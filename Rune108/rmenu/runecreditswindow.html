@@ -1,0 +1,1195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - RMenu.RuneCreditsWindow</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../rmenu/rmenu-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_rmenu/runecreditswindow.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#RuneCreditsWindow">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../rmenu/runeconsolewindow.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../rmenu/runelookandfeel.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#rmenu/runecreditswindow.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../rmenu/rmenu-overview.html">RMenu</a>.RuneCreditsWindow</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../rmenu/runemenupagewindow.html">RuneMenuPageWindow</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowbase.html">UWindowBase</a>
+   |   
+   +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowwindow.html">UWindowWindow</a>
+      |   
+      +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowclientwindow.html">UWindowClientWindow</a>
+         |   
+         +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowdialogclientwindow.html">UWindowDialogClientWindow</a>
+            |   
+            +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowpagewindow.html">UWindowPageWindow</a>
+               |   
+               +-- <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runemenupagewindow.html">RuneMenuPageWindow</a>
+                  |   
+                  +-- <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runecreditswindow.html">RuneCreditsWindow</a>
+</pre>
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_AddAnimationHeader" name="AddAnimationHeader" title="go to the details">AddAnimationHeader</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_AddAnimationLabels[10]" name="AddAnimationLabels[10]" title="go to the details">AddAnimationLabels[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_AddAnimationNames[10]" name="AddAnimationNames[10]" title="go to the details">AddAnimationNames[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_AddAnimationText" name="AddAnimationText" title="go to the details">AddAnimationText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_AddProgrammerLabels[10]" name="AddProgrammerLabels[10]" title="go to the details">AddProgrammerLabels[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_AddProgrammerNames[10]" name="AddProgrammerNames[10]" title="go to the details">AddProgrammerNames[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_AddProgrammersHeader" name="AddProgrammersHeader" title="go to the details">AddProgrammersHeader</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_AddProgrammersText" name="AddProgrammersText" title="go to the details">AddProgrammersText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_AnimationHeader" name="AnimationHeader" title="go to the details">AnimationHeader</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_AnimationLabels[10]" name="AnimationLabels[10]" title="go to the details">AnimationLabels[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_AnimationNames[10]" name="AnimationNames[10]" title="go to the details">AnimationNames[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_AnimationText" name="AnimationText" title="go to the details">AnimationText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_ArtHeader" name="ArtHeader" title="go to the details">ArtHeader</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_ArtLabels[10]" name="ArtLabels[10]" title="go to the details">ArtLabels[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ArtNames[10]" name="ArtNames[10]" title="go to the details">ArtNames[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ArtText" name="ArtText" title="go to the details">ArtText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bHallsOfValhalla" name="bHallsOfValhalla" title="go to the details">bHallsOfValhalla</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_BizHeader" name="BizHeader" title="go to the details">BizHeader</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_BizLabels[10]" name="BizLabels[10]" title="go to the details">BizLabels[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_BizNames[10]" name="BizNames[10]" title="go to the details">BizNames[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_BizText" name="BizText" title="go to the details">BizText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_DedicationHeader" name="DedicationHeader" title="go to the details">DedicationHeader</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_DedicationLabels[10]" name="DedicationLabels[10]" title="go to the details">DedicationLabels[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_DedicationNames[10]" name="DedicationNames[10]" title="go to the details">DedicationNames[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_DedicationText" name="DedicationText" title="go to the details">DedicationText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_DesignerLabels[10]" name="DesignerLabels[10]" title="go to the details">DesignerLabels[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_DesignerNames[10]" name="DesignerNames[10]" title="go to the details">DesignerNames[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenuhotlinkcontrol.html">RuneMenuHotlinkControl</a></td><td width="66%"><a href="#_HHHotlink" name="HHHotlink" title="go to the details">HHHotlink</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HHHotlinkText" name="HHHotlinkText" title="go to the details">HHHotlinkText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_HOVAnimatorsHeader" name="HOVAnimatorsHeader" title="go to the details">HOVAnimatorsHeader</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_HOVAnimatorsLabels[10]" name="HOVAnimatorsLabels[10]" title="go to the details">HOVAnimatorsLabels[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HOVAnimatorsNames[10]" name="HOVAnimatorsNames[10]" title="go to the details">HOVAnimatorsNames[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HOVAnimatorsText" name="HOVAnimatorsText" title="go to the details">HOVAnimatorsText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_HOVArtLeadHeader" name="HOVArtLeadHeader" title="go to the details">HOVArtLeadHeader</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_HOVArtLeadLabel" name="HOVArtLeadLabel" title="go to the details">HOVArtLeadLabel</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HOVArtLeadName" name="HOVArtLeadName" title="go to the details">HOVArtLeadName</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HOVArtLeadText" name="HOVArtLeadText" title="go to the details">HOVArtLeadText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_HOVDesignAssistantHeader" name="HOVDesignAssistantHeader" title="go to the details">HOVDesignAssistantHeader</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_HOVDesignAssistantLabel" name="HOVDesignAssistantLabel" title="go to the details">HOVDesignAssistantLabel</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HOVDesignAssistantName" name="HOVDesignAssistantName" title="go to the details">HOVDesignAssistantName</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HOVDesignAssistantText" name="HOVDesignAssistantText" title="go to the details">HOVDesignAssistantText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_HOVLeadHeader" name="HOVLeadHeader" title="go to the details">HOVLeadHeader</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_HOVLeadHeader2" name="HOVLeadHeader2" title="go to the details">HOVLeadHeader2</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_HOVLeadLabel" name="HOVLeadLabel" title="go to the details">HOVLeadLabel</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HOVLeadName" name="HOVLeadName" title="go to the details">HOVLeadName</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HOVLeadText" name="HOVLeadText" title="go to the details">HOVLeadText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HOVLeadText2" name="HOVLeadText2" title="go to the details">HOVLeadText2</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_HOVLevelDesignersHeader" name="HOVLevelDesignersHeader" title="go to the details">HOVLevelDesignersHeader</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_HOVLevelDesignersLabels[10]" name="HOVLevelDesignersLabels[10]" title="go to the details">HOVLevelDesignersLabels[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HOVLevelDesignersNames[10]" name="HOVLevelDesignersNames[10]" title="go to the details">HOVLevelDesignersNames[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HOVLevelDesignersText" name="HOVLevelDesignersText" title="go to the details">HOVLevelDesignersText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_HOVMaxAnimators" name="HOVMaxAnimators" title="go to the details">HOVMaxAnimators</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_HOVMaxLevelDesigners" name="HOVMaxLevelDesigners" title="go to the details">HOVMaxLevelDesigners</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_HOVMaxModelersSkinners" name="HOVMaxModelersSkinners" title="go to the details">HOVMaxModelersSkinners</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_HOVMaxMusic" name="HOVMaxMusic" title="go to the details">HOVMaxMusic</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_HOVMaxProgrammers" name="HOVMaxProgrammers" title="go to the details">HOVMaxProgrammers</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_HOVMaxTextures" name="HOVMaxTextures" title="go to the details">HOVMaxTextures</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_HOVModelersSkinnersHeader" name="HOVModelersSkinnersHeader" title="go to the details">HOVModelersSkinnersHeader</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_HOVModelersSkinnersLabels[10]" name="HOVModelersSkinnersLabels[10]" title="go to the details">HOVModelersSkinnersLabels[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HOVModelersSkinnersNames[10]" name="HOVModelersSkinnersNames[10]" title="go to the details">HOVModelersSkinnersNames[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HOVModelersSkinnersText" name="HOVModelersSkinnersText" title="go to the details">HOVModelersSkinnersText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_HOVMusicHeader" name="HOVMusicHeader" title="go to the details">HOVMusicHeader</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_HOVMusicLabels[10]" name="HOVMusicLabels[10]" title="go to the details">HOVMusicLabels[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HOVMusicNames[10]" name="HOVMusicNames[10]" title="go to the details">HOVMusicNames[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HOVMusicText" name="HOVMusicText" title="go to the details">HOVMusicText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_HOVProgrammersHeader" name="HOVProgrammersHeader" title="go to the details">HOVProgrammersHeader</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_HOVProgrammersLabels[10]" name="HOVProgrammersLabels[10]" title="go to the details">HOVProgrammersLabels[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HOVProgrammersNames[10]" name="HOVProgrammersNames[10]" title="go to the details">HOVProgrammersNames[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HOVProgrammersText" name="HOVProgrammersText" title="go to the details">HOVProgrammersText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_HOVProjectManagerHeader" name="HOVProjectManagerHeader" title="go to the details">HOVProjectManagerHeader</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_HOVProjectManagerLabel" name="HOVProjectManagerLabel" title="go to the details">HOVProjectManagerLabel</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HOVProjectManagerName" name="HOVProjectManagerName" title="go to the details">HOVProjectManagerName</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HOVProjectManagerText" name="HOVProjectManagerText" title="go to the details">HOVProjectManagerText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_HOVSoundEffectsHeader" name="HOVSoundEffectsHeader" title="go to the details">HOVSoundEffectsHeader</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_HOVSoundEffectsLabel" name="HOVSoundEffectsLabel" title="go to the details">HOVSoundEffectsLabel</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HOVSoundEffectsName" name="HOVSoundEffectsName" title="go to the details">HOVSoundEffectsName</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HOVSoundEffectsText" name="HOVSoundEffectsText" title="go to the details">HOVSoundEffectsText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_HOVTexturesHeader" name="HOVTexturesHeader" title="go to the details">HOVTexturesHeader</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_HOVTexturesLabels[10]" name="HOVTexturesLabels[10]" title="go to the details">HOVTexturesLabels[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HOVTexturesNames[10]" name="HOVTexturesNames[10]" title="go to the details">HOVTexturesNames[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HOVTexturesText" name="HOVTexturesText" title="go to the details">HOVTexturesText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_HOVThanksHeader" name="HOVThanksHeader" title="go to the details">HOVThanksHeader</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HOVThanksText" name="HOVThanksText" title="go to the details">HOVThanksText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_LevelDesignHeader" name="LevelDesignHeader" title="go to the details">LevelDesignHeader</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_LevelDesignText" name="LevelDesignText" title="go to the details">LevelDesignText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_LinksLabel" name="LinksLabel" title="go to the details">LinksLabel</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_LinksText" name="LinksText" title="go to the details">LinksText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_MaxAddAnimations" name="MaxAddAnimations" title="go to the details">MaxAddAnimations</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_MaxAddProgs" name="MaxAddProgs" title="go to the details">MaxAddProgs</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_MaxAnimations" name="MaxAnimations" title="go to the details">MaxAnimations</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_MaxArts" name="MaxArts" title="go to the details">MaxArts</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_MaxBiz" name="MaxBiz" title="go to the details">MaxBiz</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_MaxDedication" name="MaxDedication" title="go to the details">MaxDedication</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_MaxDesigners" name="MaxDesigners" title="go to the details">MaxDesigners</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_MaxMusics" name="MaxMusics" title="go to the details">MaxMusics</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_MaxProgs" name="MaxProgs" title="go to the details">MaxProgs</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_MaxSounds" name="MaxSounds" title="go to the details">MaxSounds</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_MaxThanks" name="MaxThanks" title="go to the details">MaxThanks</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_MaxVoice" name="MaxVoice" title="go to the details">MaxVoice</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_MusicHeader" name="MusicHeader" title="go to the details">MusicHeader</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_MusicLabels[10]" name="MusicLabels[10]" title="go to the details">MusicLabels[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_MusicNames[10]" name="MusicNames[10]" title="go to the details">MusicNames[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_MusicText" name="MusicText" title="go to the details">MusicText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_ProgrammerLabels[10]" name="ProgrammerLabels[10]" title="go to the details">ProgrammerLabels[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ProgrammerNames[10]" name="ProgrammerNames[10]" title="go to the details">ProgrammerNames[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_ProgrammersHeader" name="ProgrammersHeader" title="go to the details">ProgrammersHeader</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ProgrammersText" name="ProgrammersText" title="go to the details">ProgrammersText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenuhotlinkcontrol.html">RuneMenuHotlinkControl</a></td><td width="66%"><a href="#_RGHotlink" name="RGHotlink" title="go to the details">RGHotlink</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_RGHotlinkText" name="RGHotlinkText" title="go to the details">RGHotlinkText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_SoundHeader" name="SoundHeader" title="go to the details">SoundHeader</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_SoundLabels[10]" name="SoundLabels[10]" title="go to the details">SoundLabels[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_SoundNames[10]" name="SoundNames[10]" title="go to the details">SoundNames[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_SoundText" name="SoundText" title="go to the details">SoundText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_ThanksHeader" name="ThanksHeader" title="go to the details">ThanksHeader</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_ThanksLabels[10]" name="ThanksLabels[10]" title="go to the details">ThanksLabels[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ThanksNames[10]" name="ThanksNames[10]" title="go to the details">ThanksNames[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ThanksText" name="ThanksText" title="go to the details">ThanksText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenuhotlinkcontrol.html">RuneMenuHotlinkControl</a></td><td width="66%"><a href="#_TSHotlink" name="TSHotlink" title="go to the details">TSHotlink</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_TSHotlinkText" name="TSHotlinkText" title="go to the details">TSHotlinkText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_VoiceHeader" name="VoiceHeader" title="go to the details">VoiceHeader</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_VoiceLabels[10]" name="VoiceLabels[10]" title="go to the details">VoiceLabels[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_VoiceNames[10]" name="VoiceNames[10]" title="go to the details">VoiceNames[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_VoiceText" name="VoiceText" title="go to the details">VoiceText</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowpagewindow.html">UWindowPageWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowpagewindow.html#OwnerTab">OwnerTab</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_BeforePaint-" name="BeforePaint" title="go to the details">BeforePaint</a> (<a href="../engine/canvas.html">Canvas</a> C, float X, float Y))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Created-" name="Created" title="go to the details">Created</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_HOVBeforePaint-" name="HOVBeforePaint" title="go to the details">HOVBeforePaint</a> (<a href="../engine/canvas.html">Canvas</a> C, float X, float Y))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_HOVCreated-" name="HOVCreated" title="go to the details">HOVCreated</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Notify-" name="Notify" title="go to the details">Notify</a> (<a href="../uwindow/uwindowdialogcontrol.html">UWindowDialogControl</a> C, byte E))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SaveConfigs-" name="SaveConfigs" title="go to the details">SaveConfigs</a> ()))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runemenupagewindow.html">RuneMenuPageWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../rmenu/runemenupagewindow.html#Notify">Notify</a>, <a href="../rmenu/runemenupagewindow.html#Paint">Paint</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowpagewindow.html">UWindowPageWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowpagewindow.html#RightClickTab">RightClickTab</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_AddAnimationHeader" class="hidden"></a>AddAnimationHeader <a href="../Source_rmenu/runecreditswindow.html#36" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> AddAnimationHeader;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AddAnimationLabels[10]" class="hidden"></a>AddAnimationLabels[10] <a href="../Source_rmenu/runecreditswindow.html#38" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> AddAnimationLabels[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AddAnimationNames[10]" class="hidden"></a>AddAnimationNames[10] <a href="../Source_rmenu/runecreditswindow.html#39" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> AddAnimationNames[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AddAnimationText" class="hidden"></a>AddAnimationText <a href="../Source_rmenu/runecreditswindow.html#37" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> AddAnimationText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AddProgrammerLabels[10]" class="hidden"></a>AddProgrammerLabels[10] <a href="../Source_rmenu/runecreditswindow.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> AddProgrammerLabels[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AddProgrammerNames[10]" class="hidden"></a>AddProgrammerNames[10] <a href="../Source_rmenu/runecreditswindow.html#15" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> AddProgrammerNames[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AddProgrammersHeader" class="hidden"></a>AddProgrammersHeader <a href="../Source_rmenu/runecreditswindow.html#12" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> AddProgrammersHeader;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AddProgrammersText" class="hidden"></a>AddProgrammersText <a href="../Source_rmenu/runecreditswindow.html#13" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> AddProgrammersText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AnimationHeader" class="hidden"></a>AnimationHeader <a href="../Source_rmenu/runecreditswindow.html#30" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> AnimationHeader;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AnimationLabels[10]" class="hidden"></a>AnimationLabels[10] <a href="../Source_rmenu/runecreditswindow.html#32" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> AnimationLabels[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AnimationNames[10]" class="hidden"></a>AnimationNames[10] <a href="../Source_rmenu/runecreditswindow.html#33" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> AnimationNames[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AnimationText" class="hidden"></a>AnimationText <a href="../Source_rmenu/runecreditswindow.html#31" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> AnimationText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ArtHeader" class="hidden"></a>ArtHeader <a href="../Source_rmenu/runecreditswindow.html#24" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> ArtHeader;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ArtLabels[10]" class="hidden"></a>ArtLabels[10] <a href="../Source_rmenu/runecreditswindow.html#26" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> ArtLabels[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ArtNames[10]" class="hidden"></a>ArtNames[10] <a href="../Source_rmenu/runecreditswindow.html#27" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> ArtNames[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ArtText" class="hidden"></a>ArtText <a href="../Source_rmenu/runecreditswindow.html#25" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> ArtText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bHallsOfValhalla" class="hidden"></a>bHallsOfValhalla <a href="../Source_rmenu/runecreditswindow.html#157" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bHallsOfValhalla;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BizHeader" class="hidden"></a>BizHeader <a href="../Source_rmenu/runecreditswindow.html#54" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> BizHeader;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BizLabels[10]" class="hidden"></a>BizLabels[10] <a href="../Source_rmenu/runecreditswindow.html#56" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> BizLabels[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BizNames[10]" class="hidden"></a>BizNames[10] <a href="../Source_rmenu/runecreditswindow.html#57" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> BizNames[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BizText" class="hidden"></a>BizText <a href="../Source_rmenu/runecreditswindow.html#55" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> BizText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DedicationHeader" class="hidden"></a>DedicationHeader <a href="../Source_rmenu/runecreditswindow.html#72" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> DedicationHeader;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DedicationLabels[10]" class="hidden"></a>DedicationLabels[10] <a href="../Source_rmenu/runecreditswindow.html#74" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> DedicationLabels[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DedicationNames[10]" class="hidden"></a>DedicationNames[10] <a href="../Source_rmenu/runecreditswindow.html#75" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> DedicationNames[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DedicationText" class="hidden"></a>DedicationText <a href="../Source_rmenu/runecreditswindow.html#73" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> DedicationText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DesignerLabels[10]" class="hidden"></a>DesignerLabels[10] <a href="../Source_rmenu/runecreditswindow.html#20" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> DesignerLabels[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DesignerNames[10]" class="hidden"></a>DesignerNames[10] <a href="../Source_rmenu/runecreditswindow.html#21" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> DesignerNames[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HHHotlink" class="hidden"></a>HHHotlink <a href="../Source_rmenu/runecreditswindow.html#81" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenuhotlinkcontrol.html" class="source">RuneMenuHotlinkControl</a></span> HHHotlink;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HHHotlinkText" class="hidden"></a>HHHotlinkText <a href="../Source_rmenu/runecreditswindow.html#82" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> HHHotlinkText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVAnimatorsHeader" class="hidden"></a>HOVAnimatorsHeader <a href="../Source_rmenu/runecreditswindow.html#131" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> HOVAnimatorsHeader;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVAnimatorsLabels[10]" class="hidden"></a>HOVAnimatorsLabels[10] <a href="../Source_rmenu/runecreditswindow.html#133" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> HOVAnimatorsLabels[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVAnimatorsNames[10]" class="hidden"></a>HOVAnimatorsNames[10] <a href="../Source_rmenu/runecreditswindow.html#134" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> HOVAnimatorsNames[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVAnimatorsText" class="hidden"></a>HOVAnimatorsText <a href="../Source_rmenu/runecreditswindow.html#132" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> HOVAnimatorsText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVArtLeadHeader" class="hidden"></a>HOVArtLeadHeader <a href="../Source_rmenu/runecreditswindow.html#98" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> HOVArtLeadHeader;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVArtLeadLabel" class="hidden"></a>HOVArtLeadLabel <a href="../Source_rmenu/runecreditswindow.html#100" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> HOVArtLeadLabel;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVArtLeadName" class="hidden"></a>HOVArtLeadName <a href="../Source_rmenu/runecreditswindow.html#101" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> HOVArtLeadName;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVArtLeadText" class="hidden"></a>HOVArtLeadText <a href="../Source_rmenu/runecreditswindow.html#99" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> HOVArtLeadText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVDesignAssistantHeader" class="hidden"></a>HOVDesignAssistantHeader <a href="../Source_rmenu/runecreditswindow.html#108" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> HOVDesignAssistantHeader;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVDesignAssistantLabel" class="hidden"></a>HOVDesignAssistantLabel <a href="../Source_rmenu/runecreditswindow.html#110" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> HOVDesignAssistantLabel;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVDesignAssistantName" class="hidden"></a>HOVDesignAssistantName <a href="../Source_rmenu/runecreditswindow.html#111" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> HOVDesignAssistantName;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVDesignAssistantText" class="hidden"></a>HOVDesignAssistantText <a href="../Source_rmenu/runecreditswindow.html#109" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> HOVDesignAssistantText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVLeadHeader" class="hidden"></a>HOVLeadHeader <a href="../Source_rmenu/runecreditswindow.html#91" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> HOVLeadHeader;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVLeadHeader2" class="hidden"></a>HOVLeadHeader2 <a href="../Source_rmenu/runecreditswindow.html#93" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> HOVLeadHeader2;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVLeadLabel" class="hidden"></a>HOVLeadLabel <a href="../Source_rmenu/runecreditswindow.html#95" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> HOVLeadLabel;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVLeadName" class="hidden"></a>HOVLeadName <a href="../Source_rmenu/runecreditswindow.html#96" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> HOVLeadName;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVLeadText" class="hidden"></a>HOVLeadText <a href="../Source_rmenu/runecreditswindow.html#92" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> HOVLeadText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVLeadText2" class="hidden"></a>HOVLeadText2 <a href="../Source_rmenu/runecreditswindow.html#94" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> HOVLeadText2;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVLevelDesignersHeader" class="hidden"></a>HOVLevelDesignersHeader <a href="../Source_rmenu/runecreditswindow.html#119" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> HOVLevelDesignersHeader;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVLevelDesignersLabels[10]" class="hidden"></a>HOVLevelDesignersLabels[10] <a href="../Source_rmenu/runecreditswindow.html#121" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> HOVLevelDesignersLabels[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVLevelDesignersNames[10]" class="hidden"></a>HOVLevelDesignersNames[10] <a href="../Source_rmenu/runecreditswindow.html#122" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> HOVLevelDesignersNames[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVLevelDesignersText" class="hidden"></a>HOVLevelDesignersText <a href="../Source_rmenu/runecreditswindow.html#120" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> HOVLevelDesignersText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVMaxAnimators" class="hidden"></a>HOVMaxAnimators <a href="../Source_rmenu/runecreditswindow.html#135" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> HOVMaxAnimators;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVMaxLevelDesigners" class="hidden"></a>HOVMaxLevelDesigners <a href="../Source_rmenu/runecreditswindow.html#123" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> HOVMaxLevelDesigners;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVMaxModelersSkinners" class="hidden"></a>HOVMaxModelersSkinners <a href="../Source_rmenu/runecreditswindow.html#129" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> HOVMaxModelersSkinners;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVMaxMusic" class="hidden"></a>HOVMaxMusic <a href="../Source_rmenu/runecreditswindow.html#152" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> HOVMaxMusic;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVMaxProgrammers" class="hidden"></a>HOVMaxProgrammers <a href="../Source_rmenu/runecreditswindow.html#117" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> HOVMaxProgrammers;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVMaxTextures" class="hidden"></a>HOVMaxTextures <a href="../Source_rmenu/runecreditswindow.html#141" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> HOVMaxTextures;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVModelersSkinnersHeader" class="hidden"></a>HOVModelersSkinnersHeader <a href="../Source_rmenu/runecreditswindow.html#125" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> HOVModelersSkinnersHeader;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVModelersSkinnersLabels[10]" class="hidden"></a>HOVModelersSkinnersLabels[10] <a href="../Source_rmenu/runecreditswindow.html#127" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> HOVModelersSkinnersLabels[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVModelersSkinnersNames[10]" class="hidden"></a>HOVModelersSkinnersNames[10] <a href="../Source_rmenu/runecreditswindow.html#128" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> HOVModelersSkinnersNames[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVModelersSkinnersText" class="hidden"></a>HOVModelersSkinnersText <a href="../Source_rmenu/runecreditswindow.html#126" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> HOVModelersSkinnersText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVMusicHeader" class="hidden"></a>HOVMusicHeader <a href="../Source_rmenu/runecreditswindow.html#148" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> HOVMusicHeader;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVMusicLabels[10]" class="hidden"></a>HOVMusicLabels[10] <a href="../Source_rmenu/runecreditswindow.html#150" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> HOVMusicLabels[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVMusicNames[10]" class="hidden"></a>HOVMusicNames[10] <a href="../Source_rmenu/runecreditswindow.html#151" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> HOVMusicNames[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVMusicText" class="hidden"></a>HOVMusicText <a href="../Source_rmenu/runecreditswindow.html#149" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> HOVMusicText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVProgrammersHeader" class="hidden"></a>HOVProgrammersHeader <a href="../Source_rmenu/runecreditswindow.html#113" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> HOVProgrammersHeader;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVProgrammersLabels[10]" class="hidden"></a>HOVProgrammersLabels[10] <a href="../Source_rmenu/runecreditswindow.html#115" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> HOVProgrammersLabels[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVProgrammersNames[10]" class="hidden"></a>HOVProgrammersNames[10] <a href="../Source_rmenu/runecreditswindow.html#116" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> HOVProgrammersNames[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVProgrammersText" class="hidden"></a>HOVProgrammersText <a href="../Source_rmenu/runecreditswindow.html#114" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> HOVProgrammersText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVProjectManagerHeader" class="hidden"></a>HOVProjectManagerHeader <a href="../Source_rmenu/runecreditswindow.html#103" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> HOVProjectManagerHeader;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVProjectManagerLabel" class="hidden"></a>HOVProjectManagerLabel <a href="../Source_rmenu/runecreditswindow.html#105" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> HOVProjectManagerLabel;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVProjectManagerName" class="hidden"></a>HOVProjectManagerName <a href="../Source_rmenu/runecreditswindow.html#106" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> HOVProjectManagerName;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVProjectManagerText" class="hidden"></a>HOVProjectManagerText <a href="../Source_rmenu/runecreditswindow.html#104" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> HOVProjectManagerText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVSoundEffectsHeader" class="hidden"></a>HOVSoundEffectsHeader <a href="../Source_rmenu/runecreditswindow.html#143" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> HOVSoundEffectsHeader;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVSoundEffectsLabel" class="hidden"></a>HOVSoundEffectsLabel <a href="../Source_rmenu/runecreditswindow.html#145" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> HOVSoundEffectsLabel;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVSoundEffectsName" class="hidden"></a>HOVSoundEffectsName <a href="../Source_rmenu/runecreditswindow.html#146" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> HOVSoundEffectsName;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVSoundEffectsText" class="hidden"></a>HOVSoundEffectsText <a href="../Source_rmenu/runecreditswindow.html#144" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> HOVSoundEffectsText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVTexturesHeader" class="hidden"></a>HOVTexturesHeader <a href="../Source_rmenu/runecreditswindow.html#137" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> HOVTexturesHeader;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVTexturesLabels[10]" class="hidden"></a>HOVTexturesLabels[10] <a href="../Source_rmenu/runecreditswindow.html#139" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> HOVTexturesLabels[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVTexturesNames[10]" class="hidden"></a>HOVTexturesNames[10] <a href="../Source_rmenu/runecreditswindow.html#140" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> HOVTexturesNames[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVTexturesText" class="hidden"></a>HOVTexturesText <a href="../Source_rmenu/runecreditswindow.html#138" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> HOVTexturesText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVThanksHeader" class="hidden"></a>HOVThanksHeader <a href="../Source_rmenu/runecreditswindow.html#154" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> HOVThanksHeader;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVThanksText" class="hidden"></a>HOVThanksText <a href="../Source_rmenu/runecreditswindow.html#155" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> HOVThanksText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LevelDesignHeader" class="hidden"></a>LevelDesignHeader <a href="../Source_rmenu/runecreditswindow.html#18" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> LevelDesignHeader;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LevelDesignText" class="hidden"></a>LevelDesignText <a href="../Source_rmenu/runecreditswindow.html#19" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> LevelDesignText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LinksLabel" class="hidden"></a>LinksLabel <a href="../Source_rmenu/runecreditswindow.html#78" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> LinksLabel;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LinksText" class="hidden"></a>LinksText <a href="../Source_rmenu/runecreditswindow.html#79" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> LinksText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MaxAddAnimations" class="hidden"></a>MaxAddAnimations <a href="../Source_rmenu/runecreditswindow.html#40" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> MaxAddAnimations;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MaxAddProgs" class="hidden"></a>MaxAddProgs <a href="../Source_rmenu/runecreditswindow.html#16" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> MaxAddProgs;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MaxAnimations" class="hidden"></a>MaxAnimations <a href="../Source_rmenu/runecreditswindow.html#34" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> MaxAnimations;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MaxArts" class="hidden"></a>MaxArts <a href="../Source_rmenu/runecreditswindow.html#28" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> MaxArts;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MaxBiz" class="hidden"></a>MaxBiz <a href="../Source_rmenu/runecreditswindow.html#58" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> MaxBiz;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MaxDedication" class="hidden"></a>MaxDedication <a href="../Source_rmenu/runecreditswindow.html#76" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> MaxDedication;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MaxDesigners" class="hidden"></a>MaxDesigners <a href="../Source_rmenu/runecreditswindow.html#22" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> MaxDesigners;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MaxMusics" class="hidden"></a>MaxMusics <a href="../Source_rmenu/runecreditswindow.html#52" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> MaxMusics;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MaxProgs" class="hidden"></a>MaxProgs <a href="../Source_rmenu/runecreditswindow.html#10" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> MaxProgs;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MaxSounds" class="hidden"></a>MaxSounds <a href="../Source_rmenu/runecreditswindow.html#46" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> MaxSounds;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MaxThanks" class="hidden"></a>MaxThanks <a href="../Source_rmenu/runecreditswindow.html#64" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> MaxThanks;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MaxVoice" class="hidden"></a>MaxVoice <a href="../Source_rmenu/runecreditswindow.html#70" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> MaxVoice;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MusicHeader" class="hidden"></a>MusicHeader <a href="../Source_rmenu/runecreditswindow.html#48" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> MusicHeader;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MusicLabels[10]" class="hidden"></a>MusicLabels[10] <a href="../Source_rmenu/runecreditswindow.html#50" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> MusicLabels[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MusicNames[10]" class="hidden"></a>MusicNames[10] <a href="../Source_rmenu/runecreditswindow.html#51" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> MusicNames[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MusicText" class="hidden"></a>MusicText <a href="../Source_rmenu/runecreditswindow.html#49" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> MusicText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ProgrammerLabels[10]" class="hidden"></a>ProgrammerLabels[10] <a href="../Source_rmenu/runecreditswindow.html#8" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> ProgrammerLabels[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ProgrammerNames[10]" class="hidden"></a>ProgrammerNames[10] <a href="../Source_rmenu/runecreditswindow.html#9" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> ProgrammerNames[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ProgrammersHeader" class="hidden"></a>ProgrammersHeader <a href="../Source_rmenu/runecreditswindow.html#6" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> ProgrammersHeader;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ProgrammersText" class="hidden"></a>ProgrammersText <a href="../Source_rmenu/runecreditswindow.html#7" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> ProgrammersText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RGHotlink" class="hidden"></a>RGHotlink <a href="../Source_rmenu/runecreditswindow.html#87" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenuhotlinkcontrol.html" class="source">RuneMenuHotlinkControl</a></span> RGHotlink;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RGHotlinkText" class="hidden"></a>RGHotlinkText <a href="../Source_rmenu/runecreditswindow.html#88" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> RGHotlinkText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SoundHeader" class="hidden"></a>SoundHeader <a href="../Source_rmenu/runecreditswindow.html#42" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> SoundHeader;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SoundLabels[10]" class="hidden"></a>SoundLabels[10] <a href="../Source_rmenu/runecreditswindow.html#44" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> SoundLabels[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SoundNames[10]" class="hidden"></a>SoundNames[10] <a href="../Source_rmenu/runecreditswindow.html#45" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> SoundNames[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SoundText" class="hidden"></a>SoundText <a href="../Source_rmenu/runecreditswindow.html#43" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> SoundText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ThanksHeader" class="hidden"></a>ThanksHeader <a href="../Source_rmenu/runecreditswindow.html#60" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> ThanksHeader;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ThanksLabels[10]" class="hidden"></a>ThanksLabels[10] <a href="../Source_rmenu/runecreditswindow.html#62" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> ThanksLabels[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ThanksNames[10]" class="hidden"></a>ThanksNames[10] <a href="../Source_rmenu/runecreditswindow.html#63" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> ThanksNames[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ThanksText" class="hidden"></a>ThanksText <a href="../Source_rmenu/runecreditswindow.html#61" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> ThanksText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TSHotlink" class="hidden"></a>TSHotlink <a href="../Source_rmenu/runecreditswindow.html#84" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenuhotlinkcontrol.html" class="source">RuneMenuHotlinkControl</a></span> TSHotlink;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TSHotlinkText" class="hidden"></a>TSHotlinkText <a href="../Source_rmenu/runecreditswindow.html#85" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> TSHotlinkText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_VoiceHeader" class="hidden"></a>VoiceHeader <a href="../Source_rmenu/runecreditswindow.html#66" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> VoiceHeader;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_VoiceLabels[10]" class="hidden"></a>VoiceLabels[10] <a href="../Source_rmenu/runecreditswindow.html#68" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> VoiceLabels[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_VoiceNames[10]" class="hidden"></a>VoiceNames[10] <a href="../Source_rmenu/runecreditswindow.html#69" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> VoiceNames[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_VoiceText" class="hidden"></a>VoiceText <a href="../Source_rmenu/runecreditswindow.html#67" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> VoiceText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_BeforePaint-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BeforePaint <span class="function_state"></span> <a href="../Source_rmenu/runecreditswindow.html#408" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  BeforePaint ( <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type">C</span>, <span class="source_keyword">float</span> X, <span class="source_keyword">float</span> <span class="source_type">Y</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Created-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Created <span class="function_state"></span> <a href="../Source_rmenu/runecreditswindow.html#160" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Created ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVBeforePaint-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> HOVBeforePaint <span class="function_state"></span> <a href="../Source_rmenu/runecreditswindow.html#722" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  HOVBeforePaint ( <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type">C</span>, <span class="source_keyword">float</span> X, <span class="source_keyword">float</span> <span class="source_type">Y</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HOVCreated-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> HOVCreated <span class="function_state"></span> <a href="../Source_rmenu/runecreditswindow.html#507" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  HOVCreated ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Notify-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Notify <span class="function_state"></span> <a href="../Source_rmenu/runecreditswindow.html#822" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Notify ( <span class="source_type"><a href="../uwindow/uwindowdialogcontrol.html" class="source">UWindowDialogControl</a></span> <span class="source_type">C</span>, <span class="source_keyword">byte</span> E) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SaveConfigs-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SaveConfigs <span class="function_state"></span> <a href="../Source_rmenu/runecreditswindow.html#854" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SaveConfigs ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     ProgrammersText=<span class="source_string">"Programming"</span>
+     ProgrammerNames(<span class="source_int">0</span>)=<span class="source_string">"Paul MacArthur"</span>
+     ProgrammerNames(<span class="source_int">1</span>)=<span class="source_string">"Chris Rhinehart"</span>
+     MaxProgs=<span class="source_int">2</span>
+     AddProgrammersText=<span class="source_string">"Additional Programming"</span>
+     AddProgrammerNames(<span class="source_int">0</span>)=<span class="source_string">"Ben Gokey"</span>
+     AddProgrammerNames(<span class="source_int">1</span>)=<span class="source_string">"Mike Craddick"</span>
+     MaxAddProgs=<span class="source_int">2</span>
+     LevelDesignText=<span class="source_string">"Level Design"</span>
+     DesignerNames(<span class="source_int">0</span>)=<span class="source_string">"Mick Beard"</span>
+     DesignerNames(<span class="source_int">1</span>)=<span class="source_string">"Dave Halsted"</span>
+     DesignerNames(<span class="source_int">2</span>)=<span class="source_string">"Ted Halsted"</span>
+     DesignerNames(<span class="source_int">3</span>)=<span class="source_string">"James Sumwalt"</span>
+     MaxDesigners=<span class="source_int">4</span>
+     ArtText=<span class="source_string">"Art & Models"</span>
+     ArtNames(<span class="source_int">0</span>)=<span class="source_string">"Tim Bowman"</span>
+     ArtNames(<span class="source_int">1</span>)=<span class="source_string">"Shane Gurno"</span>
+     ArtNames(<span class="source_int">2</span>)=<span class="source_string">"Greg Marshall"</span>
+     MaxArts=<span class="source_int">3</span>
+     AnimationText=<span class="source_string">"Animation"</span>
+     AnimationNames(<span class="source_int">0</span>)=<span class="source_string">"Jeff DeWitt"</span>
+     AnimationNames(<span class="source_int">1</span>)=<span class="source_string">"Nathaniel Albright"</span>
+     MaxAnimations=<span class="source_int">2</span>
+     AddAnimationText=<span class="source_string">"Additional Animation"</span>
+     AddAnimationNames(<span class="source_int">0</span>)=<span class="source_string">"Mike Werckle"</span>
+     MaxAddAnimations=<span class="source_int">1</span>
+     SoundText=<span class="source_string">"Sound Effects"</span>
+     SoundNames(<span class="source_int">0</span>)=<span class="source_string">"Mike Larson"</span>
+     MaxSounds=<span class="source_int">1</span>
+     MusicText=<span class="source_string">"Music"</span>
+     MusicNames(<span class="source_int">0</span>)=<span class="source_string">"Mike Larson"</span>
+     MusicNames(<span class="source_int">1</span>)=<span class="source_string">"Jim B-Reay"</span>
+     MusicNames(<span class="source_int">2</span>)=<span class="source_string">"Romulus Mars Priscus"</span>
+     MaxMusics=<span class="source_int">3</span>
+     BizText=<span class="source_string">"Biz"</span>
+     BizNames(<span class="source_int">0</span>)=<span class="source_string">"Tim Gerritsen"</span>
+     MaxBiz=<span class="source_int">1</span>
+     ThanksText=<span class="source_string">"Special Thanks to"</span>
+     ThanksNames(<span class="source_int">0</span>)=<span class="source_string">"Seth Johnson"</span>
+     ThanksNames(<span class="source_int">1</span>)=<span class="source_string">"Kenny Stoll"</span>
+     ThanksNames(<span class="source_int">2</span>)=<span class="source_string">"Sean Wipfli"</span>
+     ThanksNames(<span class="source_int">3</span>)=<span class="source_string">"Larry Hill"</span>
+     ThanksNames(<span class="source_int">4</span>)=<span class="source_string">"John Falgate"</span>
+     MaxThanks=<span class="source_int">5</span>
+     VoiceText=<span class="source_string">"Voice Actors"</span>
+     VoiceNames(<span class="source_int">0</span>)=<span class="source_string">"Lee Ernst"</span>
+     VoiceNames(<span class="source_int">1</span>)=<span class="source_string">"Ted Halsted"</span>
+     VoiceNames(<span class="source_int">2</span>)=<span class="source_string">"Mike Larson"</span>
+     VoiceNames(<span class="source_int">3</span>)=<span class="source_string">"Tejumola F Ologboni"</span>
+     VoiceNames(<span class="source_int">4</span>)=<span class="source_string">"Sue Quinn"</span>
+     VoiceNames(<span class="source_int">5</span>)=<span class="source_string">"Nick Skrowaczewski"</span>
+     MaxVoice=<span class="source_int">6</span>
+     DedicationText=<span class="source_string">"Dedicated to the Memory of:"</span>
+     DedicationNames(<span class="source_int">0</span>)=<span class="source_string">"Gene Rhinehart"</span>
+     DedicationNames(<span class="source_int">1</span>)=<span class="source_string">"1950 - 1999"</span>
+     MaxDedication=<span class="source_int">2</span>
+     LinksText=<span class="source_string">"Links:"</span>
+     HHHotlinkText=<span class="source_string">"www.humanhead.com"</span>
+     TSHotlinkText=<span class="source_string">"www.runegame.com/support.php"</span>
+     RGHotlinkText=<span class="source_string">"www.runegame.com"</span>
+     HOVLeadText=<span class="source_string">"Project Lead /"</span>
+     HOVLeadText2=<span class="source_string">" Lead Programmer:"</span>
+     HOVLeadName=<span class="source_string">"Chris Rhinehart"</span>
+     HOVArtLeadText=<span class="source_string">"Art Lead:"</span>
+     HOVArtLeadName=<span class="source_string">"Rowan Atalla"</span>
+     HOVProjectManagerText=<span class="source_string">"Project Manager / Biz:"</span>
+     HOVProjectManagerName=<span class="source_string">"Timothy S. Gerritsen"</span>
+     HOVDesignAssistantText=<span class="source_string">"Design Assistant:"</span>
+     HOVDesignAssistantName=<span class="source_string">"Seth Johnson"</span>
+     HOVProgrammersText=<span class="source_string">"Programming"</span>
+     HOVProgrammersNames(<span class="source_int">0</span>)=<span class="source_string">"Chris Rhinehart"</span>
+     HOVProgrammersNames(<span class="source_int">1</span>)=<span class="source_string">"Mike Craddick"</span>
+     HOVProgrammersNames(<span class="source_int">2</span>)=<span class="source_string">"Ben Gokey"</span>
+     HOVProgrammersNames(<span class="source_int">3</span>)=<span class="source_string">"Paul MacArthur"</span>
+     HOVMaxProgrammers=<span class="source_int">4</span>
+     HOVLevelDesignersText=<span class="source_string">"Level Designers:"</span>
+     HOVLevelDesignersNames(<span class="source_int">0</span>)=<span class="source_string">"Rowan Atalla"</span>
+     HOVLevelDesignersNames(<span class="source_int">1</span>)=<span class="source_string">"Mick Beard"</span>
+     HOVLevelDesignersNames(<span class="source_int">2</span>)=<span class="source_string">"Mike Flynn"</span>
+     HOVLevelDesignersNames(<span class="source_int">3</span>)=<span class="source_string">"Brian Frank"</span>
+     HOVLevelDesignersNames(<span class="source_int">4</span>)=<span class="source_string">"Dave Halsted"</span>
+     HOVLevelDesignersNames(<span class="source_int">5</span>)=<span class="source_string">"Ted Halsted"</span>
+     HOVLevelDesignersNames(<span class="source_int">6</span>)=<span class="source_string">"Jean-Paul LeBreton"</span>
+     HOVLevelDesignersNames(<span class="source_int">7</span>)=<span class="source_string">"Jim Sumwalt"</span>
+     HOVMaxLevelDesigners=<span class="source_int">8</span>
+     HOVModelersSkinnersText=<span class="source_string">"Modelers/Skinners:"</span>
+     HOVModelersSkinnersNames(<span class="source_int">0</span>)=<span class="source_string">"Tim Bowman"</span>
+     HOVModelersSkinnersNames(<span class="source_int">1</span>)=<span class="source_string">"David Gulisano"</span>
+     HOVModelersSkinnersNames(<span class="source_int">2</span>)=<span class="source_string">"Shane Gurno"</span>
+     HOVModelersSkinnersNames(<span class="source_int">3</span>)=<span class="source_string">"Brett Hawkins"</span>
+     HOVMaxModelersSkinners=<span class="source_int">4</span>
+     HOVAnimatorsText=<span class="source_string">"Animators:"</span>
+     HOVAnimatorsNames(<span class="source_int">0</span>)=<span class="source_string">"Jeff DeWitt"</span>
+     HOVAnimatorsNames(<span class="source_int">1</span>)=<span class="source_string">"Nathaniel Albright"</span>
+     HOVMaxAnimators=<span class="source_int">2</span>
+     HOVTexturesText=<span class="source_string">"Level Textures:"</span>
+     HOVTexturesNames(<span class="source_int">0</span>)=<span class="source_string">"Greg Marshall"</span>
+     HOVTexturesNames(<span class="source_int">1</span>)=<span class="source_string">"Eli Quinn"</span>
+     HOVMaxTextures=<span class="source_int">2</span>
+     HOVSoundEffectsText=<span class="source_string">"Sound Effects:"</span>
+     HOVSoundEffectsName=<span class="source_string">"Mike Larson"</span>
+     HOVMusicText=<span class="source_string">"Music:"</span>
+     HOVMusicNames(<span class="source_int">0</span>)=<span class="source_string">"Mike Larson"</span>
+     HOVMusicNames(<span class="source_int">1</span>)=<span class="source_string">"Romulus Mars Priscus"</span>
+     HOVMusicNames(<span class="source_int">2</span>)=<span class="source_string">"Jim B-Reay"</span>
+     HOVMaxMusic=<span class="source_int">3</span>
+     HOVThanksText=<span class="source_string">"A long overdue special thanks to Terry Nagy for his assistance on Rune."</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../rmenu/rmenu-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_rmenu/runecreditswindow.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#RuneCreditsWindow">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../rmenu/runeconsolewindow.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../rmenu/runelookandfeel.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:41:08.148 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

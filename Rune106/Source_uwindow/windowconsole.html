@@ -1,0 +1,569 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - Source: UWindow.WindowConsole</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../uwindow/uwindow-overview.html">Package</a></td>
+	<td class="header"><a href="../uwindow/windowconsole.html">Class</a></td>
+	<td class="header_hilight">Source</td>
+	<td class="header"><a class="header" href="../classtree.html#WindowConsole">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../Source_uwindow/uwindowwrappedtextarea.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../Source_uwindow/uwindowbase.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#Source_uwindow/windowconsole.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/windowconsole.html">WindowConsole</a></h1>
+<br />
+<div class="source"><table class="source"><tr><td class="source_lineno"><span class="source_lineno">00001<br />00002<br />00003<br />00004<br />00005<br />00006<br />00007<br />00008<br />00009<br />00010<br />00011<br />00012<br />00013<br />00014<br />00015<br />00016<br />00017<br />00018<br />00019<br />00020<br />
+00021<br />00022<br />00023<br />00024<br />00025<br />00026<br />00027<br />00028<br />00029<br />00030<br />00031<br />00032<br />00033<br />00034<br />00035<br />00036<br />00037<br />00038<br />00039<br />00040<br />
+00041<br />00042<br />00043<br />00044<br />00045<br />00046<br />00047<br />00048<br />00049<br />00050<br />00051<br />00052<br />00053<br />00054<br />00055<br />00056<br />00057<br />00058<br />00059<br />00060<br />
+00061<br />00062<br />00063<br />00064<br />00065<br />00066<br />00067<br />00068<br />00069<br />00070<br />00071<br />00072<br />00073<br />00074<br />00075<br />00076<br />00077<br />00078<br />00079<br />00080<br />
+00081<br />00082<br />00083<br />00084<br />00085<br />00086<br />00087<br />00088<br />00089<br />00090<br />00091<br />00092<br />00093<br />00094<br />00095<br />00096<br />00097<br />00098<br />00099<br />00100<br />
+00101<br />00102<br />00103<br />00104<br />00105<br />00106<br />00107<br />00108<br />00109<br />00110<br />00111<br />00112<br />00113<br />00114<br />00115<br />00116<br />00117<br />00118<br />00119<br />00120<br />
+00121<br />00122<br />00123<br />00124<br />00125<br />00126<br />00127<br />00128<br />00129<br />00130<br />00131<br />00132<br />00133<br />00134<br />00135<br />00136<br />00137<br />00138<br />00139<br />00140<br />
+00141<br />00142<br />00143<br />00144<br />00145<br />00146<br />00147<br />00148<br />00149<br />00150<br />00151<br />00152<br />00153<br />00154<br />00155<br />00156<br />00157<br />00158<br />00159<br />00160<br />
+00161<br />00162<br />00163<br />00164<br />00165<br />00166<br />00167<br />00168<br />00169<br />00170<br />00171<br />00172<br />00173<br />00174<br />00175<br />00176<br />00177<br />00178<br />00179<br />00180<br />
+00181<br />00182<br />00183<br />00184<br />00185<br />00186<br />00187<br />00188<br />00189<br />00190<br />00191<br />00192<br />00193<br />00194<br />00195<br />00196<br />00197<br />00198<br />00199<br />00200<br />
+00201<br />00202<br />00203<br />00204<br />00205<br />00206<br />00207<br />00208<br />00209<br />00210<br />00211<br />00212<br />00213<br />00214<br />00215<br />00216<br />00217<br />00218<br />00219<br />00220<br />
+00221<br />00222<br />00223<br />00224<br />00225<br />00226<br />00227<br />00228<br />00229<br />00230<br />00231<br />00232<br />00233<br />00234<br />00235<br />00236<br />00237<br />00238<br />00239<br />00240<br />
+00241<br />00242<br />00243<br />00244<br />00245<br />00246<br />00247<br />00248<br />00249<br />00250<br />00251<br />00252<br />00253<br />00254<br />00255<br />00256<br />00257<br />00258<br />00259<br />00260<br />
+00261<br />00262<br />00263<br />00264<br />00265<br />00266<br />00267<br />00268<br />00269<br />00270<br />00271<br />00272<br />00273<br />00274<br />00275<br />00276<br />00277<br />00278<br />00279<br />00280<br />
+00281<br />00282<br />00283<br />00284<br />00285<br />00286<br />00287<br />00288<br />00289<br />00290<br />00291<br />00292<br />00293<br />00294<br />00295<br />00296<br />00297<br />00298<br />00299<br />00300<br />
+00301<br />00302<br />00303<br />00304<br />00305<br />00306<br />00307<br />00308<br />00309<br />00310<br />00311<br />00312<br />00313<br />00314<br />00315<br />00316<br />00317<br />00318<br />00319<br />00320<br />
+00321<br />00322<br />00323<br />00324<br />00325<br />00326<br />00327<br />00328<br />00329<br />00330<br />00331<br />00332<br />00333<br />00334<br />00335<br />00336<br />00337<br />00338<br />00339<br />00340<br />
+00341<br />00342<br />00343<br />00344<br />00345<br />00346<br />00347<br />00348<br />00349<br />00350<br />00351<br />00352<br />00353<br />00354<br />00355<br />00356<br />00357<br />00358<br />00359<br />00360<br />
+00361<br />00362<br />00363<br />00364<br />00365<br />00366<br />00367<br />00368<br />00369<br />00370<br />00371<br />00372<br />00373<br />00374<br />00375<br />00376<br />00377<br />00378<br />00379<br />00380<br />
+00381<br />00382<br />00383<br />00384<br />00385<br />00386<br />00387<br />00388<br />00389<br />00390<br />00391<br />00392<br />00393<br />00394<br />00395<br />00396<br />00397<br />00398<br />00399<br />00400<br />
+00401<br />00402<br />00403<br />00404<br />00405<br />00406<br />00407<br />00408<br />00409<br />00410<br />00411<br />00412<br />00413<br />00414<br />00415<br />00416<br />00417<br />00418<br />00419<br />00420<br />
+00421<br />00422<br />00423<br />00424<br />00425<br />00426<br />00427<br />00428<br />00429<br />00430<br />00431<br />00432<br />00433<br />00434<br />00435<br />00436<br />00437<br />00438<br />00439<br />00440<br />
+00441<br />00442<br />00443<br />00444<br />00445<br />00446<br />00447<br />00448<br />00449<br />00450<br />00451<br />00452<br />00453<br />00454<br />00455<br />00456<br />00457<br />00458<br />00459<br />00460<br />
+00461<br />00462<br />00463<br />00464<br />00465<br />00466<br />00467<br />00468<br />00469<br />00470<br />00471<br />00472<br />00473<br />00474<br />00475<br />00476<br />00477<br />00478<br />00479<br />00480<br />
+00481<br />00482<br />00483<br />00484<br />00485<br />00486<br />00487</span></td>
+<td class="source"><pre class="source"><a name="1"></a><span class="source_comment">//=============================================================================
+</span><a name="2"></a><span class="source_comment">// WindowConsole - console replacer to implement UWindow UI System
+</span><a name="3"></a><span class="source_comment">//=============================================================================
+</span><a name="4"></a><span class="source_keyword">class</span> <span class="source_type"><a href="../uwindow/windowconsole.html" class="source">WindowConsole</a></span> <span class="source_keyword">extends</span> <span class="source_type"><a href="../engine/console.html" class="source">Console</a></span>;
+<a name="5"></a>
+<a name="6"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowrootwindow.html" class="source">UWindowRootWindow</a></span>   Root;
+<a name="7"></a><span class="source_keyword">var</span>() <span class="source_keyword2">config</span> <span class="source_keyword">string</span>     RootWindow;
+<a name="8"></a>
+<a name="9"></a><span class="source_keyword">var</span> <span class="source_keyword">float</span>               OldClipX;
+<a name="10"></a><span class="source_keyword">var</span> <span class="source_keyword">float</span>               OldClipY;
+<a name="11"></a><span class="source_keyword">var</span> <span class="source_keyword">bool</span>                bCreatedRoot;
+<a name="12"></a><span class="source_keyword">var</span> <span class="source_keyword">float</span>               MouseX;
+<a name="13"></a><span class="source_keyword">var</span> <span class="source_keyword">float</span>               <span class="source_type">MouseY</span>;
+<a name="14"></a>
+<a name="15"></a><span class="source_keyword">var</span> <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../uwindow/uwindowconsolewindow.html" class="source">UWindowConsoleWindow</a></span>&gt; ConsoleClass;
+<a name="16"></a><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">float</span>        MouseScale;
+<a name="17"></a><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">bool</span>         ShowDesktop;
+<a name="18"></a><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">bool</span>         bShowConsole;
+<a name="19"></a><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">float</span>        MenuTranslucency;
+<a name="20"></a><span class="source_keyword">var</span> <span class="source_keyword">bool</span>                bBlackout;
+<a name="21"></a><span class="source_keyword">var</span> <span class="source_keyword">bool</span>                bUWindowType;
+<a name="22"></a>
+<a name="23"></a><span class="source_keyword">var</span> <span class="source_keyword">bool</span>                bUWindowActive;
+<a name="24"></a><span class="source_keyword">var</span> <span class="source_keyword">bool</span>                bQuickKeyEnable;
+<a name="25"></a><span class="source_keyword">var</span> <span class="source_keyword">bool</span>                bLocked;
+<a name="26"></a><span class="source_keyword">var</span> <span class="source_keyword">bool</span>                bLevelChange;
+<a name="27"></a><span class="source_keyword">var</span> <span class="source_keyword">string</span>              OldLevel;
+<a name="28"></a><span class="source_keyword">var</span> <span class="source_keyword2">globalconfig</span> <span class="source_keyword">byte</span>   ConsoleKey;
+<a name="29"></a>
+<a name="30"></a><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_type"><a href="../engine/console.html#EInputKey" class="source">EInputKey</a></span>    UWindowKey;
+<a name="31"></a>
+<a name="32"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowconsolewindow.html" class="source">UWindowConsoleWindow</a></span> ConsoleWindow;
+<a name="33"></a>
+<a name="34"></a><span class="source_keyword">function</span> ResetUWindow()
+<a name="35"></a>{
+<a name="36"></a>    <span class="source_keyword">if</span>(Root != <span class="source_keyword">None</span>)
+<a name="37"></a>        Root.Close();
+<a name="38"></a>    Root = <span class="source_keyword">None</span>;
+<a name="39"></a>    bCreatedRoot = <span class="source_keyword">False</span>;
+<a name="40"></a>    ConsoleWindow = <span class="source_keyword">None</span>;
+<a name="41"></a>    bShowConsole = <span class="source_keyword">False</span>;
+<a name="42"></a>    CloseUWindow();
+<a name="43"></a>}
+<a name="44"></a>
+<a name="45"></a><span class="source_keyword">event</span> <span class="source_keyword">bool</span> KeyEvent( <span class="source_type"><a href="../engine/console.html#EInputKey" class="source">EInputKey</a></span> <span class="source_type">Key</span>, <span class="source_type"><a href="../engine/console.html#EInputAction" class="source">EInputAction</a></span> Action, <span class="source_keyword">FLOAT</span> <span class="source_type">Delta</span> )
+<a name="46"></a>{
+<a name="47"></a>    <span class="source_keyword">local</span> <span class="source_keyword">byte</span> k;
+<a name="48"></a>    k = <span class="source_type">Key</span>;
+<a name="49"></a>    <span class="source_keyword">switch</span>(Action)
+<a name="50"></a>    {
+<a name="51"></a>    <span class="source_keyword">case</span> IST_Press:
+<a name="52"></a>        <span class="source_keyword">switch</span>(k)
+<a name="53"></a>        {
+<a name="54"></a>        <span class="source_keyword">case</span> <span class="source_type"><a href="../engine/console.html#EInputKey" class="source">EInputKey</a></span>.IK_Escape:
+<a name="55"></a>            <span class="source_keyword">if</span> (bLocked)
+<a name="56"></a>                <span class="source_keyword">return</span> <span class="source_keyword">true</span>;
+<a name="57"></a>
+<a name="58"></a>            Root.GetPlayerOwner().RendMap = <span class="source_int">0</span>;
+<a name="59"></a>            bQuickKeyEnable = <span class="source_keyword">False</span>;
+<a name="60"></a>            LaunchUWindow();
+<a name="61"></a>            <span class="source_keyword">return</span> <span class="source_keyword">true</span>;
+<a name="62"></a>        <span class="source_keyword">case</span> ConsoleKey:
+<a name="63"></a>            <span class="source_keyword">if</span> (bLocked)
+<a name="64"></a>                <span class="source_keyword">return</span> <span class="source_keyword">true</span>;
+<a name="65"></a>
+<a name="66"></a>            bQuickKeyEnable = <span class="source_keyword">True</span>;
+<a name="67"></a>            LaunchUWindow();
+<a name="68"></a>            <span class="source_keyword">if</span>(!bShowConsole)
+<a name="69"></a>                ShowConsole();
+<a name="70"></a>            <span class="source_keyword">return</span> <span class="source_keyword">true</span>;
+<a name="71"></a>        }
+<a name="72"></a>        <span class="source_keyword">break</span>;
+<a name="73"></a>    }
+<a name="74"></a>
+<a name="75"></a>    <span class="source_keyword">return</span> <span class="source_keyword">False</span>; 
+<a name="76"></a>    <span class="source_comment">//!! because of ConsoleKey
+</span><a name="77"></a>    <span class="source_comment">//!! return Super.KeyEvent(Key, Action, Delta);
+</span><a name="78"></a>}
+<a name="79"></a>
+<a name="80"></a><span class="source_keyword">function</span> ShowConsole()
+<a name="81"></a>{
+<a name="82"></a>    bShowConsole = <span class="source_keyword">true</span>;
+<a name="83"></a>    <span class="source_keyword">if</span>(bCreatedRoot)
+<a name="84"></a>        ConsoleWindow.ShowWindow();
+<a name="85"></a>}
+<a name="86"></a>
+<a name="87"></a><span class="source_keyword">function</span> HideConsole()
+<a name="88"></a>{
+<a name="89"></a>    ConsoleLines = <span class="source_int">0</span>;
+<a name="90"></a>    bShowConsole = <span class="source_keyword">false</span>;
+<a name="91"></a>    <span class="source_keyword">if</span> (ConsoleWindow != <span class="source_keyword">None</span>)
+<a name="92"></a>        ConsoleWindow.HideWindow();
+<a name="93"></a>}
+<a name="94"></a>
+<a name="95"></a><span class="source_keyword">event</span> Tick( <span class="source_keyword">float</span> <span class="source_type">Delta</span> )
+<a name="96"></a>{
+<a name="97"></a>    <span class="source_keyword">Super</span>.Tick(<span class="source_type">Delta</span>);
+<a name="98"></a>
+<a name="99"></a>    <span class="source_keyword">if</span>(bLevelChange && Root != <span class="source_keyword">None</span> && <span class="source_keyword">string</span>(<span class="source_type">Viewport</span>.<span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span>.<span class="source_type">Level</span>) != OldLevel)
+<a name="100"></a>    {
+<a name="101"></a>        OldLevel = <span class="source_keyword">string</span>(<span class="source_type">Viewport</span>.<span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span>.<span class="source_type">Level</span>);
+<a name="102"></a>        <span class="source_comment">// if this is Entry, we could be falling through to another level...
+</span><a name="103"></a>        <span class="source_keyword">if</span>(<span class="source_type">Viewport</span>.<span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span>.<span class="source_type">Level</span> != <span class="source_type">Viewport</span>.<span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span>.GetEntryLevel())
+<a name="104"></a>            bLevelChange = <span class="source_keyword">False</span>;
+<a name="105"></a>        Root.NotifyAfterLevelChange();
+<a name="106"></a>    }
+<a name="107"></a>}
+<a name="108"></a>
+<a name="109"></a><span class="source_keyword">state</span> UWindow
+<a name="110"></a>{
+<a name="111"></a>    <span class="source_keyword">event</span> EndState()
+<a name="112"></a>    {
+<a name="113"></a>        Root.GetPlayerOwner().RendMap = <span class="source_int">5</span>;
+<a name="114"></a>    }
+<a name="115"></a>
+<a name="116"></a>    <span class="source_keyword">event</span> Tick( <span class="source_keyword">float</span> <span class="source_type">Delta</span> )
+<a name="117"></a>    {
+<a name="118"></a>        Global.Tick(<span class="source_type">Delta</span>);
+<a name="119"></a>        <span class="source_keyword">if</span>(Root != <span class="source_keyword">None</span>)
+<a name="120"></a>            Root.DoTick(<span class="source_type">Delta</span>);
+<a name="121"></a>    }
+<a name="122"></a>
+<a name="123"></a>    <span class="source_keyword">event</span> PostRender( <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> )
+<a name="124"></a>    {
+<a name="125"></a>        <span class="source_keyword">if</span>( bTimeDemo )
+<a name="126"></a>        {   
+<a name="127"></a>            TimeDemoCalc();
+<a name="128"></a>            TimeDemoRender( <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> );
+<a name="129"></a>        }
+<a name="130"></a>
+<a name="131"></a>        <span class="source_keyword">if</span>(Root != <span class="source_keyword">None</span>)
+<a name="132"></a>            Root.bUWindowActive = <span class="source_keyword">True</span>;
+<a name="133"></a>        RenderUWindow( <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> );
+<a name="134"></a>    }
+<a name="135"></a>
+<a name="136"></a>    <span class="source_keyword">event</span> <span class="source_keyword">bool</span> KeyType( <span class="source_type"><a href="../engine/console.html#EInputKey" class="source">EInputKey</a></span> <span class="source_type">Key</span> )
+<a name="137"></a>    {
+<a name="138"></a>        <span class="source_keyword">if</span> (Root != <span class="source_keyword">None</span>)
+<a name="139"></a>            Root.WindowEvent(WM_KeyType, <span class="source_keyword">None</span>, MouseX, <span class="source_type">MouseY</span>, <span class="source_type">Key</span>);
+<a name="140"></a>        <span class="source_keyword">return</span> <span class="source_keyword">True</span>;
+<a name="141"></a>    }
+<a name="142"></a>
+<a name="143"></a>    <span class="source_keyword">event</span> <span class="source_keyword">bool</span> KeyEvent( <span class="source_type"><a href="../engine/console.html#EInputKey" class="source">EInputKey</a></span> <span class="source_type">Key</span>, <span class="source_type"><a href="../engine/console.html#EInputAction" class="source">EInputAction</a></span> Action, <span class="source_keyword">FLOAT</span> <span class="source_type">Delta</span> )
+<a name="144"></a>    {
+<a name="145"></a>        <span class="source_keyword">local</span> <span class="source_keyword">byte</span> k;
+<a name="146"></a>        k = <span class="source_type">Key</span>;
+<a name="147"></a>
+<a name="148"></a>        <span class="source_keyword">switch</span> (Action)
+<a name="149"></a>        {
+<a name="150"></a>        <span class="source_keyword">case</span> IST_Release:
+<a name="151"></a>            <span class="source_keyword">switch</span> (k)
+<a name="152"></a>            {
+<a name="153"></a>            <span class="source_keyword">case</span> <span class="source_type"><a href="../engine/console.html#EInputKey" class="source">EInputKey</a></span>.IK_LeftMouse:
+<a name="154"></a>                <span class="source_keyword">if</span>(Root != <span class="source_keyword">None</span>) 
+<a name="155"></a>                    Root.WindowEvent(WM_LMouseUp, <span class="source_keyword">None</span>, MouseX, <span class="source_type">MouseY</span>, k);
+<a name="156"></a>                <span class="source_keyword">break</span>;
+<a name="157"></a>            <span class="source_keyword">case</span> <span class="source_type"><a href="../engine/console.html#EInputKey" class="source">EInputKey</a></span>.IK_RightMouse:
+<a name="158"></a>                <span class="source_keyword">if</span>(Root != <span class="source_keyword">None</span>)
+<a name="159"></a>                    Root.WindowEvent(WM_RMouseUp, <span class="source_keyword">None</span>, MouseX, <span class="source_type">MouseY</span>, k);
+<a name="160"></a>                <span class="source_keyword">break</span>;
+<a name="161"></a>            <span class="source_keyword">case</span> <span class="source_type"><a href="../engine/console.html#EInputKey" class="source">EInputKey</a></span>.IK_MiddleMouse:
+<a name="162"></a>                <span class="source_keyword">if</span>(Root != <span class="source_keyword">None</span>)
+<a name="163"></a>                    Root.WindowEvent(WM_MMouseUp, <span class="source_keyword">None</span>, MouseX, <span class="source_type">MouseY</span>, k);
+<a name="164"></a>                <span class="source_keyword">break</span>;
+<a name="165"></a>            default:
+<a name="166"></a>                <span class="source_keyword">if</span>(Root != <span class="source_keyword">None</span>)
+<a name="167"></a>                    Root.WindowEvent(WM_KeyUp, <span class="source_keyword">None</span>, MouseX, <span class="source_type">MouseY</span>, k);
+<a name="168"></a>                <span class="source_keyword">break</span>;
+<a name="169"></a>            }
+<a name="170"></a>            <span class="source_keyword">break</span>;
+<a name="171"></a>
+<a name="172"></a>        <span class="source_keyword">case</span> IST_Press:
+<a name="173"></a>            <span class="source_keyword">switch</span> (k)
+<a name="174"></a>            {
+<a name="175"></a>            <span class="source_keyword">case</span> <span class="source_type"><a href="../engine/console.html#EInputKey" class="source">EInputKey</a></span>.IK_F9:   <span class="source_comment">// Screenshot
+</span><a name="176"></a>                <span class="source_keyword">return</span> Global.KeyEvent(<span class="source_type">Key</span>, Action, <span class="source_type">Delta</span>);
+<a name="177"></a>                <span class="source_keyword">break</span>;
+<a name="178"></a>            <span class="source_keyword">case</span> ConsoleKey:
+<a name="179"></a>                <span class="source_keyword">if</span> (bShowConsole)
+<a name="180"></a>                {
+<a name="181"></a>                    HideConsole();
+<a name="182"></a>                    <span class="source_keyword">if</span>(bQuickKeyEnable)
+<a name="183"></a>                        CloseUWindow();
+<a name="184"></a>                }
+<a name="185"></a>                <span class="source_keyword">else</span>
+<a name="186"></a>                {
+<a name="187"></a>                    <span class="source_keyword">if</span>(Root.bAllowConsole)
+<a name="188"></a>                        ShowConsole();
+<a name="189"></a>                    <span class="source_keyword">else</span>
+<a name="190"></a>                        Root.WindowEvent(WM_KeyDown, <span class="source_keyword">None</span>, MouseX, <span class="source_type">MouseY</span>, k);
+<a name="191"></a>                }
+<a name="192"></a>                <span class="source_keyword">break</span>;
+<a name="193"></a>            <span class="source_keyword">case</span> <span class="source_type"><a href="../engine/console.html#EInputKey" class="source">EInputKey</a></span>.IK_Escape:
+<a name="194"></a>                <span class="source_keyword">if</span>(Root != <span class="source_keyword">None</span>)
+<a name="195"></a>                    Root.CloseActiveWindow();
+<a name="196"></a>                <span class="source_keyword">break</span>;
+<a name="197"></a>            <span class="source_keyword">case</span> <span class="source_type"><a href="../engine/console.html#EInputKey" class="source">EInputKey</a></span>.IK_LeftMouse:
+<a name="198"></a>                <span class="source_keyword">if</span>(Root != <span class="source_keyword">None</span>)
+<a name="199"></a>                    Root.WindowEvent(WM_LMouseDown, <span class="source_keyword">None</span>, MouseX, <span class="source_type">MouseY</span>, k);
+<a name="200"></a>                <span class="source_keyword">break</span>;
+<a name="201"></a>            <span class="source_keyword">case</span> <span class="source_type"><a href="../engine/console.html#EInputKey" class="source">EInputKey</a></span>.IK_RightMouse:
+<a name="202"></a>                <span class="source_keyword">if</span>(Root != <span class="source_keyword">None</span>)
+<a name="203"></a>                    Root.WindowEvent(WM_RMouseDown, <span class="source_keyword">None</span>, MouseX, <span class="source_type">MouseY</span>, k);
+<a name="204"></a>                <span class="source_keyword">break</span>;
+<a name="205"></a>            <span class="source_keyword">case</span> <span class="source_type"><a href="../engine/console.html#EInputKey" class="source">EInputKey</a></span>.IK_MiddleMouse:
+<a name="206"></a>                <span class="source_keyword">if</span>(Root != <span class="source_keyword">None</span>)
+<a name="207"></a>                    Root.WindowEvent(WM_MMouseDown, <span class="source_keyword">None</span>, MouseX, <span class="source_type">MouseY</span>, k);
+<a name="208"></a>                <span class="source_keyword">break</span>;
+<a name="209"></a>            default:
+<a name="210"></a>                <span class="source_keyword">if</span>(Root != <span class="source_keyword">None</span>)
+<a name="211"></a>                    Root.WindowEvent(WM_KeyDown, <span class="source_keyword">None</span>, MouseX, <span class="source_type">MouseY</span>, k);
+<a name="212"></a>                <span class="source_keyword">break</span>;
+<a name="213"></a>            }
+<a name="214"></a>            <span class="source_keyword">break</span>;
+<a name="215"></a>        <span class="source_keyword">case</span> IST_Axis:
+<a name="216"></a>            <span class="source_keyword">switch</span> (<span class="source_type">Key</span>)
+<a name="217"></a>            {
+<a name="218"></a>            <span class="source_keyword">case</span> IK_MouseX:
+<a name="219"></a>                MouseX = MouseX + (MouseScale * <span class="source_type">Delta</span>);
+<a name="220"></a>                <span class="source_keyword">break</span>;
+<a name="221"></a>            <span class="source_keyword">case</span> IK_MouseY:
+<a name="222"></a>                <span class="source_type">MouseY</span> = <span class="source_type">MouseY</span> - (MouseScale * <span class="source_type">Delta</span>);
+<a name="223"></a>                <span class="source_keyword">break</span>;                  
+<a name="224"></a>            }
+<a name="225"></a>        default:
+<a name="226"></a>            <span class="source_keyword">break</span>;
+<a name="227"></a>        }
+<a name="228"></a>
+<a name="229"></a>        <span class="source_keyword">return</span> <span class="source_keyword">true</span>;
+<a name="230"></a>    }
+<a name="231"></a>
+<a name="232"></a>Begin:
+<a name="233"></a>}
+<a name="234"></a>
+<a name="235"></a><span class="source_keyword">function</span> ToggleUWindow()
+<a name="236"></a>{
+<a name="237"></a>}
+<a name="238"></a>
+<a name="239"></a><span class="source_keyword">function</span> LaunchUWindow()
+<a name="240"></a>{
+<a name="241"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> <span class="source_type">i</span>;
+<a name="242"></a>
+<a name="243"></a>    Root.GetPlayerOwner().Typing(<span class="source_keyword">true</span>); <span class="source_comment">//RUNE: Now typing
+</span><a name="244"></a>
+<a name="245"></a>    <span class="source_type">Viewport</span>.bSuspendPrecaching = <span class="source_keyword">True</span>;
+<a name="246"></a>    bUWindowActive = !bQuickKeyEnable;
+<a name="247"></a>    <span class="source_type">Viewport</span>.bShowWindowsMouse = <span class="source_keyword">True</span>;
+<a name="248"></a>
+<a name="249"></a>    <span class="source_keyword">if</span>(bQuickKeyEnable)
+<a name="250"></a>        bNoDrawWorld = <span class="source_keyword">False</span>;
+<a name="251"></a>    <span class="source_keyword">else</span>
+<a name="252"></a>    {
+<a name="253"></a>        <span class="source_keyword">if</span>(<span class="source_type">Viewport</span>.<span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span>.<span class="source_type">Level</span>.NetMode == NM_Standalone)
+<a name="254"></a>            <span class="source_type">Viewport</span>.<span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span>.SetPause( <span class="source_keyword">True</span> );
+<a name="255"></a>        bNoDrawWorld = ShowDesktop;
+<a name="256"></a>    }
+<a name="257"></a>    <span class="source_keyword">if</span>(Root != <span class="source_keyword">None</span>)
+<a name="258"></a>        Root.bWindowVisible = <span class="source_keyword">True</span>;
+<a name="259"></a>
+<a name="260"></a>    GotoState(<span class="source_name">'UWindow'</span>);
+<a name="261"></a>}
+<a name="262"></a>
+<a name="263"></a><span class="source_keyword">function</span> CloseUWindow()
+<a name="264"></a>{
+<a name="265"></a>    Root.GetPlayerOwner().Typing(<span class="source_keyword">false</span>);    <span class="source_comment">//RUNE: Not typing
+</span><a name="266"></a>
+<a name="267"></a>    <span class="source_keyword">if</span>(!bQuickKeyEnable)
+<a name="268"></a>        <span class="source_type">Viewport</span>.<span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span>.SetPause( <span class="source_keyword">False</span> );
+<a name="269"></a>
+<a name="270"></a>    bNoDrawWorld = <span class="source_keyword">False</span>;
+<a name="271"></a>    bQuickKeyEnable = <span class="source_keyword">False</span>;
+<a name="272"></a>    bUWindowActive = <span class="source_keyword">False</span>;
+<a name="273"></a>    <span class="source_type">Viewport</span>.bShowWindowsMouse = <span class="source_keyword">False</span>;
+<a name="274"></a>
+<a name="275"></a>    <span class="source_keyword">if</span>(Root != <span class="source_keyword">None</span>)
+<a name="276"></a>        Root.bWindowVisible = <span class="source_keyword">False</span>;
+<a name="277"></a>    GotoState(<span class="source_name">''</span>);
+<a name="278"></a>    <span class="source_type">Viewport</span>.bSuspendPrecaching = <span class="source_keyword">False</span>;
+<a name="279"></a>}
+<a name="280"></a>
+<a name="281"></a><span class="source_keyword">function</span> CreateRootWindow(<span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>)
+<a name="282"></a>{
+<a name="283"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> <span class="source_type">i</span>;
+<a name="284"></a>
+<a name="285"></a>    <span class="source_keyword">if</span>(<span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> != <span class="source_keyword">None</span>)
+<a name="286"></a>    {
+<a name="287"></a>        OldClipX = <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.ClipX;
+<a name="288"></a>        OldClipY = <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.<span class="source_type">ClipY</span>;
+<a name="289"></a>    }
+<a name="290"></a>    <span class="source_keyword">else</span>
+<a name="291"></a>    {
+<a name="292"></a>        OldClipX = <span class="source_int">0</span>;
+<a name="293"></a>        OldClipY = <span class="source_int">0</span>;
+<a name="294"></a>    }
+<a name="295"></a>    
+<a name="296"></a><span class="source_comment">//	Log("Creating root window: "$RootWindow);
+</span><a name="297"></a>    
+<a name="298"></a>    Root = New(<span class="source_keyword">None</span>) <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../uwindow/uwindowrootwindow.html" class="source">UWindowRootWindow</a></span>&gt;(DynamicLoadObject(RootWindow, <span class="source_keyword">class</span><span class="source_name">'Class'</span>));
+<a name="299"></a>
+<a name="300"></a>    Root.BeginPlay();
+<a name="301"></a>    Root.WinTop = <span class="source_int">0</span>;
+<a name="302"></a>    Root.WinLeft = <span class="source_int">0</span>;
+<a name="303"></a>
+<a name="304"></a>    <span class="source_keyword">if</span>(<span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> != <span class="source_keyword">None</span>)
+<a name="305"></a>    {
+<a name="306"></a>        Root.WinWidth = <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.ClipX / Root.GUIScale;
+<a name="307"></a>        Root.WinHeight = <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.<span class="source_type">ClipY</span> / Root.GUIScale;
+<a name="308"></a>        Root.RealWidth = <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.ClipX;
+<a name="309"></a>        Root.RealHeight = <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.<span class="source_type">ClipY</span>;
+<a name="310"></a>    }
+<a name="311"></a>    <span class="source_keyword">else</span>
+<a name="312"></a>    {
+<a name="313"></a>        Root.WinWidth = <span class="source_int">0</span>;
+<a name="314"></a>        Root.WinHeight = <span class="source_int">0</span>;
+<a name="315"></a>        Root.RealWidth = <span class="source_int">0</span>;
+<a name="316"></a>        Root.RealHeight = <span class="source_int">0</span>;
+<a name="317"></a>    }
+<a name="318"></a>
+<a name="319"></a>    Root.ClippingRegion.X = <span class="source_int">0</span>;
+<a name="320"></a>    Root.ClippingRegion.<span class="source_type">Y</span> = <span class="source_int">0</span>;
+<a name="321"></a>    Root.ClippingRegion.W = Root.WinWidth;
+<a name="322"></a>    Root.ClippingRegion.H = Root.WinHeight;
+<a name="323"></a>
+<a name="324"></a>    Root.<span class="source_type"><a href="../engine/console.html" class="source">Console</a></span> = Self;
+<a name="325"></a>
+<a name="326"></a>    Root.bUWindowActive = bUWindowActive;
+<a name="327"></a>
+<a name="328"></a>    Root.Created();
+<a name="329"></a>    bCreatedRoot = <span class="source_keyword">True</span>;
+<a name="330"></a>
+<a name="331"></a>    <span class="source_comment">// Create the console window.
+</span><a name="332"></a>    ConsoleWindow = <span class="source_type"><a href="../uwindow/uwindowconsolewindow.html" class="source">UWindowConsoleWindow</a></span>(Root.CreateWindow(ConsoleClass, <span class="source_int">100</span>, <span class="source_int">100</span>, <span class="source_int">200</span>, <span class="source_int">200</span>));
+<a name="333"></a>    <span class="source_keyword">if</span>(!bShowConsole)
+<a name="334"></a>        HideConsole();
+<a name="335"></a>
+<a name="336"></a>    <span class="source_type"><a href="../uwindow/uwindowconsoleclientwindow.html" class="source">UWindowConsoleClientWindow</a></span>(ConsoleWindow.ClientArea).TextArea.AddText(<span class="source_string">" "</span>);
+<a name="337"></a>    <span class="source_keyword">for</span> (<span class="source_type">I</span>=<span class="source_int">0</span>; <span class="source_type">I</span>&lt;<span class="source_int">4</span>; <span class="source_type">I</span>++)
+<a name="338"></a>        <span class="source_type"><a href="../uwindow/uwindowconsoleclientwindow.html" class="source">UWindowConsoleClientWindow</a></span>(ConsoleWindow.ClientArea).TextArea.AddText(MsgText[<span class="source_type">I</span>]);
+<a name="339"></a>}
+<a name="340"></a>
+<a name="341"></a><span class="source_keyword">function</span> RenderUWindow( <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> )
+<a name="342"></a>{
+<a name="343"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../uwindow/uwindowwindow.html" class="source">UWindowWindow</a></span> NewFocusWindow;
+<a name="344"></a>
+<a name="345"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.bNoSmooth = <span class="source_keyword">True</span>;
+<a name="346"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.Z = <span class="source_int">1</span>;
+<a name="347"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.Style = <span class="source_int">1</span>;
+<a name="348"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawColor.r = <span class="source_int">255</span>;
+<a name="349"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawColor.g = <span class="source_int">255</span>;
+<a name="350"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawColor.<span class="source_type">b</span> = <span class="source_int">255</span>;
+<a name="351"></a>
+<a name="352"></a>    <span class="source_keyword">if</span>(<span class="source_type">Viewport</span>.bWindowsMouseAvailable && Root != <span class="source_keyword">None</span>)
+<a name="353"></a>    {
+<a name="354"></a>        MouseX = <span class="source_type">Viewport</span>.WindowsMouseX/Root.GUIScale;
+<a name="355"></a>        <span class="source_type">MouseY</span> = <span class="source_type">Viewport</span>.WindowsMouseY/Root.GUIScale;
+<a name="356"></a>    }
+<a name="357"></a>
+<a name="358"></a>    <span class="source_keyword">if</span>(!bCreatedRoot) 
+<a name="359"></a>        CreateRootWindow(<span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>);
+<a name="360"></a>
+<a name="361"></a>    Root.bWindowVisible = <span class="source_keyword">True</span>;
+<a name="362"></a>    Root.bUWindowActive = bUWindowActive;
+<a name="363"></a>    Root.bQuickKeyEnable = bQuickKeyEnable;
+<a name="364"></a>
+<a name="365"></a>    <span class="source_keyword">if</span>(<span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.ClipX != OldClipX || <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.<span class="source_type">ClipY</span> != OldClipY)
+<a name="366"></a>    {
+<a name="367"></a>        OldClipX = <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.ClipX;
+<a name="368"></a>        OldClipY = <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.<span class="source_type">ClipY</span>;
+<a name="369"></a>
+<a name="370"></a>        <span class="source_comment">// RUNE: Explicitly set scale when changing resolution
+</span><a name="371"></a>        Root.ComputeGuiScale(<span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.ClipX, <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.<span class="source_type">ClipY</span>);
+<a name="372"></a>        
+<a name="373"></a>        Root.WinTop = <span class="source_int">0</span>;
+<a name="374"></a>        Root.WinLeft = <span class="source_int">0</span>;
+<a name="375"></a>        Root.WinWidth = <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.ClipX / Root.GUIScale;
+<a name="376"></a>        Root.WinHeight = <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.<span class="source_type">ClipY</span> / Root.GUIScale;
+<a name="377"></a>
+<a name="378"></a>        Root.RealWidth = <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.ClipX;
+<a name="379"></a>        Root.RealHeight = <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.<span class="source_type">ClipY</span>;
+<a name="380"></a>
+<a name="381"></a>        Root.ClippingRegion.X = <span class="source_int">0</span>;
+<a name="382"></a>        Root.ClippingRegion.<span class="source_type">Y</span> = <span class="source_int">0</span>;
+<a name="383"></a>        Root.ClippingRegion.W = Root.WinWidth;
+<a name="384"></a>        Root.ClippingRegion.H = Root.WinHeight;
+<a name="385"></a>
+<a name="386"></a>        Root.Resized();
+<a name="387"></a>    }
+<a name="388"></a>
+<a name="389"></a>    <span class="source_keyword">if</span>(MouseX &gt; Root.WinWidth) MouseX = Root.WinWidth;
+<a name="390"></a>    <span class="source_keyword">if</span>(<span class="source_type">MouseY</span> &gt; Root.WinHeight) <span class="source_type">MouseY</span> = Root.WinHeight;
+<a name="391"></a>    <span class="source_keyword">if</span>(MouseX &lt; <span class="source_int">0</span>) MouseX = <span class="source_int">0</span>;
+<a name="392"></a>    <span class="source_keyword">if</span>(<span class="source_type">MouseY</span> &lt; <span class="source_int">0</span>) <span class="source_type">MouseY</span> = <span class="source_int">0</span>;
+<a name="393"></a>
+<a name="394"></a>
+<a name="395"></a>    <span class="source_comment">// Check for keyboard focus
+</span><a name="396"></a>    NewFocusWindow = Root.CheckKeyFocusWindow();
+<a name="397"></a>
+<a name="398"></a>    <span class="source_keyword">if</span>(NewFocusWindow != Root.KeyFocusWindow)
+<a name="399"></a>    {
+<a name="400"></a>        Root.KeyFocusWindow.KeyFocusExit();     
+<a name="401"></a>        Root.KeyFocusWindow = NewFocusWindow;
+<a name="402"></a>        Root.KeyFocusWindow.KeyFocusEnter();
+<a name="403"></a>    }
+<a name="404"></a>
+<a name="405"></a>
+<a name="406"></a>    Root.MoveMouse(MouseX, <span class="source_type">MouseY</span>);
+<a name="407"></a>    Root.WindowEvent(WM_Paint, <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>, MouseX, <span class="source_type">MouseY</span>, <span class="source_int">0</span>);
+<a name="408"></a>    <span class="source_keyword">if</span>(bUWindowActive || bQuickKeyEnable) 
+<a name="409"></a>        Root.DrawMouse(<span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>);
+<a name="410"></a>}
+<a name="411"></a>
+<a name="412"></a><span class="source_keyword">event</span> Message( <span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span> <span class="source_type">PRI</span>, <span class="source_keyword2">coerce</span> <span class="source_keyword">string</span> <span class="source_type">Msg</span>, <span class="source_keyword">name</span> <span class="source_type">N</span> )
+<a name="413"></a>{
+<a name="414"></a>    <span class="source_keyword">local</span> <span class="source_keyword">string</span> OutText;
+<a name="415"></a>
+<a name="416"></a>    <span class="source_keyword">Super</span>.Message( <span class="source_type">PRI</span>, <span class="source_type">Msg</span>, <span class="source_type">N</span> );
+<a name="417"></a>
+<a name="418"></a>    <span class="source_keyword">if</span> ( <span class="source_type">Viewport</span>.<span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> == <span class="source_keyword">None</span> )
+<a name="419"></a>        <span class="source_keyword">return</span>;
+<a name="420"></a>
+<a name="421"></a>    <span class="source_keyword">if</span>( <span class="source_type">Msg</span>!=<span class="source_string">""</span> )
+<a name="422"></a>    {
+<a name="423"></a>        <span class="source_keyword">if</span> (( <span class="source_type">MsgType</span>[TopLine] == <span class="source_name">'Say'</span> ) || ( <span class="source_type">MsgType</span>[TopLine] == <span class="source_name">'TeamSay'</span> ))
+<a name="424"></a>            OutText = MsgPlayer[TopLine].PlayerName$<span class="source_string">": "</span>$MsgText[TopLine];
+<a name="425"></a>        <span class="source_keyword">else</span>
+<a name="426"></a>            OutText = MsgText[TopLine];
+<a name="427"></a>        <span class="source_keyword">if</span> (ConsoleWindow != <span class="source_keyword">None</span>)
+<a name="428"></a>            <span class="source_type"><a href="../uwindow/uwindowconsoleclientwindow.html" class="source">UWindowConsoleClientWindow</a></span>(ConsoleWindow.ClientArea).TextArea.AddText(OutText);
+<a name="429"></a>    }
+<a name="430"></a>}
+<a name="431"></a>
+<a name="432"></a><span class="source_keyword">event</span> AddString( <span class="source_keyword2">coerce</span> <span class="source_keyword">string</span> <span class="source_type">Msg</span> )
+<a name="433"></a>{
+<a name="434"></a>    <span class="source_keyword">Super</span>.AddString( <span class="source_type">Msg</span> );
+<a name="435"></a>
+<a name="436"></a>    <span class="source_keyword">if</span>( <span class="source_type">Msg</span>!=<span class="source_string">""</span> )
+<a name="437"></a>    {
+<a name="438"></a>        <span class="source_keyword">if</span> (ConsoleWindow != <span class="source_keyword">None</span>)
+<a name="439"></a>            <span class="source_type"><a href="../uwindow/uwindowconsoleclientwindow.html" class="source">UWindowConsoleClientWindow</a></span>(ConsoleWindow.ClientArea).TextArea.AddText(<span class="source_type">Msg</span>);
+<a name="440"></a>    }
+<a name="441"></a>}
+<a name="442"></a>
+<a name="443"></a><span class="source_keyword">function</span> UpdateHistory()
+<a name="444"></a>{
+<a name="445"></a>    <span class="source_comment">// Update history buffer.
+</span><a name="446"></a>    History[HistoryCur++ % MaxHistory] = TypedStr;
+<a name="447"></a>    <span class="source_keyword">if</span>( HistoryCur &gt; HistoryBot )
+<a name="448"></a>        HistoryBot++;
+<a name="449"></a>    <span class="source_keyword">if</span>( HistoryCur - HistoryTop &gt;= MaxHistory )
+<a name="450"></a>        HistoryTop = HistoryCur - MaxHistory + <span class="source_int">1</span>;
+<a name="451"></a>}
+<a name="452"></a>
+<a name="453"></a><span class="source_keyword">function</span> HistoryUp()
+<a name="454"></a>{
+<a name="455"></a>    <span class="source_keyword">if</span>( HistoryCur &gt; HistoryTop )
+<a name="456"></a>    {
+<a name="457"></a>        History[HistoryCur % MaxHistory] = TypedStr;
+<a name="458"></a>        TypedStr = History[--HistoryCur % MaxHistory];
+<a name="459"></a>    }
+<a name="460"></a>}
+<a name="461"></a>
+<a name="462"></a><span class="source_keyword">function</span> HistoryDown()
+<a name="463"></a>{
+<a name="464"></a>    History[HistoryCur % MaxHistory] = TypedStr;
+<a name="465"></a>    <span class="source_keyword">if</span>( HistoryCur &lt; HistoryBot )
+<a name="466"></a>        TypedStr = History[++HistoryCur % MaxHistory];
+<a name="467"></a>    <span class="source_keyword">else</span>
+<a name="468"></a>        TypedStr=<span class="source_string">""</span>;
+<a name="469"></a>}
+<a name="470"></a>
+<a name="471"></a><span class="source_keyword">function</span> NotifyLevelChange()
+<a name="472"></a>{
+<a name="473"></a>    <span class="source_keyword">Super</span>.NotifyLevelChange();
+<a name="474"></a>    bLevelChange = <span class="source_keyword">True</span>;
+<a name="475"></a>    <span class="source_keyword">if</span>(Root != <span class="source_keyword">None</span>)
+<a name="476"></a>        Root.NotifyBeforeLevelChange();
+<a name="477"></a>}
+<a name="478"></a>
+<a name="479"></a><span class="source_keyword">defaultproperties</span>
+<a name="480"></a>{
+<a name="481"></a>     RootWindow=<span class="source_string">"UWindow.UWindowRootWindow"</span>
+<a name="482"></a>     ConsoleClass=<span class="source_keyword">Class</span><span class="source_name">'UWindow.UWindowConsoleWindow'</span>
+<a name="483"></a>     MouseScale=<span class="source_int">0.600000</span>
+<a name="484"></a>     MenuTranslucency=<span class="source_int">1.000000</span>
+<a name="485"></a>     ConsoleKey=<span class="source_int">192</span>
+<a name="486"></a>}
+<a name="487"></a></pre></td></tr></table></div>
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../uwindow/uwindow-overview.html">Package</a></td>
+	<td class="header"><a href="../uwindow/windowconsole.html">Class</a></td>
+	<td class="header_hilight">Source</td>
+	<td class="header"><a class="header" href="../classtree.html#WindowConsole">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../Source_uwindow/uwindowwrappedtextarea.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../Source_uwindow/uwindowbase.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Class file time: Thu 28/1/2021 11:08:46.000 - Creation time: Thu 28/1/2021 11:27:58.292 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - RuneI.InvisibleWeapon</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/invisibleweapon.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#InvisibleWeapon">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/instrument.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/jarl.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#runei/invisibleweapon.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../runei/runei-overview.html">RuneI</a>.InvisibleWeapon</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../engine/weapon.html">Weapon</a></dd>
+<dt>Modifiers</dt><dd>abstract </dd>
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a>
+   |   
+   +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/inventory.html">Inventory</a>
+      |   
+      +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/weapon.html">Weapon</a>
+         |   
+         +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/invisibleweapon.html">InvisibleWeapon</a>
+</pre>
+
+<h4>Direct Known Subclasses:</h4>
+<blockquote>
+	<a href="../runei/crabpincer.html">CrabPincer</a>, <a href="../runei/goblinclaw.html">GoblinClaw</a>, <a href="../runei/mechblade.html">MechBlade</a>, <a href="../runei/sarkclaw.html">SarkClaw</a>, <a href="../runei/snowbeastjaws.html">SnowbeastJaws</a>, <a href="../runei/snowbeastpaw.html">SnowbeastPaw</a>, <a href="../runei/tubestrikertongue.html">TubestrikerTongue</a>, <a href="../runei/zombieclaw.html">ZombieClaw</a>
+</blockquote>
+
+<hr />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Constants Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Contants from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/weapon.html">Weapon</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/weapon.html#HitCount">HitCount</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/weapon.html">Weapon</a></td><td width="66%"><a href="#_ChainedWeapon" name="ChainedWeapon" title="go to the details">ChainedWeapon</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/weapon.html">Weapon</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/weapon.html#A_AttackA">A_AttackA</a>, <a href="../engine/weapon.html#A_AttackAReturn">A_AttackAReturn</a>, <a href="../engine/weapon.html#A_AttackB">A_AttackB</a>, <a href="../engine/weapon.html#A_AttackBackupA">A_AttackBackupA</a>, <a href="../engine/weapon.html#A_AttackBackupAReturn">A_AttackBackupAReturn</a>, <a href="../engine/weapon.html#A_AttackBackupB">A_AttackBackupB</a>, <a href="../engine/weapon.html#A_AttackBackupBReturn">A_AttackBackupBReturn</a>, <a href="../engine/weapon.html#A_AttackBReturn">A_AttackBReturn</a>, <a href="../engine/weapon.html#A_AttackC">A_AttackC</a>, <a href="../engine/weapon.html#A_AttackCReturn">A_AttackCReturn</a>, <a href="../engine/weapon.html#A_AttackD">A_AttackD</a>, <a href="../engine/weapon.html#A_AttackDReturn">A_AttackDReturn</a>, <a href="../engine/weapon.html#A_AttackStandA">A_AttackStandA</a>, <a href="../engine/weapon.html#A_AttackStandAReturn">A_AttackStandAReturn</a>, <a href="../engine/weapon.html#A_AttackStandB">A_AttackStandB</a>, <a href="../engine/weapon.html#A_AttackStandBReturn">A_AttackStandBReturn</a>, <a href="../engine/weapon.html#A_AttackStrafeLeft">A_AttackStrafeLeft</a>, <a href="../engine/weapon.html#A_AttackStrafeRight">A_AttackStrafeRight</a>, <a href="../engine/weapon.html#A_Backward">A_Backward</a>, <a href="../engine/weapon.html#A_Backward45Left">A_Backward45Left</a>, <a href="../engine/weapon.html#A_Backward45Right">A_Backward45Right</a>, <a href="../engine/weapon.html#A_Defend">A_Defend</a>, <a href="../engine/weapon.html#A_DefendIdle">A_DefendIdle</a>, <a href="../engine/weapon.html#A_Forward">A_Forward</a>, <a href="../engine/weapon.html#A_Forward45Left">A_Forward45Left</a>, <a href="../engine/weapon.html#A_Forward45Right">A_Forward45Right</a>, <a href="../engine/weapon.html#A_ForwardAttack">A_ForwardAttack</a>, <a href="../engine/weapon.html#A_Idle">A_Idle</a>, <a href="../engine/weapon.html#A_Jump">A_Jump</a>, <a href="../engine/weapon.html#A_JumpAttack">A_JumpAttack</a>, <a href="../engine/weapon.html#A_LeverTrigger">A_LeverTrigger</a>, <a href="../engine/weapon.html#A_PainBack">A_PainBack</a>, <a href="../engine/weapon.html#A_PainFront">A_PainFront</a>, <a href="../engine/weapon.html#A_PainLeft">A_PainLeft</a>, <a href="../engine/weapon.html#A_PainRight">A_PainRight</a>, <a href="../engine/weapon.html#A_PickupGroundLeft">A_PickupGroundLeft</a>, <a href="../engine/weapon.html#A_PickupHighLeft">A_PickupHighLeft</a>, <a href="../engine/weapon.html#A_Powerup">A_Powerup</a>, <a href="../engine/weapon.html#A_PumpTrigger">A_PumpTrigger</a>, <a href="../engine/weapon.html#A_StrafeLeft">A_StrafeLeft</a>, <a href="../engine/weapon.html#A_StrafeRight">A_StrafeRight</a>, <a href="../engine/weapon.html#A_Taunt">A_Taunt</a>, <a href="../engine/weapon.html#A_Throw">A_Throw</a>, <a href="../engine/weapon.html#A_TurnLeft">A_TurnLeft</a>, <a href="../engine/weapon.html#A_TurnRight">A_TurnRight</a>, <a href="../engine/weapon.html#bCanBePoweredUp">bCanBePoweredUp</a>, <a href="../engine/weapon.html#bClientPoweredUp">bClientPoweredUp</a>, <a href="../engine/weapon.html#bCrouchTwoHands">bCrouchTwoHands</a>, <a href="../engine/weapon.html#BloodTexture">BloodTexture</a>, <a href="../engine/weapon.html#bPlayedDropSound">bPlayedDropSound</a>, <a href="../engine/weapon.html#bPoweredUp">bPoweredUp</a>, <a href="../engine/weapon.html#bWeaponStay">bWeaponStay</a>, <a href="../engine/weapon.html#Damage">Damage</a>, <a href="../engine/weapon.html#DamageType">DamageType</a>, <a href="../engine/weapon.html#ExtendedLength">ExtendedLength</a>, <a href="../engine/weapon.html#FrameOfAttackAnim">FrameOfAttackAnim</a>, <a href="../engine/weapon.html#gB1">gB1</a>, <a href="../engine/weapon.html#gB2">gB2</a>, <a href="../engine/weapon.html#gE1">gE1</a>, <a href="../engine/weapon.html#gE2">gE2</a>, <a href="../engine/weapon.html#HitBreakableStone">HitBreakableStone</a>, <a href="../engine/weapon.html#HitBreakableWood">HitBreakableWood</a>, <a href="../engine/weapon.html#HitDirt[3]">HitDirt[3]</a>, <a href="../engine/weapon.html#HitFlesh[3]">HitFlesh[3]</a>, <a href="../engine/weapon.html#HitMatterSoundCount">HitMatterSoundCount</a>, <a href="../engine/weapon.html#HitMetal[3]">HitMetal[3]</a>, <a href="../engine/weapon.html#HitShield">HitShield</a>, <a href="../engine/weapon.html#HitStone[3]">HitStone[3]</a>, <a href="../engine/weapon.html#HitWeapon">HitWeapon</a>, <a href="../engine/weapon.html#HitWood[3]">HitWood[3]</a>, <a href="../engine/weapon.html#lastpos1">lastpos1</a>, <a href="../engine/weapon.html#lastpos2">lastpos2</a>, <a href="../engine/weapon.html#LastThrower">LastThrower</a>, <a href="../engine/weapon.html#MeleeType">MeleeType</a>, <a href="../engine/weapon.html#NumEarthSounds">NumEarthSounds</a>, <a href="../engine/weapon.html#NumFleshSounds">NumFleshSounds</a>, <a href="../engine/weapon.html#NumMetalSounds">NumMetalSounds</a>, <a href="../engine/weapon.html#NumStoneSounds">NumStoneSounds</a>, <a href="../engine/weapon.html#NumThroughAirBerserkSounds">NumThroughAirBerserkSounds</a>, <a href="../engine/weapon.html#NumThroughAirSounds">NumThroughAirSounds</a>, <a href="../engine/weapon.html#NumWoodSounds">NumWoodSounds</a>, <a href="../engine/weapon.html#PitchDeviation">PitchDeviation</a>, <a href="../engine/weapon.html#PoweredUpEndingSound">PoweredUpEndingSound</a>, <a href="../engine/weapon.html#PoweredUpEndSound">PoweredUpEndSound</a>, <a href="../engine/weapon.html#PoweredUpSoundLOOP">PoweredUpSoundLOOP</a>, <a href="../engine/weapon.html#PoweredUpSwipeClass">PoweredUpSwipeClass</a>, <a href="../engine/weapon.html#PowerupIcon">PowerupIcon</a>, <a href="../engine/weapon.html#PowerupIconAnim">PowerupIconAnim</a>, <a href="../engine/weapon.html#PowerupMessage">PowerupMessage</a>, <a href="../engine/weapon.html#PowerUpSound">PowerUpSound</a>, <a href="../engine/weapon.html#Rating">Rating</a>, <a href="../engine/weapon.html#RunePowerDuration">RunePowerDuration</a>, <a href="../engine/weapon.html#RunePowerRequired">RunePowerRequired</a>, <a href="../engine/weapon.html#SheathSound">SheathSound</a>, <a href="../engine/weapon.html#StabbedActor">StabbedActor</a>, <a href="../engine/weapon.html#StabMesh">StabMesh</a>, <a href="../engine/weapon.html#StowMesh">StowMesh</a>, <a href="../engine/weapon.html#SweepJoint1">SweepJoint1</a>, <a href="../engine/weapon.html#SweepJoint2">SweepJoint2</a>, <a href="../engine/weapon.html#SweepVector">SweepVector</a>, <a href="../engine/weapon.html#Swipe">Swipe</a>, <a href="../engine/weapon.html#SwipeClass">SwipeClass</a>, <a href="../engine/weapon.html#SwipeHits[16]">SwipeHits[16]</a>, <a href="../engine/weapon.html#ThroughAirBerserk[3]">ThroughAirBerserk[3]</a>, <a href="../engine/weapon.html#ThroughAir[3]">ThroughAir[3]</a>, <a href="../engine/weapon.html#ThrownDamageType">ThrownDamageType</a>, <a href="../engine/weapon.html#ThrownSoundLOOP">ThrownSoundLOOP</a>, <a href="../engine/weapon.html#TimerCount">TimerCount</a>, <a href="../engine/weapon.html#UnsheathSound">UnsheathSound</a>, <a href="../engine/weapon.html#WeaponSweepExtent">WeaponSweepExtent</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/inventory.html">Inventory</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/inventory.html#AbsorptionPriority">AbsorptionPriority</a>, <a href="../engine/inventory.html#ActivateSound">ActivateSound</a>, <a href="../engine/inventory.html#ArmorAbsorption">ArmorAbsorption</a>, <a href="../engine/inventory.html#AutoSwitchPriority">AutoSwitchPriority</a>, <a href="../engine/inventory.html#bActivatable">bActivatable</a>, <a href="../engine/inventory.html#bActive">bActive</a>, <a href="../engine/inventory.html#bAmbientGlow">bAmbientGlow</a>, <a href="../engine/inventory.html#bDisplayableInv">bDisplayableInv</a>, <a href="../engine/inventory.html#bExpireWhenTossed">bExpireWhenTossed</a>, <a href="../engine/inventory.html#bFirstFrame">bFirstFrame</a>, <a href="../engine/inventory.html#bHeldItem">bHeldItem</a>, <a href="../engine/inventory.html#bInstantRespawn">bInstantRespawn</a>, <a href="../engine/inventory.html#bIsAnArmor">bIsAnArmor</a>, <a href="../engine/inventory.html#bMuzzleFlashParticles">bMuzzleFlashParticles</a>, <a href="../engine/inventory.html#BobDamping">BobDamping</a>, <a href="../engine/inventory.html#bRotatingPickup">bRotatingPickup</a>, <a href="../engine/inventory.html#bSleepTouch">bSleepTouch</a>, <a href="../engine/inventory.html#bSteadyFlash3rd">bSteadyFlash3rd</a>, <a href="../engine/inventory.html#bSteadyToggle">bSteadyToggle</a>, <a href="../engine/inventory.html#bToggleSteadyFlash">bToggleSteadyFlash</a>, <a href="../engine/inventory.html#bTossedOut">bTossedOut</a>, <a href="../engine/inventory.html#Charge">Charge</a>, <a href="../engine/inventory.html#DeActivateSound">DeActivateSound</a>, <a href="../engine/inventory.html#DropSound">DropSound</a>, <a href="../engine/inventory.html#ExpireTime">ExpireTime</a>, <a href="../engine/inventory.html#FlashCount">FlashCount</a>, <a href="../engine/inventory.html#Icon">Icon</a>, <a href="../engine/inventory.html#InventoryGroup">InventoryGroup</a>, <a href="../engine/inventory.html#ItemArticle">ItemArticle</a>, <a href="../engine/inventory.html#ItemMessageClass">ItemMessageClass</a>, <a href="../engine/inventory.html#ItemName">ItemName</a>, <a href="../engine/inventory.html#MaxDesireability">MaxDesireability</a>, <a href="../engine/inventory.html#MuzzleFlashMesh">MuzzleFlashMesh</a>, <a href="../engine/inventory.html#MuzzleFlashScale">MuzzleFlashScale</a>, <a href="../engine/inventory.html#MuzzleFlashStyle">MuzzleFlashStyle</a>, <a href="../engine/inventory.html#MuzzleFlashTexture">MuzzleFlashTexture</a>, <a href="../engine/inventory.html#MyMarker">MyMarker</a>, <a href="../engine/inventory.html#M_Activated">M_Activated</a>, <a href="../engine/inventory.html#M_Deactivated">M_Deactivated</a>, <a href="../engine/inventory.html#M_Selected">M_Selected</a>, <a href="../engine/inventory.html#NextArmor">NextArmor</a>, <a href="../engine/inventory.html#OldFlashCount">OldFlashCount</a>, <a href="../engine/inventory.html#PickupMessage">PickupMessage</a>, <a href="../engine/inventory.html#PickupMessageClass">PickupMessageClass</a>, <a href="../engine/inventory.html#PickupSound">PickupSound</a>, <a href="../engine/inventory.html#PickupViewMesh">PickupViewMesh</a>, <a href="../engine/inventory.html#PickupViewScale">PickupViewScale</a>, <a href="../engine/inventory.html#PlayerLastTouched">PlayerLastTouched</a>, <a href="../engine/inventory.html#PlayerViewMesh">PlayerViewMesh</a>, <a href="../engine/inventory.html#PlayerViewOffset">PlayerViewOffset</a>, <a href="../engine/inventory.html#PlayerViewScale">PlayerViewScale</a>, <a href="../engine/inventory.html#ProtectionType1">ProtectionType1</a>, <a href="../engine/inventory.html#ProtectionType2">ProtectionType2</a>, <a href="../engine/inventory.html#RespawnSound">RespawnSound</a>, <a href="../engine/inventory.html#RespawnTime">RespawnTime</a>, <a href="../engine/inventory.html#StatusIcon">StatusIcon</a>, <a href="../engine/inventory.html#ThirdPersonMesh">ThirdPersonMesh</a>, <a href="../engine/inventory.html#ThirdPersonScale">ThirdPersonScale</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Enumerations Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Enumerations from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/weapon.html">Weapon</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/weapon.html#EMeleeType">EMeleeType</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Structures Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Structures from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/weapon.html">Weapon</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/weapon.html#SwipeHit">SwipeHit</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ChainOnWeapon-" name="ChainOnWeapon" title="go to the details">ChainOnWeapon</a> (<a href="../engine/weapon.html">Weapon</a> W))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Destroyed-" name="Destroyed" title="go to the details">Destroyed</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DisableSwipeTrail-" name="DisableSwipeTrail" title="go to the details">DisableSwipeTrail</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DropFrom-" name="DropFrom" title="go to the details">DropFrom</a> (<a href="../core/object.html#Vector">vector</a> StartLocation))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_EnableSwipeTrail-" name="EnableSwipeTrail" title="go to the details">EnableSwipeTrail</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_FinishAttack-" name="FinishAttack" title="go to the details">FinishAttack</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_FinishAttack-Active" name="FinishAttack" title="go to the details">FinishAttack</a> ()))<br /><span class="function_state">Active</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_FinishAttack-Swinging" name="FinishAttack" title="go to the details">FinishAttack</a> ()))<br /><span class="function_state">Swinging</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SpawnHitEffect-" name="SpawnHitEffect" title="go to the details">SpawnHitEffect</a> (<a href="../core/object.html#Vector">vector</a> HitLoc, <a href="../core/object.html#Vector">vector</a> HitNorm, int LowMask, int HighMask, <a href="../engine/actor.html">Actor</a> HitActor))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_StartAttack-" name="StartAttack" title="go to the details">StartAttack</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_StartAttack-Active" name="StartAttack" title="go to the details">StartAttack</a> ()))<br /><span class="function_state">Active</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_StartAttack-Swinging" name="StartAttack" title="go to the details">StartAttack</a> ()))<br /><span class="function_state">Swinging</span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/weapon.html">Weapon</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/weapon.html#BeginState">BeginState</a>, <a href="../engine/weapon.html#CalculateDamage">CalculateDamage</a>, <a href="../engine/weapon.html#CanBeUsed">CanBeUsed</a>, <a href="../engine/weapon.html#ClearSwipeArray">ClearSwipeArray</a>, <a href="../engine/weapon.html#ClientAltFire">ClientAltFire</a>, <a href="../engine/weapon.html#ClientFire">ClientFire</a>, <a href="../engine/weapon.html#ClientWeaponEvent">ClientWeaponEvent</a>, <a href="../engine/weapon.html#Debug">Debug</a>, <a href="../engine/weapon.html#Destroyed">Destroyed</a>, <a href="../engine/weapon.html#DisableSwipeTrail">DisableSwipeTrail</a>, <a href="../engine/weapon.html#DoWeaponSwipe">DoWeaponSwipe</a>, <a href="../engine/weapon.html#DropFrom">DropFrom</a>, <a href="../engine/weapon.html#EnableSwipeTrail">EnableSwipeTrail</a>, <a href="../engine/weapon.html#EndState">EndState</a>, <a href="../engine/weapon.html#FinishAttack">FinishAttack</a>, <a href="../engine/weapon.html#ForceAltFire">ForceAltFire</a>, <a href="../engine/weapon.html#ForceFire">ForceFire</a>, <a href="../engine/weapon.html#FrameNotify">FrameNotify</a>, <a href="../engine/weapon.html#FrameSwept">FrameSwept</a>, <a href="../engine/weapon.html#GetUsePriority">GetUsePriority</a>, <a href="../engine/weapon.html#HandlePickupQuery">HandlePickupQuery</a>, <a href="../engine/weapon.html#HitWall">HitWall</a>, <a href="../engine/weapon.html#Landed">Landed</a>, <a href="../engine/weapon.html#MatterForJoint">MatterForJoint</a>, <a href="../engine/weapon.html#PlayHitMatterSound">PlayHitMatterSound</a>, <a href="../engine/weapon.html#PlayNormalFrame">PlayNormalFrame</a>, <a href="../engine/weapon.html#PlaySwipeSound">PlaySwipeSound</a>, <a href="../engine/weapon.html#PlayThrowFrame">PlayThrowFrame</a>, <a href="../engine/weapon.html#PostBeginPlay">PostBeginPlay</a>, <a href="../engine/weapon.html#PostRender">PostRender</a>, <a href="../engine/weapon.html#PoweredUpCallback1">PoweredUpCallback1</a>, <a href="../engine/weapon.html#PoweredUpCallback2">PoweredUpCallback2</a>, <a href="../engine/weapon.html#PowerUp">PowerUp</a>, <a href="../engine/weapon.html#PowerupEnd">PowerupEnd</a>, <a href="../engine/weapon.html#PowerupEnded">PowerupEnded</a>, <a href="../engine/weapon.html#PowerupEndingPulseOff">PowerupEndingPulseOff</a>, <a href="../engine/weapon.html#PowerupEndingPulseOn">PowerupEndingPulseOn</a>, <a href="../engine/weapon.html#PowerupInit">PowerupInit</a>, <a href="../engine/weapon.html#PowerUpNotify1">PowerUpNotify1</a>, <a href="../engine/weapon.html#PowerUpNotify2">PowerUpNotify2</a>, <a href="../engine/weapon.html#PowerupStatusChanged">PowerupStatusChanged</a>, <a href="../engine/weapon.html#PreRender">PreRender</a>, <a href="../engine/weapon.html#RateSelf">RateSelf</a>, <a href="../engine/weapon.html#RemovePowerupEffect">RemovePowerupEffect</a>, <a href="../engine/weapon.html#RemoveStab">RemoveStab</a>, <a href="../engine/weapon.html#SetWeaponStay">SetWeaponStay</a>, <a href="../engine/weapon.html#SpawnCopy">SpawnCopy</a>, <a href="../engine/weapon.html#SpawnHitEffect">SpawnHitEffect</a>, <a href="../engine/weapon.html#SpawnPowerupEffect">SpawnPowerupEffect</a>, <a href="../engine/weapon.html#SplashJump">SplashJump</a>, <a href="../engine/weapon.html#StabActor">StabActor</a>, <a href="../engine/weapon.html#StartAttack">StartAttack</a>, <a href="../engine/weapon.html#StartDamageCheck">StartDamageCheck</a>, <a href="../engine/weapon.html#StickInWall">StickInWall</a>, <a href="../engine/weapon.html#SuggestAttackStyle">SuggestAttackStyle</a>, <a href="../engine/weapon.html#SuggestDefenseStyle">SuggestDefenseStyle</a>, <a href="../engine/weapon.html#SwipeArrayCheck">SwipeArrayCheck</a>, <a href="../engine/weapon.html#Timer">Timer</a>, <a href="../engine/weapon.html#Touch">Touch</a>, <a href="../engine/weapon.html#TravelPostAccept">TravelPostAccept</a>, <a href="../engine/weapon.html#TweenToStill">TweenToStill</a>, <a href="../engine/weapon.html#WeaponFire">WeaponFire</a>, <a href="../engine/weapon.html#ZoneChange">ZoneChange</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/inventory.html">Inventory</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/inventory.html#Activate">Activate</a>, <a href="../engine/inventory.html#AltFire">AltFire</a>, <a href="../engine/inventory.html#ArmorAbsorbDamage">ArmorAbsorbDamage</a>, <a href="../engine/inventory.html#ArmorImpactEffect">ArmorImpactEffect</a>, <a href="../engine/inventory.html#ArmorPriority">ArmorPriority</a>, <a href="../engine/inventory.html#BecomeItem">BecomeItem</a>, <a href="../engine/inventory.html#BecomePickup">BecomePickup</a>, <a href="../engine/inventory.html#BeginState">BeginState</a>, <a href="../engine/inventory.html#BotDesireability">BotDesireability</a>, <a href="../engine/inventory.html#CanBeUsed">CanBeUsed</a>, <a href="../engine/inventory.html#ChangedWeapon">ChangedWeapon</a>, <a href="../engine/inventory.html#CheckTouching">CheckTouching</a>, <a href="../engine/inventory.html#Destroyed">Destroyed</a>, <a href="../engine/inventory.html#DrawStatusIconAt">DrawStatusIconAt</a>, <a href="../engine/inventory.html#DropFrom">DropFrom</a>, <a href="../engine/inventory.html#DropInventory">DropInventory</a>, <a href="../engine/inventory.html#EndState">EndState</a>, <a href="../engine/inventory.html#Fire">Fire</a>, <a href="../engine/inventory.html#GetHumanName">GetHumanName</a>, <a href="../engine/inventory.html#GetUsePriority">GetUsePriority</a>, <a href="../engine/inventory.html#GiveTo">GiveTo</a>, <a href="../engine/inventory.html#HandlePickupQuery">HandlePickupQuery</a>, <a href="../engine/inventory.html#InventoryCapsFloat">InventoryCapsFloat</a>, <a href="../engine/inventory.html#InventoryCapsString">InventoryCapsString</a>, <a href="../engine/inventory.html#InventorySpecial1">InventorySpecial1</a>, <a href="../engine/inventory.html#InventorySpecial2">InventorySpecial2</a>, <a href="../engine/inventory.html#InventorySpecial3">InventorySpecial3</a>, <a href="../engine/inventory.html#Landed">Landed</a>, <a href="../engine/inventory.html#OwnerJumped">OwnerJumped</a>, <a href="../engine/inventory.html#PostBeginPlay">PostBeginPlay</a>, <a href="../engine/inventory.html#PrioritizeArmor">PrioritizeArmor</a>, <a href="../engine/inventory.html#RecommendWeapon">RecommendWeapon</a>, <a href="../engine/inventory.html#ReduceDamage">ReduceDamage</a>, <a href="../engine/inventory.html#SelectNext">SelectNext</a>, <a href="../engine/inventory.html#SetOwnerDisplay">SetOwnerDisplay</a>, <a href="../engine/inventory.html#SetRespawn">SetRespawn</a>, <a href="../engine/inventory.html#SpawnCopy">SpawnCopy</a>, <a href="../engine/inventory.html#Touch">Touch</a>, <a href="../engine/inventory.html#TravelPreAccept">TravelPreAccept</a>, <a href="../engine/inventory.html#Use">Use</a>, <a href="../engine/inventory.html#ValidTouch">ValidTouch</a>, <a href="../engine/inventory.html#WeaponChange">WeaponChange</a>, <a href="../engine/inventory.html#ZoneChange">ZoneChange</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th class="title">States Summary</th>
+</tr>
+</table>
+
+<table>
+<tr>
+	<th>Active <a href="../Source_runei/invisibleweapon.html#125" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> Active <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_FinishAttack+Active">FinishAttack</a>, <a href="#_StartAttack+Active">StartAttack</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>Swinging <a href="../Source_runei/invisibleweapon.html#109" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> Swinging <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_FinishAttack+Swinging">FinishAttack</a>, <a href="#_StartAttack+Swinging">StartAttack</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_ChainedWeapon" class="hidden"></a>ChainedWeapon <a href="../Source_runei/invisibleweapon.html#7" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span> ChainedWeapon;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_ChainOnWeapon-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ChainOnWeapon <span class="function_state"></span> <a href="../Source_runei/invisibleweapon.html#52" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ChainOnWeapon ( <span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span> W) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Destroyed-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Destroyed <span class="function_state"></span> <a href="../Source_runei/invisibleweapon.html#67" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Destroyed ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DisableSwipeTrail-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DisableSwipeTrail <span class="function_state"></span> <a href="../Source_runei/invisibleweapon.html#89" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  DisableSwipeTrail ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DropFrom-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DropFrom <span class="function_state"></span> <a href="../Source_runei/invisibleweapon.html#62" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  DropFrom ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> StartLocation) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EnableSwipeTrail-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> EnableSwipeTrail <span class="function_state"></span> <a href="../Source_runei/invisibleweapon.html#82" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  EnableSwipeTrail ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FinishAttack-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> FinishAttack <span class="function_state"></span> <a href="../Source_runei/invisibleweapon.html#102" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  FinishAttack ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FinishAttack-Active" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> FinishAttack <span class="function_state">Active</span> <a href="../Source_runei/invisibleweapon.html#133" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  FinishAttack ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FinishAttack-Swinging" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> FinishAttack <span class="function_state">Swinging</span> <a href="../Source_runei/invisibleweapon.html#117" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  FinishAttack ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SpawnHitEffect-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SpawnHitEffect <span class="function_state"></span> <a href="../Source_runei/invisibleweapon.html#15" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SpawnHitEffect ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitLoc, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitNorm, <span class="source_keyword">int</span> LowMask, <span class="source_keyword">int</span> HighMask, <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> HitActor) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StartAttack-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> StartAttack <span class="function_state"></span> <a href="../Source_runei/invisibleweapon.html#96" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  StartAttack ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StartAttack-Active" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> StartAttack <span class="function_state">Active</span> <a href="../Source_runei/invisibleweapon.html#127" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  StartAttack ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StartAttack-Swinging" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> StartAttack <span class="function_state">Swinging</span> <a href="../Source_runei/invisibleweapon.html#111" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  StartAttack ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     MeleeType=MELEE_HAMMER
+     Damage=<span class="source_int">10</span>
+     <span class="source_type"><a href="../engine/damagetype.html" class="source">DamageType</a></span>=Blunt
+     ExtendedLength=<span class="source_int">20.000000</span>
+     SweepVector=(<span class="source_type">Y</span>=-<span class="source_int">1.000000</span>)
+     A_Taunt=S3_taunt
+     DrawType=DT_None
+     bSweepable=<span class="source_keyword">False</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/invisibleweapon.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#InvisibleWeapon">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/instrument.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/jarl.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:27:17.944 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

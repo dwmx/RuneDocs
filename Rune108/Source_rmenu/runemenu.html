@@ -1,0 +1,520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - Source: RMenu.RuneMenu</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../rmenu/rmenu-overview.html">Package</a></td>
+	<td class="header"><a href="../rmenu/runemenu.html">Class</a></td>
+	<td class="header_hilight">Source</td>
+	<td class="header"><a class="header" href="../classtree.html#RuneMenu">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../Source_rmenu/runelookmesh.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../Source_rmenu/runemenuaboutclientwindow.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#Source_rmenu/runemenu.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runemenu.html">RuneMenu</a></h1>
+<br />
+<div class="source"><table class="source"><tr><td class="source_lineno"><span class="source_lineno">00001<br />00002<br />00003<br />00004<br />00005<br />00006<br />00007<br />00008<br />00009<br />00010<br />00011<br />00012<br />00013<br />00014<br />00015<br />00016<br />00017<br />00018<br />00019<br />00020<br />
+00021<br />00022<br />00023<br />00024<br />00025<br />00026<br />00027<br />00028<br />00029<br />00030<br />00031<br />00032<br />00033<br />00034<br />00035<br />00036<br />00037<br />00038<br />00039<br />00040<br />
+00041<br />00042<br />00043<br />00044<br />00045<br />00046<br />00047<br />00048<br />00049<br />00050<br />00051<br />00052<br />00053<br />00054<br />00055<br />00056<br />00057<br />00058<br />00059<br />00060<br />
+00061<br />00062<br />00063<br />00064<br />00065<br />00066<br />00067<br />00068<br />00069<br />00070<br />00071<br />00072<br />00073<br />00074<br />00075<br />00076<br />00077<br />00078<br />00079<br />00080<br />
+00081<br />00082<br />00083<br />00084<br />00085<br />00086<br />00087<br />00088<br />00089<br />00090<br />00091<br />00092<br />00093<br />00094<br />00095<br />00096<br />00097<br />00098<br />00099<br />00100<br />
+00101<br />00102<br />00103<br />00104<br />00105<br />00106<br />00107<br />00108<br />00109<br />00110<br />00111<br />00112<br />00113<br />00114<br />00115<br />00116<br />00117<br />00118<br />00119<br />00120<br />
+00121<br />00122<br />00123<br />00124<br />00125<br />00126<br />00127<br />00128<br />00129<br />00130<br />00131<br />00132<br />00133<br />00134<br />00135<br />00136<br />00137<br />00138<br />00139<br />00140<br />
+00141<br />00142<br />00143<br />00144<br />00145<br />00146<br />00147<br />00148<br />00149<br />00150<br />00151<br />00152<br />00153<br />00154<br />00155<br />00156<br />00157<br />00158<br />00159<br />00160<br />
+00161<br />00162<br />00163<br />00164<br />00165<br />00166<br />00167<br />00168<br />00169<br />00170<br />00171<br />00172<br />00173<br />00174<br />00175<br />00176<br />00177<br />00178<br />00179<br />00180<br />
+00181<br />00182<br />00183<br />00184<br />00185<br />00186<br />00187<br />00188<br />00189<br />00190<br />00191<br />00192<br />00193<br />00194<br />00195<br />00196<br />00197<br />00198<br />00199<br />00200<br />
+00201<br />00202<br />00203<br />00204<br />00205<br />00206<br />00207<br />00208<br />00209<br />00210<br />00211<br />00212<br />00213<br />00214<br />00215<br />00216<br />00217<br />00218<br />00219<br />00220<br />
+00221<br />00222<br />00223<br />00224<br />00225<br />00226<br />00227<br />00228<br />00229<br />00230<br />00231<br />00232<br />00233<br />00234<br />00235<br />00236<br />00237<br />00238<br />00239<br />00240<br />
+00241<br />00242<br />00243<br />00244<br />00245<br />00246<br />00247<br />00248<br />00249<br />00250<br />00251<br />00252<br />00253<br />00254<br />00255<br />00256<br />00257<br />00258<br />00259<br />00260<br />
+00261<br />00262<br />00263<br />00264<br />00265<br />00266<br />00267<br />00268<br />00269<br />00270<br />00271<br />00272<br />00273<br />00274<br />00275<br />00276<br />00277<br />00278<br />00279<br />00280<br />
+00281<br />00282<br />00283<br />00284<br />00285<br />00286<br />00287<br />00288<br />00289<br />00290<br />00291<br />00292<br />00293<br />00294<br />00295<br />00296<br />00297<br />00298<br />00299<br />00300<br />
+00301<br />00302<br />00303<br />00304<br />00305<br />00306<br />00307<br />00308<br />00309<br />00310<br />00311<br />00312<br />00313<br />00314<br />00315<br />00316<br />00317<br />00318<br />00319<br />00320<br />
+00321<br />00322<br />00323<br />00324<br />00325<br />00326<br />00327<br />00328<br />00329<br />00330<br />00331<br />00332<br />00333<br />00334<br />00335<br />00336<br />00337<br />00338<br />00339<br />00340<br />
+00341<br />00342<br />00343<br />00344<br />00345<br />00346<br />00347<br />00348<br />00349<br />00350<br />00351<br />00352<br />00353<br />00354<br />00355<br />00356<br />00357<br />00358<br />00359<br />00360<br />
+00361<br />00362<br />00363<br />00364<br />00365<br />00366<br />00367<br />00368<br />00369<br />00370<br />00371<br />00372<br />00373<br />00374<br />00375<br />00376<br />00377<br />00378<br />00379<br />00380<br />
+00381<br />00382<br />00383<br />00384<br />00385<br />00386<br />00387<br />00388<br />00389<br />00390<br />00391<br />00392<br />00393<br />00394<br />00395<br />00396<br />00397<br />00398<br />00399<br />00400<br />
+00401<br />00402<br />00403<br />00404<br />00405<br />00406<br />00407<br />00408<br />00409<br />00410<br />00411<br />00412<br />00413<br />00414<br />00415<br />00416<br />00417<br />00418<br />00419<br />00420<br />
+00421<br />00422<br />00423<br />00424<br />00425<br />00426<br />00427<br />00428<br />00429<br />00430<br />00431<br />00432<br />00433<br />00434<br />00435<br />00436<br />00437<br />00438<br />00439<br />00440
+</span></td>
+<td class="source"><pre class="source"><a name="1"></a><span class="source_comment">//=============================================================================
+</span><a name="2"></a><span class="source_comment">// RuneMenu	-&gt; Main Rune Menu Class
+</span><a name="3"></a><span class="source_comment">//=============================================================================
+</span><a name="4"></a><span class="source_keyword">class</span> <span class="source_type"><a href="../rmenu/runemenu.html" class="source">RuneMenu</a></span> <span class="source_keyword">extends</span> <span class="source_type"><a href="../rmenu/runewindow.html" class="source">RuneWindow</a></span>;
+<a name="5"></a>
+<a name="6"></a><span class="source_macro">#exec TEXTURE IMPORT NAME=HHLogo FILE=Textures\HHLogo.bmp GROUP="Icons" MIPS=OFF
+</span><a name="7"></a><span class="source_macro">#exec TEXTURE IMPORT NAME=HHLogoS FILE=Textures\HHLogoSelected.bmp GROUP="Icons" MIPS=OFF
+</span><a name="8"></a><span class="source_comment">//#exec TEXTURE IMPORT NAME=GODLogo FILE=Textures\GODLogo.bmp GROUP="Icons" MIPS=OFF
+</span><a name="9"></a><span class="source_comment">//#exec TEXTURE IMPORT NAME=GODLogoS FILE=Textures\GODLogoSelected.bmp GROUP="Icons" MIPS=OFF
+</span><a name="10"></a>
+<a name="11"></a><span class="source_comment">//Controls
+</span><a name="12"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runebutton.html" class="source">RuneButton</a></span> NewButton, LoadButton, SaveButton, MultiButton, OptionsButton, ExitButton;
+<a name="13"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenutopwindow.html" class="source">RuneMenuTopWindow</a></span> NewMenu, LoadMenu, SaveMenu, OptionsMenu, MultiMenu, AboutMenu;<span class="source_comment">//GodAboutMenu;
+</span><a name="14"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> VersionLabel;
+<a name="15"></a><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bWalk;
+<a name="16"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> CenterRotator, ViewRotator;
+<a name="17"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemeshactor.html" class="source">RuneMeshActor</a></span> LogoMesh;
+<a name="18"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> LogoOffset;
+<a name="19"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> RotFactor;
+<a name="20"></a><span class="source_keyword">var</span> <span class="source_keyword">float</span> TimeElapsed;
+<a name="21"></a>
+<a name="22"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> NewGameText;
+<a name="23"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> LoadGameText;
+<a name="24"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> SaveGameText;
+<a name="25"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> MultiplayerText;
+<a name="26"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> OptionsText;
+<a name="27"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> ExitText;
+<a name="28"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> NewGameHelp,LoadGameHelp,SaveGameHelp,MultiplayerHelp,OptionsHelp,AboutHelp,ExitHelp;
+<a name="29"></a>
+<a name="30"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowbutton.html" class="source">UWindowButton</a></span> HHButton, GODButton;
+<a name="31"></a>
+<a name="32"></a><span class="source_keyword">var</span> <span class="source_keyword">string</span> HOVStr; <span class="source_comment">// Halls of Valhalla status
+</span><a name="33"></a>
+<a name="34"></a><span class="source_comment">//=============================================================================
+</span><a name="35"></a><span class="source_comment">// Superclass Function Overrides
+</span><a name="36"></a><span class="source_comment">//=============================================================================
+</span><a name="37"></a>
+<a name="38"></a><span class="source_keyword">function</span>    Created()
+<a name="39"></a>{
+<a name="40"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> ControlOffset;
+<a name="41"></a>
+<a name="42"></a>    <span class="source_keyword">Super</span>.Created();
+<a name="43"></a>
+<a name="44"></a>    <span class="source_comment">// Check if this machine has HOV Add-on installed
+</span><a name="45"></a>    HOVStr = GetPlayerOwner().ConsoleCommand(<span class="source_string">"ISADDON"</span>);
+<a name="46"></a>
+<a name="47"></a>    WinLeft = <span class="source_int">0</span>;
+<a name="48"></a>    WinTop = <span class="source_int">0</span>;
+<a name="49"></a>
+<a name="50"></a>    DefaultWidth = <span class="source_int">200</span>;
+<a name="51"></a>    DefaultHeight = <span class="source_int">460</span>;
+<a name="52"></a>    WinWidth = DefaultWidth;
+<a name="53"></a>    WinHeight = DefaultHeight;
+<a name="54"></a>
+<a name="55"></a>    ControlOffset = <span class="source_int">100</span>;
+<a name="56"></a>
+<a name="57"></a>    <span class="source_keyword">if</span>(HOVStr == <span class="source_string">"NONE"</span>)
+<a name="58"></a>        SpawnLogoMesh();
+<a name="59"></a>
+<a name="60"></a>    <span class="source_keyword">if</span>(HOVStr != <span class="source_string">"STANDALONE"</span>)
+<a name="61"></a>    {
+<a name="62"></a>        NewButton = <span class="source_type"><a href="../rmenu/runebutton.html" class="source">RuneButton</a></span>(CreateControl(<span class="source_keyword">class</span><span class="source_name">'RuneButton'</span>, <span class="source_int">0</span>, <span class="source_int">0</span>, <span class="source_int">180</span>, <span class="source_int">40</span>));
+<a name="63"></a>        NewButton.<span class="source_type">Text</span>=NewGameText;
+<a name="64"></a>        NewButton.SetHelpText(NewGameHelp);
+<a name="65"></a>        NewButton.WinLeft = <span class="source_int">10</span>;
+<a name="66"></a>        NewButton.WinTop = ControlOffset;
+<a name="67"></a>        NewButton.OverSound = <span class="source_type">Sound</span><span class="source_name">'LeftMouseOver'</span>;
+<a name="68"></a>        NewButton.DownSound = <span class="source_type">Sound</span><span class="source_name">'LeftButton'</span>;
+<a name="69"></a>        ControlOffset += <span class="source_int">50</span>;
+<a name="70"></a>
+<a name="71"></a>        LoadButton=<span class="source_type"><a href="../rmenu/runebutton.html" class="source">RuneButton</a></span>(CreateControl(<span class="source_keyword">class</span><span class="source_name">'RuneButton'</span>, <span class="source_int">0</span>, <span class="source_int">0</span>, <span class="source_int">180</span>, <span class="source_int">40</span>));
+<a name="72"></a>        LoadButton.<span class="source_type">Text</span>=LoadGameText;
+<a name="73"></a>        LoadButton.SetHelpText(LoadGameHelp);
+<a name="74"></a>        LoadButton.WinLeft = <span class="source_int">10</span>;
+<a name="75"></a>        LoadButton.WinTop = ControlOffset;
+<a name="76"></a>        LoadButton.OverSound = <span class="source_type">Sound</span><span class="source_name">'LeftMouseOver'</span>;
+<a name="77"></a>        LoadButton.DownSound = <span class="source_type">Sound</span><span class="source_name">'LeftButton'</span>;
+<a name="78"></a>        ControlOffset += <span class="source_int">50</span>;
+<a name="79"></a>
+<a name="80"></a>        SaveButton=<span class="source_type"><a href="../rmenu/runebutton.html" class="source">RuneButton</a></span>(CreateControl(<span class="source_keyword">class</span><span class="source_name">'RuneButton'</span>, <span class="source_int">0</span>, <span class="source_int">0</span>, <span class="source_int">180</span>, <span class="source_int">40</span>));
+<a name="81"></a>        SaveButton.<span class="source_type">Text</span>=SaveGameText;
+<a name="82"></a>        SaveButton.SetHelpText(SaveGameHelp);
+<a name="83"></a>        SaveButton.WinLeft = <span class="source_int">10</span>;
+<a name="84"></a>        SaveButton.WinTop = ControlOffset;
+<a name="85"></a>        SaveButton.OverSound = <span class="source_type">Sound</span><span class="source_name">'LeftMouseOver'</span>;
+<a name="86"></a>        SaveButton.DownSound = <span class="source_type">Sound</span><span class="source_name">'LeftButton'</span>;
+<a name="87"></a>        ControlOffset += <span class="source_int">50</span>;
+<a name="88"></a>    }
+<a name="89"></a>    <span class="source_keyword">else</span> <span class="source_comment">// HOV standalone correction
+</span><a name="90"></a>        ControlOffset += <span class="source_int">50</span>;
+<a name="91"></a>            
+<a name="92"></a>    MultiButton=<span class="source_type"><a href="../rmenu/runebutton.html" class="source">RuneButton</a></span>(CreateControl(<span class="source_keyword">class</span><span class="source_name">'RuneButton'</span>, <span class="source_int">0</span>, <span class="source_int">0</span>, <span class="source_int">180</span>, <span class="source_int">40</span>));
+<a name="93"></a>    MultiButton.<span class="source_type">Text</span>=MultiplayerText;
+<a name="94"></a>    MultiButton.SetHelpText(MultiplayerHelp);
+<a name="95"></a>    MultiButton.WinLeft = <span class="source_int">10</span>;
+<a name="96"></a>    MultiButton.WinTop = ControlOffset;
+<a name="97"></a>    MultiButton.OverSound = <span class="source_type">Sound</span><span class="source_name">'LeftMouseOver'</span>;
+<a name="98"></a>    MultiButton.DownSound = <span class="source_type">Sound</span><span class="source_name">'LeftButton'</span>;
+<a name="99"></a>    ControlOffset += <span class="source_int">50</span>;
+<a name="100"></a>
+<a name="101"></a>    OptionsButton = <span class="source_type"><a href="../rmenu/runebutton.html" class="source">RuneButton</a></span>(CreateControl(<span class="source_keyword">class</span><span class="source_name">'RuneButton'</span>, <span class="source_int">0</span>, <span class="source_int">0</span>, <span class="source_int">180</span>, <span class="source_int">40</span>));
+<a name="102"></a>    OptionsButton.<span class="source_type">Text</span> = OptionsText;
+<a name="103"></a>    OptionsButton.SetHelpText(OptionsHelp);
+<a name="104"></a>    OptionsButton.WinLeft = <span class="source_int">10</span>;
+<a name="105"></a>    OptionsButton.WinTop = ControlOffset;
+<a name="106"></a>    OptionsButton.OverSound = <span class="source_type">Sound</span><span class="source_name">'LeftMouseOver'</span>;
+<a name="107"></a>    OptionsButton.DownSound = <span class="source_type">Sound</span><span class="source_name">'LeftButton'</span>;
+<a name="108"></a>    ControlOffset += <span class="source_int">50</span>;
+<a name="109"></a>
+<a name="110"></a>    ExitButton = <span class="source_type"><a href="../rmenu/runebutton.html" class="source">RuneButton</a></span>(CreateControl(<span class="source_keyword">class</span><span class="source_name">'RuneButton'</span>, <span class="source_int">0</span>, <span class="source_int">0</span>, <span class="source_int">180</span>, <span class="source_int">40</span>));
+<a name="111"></a>    ExitButton.<span class="source_type">Text</span> = ExitText;
+<a name="112"></a>    ExitButton.SetHelpText(ExitHelp);
+<a name="113"></a>    ExitButton.WinLeft = <span class="source_int">10</span>;
+<a name="114"></a>    ExitButton.OverSound = <span class="source_type">Sound</span><span class="source_name">'LeftMouseOver'</span>;
+<a name="115"></a>    ExitButton.WinTop = ControlOffset;
+<a name="116"></a>    ExitButton.DownSound = <span class="source_type">Sound</span><span class="source_name">'LeftButton'</span>;
+<a name="117"></a>    ControlOffset += <span class="source_int">50</span>;    <span class="source_comment">//47
+</span><a name="118"></a>
+<a name="119"></a>    <span class="source_keyword">if</span>(HOVStr == <span class="source_string">"STANDALONE"</span>) <span class="source_comment">// HOV correction
+</span><a name="120"></a>        ControlOffset += <span class="source_int">100</span>;
+<a name="121"></a>
+<a name="122"></a>    <span class="source_comment">// Logo Buttons
+</span><a name="123"></a>    HHButton = <span class="source_type"><a href="../uwindow/uwindowbutton.html" class="source">UWindowButton</a></span>(CreateControl(<span class="source_keyword">class</span><span class="source_name">'UWindowButton'</span>, <span class="source_int">120</span>, ControlOffset, <span class="source_int">64</span>, <span class="source_int">60</span>));
+<a name="124"></a>    HHButton.SetHelpText(AboutHelp);
+<a name="125"></a>    HHButton.UpTexture = <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'HHLogo'</span>;
+<a name="126"></a>    HHButton.DownTexture = <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'HHLogoS'</span>;
+<a name="127"></a>    HHButton.OverTexture = <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'HHLogoS'</span>;
+<a name="128"></a>    HHButton.bStretched = <span class="source_keyword">true</span>;
+<a name="129"></a>    HHButton.OverSound = <span class="source_type">Sound</span><span class="source_name">'LeftMouseOver'</span>;
+<a name="130"></a>    HHButton.DownSound = <span class="source_type">Sound</span><span class="source_name">'LeftButton'</span>;
+<a name="131"></a>
+<a name="132"></a><span class="source_comment">//	GODButton = UWindowButton(CreateControl(class'UWindowButton', 20, ControlOffset, 64, 32));
+</span><a name="133"></a><span class="source_comment">//	GODButton.SetHelpText(AboutHelp);
+</span><a name="134"></a><span class="source_comment">//	GODButton.UpTexture = Texture'GodLogo';
+</span><a name="135"></a><span class="source_comment">//	GODButton.DownTexture = Texture'GodLogoS';
+</span><a name="136"></a><span class="source_comment">//	GODButton.OverTexture = Texture'GodLogoS';
+</span><a name="137"></a><span class="source_comment">//	GODButton.bStretched = true;
+</span><a name="138"></a><span class="source_comment">//	GODButton.OverSound = Sound'LeftMouseOver';
+</span><a name="139"></a><span class="source_comment">//	GODButton.DownSound = Sound'LeftButton';
+</span><a name="140"></a>
+<a name="141"></a>    <span class="source_comment">// Engine Version
+</span><a name="142"></a><span class="source_comment">/*  VersionLabel = RuneMenuLabelControl(CreateWindow(class'RuneMenuLabelControl', 0, 0, 180, 1));
+<a name="143"></a>    VersionLabel.SetText("Version:"@GetVersionString());
+<a name="144"></a>    VersionLabel.SetFont(F_Normal);
+<a name="145"></a>    VersionLabel.WinLeft = 10;
+<a name="146"></a>    VersionLabel.WinTop = WinHeight-12;
+<a name="147"></a>    VersionLabel.bAlwaysOnTop = true;*/</span>
+<a name="148"></a>
+<a name="149"></a>    <span class="source_comment">// Invisible buttons
+</span><a name="150"></a>    <span class="source_keyword">if</span>(HOVStr != <span class="source_string">"STANDALONE"</span>)
+<a name="151"></a>    {
+<a name="152"></a>        NewButton.ButtonTexture = <span class="source_keyword">None</span>;
+<a name="153"></a>        LoadButton.ButtonTexture = <span class="source_keyword">None</span>;
+<a name="154"></a>        SaveButton.ButtonTexture = <span class="source_keyword">None</span>;
+<a name="155"></a>    }
+<a name="156"></a>
+<a name="157"></a>    MultiButton.ButtonTexture = <span class="source_keyword">None</span>;
+<a name="158"></a>    OptionsButton.ButtonTexture = <span class="source_keyword">None</span>;
+<a name="159"></a>    ExitButton.ButtonTexture = <span class="source_keyword">None</span>;
+<a name="160"></a>}
+<a name="161"></a>
+<a name="162"></a><span class="source_keyword">function</span> <span class="source_keyword">string</span> GetVersionString()
+<a name="163"></a>{
+<a name="164"></a>    <span class="source_keyword">local</span> <span class="source_keyword">string</span> <span class="source_type">text</span>, text2, versionstring;
+<a name="165"></a>
+<a name="166"></a><span class="source_comment">//	text = "00"$GetEntryLevel().EngineVersion;
+</span><a name="167"></a><span class="source_comment">//	text = Right(text, 3);
+</span><a name="168"></a>
+<a name="169"></a>    <span class="source_type">text</span> = <span class="source_string">""</span>$GetEntryLevel().EngineVersion; <span class="source_comment">//108 version title in the low left
+</span><a name="170"></a>    text2 = <span class="source_type">text</span>;
+<a name="171"></a>    <span class="source_type">text</span> = Left(<span class="source_type">text</span>, <span class="source_int">3</span>);
+<a name="172"></a>
+<a name="173"></a>    <span class="source_keyword">if</span> (GetPlayerOwner() != <span class="source_keyword">None</span> && GetPlayerOwner().bCheatsEnabled)
+<a name="174"></a>        versionstring = Left(Text2,<span class="source_int">1</span>) $ <span class="source_string">"."</span> $ Right(Text2,<span class="source_int">2</span>) @ <span class="source_string">"Build"</span> @ GetEntryLevel().BuildNumber;
+<a name="175"></a>    <span class="source_keyword">else</span>
+<a name="176"></a>        versionstring = Left(<span class="source_type">Text</span>,<span class="source_int">1</span>) $ <span class="source_string">"."</span> $ Right(<span class="source_type">Text</span>,<span class="source_int">2</span>);
+<a name="177"></a>
+<a name="178"></a>    <span class="source_keyword">return</span> versionstring;
+<a name="179"></a>}
+<a name="180"></a>
+<a name="181"></a><span class="source_keyword">function</span> SpawnLogoMesh()
+<a name="182"></a>{
+<a name="183"></a><span class="source_comment">//	LogoMesh = GetEntryLevel().Spawn(class'RuneLookMesh', GetEntryLevel());
+</span><a name="184"></a><span class="source_comment">//	LogoMesh.Skeletal = SkelModel'Goblin';
+</span><a name="185"></a><span class="source_comment">//	LogoMesh.SkelMesh = 0;
+</span><a name="186"></a><span class="source_comment">//	LogoMesh.LoopAnim('idleA', 1.0, 0.1);
+</span><a name="187"></a>
+<a name="188"></a>    LogoMesh = GetEntryLevel().Spawn(<span class="source_keyword">class</span><span class="source_name">'RuneMeshActor'</span>, GetEntryLevel());
+<a name="189"></a>    LogoMesh.Skeletal = <span class="source_type">SkelModel</span><span class="source_name">'RuneLogo'</span>;
+<a name="190"></a>    LogoMesh.SkelMesh = <span class="source_int">1</span>;
+<a name="191"></a>    LogoMesh.SubstituteMesh = <span class="source_keyword">None</span>;
+<a name="192"></a>    LogoMesh.bMeshEnviroMap=<span class="source_keyword">True</span>;
+<a name="193"></a>    LogoMesh.SetDefaultPolyGroups();
+<a name="194"></a>
+<a name="195"></a>    ViewRotator = rot(<span class="source_int">0</span>, <span class="source_int">32768</span>, <span class="source_int">0</span>) + CenterRotator;
+<a name="196"></a>}
+<a name="197"></a>
+<a name="198"></a><span class="source_keyword">function</span> Close(<span class="source_keyword2">optional</span> <span class="source_keyword">bool</span> bByParent)
+<a name="199"></a>{
+<a name="200"></a>    Root.<span class="source_type"><a href="../engine/console.html" class="source">Console</a></span>.CloseUWindow();
+<a name="201"></a>}
+<a name="202"></a>
+<a name="203"></a><span class="source_keyword">function</span> PreSize()
+<a name="204"></a>{
+<a name="205"></a>}
+<a name="206"></a>
+<a name="207"></a><span class="source_keyword">function</span> Tick(<span class="source_keyword">float</span> <span class="source_type">DeltaTime</span>)
+<a name="208"></a>{
+<a name="209"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> r;
+<a name="210"></a>
+<a name="211"></a>    TimeElapsed += <span class="source_type">DeltaTime</span>;
+<a name="212"></a>    r.Pitch = Cos(TimeElapsed) * RotFactor.X;
+<a name="213"></a>    r.Yaw = Sin(TimeElapsed) * RotFactor.<span class="source_type">Y</span>;
+<a name="214"></a><span class="source_comment">//	r.Roll = Sin(TimeElapsed) * RotFactor.Z;
+</span><a name="215"></a>    r.Roll = <span class="source_int">0</span>;
+<a name="216"></a>    ViewRotator = rot(<span class="source_int">0</span>, <span class="source_int">32768</span>, <span class="source_int">0</span>) + CenterRotator + r;
+<a name="217"></a>}
+<a name="218"></a>
+<a name="219"></a><span class="source_keyword">function</span> Paint(<span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type">C</span>,<span class="source_keyword">float</span> X,<span class="source_keyword">float</span> <span class="source_type">Y</span>)
+<a name="220"></a>{
+<a name="221"></a>    <span class="source_keyword">local</span> <span class="source_keyword">float</span> OldFov;
+<a name="222"></a>
+<a name="223"></a>    <span class="source_keyword">Super</span>.Paint(<span class="source_type">C</span>,X,<span class="source_type">Y</span>);
+<a name="224"></a>
+<a name="225"></a><span class="source_comment">//	LookAndFeel.DrawClientArea(Self, C);	// Tiled
+</span><a name="226"></a>    <span class="source_keyword">if</span>(HOVStr == <span class="source_string">"STANDALONE"</span>)
+<a name="227"></a>    {
+<a name="228"></a>        DrawStretchedTexture(<span class="source_type">C</span>, <span class="source_int">0</span>, <span class="source_int">0</span>, WinWidth, WinHeight / <span class="source_int">2</span>, <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'SideBackHOV1'</span>);
+<a name="229"></a>        DrawStretchedTexture(<span class="source_type">C</span>, <span class="source_int">0</span>, WinHeight / <span class="source_int">2</span>, WinWidth, WinHeight / <span class="source_int">2</span>, <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'SideBackHOV2'</span>);
+<a name="230"></a>    }
+<a name="231"></a>    <span class="source_keyword">else</span> <span class="source_keyword">if</span>(HOVStr == <span class="source_string">"ADDON"</span>)
+<a name="232"></a>    {
+<a name="233"></a>        DrawStretchedTexture(<span class="source_type">C</span>, <span class="source_int">0</span>, <span class="source_int">0</span>, WinWidth, WinHeight, <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'SideBack'</span>);
+<a name="234"></a>        DrawStretchedTexture(<span class="source_type">C</span>, <span class="source_int">0</span>, <span class="source_int">0</span>, WinWidth, WinHeight / <span class="source_int">4</span>, <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'SBHOVTop'</span>);
+<a name="235"></a>    }
+<a name="236"></a>    <span class="source_keyword">else</span>
+<a name="237"></a>    {
+<a name="238"></a>        DrawStretchedTexture(<span class="source_type">C</span>, <span class="source_int">0</span>, <span class="source_int">0</span>, WinWidth, WinHeight, <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'SideBack'</span>);
+<a name="239"></a>        <span class="source_keyword">if</span> (LogoMesh!=<span class="source_keyword">None</span>)
+<a name="240"></a>        {
+<a name="241"></a>            OldFov = GetPlayerOwner().FOVAngle;
+<a name="242"></a>            GetPlayerOwner().SetFOVAngle(<span class="source_int">30</span>);
+<a name="243"></a>            DrawClippedActor( <span class="source_type">C</span>, WinWidth/<span class="source_int">2</span>, WinHeight/<span class="source_int">2</span>, LogoMesh, <span class="source_keyword">False</span>, ViewRotator, LogoOffset );
+<a name="244"></a>            GetPlayerOwner().SetFOVAngle(OldFov);
+<a name="245"></a>        }
+<a name="246"></a>        <span class="source_keyword">else</span>
+<a name="247"></a>        {
+<a name="248"></a>            SpawnLogoMesh();
+<a name="249"></a>        }
+<a name="250"></a>    }
+<a name="251"></a>}
+<a name="252"></a>
+<a name="253"></a><span class="source_keyword">function</span> AfterPaint(<span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type">C</span>, <span class="source_keyword">float</span> X, <span class="source_keyword">float</span> <span class="source_type">Y</span>)
+<a name="254"></a>{
+<a name="255"></a>    <span class="source_comment">// Draw version over everything
+</span><a name="256"></a>    <span class="source_type">C</span>.<span class="source_type">Font</span> = Root.Fonts[F_Normal];
+<a name="257"></a>    <span class="source_type">C</span>.SetPos(<span class="source_int">10</span>, Root.GUIScale*WinHeight - Root.GUIScale*<span class="source_int">12</span>);
+<a name="258"></a>    <span class="source_type">C</span>.DrawText(GetVersionString());
+<a name="259"></a>}
+<a name="260"></a>
+<a name="261"></a><span class="source_keyword">function</span> Notify(<span class="source_type"><a href="../uwindow/uwindowdialogcontrol.html" class="source">UWindowDialogControl</a></span> <span class="source_type">C</span>, <span class="source_keyword">byte</span> E)
+<a name="262"></a>{
+<a name="263"></a>    <span class="source_keyword">if</span>(E == DE_Click)
+<a name="264"></a>    {
+<a name="265"></a>        <span class="source_keyword">switch</span>(<span class="source_type">C</span>)
+<a name="266"></a>        {
+<a name="267"></a>            <span class="source_keyword">case</span> NewButton:
+<a name="268"></a>                HideSubmenusExcept(NewMenu);
+<a name="269"></a>                <span class="source_keyword">if</span>(NewMenu == <span class="source_keyword">None</span>)
+<a name="270"></a>                    NewMenu = <span class="source_type"><a href="../rmenu/runemenutopwindow.html" class="source">RuneMenuTopWindow</a></span>(Root.Createwindow(<span class="source_keyword">class</span><span class="source_name">'RuneMenuNewTop'</span>, <span class="source_int">0</span>, <span class="source_int">0</span>, <span class="source_int">440</span>, <span class="source_int">100</span>));
+<a name="271"></a>                NewMenu.ShowWindow();
+<a name="272"></a>                <span class="source_keyword">if</span>(NewMenu!=<span class="source_keyword">None</span> && !NewMenu.bOpen)
+<a name="273"></a>                    NewMenu.SlideOpen();
+<a name="274"></a>                <span class="source_keyword">break</span>;
+<a name="275"></a>            <span class="source_keyword">case</span> LoadButton:
+<a name="276"></a>                HideSubmenusExcept(LoadMenu);
+<a name="277"></a>                <span class="source_keyword">if</span>(LoadMenu == <span class="source_keyword">None</span>)
+<a name="278"></a>                    LoadMenu = <span class="source_type"><a href="../rmenu/runemenutopwindow.html" class="source">RuneMenuTopWindow</a></span>(Root.CreateWindow(<span class="source_keyword">class</span><span class="source_name">'RuneMenuLoadTop'</span>, <span class="source_int">0</span>, <span class="source_int">0</span>, <span class="source_int">440</span>, <span class="source_int">100</span>));
+<a name="279"></a>                LoadMenu.ShowWindow();
+<a name="280"></a>                <span class="source_keyword">if</span>(LoadMenu!=<span class="source_keyword">None</span> && !LoadMenu.bOpen)
+<a name="281"></a>                    LoadMenu.SlideOpen();
+<a name="282"></a>                <span class="source_keyword">break</span>;
+<a name="283"></a>            <span class="source_keyword">case</span> SaveButton:
+<a name="284"></a>                HideSubmenusExcept(SaveMenu);
+<a name="285"></a>                <span class="source_keyword">if</span>(SaveMenu == <span class="source_keyword">None</span>)
+<a name="286"></a>                    SaveMenu = <span class="source_type"><a href="../rmenu/runemenutopwindow.html" class="source">RuneMenuTopWindow</a></span>(Root.CreateWindow(<span class="source_keyword">class</span><span class="source_name">'RuneMenuSaveTop'</span>, <span class="source_int">0</span>, <span class="source_int">0</span>, <span class="source_int">440</span>, <span class="source_int">100</span>));
+<a name="287"></a>                SaveMenu.ShowWindow();
+<a name="288"></a>                <span class="source_keyword">if</span>(SaveMenu!=<span class="source_keyword">None</span> && !SaveMenu.bOpen)
+<a name="289"></a>                    SaveMenu.SlideOpen();
+<a name="290"></a>                <span class="source_keyword">break</span>;
+<a name="291"></a>            <span class="source_keyword">case</span> OptionsButton:
+<a name="292"></a>                HideSubmenusExcept(OptionsMenu);
+<a name="293"></a>                <span class="source_keyword">if</span>(OptionsMenu == <span class="source_keyword">None</span>)
+<a name="294"></a>                    OptionsMenu = <span class="source_type"><a href="../rmenu/runemenutopwindow.html" class="source">RuneMenuTopWindow</a></span>(Root.CreateWindow(<span class="source_keyword">class</span><span class="source_name">'RuneMenuOptionsTop'</span>, <span class="source_int">0</span>, <span class="source_int">0</span>, <span class="source_int">440</span>, <span class="source_int">100</span>));
+<a name="295"></a>                OptionsMenu.ShowWindow();
+<a name="296"></a>                <span class="source_keyword">if</span>(OptionsMenu!=<span class="source_keyword">None</span> && !OptionsMenu.bOpen)
+<a name="297"></a>                    OptionsMenu.SlideOpen();
+<a name="298"></a>                <span class="source_keyword">break</span>;
+<a name="299"></a>            <span class="source_keyword">case</span> MultiButton:
+<a name="300"></a>                HideSubmenusExcept(MultiMenu);
+<a name="301"></a>                <span class="source_keyword">if</span>(MultiMenu == <span class="source_keyword">None</span>)
+<a name="302"></a>                    MultiMenu = <span class="source_type"><a href="../rmenu/runemenutopwindow.html" class="source">RuneMenuTopWindow</a></span>(Root.CreateWindow(<span class="source_keyword">class</span><span class="source_name">'RuneMenuMultiplayerTop'</span>, <span class="source_int">0</span>, <span class="source_int">0</span>, <span class="source_int">440</span>, <span class="source_int">100</span>));
+<a name="303"></a>                MultiMenu.ShowWindow();
+<a name="304"></a>                <span class="source_keyword">if</span>(MultiMenu!=<span class="source_keyword">None</span> && !MultiMenu.bOpen)
+<a name="305"></a>                    MultiMenu.SlideOpen();
+<a name="306"></a>                <span class="source_keyword">break</span>;
+<a name="307"></a>            <span class="source_keyword">case</span> ExitButton:
+<a name="308"></a>                HideSubmenusExcept(<span class="source_keyword">None</span>);
+<a name="309"></a>                Root.<span class="source_type"><a href="../engine/console.html" class="source">Console</a></span>.ConsoleCommand(<span class="source_string">"Exit"</span>);
+<a name="310"></a>                <span class="source_keyword">break</span>;
+<a name="311"></a>            <span class="source_keyword">case</span> HHButton:
+<a name="312"></a>                HideSubmenusExcept(AboutMenu);
+<a name="313"></a>                <span class="source_keyword">if</span> (AboutMenu == <span class="source_keyword">None</span>)
+<a name="314"></a>                    AboutMenu = <span class="source_type"><a href="../rmenu/runemenutopwindow.html" class="source">RuneMenuTopWindow</a></span>(Root.CreateWindow(<span class="source_keyword">class</span><span class="source_name">'RuneMenuAboutTop'</span>, <span class="source_int">0</span>, <span class="source_int">0</span>, <span class="source_int">440</span>, <span class="source_int">100</span>));
+<a name="315"></a>                AboutMenu.ShowWindow();
+<a name="316"></a>                <span class="source_keyword">if</span>(AboutMenu!=<span class="source_keyword">None</span> && !AboutMenu.bOpen)
+<a name="317"></a>                    AboutMenu.SlideOpen();
+<a name="318"></a>                <span class="source_keyword">break</span>;
+<a name="319"></a><span class="source_comment">//			case GodButton:
+</span><a name="320"></a><span class="source_comment">//				HideSubmenusExcept(GodAboutMenu);
+</span><a name="321"></a><span class="source_comment">//				if (GodAboutMenu == None)
+</span><a name="322"></a><span class="source_comment">//					GodAboutMenu = RuneMenuTopWindow(Root.CreateWindow(class'RuneMenuGodAboutTop', 0, 0, 440, 100));
+</span><a name="323"></a><span class="source_comment">//				GodAboutMenu.ShowWindow();
+</span><a name="324"></a><span class="source_comment">//				if(GodAboutMenu!=None && !GodAboutMenu.bOpen)
+</span><a name="325"></a><span class="source_comment">//					GodAboutMenu.SlideOpen();
+</span><a name="326"></a><span class="source_comment">//				break;
+</span><a name="327"></a>        }
+<a name="328"></a>    }
+<a name="329"></a>}
+<a name="330"></a>
+<a name="331"></a><span class="source_keyword">function</span> ShowWindow()
+<a name="332"></a>{
+<a name="333"></a>    <span class="source_keyword">Super</span>.ShowWindow();
+<a name="334"></a>
+<a name="335"></a>    HideSubmenusExcept(<span class="source_keyword">None</span>);
+<a name="336"></a>}
+<a name="337"></a>
+<a name="338"></a><span class="source_keyword">function</span> HideSubmenusExcept(<span class="source_type"><a href="../rmenu/runemenutopwindow.html" class="source">RuneMenuTopWindow</a></span> Exclude)
+<a name="339"></a>{
+<a name="340"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../core/object.html#Color" class="source">Color</a></span> Col;
+<a name="341"></a>
+<a name="342"></a>    <span class="source_keyword">if</span> (NewMenu!=<span class="source_keyword">None</span> && NewMenu!=Exclude)
+<a name="343"></a>    {
+<a name="344"></a>        NewMenu.HideWindow();
+<a name="345"></a>        NewMenu.HideAllWindows();
+<a name="346"></a>    }
+<a name="347"></a>
+<a name="348"></a>    <span class="source_keyword">if</span> (LoadMenu!=<span class="source_keyword">None</span> && LoadMenu!=Exclude)
+<a name="349"></a>    {
+<a name="350"></a>        LoadMenu.HideWindow();
+<a name="351"></a>        LoadMenu.HideAllWindows();
+<a name="352"></a>    }
+<a name="353"></a>
+<a name="354"></a>    <span class="source_keyword">if</span> (SaveMenu!=<span class="source_keyword">None</span> && SaveMenu!=Exclude)
+<a name="355"></a>    {
+<a name="356"></a>        SaveMenu.HideWindow();
+<a name="357"></a>        SaveMenu.HideAllWindows();
+<a name="358"></a>    }
+<a name="359"></a>
+<a name="360"></a>    <span class="source_keyword">if</span> (OptionsMenu!=<span class="source_keyword">None</span> && OptionsMenu!=Exclude)
+<a name="361"></a>    {
+<a name="362"></a>        OptionsMenu.HideWindow();
+<a name="363"></a>        OptionsMenu.HideAllWindows();
+<a name="364"></a>    }
+<a name="365"></a>
+<a name="366"></a>    <span class="source_keyword">if</span> (MultiMenu!=<span class="source_keyword">None</span> && MultiMenu!=Exclude)
+<a name="367"></a>    {
+<a name="368"></a>        MultiMenu.HideWindow();
+<a name="369"></a>        MultiMenu.HideAllWindows();
+<a name="370"></a>    }
+<a name="371"></a>
+<a name="372"></a>    <span class="source_keyword">if</span> (AboutMenu!=<span class="source_keyword">None</span> && AboutMenu!=Exclude)
+<a name="373"></a>    {
+<a name="374"></a>        AboutMenu.HideWindow();
+<a name="375"></a>        AboutMenu.HideAllWindows();
+<a name="376"></a>    }
+<a name="377"></a>
+<a name="378"></a><span class="source_comment">/*  if (GodAboutMenu!=None && GodAboutMenu!=Exclude)
+<a name="379"></a>    {
+<a name="380"></a>        GodAboutMenu.HideWindow();
+<a name="381"></a>        GodAboutMenu.HideAllWindows();
+<a name="382"></a>    }
+<a name="383"></a>*/</span>
+<a name="384"></a>    <span class="source_comment">// Reset all button colors
+</span><a name="385"></a>    <span class="source_keyword">if</span>(HOVStr != <span class="source_string">"STANDALONE"</span>)
+<a name="386"></a>    {
+<a name="387"></a>        NewButton.ResetTextColor();
+<a name="388"></a>        LoadButton.ResetTextColor();
+<a name="389"></a>        SaveButton.ResetTextColor();
+<a name="390"></a>    }
+<a name="391"></a>
+<a name="392"></a>    MultiButton.ResetTextColor();
+<a name="393"></a>    OptionsButton.ResetTextColor();
+<a name="394"></a>    ExitButton.ResetTextColor();
+<a name="395"></a>}
+<a name="396"></a>
+<a name="397"></a><span class="source_keyword">function</span> Resized()
+<a name="398"></a>{   
+<a name="399"></a>    Notify(NewButton, DE_Click);
+<a name="400"></a>}
+<a name="401"></a>
+<a name="402"></a><span class="source_keyword">function</span> SecretAction()
+<a name="403"></a>{
+<a name="404"></a>    bWalk = !bWalk;
+<a name="405"></a>}
+<a name="406"></a>
+<a name="407"></a><span class="source_keyword">function</span> Move(<span class="source_type"><a href="../uwindow/uwindowwindow.html" class="source">UWindowWindow</a></span> W)
+<a name="408"></a>{
+<a name="409"></a>    <span class="source_keyword">if</span> (bWalk)
+<a name="410"></a>    {
+<a name="411"></a>        W.WinLeft += RandRange(-<span class="source_int">5</span>,<span class="source_int">5</span>);
+<a name="412"></a>        W.WinTop  += RandRange(-<span class="source_int">5</span>,<span class="source_int">5</span>);
+<a name="413"></a>        W.WinLeft = Clamp(W.WinLeft, <span class="source_int">0</span>, <span class="source_int">640</span>-W.WinWidth);
+<a name="414"></a>        W.WinTop  = Clamp(W.WinTop,  <span class="source_int">0</span>, <span class="source_int">480</span>-W.WinHeight);
+<a name="415"></a>        <span class="source_comment">//Root.Console.AddString("Moving"@W.name@W.WinLeft@W.WinTop);
+</span><a name="416"></a>    }
+<a name="417"></a>}
+<a name="418"></a>
+<a name="419"></a><span class="source_keyword">defaultproperties</span>
+<a name="420"></a>{
+<a name="421"></a>     LogoOffset=(X=<span class="source_int">15.000000</span>,Z=<span class="source_int">13.400000</span>)
+<a name="422"></a>     RotFactor=(X=<span class="source_int">2000.000000</span>,<span class="source_type">Y</span>=<span class="source_int">4000.000000</span>)
+<a name="423"></a>     NewGameText=<span class="source_string">"New Game"</span>
+<a name="424"></a>     LoadGameText=<span class="source_string">"Load Game"</span>
+<a name="425"></a>     SaveGameText=<span class="source_string">"Save Game"</span>
+<a name="426"></a>     MultiplayerText=<span class="source_string">"Multiplayer"</span>
+<a name="427"></a>     OptionsText=<span class="source_string">"Options"</span>
+<a name="428"></a>     ExitText=<span class="source_string">"Exit"</span>
+<a name="429"></a>     NewGameHelp=<span class="source_string">"Start a new game"</span>
+<a name="430"></a>     LoadGameHelp=<span class="source_string">"Load a saved game"</span>
+<a name="431"></a>     SaveGameHelp=<span class="source_string">"Save the current game"</span>
+<a name="432"></a>     MultiplayerHelp=<span class="source_string">"Multiplayer game options"</span>
+<a name="433"></a>     OptionsHelp=<span class="source_string">"Set Audio, Video, Input, Control options"</span>
+<a name="434"></a>     AboutHelp=<span class="source_string">"Credits, Links"</span>
+<a name="435"></a>     ExitHelp=<span class="source_string">"Exit"</span>
+<a name="436"></a>     DefaultWidth=<span class="source_int">200</span>
+<a name="437"></a>     DefaultHeight=<span class="source_int">460</span>
+<a name="438"></a>     bAlwaysOnTop=<span class="source_keyword">True</span>
+<a name="439"></a>}
+<a name="440"></a></pre></td></tr></table></div>
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../rmenu/rmenu-overview.html">Package</a></td>
+	<td class="header"><a href="../rmenu/runemenu.html">Class</a></td>
+	<td class="header_hilight">Source</td>
+	<td class="header"><a class="header" href="../classtree.html#RuneMenu">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../Source_rmenu/runelookmesh.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../Source_rmenu/runemenuaboutclientwindow.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Class file time: Thu 28/1/2021 11:38:08.000 - Creation time: Thu 28/1/2021 11:41:30.145 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

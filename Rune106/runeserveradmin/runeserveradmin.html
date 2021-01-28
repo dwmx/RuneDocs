@@ -1,0 +1,726 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - RuneServerAdmin.RuneServerAdmin</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runeserveradmin/runeserveradmin-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runeserveradmin/runeserveradmin.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#RuneServerAdmin">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runeserveradmin/runeimageserver.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runeserveradmin/runeserveradminspectator.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#runeserveradmin/runeserveradmin.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../runeserveradmin/runeserveradmin-overview.html">RuneServerAdmin</a>.RuneServerAdmin</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../uweb/webapplication.html">WebApplication</a></dd>
+<dt>Modifiers</dt><dd>config </dd>
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../uweb/uweb-overview.html">UWeb</a>.<a href="../uweb/webapplication.html">WebApplication</a>
+   |   
+   +-- <a href="../runeserveradmin/runeserveradmin-overview.html">RuneServerAdmin</a>.<a href="../runeserveradmin/runeserveradmin.html">RuneServerAdmin</a>
+</pre>
+
+
+
+<hr />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Constants Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Contants from <a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../core/object.html#MaxInt">MaxInt</a>, <a href="../core/object.html#Pi">Pi</a>, <a href="../core/object.html#RF_NotForClient">RF_NotForClient</a>, <a href="../core/object.html#RF_NotForEdit">RF_NotForEdit</a>, <a href="../core/object.html#RF_NotForServer">RF_NotForServer</a>, <a href="../core/object.html#RF_Public">RF_Public</a>, <a href="../core/object.html#RF_Transactional">RF_Transactional</a>, <a href="../core/object.html#RF_Transient">RF_Transient</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_AdminPassword" name="AdminPassword" title="go to the details">AdminPassword</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_AdminRealm" name="AdminRealm" title="go to the details">AdminRealm</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_AdminUsername" name="AdminUsername" title="go to the details">AdminUsername</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_CurrentConsoleLogPage" name="CurrentConsoleLogPage" title="go to the details">CurrentConsoleLogPage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_CurrentConsolePage" name="CurrentConsolePage" title="go to the details">CurrentConsolePage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_CurrentConsoleSendPage" name="CurrentConsoleSendPage" title="go to the details">CurrentConsoleSendPage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_CurrentGamePage" name="CurrentGamePage" title="go to the details">CurrentGamePage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_CurrentIndexPage" name="CurrentIndexPage" title="go to the details">CurrentIndexPage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_CurrentMenuPage" name="CurrentMenuPage" title="go to the details">CurrentMenuPage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_CurrentMutatorsPage" name="CurrentMutatorsPage" title="go to the details">CurrentMutatorsPage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_CurrentPage" name="CurrentPage" title="go to the details">CurrentPage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_CurrentPlayersPage" name="CurrentPlayersPage" title="go to the details">CurrentPlayersPage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_CurrentRestartPage" name="CurrentRestartPage" title="go to the details">CurrentRestartPage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_DefaultBG" name="DefaultBG" title="go to the details">DefaultBG</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_DefaultSendText" name="DefaultSendText" title="go to the details">DefaultSendText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_DefaultsIPPolicyPage" name="DefaultsIPPolicyPage" title="go to the details">DefaultsIPPolicyPage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_DefaultsMapsPage" name="DefaultsMapsPage" title="go to the details">DefaultsMapsPage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_DefaultsMenuPage" name="DefaultsMenuPage" title="go to the details">DefaultsMenuPage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_DefaultsPage" name="DefaultsPage" title="go to the details">DefaultsPage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_DefaultsRestartPage" name="DefaultsRestartPage" title="go to the details">DefaultsRestartPage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_DefaultsRulesPage" name="DefaultsRulesPage" title="go to the details">DefaultsRulesPage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_DefaultsServerPage" name="DefaultsServerPage" title="go to the details">DefaultsServerPage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_DefaultsSettingsPage" name="DefaultsSettingsPage" title="go to the details">DefaultsSettingsPage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../runeserveradmin/listitem.html">ListItem</a></td><td width="66%"><a href="#_ExcludeMaps" name="ExcludeMaps" title="go to the details">ExcludeMaps</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../runeserveradmin/listitem.html">ListItem</a></td><td width="66%"><a href="#_ExcludeMutators" name="ExcludeMutators" title="go to the details">ExcludeMutators</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../runeserveradmin/listitem.html">ListItem</a></td><td width="66%"><a href="#_GameTypeList" name="GameTypeList" title="go to the details">GameTypeList</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HighlightedBG" name="HighlightedBG" title="go to the details">HighlightedBG</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../runeserveradmin/listitem.html">ListItem</a></td><td width="66%"><a href="#_IncludeMaps" name="IncludeMaps" title="go to the details">IncludeMaps</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../runeserveradmin/listitem.html">ListItem</a></td><td width="66%"><a href="#_IncludeMutators" name="IncludeMutators" title="go to the details">IncludeMutators</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_MenuPage" name="MenuPage" title="go to the details">MenuPage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_MessageUHTM" name="MessageUHTM" title="go to the details">MessageUHTM</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_RootPage" name="RootPage" title="go to the details">RootPage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../runeserveradmin/runeserveradminspectator.html">RuneServerAdminSpectator</a></td><td width="66%"><a href="#_Spectator" name="Spectator" title="go to the details">Spectator</a></td></tr>
+<tr><th colspan="2" class="small">RuneServerAdmin</th></tr>
+<tr><td nowrap="nowrap" width="33%">class&lt;<a href="../runeserveradmin/runeserveradminspectator.html">RuneServerAdminSpectator</a>&gt;</td><td width="66%"><a href="#_SpectatorType" name="SpectatorType" title="go to the details">SpectatorType</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../uweb/uweb-overview.html">UWeb</a>.<a href="../uweb/webapplication.html">WebApplication</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uweb/webapplication.html#Level">Level</a>, <a href="../uweb/webapplication.html#Path">Path</a>, <a href="../uweb/webapplication.html#WebServer">WebServer</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../core/object.html#Class">Class</a>, <a href="../core/object.html#Name">Name</a>, <a href="../core/object.html#ObjectFlags">ObjectFlags</a>, <a href="../core/object.html#ObjectInternal[6]">ObjectInternal[6]</a>, <a href="../core/object.html#Outer">Outer</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Enumerations Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Enumerations from <a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../core/object.html#EMatterType">EMatterType</a>, <a href="../core/object.html#ESheerAxis">ESheerAxis</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Structures Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Structures from <a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../core/object.html#BoundingBox">BoundingBox</a>, <a href="../core/object.html#BoundingVolume">BoundingVolume</a>, <a href="../core/object.html#Color">Color</a>, <a href="../core/object.html#Coords">Coords</a>, <a href="../core/object.html#Guid">Guid</a>, <a href="../core/object.html#Plane">Plane</a>, <a href="../core/object.html#Rotator">Rotator</a>, <a href="../core/object.html#Scale">Scale</a>, <a href="../core/object.html#Vector">Vector</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ApplyMapList-" name="ApplyMapList" title="go to the details">ApplyMapList</a> (out <a href="../runeserveradmin/listitem.html">ListItem</a> ExcludeMaps, out <a href="../runeserveradmin/listitem.html">ListItem</a> IncludeMaps, String GameType, String MapListType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>String&nbsp;</td><td><a href="#_GenerateGameTypeOptions-" name="GenerateGameTypeOptions" title="go to the details">GenerateGameTypeOptions</a> (String CurrentGameType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>String&nbsp;</td><td><a href="#_GenerateMapListOptions-" name="GenerateMapListOptions" title="go to the details">GenerateMapListOptions</a> (String GameType, String MapListType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>String&nbsp;</td><td><a href="#_GenerateMapListSelect-" name="GenerateMapListSelect" title="go to the details">GenerateMapListSelect</a> (<a href="../runeserveradmin/listitem.html">ListItem</a> MapList, optional string SelectedItem))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>String&nbsp;</td><td><a href="#_GenerateMutatorListSelect-" name="GenerateMutatorListSelect" title="go to the details">GenerateMutatorListSelect</a> (<a href="../runeserveradmin/listitem.html">ListItem</a> MutatorList))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>&nbsp;</td><td><a href="#_Init-" name="Init" title="go to the details">Init</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_LoadGameTypes-" name="LoadGameTypes" title="go to the details">LoadGameTypes</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_LoadMutators-" name="LoadMutators" title="go to the details">LoadMutators</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>String&nbsp;</td><td><a href="#_PadLeft-" name="PadLeft" title="go to the details">PadLeft</a> (String InStr, int Width, String PadStr))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>&nbsp;</td><td><a href="#_Query-" name="Query" title="go to the details">Query</a> (<a href="../uweb/webrequest.html">WebRequest</a> Request, <a href="../uweb/webresponse.html">WebResponse</a> Response))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_QueryCurrent-" name="QueryCurrent" title="go to the details">QueryCurrent</a> (<a href="../uweb/webrequest.html">WebRequest</a> Request, <a href="../uweb/webresponse.html">WebResponse</a> Response))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_QueryCurrentConsole-" name="QueryCurrentConsole" title="go to the details">QueryCurrentConsole</a> (<a href="../uweb/webrequest.html">WebRequest</a> Request, <a href="../uweb/webresponse.html">WebResponse</a> Response))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_QueryCurrentConsoleLog-" name="QueryCurrentConsoleLog" title="go to the details">QueryCurrentConsoleLog</a> (<a href="../uweb/webrequest.html">WebRequest</a> Request, <a href="../uweb/webresponse.html">WebResponse</a> Response))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_QueryCurrentConsoleSend-" name="QueryCurrentConsoleSend" title="go to the details">QueryCurrentConsoleSend</a> (<a href="../uweb/webrequest.html">WebRequest</a> Request, <a href="../uweb/webresponse.html">WebResponse</a> Response))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_QueryCurrentGame-" name="QueryCurrentGame" title="go to the details">QueryCurrentGame</a> (<a href="../uweb/webrequest.html">WebRequest</a> Request, <a href="../uweb/webresponse.html">WebResponse</a> Response))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_QueryCurrentMenu-" name="QueryCurrentMenu" title="go to the details">QueryCurrentMenu</a> (<a href="../uweb/webrequest.html">WebRequest</a> Request, <a href="../uweb/webresponse.html">WebResponse</a> Response))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_QueryCurrentMutators-" name="QueryCurrentMutators" title="go to the details">QueryCurrentMutators</a> (<a href="../uweb/webrequest.html">WebRequest</a> Request, <a href="../uweb/webresponse.html">WebResponse</a> Response))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_QueryCurrentPlayers-" name="QueryCurrentPlayers" title="go to the details">QueryCurrentPlayers</a> (<a href="../uweb/webrequest.html">WebRequest</a> Request, <a href="../uweb/webresponse.html">WebResponse</a> Response))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_QueryDefaults-" name="QueryDefaults" title="go to the details">QueryDefaults</a> (<a href="../uweb/webrequest.html">WebRequest</a> Request, <a href="../uweb/webresponse.html">WebResponse</a> Response))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_QueryDefaultsIPPolicy-" name="QueryDefaultsIPPolicy" title="go to the details">QueryDefaultsIPPolicy</a> (<a href="../uweb/webrequest.html">WebRequest</a> Request, <a href="../uweb/webresponse.html">WebResponse</a> Response))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_QueryDefaultsMaps-" name="QueryDefaultsMaps" title="go to the details">QueryDefaultsMaps</a> (<a href="../uweb/webrequest.html">WebRequest</a> Request, <a href="../uweb/webresponse.html">WebResponse</a> Response))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_QueryDefaultsMenu-" name="QueryDefaultsMenu" title="go to the details">QueryDefaultsMenu</a> (<a href="../uweb/webrequest.html">WebRequest</a> Request, <a href="../uweb/webresponse.html">WebResponse</a> Response))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_QueryDefaultsRules-" name="QueryDefaultsRules" title="go to the details">QueryDefaultsRules</a> (<a href="../uweb/webrequest.html">WebRequest</a> Request, <a href="../uweb/webresponse.html">WebResponse</a> Response))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_QueryDefaultsServer-" name="QueryDefaultsServer" title="go to the details">QueryDefaultsServer</a> (<a href="../uweb/webrequest.html">WebRequest</a> Request, <a href="../uweb/webresponse.html">WebResponse</a> Response))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_QueryDefaultsSettings-" name="QueryDefaultsSettings" title="go to the details">QueryDefaultsSettings</a> (<a href="../uweb/webrequest.html">WebRequest</a> Request, <a href="../uweb/webresponse.html">WebResponse</a> Response))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_QueryMenu-" name="QueryMenu" title="go to the details">QueryMenu</a> (<a href="../uweb/webrequest.html">WebRequest</a> Request, <a href="../uweb/webresponse.html">WebResponse</a> Response))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_QueryRestartPage-" name="QueryRestartPage" title="go to the details">QueryRestartPage</a> (<a href="../uweb/webrequest.html">WebRequest</a> Request, <a href="../uweb/webresponse.html">WebResponse</a> Response))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_QueryRoot-" name="QueryRoot" title="go to the details">QueryRoot</a> (<a href="../uweb/webrequest.html">WebRequest</a> Request, <a href="../uweb/webresponse.html">WebResponse</a> Response))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ReloadExcludeMaps-" name="ReloadExcludeMaps" title="go to the details">ReloadExcludeMaps</a> (out <a href="../runeserveradmin/listitem.html">ListItem</a> ExcludeMaps, String GameType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ReloadIncludeMaps-" name="ReloadIncludeMaps" title="go to the details">ReloadIncludeMaps</a> (out <a href="../runeserveradmin/listitem.html">ListItem</a> ExcludeMaps, out <a href="../runeserveradmin/listitem.html">ListItem</a> IncludeMaps, String GameType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_UpdateDefaultMaps-" name="UpdateDefaultMaps" title="go to the details">UpdateDefaultMaps</a> (String GameType, <a href="../runeserveradmin/listitem.html">ListItem</a> TempItem))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>String&nbsp;</td><td><a href="#_UsedMutators-" name="UsedMutators" title="go to the details">UsedMutators</a> ()))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../uweb/uweb-overview.html">UWeb</a>.<a href="../uweb/webapplication.html">WebApplication</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uweb/webapplication.html#Cleanup">Cleanup</a>, <a href="../uweb/webapplication.html#Init">Init</a>, <a href="../uweb/webapplication.html#Query">Query</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../core/object.html#!">!</a>, <a href="../core/object.html#!=">!=</a>, <a href="../core/object.html#$">$</a>, <a href="../core/object.html#%">%</a>, <a href="../core/object.html#&">&</a>, <a href="../core/object.html#&&">&&</a>, <a href="../core/object.html#*">*</a>, <a href="../core/object.html#**">**</a>, <a href="../core/object.html#*=">*=</a>, <a href="../core/object.html#+">+</a>, <a href="../core/object.html#++">++</a>, <a href="../core/object.html#+=">+=</a>, <a href="../core/object.html#-">-</a>, <a href="../core/object.html#--">--</a>, <a href="../core/object.html#-=">-=</a>, <a href="../core/object.html#/ ">/ </a>, <a href="../core/object.html#/=">/=</a>, <a href="../core/object.html#&lt;">&lt;</a>, <a href="../core/object.html#&lt;&lt;">&lt;&lt;</a>, <a href="../core/object.html#&lt;=">&lt;=</a>, <a href="../core/object.html#==">==</a>, <a href="../core/object.html#&gt;">&gt;</a>, <a href="../core/object.html#&gt;=">&gt;=</a>, <a href="../core/object.html#&gt;&gt;">&gt;&gt;</a>, <a href="../core/object.html#&gt;&gt;&gt;">&gt;&gt;&gt;</a>, <a href="../core/object.html#@">@</a>, <a href="../core/object.html#Abs">Abs</a>, <a href="../core/object.html#Asc">Asc</a>, <a href="../core/object.html#Atan">Atan</a>, <a href="../core/object.html#BeginState">BeginState</a>, <a href="../core/object.html#Caps">Caps</a>, <a href="../core/object.html#Chr">Chr</a>, <a href="../core/object.html#Clamp">Clamp</a>, <a href="../core/object.html#ClassIsChildOf">ClassIsChildOf</a>, <a href="../core/object.html#Cos">Cos</a>, <a href="../core/object.html#Cross">Cross</a>, <a href="../core/object.html#Disable">Disable</a>, <a href="../core/object.html#Dot">Dot</a>, <a href="../core/object.html#DynamicLoadObject">DynamicLoadObject</a>, <a href="../core/object.html#Enable">Enable</a>, <a href="../core/object.html#EndState">EndState</a>, <a href="../core/object.html#Exp">Exp</a>, <a href="../core/object.html#FClamp">FClamp</a>, <a href="../core/object.html#FMax">FMax</a>, <a href="../core/object.html#FMin">FMin</a>, <a href="../core/object.html#FRand">FRand</a>, <a href="../core/object.html#GetAxes">GetAxes</a>, <a href="../core/object.html#GetEnum">GetEnum</a>, <a href="../core/object.html#GetPropertyText">GetPropertyText</a>, <a href="../core/object.html#GetStateName">GetStateName</a>, <a href="../core/object.html#GetToken">GetToken</a>, <a href="../core/object.html#GetUnAxes">GetUnAxes</a>, <a href="../core/object.html#GotoState">GotoState</a>, <a href="../core/object.html#InStr">InStr</a>, <a href="../core/object.html#Invert">Invert</a>, <a href="../core/object.html#IsA">IsA</a>, <a href="../core/object.html#IsInState">IsInState</a>, <a href="../core/object.html#Left">Left</a>, <a href="../core/object.html#Len">Len</a>, <a href="../core/object.html#Lerp">Lerp</a>, <a href="../core/object.html#Localize">Localize</a>, <a href="../core/object.html#Log">Log</a>, <a href="../core/object.html#Loge">Loge</a>, <a href="../core/object.html#Max">Max</a>, <a href="../core/object.html#Mid">Mid</a>, <a href="../core/object.html#Min">Min</a>, <a href="../core/object.html#MirrorVectorByNormal">MirrorVectorByNormal</a>, <a href="../core/object.html#Normal">Normal</a>, <a href="../core/object.html#Normalize">Normalize</a>, <a href="../core/object.html#OrthoRotation">OrthoRotation</a>, <a href="../core/object.html#Radians">Radians</a>, <a href="../core/object.html#Rand">Rand</a>, <a href="../core/object.html#RandRange">RandRange</a>, <a href="../core/object.html#ResetConfig">ResetConfig</a>, <a href="../core/object.html#Right">Right</a>, <a href="../core/object.html#RotRand">RotRand</a>, <a href="../core/object.html#SaveConfig">SaveConfig</a>, <a href="../core/object.html#SetPropertyText">SetPropertyText</a>, <a href="../core/object.html#Sin">Sin</a>, <a href="../core/object.html#Smerp">Smerp</a>, <a href="../core/object.html#Sqrt">Sqrt</a>, <a href="../core/object.html#Square">Square</a>, <a href="../core/object.html#StaticSaveConfig">StaticSaveConfig</a>, <a href="../core/object.html#Tan">Tan</a>, <a href="../core/object.html#VRand">VRand</a>, <a href="../core/object.html#VSize">VSize</a>, <a href="../core/object.html#VSize2D">VSize2D</a>, <a href="../core/object.html#Warn">Warn</a>, <a href="../core/object.html#^">^</a>, <a href="../core/object.html#^^">^^</a>, <a href="../core/object.html#|">|</a>, <a href="../core/object.html#||">||</a>, <a href="../core/object.html#~">~</a>, <a href="../core/object.html#~=">~=</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_AdminPassword" class="hidden"></a>AdminPassword <a href="../Source_runeserveradmin/runeserveradmin.html#46" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> AdminPassword;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AdminRealm" class="hidden"></a>AdminRealm <a href="../Source_runeserveradmin/runeserveradmin.html#44" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> AdminRealm;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AdminUsername" class="hidden"></a>AdminUsername <a href="../Source_runeserveradmin/runeserveradmin.html#45" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> AdminUsername;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CurrentConsoleLogPage" class="hidden"></a>CurrentConsoleLogPage <a href="../Source_runeserveradmin/runeserveradmin.html#23" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> CurrentConsoleLogPage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CurrentConsolePage" class="hidden"></a>CurrentConsolePage <a href="../Source_runeserveradmin/runeserveradmin.html#22" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> CurrentConsolePage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CurrentConsoleSendPage" class="hidden"></a>CurrentConsoleSendPage <a href="../Source_runeserveradmin/runeserveradmin.html#24" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> CurrentConsoleSendPage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CurrentGamePage" class="hidden"></a>CurrentGamePage <a href="../Source_runeserveradmin/runeserveradmin.html#21" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> CurrentGamePage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CurrentIndexPage" class="hidden"></a>CurrentIndexPage <a href="../Source_runeserveradmin/runeserveradmin.html#19" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> CurrentIndexPage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CurrentMenuPage" class="hidden"></a>CurrentMenuPage <a href="../Source_runeserveradmin/runeserveradmin.html#18" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> CurrentMenuPage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CurrentMutatorsPage" class="hidden"></a>CurrentMutatorsPage <a href="../Source_runeserveradmin/runeserveradmin.html#26" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> CurrentMutatorsPage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CurrentPage" class="hidden"></a>CurrentPage <a href="../Source_runeserveradmin/runeserveradmin.html#17" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> CurrentPage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CurrentPlayersPage" class="hidden"></a>CurrentPlayersPage <a href="../Source_runeserveradmin/runeserveradmin.html#20" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> CurrentPlayersPage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CurrentRestartPage" class="hidden"></a>CurrentRestartPage <a href="../Source_runeserveradmin/runeserveradmin.html#27" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> CurrentRestartPage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DefaultBG" class="hidden"></a>DefaultBG <a href="../Source_runeserveradmin/runeserveradmin.html#41" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> DefaultBG;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DefaultSendText" class="hidden"></a>DefaultSendText <a href="../Source_runeserveradmin/runeserveradmin.html#25" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> DefaultSendText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DefaultsIPPolicyPage" class="hidden"></a>DefaultsIPPolicyPage <a href="../Source_runeserveradmin/runeserveradmin.html#35" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> DefaultsIPPolicyPage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DefaultsMapsPage" class="hidden"></a>DefaultsMapsPage <a href="../Source_runeserveradmin/runeserveradmin.html#31" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> DefaultsMapsPage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DefaultsMenuPage" class="hidden"></a>DefaultsMenuPage <a href="../Source_runeserveradmin/runeserveradmin.html#30" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> DefaultsMenuPage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DefaultsPage" class="hidden"></a>DefaultsPage <a href="../Source_runeserveradmin/runeserveradmin.html#29" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> DefaultsPage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DefaultsRestartPage" class="hidden"></a>DefaultsRestartPage <a href="../Source_runeserveradmin/runeserveradmin.html#36" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> DefaultsRestartPage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DefaultsRulesPage" class="hidden"></a>DefaultsRulesPage <a href="../Source_runeserveradmin/runeserveradmin.html#32" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> DefaultsRulesPage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DefaultsServerPage" class="hidden"></a>DefaultsServerPage <a href="../Source_runeserveradmin/runeserveradmin.html#34" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> DefaultsServerPage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DefaultsSettingsPage" class="hidden"></a>DefaultsSettingsPage <a href="../Source_runeserveradmin/runeserveradmin.html#33" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> DefaultsSettingsPage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ExcludeMaps" class="hidden"></a>ExcludeMaps <a href="../Source_runeserveradmin/runeserveradmin.html#9" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../runeserveradmin/listitem.html" class="source">ListItem</a></span> ExcludeMaps;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ExcludeMutators" class="hidden"></a>ExcludeMutators <a href="../Source_runeserveradmin/runeserveradmin.html#12" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../runeserveradmin/listitem.html" class="source">ListItem</a></span> ExcludeMutators;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GameTypeList" class="hidden"></a>GameTypeList <a href="../Source_runeserveradmin/runeserveradmin.html#6" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../runeserveradmin/listitem.html" class="source">ListItem</a></span> GameTypeList;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HighlightedBG" class="hidden"></a>HighlightedBG <a href="../Source_runeserveradmin/runeserveradmin.html#42" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> HighlightedBG;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_IncludeMaps" class="hidden"></a>IncludeMaps <a href="../Source_runeserveradmin/runeserveradmin.html#8" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../runeserveradmin/listitem.html" class="source">ListItem</a></span> IncludeMaps;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_IncludeMutators" class="hidden"></a>IncludeMutators <a href="../Source_runeserveradmin/runeserveradmin.html#11" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../runeserveradmin/listitem.html" class="source">ListItem</a></span> IncludeMutators;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MenuPage" class="hidden"></a>MenuPage <a href="../Source_runeserveradmin/runeserveradmin.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> MenuPage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MessageUHTM" class="hidden"></a>MessageUHTM <a href="../Source_runeserveradmin/runeserveradmin.html#38" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> MessageUHTM;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RootPage" class="hidden"></a>RootPage <a href="../Source_runeserveradmin/runeserveradmin.html#15" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> RootPage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Spectator" class="hidden"></a>Spectator <a href="../Source_runeserveradmin/runeserveradmin.html#4" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../runeserveradmin/runeserveradminspectator.html" class="source">RuneServerAdminSpectator</a></span> <span class="source_type"><a href="../engine/spectator.html" class="source">Spectator</a></span>;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">RuneServerAdmin</h3>
+<h4><a name="_SpectatorType" class="hidden"></a>SpectatorType <a href="../Source_runeserveradmin/runeserveradmin.html#3" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runeserveradmin/runeserveradmin.html" class="source">RuneServerAdmin</a></span>) <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../runeserveradmin/runeserveradminspectator.html" class="source">RuneServerAdminSpectator</a></span>&gt; SpectatorType;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_ApplyMapList-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ApplyMapList <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#192" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ApplyMapList ( <span class="source_keyword2">out</span> <span class="source_type"><a href="../runeserveradmin/listitem.html" class="source">ListItem</a></span> ExcludeMaps, <span class="source_keyword2">out</span> <span class="source_type"><a href="../runeserveradmin/listitem.html" class="source">ListItem</a></span> IncludeMaps, <span class="source_keyword">String</span> GameType, <span class="source_keyword">String</span> MapListType) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GenerateGameTypeOptions-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GenerateGameTypeOptions <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#318" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">String</span> GenerateGameTypeOptions ( <span class="source_keyword">String</span> CurrentGameType) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GenerateMapListOptions-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GenerateMapListOptions <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#335" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">String</span> GenerateMapListOptions ( <span class="source_keyword">String</span> GameType, <span class="source_keyword">String</span> MapListType) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GenerateMapListSelect-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GenerateMapListSelect <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#369" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">String</span> GenerateMapListSelect ( <span class="source_type"><a href="../runeserveradmin/listitem.html" class="source">ListItem</a></span> <span class="source_type"><a href="../engine/maplist.html" class="source">MapList</a></span>, <span class="source_keyword2">optional</span> <span class="source_keyword">string</span> SelectedItem) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GenerateMutatorListSelect-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GenerateMutatorListSelect <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#159" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">String</span> GenerateMutatorListSelect ( <span class="source_type"><a href="../runeserveradmin/listitem.html" class="source">ListItem</a></span> MutatorList) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Init-" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> Init <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#48" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span>  <span class="source_keyword2">Init</span> ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LoadGameTypes-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> LoadGameTypes <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#62" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  LoadGameTypes ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LoadMutators-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> LoadMutators <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#93" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  LoadMutators ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PadLeft-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PadLeft <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#180" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">String</span> PadLeft ( <span class="source_keyword">String</span> InStr, <span class="source_keyword">int</span> Width, <span class="source_keyword">String</span> PadStr) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Query-" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> Query <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#389" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span>  Query ( <span class="source_type"><a href="../uweb/webrequest.html" class="source">WebRequest</a></span> Request, <span class="source_type"><a href="../uweb/webresponse.html" class="source">WebResponse</a></span> Response) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_QueryCurrent-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> QueryCurrent <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#483" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  QueryCurrent ( <span class="source_type"><a href="../uweb/webrequest.html" class="source">WebRequest</a></span> Request, <span class="source_type"><a href="../uweb/webresponse.html" class="source">WebResponse</a></span> Response) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_QueryCurrentConsole-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> QueryCurrentConsole <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#692" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  QueryCurrentConsole ( <span class="source_type"><a href="../uweb/webrequest.html" class="source">WebRequest</a></span> Request, <span class="source_type"><a href="../uweb/webresponse.html" class="source">WebResponse</a></span> Response) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_QueryCurrentConsoleLog-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> QueryCurrentConsoleLog <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#714" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  QueryCurrentConsoleLog ( <span class="source_type"><a href="../uweb/webrequest.html" class="source">WebRequest</a></span> Request, <span class="source_type"><a href="../uweb/webresponse.html" class="source">WebResponse</a></span> Response) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_QueryCurrentConsoleSend-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> QueryCurrentConsoleSend <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#728" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  QueryCurrentConsoleSend ( <span class="source_type"><a href="../uweb/webrequest.html" class="source">WebRequest</a></span> Request, <span class="source_type"><a href="../uweb/webresponse.html" class="source">WebResponse</a></span> Response) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_QueryCurrentGame-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> QueryCurrentGame <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#642" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  QueryCurrentGame ( <span class="source_type"><a href="../uweb/webrequest.html" class="source">WebRequest</a></span> Request, <span class="source_type"><a href="../uweb/webresponse.html" class="source">WebResponse</a></span> Response) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_QueryCurrentMenu-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> QueryCurrentMenu <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#497" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  QueryCurrentMenu ( <span class="source_type"><a href="../uweb/webrequest.html" class="source">WebRequest</a></span> Request, <span class="source_type"><a href="../uweb/webresponse.html" class="source">WebResponse</a></span> Response) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_QueryCurrentMutators-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> QueryCurrentMutators <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#743" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  QueryCurrentMutators ( <span class="source_type"><a href="../uweb/webrequest.html" class="source">WebRequest</a></span> Request, <span class="source_type"><a href="../uweb/webresponse.html" class="source">WebResponse</a></span> Response) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_QueryCurrentPlayers-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> QueryCurrentPlayers <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#536" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  QueryCurrentPlayers ( <span class="source_type"><a href="../uweb/webrequest.html" class="source">WebRequest</a></span> Request, <span class="source_type"><a href="../uweb/webresponse.html" class="source">WebResponse</a></span> Response) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_QueryDefaults-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> QueryDefaults <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#829" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  QueryDefaults ( <span class="source_type"><a href="../uweb/webrequest.html" class="source">WebRequest</a></span> Request, <span class="source_type"><a href="../uweb/webresponse.html" class="source">WebResponse</a></span> Response) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_QueryDefaultsIPPolicy-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> QueryDefaultsIPPolicy <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#1260" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  QueryDefaultsIPPolicy ( <span class="source_type"><a href="../uweb/webrequest.html" class="source">WebRequest</a></span> Request, <span class="source_type"><a href="../uweb/webresponse.html" class="source">WebResponse</a></span> Response) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_QueryDefaultsMaps-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> QueryDefaultsMaps <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#914" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  QueryDefaultsMaps ( <span class="source_type"><a href="../uweb/webrequest.html" class="source">WebRequest</a></span> Request, <span class="source_type"><a href="../uweb/webresponse.html" class="source">WebResponse</a></span> Response) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_QueryDefaultsMenu-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> QueryDefaultsMenu <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#846" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  QueryDefaultsMenu ( <span class="source_type"><a href="../uweb/webrequest.html" class="source">WebRequest</a></span> Request, <span class="source_type"><a href="../uweb/webresponse.html" class="source">WebResponse</a></span> Response) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_QueryDefaultsRules-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> QueryDefaultsRules <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#1062" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  QueryDefaultsRules ( <span class="source_type"><a href="../uweb/webrequest.html" class="source">WebRequest</a></span> Request, <span class="source_type"><a href="../uweb/webresponse.html" class="source">WebResponse</a></span> Response) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_QueryDefaultsServer-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> QueryDefaultsServer <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#1190" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  QueryDefaultsServer ( <span class="source_type"><a href="../uweb/webrequest.html" class="source">WebRequest</a></span> Request, <span class="source_type"><a href="../uweb/webresponse.html" class="source">WebResponse</a></span> Response) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_QueryDefaultsSettings-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> QueryDefaultsSettings <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#1142" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  QueryDefaultsSettings ( <span class="source_type"><a href="../uweb/webrequest.html" class="source">WebRequest</a></span> Request, <span class="source_type"><a href="../uweb/webresponse.html" class="source">WebResponse</a></span> Response) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_QueryMenu-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> QueryMenu <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#460" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  QueryMenu ( <span class="source_type"><a href="../uweb/webrequest.html" class="source">WebRequest</a></span> Request, <span class="source_type"><a href="../uweb/webresponse.html" class="source">WebResponse</a></span> Response) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_QueryRestartPage-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> QueryRestartPage <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#735" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  QueryRestartPage ( <span class="source_type"><a href="../uweb/webrequest.html" class="source">WebRequest</a></span> Request, <span class="source_type"><a href="../uweb/webresponse.html" class="source">WebResponse</a></span> Response) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_QueryRoot-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> QueryRoot <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#447" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  QueryRoot ( <span class="source_type"><a href="../uweb/webrequest.html" class="source">WebRequest</a></span> Request, <span class="source_type"><a href="../uweb/webresponse.html" class="source">WebResponse</a></span> Response) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ReloadExcludeMaps-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ReloadExcludeMaps <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#227" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ReloadExcludeMaps ( <span class="source_keyword2">out</span> <span class="source_type"><a href="../runeserveradmin/listitem.html" class="source">ListItem</a></span> ExcludeMaps, <span class="source_keyword">String</span> GameType) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ReloadIncludeMaps-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ReloadIncludeMaps <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#261" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ReloadIncludeMaps ( <span class="source_keyword2">out</span> <span class="source_type"><a href="../runeserveradmin/listitem.html" class="source">ListItem</a></span> ExcludeMaps, <span class="source_keyword2">out</span> <span class="source_type"><a href="../runeserveradmin/listitem.html" class="source">ListItem</a></span> IncludeMaps, <span class="source_keyword">String</span> GameType) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_UpdateDefaultMaps-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> UpdateDefaultMaps <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#297" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  UpdateDefaultMaps ( <span class="source_keyword">String</span> GameType, <span class="source_type"><a href="../runeserveradmin/listitem.html" class="source">ListItem</a></span> TempItem) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_UsedMutators-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> UsedMutators <span class="function_state"></span> <a href="../Source_runeserveradmin/runeserveradmin.html#142" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">String</span> UsedMutators ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     SpectatorType=<span class="source_keyword">Class</span><span class="source_name">'RuneServerAdmin.RuneServerAdminSpectator'</span>
+     MenuPage=<span class="source_string">"menu"</span>
+     RootPage=<span class="source_string">"root"</span>
+     CurrentPage=<span class="source_string">"current"</span>
+     CurrentMenuPage=<span class="source_string">"current_menu"</span>
+     CurrentIndexPage=<span class="source_string">"current_index"</span>
+     CurrentPlayersPage=<span class="source_string">"current_players"</span>
+     CurrentGamePage=<span class="source_string">"current_game"</span>
+     CurrentConsolePage=<span class="source_string">"current_console"</span>
+     CurrentConsoleLogPage=<span class="source_string">"current_console_log"</span>
+     CurrentConsoleSendPage=<span class="source_string">"current_console_send"</span>
+     DefaultSendText=<span class="source_string">"say "</span>
+     CurrentMutatorsPage=<span class="source_string">"current_mutators"</span>
+     CurrentRestartPage=<span class="source_string">"current_restart"</span>
+     DefaultsPage=<span class="source_string">"defaults"</span>
+     DefaultsMenuPage=<span class="source_string">"defaults_menu"</span>
+     DefaultsMapsPage=<span class="source_string">"defaults_maps"</span>
+     DefaultsRulesPage=<span class="source_string">"defaults_rules"</span>
+     DefaultsSettingsPage=<span class="source_string">"defaults_settings"</span>
+     DefaultsServerPage=<span class="source_string">"defaults_server"</span>
+     DefaultsIPPolicyPage=<span class="source_string">"defaults_ippolicy"</span>
+     DefaultsRestartPage=<span class="source_string">"defaults_restart"</span>
+     MessageUHTM=<span class="source_string">"message.uhtm"</span>
+     DefaultBG=<span class="source_string">"#aaaaaa"</span>
+     HighlightedBG=<span class="source_string">"#ffffff"</span>
+     AdminRealm=<span class="source_string">"Rune Remote Admin Server"</span>
+     AdminUsername=<span class="source_string">"admin"</span>
+     AdminPassword=<span class="source_string">"admin"</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runeserveradmin/runeserveradmin-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runeserveradmin/runeserveradmin.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#RuneServerAdmin">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runeserveradmin/runeimageserver.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runeserveradmin/runeserveradminspectator.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:27:22.057 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

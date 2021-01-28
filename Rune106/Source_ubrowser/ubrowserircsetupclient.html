@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - Source: UBrowser.UBrowserIRCSetupClient</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../ubrowser/ubrowser-overview.html">Package</a></td>
+	<td class="header"><a href="../ubrowser/ubrowserircsetupclient.html">Class</a></td>
+	<td class="header_hilight">Source</td>
+	<td class="header"><a class="header" href="../classtree.html#UBrowserIRCSetupClient">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../Source_ubrowser/ubrowserircprivpage.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../Source_ubrowser/ubrowserircsystemmenu.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#Source_ubrowser/ubrowserircsetupclient.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../ubrowser/ubrowser-overview.html">UBrowser</a>.<a href="../ubrowser/ubrowserircsetupclient.html">UBrowserIRCSetupClient</a></h1>
+<br />
+<div class="source"><table class="source"><tr><td class="source_lineno"><span class="source_lineno">00001<br />00002<br />00003<br />00004<br />00005<br />00006<br />00007<br />00008<br />00009<br />00010<br />00011<br />00012<br />00013<br />00014<br />00015<br />00016<br />00017<br />00018<br />00019<br />00020<br />
+00021<br />00022<br />00023<br />00024<br />00025<br />00026<br />00027<br />00028<br />00029<br />00030<br />00031<br />00032<br />00033<br />00034<br />00035<br />00036<br />00037<br />00038<br />00039<br />00040<br />
+00041<br />00042<br />00043<br />00044<br />00045<br />00046<br />00047<br />00048<br />00049<br />00050<br />00051<br />00052<br />00053<br />00054<br />00055<br />00056<br />00057<br />00058<br />00059<br />00060<br />
+00061<br />00062<br />00063<br />00064<br />00065<br />00066<br />00067<br />00068<br />00069<br />00070<br />00071<br />00072<br />00073<br />00074<br />00075<br />00076<br />00077<br />00078<br />00079<br />00080<br />
+00081<br />00082<br />00083<br />00084<br />00085<br />00086<br />00087<br />00088<br />00089<br />00090<br />00091<br />00092<br />00093<br />00094<br />00095<br />00096<br />00097<br />00098<br />00099<br />00100<br />
+00101<br />00102<br />00103<br />00104<br />00105<br />00106<br />00107<br />00108<br />00109<br />00110<br />00111<br />00112<br />00113<br />00114<br />00115<br />00116<br />00117<br />00118<br />00119<br />00120<br />
+00121<br />00122<br />00123<br />00124<br />00125<br />00126<br />00127<br />00128<br />00129<br />00130<br />00131<br />00132<br />00133<br />00134<br />00135<br />00136<br />00137<br />00138<br />00139<br />00140<br />
+00141<br />00142<br />00143<br />00144<br />00145<br />00146<br />00147<br />00148<br />00149<br />00150<br />00151<br />00152<br />00153<br />00154<br />00155<br />00156<br />00157<br />00158<br />00159<br />00160<br />
+00161<br />00162<br />00163<br />00164<br />00165<br />00166<br />00167<br />00168<br />00169<br />00170<br />00171<br />00172<br />00173<br />00174<br />00175<br />00176<br />00177<br />00178<br />00179<br />00180<br />
+00181<br />00182<br />00183<br />00184<br />00185<br />00186<br />00187<br />00188<br />00189<br />00190<br />00191<br />00192<br />00193<br />00194<br />00195<br />00196<br />00197<br />00198<br />00199<br />00200<br />
+00201<br />00202<br />00203<br />00204<br />00205<br />00206<br />00207<br />00208<br />00209<br />00210<br />00211</span></td>
+<td class="source"><pre class="source"><a name="0"></a><span class="source_keyword">class</span> <span class="source_type"><a href="../ubrowser/ubrowserircsetupclient.html" class="source">UBrowserIRCSetupClient</a></span> <span class="source_keyword">expands</span> <span class="source_type"><a href="../uwindow/uwindowdialogclientwindow.html" class="source">UWindowDialogClientWindow</a></span>;
+<a name="2"></a>
+<a name="3"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowcombocontrol.html" class="source">UWindowComboControl</a></span> ServerCombo;
+<a name="4"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowcombocontrol.html" class="source">UWindowComboControl</a></span> ChannelCombo;
+<a name="5"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowsmallbutton.html" class="source">UWindowSmallButton</a></span> ConnectButton;
+<a name="6"></a>
+<a name="7"></a><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span>       IRCServerHistory[<span class="source_int">10</span>];
+<a name="8"></a><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span>       IRCChannelHistory[<span class="source_int">10</span>];
+<a name="9"></a><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">bool</span>         bHasReadWarning;
+<a name="10"></a>
+<a name="11"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span>    ServerText;
+<a name="12"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span>    ChannelText;
+<a name="13"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span>    ServerHelp;
+<a name="14"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span>    ChannelHelp;
+<a name="15"></a>
+<a name="16"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span>    ConnectText;
+<a name="17"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span>    DisconnectText;
+<a name="18"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span>    ConnectHelp;
+<a name="19"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span>    DisconnectHelp;
+<a name="20"></a>
+<a name="21"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span>    WarningText;
+<a name="22"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span>    WarningTitle;
+<a name="23"></a>
+<a name="24"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowmessagebox.html" class="source">UWindowMessageBox</a></span> ConfirmJoin;
+<a name="25"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../ubrowser/ubrowserircsystempage.html" class="source">UBrowserIRCSystemPage</a></span> SystemPage;
+<a name="26"></a>
+<a name="27"></a><span class="source_keyword">function</span> Created()
+<a name="28"></a>{
+<a name="29"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../core/object.html#Color" class="source">Color</a></span> TC;
+<a name="30"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> <span class="source_type">i</span>;
+<a name="31"></a>
+<a name="32"></a>    <span class="source_keyword">Super</span>.Created();
+<a name="33"></a>
+<a name="34"></a>    SystemPage = <span class="source_type"><a href="../ubrowser/ubrowserircsystempage.html" class="source">UBrowserIRCSystemPage</a></span>(OwnerWindow);
+<a name="35"></a>
+<a name="36"></a>    ServerCombo = <span class="source_type"><a href="../uwindow/uwindowcombocontrol.html" class="source">UWindowComboControl</a></span>(CreateControl(<span class="source_keyword">class</span><span class="source_name">'UWindowComboControl'</span>, <span class="source_int">10</span>, <span class="source_int">5</span>, <span class="source_int">250</span>, <span class="source_int">1</span>));
+<a name="37"></a>    ServerCombo.EditBoxWidth = <span class="source_int">160</span>;
+<a name="38"></a>    ServerCombo.SetText(ServerText);
+<a name="39"></a>    ServerCombo.SetHelpText(ServerHelp);
+<a name="40"></a>    ServerCombo.SetFont(F_Normal);
+<a name="41"></a>    ServerCombo.SetEditable(<span class="source_keyword">True</span>);
+<a name="42"></a>    <span class="source_keyword">for</span> (<span class="source_type">i</span>=<span class="source_int">0</span>; <span class="source_type">i</span>&lt;<span class="source_int">10</span>; <span class="source_type">i</span>++)
+<a name="43"></a>        <span class="source_keyword">if</span> (IRCServerHistory[<span class="source_type">i</span>] != <span class="source_string">""</span>)
+<a name="44"></a>            ServerCombo.AddItem(IRCServerHistory[<span class="source_type">i</span>]);
+<a name="45"></a>
+<a name="46"></a>    TC.R = <span class="source_int">255</span>;
+<a name="47"></a>    TC.G = <span class="source_int">255</span>;
+<a name="48"></a>    TC.<span class="source_type">B</span> = <span class="source_int">255</span>;
+<a name="49"></a>    ServerCombo.SetTextColor(TC);
+<a name="50"></a>    ServerCombo.SetSelectedIndex(<span class="source_int">0</span>);
+<a name="51"></a>
+<a name="52"></a>    ChannelCombo = <span class="source_type"><a href="../uwindow/uwindowcombocontrol.html" class="source">UWindowComboControl</a></span>(CreateControl(<span class="source_keyword">class</span><span class="source_name">'UWindowComboControl'</span>, <span class="source_int">10</span>, <span class="source_int">25</span>, <span class="source_int">180</span>, <span class="source_int">1</span>));
+<a name="53"></a>    ChannelCombo.EditBoxWidth = <span class="source_int">90</span>;
+<a name="54"></a>    ChannelCombo.SetText(ChannelText);
+<a name="55"></a>    ChannelCombo.SetHelpText(ChannelHelp);
+<a name="56"></a>    ChannelCombo.SetFont(F_Normal);
+<a name="57"></a>    ChannelCombo.SetEditable(<span class="source_keyword">True</span>);
+<a name="58"></a>    <span class="source_keyword">for</span> (<span class="source_type">i</span>=<span class="source_int">0</span>; <span class="source_type">i</span>&lt;<span class="source_int">10</span>; <span class="source_type">i</span>++)
+<a name="59"></a>        <span class="source_keyword">if</span> (IRCChannelHistory[<span class="source_type">i</span>] != <span class="source_string">""</span>)
+<a name="60"></a>            ChannelCombo.AddItem(IRCChannelHistory[<span class="source_type">i</span>]);
+<a name="61"></a>    ChannelCombo.SetSelectedIndex(<span class="source_int">0</span>);
+<a name="62"></a>    ChannelCombo.SetTextColor(TC);
+<a name="63"></a>
+<a name="64"></a>    ConnectButton = <span class="source_type"><a href="../uwindow/uwindowsmallbutton.html" class="source">UWindowSmallButton</a></span>(CreateControl(<span class="source_keyword">class</span><span class="source_name">'UWindowSmallButton'</span>, <span class="source_int">196</span>, <span class="source_int">26</span>, <span class="source_int">64</span>, <span class="source_int">16</span>));
+<a name="65"></a>    ConnectButton.bIgnoreLDoubleclick = <span class="source_keyword">True</span>;
+<a name="66"></a>}
+<a name="67"></a>
+<a name="68"></a><span class="source_keyword">function</span> BeforePaint(<span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type">C</span>, <span class="source_keyword">float</span> X, <span class="source_keyword">float</span> <span class="source_type">Y</span>)
+<a name="69"></a>{
+<a name="70"></a>    <span class="source_keyword">Super</span>.BeforePaint(<span class="source_type">C</span>, X, <span class="source_type">Y</span>);
+<a name="71"></a>
+<a name="72"></a>    <span class="source_keyword">if</span>(SystemPage.bConnected)
+<a name="73"></a>    {
+<a name="74"></a>        ConnectButton.SetText(DisconnectText);
+<a name="75"></a>        ConnectButton.SetHelpText(DisconnectHelp);
+<a name="76"></a>    }
+<a name="77"></a>    <span class="source_keyword">else</span>
+<a name="78"></a>    {
+<a name="79"></a>        ConnectButton.SetText(ConnectText);
+<a name="80"></a>        ConnectButton.SetHelpText(ConnectHelp);
+<a name="81"></a>    }
+<a name="82"></a>
+<a name="83"></a>    ConnectButton.AutoWidth(<span class="source_type">C</span>);
+<a name="84"></a>
+<a name="85"></a>}
+<a name="86"></a>
+<a name="87"></a><span class="source_keyword">function</span> Paint(<span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type">C</span>, <span class="source_keyword">float</span> X, <span class="source_keyword">float</span> <span class="source_type">Y</span>)
+<a name="88"></a>{
+<a name="89"></a>    DrawStretchedTexture(<span class="source_type">C</span>, <span class="source_int">0</span>, <span class="source_int">0</span>, WinWidth, WinHeight, <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'BlackTexture'</span>);
+<a name="90"></a>}
+<a name="91"></a>
+<a name="92"></a><span class="source_keyword">function</span> DoJoin()
+<a name="93"></a>{
+<a name="94"></a>    SystemPage.Server = ServerCombo.GetValue();
+<a name="95"></a>    SystemPage.DefaultChannel = ChannelCombo.GetValue();
+<a name="96"></a>    SystemPage.Connect();
+<a name="97"></a>
+<a name="98"></a>    SaveServerCombo();
+<a name="99"></a>    SaveChannelCombo();
+<a name="100"></a>    SaveConfig();
+<a name="101"></a>}
+<a name="102"></a>
+<a name="103"></a><span class="source_keyword">function</span> MessageBoxDone(<span class="source_type"><a href="../uwindow/uwindowmessagebox.html" class="source">UWindowMessageBox</a></span> W, <span class="source_type"><a href="../uwindow/uwindowbase.html#MessageBoxResult" class="source">MessageBoxResult</a></span> <span class="source_type">Result</span>)
+<a name="104"></a>{
+<a name="105"></a>    <span class="source_keyword">if</span>(W == ConfirmJoin && <span class="source_type">Result</span> == MR_Yes)
+<a name="106"></a>    {
+<a name="107"></a>        bHasReadWarning = <span class="source_keyword">True</span>;     
+<a name="108"></a>        DoJoin();
+<a name="109"></a>    }
+<a name="110"></a>}
+<a name="111"></a>
+<a name="112"></a><span class="source_keyword">function</span> Notify(<span class="source_type"><a href="../uwindow/uwindowdialogcontrol.html" class="source">UWindowDialogControl</a></span> <span class="source_type">C</span>, <span class="source_keyword">byte</span> E)
+<a name="113"></a>{
+<a name="114"></a>    <span class="source_keyword">Super</span>.Notify(<span class="source_type">C</span>, E);
+<a name="115"></a>
+<a name="116"></a>    <span class="source_keyword">if</span>(<span class="source_type">C</span> == ConnectButton && E == DE_Click)
+<a name="117"></a>    {
+<a name="118"></a>        <span class="source_keyword">if</span>(SystemPage.bConnected)
+<a name="119"></a>            SystemPage.Disconnect();
+<a name="120"></a>        <span class="source_keyword">else</span>
+<a name="121"></a>        {
+<a name="122"></a>            <span class="source_keyword">if</span>(bHasReadWarning)
+<a name="123"></a>                DoJoin();
+<a name="124"></a>            <span class="source_keyword">else</span>
+<a name="125"></a>                ConfirmJoin = MessageBox(WarningTitle, WarningText, MB_YesNo, MR_No);
+<a name="126"></a>        }
+<a name="127"></a>    }
+<a name="128"></a>
+<a name="129"></a>    <span class="source_keyword">if</span>(<span class="source_type">C</span> == ChannelCombo && E == DE_EnterPressed)
+<a name="130"></a>    {
+<a name="131"></a>        SystemPage.JoinChannel(ChannelCombo.GetValue());
+<a name="132"></a>        SaveChannelCombo();
+<a name="133"></a>        SaveConfig();
+<a name="134"></a>    }
+<a name="135"></a>}
+<a name="136"></a>
+<a name="137"></a><span class="source_keyword">function</span> NewIRCServer(<span class="source_keyword">string</span> <span class="source_type">S</span>)
+<a name="138"></a>{
+<a name="139"></a>    <span class="source_keyword">if</span>(ServerCombo.List.Items.Count() == <span class="source_int">1</span> && ServerCombo.GetValue() != <span class="source_type">S</span>)
+<a name="140"></a>    {
+<a name="141"></a>        Log(<span class="source_string">"Received new IRC server from UpdateServer: "</span>$<span class="source_type">S</span>);
+<a name="142"></a>        ServerCombo.Clear();
+<a name="143"></a>        ServerCombo.AddItem(<span class="source_type">S</span>);
+<a name="144"></a>        ServerCombo.SetSelectedIndex(<span class="source_int">0</span>);
+<a name="145"></a>        SaveServerCombo();
+<a name="146"></a>        SaveConfig();
+<a name="147"></a>    }
+<a name="148"></a>}
+<a name="149"></a>
+<a name="150"></a><span class="source_keyword">function</span> SaveServerCombo()
+<a name="151"></a>{
+<a name="152"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../uwindow/uwindowcombolistitem.html" class="source">UWindowComboListItem</a></span> <span class="source_type">Item</span>;
+<a name="153"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> <span class="source_type">i</span>;
+<a name="154"></a>
+<a name="155"></a>    ServerCombo.RemoveItem(ServerCombo.FindItemIndex(ServerCombo.GetValue()));
+<a name="156"></a>    ServerCombo.InsertItem(ServerCombo.GetValue());
+<a name="157"></a>    <span class="source_keyword">while</span>(ServerCombo.List.Items.Count() &gt; <span class="source_int">10</span>)
+<a name="158"></a>        ServerCombo.List.Items.Last.Remove();
+<a name="159"></a>
+<a name="160"></a>    <span class="source_type">Item</span> = <span class="source_type"><a href="../uwindow/uwindowcombolistitem.html" class="source">UWindowComboListItem</a></span>(ServerCombo.List.Items.Next);
+<a name="161"></a>    <span class="source_keyword">for</span> (<span class="source_type">i</span>=<span class="source_int">0</span>; <span class="source_type">i</span>&lt;<span class="source_int">10</span>; <span class="source_type">i</span>++)
+<a name="162"></a>    {
+<a name="163"></a>        <span class="source_keyword">if</span>(<span class="source_type">Item</span> != <span class="source_keyword">None</span>)
+<a name="164"></a>        {
+<a name="165"></a>            IRCServerHistory[<span class="source_type">i</span>] = <span class="source_type">Item</span>.<span class="source_type">Value</span>;
+<a name="166"></a>            <span class="source_type">Item</span> = <span class="source_type"><a href="../uwindow/uwindowcombolistitem.html" class="source">UWindowComboListItem</a></span>(<span class="source_type">Item</span>.Next);
+<a name="167"></a>        }
+<a name="168"></a>        <span class="source_keyword">else</span>
+<a name="169"></a>            IRCServerHistory[<span class="source_type">i</span>] = <span class="source_string">""</span>;
+<a name="170"></a>    }           
+<a name="171"></a>}
+<a name="172"></a>
+<a name="173"></a><span class="source_keyword">function</span> SaveChannelCombo()
+<a name="174"></a>{
+<a name="175"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../uwindow/uwindowcombolistitem.html" class="source">UWindowComboListItem</a></span> <span class="source_type">Item</span>;
+<a name="176"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> <span class="source_type">i</span>;
+<a name="177"></a>
+<a name="178"></a>    ChannelCombo.RemoveItem(ChannelCombo.FindItemIndex(ChannelCombo.GetValue()));
+<a name="179"></a>    ChannelCombo.InsertItem(ChannelCombo.GetValue());
+<a name="180"></a>    <span class="source_keyword">while</span>(ChannelCombo.List.Items.Count() &gt; <span class="source_int">10</span>)
+<a name="181"></a>        ChannelCombo.List.Items.Last.Remove();
+<a name="182"></a>
+<a name="183"></a>    <span class="source_type">Item</span> = <span class="source_type"><a href="../uwindow/uwindowcombolistitem.html" class="source">UWindowComboListItem</a></span>(ChannelCombo.List.Items.Next);
+<a name="184"></a>    <span class="source_keyword">for</span> (<span class="source_type">i</span>=<span class="source_int">0</span>; <span class="source_type">i</span>&lt;<span class="source_int">10</span>; <span class="source_type">i</span>++)
+<a name="185"></a>    {
+<a name="186"></a>        <span class="source_keyword">if</span>(<span class="source_type">Item</span> != <span class="source_keyword">None</span>)
+<a name="187"></a>        {
+<a name="188"></a>            IRCChannelHistory[<span class="source_type">i</span>] = <span class="source_type">Item</span>.<span class="source_type">Value</span>;
+<a name="189"></a>            <span class="source_type">Item</span> = <span class="source_type"><a href="../uwindow/uwindowcombolistitem.html" class="source">UWindowComboListItem</a></span>(<span class="source_type">Item</span>.Next);
+<a name="190"></a>        }
+<a name="191"></a>        <span class="source_keyword">else</span>
+<a name="192"></a>            IRCChannelHistory[<span class="source_type">i</span>] = <span class="source_string">""</span>;
+<a name="193"></a>    }           
+<a name="194"></a>}
+<a name="195"></a>
+<a name="196"></a><span class="source_keyword">defaultproperties</span>
+<a name="197"></a>{
+<a name="198"></a>     IRCServerHistory(<span class="source_int">0</span>)=<span class="source_string">"irc.gameslink.net"</span>
+<a name="199"></a>     bHasReadWarning=<span class="source_keyword">True</span>
+<a name="200"></a>     ServerText=<span class="source_string">"IRC Server"</span>
+<a name="201"></a>     ChannelText=<span class="source_string">"Default Channel"</span>
+<a name="202"></a>     ServerHelp=<span class="source_string">"Choose an IRC server from the list or type in your own IRC server name or IP address."</span>
+<a name="203"></a>     ChannelHelp=<span class="source_string">"Choose a default channel to join once the server has connected, or type in your own channel name."</span>
+<a name="204"></a>     ConnectText=<span class="source_string">"Connect"</span>
+<a name="205"></a>     DisconnectText=<span class="source_string">"Logoff"</span>
+<a name="206"></a>     ConnectHelp=<span class="source_string">"Connect to the IRC chat server."</span>
+<a name="207"></a>     DisconnectHelp=<span class="source_string">"Disconnect from the IRC chat server."</span>
+<a name="208"></a>     WarningText=<span class="source_string">"The Chat facility will connect you to the Internet Relay Chat (IRC) network.\n\nEpic Games is not responsible for the content of any channels in IRC. You enter these channels at your own risk.\n\nAre you sure you still want to connect?"</span>
+<a name="209"></a>     WarningTitle=<span class="source_string">"Warning"</span>
+<a name="210"></a>}
+<a name="211"></a></pre></td></tr></table></div>
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../ubrowser/ubrowser-overview.html">Package</a></td>
+	<td class="header"><a href="../ubrowser/ubrowserircsetupclient.html">Class</a></td>
+	<td class="header_hilight">Source</td>
+	<td class="header"><a class="header" href="../classtree.html#UBrowserIRCSetupClient">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../Source_ubrowser/ubrowserircprivpage.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../Source_ubrowser/ubrowserircsystemmenu.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Class file time: Thu 28/1/2021 11:08:46.000 - Creation time: Thu 28/1/2021 11:27:53.650 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - RuneI.SnowBeastChained</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/snowbeastchained.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#SnowBeastChained">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/snowbeastboss.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/snowbeastchainedcarcass.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#runei/snowbeastchained.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../runei/runei-overview.html">RuneI</a>.SnowBeastChained</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../runei/snowbeast.html">SnowBeast</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a>
+   |   
+   +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/pawn.html">Pawn</a>
+      |   
+      +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/scriptpawn.html">ScriptPawn</a>
+         |   
+         +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/snowbeast.html">SnowBeast</a>
+            |   
+            +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/snowbeastchained.html">SnowBeastChained</a>
+</pre>
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/snowbeast.html">SnowBeast</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/snowbeast.html#bAngry">bAngry</a>, <a href="../runei/snowbeast.html#bBiting">bBiting</a>, <a href="../runei/snowbeast.html#bLunging">bLunging</a>, <a href="../runei/snowbeast.html#HowlingSound">HowlingSound</a>, <a href="../runei/snowbeast.html#Jaws">Jaws</a>, <a href="../runei/snowbeast.html#MaxBashThrust">MaxBashThrust</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/scriptpawn.html">ScriptPawn</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/scriptpawn.html#AcquireSound">AcquireSound</a>, <a href="../runei/scriptpawn.html#AlertOrders">AlertOrders</a>, <a href="../runei/scriptpawn.html#AlertOrdersTag">AlertOrdersTag</a>, <a href="../runei/scriptpawn.html#Ally">Ally</a>, <a href="../runei/scriptpawn.html#AllyMaxTime">AllyMaxTime</a>, <a href="../runei/scriptpawn.html#AllyTime">AllyTime</a>, <a href="../runei/scriptpawn.html#AmbientFightSoundDelay">AmbientFightSoundDelay</a>, <a href="../runei/scriptpawn.html#AmbientFightSounds[3]">AmbientFightSounds[3]</a>, <a href="../runei/scriptpawn.html#AmbientWaitSoundDelay">AmbientWaitSoundDelay</a>, <a href="../runei/scriptpawn.html#AmbientWaitSounds[3]">AmbientWaitSounds[3]</a>, <a href="../runei/scriptpawn.html#AttackAction">AttackAction</a>, <a href="../runei/scriptpawn.html#AttackOrders">AttackOrders</a>, <a href="../runei/scriptpawn.html#A_PullUp">A_PullUp</a>, <a href="../runei/scriptpawn.html#A_StepUp">A_StepUp</a>, <a href="../runei/scriptpawn.html#bAlerted">bAlerted</a>, <a href="../runei/scriptpawn.html#bBurnable">bBurnable</a>, <a href="../runei/scriptpawn.html#bCanDefend">bCanDefend</a>, <a href="../runei/scriptpawn.html#bCanSwing">bCanSwing</a>, <a href="../runei/scriptpawn.html#bDisableCheckForEnemies">bDisableCheckForEnemies</a>, <a href="../runei/scriptpawn.html#bDodgeAfterAttack">bDodgeAfterAttack</a>, <a href="../runei/scriptpawn.html#bFallAtStartup">bFallAtStartup</a>, <a href="../runei/scriptpawn.html#bFrustrated">bFrustrated</a>, <a href="../runei/scriptpawn.html#bGlider">bGlider</a>, <a href="../runei/scriptpawn.html#bIsBoss">bIsBoss</a>, <a href="../runei/scriptpawn.html#BlockChance">BlockChance</a>, <a href="../runei/scriptpawn.html#bLungeAttack">bLungeAttack</a>, <a href="../runei/scriptpawn.html#bMoveWhenUnreachable">bMoveWhenUnreachable</a>, <a href="../runei/scriptpawn.html#bPaceAttack">bPaceAttack</a>, <a href="../runei/scriptpawn.html#bQuiet">bQuiet</a>, <a href="../runei/scriptpawn.html#BreathSound">BreathSound</a>, <a href="../runei/scriptpawn.html#bRoamHome">bRoamHome</a>, <a href="../runei/scriptpawn.html#bStatueCanWake">bStatueCanWake</a>, <a href="../runei/scriptpawn.html#bStatueDestructible">bStatueDestructible</a>, <a href="../runei/scriptpawn.html#bTaskLocked">bTaskLocked</a>, <a href="../runei/scriptpawn.html#bTeamLeader">bTeamLeader</a>, <a href="../runei/scriptpawn.html#bWaitLook">bWaitLook</a>, <a href="../runei/scriptpawn.html#bWillJoin">bWillJoin</a>, <a href="../runei/scriptpawn.html#CurrentPoint">CurrentPoint</a>, <a href="../runei/scriptpawn.html#debugstates">debugstates</a>, <a href="../runei/scriptpawn.html#DispatchAction">DispatchAction</a>, <a href="../runei/scriptpawn.html#EnemyDist">EnemyDist</a>, <a href="../runei/scriptpawn.html#EnemyFacing">EnemyFacing</a>, <a href="../runei/scriptpawn.html#EnemyIncidence">EnemyIncidence</a>, <a href="../runei/scriptpawn.html#EnemyMovement">EnemyMovement</a>, <a href="../runei/scriptpawn.html#EnemyVertical">EnemyVertical</a>, <a href="../runei/scriptpawn.html#FearSound">FearSound</a>, <a href="../runei/scriptpawn.html#FightOrDefend">FightOrDefend</a>, <a href="../runei/scriptpawn.html#FightOrFlight">FightOrFlight</a>, <a href="../runei/scriptpawn.html#Hated">Hated</a>, <a href="../runei/scriptpawn.html#HighOrLow">HighOrLow</a>, <a href="../runei/scriptpawn.html#HighOrLowBlock">HighOrLowBlock</a>, <a href="../runei/scriptpawn.html#HomeBase">HomeBase</a>, <a href="../runei/scriptpawn.html#HomeRot">HomeRot</a>, <a href="../runei/scriptpawn.html#HuntDistance">HuntDistance</a>, <a href="../runei/scriptpawn.html#HuntSound">HuntSound</a>, <a href="../runei/scriptpawn.html#HuntStartTime">HuntStartTime</a>, <a href="../runei/scriptpawn.html#HuntTime">HuntTime</a>, <a href="../runei/scriptpawn.html#i">i</a>, <a href="../runei/scriptpawn.html#IgnoreEnemy">IgnoreEnemy</a>, <a href="../runei/scriptpawn.html#LastAction">LastAction</a>, <a href="../runei/scriptpawn.html#LastNodeVisited">LastNodeVisited</a>, <a href="../runei/scriptpawn.html#LastPathTime">LastPathTime</a>, <a href="../runei/scriptpawn.html#LastPointVisited">LastPointVisited</a>, <a href="../runei/scriptpawn.html#LatOrVertDodge">LatOrVertDodge</a>, <a href="../runei/scriptpawn.html#lookIndex">lookIndex</a>, <a href="../runei/scriptpawn.html#LungeRange">LungeRange</a>, <a href="../runei/scriptpawn.html#MaxStopWait">MaxStopWait</a>, <a href="../runei/scriptpawn.html#MinStopWait">MinStopWait</a>, <a href="../runei/scriptpawn.html#NextAnim">NextAnim</a>, <a href="../runei/scriptpawn.html#NextPoint">NextPoint</a>, <a href="../runei/scriptpawn.html#NumAmbientFightSounds">NumAmbientFightSounds</a>, <a href="../runei/scriptpawn.html#NumAmbientWaitSounds">NumAmbientWaitSounds</a>, <a href="../runei/scriptpawn.html#numHuntPaths">numHuntPaths</a>, <a href="../runei/scriptpawn.html#OrderObject">OrderObject</a>, <a href="../runei/scriptpawn.html#Orders">Orders</a>, <a href="../runei/scriptpawn.html#OrdersTag">OrdersTag</a>, <a href="../runei/scriptpawn.html#PaceRange">PaceRange</a>, <a href="../runei/scriptpawn.html#ProtectionTimer">ProtectionTimer</a>, <a href="../runei/scriptpawn.html#RoamSound">RoamSound</a>, <a href="../runei/scriptpawn.html#ShadowScale">ShadowScale</a>, <a href="../runei/scriptpawn.html#SpeechPos">SpeechPos</a>, <a href="../runei/scriptpawn.html#StartShield">StartShield</a>, <a href="../runei/scriptpawn.html#StartWeapon">StartWeapon</a>, <a href="../runei/scriptpawn.html#StatueAnimFrame">StatueAnimFrame</a>, <a href="../runei/scriptpawn.html#StatueAnimSeq">StatueAnimSeq</a>, <a href="../runei/scriptpawn.html#TeamTag">TeamTag</a>, <a href="../runei/scriptpawn.html#testfloat">testfloat</a>, <a href="../runei/scriptpawn.html#teststring">teststring</a>, <a href="../runei/scriptpawn.html#teststring2">teststring2</a>, <a href="../runei/scriptpawn.html#ThreatenSound">ThreatenSound</a>, <a href="../runei/scriptpawn.html#ThrowTrajectory">ThrowTrajectory</a>, <a href="../runei/scriptpawn.html#TimeBetweenAttacks">TimeBetweenAttacks</a>, <a href="../runei/scriptpawn.html#TriggerOrders">TriggerOrders</a>, <a href="../runei/scriptpawn.html#TriggerOrdersTag">TriggerOrdersTag</a>, <a href="../runei/scriptpawn.html#VecFromEnemy">VecFromEnemy</a>, <a href="../runei/scriptpawn.html#VecToEnemy">VecToEnemy</a>, <a href="../runei/scriptpawn.html#WanderDistance">WanderDistance</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Enumerations Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Enumerations from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/scriptpawn.html">ScriptPawn</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/scriptpawn.html#AttackAction_e">AttackAction_e</a>, <a href="../runei/scriptpawn.html#Facing_e">Facing_e</a>, <a href="../runei/scriptpawn.html#Incidence_e">Incidence_e</a>, <a href="../runei/scriptpawn.html#Movement_e">Movement_e</a>, <a href="../runei/scriptpawn.html#Vertical_e">Vertical_e</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_JointDamaged-" name="JointDamaged" title="go to the details">JointDamaged</a> (int Damage, <a href="../engine/pawn.html">Pawn</a> EventInstigator, <a href="../core/object.html#Vector">vector</a> HitLoc, <a href="../core/object.html#Vector">vector</a> Momentum, name DamageType, int joint))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../engine/texture.html">Texture</a>&nbsp;</td><td><a href="#_PainSkin-" name="PainSkin" title="go to the details">PainSkin</a> (int BodyPart))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/snowbeast.html">SnowBeast</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/snowbeast.html#AfterSpawningInventory">AfterSpawningInventory</a>, <a href="../runei/snowbeast.html#AmbientSoundTimer">AmbientSoundTimer</a>, <a href="../runei/snowbeast.html#AttitudeToCreature">AttitudeToCreature</a>, <a href="../runei/snowbeast.html#BeginState">BeginState</a>, <a href="../runei/snowbeast.html#BodyPartCritical">BodyPartCritical</a>, <a href="../runei/snowbeast.html#BodyPartForJoint">BodyPartForJoint</a>, <a href="../runei/snowbeast.html#BodyPartForPolyGroup">BodyPartForPolyGroup</a>, <a href="../runei/snowbeast.html#BodyPartSeverable">BodyPartSeverable</a>, <a href="../runei/snowbeast.html#Breath">Breath</a>, <a href="../runei/snowbeast.html#Bump">Bump</a>, <a href="../runei/snowbeast.html#CanGotoPainState">CanGotoPainState</a>, <a href="../runei/snowbeast.html#CanPickup">CanPickup</a>, <a href="../runei/snowbeast.html#ComputeLunge">ComputeLunge</a>, <a href="../runei/snowbeast.html#CreatureStatue">CreatureStatue</a>, <a href="../runei/snowbeast.html#Destroyed">Destroyed</a>, <a href="../runei/snowbeast.html#EndState">EndState</a>, <a href="../runei/snowbeast.html#HitWall">HitWall</a>, <a href="../runei/snowbeast.html#HowlSound">HowlSound</a>, <a href="../runei/snowbeast.html#InAttackRange">InAttackRange</a>, <a href="../runei/snowbeast.html#JointDamaged">JointDamaged</a>, <a href="../runei/snowbeast.html#MakeTwitchable">MakeTwitchable</a>, <a href="../runei/snowbeast.html#PainSkin">PainSkin</a>, <a href="../runei/snowbeast.html#PickDestinationBackup">PickDestinationBackup</a>, <a href="../runei/snowbeast.html#PickStrafeDestination">PickStrafeDestination</a>, <a href="../runei/snowbeast.html#PlayBackDeath">PlayBackDeath</a>, <a href="../runei/snowbeast.html#PlayBite">PlayBite</a>, <a href="../runei/snowbeast.html#PlayCower">PlayCower</a>, <a href="../runei/snowbeast.html#PlayDeath">PlayDeath</a>, <a href="../runei/snowbeast.html#PlayDrownDeath">PlayDrownDeath</a>, <a href="../runei/snowbeast.html#PlayDrowning">PlayDrowning</a>, <a href="../runei/snowbeast.html#PlayFrontHit">PlayFrontHit</a>, <a href="../runei/snowbeast.html#PlayHeadDeath">PlayHeadDeath</a>, <a href="../runei/snowbeast.html#PlayHuntStop">PlayHuntStop</a>, <a href="../runei/snowbeast.html#PlayJumping">PlayJumping</a>, <a href="../runei/snowbeast.html#PlayLeftDeath">PlayLeftDeath</a>, <a href="../runei/snowbeast.html#PlayLunge">PlayLunge</a>, <a href="../runei/snowbeast.html#PlayMoving">PlayMoving</a>, <a href="../runei/snowbeast.html#PlayRightDeath">PlayRightDeath</a>, <a href="../runei/snowbeast.html#PlaySwingLeft">PlaySwingLeft</a>, <a href="../runei/snowbeast.html#PlaySwingRight">PlaySwingRight</a>, <a href="../runei/snowbeast.html#PlayThreatening">PlayThreatening</a>, <a href="../runei/snowbeast.html#PlayTurning">PlayTurning</a>, <a href="../runei/snowbeast.html#PlayWaiting">PlayWaiting</a>, <a href="../runei/snowbeast.html#Timer">Timer</a>, <a href="../runei/snowbeast.html#TweenToHuntStop">TweenToHuntStop</a>, <a href="../runei/snowbeast.html#TweenToMoving">TweenToMoving</a>, <a href="../runei/snowbeast.html#TweenToWaiting">TweenToWaiting</a>, <a href="../runei/snowbeast.html#WeaponActivate">WeaponActivate</a>, <a href="../runei/snowbeast.html#WeaponDeactivate">WeaponDeactivate</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/scriptpawn.html">ScriptPawn</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/scriptpawn.html#AddLocalVelocity">AddLocalVelocity</a>, <a href="../runei/scriptpawn.html#adjustJump">adjustJump</a>, <a href="../runei/scriptpawn.html#AfterSpawningInventory">AfterSpawningInventory</a>, <a href="../runei/scriptpawn.html#AllowWeaponToHitActor">AllowWeaponToHitActor</a>, <a href="../runei/scriptpawn.html#AmbientSoundTimer">AmbientSoundTimer</a>, <a href="../runei/scriptpawn.html#AnimEnd">AnimEnd</a>, <a href="../runei/scriptpawn.html#AssimilateVagrants">AssimilateVagrants</a>, <a href="../runei/scriptpawn.html#AttitudeTo">AttitudeTo</a>, <a href="../runei/scriptpawn.html#AttitudeToCreature">AttitudeToCreature</a>, <a href="../runei/scriptpawn.html#BeginState">BeginState</a>, <a href="../runei/scriptpawn.html#Breath">Breath</a>, <a href="../runei/scriptpawn.html#Bump">Bump</a>, <a href="../runei/scriptpawn.html#CanBeStatued">CanBeStatued</a>, <a href="../runei/scriptpawn.html#CanDirectlyThreaten">CanDirectlyThreaten</a>, <a href="../runei/scriptpawn.html#CanGotoPainState">CanGotoPainState</a>, <a href="../runei/scriptpawn.html#CheckDestination">CheckDestination</a>, <a href="../runei/scriptpawn.html#CheckElectLeader">CheckElectLeader</a>, <a href="../runei/scriptpawn.html#CheckForEnemies">CheckForEnemies</a>, <a href="../runei/scriptpawn.html#CheckReachable">CheckReachable</a>, <a href="../runei/scriptpawn.html#CreatureNormal">CreatureNormal</a>, <a href="../runei/scriptpawn.html#CreatureStatue">CreatureStatue</a>, <a href="../runei/scriptpawn.html#DamageAttitudeTo">DamageAttitudeTo</a>, <a href="../runei/scriptpawn.html#DebrisCloud">DebrisCloud</a>, <a href="../runei/scriptpawn.html#Debug">Debug</a>, <a href="../runei/scriptpawn.html#DecideOrders">DecideOrders</a>, <a href="../runei/scriptpawn.html#DoLanded">DoLanded</a>, <a href="../runei/scriptpawn.html#DoThrow">DoThrow</a>, <a href="../runei/scriptpawn.html#EndState">EndState</a>, <a href="../runei/scriptpawn.html#EnemyAcquired">EnemyAcquired</a>, <a href="../runei/scriptpawn.html#EnemyNotVisible">EnemyNotVisible</a>, <a href="../runei/scriptpawn.html#Evaluate">Evaluate</a>, <a href="../runei/scriptpawn.html#ExecuteScriptAction">ExecuteScriptAction</a>, <a href="../runei/scriptpawn.html#ExecuteScriptDispatcherAction">ExecuteScriptDispatcherAction</a>, <a href="../runei/scriptpawn.html#ExecuteScriptPoint">ExecuteScriptPoint</a>, <a href="../runei/scriptpawn.html#Falling">Falling</a>, <a href="../runei/scriptpawn.html#FearThisSpot">FearThisSpot</a>, <a href="../runei/scriptpawn.html#FindViewSpot">FindViewSpot</a>, <a href="../runei/scriptpawn.html#FinishScriptDispatcher">FinishScriptDispatcher</a>, <a href="../runei/scriptpawn.html#FollowOrders">FollowOrders</a>, <a href="../runei/scriptpawn.html#FrameNotify">FrameNotify</a>, <a href="../runei/scriptpawn.html#GetEnemyProximity">GetEnemyProximity</a>, <a href="../runei/scriptpawn.html#GiveAttackOrders">GiveAttackOrders</a>, <a href="../runei/scriptpawn.html#GiveFleeOrders">GiveFleeOrders</a>, <a href="../runei/scriptpawn.html#GiveNullOrders">GiveNullOrders</a>, <a href="../runei/scriptpawn.html#GrabEdge">GrabEdge</a>, <a href="../runei/scriptpawn.html#HeadZoneChange">HeadZoneChange</a>, <a href="../runei/scriptpawn.html#HearNoise">HearNoise</a>, <a href="../runei/scriptpawn.html#HitWall">HitWall</a>, <a href="../runei/scriptpawn.html#IAmLeader">IAmLeader</a>, <a href="../runei/scriptpawn.html#InAttackRange">InAttackRange</a>, <a href="../runei/scriptpawn.html#InformTeammates">InformTeammates</a>, <a href="../runei/scriptpawn.html#InLungeRange">InLungeRange</a>, <a href="../runei/scriptpawn.html#InMeleeRange">InMeleeRange</a>, <a href="../runei/scriptpawn.html#InPaceRange">InPaceRange</a>, <a href="../runei/scriptpawn.html#InRange">InRange</a>, <a href="../runei/scriptpawn.html#InventoryNormal">InventoryNormal</a>, <a href="../runei/scriptpawn.html#InventoryStatue">InventoryStatue</a>, <a href="../runei/scriptpawn.html#JointDamaged">JointDamaged</a>, <a href="../runei/scriptpawn.html#Landed">Landed</a>, <a href="../runei/scriptpawn.html#LimbSevered">LimbSevered</a>, <a href="../runei/scriptpawn.html#LongFall">LongFall</a>, <a href="../runei/scriptpawn.html#LookAtEndPoint">LookAtEndPoint</a>, <a href="../runei/scriptpawn.html#MatterForJoint">MatterForJoint</a>, <a href="../runei/scriptpawn.html#MayFall">MayFall</a>, <a href="../runei/scriptpawn.html#OrderFinished">OrderFinished</a>, <a href="../runei/scriptpawn.html#PainTimer">PainTimer</a>, <a href="../runei/scriptpawn.html#PickDestination">PickDestination</a>, <a href="../runei/scriptpawn.html#PickWaypoint">PickWaypoint</a>, <a href="../runei/scriptpawn.html#PlayAmbientFightSound">PlayAmbientFightSound</a>, <a href="../runei/scriptpawn.html#PlayAmbientWaitSound">PlayAmbientWaitSound</a>, <a href="../runei/scriptpawn.html#PlayBackup">PlayBackup</a>, <a href="../runei/scriptpawn.html#PlayBlockHigh">PlayBlockHigh</a>, <a href="../runei/scriptpawn.html#PlayBlockLow">PlayBlockLow</a>, <a href="../runei/scriptpawn.html#PlayCower">PlayCower</a>, <a href="../runei/scriptpawn.html#PlayDeath">PlayDeath</a>, <a href="../runei/scriptpawn.html#PlayDropWeapon">PlayDropWeapon</a>, <a href="../runei/scriptpawn.html#PlayFrontHit">PlayFrontHit</a>, <a href="../runei/scriptpawn.html#PlayHuntStop">PlayHuntStop</a>, <a href="../runei/scriptpawn.html#PlayInAir">PlayInAir</a>, <a href="../runei/scriptpawn.html#PlayJumping">PlayJumping</a>, <a href="../runei/scriptpawn.html#PlayLanding">PlayLanding</a>, <a href="../runei/scriptpawn.html#PlayMeleeHigh">PlayMeleeHigh</a>, <a href="../runei/scriptpawn.html#PlayMeleeLow">PlayMeleeLow</a>, <a href="../runei/scriptpawn.html#PlayMeleeVertical">PlayMeleeVertical</a>, <a href="../runei/scriptpawn.html#PlayMoving">PlayMoving</a>, <a href="../runei/scriptpawn.html#PlayMovingAttack">PlayMovingAttack</a>, <a href="../runei/scriptpawn.html#PlayPickupShield">PlayPickupShield</a>, <a href="../runei/scriptpawn.html#PlayPickupWeapon">PlayPickupWeapon</a>, <a href="../runei/scriptpawn.html#PlayPullUp">PlayPullUp</a>, <a href="../runei/scriptpawn.html#PlayStepUp">PlayStepUp</a>, <a href="../runei/scriptpawn.html#PlayStrafeLeft">PlayStrafeLeft</a>, <a href="../runei/scriptpawn.html#PlayStrafeRight">PlayStrafeRight</a>, <a href="../runei/scriptpawn.html#PlayTaunting">PlayTaunting</a>, <a href="../runei/scriptpawn.html#PlayThreatening">PlayThreatening</a>, <a href="../runei/scriptpawn.html#PlayThrowing">PlayThrowing</a>, <a href="../runei/scriptpawn.html#PlayTurning">PlayTurning</a>, <a href="../runei/scriptpawn.html#PlayWaiting">PlayWaiting</a>, <a href="../runei/scriptpawn.html#PowerupBlaze">PowerupBlaze</a>, <a href="../runei/scriptpawn.html#PowerupElectricity">PowerupElectricity</a>, <a href="../runei/scriptpawn.html#PowerupFire">PowerupFire</a>, <a href="../runei/scriptpawn.html#PowerupFriend">PowerupFriend</a>, <a href="../runei/scriptpawn.html#PowerupIce">PowerupIce</a>, <a href="../runei/scriptpawn.html#PowerupStone">PowerupStone</a>, <a href="../runei/scriptpawn.html#PreBeginPlay">PreBeginPlay</a>, <a href="../runei/scriptpawn.html#ProtectAlly">ProtectAlly</a>, <a href="../runei/scriptpawn.html#SeePlayer">SeePlayer</a>, <a href="../runei/scriptpawn.html#SetEnemy">SetEnemy</a>, <a href="../runei/scriptpawn.html#SetFall">SetFall</a>, <a href="../runei/scriptpawn.html#SetHome">SetHome</a>, <a href="../runei/scriptpawn.html#SetMovementPhysics">SetMovementPhysics</a>, <a href="../runei/scriptpawn.html#SetOnFire">SetOnFire</a>, <a href="../runei/scriptpawn.html#ShadowUpdate">ShadowUpdate</a>, <a href="../runei/scriptpawn.html#SoundChance">SoundChance</a>, <a href="../runei/scriptpawn.html#SpawnBloodSplot">SpawnBloodSplot</a>, <a href="../runei/scriptpawn.html#SpawnDebris">SpawnDebris</a>, <a href="../runei/scriptpawn.html#SpawnStartInventory">SpawnStartInventory</a>, <a href="../runei/scriptpawn.html#SpeechTimer">SpeechTimer</a>, <a href="../runei/scriptpawn.html#TestDirection">TestDirection</a>, <a href="../runei/scriptpawn.html#Tick">Tick</a>, <a href="../runei/scriptpawn.html#Timer">Timer</a>, <a href="../runei/scriptpawn.html#TouchSurroundingObjects">TouchSurroundingObjects</a>, <a href="../runei/scriptpawn.html#Trigger">Trigger</a>, <a href="../runei/scriptpawn.html#TryChargeEnemy">TryChargeEnemy</a>, <a href="../runei/scriptpawn.html#TweenToHuntStop">TweenToHuntStop</a>, <a href="../runei/scriptpawn.html#TweenToJumping">TweenToJumping</a>, <a href="../runei/scriptpawn.html#TweenToMeleeHigh">TweenToMeleeHigh</a>, <a href="../runei/scriptpawn.html#TweenToMeleeLow">TweenToMeleeLow</a>, <a href="../runei/scriptpawn.html#TweenToMoving">TweenToMoving</a>, <a href="../runei/scriptpawn.html#TweenToThrowing">TweenToThrowing</a>, <a href="../runei/scriptpawn.html#TweenToTurning">TweenToTurning</a>, <a href="../runei/scriptpawn.html#TweenToWaiting">TweenToWaiting</a>, <a href="../runei/scriptpawn.html#UnPowerupFriend">UnPowerupFriend</a>, <a href="../runei/scriptpawn.html#ValidEnemy">ValidEnemy</a>, <a href="../runei/scriptpawn.html#WantsToPickUp">WantsToPickUp</a>, <a href="../runei/scriptpawn.html#WeaponActivate">WeaponActivate</a>, <a href="../runei/scriptpawn.html#WeaponDeactivate">WeaponDeactivate</a>, <a href="../runei/scriptpawn.html#ZoneChange">ZoneChange</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_JointDamaged-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> JointDamaged <span class="function_state"></span> <a href="../Source_runei/snowbeastchained.html#50" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> JointDamaged ( <span class="source_keyword">int</span> Damage, <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">EventInstigator</span>, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitLoc, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> Momentum, <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">DamageType</a></span>, <span class="source_keyword">int</span> joint) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PainSkin-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PainSkin <span class="function_state"></span> <a href="../Source_runei/snowbeastchained.html#20" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span> PainSkin ( <span class="source_keyword">int</span> BodyPart) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     bIsBoss=<span class="source_keyword">True</span>
+     ReducedDamageType=All
+     AttitudeToPlayer=ATTITUDE_Ignore
+     bRotateTorso=<span class="source_keyword">False</span>
+     SkelMesh=<span class="source_int">2</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/snowbeastchained.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#SnowBeastChained">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/snowbeastboss.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/snowbeastchainedcarcass.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:27:23.350 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

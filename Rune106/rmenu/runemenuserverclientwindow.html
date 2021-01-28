@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - RMenu.RuneMenuServerClientWindow</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../rmenu/rmenu-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_rmenu/runemenuserverclientwindow.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#RuneMenuServerClientWindow">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../rmenu/runemenuscrollingdialogclient.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../rmenu/runemenuserverscrollclient.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#rmenu/runemenuserverclientwindow.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../rmenu/rmenu-overview.html">RMenu</a>.RuneMenuServerClientWindow</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../rmenu/runemenupagewindow.html">RuneMenuPageWindow</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowbase.html">UWindowBase</a>
+   |   
+   +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowwindow.html">UWindowWindow</a>
+      |   
+      +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowclientwindow.html">UWindowClientWindow</a>
+         |   
+         +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowdialogclientwindow.html">UWindowDialogClientWindow</a>
+            |   
+            +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowpagewindow.html">UWindowPageWindow</a>
+               |   
+               +-- <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runemenupagewindow.html">RuneMenuPageWindow</a>
+                  |   
+                  +-- <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runemenuserverclientwindow.html">RuneMenuServerClientWindow</a>
+</pre>
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bKeepMutators" name="bKeepMutators" title="go to the details">bKeepMutators</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bNetworkGame" name="bNetworkGame" title="go to the details">bNetworkGame</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindowsmallbutton.html">UWindowSmallButton</a></td><td width="66%"><a href="#_DedicatedButton" name="DedicatedButton" title="go to the details">DedicatedButton</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_DedicatedHelp" name="DedicatedHelp" title="go to the details">DedicatedHelp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_DedicatedText" name="DedicatedText" title="go to the details">DedicatedText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">class&lt;<a href="../engine/gameinfo.html">GameInfo</a>&gt;</td><td width="66%"><a href="#_GameClass" name="GameClass" title="go to the details">GameClass</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_GameType" name="GameType" title="go to the details">GameType</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_Map" name="Map" title="go to the details">Map</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_MaplistTab" name="MaplistTab" title="go to the details">MaplistTab</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_MutatorList" name="MutatorList" title="go to the details">MutatorList</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_MutatorTab" name="MutatorTab" title="go to the details">MutatorTab</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindowpagecontrol.html">UWindowPageControl</a></td><td width="66%"><a href="#_Pages" name="Pages" title="go to the details">Pages</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_RulesTab" name="RulesTab" title="go to the details">RulesTab</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindowpagecontrolpage.html">UWindowPageControlPage</a></td><td width="66%"><a href="#_ServerTab" name="ServerTab" title="go to the details">ServerTab</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ServerText" name="ServerText" title="go to the details">ServerText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_SettingsTab" name="SettingsTab" title="go to the details">SettingsTab</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindowsmallbutton.html">UWindowSmallButton</a></td><td width="66%"><a href="#_StartButton" name="StartButton" title="go to the details">StartButton</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_StartHelp" name="StartHelp" title="go to the details">StartHelp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_StartMatchTab" name="StartMatchTab" title="go to the details">StartMatchTab</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_StartText" name="StartText" title="go to the details">StartText</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowpagewindow.html">UWindowPageWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowpagewindow.html#OwnerTab">OwnerTab</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Created-" name="Created" title="go to the details">Created</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_CreatePages-" name="CreatePages" title="go to the details">CreatePages</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DedicatedPressed-" name="DedicatedPressed" title="go to the details">DedicatedPressed</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_GameChanged-" name="GameChanged" title="go to the details">GameChanged</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Notify-" name="Notify" title="go to the details">Notify</a> (<a href="../uwindow/uwindowdialogcontrol.html">UWindowDialogControl</a> C, byte E))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Paint-" name="Paint" title="go to the details">Paint</a> (<a href="../engine/canvas.html">Canvas</a> C, float X, float Y))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Resized-" name="Resized" title="go to the details">Resized</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SaveConfigs-" name="SaveConfigs" title="go to the details">SaveConfigs</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_StartPressed-" name="StartPressed" title="go to the details">StartPressed</a> ()))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runemenupagewindow.html">RuneMenuPageWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../rmenu/runemenupagewindow.html#Notify">Notify</a>, <a href="../rmenu/runemenupagewindow.html#Paint">Paint</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowpagewindow.html">UWindowPageWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowpagewindow.html#RightClickTab">RightClickTab</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_bKeepMutators" class="hidden"></a>bKeepMutators <a href="../Source_rmenu/runemenuserverclientwindow.html#7" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">bool</span> bKeepMutators;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bNetworkGame" class="hidden"></a>bNetworkGame <a href="../Source_rmenu/runemenuserverclientwindow.html#22" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bNetworkGame;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DedicatedButton" class="hidden"></a>DedicatedButton <a href="../Source_rmenu/runemenuserverclientwindow.html#11" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowsmallbutton.html" class="source">UWindowSmallButton</a></span> DedicatedButton;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DedicatedHelp" class="hidden"></a>DedicatedHelp <a href="../Source_rmenu/runemenuserverclientwindow.html#20" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> DedicatedHelp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DedicatedText" class="hidden"></a>DedicatedText <a href="../Source_rmenu/runemenuserverclientwindow.html#19" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> DedicatedText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GameClass" class="hidden"></a>GameClass <a href="../Source_rmenu/runemenuserverclientwindow.html#8" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>&gt; GameClass;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GameType" class="hidden"></a>GameType <a href="../Source_rmenu/runemenuserverclientwindow.html#5" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> GameType;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Map" class="hidden"></a>Map <a href="../Source_rmenu/runemenuserverclientwindow.html#4" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> Map;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MaplistTab" class="hidden"></a>MaplistTab <a href="../Source_rmenu/runemenuserverclientwindow.html#16" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> MaplistTab;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MutatorList" class="hidden"></a>MutatorList <a href="../Source_rmenu/runemenuserverclientwindow.html#6" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> MutatorList;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MutatorTab" class="hidden"></a>MutatorTab <a href="../Source_rmenu/runemenuserverclientwindow.html#16" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> MutatorTab;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Pages" class="hidden"></a>Pages <a href="../Source_rmenu/runemenuserverclientwindow.html#13" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowpagecontrol.html" class="source">UWindowPageControl</a></span> Pages;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RulesTab" class="hidden"></a>RulesTab <a href="../Source_rmenu/runemenuserverclientwindow.html#16" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> RulesTab;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ServerTab" class="hidden"></a>ServerTab <a href="../Source_rmenu/runemenuserverclientwindow.html#12" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowpagecontrolpage.html" class="source">UWindowPageControlPage</a></span> ServerTab;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ServerText" class="hidden"></a>ServerText <a href="../Source_rmenu/runemenuserverclientwindow.html#21" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> ServerText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SettingsTab" class="hidden"></a>SettingsTab <a href="../Source_rmenu/runemenuserverclientwindow.html#16" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> SettingsTab;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StartButton" class="hidden"></a>StartButton <a href="../Source_rmenu/runemenuserverclientwindow.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowsmallbutton.html" class="source">UWindowSmallButton</a></span> StartButton;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StartHelp" class="hidden"></a>StartHelp <a href="../Source_rmenu/runemenuserverclientwindow.html#18" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> StartHelp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StartMatchTab" class="hidden"></a>StartMatchTab <a href="../Source_rmenu/runemenuserverclientwindow.html#16" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> StartMatchTab;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StartText" class="hidden"></a>StartText <a href="../Source_rmenu/runemenuserverclientwindow.html#17" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> StartText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_Created-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Created <span class="function_state"></span> <a href="../Source_rmenu/runemenuserverclientwindow.html#24" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Created ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CreatePages-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CreatePages <span class="function_state"></span> <a href="../Source_rmenu/runemenuserverclientwindow.html#46" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  CreatePages ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DedicatedPressed-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DedicatedPressed <span class="function_state"></span> <a href="../Source_rmenu/runemenuserverclientwindow.html#133" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  DedicatedPressed ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GameChanged-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GameChanged <span class="function_state"></span> <a href="../Source_rmenu/runemenuserverclientwindow.html#151" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  GameChanged ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Notify-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Notify <span class="function_state"></span> <a href="../Source_rmenu/runemenuserverclientwindow.html#92" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Notify ( <span class="source_type"><a href="../uwindow/uwindowdialogcontrol.html" class="source">UWindowDialogControl</a></span> <span class="source_type">C</span>, <span class="source_keyword">byte</span> E) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Paint-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Paint <span class="function_state"></span> <a href="../Source_rmenu/runemenuserverclientwindow.html#84" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Paint ( <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type">C</span>, <span class="source_keyword">float</span> X, <span class="source_keyword">float</span> <span class="source_type">Y</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Resized-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Resized <span class="function_state"></span> <a href="../Source_rmenu/runemenuserverclientwindow.html#75" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Resized ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SaveConfigs-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SaveConfigs <span class="function_state"></span> <a href="../Source_rmenu/runemenuserverclientwindow.html#197" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SaveConfigs ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StartPressed-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> StartPressed <span class="function_state"></span> <a href="../Source_rmenu/runemenuserverclientwindow.html#111" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  StartPressed ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     GameType=<span class="source_string">"RuneI.RuneMultiPlayer"</span>
+     StartMatchTab=<span class="source_string">"Match"</span>
+     RulesTab=<span class="source_string">"Rules"</span>
+     SettingsTab=<span class="source_string">"Settings"</span>
+     MutatorTab=<span class="source_string">"Mutators"</span>
+     MaplistTab=<span class="source_string">"Maplists"</span>
+     StartText=<span class="source_string">"Start"</span>
+     StartHelp=<span class="source_string">"Start game with current options"</span>
+     DedicatedText=<span class="source_string">"Dedicated"</span>
+     DedicatedHelp=<span class="source_string">"Press to launch a dedicated server."</span>
+     ServerText=<span class="source_string">"Server"</span>
+     bNetworkGame=<span class="source_keyword">True</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../rmenu/rmenu-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_rmenu/runemenuserverclientwindow.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#RuneMenuServerClientWindow">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../rmenu/runemenuscrollingdialogclient.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../rmenu/runemenuserverscrollclient.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:27:21.692 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

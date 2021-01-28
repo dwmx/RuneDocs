@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - RuneI.Lizard</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/lizard.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#Lizard">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/lionhead.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/loki.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#runei/lizard.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../runei/runei-overview.html">RuneI</a>.Lizard</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../runei/food.html">Food</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a>
+   |   
+   +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/inventory.html">Inventory</a>
+      |   
+      +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/pickup.html">Pickup</a>
+         |   
+         +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/food.html">Food</a>
+            |   
+            +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/lizard.html">Lizard</a>
+</pre>
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><th colspan="2" class="small">Lizard</th></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_AmbientDelay" name="AmbientDelay" title="go to the details">AmbientDelay</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">Sound</td><td width="66%"><a href="#_AmbientSound[3]" name="AmbientSound[3]" title="go to the details">AmbientSound[3]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bChameleon" name="bChameleon" title="go to the details">bChameleon</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bWallLizard" name="bWallLizard" title="go to the details">bWallLizard</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/food.html">Food</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/food.html#JunkActor">JunkActor</a>, <a href="../runei/food.html#Nutrition">Nutrition</a>, <a href="../runei/food.html#UseSound">UseSound</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/pickup.html">Pickup</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/pickup.html#bAutoActivate">bAutoActivate</a>, <a href="../engine/pickup.html#bCanActivate">bCanActivate</a>, <a href="../engine/pickup.html#bCanHaveMultipleCopies">bCanHaveMultipleCopies</a>, <a href="../engine/pickup.html#ExpireMessage">ExpireMessage</a>, <a href="../engine/pickup.html#Inv">Inv</a>, <a href="../engine/pickup.html#NumCopies">NumCopies</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ChangeBehavior-Pickup" name="ChangeBehavior" title="go to the details">ChangeBehavior</a> ()))<br /><span class="function_state">Pickup</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Debug-" name="Debug" title="go to the details">Debug</a> (<a href="../engine/canvas.html">Canvas</a> canvas, int mode))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_FallToGround-" name="FallToGround" title="go to the details">FallToGround</a> (<a href="../engine/pawn.html">pawn</a> EventInstigator))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_HitWall-Pickup" name="HitWall" title="go to the details">HitWall</a> (<a href="../core/object.html#Vector">vector</a> HitNormal, <a href="../engine/actor.html">actor</a> Wall))<br /><span class="function_state">Pickup</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_JointDamaged-Pickup" name="JointDamaged" title="go to the details">JointDamaged</a> (int Damage, <a href="../engine/pawn.html">Pawn</a> EventInstigator, <a href="../core/object.html#Vector">vector</a> HitLoc, <a href="../core/object.html#Vector">vector</a> Momentum, name DamageType, int joint))<br /><span class="function_state">Pickup</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Landed-Pickup" name="Landed" title="go to the details">Landed</a> (<a href="../core/object.html#Vector">vector</a> HitNormal, <a href="../engine/actor.html">actor</a> HitActor))<br /><span class="function_state">Pickup</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PostBeginPlay-" name="PostBeginPlay" title="go to the details">PostBeginPlay</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Trigger-" name="Trigger" title="go to the details">Trigger</a> (<a href="../engine/actor.html">actor</a> Other, <a href="../engine/pawn.html">pawn</a> EventInstigator))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/food.html">Food</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/food.html#GetUsePriority">GetUsePriority</a>, <a href="../runei/food.html#InventorySpecial1">InventorySpecial1</a>, <a href="../runei/food.html#PickupFunction">PickupFunction</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/pickup.html">Pickup</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/pickup.html#Activate">Activate</a>, <a href="../engine/pickup.html#BeginState">BeginState</a>, <a href="../engine/pickup.html#HandlePickupQuery">HandlePickupQuery</a>, <a href="../engine/pickup.html#PickupFunction">PickupFunction</a>, <a href="../engine/pickup.html#SpawnCopy">SpawnCopy</a>, <a href="../engine/pickup.html#Touch">Touch</a>, <a href="../engine/pickup.html#TravelPostAccept">TravelPostAccept</a>, <a href="../engine/pickup.html#UseCharge">UseCharge</a>, <a href="../engine/pickup.html#UsedUp">UsedUp</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th class="title">States Summary</th>
+</tr>
+</table>
+
+<table>
+<tr>
+	<th>Pickup <a href="../Source_runei/lizard.html#76" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw">auto state</span> Pickup <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_ChangeBehavior+Pickup">ChangeBehavior</a>, <a href="#_HitWall+Pickup">HitWall</a>, <a href="#_JointDamaged+Pickup">JointDamaged</a>, <a href="#_Landed+Pickup">Landed</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h3 class="vartag">Lizard</h3>
+<h4><a name="_AmbientDelay" class="hidden"></a>AmbientDelay <a href="../Source_runei/lizard.html#10" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/lizard.html" class="source">Lizard</a></span>) <span class="source_keyword">float</span> AmbientDelay;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AmbientSound[3]" class="hidden"></a>AmbientSound[3] <a href="../Source_runei/lizard.html#9" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/lizard.html" class="source">Lizard</a></span>) <span class="source_type">Sound</span> <span class="source_type"><a href="../engine/ambientsound.html" class="source">AmbientSound</a></span>[<span class="source_int">3</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bChameleon" class="hidden"></a>bChameleon <a href="../Source_runei/lizard.html#7" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/lizard.html" class="source">Lizard</a></span>) <span class="source_keyword">bool</span> bChameleon;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bWallLizard" class="hidden"></a>bWallLizard <a href="../Source_runei/lizard.html#6" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/lizard.html" class="source">Lizard</a></span>) <span class="source_keyword">bool</span> bWallLizard;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_ChangeBehavior-Pickup" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ChangeBehavior <span class="function_state">Pickup</span> <a href="../Source_runei/lizard.html#84" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ChangeBehavior ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Debug-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Debug <span class="function_state"></span> <a href="../Source_runei/lizard.html#147" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span>  Debug ( <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span>, <span class="source_keyword">int</span> mode) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FallToGround-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> FallToGround <span class="function_state"></span> <a href="../Source_runei/lizard.html#46" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  FallToGround ( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">EventInstigator</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HitWall-Pickup" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> HitWall <span class="function_state">Pickup</span> <a href="../Source_runei/lizard.html#113" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  HitWall ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitNormal, <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> Wall) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_JointDamaged-Pickup" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> JointDamaged <span class="function_state">Pickup</span> <a href="../Source_runei/lizard.html#78" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> JointDamaged ( <span class="source_keyword">int</span> Damage, <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">EventInstigator</span>, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitLoc, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> Momentum, <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">DamageType</a></span>, <span class="source_keyword">int</span> joint) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Landed-Pickup" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Landed <span class="function_state">Pickup</span> <a href="../Source_runei/lizard.html#118" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Landed ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitNormal, <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> HitActor) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PostBeginPlay-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PostBeginPlay <span class="function_state"></span> <a href="../Source_runei/lizard.html#12" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PostBeginPlay ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Trigger-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Trigger <span class="function_state"></span> <a href="../Source_runei/lizard.html#41" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  <span class="source_type"><a href="../engine/trigger.html" class="source">Trigger</a></span> ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">EventInstigator</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     <span class="source_type"><a href="../engine/ambientsound.html" class="source">AmbientSound</a></span>(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Lizard.lizard01'</span>
+     <span class="source_type"><a href="../engine/ambientsound.html" class="source">AmbientSound</a></span>(<span class="source_int">1</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Lizard.lizard02'</span>
+     <span class="source_type"><a href="../engine/ambientsound.html" class="source">AmbientSound</a></span>(<span class="source_int">2</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Lizard.lizard03'</span>
+     AmbientDelay=<span class="source_int">15.000000</span>
+     Nutrition=<span class="source_int">15</span>
+     JunkActor=<span class="source_keyword">Class</span><span class="source_name">'RuneI.EatenLizard'</span>
+     UseSound=<span class="source_type">Sound</span><span class="source_name">'OtherSnd.Pickups.pickuplizard01'</span>
+     <span class="source_type"><a href="../runei/pickupmessage.html" class="source">PickupMessage</a></span>=<span class="source_string">"You consumed a lizard"</span>
+     DrawScale=<span class="source_int">1.250000</span>
+     ScaleGlow=<span class="source_int">1.250000</span>
+     LODCurve=LOD_CURVE_CONSERVATIVE
+     CollisionRadius=<span class="source_int">25.000000</span>
+     CollisionHeight=<span class="source_int">20.000000</span>
+     bCollideWorld=<span class="source_keyword">True</span>
+     Skeletal=<span class="source_type">SkelModel</span><span class="source_name">'creatures.Lizard'</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/lizard.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#Lizard">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/lionhead.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/loki.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:41:05.259 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

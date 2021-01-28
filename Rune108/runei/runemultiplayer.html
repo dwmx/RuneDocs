@@ -1,0 +1,644 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - RuneI.RuneMultiPlayer</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/runemultiplayer.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#RuneMultiPlayer">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/runehud.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/runeofhealth.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#runei/runemultiplayer.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../runei/runei-overview.html">RuneI</a>.RuneMultiPlayer</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../runei/runegameinfo.html">RuneGameInfo</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a>
+   |   
+   +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/info.html">Info</a>
+      |   
+      +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/gameinfo.html">GameInfo</a>
+         |   
+         +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runegameinfo.html">RuneGameInfo</a>
+            |   
+            +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runemultiplayer.html">RuneMultiPlayer</a>
+</pre>
+
+<h4>Direct Known Subclasses:</h4>
+<blockquote>
+	<a href="../arena/arenagameinfo.html">ArenaGameInfo</a>, <a href="../runei/teamgame.html">TeamGame</a>
+</blockquote>
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bAlreadyChanged" name="bAlreadyChanged" title="go to the details">bAlreadyChanged</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bDontRestart" name="bDontRestart" title="go to the details">bDontRestart</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bFirstBlood" name="bFirstBlood" title="go to the details">bFirstBlood</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bLevelHasTeamOnly" name="bLevelHasTeamOnly" title="go to the details">bLevelHasTeamOnly</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_CrushedMessage" name="CrushedMessage" title="go to the details">CrushedMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_DrownedMessage" name="DrownedMessage" title="go to the details">DrownedMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_FellMessage" name="FellMessage" title="go to the details">FellMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_FireMessage" name="FireMessage" title="go to the details">FireMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_FirstBloodMsg" name="FirstBloodMsg" title="go to the details">FirstBloodMsg</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_GlobalNameChange" name="GlobalNameChange" title="go to the details">GlobalNameChange</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_GlobalNameChangeTrailer" name="GlobalNameChangeTrailer" title="go to the details">GlobalNameChangeTrailer</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HeadKillMsg" name="HeadKillMsg" title="go to the details">HeadKillMsg</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HeadMessage" name="HeadMessage" title="go to the details">HeadMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/navigationpoint.html">NavigationPoint</a></td><td width="66%"><a href="#_LastStartSpot" name="LastStartSpot" title="go to the details">LastStartSpot</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_NoNameChange" name="NoNameChange" title="go to the details">NoNameChange</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_NormalMessage" name="NormalMessage" title="go to the details">NormalMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_RemainingTime" name="RemainingTime" title="go to the details">RemainingTime</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_SpreeEndMsg" name="SpreeEndMsg" title="go to the details">SpreeEndMsg</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_SpreeEndTrailer" name="SpreeEndTrailer" title="go to the details">SpreeEndTrailer</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_SpreeMsg" name="SpreeMsg" title="go to the details">SpreeMsg</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_SuicidedMessage" name="SuicidedMessage" title="go to the details">SuicidedMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ThrownMessage" name="ThrownMessage" title="go to the details">ThrownMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_TimeMessage[16]" name="TimeMessage[16]" title="go to the details">TimeMessage[16]</a></td></tr>
+<tr><th colspan="2" class="small">RuneMultiPlayer</th></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bChangeLevels" name="bChangeLevels" title="go to the details">bChangeLevels</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bHardCoreMode" name="bHardCoreMode" title="go to the details">bHardCoreMode</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bMegaSpeed" name="bMegaSpeed" title="go to the details">bMegaSpeed</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_FragLimit" name="FragLimit" title="go to the details">FragLimit</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_TimeLimit" name="TimeLimit" title="go to the details">TimeLimit</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runegameinfo.html">RuneGameInfo</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/runegameinfo.html#GenericDiedMessage">GenericDiedMessage</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/gameinfo.html">GameInfo</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/gameinfo.html#AdminPassword">AdminPassword</a>, <a href="../engine/gameinfo.html#AutoAim">AutoAim</a>, <a href="../engine/gameinfo.html#bAllowFOV">bAllowFOV</a>, <a href="../engine/gameinfo.html#bAllowLimbSever">bAllowLimbSever</a>, <a href="../engine/gameinfo.html#bAllowShieldDrop">bAllowShieldDrop</a>, <a href="../engine/gameinfo.html#bAllowWeaponDrop">bAllowWeaponDrop</a>, <a href="../engine/gameinfo.html#bAlternateMode">bAlternateMode</a>, <a href="../engine/gameinfo.html#BaseMutator">BaseMutator</a>, <a href="../engine/gameinfo.html#bAutoPickup">bAutoPickup</a>, <a href="../engine/gameinfo.html#bBatchLocal">bBatchLocal</a>, <a href="../engine/gameinfo.html#bCanChangeSkin">bCanChangeSkin</a>, <a href="../engine/gameinfo.html#bCanViewOthers">bCanViewOthers</a>, <a href="../engine/gameinfo.html#bClassicDeathmessages">bClassicDeathmessages</a>, <a href="../engine/gameinfo.html#bCoopWeaponMode">bCoopWeaponMode</a>, <a href="../engine/gameinfo.html#bDeathMatch">bDeathMatch</a>, <a href="../engine/gameinfo.html#BeaconName">BeaconName</a>, <a href="../engine/gameinfo.html#bGameEnded">bGameEnded</a>, <a href="../engine/gameinfo.html#bHumansOnly">bHumansOnly</a>, <a href="../engine/gameinfo.html#bLocalLog">bLocalLog</a>, <a href="../engine/gameinfo.html#bLoggingGame">bLoggingGame</a>, <a href="../engine/gameinfo.html#bLowGore">bLowGore</a>, <a href="../engine/gameinfo.html#bMuteSpectators">bMuteSpectators</a>, <a href="../engine/gameinfo.html#bNoCheating">bNoCheating</a>, <a href="../engine/gameinfo.html#bNoMonsters">bNoMonsters</a>, <a href="../engine/gameinfo.html#BotMenuType">BotMenuType</a>, <a href="../engine/gameinfo.html#bOverTime">bOverTime</a>, <a href="../engine/gameinfo.html#bPauseable">bPauseable</a>, <a href="../engine/gameinfo.html#bRestartLevel">bRestartLevel</a>, <a href="../engine/gameinfo.html#bSubtitles">bSubtitles</a>, <a href="../engine/gameinfo.html#bTeamGame">bTeamGame</a>, <a href="../engine/gameinfo.html#bVeryLowGore">bVeryLowGore</a>, <a href="../engine/gameinfo.html#bWorldLog">bWorldLog</a>, <a href="../engine/gameinfo.html#CurrentID">CurrentID</a>, <a href="../engine/gameinfo.html#DamageMutator">DamageMutator</a>, <a href="../engine/gameinfo.html#DeathMessageClass">DeathMessageClass</a>, <a href="../engine/gameinfo.html#DebrisPercentage">DebrisPercentage</a>, <a href="../engine/gameinfo.html#DefaultPlayerClass">DefaultPlayerClass</a>, <a href="../engine/gameinfo.html#DefaultPlayerName">DefaultPlayerName</a>, <a href="../engine/gameinfo.html#DefaultPlayerState">DefaultPlayerState</a>, <a href="../engine/gameinfo.html#DefaultShield">DefaultShield</a>, <a href="../engine/gameinfo.html#DefaultWeapon">DefaultWeapon</a>, <a href="../engine/gameinfo.html#DemoBuild">DemoBuild</a>, <a href="../engine/gameinfo.html#DemoHasTuts">DemoHasTuts</a>, <a href="../engine/gameinfo.html#Difficulty">Difficulty</a>, <a href="../engine/gameinfo.html#DMMessageClass">DMMessageClass</a>, <a href="../engine/gameinfo.html#EnteredMessage">EnteredMessage</a>, <a href="../engine/gameinfo.html#FailedPlaceMessage">FailedPlaceMessage</a>, <a href="../engine/gameinfo.html#FailedSpawnMessage">FailedSpawnMessage</a>, <a href="../engine/gameinfo.html#FailedTeamMessage">FailedTeamMessage</a>, <a href="../engine/gameinfo.html#GameMenuType">GameMenuType</a>, <a href="../engine/gameinfo.html#GameName">GameName</a>, <a href="../engine/gameinfo.html#GameOptionsMenuType">GameOptionsMenuType</a>, <a href="../engine/gameinfo.html#GamePassword">GamePassword</a>, <a href="../engine/gameinfo.html#GameReplicationInfo">GameReplicationInfo</a>, <a href="../engine/gameinfo.html#GameReplicationInfoClass">GameReplicationInfoClass</a>, <a href="../engine/gameinfo.html#GameSpeed">GameSpeed</a>, <a href="../engine/gameinfo.html#GameUMenuType">GameUMenuType</a>, <a href="../engine/gameinfo.html#HUDType">HUDType</a>, <a href="../engine/gameinfo.html#IPBanned">IPBanned</a>, <a href="../engine/gameinfo.html#IPPolicies[50]">IPPolicies[50]</a>, <a href="../engine/gameinfo.html#ItemGoals">ItemGoals</a>, <a href="../engine/gameinfo.html#KillGoals">KillGoals</a>, <a href="../engine/gameinfo.html#LeftMessage">LeftMessage</a>, <a href="../engine/gameinfo.html#LocalLog">LocalLog</a>, <a href="../engine/gameinfo.html#LocalLogFileName">LocalLogFileName</a>, <a href="../engine/gameinfo.html#MaplistMenuType">MaplistMenuType</a>, <a href="../engine/gameinfo.html#MapListType">MapListType</a>, <a href="../engine/gameinfo.html#MapPrefix">MapPrefix</a>, <a href="../engine/gameinfo.html#MaxedOutMessage">MaxedOutMessage</a>, <a href="../engine/gameinfo.html#MaxPlayers">MaxPlayers</a>, <a href="../engine/gameinfo.html#MaxSpectators">MaxSpectators</a>, <a href="../engine/gameinfo.html#MultiplayerUMenuType">MultiplayerUMenuType</a>, <a href="../engine/gameinfo.html#MutatorClass">MutatorClass</a>, <a href="../engine/gameinfo.html#MutatorMenuType">MutatorMenuType</a>, <a href="../engine/gameinfo.html#NameChangedMessage">NameChangedMessage</a>, <a href="../engine/gameinfo.html#NeedPassword">NeedPassword</a>, <a href="../engine/gameinfo.html#NumPlayers">NumPlayers</a>, <a href="../engine/gameinfo.html#NumSpectators">NumSpectators</a>, <a href="../engine/gameinfo.html#ParticlePercentage">ParticlePercentage</a>, <a href="../engine/gameinfo.html#RulesMenuType">RulesMenuType</a>, <a href="../engine/gameinfo.html#ScoreBoardType">ScoreBoardType</a>, <a href="../engine/gameinfo.html#SecretGoals">SecretGoals</a>, <a href="../engine/gameinfo.html#SentText">SentText</a>, <a href="../engine/gameinfo.html#ServerLogName">ServerLogName</a>, <a href="../engine/gameinfo.html#SettingsMenuType">SettingsMenuType</a>, <a href="../engine/gameinfo.html#SpecialDamageString">SpecialDamageString</a>, <a href="../engine/gameinfo.html#StartTime">StartTime</a>, <a href="../engine/gameinfo.html#StatLogClass">StatLogClass</a>, <a href="../engine/gameinfo.html#SwitchLevelMessage">SwitchLevelMessage</a>, <a href="../engine/gameinfo.html#WaterZoneType">WaterZoneType</a>, <a href="../engine/gameinfo.html#WorldLog">WorldLog</a>, <a href="../engine/gameinfo.html#WorldLogFileName">WorldLogFileName</a>, <a href="../engine/gameinfo.html#WrongPassword">WrongPassword</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_AcceptInventory-" name="AcceptInventory" title="go to the details">AcceptInventory</a> (<a href="../engine/pawn.html">pawn</a> PlayerPawn))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_AddBot-" name="AddBot" title="go to the details">AddBot</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_CanSpectate-" name="CanSpectate" title="go to the details">CanSpectate</a> (<a href="../engine/pawn.html">pawn</a> Viewer, actor ViewTarget ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ChangeName-" name="ChangeName" title="go to the details">ChangeName</a> (<a href="../engine/pawn.html">Pawn</a> Other, coerce string S, bool bNameChange ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Debug-" name="Debug" title="go to the details">Debug</a> (<a href="../engine/canvas.html">Canvas</a> canvas, int mode))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_EndGame-" name="EndGame" title="go to the details">EndGame</a> (string Reason ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_EndSpree-" name="EndSpree" title="go to the details">EndSpree</a> (<a href="../engine/pawn.html">Pawn</a> Killer, <a href="../engine/pawn.html">Pawn</a> Other))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../engine/navigationpoint.html">NavigationPoint</a>&nbsp;</td><td><a href="#_FindPlayerStart-" name="FindPlayerStart" title="go to the details">FindPlayerStart</a> (<a href="../engine/pawn.html">Pawn</a> Player, optional byte InTeam, optional string incomingName ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>int&nbsp;</td><td><a href="#_GetIntOption-" name="GetIntOption" title="go to the details">GetIntOption</a> (string Options, string ParseString, int CurrentValue))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>string&nbsp;</td><td><a href="#_GetRules-" name="GetRules" title="go to the details">GetRules</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>&nbsp;</td><td><a href="#_InitGame-" name="InitGame" title="go to the details">InitGame</a> (string Options, out string Error ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_IsRelevant-" name="IsRelevant" title="go to the details">IsRelevant</a> (<a href="../engine/actor.html">actor</a> Other))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Killed-" name="Killed" title="go to the details">Killed</a> (<a href="../engine/pawn.html">pawn</a> killer, <a href="../engine/pawn.html">pawn</a> Other, name damageType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>string&nbsp;</td><td><a href="#_KillMessage-" name="KillMessage" title="go to the details">KillMessage</a> (name damageType, pawn killer ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_LogGameParameters-" name="LogGameParameters" title="go to the details">LogGameParameters</a> (<a href="../engine/statlog.html">StatLog</a> StatLog))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td><a href="../engine/playerpawn.html">playerpawn</a>&nbsp;</td><td><a href="#_Login-" name="Login" title="go to the details">Login</a> (string Portal, string Options, out string Error, class&lt;<a href="../engine/playerpawn.html">playerpawn</a>&gt; SpawnClass
+))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Logout-" name="Logout" title="go to the details">Logout</a> (<a href="../engine/pawn.html">pawn</a> Exiting))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_NotifySpree-" name="NotifySpree" title="go to the details">NotifySpree</a> (<a href="../engine/pawn.html">Pawn</a> Killer, int num))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_PlayerJumpZScaling-" name="PlayerJumpZScaling" title="go to the details">PlayerJumpZScaling</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_PlaySpawnEffect-" name="PlaySpawnEffect" title="go to the details">PlaySpawnEffect</a> (<a href="../engine/inventory.html">inventory</a> Inv))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayTeleportEffect-" name="PlayTeleportEffect" title="go to the details">PlayTeleportEffect</a> (<a href="../engine/actor.html">actor</a> Incoming, bool bOut, bool bSound))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PostBeginPlay-" name="PostBeginPlay" title="go to the details">PostBeginPlay</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PreCacheReferences-" name="PreCacheReferences" title="go to the details">PreCacheReferences</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ReduceDamage-" name="ReduceDamage" title="go to the details">ReduceDamage</a> (out int BluntDamage, out int SeverDamage, name DamageType, <a href="../engine/pawn.html">pawn</a> injured, <a href="../engine/pawn.html">pawn</a> instigatedBy))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_RestartGame-" name="RestartGame" title="go to the details">RestartGame</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SendCountdownMessage-" name="SendCountdownMessage" title="go to the details">SendCountdownMessage</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SetGameSpeed-" name="SetGameSpeed" title="go to the details">SetGameSpeed</a> (Float T ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_ShouldRespawn-" name="ShouldRespawn" title="go to the details">ShouldRespawn</a> (<a href="../engine/actor.html">Actor</a> Other))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Timer-" name="Timer" title="go to the details">Timer</a> ()))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runegameinfo.html">RuneGameInfo</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/runegameinfo.html#KillMessage">KillMessage</a>, <a href="../runei/runegameinfo.html#ProcessServerTravel">ProcessServerTravel</a>, <a href="../runei/runegameinfo.html#RestartPlayer">RestartPlayer</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/gameinfo.html">GameInfo</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/gameinfo.html#AcceptInventory">AcceptInventory</a>, <a href="../engine/gameinfo.html#AddBot">AddBot</a>, <a href="../engine/gameinfo.html#AddDefaultInventory">AddDefaultInventory</a>, <a href="../engine/gameinfo.html#AdminLogin">AdminLogin</a>, <a href="../engine/gameinfo.html#AdminLogout">AdminLogout</a>, <a href="../engine/gameinfo.html#AllowsBroadcast">AllowsBroadcast</a>, <a href="../engine/gameinfo.html#AllowShieldDrop">AllowShieldDrop</a>, <a href="../engine/gameinfo.html#AllowWeaponDrop">AllowWeaponDrop</a>, <a href="../engine/gameinfo.html#AtCapacity">AtCapacity</a>, <a href="../engine/gameinfo.html#BroadcastRegularDeathMessage">BroadcastRegularDeathMessage</a>, <a href="../engine/gameinfo.html#CanSpectate">CanSpectate</a>, <a href="../engine/gameinfo.html#ChangeName">ChangeName</a>, <a href="../engine/gameinfo.html#ChangeTeam">ChangeTeam</a>, <a href="../engine/gameinfo.html#CheckIPPolicy">CheckIPPolicy</a>, <a href="../engine/gameinfo.html#CreatureKillMessage">CreatureKillMessage</a>, <a href="../engine/gameinfo.html#Debug">Debug</a>, <a href="../engine/gameinfo.html#DetailChange">DetailChange</a>, <a href="../engine/gameinfo.html#DiscardInventory">DiscardInventory</a>, <a href="../engine/gameinfo.html#EndGame">EndGame</a>, <a href="../engine/gameinfo.html#FindPlayerStart">FindPlayerStart</a>, <a href="../engine/gameinfo.html#ForceAddBot">ForceAddBot</a>, <a href="../engine/gameinfo.html#GameEnding">GameEnding</a>, <a href="../engine/gameinfo.html#GetBeaconText">GetBeaconText</a>, <a href="../engine/gameinfo.html#GetInfo">GetInfo</a>, <a href="../engine/gameinfo.html#GetIntOption">GetIntOption</a>, <a href="../engine/gameinfo.html#GetKeyValue">GetKeyValue</a>, <a href="../engine/gameinfo.html#GetNetworkNumber">GetNetworkNumber</a>, <a href="../engine/gameinfo.html#GetRules">GetRules</a>, <a href="../engine/gameinfo.html#GetServerPort">GetServerPort</a>, <a href="../engine/gameinfo.html#GetTeamVectorColor">GetTeamVectorColor</a>, <a href="../engine/gameinfo.html#GrabOption">GrabOption</a>, <a href="../engine/gameinfo.html#HasOption">HasOption</a>, <a href="../engine/gameinfo.html#InitGame">InitGame</a>, <a href="../engine/gameinfo.html#InitGameReplicationInfo">InitGameReplicationInfo</a>, <a href="../engine/gameinfo.html#InitLogging">InitLogging</a>, <a href="../engine/gameinfo.html#IsRelevant">IsRelevant</a>, <a href="../engine/gameinfo.html#Killed">Killed</a>, <a href="../engine/gameinfo.html#KillMessage">KillMessage</a>, <a href="../engine/gameinfo.html#LogGameParameters">LogGameParameters</a>, <a href="../engine/gameinfo.html#Login">Login</a>, <a href="../engine/gameinfo.html#Logout">Logout</a>, <a href="../engine/gameinfo.html#ParseKillMessage">ParseKillMessage</a>, <a href="../engine/gameinfo.html#ParseOption">ParseOption</a>, <a href="../engine/gameinfo.html#PickupQuery">PickupQuery</a>, <a href="../engine/gameinfo.html#PlayerJumpZScaling">PlayerJumpZScaling</a>, <a href="../engine/gameinfo.html#PlayerKillMessage">PlayerKillMessage</a>, <a href="../engine/gameinfo.html#PlaySpawnEffect">PlaySpawnEffect</a>, <a href="../engine/gameinfo.html#PlayTeleportEffect">PlayTeleportEffect</a>, <a href="../engine/gameinfo.html#PostBeginPlay">PostBeginPlay</a>, <a href="../engine/gameinfo.html#PostLogin">PostLogin</a>, <a href="../engine/gameinfo.html#PreBeginPlay">PreBeginPlay</a>, <a href="../engine/gameinfo.html#PreLogin">PreLogin</a>, <a href="../engine/gameinfo.html#ProcessServerTravel">ProcessServerTravel</a>, <a href="../engine/gameinfo.html#ReduceDamage">ReduceDamage</a>, <a href="../engine/gameinfo.html#RegisterDamageMutator">RegisterDamageMutator</a>, <a href="../engine/gameinfo.html#ResetGame">ResetGame</a>, <a href="../engine/gameinfo.html#RestartGame">RestartGame</a>, <a href="../engine/gameinfo.html#RestartPlayer">RestartPlayer</a>, <a href="../engine/gameinfo.html#ScoreEvent">ScoreEvent</a>, <a href="../engine/gameinfo.html#ScoreKill">ScoreKill</a>, <a href="../engine/gameinfo.html#SendPlayer">SendPlayer</a>, <a href="../engine/gameinfo.html#SetEndCams">SetEndCams</a>, <a href="../engine/gameinfo.html#SetGameSpeed">SetGameSpeed</a>, <a href="../engine/gameinfo.html#SetPause">SetPause</a>, <a href="../engine/gameinfo.html#ShouldRespawn">ShouldRespawn</a>, <a href="../engine/gameinfo.html#StartPlayer">StartPlayer</a>, <a href="../engine/gameinfo.html#Timer">Timer</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_bAlreadyChanged" class="hidden"></a>bAlreadyChanged <a href="../Source_runei/runemultiplayer.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bAlreadyChanged;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bDontRestart" class="hidden"></a>bDontRestart <a href="../Source_runei/runemultiplayer.html#13" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bDontRestart;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bFirstBlood" class="hidden"></a>bFirstBlood <a href="../Source_runei/runemultiplayer.html#15" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bFirstBlood;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bLevelHasTeamOnly" class="hidden"></a>bLevelHasTeamOnly <a href="../Source_runei/runemultiplayer.html#47" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bLevelHasTeamOnly;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CrushedMessage" class="hidden"></a>CrushedMessage <a href="../Source_runei/runemultiplayer.html#36" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> CrushedMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DrownedMessage" class="hidden"></a>DrownedMessage <a href="../Source_runei/runemultiplayer.html#37" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> DrownedMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FellMessage" class="hidden"></a>FellMessage <a href="../Source_runei/runemultiplayer.html#38" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> FellMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FireMessage" class="hidden"></a>FireMessage <a href="../Source_runei/runemultiplayer.html#41" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> FireMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FirstBloodMsg" class="hidden"></a>FirstBloodMsg <a href="../Source_runei/runemultiplayer.html#29" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> FirstBloodMsg;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GlobalNameChange" class="hidden"></a>GlobalNameChange <a href="../Source_runei/runemultiplayer.html#25" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> GlobalNameChange;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GlobalNameChangeTrailer" class="hidden"></a>GlobalNameChangeTrailer <a href="../Source_runei/runemultiplayer.html#28" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> GlobalNameChangeTrailer;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HeadKillMsg" class="hidden"></a>HeadKillMsg <a href="../Source_runei/runemultiplayer.html#33" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> HeadKillMsg;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HeadMessage" class="hidden"></a>HeadMessage <a href="../Source_runei/runemultiplayer.html#42" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> HeadMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LastStartSpot" class="hidden"></a>LastStartSpot <a href="../Source_runei/runemultiplayer.html#45" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/navigationpoint.html" class="source">NavigationPoint</a></span> LastStartSpot;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NoNameChange" class="hidden"></a>NoNameChange <a href="../Source_runei/runemultiplayer.html#26" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> NoNameChange;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NormalMessage" class="hidden"></a>NormalMessage <a href="../Source_runei/runemultiplayer.html#40" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> NormalMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RemainingTime" class="hidden"></a>RemainingTime <a href="../Source_runei/runemultiplayer.html#16" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> RemainingTime;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SpreeEndMsg" class="hidden"></a>SpreeEndMsg <a href="../Source_runei/runemultiplayer.html#31" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> SpreeEndMsg;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SpreeEndTrailer" class="hidden"></a>SpreeEndTrailer <a href="../Source_runei/runemultiplayer.html#32" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> SpreeEndTrailer;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SpreeMsg" class="hidden"></a>SpreeMsg <a href="../Source_runei/runemultiplayer.html#30" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> SpreeMsg;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SuicidedMessage" class="hidden"></a>SuicidedMessage <a href="../Source_runei/runemultiplayer.html#43" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> SuicidedMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ThrownMessage" class="hidden"></a>ThrownMessage <a href="../Source_runei/runemultiplayer.html#39" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> ThrownMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TimeMessage[16]" class="hidden"></a>TimeMessage[16] <a href="../Source_runei/runemultiplayer.html#27" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> TimeMessage[<span class="source_int">16</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">RuneMultiPlayer</h3>
+<h4><a name="_bChangeLevels" class="hidden"></a>bChangeLevels <a href="../Source_runei/runemultiplayer.html#9" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/runemultiplayer.html" class="source">RuneMultiPlayer</a></span>) <span class="source_keyword2">globalconfig</span> <span class="source_keyword">bool</span> bChangeLevels;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bHardCoreMode" class="hidden"></a>bHardCoreMode <a href="../Source_runei/runemultiplayer.html#10" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/runemultiplayer.html" class="source">RuneMultiPlayer</a></span>) <span class="source_keyword2">globalconfig</span> <span class="source_keyword">bool</span> bHardCoreMode;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bMegaSpeed" class="hidden"></a>bMegaSpeed <a href="../Source_runei/runemultiplayer.html#11" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/runemultiplayer.html" class="source">RuneMultiPlayer</a></span>) <span class="source_keyword2">globalconfig</span> <span class="source_keyword">bool</span> bMegaSpeed;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FragLimit" class="hidden"></a>FragLimit <a href="../Source_runei/runemultiplayer.html#6" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/runemultiplayer.html" class="source">RuneMultiPlayer</a></span>) <span class="source_keyword2">globalconfig</span> <span class="source_keyword">int</span> FragLimit;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TimeLimit" class="hidden"></a>TimeLimit <a href="../Source_runei/runemultiplayer.html#7" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/runemultiplayer.html" class="source">RuneMultiPlayer</a></span>) <span class="source_keyword2">globalconfig</span> <span class="source_keyword">int</span> TimeLimit;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_AcceptInventory-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> AcceptInventory <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#537" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  AcceptInventory ( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type"><a href="../engine/playerpawn.html" class="source">PlayerPawn</a></span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AddBot-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> AddBot <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#303" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> AddBot ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CanSpectate-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CanSpectate <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#591" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> CanSpectate ( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> Viewer, <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">ViewTarget</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ChangeName-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ChangeName <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#553" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ChangeName ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">Other</span>, <span class="source_keyword2">coerce</span> <span class="source_keyword">string</span> <span class="source_type">S</span>, <span class="source_keyword">bool</span> <span class="source_type">bNameChange</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Debug-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Debug <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#710" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span>  Debug ( <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span>, <span class="source_keyword">int</span> mode) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EndGame-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> EndGame <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#657" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  EndGame ( <span class="source_keyword">string</span> <span class="source_type">Reason</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EndSpree-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> EndSpree <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#602" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  EndSpree ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">Killer</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">Other</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FindPlayerStart-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> FindPlayerStart <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#440" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_type"><a href="../engine/navigationpoint.html" class="source">NavigationPoint</a></span> FindPlayerStart ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type"><a href="../engine/player.html" class="source">Player</a></span>, <span class="source_keyword2">optional</span> <span class="source_keyword">byte</span> InTeam, <span class="source_keyword2">optional</span> <span class="source_keyword">string</span> <span class="source_type">incomingName</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetIntOption-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetIntOption <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#80" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">int</span> GetIntOption ( <span class="source_keyword">string</span> Options, <span class="source_keyword">string</span> ParseString, <span class="source_keyword">int</span> CurrentValue) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetRules-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetRules <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#152" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">string</span> GetRules ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_InitGame-" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> InitGame <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#132" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span>  InitGame ( <span class="source_keyword">string</span> Options, <span class="source_keyword2">out</span> <span class="source_keyword">string</span> <span class="source_type">Error</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_IsRelevant-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> IsRelevant <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#88" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> IsRelevant ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Killed-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Killed <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#612" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Killed ( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">killer</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">Other</span>, <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">damageType</a></span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_KillMessage-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> KillMessage <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#672" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">static</span> <span class="source_keyword">function</span> <span class="source_keyword">string</span> KillMessage ( <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">damageType</a></span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">killer</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LogGameParameters-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> LogGameParameters <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#100" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  LogGameParameters ( <span class="source_type"><a href="../engine/statlog.html" class="source">StatLog</a></span> <span class="source_type"><a href="../engine/statlog.html" class="source">StatLog</a></span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Login-" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> Login <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#275" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span> <span class="source_type"><a href="../engine/playerpawn.html" class="source">playerpawn</a></span> Login ( <span class="source_keyword">string</span> Portal,
+    <span class="source_keyword">string</span> Options,
+    <span class="source_keyword2">out</span> <span class="source_keyword">string</span> <span class="source_type">Error</span>,
+    <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/playerpawn.html" class="source">playerpawn</a></span>&gt; SpawnClass
+) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Logout-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Logout <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#359" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Logout ( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">Exiting</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NotifySpree-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> NotifySpree <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#596" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  NotifySpree ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">Killer</span>, <span class="source_keyword">int</span> <span class="source_type">num</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayerJumpZScaling-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayerJumpZScaling <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#114" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">float</span> PlayerJumpZScaling ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlaySpawnEffect-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlaySpawnEffect <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#222" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">float</span> PlaySpawnEffect ( <span class="source_type"><a href="../engine/inventory.html" class="source">inventory</a></span> <span class="source_type">Inv</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayTeleportEffect-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayTeleportEffect <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#228" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayTeleportEffect ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> Incoming, <span class="source_keyword">bool</span> bOut, <span class="source_keyword">bool</span> bSound) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PostBeginPlay-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PostBeginPlay <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#50" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PostBeginPlay ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PreCacheReferences-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PreCacheReferences <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#75" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PreCacheReferences ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ReduceDamage-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ReduceDamage <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#179" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ReduceDamage ( <span class="source_keyword2">out</span> <span class="source_keyword">int</span> BluntDamage, <span class="source_keyword2">out</span> <span class="source_keyword">int</span> SeverDamage, <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">DamageType</a></span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> injured, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">instigatedBy</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RestartGame-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> RestartGame <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#243" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  RestartGame ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SendCountdownMessage-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SendCountdownMessage <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#366" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SendCountdownMessage ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SetGameSpeed-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SetGameSpeed <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#125" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SetGameSpeed ( <span class="source_keyword">Float</span> <span class="source_type">T</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ShouldRespawn-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ShouldRespawn <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#586" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> ShouldRespawn ( <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> <span class="source_type">Other</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Timer-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Timer <span class="function_state"></span> <a href="../Source_runei/runemultiplayer.html#414" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Timer ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     bChangeLevels=<span class="source_keyword">True</span>
+     bHardCoreMode=<span class="source_keyword">True</span>
+     GlobalNameChange=<span class="source_string">" changed name to "</span>
+     NoNameChange=<span class="source_string">" is already in use"</span>
+     TimeMessage(<span class="source_int">0</span>)=<span class="source_string">"5 minutes left in the game!"</span>
+     TimeMessage(<span class="source_int">1</span>)=<span class="source_string">"4 minutes left in the game!"</span>
+     TimeMessage(<span class="source_int">2</span>)=<span class="source_string">"3 minutes left in the game!"</span>
+     TimeMessage(<span class="source_int">3</span>)=<span class="source_string">"2 minutes left in the game!"</span>
+     TimeMessage(<span class="source_int">4</span>)=<span class="source_string">"1 minute left in the game!"</span>
+     TimeMessage(<span class="source_int">5</span>)=<span class="source_string">"30 seconds left!"</span>
+     TimeMessage(<span class="source_int">6</span>)=<span class="source_string">"10 seconds left!"</span>
+     TimeMessage(<span class="source_int">7</span>)=<span class="source_string">"5 seconds and counting..."</span>
+     TimeMessage(<span class="source_int">8</span>)=<span class="source_string">"4..."</span>
+     TimeMessage(<span class="source_int">9</span>)=<span class="source_string">"3..."</span>
+     TimeMessage(<span class="source_int">10</span>)=<span class="source_string">"2..."</span>
+     TimeMessage(<span class="source_int">11</span>)=<span class="source_string">"1..."</span>
+     TimeMessage(<span class="source_int">12</span>)=<span class="source_string">"Time Up!"</span>
+     FirstBloodMsg=<span class="source_string">"drew FIRST BLOOD"</span>
+     SpreeMsg=<span class="source_string">"in a row for"</span>
+     SpreeEndMsg=<span class="source_string">"stopped"</span>
+     SpreeEndTrailer=<span class="source_string">"'s killing spree."</span>
+     HeadKillMsg=<span class="source_string">" took a trophy."</span>
+     CrushedMessage=<span class="source_string">" was crushed."</span>
+     DrownedMessage=<span class="source_string">"%o got a mouthful."</span>
+     FellMessage=<span class="source_string">" suffered deceleration trauma."</span>
+     ThrownMessage=<span class="source_string">"%o got skewered by %k."</span>
+     NormalMessage=<span class="source_string">"%o was whacked up by %k."</span>
+     FireMessage=<span class="source_string">"%o got smoked by %k."</span>
+     HeadMessage=<span class="source_string">"%o died by %k's blade."</span>
+     SuicidedMessage=<span class="source_string">" died."</span>
+     bRestartLevel=<span class="source_keyword">False</span>
+     bPauseable=<span class="source_keyword">False</span>
+     bDeathMatch=<span class="source_keyword">True</span>
+     DefaultWeapon=<span class="source_keyword">Class</span><span class="source_name">'RuneI.handaxe'</span>
+     ScoreBoardType=<span class="source_keyword">Class</span><span class="source_name">'RuneI.RuneScoreboard'</span>
+     RulesMenuType=<span class="source_string">"RMenu.RuneMenuRulesScrollClient"</span>
+     SettingsMenuType=<span class="source_string">"RMenu.RuneMenuSettingsScrollClient"</span>
+     MutatorMenuType=<span class="source_string">"RMenu.RuneMenuMutatorScrollClient"</span>
+     MaplistMenuType=<span class="source_string">"RMenu.RuneMenuMaplistScrollClient"</span>
+     GameUMenuType=<span class="source_string">"RMenu.RuneMenu"</span>
+     MultiplayerUMenuType=<span class="source_string">"RMenu.RuneMenuMultiplayerTop"</span>
+     GameOptionsMenuType=<span class="source_string">"RMenu.RuneMenuOptionsTop"</span>
+     MapListType=<span class="source_keyword">Class</span><span class="source_name">'RuneI.DMmaplist'</span>
+     MapPrefix=<span class="source_string">"DM"</span>
+     BeaconName=<span class="source_string">"DM"</span>
+     GameName=<span class="source_string">"RuneMatch"</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/runemultiplayer.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#RuneMultiPlayer">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/runehud.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/runeofhealth.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:41:09.099 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

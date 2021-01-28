@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - RMenu.RuneMenuLoadTop</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../rmenu/rmenu-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_rmenu/runemenuloadtop.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#RuneMenuLoadTop">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../rmenu/runemenuloadscrollclient.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../rmenu/runemenumaplist.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#rmenu/runemenuloadtop.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../rmenu/rmenu-overview.html">RMenu</a>.RuneMenuLoadTop</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../rmenu/runemenutopwindow.html">RuneMenuTopWindow</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowbase.html">UWindowBase</a>
+   |   
+   +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowwindow.html">UWindowWindow</a>
+      |   
+      +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowclientwindow.html">UWindowClientWindow</a>
+         |   
+         +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowdialogclientwindow.html">UWindowDialogClientWindow</a>
+            |   
+            +-- <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runewindow.html">RuneWindow</a>
+               |   
+               +-- <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runemenutopwindow.html">RuneMenuTopWindow</a>
+                  |   
+                  +-- <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runemenuloadtop.html">RuneMenuLoadTop</a>
+</pre>
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_LoadLabel" name="LoadLabel" title="go to the details">LoadLabel</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_LoadText" name="LoadText" title="go to the details">LoadText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindowwindow.html">UWindowWindow</a></td><td width="66%"><a href="#_LoadWindow" name="LoadWindow" title="go to the details">LoadWindow</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runemenutopwindow.html">RuneMenuTopWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../rmenu/runemenutopwindow.html#bOpen">bOpen</a>, <a href="../rmenu/runemenutopwindow.html#bOpening">bOpening</a>, <a href="../rmenu/runemenutopwindow.html#SlideRate">SlideRate</a>, <a href="../rmenu/runemenutopwindow.html#test1">test1</a>, <a href="../rmenu/runemenutopwindow.html#test2">test2</a>, <a href="../rmenu/runemenutopwindow.html#XAlpha">XAlpha</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runewindow.html">RuneWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../rmenu/runewindow.html#DefaultHeight">DefaultHeight</a>, <a href="../rmenu/runewindow.html#DefaultWidth">DefaultWidth</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Created-" name="Created" title="go to the details">Created</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DoneOpening-" name="DoneOpening" title="go to the details">DoneOpening</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_HideAllWindows-" name="HideAllWindows" title="go to the details">HideAllWindows</a> ()))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runemenutopwindow.html">RuneMenuTopWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../rmenu/runemenutopwindow.html#Created">Created</a>, <a href="../rmenu/runemenutopwindow.html#CubicBlend">CubicBlend</a>, <a href="../rmenu/runemenutopwindow.html#DebugString">DebugString</a>, <a href="../rmenu/runemenutopwindow.html#DoneOpening">DoneOpening</a>, <a href="../rmenu/runemenutopwindow.html#HermiteBlend">HermiteBlend</a>, <a href="../rmenu/runemenutopwindow.html#HideAllWindows">HideAllWindows</a>, <a href="../rmenu/runemenutopwindow.html#HideWindow">HideWindow</a>, <a href="../rmenu/runemenutopwindow.html#Paint">Paint</a>, <a href="../rmenu/runemenutopwindow.html#SlideOpen">SlideOpen</a>, <a href="../rmenu/runemenutopwindow.html#Tick">Tick</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runewindow.html">RuneWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../rmenu/runewindow.html#BeforePaint">BeforePaint</a>, <a href="../rmenu/runewindow.html#Created">Created</a>, <a href="../rmenu/runewindow.html#Paint">Paint</a>, <a href="../rmenu/runewindow.html#PreSize">PreSize</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_LoadLabel" class="hidden"></a>LoadLabel <a href="../Source_rmenu/runemenuloadtop.html#8" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> LoadLabel;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LoadText" class="hidden"></a>LoadText <a href="../Source_rmenu/runemenuloadtop.html#9" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> LoadText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LoadWindow" class="hidden"></a>LoadWindow <a href="../Source_rmenu/runemenuloadtop.html#6" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowwindow.html" class="source">UWindowWindow</a></span> LoadWindow;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_Created-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Created <span class="function_state"></span> <a href="../Source_rmenu/runemenuloadtop.html#15" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Created ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DoneOpening-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DoneOpening <span class="function_state"></span> <a href="../Source_rmenu/runemenuloadtop.html#42" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  DoneOpening ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HideAllWindows-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> HideAllWindows <span class="function_state"></span> <a href="../Source_rmenu/runemenuloadtop.html#53" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  HideAllWindows ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     LoadText=<span class="source_string">"Load Game"</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../rmenu/rmenu-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_rmenu/runemenuloadtop.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#RuneMenuLoadTop">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../rmenu/runemenuloadscrollclient.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../rmenu/runemenumaplist.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:41:08.515 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

@@ -1,0 +1,516 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - RuneI.RuneScoreBoard</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/runescoreboard.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#RuneScoreBoard">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/runes.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/runescoreboardteam.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#runei/runescoreboard.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../runei/runei-overview.html">RuneI</a>.RuneScoreBoard</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../engine/scoreboard.html">ScoreBoard</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a>
+   |   
+   +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/info.html">Info</a>
+      |   
+      +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/scoreboard.html">ScoreBoard</a>
+         |   
+         +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runescoreboard.html">RuneScoreBoard</a>
+</pre>
+
+<h4>Direct Known Subclasses:</h4>
+<blockquote>
+	<a href="../runei/runescoreboardteam.html">RuneScoreBoardTeam</a>
+</blockquote>
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_AwardsText" name="AwardsText" title="go to the details">AwardsText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/texture.html">Texture</a></td><td width="66%"><a href="#_Background" name="Background" title="go to the details">Background</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Color">color</a></td><td width="66%"><a href="#_BackgroundColor" name="BackgroundColor" title="go to the details">BackgroundColor</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Color">color</a></td><td width="66%"><a href="#_BlueColor" name="BlueColor" title="go to the details">BlueColor</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bTimeDown" name="bTimeDown" title="go to the details">bTimeDown</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ContinueMsg" name="ContinueMsg" title="go to the details">ContinueMsg</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ContinueTrailer" name="ContinueTrailer" title="go to the details">ContinueTrailer</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Color">color</a></td><td width="66%"><a href="#_CyanColor" name="CyanColor" title="go to the details">CyanColor</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_DeathsText" name="DeathsText" title="go to the details">DeathsText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ElapsedTimeMsg" name="ElapsedTimeMsg" title="go to the details">ElapsedTimeMsg</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/texture.html">Texture</a></td><td width="66%"><a href="#_FirstBloodIcon" name="FirstBloodIcon" title="go to the details">FirstBloodIcon</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_FontInfoClass" name="FontInfoClass" title="go to the details">FontInfoClass</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_FragsText" name="FragsText" title="go to the details">FragsText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_GameTypeMsg" name="GameTypeMsg" title="go to the details">GameTypeMsg</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Color">color</a></td><td width="66%"><a href="#_GoldColor" name="GoldColor" title="go to the details">GoldColor</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Color">color</a></td><td width="66%"><a href="#_GreenColor" name="GreenColor" title="go to the details">GreenColor</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/texture.html">Texture</a></td><td width="66%"><a href="#_HeadIcon" name="HeadIcon" title="go to the details">HeadIcon</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_IdealPlayerCountMsg" name="IdealPlayerCountMsg" title="go to the details">IdealPlayerCountMsg</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Color">color</a></td><td width="66%"><a href="#_LightCyanColor" name="LightCyanColor" title="go to the details">LightCyanColor</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Color">color</a></td><td width="66%"><a href="#_LightGreenColor" name="LightGreenColor" title="go to the details">LightGreenColor</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_MapTitleMsg" name="MapTitleMsg" title="go to the details">MapTitleMsg</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/fontinfo.html">FontInfo</a></td><td width="66%"><a href="#_MyFonts" name="MyFonts" title="go to the details">MyFonts</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_NameText" name="NameText" title="go to the details">NameText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_NumPlayersMsg" name="NumPlayersMsg" title="go to the details">NumPlayersMsg</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/playerreplicationinfo.html">PlayerReplicationInfo</a></td><td width="66%"><a href="#_Ordered[32]" name="Ordered[32]" title="go to the details">Ordered[32]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_PingText" name="PingText" title="go to the details">PingText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ReadyText" name="ReadyText" title="go to the details">ReadyText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Color">color</a></td><td width="66%"><a href="#_RedColor" name="RedColor" title="go to the details">RedColor</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_RemainingTimeMsg" name="RemainingTimeMsg" title="go to the details">RemainingTimeMsg</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_RestartMsg" name="RestartMsg" title="go to the details">RestartMsg</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/texture.html">Texture</a></td><td width="66%"><a href="#_Seperator" name="Seperator" title="go to the details">Seperator</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/texture.html">Texture</a></td><td width="66%"><a href="#_SpreeIcon" name="SpreeIcon" title="go to the details">SpreeIcon</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Color">color</a></td><td width="66%"><a href="#_VioletColor" name="VioletColor" title="go to the details">VioletColor</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Color">color</a></td><td width="66%"><a href="#_WhiteColor" name="WhiteColor" title="go to the details">WhiteColor</a></td></tr>
+<tr><th colspan="2" class="small">RuneScoreBoard</th></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_BackgroundAlpha" name="BackgroundAlpha" title="go to the details">BackgroundAlpha</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/scoreboard.html">ScoreBoard</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/scoreboard.html#OwnerHUD">OwnerHUD</a>, <a href="../engine/scoreboard.html#RegFont">RegFont</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DrawBackground-" name="DrawBackground" title="go to the details">DrawBackground</a> (<a href="../engine/canvas.html">canvas</a> Canvas, int X, int Y, int W, int H))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DrawHeader-" name="DrawHeader" title="go to the details">DrawHeader</a> (canvas <a href="../engine/canvas.html">Canvas</a> ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DrawPlayerInfo-" name="DrawPlayerInfo" title="go to the details">DrawPlayerInfo</a> (<a href="../engine/canvas.html">canvas</a> Canvas, <a href="../engine/playerreplicationinfo.html">PlayerReplicationInfo</a> PRI, float XOffset, float YOffset))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DrawTableHeadings-" name="DrawTableHeadings" title="go to the details">DrawTableHeadings</a> (<a href="../engine/canvas.html">canvas</a> Canvas))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DrawTrailer-" name="DrawTrailer" title="go to the details">DrawTrailer</a> (canvas <a href="../engine/canvas.html">Canvas</a> ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PostBeginPlay-" name="PostBeginPlay" title="go to the details">PostBeginPlay</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ShowScores-" name="ShowScores" title="go to the details">ShowScores</a> (canvas <a href="../engine/canvas.html">Canvas</a> ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SortScores-" name="SortScores" title="go to the details">SortScores</a> (int N))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>string&nbsp;</td><td><a href="#_TwoDigitString-" name="TwoDigitString" title="go to the details">TwoDigitString</a> (int Num))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/scoreboard.html">ScoreBoard</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/scoreboard.html#PreBeginPlay">PreBeginPlay</a>, <a href="../engine/scoreboard.html#ShowMiniScores">ShowMiniScores</a>, <a href="../engine/scoreboard.html#ShowScores">ShowScores</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_AwardsText" class="hidden"></a>AwardsText <a href="../Source_runei/runescoreboard.html#20" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> AwardsText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Background" class="hidden"></a>Background <a href="../Source_runei/runescoreboard.html#21" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span> Background;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BackgroundColor" class="hidden"></a>BackgroundColor <a href="../Source_runei/runescoreboard.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Color" class="source">color</a></span> BackgroundColor;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BlueColor" class="hidden"></a>BlueColor <a href="../Source_runei/runescoreboard.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Color" class="source">color</a></span> BlueColor;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bTimeDown" class="hidden"></a>bTimeDown <a href="../Source_runei/runescoreboard.html#16" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bTimeDown;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ContinueMsg" class="hidden"></a>ContinueMsg <a href="../Source_runei/runescoreboard.html#19" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> ContinueMsg;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ContinueTrailer" class="hidden"></a>ContinueTrailer <a href="../Source_runei/runescoreboard.html#19" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> ContinueTrailer;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CyanColor" class="hidden"></a>CyanColor <a href="../Source_runei/runescoreboard.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Color" class="source">color</a></span> CyanColor;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DeathsText" class="hidden"></a>DeathsText <a href="../Source_runei/runescoreboard.html#20" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> DeathsText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ElapsedTimeMsg" class="hidden"></a>ElapsedTimeMsg <a href="../Source_runei/runescoreboard.html#18" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> ElapsedTimeMsg;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FirstBloodIcon" class="hidden"></a>FirstBloodIcon <a href="../Source_runei/runescoreboard.html#21" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span> FirstBloodIcon;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FontInfoClass" class="hidden"></a>FontInfoClass <a href="../Source_runei/runescoreboard.html#24" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">globalconfig</span> <span class="source_keyword">string</span> FontInfoClass;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FragsText" class="hidden"></a>FragsText <a href="../Source_runei/runescoreboard.html#20" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> FragsText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GameTypeMsg" class="hidden"></a>GameTypeMsg <a href="../Source_runei/runescoreboard.html#18" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> GameTypeMsg;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GoldColor" class="hidden"></a>GoldColor <a href="../Source_runei/runescoreboard.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Color" class="source">color</a></span> GoldColor;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GreenColor" class="hidden"></a>GreenColor <a href="../Source_runei/runescoreboard.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Color" class="source">color</a></span> GreenColor;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HeadIcon" class="hidden"></a>HeadIcon <a href="../Source_runei/runescoreboard.html#21" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span> HeadIcon;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_IdealPlayerCountMsg" class="hidden"></a>IdealPlayerCountMsg <a href="../Source_runei/runescoreboard.html#18" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> IdealPlayerCountMsg;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LightCyanColor" class="hidden"></a>LightCyanColor <a href="../Source_runei/runescoreboard.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Color" class="source">color</a></span> LightCyanColor;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LightGreenColor" class="hidden"></a>LightGreenColor <a href="../Source_runei/runescoreboard.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Color" class="source">color</a></span> LightGreenColor;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MapTitleMsg" class="hidden"></a>MapTitleMsg <a href="../Source_runei/runescoreboard.html#18" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> MapTitleMsg;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MyFonts" class="hidden"></a>MyFonts <a href="../Source_runei/runescoreboard.html#25" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/fontinfo.html" class="source">FontInfo</a></span> MyFonts;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NameText" class="hidden"></a>NameText <a href="../Source_runei/runescoreboard.html#20" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> NameText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NumPlayersMsg" class="hidden"></a>NumPlayersMsg <a href="../Source_runei/runescoreboard.html#18" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> NumPlayersMsg;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Ordered[32]" class="hidden"></a>Ordered[32] <a href="../Source_runei/runescoreboard.html#15" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span> Ordered[<span class="source_int">32</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PingText" class="hidden"></a>PingText <a href="../Source_runei/runescoreboard.html#20" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> PingText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ReadyText" class="hidden"></a>ReadyText <a href="../Source_runei/runescoreboard.html#17" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> ReadyText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RedColor" class="hidden"></a>RedColor <a href="../Source_runei/runescoreboard.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Color" class="source">color</a></span> RedColor;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RemainingTimeMsg" class="hidden"></a>RemainingTimeMsg <a href="../Source_runei/runescoreboard.html#18" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> RemainingTimeMsg;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RestartMsg" class="hidden"></a>RestartMsg <a href="../Source_runei/runescoreboard.html#19" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> RestartMsg;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Seperator" class="hidden"></a>Seperator <a href="../Source_runei/runescoreboard.html#21" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span> Seperator;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SpreeIcon" class="hidden"></a>SpreeIcon <a href="../Source_runei/runescoreboard.html#21" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span> SpreeIcon;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_VioletColor" class="hidden"></a>VioletColor <a href="../Source_runei/runescoreboard.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Color" class="source">color</a></span> VioletColor;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_WhiteColor" class="hidden"></a>WhiteColor <a href="../Source_runei/runescoreboard.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Color" class="source">color</a></span> WhiteColor;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">RuneScoreBoard</h3>
+<h4><a name="_BackgroundAlpha" class="hidden"></a>BackgroundAlpha <a href="../Source_runei/runescoreboard.html#22" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/runescoreboard.html" class="source">RuneScoreBoard</a></span>) <span class="source_keyword">float</span> BackgroundAlpha;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_DrawBackground-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DrawBackground <span class="function_state"></span> <a href="../Source_runei/runescoreboard.html#169" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  DrawBackground ( <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>, <span class="source_keyword">int</span> X, <span class="source_keyword">int</span> <span class="source_type">Y</span>, <span class="source_keyword">int</span> W, <span class="source_keyword">int</span> H) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DrawHeader-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DrawHeader <span class="function_state"></span> <a href="../Source_runei/runescoreboard.html#36" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  DrawHeader ( <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DrawPlayerInfo-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DrawPlayerInfo <span class="function_state"></span> <a href="../Source_runei/runescoreboard.html#221" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  DrawPlayerInfo ( <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>, <span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span> <span class="source_type">PRI</span>, <span class="source_keyword">float</span> XOffset, <span class="source_keyword">float</span> YOffset) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DrawTableHeadings-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DrawTableHeadings <span class="function_state"></span> <a href="../Source_runei/runescoreboard.html#180" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  DrawTableHeadings ( <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DrawTrailer-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DrawTrailer <span class="function_state"></span> <a href="../Source_runei/runescoreboard.html#94" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  DrawTrailer ( <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PostBeginPlay-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PostBeginPlay <span class="function_state"></span> <a href="../Source_runei/runescoreboard.html#27" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PostBeginPlay ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ShowScores-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ShowScores <span class="function_state"></span> <a href="../Source_runei/runescoreboard.html#372" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ShowScores ( <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SortScores-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SortScores <span class="function_state"></span> <a href="../Source_runei/runescoreboard.html#347" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SortScores ( <span class="source_keyword">int</span> <span class="source_type">N</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TwoDigitString-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> TwoDigitString <span class="function_state"></span> <a href="../Source_runei/runescoreboard.html#86" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">string</span> TwoDigitString ( <span class="source_keyword">int</span> <span class="source_type">Num</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     GreenColor=(G=<span class="source_int">255</span>)
+     WhiteColor=(R=<span class="source_int">255</span>,G=<span class="source_int">255</span>,<span class="source_type">B</span>=<span class="source_int">255</span>)
+     GoldColor=(R=<span class="source_int">255</span>,G=<span class="source_int">255</span>)
+     CyanColor=(G=<span class="source_int">255</span>,<span class="source_type">B</span>=<span class="source_int">255</span>)
+     RedColor=(R=<span class="source_int">255</span>)
+     LightCyanColor=(R=<span class="source_int">128</span>,G=<span class="source_int">255</span>,<span class="source_type">B</span>=<span class="source_int">255</span>)
+     LightGreenColor=(G=<span class="source_int">128</span>,<span class="source_type">B</span>=<span class="source_int">128</span>)
+     VioletColor=(R=<span class="source_int">228</span>,<span class="source_type">B</span>=<span class="source_int">228</span>)
+     BlueColor=(<span class="source_type">B</span>=<span class="source_int">255</span>)
+     BackgroundColor=(R=<span class="source_int">255</span>,G=<span class="source_int">255</span>,<span class="source_type">B</span>=<span class="source_int">255</span>)
+     ReadyText=<span class="source_string">"R"</span>
+     RemainingTimeMsg=<span class="source_string">"Remaining Time: "</span>
+     ElapsedTimeMsg=<span class="source_string">"Elapsed Time: "</span>
+     GameTypeMsg=<span class="source_string">"Game Type: "</span>
+     MapTitleMsg=<span class="source_string">"Map: "</span>
+     IdealPlayerCountMsg=<span class="source_string">"Ideal Player Load:"</span>
+     NumPlayersMsg=<span class="source_string">" Players"</span>
+     RestartMsg=<span class="source_string">"You are dead.  Hit [Fire] to respawn!"</span>
+     ContinueMsg=<span class="source_string">"The match has ended. "</span>
+     ContinueTrailer=<span class="source_string">"reached."</span>
+     NameText=<span class="source_string">"Name"</span>
+     FragsText=<span class="source_string">"Frags"</span>
+     DeathsText=<span class="source_string">"Deaths"</span>
+     PingText=<span class="source_string">"Ping"</span>
+     AwardsText=<span class="source_string">"Trophies"</span>
+     FirstBloodIcon=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'RuneI.TrophyFirstBlood'</span>
+     SpreeIcon=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'RuneI.TrophySpree'</span>
+     HeadIcon=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'RuneI.TrophyHeads'</span>
+     Seperator=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'RuneI.sb_seperator'</span>
+     Background=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'RuneI.sb_horizramp'</span>
+     BackgroundAlpha=<span class="source_int">0.100000</span>
+     RegFont=<span class="source_type">Font</span><span class="source_name">'Engine.MedFont'</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/runescoreboard.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#RuneScoreBoard">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/runes.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/runescoreboardteam.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:27:22.029 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

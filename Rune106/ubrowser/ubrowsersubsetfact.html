@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - UBrowser.UBrowserSubsetFact</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../ubrowser/ubrowser-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_ubrowser/ubrowsersubsetfact.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#UBrowserSubsetFact">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../ubrowser/ubrowserserverping.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../ubrowser/ubrowsersubsetlist.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#ubrowser/ubrowsersubsetfact.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../ubrowser/ubrowser-overview.html">UBrowser</a>.UBrowserSubsetFact</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../ubrowser/ubrowserserverlistfactory.html">UBrowserServerListFactory</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowbase.html">UWindowBase</a>
+   |   
+   +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowlist.html">UWindowList</a>
+      |   
+      +-- <a href="../ubrowser/ubrowser-overview.html">UBrowser</a>.<a href="../ubrowser/ubrowserserverlistfactory.html">UBrowserServerListFactory</a>
+         |   
+         +-- <a href="../ubrowser/ubrowser-overview.html">UBrowser</a>.<a href="../ubrowser/ubrowsersubsetfact.html">UBrowserSubsetFact</a>
+</pre>
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_NotFoundError" name="NotFoundError" title="go to the details">NotFoundError</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_NotReadyError" name="NotReadyError" title="go to the details">NotReadyError</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../ubrowser/ubrowserserverlistwindow.html">UBrowserServerListWindow</a></td><td width="66%"><a href="#_SupersetWindow" name="SupersetWindow" title="go to the details">SupersetWindow</a></td></tr>
+<tr><th colspan="2" class="small">UBrowserSubsetFact</th></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bCompatibleServersOnly" name="bCompatibleServersOnly" title="go to the details">bCompatibleServersOnly</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bLocalServersOnly" name="bLocalServersOnly" title="go to the details">bLocalServersOnly</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_GameMode" name="GameMode" title="go to the details">GameMode</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_GameType" name="GameType" title="go to the details">GameType</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_MaxPing" name="MaxPing" title="go to the details">MaxPing</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_MinPlayers" name="MinPlayers" title="go to the details">MinPlayers</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_Ping" name="Ping" title="go to the details">Ping</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_SupersetTag" name="SupersetTag" title="go to the details">SupersetTag</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../ubrowser/ubrowser-overview.html">UBrowser</a>.<a href="../ubrowser/ubrowserserverlistfactory.html">UBrowserServerListFactory</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../ubrowser/ubrowserserverlistfactory.html#bIncrementalPing">bIncrementalPing</a>, <a href="../ubrowser/ubrowserserverlistfactory.html#Owner">Owner</a>, <a href="../ubrowser/ubrowserserverlistfactory.html#PingedList">PingedList</a>, <a href="../ubrowser/ubrowserserverlistfactory.html#UnpingedList">UnpingedList</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowlist.html">UWindowList</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowlist.html#bItemOrderChanged">bItemOrderChanged</a>, <a href="../uwindow/uwindowlist.html#BranchLeft">BranchLeft</a>, <a href="../uwindow/uwindowlist.html#BranchRight">BranchRight</a>, <a href="../uwindow/uwindowlist.html#bSortSuspended">bSortSuspended</a>, <a href="../uwindow/uwindowlist.html#bSuspendableSort">bSuspendableSort</a>, <a href="../uwindow/uwindowlist.html#bTreeSort">bTreeSort</a>, <a href="../uwindow/uwindowlist.html#CompareCount">CompareCount</a>, <a href="../uwindow/uwindowlist.html#CurrentSortItem">CurrentSortItem</a>, <a href="../uwindow/uwindowlist.html#InternalCount">InternalCount</a>, <a href="../uwindow/uwindowlist.html#Last">Last</a>, <a href="../uwindow/uwindowlist.html#Next">Next</a>, <a href="../uwindow/uwindowlist.html#ParentNode">ParentNode</a>, <a href="../uwindow/uwindowlist.html#Prev">Prev</a>, <a href="../uwindow/uwindowlist.html#Sentinel">Sentinel</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ConsiderItem-" name="ConsiderItem" title="go to the details">ConsiderItem</a> (<a href="../ubrowser/ubrowserserverlist.html">UBrowserServerList</a> L))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Query-" name="Query" title="go to the details">Query</a> (optional bool bBySuperset, optional bool bInitial))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_QueryFinished-" name="QueryFinished" title="go to the details">QueryFinished</a> (bool bSuccess, optional string ErrorMsg))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Shutdown-" name="Shutdown" title="go to the details">Shutdown</a> (optional bool bBySuperset))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../ubrowser/ubrowser-overview.html">UBrowser</a>.<a href="../ubrowser/ubrowserserverlistfactory.html">UBrowserServerListFactory</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../ubrowser/ubrowserserverlistfactory.html#FoundServer">FoundServer</a>, <a href="../ubrowser/ubrowserserverlistfactory.html#GetPlayerOwner">GetPlayerOwner</a>, <a href="../ubrowser/ubrowserserverlistfactory.html#Query">Query</a>, <a href="../ubrowser/ubrowserserverlistfactory.html#QueryFinished">QueryFinished</a>, <a href="../ubrowser/ubrowserserverlistfactory.html#Shutdown">Shutdown</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowlist.html">UWindowList</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowlist.html#Append">Append</a>, <a href="../uwindow/uwindowlist.html#AppendItem">AppendItem</a>, <a href="../uwindow/uwindowlist.html#AppendListCopy">AppendListCopy</a>, <a href="../uwindow/uwindowlist.html#Clear">Clear</a>, <a href="../uwindow/uwindowlist.html#Compare">Compare</a>, <a href="../uwindow/uwindowlist.html#ContinueSort">ContinueSort</a>, <a href="../uwindow/uwindowlist.html#CopyExistingListItem">CopyExistingListItem</a>, <a href="../uwindow/uwindowlist.html#Count">Count</a>, <a href="../uwindow/uwindowlist.html#CountShown">CountShown</a>, <a href="../uwindow/uwindowlist.html#CreateItem">CreateItem</a>, <a href="../uwindow/uwindowlist.html#DestroyList">DestroyList</a>, <a href="../uwindow/uwindowlist.html#DestroyListItem">DestroyListItem</a>, <a href="../uwindow/uwindowlist.html#DisconnectList">DisconnectList</a>, <a href="../uwindow/uwindowlist.html#DoAppendItem">DoAppendItem</a>, <a href="../uwindow/uwindowlist.html#FindEntry">FindEntry</a>, <a href="../uwindow/uwindowlist.html#GraftLeft">GraftLeft</a>, <a href="../uwindow/uwindowlist.html#GraftRight">GraftRight</a>, <a href="../uwindow/uwindowlist.html#Insert">Insert</a>, <a href="../uwindow/uwindowlist.html#InsertAfter">InsertAfter</a>, <a href="../uwindow/uwindowlist.html#InsertBefore">InsertBefore</a>, <a href="../uwindow/uwindowlist.html#InsertItem">InsertItem</a>, <a href="../uwindow/uwindowlist.html#InsertItemAfter">InsertItemAfter</a>, <a href="../uwindow/uwindowlist.html#InsertItemBefore">InsertItemBefore</a>, <a href="../uwindow/uwindowlist.html#LeftMost">LeftMost</a>, <a href="../uwindow/uwindowlist.html#MoveItemSorted">MoveItemSorted</a>, <a href="../uwindow/uwindowlist.html#Remove">Remove</a>, <a href="../uwindow/uwindowlist.html#RightMost">RightMost</a>, <a href="../uwindow/uwindowlist.html#SetupSentinel">SetupSentinel</a>, <a href="../uwindow/uwindowlist.html#ShowThisItem">ShowThisItem</a>, <a href="../uwindow/uwindowlist.html#Sort">Sort</a>, <a href="../uwindow/uwindowlist.html#Tick">Tick</a>, <a href="../uwindow/uwindowlist.html#Validate">Validate</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_NotFoundError" class="hidden"></a>NotFoundError <a href="../Source_ubrowser/ubrowsersubsetfact.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> NotFoundError;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NotReadyError" class="hidden"></a>NotReadyError <a href="../Source_ubrowser/ubrowsersubsetfact.html#15" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> NotReadyError;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SupersetWindow" class="hidden"></a>SupersetWindow <a href="../Source_ubrowser/ubrowsersubsetfact.html#17" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../ubrowser/ubrowserserverlistwindow.html" class="source">UBrowserServerListWindow</a></span> SupersetWindow;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">UBrowserSubsetFact</h3>
+<h4><a name="_bCompatibleServersOnly" class="hidden"></a>bCompatibleServersOnly <a href="../Source_ubrowser/ubrowsersubsetfact.html#9" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../ubrowser/ubrowsersubsetfact.html" class="source">UBrowserSubsetFact</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">bool</span> bCompatibleServersOnly;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bLocalServersOnly" class="hidden"></a>bLocalServersOnly <a href="../Source_ubrowser/ubrowsersubsetfact.html#8" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../ubrowser/ubrowsersubsetfact.html" class="source">UBrowserSubsetFact</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">bool</span> bLocalServersOnly;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GameMode" class="hidden"></a>GameMode <a href="../Source_ubrowser/ubrowsersubsetfact.html#4" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../ubrowser/ubrowsersubsetfact.html" class="source">UBrowserSubsetFact</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">string</span> GameMode;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GameType" class="hidden"></a>GameType <a href="../Source_ubrowser/ubrowsersubsetfact.html#5" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../ubrowser/ubrowsersubsetfact.html" class="source">UBrowserSubsetFact</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">string</span> GameType;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MaxPing" class="hidden"></a>MaxPing <a href="../Source_ubrowser/ubrowsersubsetfact.html#11" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../ubrowser/ubrowsersubsetfact.html" class="source">UBrowserSubsetFact</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">int</span> MaxPing;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MinPlayers" class="hidden"></a>MinPlayers <a href="../Source_ubrowser/ubrowsersubsetfact.html#10" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../ubrowser/ubrowsersubsetfact.html" class="source">UBrowserSubsetFact</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">int</span> MinPlayers;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Ping" class="hidden"></a>Ping <a href="../Source_ubrowser/ubrowsersubsetfact.html#6" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../ubrowser/ubrowsersubsetfact.html" class="source">UBrowserSubsetFact</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">float</span> Ping;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SupersetTag" class="hidden"></a>SupersetTag <a href="../Source_ubrowser/ubrowsersubsetfact.html#7" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../ubrowser/ubrowsersubsetfact.html" class="source">UBrowserSubsetFact</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">name</span> SupersetTag;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_ConsiderItem-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ConsiderItem <span class="function_state"></span> <a href="../Source_ubrowser/ubrowsersubsetfact.html#74" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ConsiderItem ( <span class="source_type"><a href="../ubrowser/ubrowserserverlist.html" class="source">UBrowserServerList</a></span> L) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Query-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Query <span class="function_state"></span> <a href="../Source_ubrowser/ubrowsersubsetfact.html#19" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Query ( <span class="source_keyword2">optional</span> <span class="source_keyword">bool</span> bBySuperset, <span class="source_keyword2">optional</span> <span class="source_keyword">bool</span> bInitial) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_QueryFinished-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> QueryFinished <span class="function_state"></span> <a href="../Source_ubrowser/ubrowsersubsetfact.html#113" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  QueryFinished ( <span class="source_keyword">bool</span> bSuccess, <span class="source_keyword2">optional</span> <span class="source_keyword">string</span> ErrorMsg) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Shutdown-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Shutdown <span class="function_state"></span> <a href="../Source_ubrowser/ubrowsersubsetfact.html#68" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Shutdown ( <span class="source_keyword2">optional</span> <span class="source_keyword">bool</span> bBySuperset) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     Ping=<span class="source_int">9999.000000</span>
+     SupersetTag=All
+     NotFoundError=<span class="source_string">"Could not find the window: "</span>
+     NotReadyError=<span class="source_string">"Window is not ready: "</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../ubrowser/ubrowser-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_ubrowser/ubrowsersubsetfact.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#UBrowserSubsetFact">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../ubrowser/ubrowserserverping.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../ubrowser/ubrowsersubsetlist.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:27:26.214 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

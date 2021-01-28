@@ -1,0 +1,463 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - RuneI.TeamGame</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/teamgame.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#TeamGame">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/tarpframe.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/teaminfo.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#runei/teamgame.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../runei/runei-overview.html">RuneI</a>.TeamGame</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../runei/runemultiplayer.html">RuneMultiPlayer</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a>
+   |   
+   +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/info.html">Info</a>
+      |   
+      +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/gameinfo.html">GameInfo</a>
+         |   
+         +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runegameinfo.html">RuneGameInfo</a>
+            |   
+            +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runemultiplayer.html">RuneMultiPlayer</a>
+               |   
+               +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/teamgame.html">TeamGame</a>
+</pre>
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_NewTeamMessage" name="NewTeamMessage" title="go to the details">NewTeamMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_NextBotTeam" name="NextBotTeam" title="go to the details">NextBotTeam</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_TeamColor[4]" name="TeamColor[4]" title="go to the details">TeamColor[4]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_TeamSupported[4]" name="TeamSupported[4]" title="go to the details">TeamSupported[4]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../runei/teaminfo.html">TeamInfo</a></td><td width="66%"><a href="#_Teams[4]" name="Teams[4]" title="go to the details">Teams[4]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">byte</td><td width="66%"><a href="#_TEAM_Blue" name="TEAM_Blue" title="go to the details">TEAM_Blue</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">byte</td><td width="66%"><a href="#_TEAM_Gold" name="TEAM_Gold" title="go to the details">TEAM_Gold</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">byte</td><td width="66%"><a href="#_TEAM_Green" name="TEAM_Green" title="go to the details">TEAM_Green</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">byte</td><td width="66%"><a href="#_TEAM_Red" name="TEAM_Red" title="go to the details">TEAM_Red</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Vector">vector</a></td><td width="66%"><a href="#_VColorBlue" name="VColorBlue" title="go to the details">VColorBlue</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Vector">vector</a></td><td width="66%"><a href="#_VColorGold" name="VColorGold" title="go to the details">VColorGold</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Vector">vector</a></td><td width="66%"><a href="#_VColorGreen" name="VColorGreen" title="go to the details">VColorGreen</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Vector">vector</a></td><td width="66%"><a href="#_VColorRed" name="VColorRed" title="go to the details">VColorRed</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Vector">vector</a></td><td width="66%"><a href="#_VColorWhite" name="VColorWhite" title="go to the details">VColorWhite</a></td></tr>
+<tr><th colspan="2" class="small">TeamGame</th></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bNoTeamChanges" name="bNoTeamChanges" title="go to the details">bNoTeamChanges</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bSpawnInTeamArea" name="bSpawnInTeamArea" title="go to the details">bSpawnInTeamArea</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_FriendlyFireScale" name="FriendlyFireScale" title="go to the details">FriendlyFireScale</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_GoalTeamScore" name="GoalTeamScore" title="go to the details">GoalTeamScore</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_MaxTeams" name="MaxTeams" title="go to the details">MaxTeams</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_MaxTeamSize" name="MaxTeamSize" title="go to the details">MaxTeamSize</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runemultiplayer.html">RuneMultiPlayer</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/runemultiplayer.html#bAlreadyChanged">bAlreadyChanged</a>, <a href="../runei/runemultiplayer.html#bChangeLevels">bChangeLevels</a>, <a href="../runei/runemultiplayer.html#bDontRestart">bDontRestart</a>, <a href="../runei/runemultiplayer.html#bFirstBlood">bFirstBlood</a>, <a href="../runei/runemultiplayer.html#bHardCoreMode">bHardCoreMode</a>, <a href="../runei/runemultiplayer.html#bLevelHasTeamOnly">bLevelHasTeamOnly</a>, <a href="../runei/runemultiplayer.html#bMegaSpeed">bMegaSpeed</a>, <a href="../runei/runemultiplayer.html#CrushedMessage">CrushedMessage</a>, <a href="../runei/runemultiplayer.html#DrownedMessage">DrownedMessage</a>, <a href="../runei/runemultiplayer.html#FellMessage">FellMessage</a>, <a href="../runei/runemultiplayer.html#FireMessage">FireMessage</a>, <a href="../runei/runemultiplayer.html#FirstBloodMsg">FirstBloodMsg</a>, <a href="../runei/runemultiplayer.html#FragLimit">FragLimit</a>, <a href="../runei/runemultiplayer.html#GlobalNameChange">GlobalNameChange</a>, <a href="../runei/runemultiplayer.html#GlobalNameChangeTrailer">GlobalNameChangeTrailer</a>, <a href="../runei/runemultiplayer.html#HeadKillMsg">HeadKillMsg</a>, <a href="../runei/runemultiplayer.html#HeadMessage">HeadMessage</a>, <a href="../runei/runemultiplayer.html#LastStartSpot">LastStartSpot</a>, <a href="../runei/runemultiplayer.html#NoNameChange">NoNameChange</a>, <a href="../runei/runemultiplayer.html#NormalMessage">NormalMessage</a>, <a href="../runei/runemultiplayer.html#RemainingTime">RemainingTime</a>, <a href="../runei/runemultiplayer.html#SpreeEndMsg">SpreeEndMsg</a>, <a href="../runei/runemultiplayer.html#SpreeEndTrailer">SpreeEndTrailer</a>, <a href="../runei/runemultiplayer.html#SpreeMsg">SpreeMsg</a>, <a href="../runei/runemultiplayer.html#SuicidedMessage">SuicidedMessage</a>, <a href="../runei/runemultiplayer.html#ThrownMessage">ThrownMessage</a>, <a href="../runei/runemultiplayer.html#TimeLimit">TimeLimit</a>, <a href="../runei/runemultiplayer.html#TimeMessage[16]">TimeMessage[16]</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runegameinfo.html">RuneGameInfo</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/runegameinfo.html#GenericDiedMessage">GenericDiedMessage</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_AddBot-" name="AddBot" title="go to the details">AddBot</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_AddToTeam-" name="AddToTeam" title="go to the details">AddToTeam</a> (int num, Pawn Other ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_CanSpectate-" name="CanSpectate" title="go to the details">CanSpectate</a> (<a href="../engine/pawn.html">pawn</a> Viewer, actor ViewTarget ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_ChangeTeam-" name="ChangeTeam" title="go to the details">ChangeTeam</a> (<a href="../engine/pawn.html">Pawn</a> Other, int NewTeam))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../engine/navigationpoint.html">NavigationPoint</a>&nbsp;</td><td><a href="#_FindPlayerStart-" name="FindPlayerStart" title="go to the details">FindPlayerStart</a> (<a href="../engine/pawn.html">Pawn</a> Player, optional byte InTeam, optional string incomingName ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>byte&nbsp;</td><td><a href="#_ForceTeam-" name="ForceTeam" title="go to the details">ForceTeam</a> (<a href="../engine/pawn.html">pawn</a> aPlayer))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>string&nbsp;</td><td><a href="#_GetRules-" name="GetRules" title="go to the details">GetRules</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../core/object.html#Vector">vector</a>&nbsp;</td><td><a href="#_GetTeamVectorColor-" name="GetTeamVectorColor" title="go to the details">GetTeamVectorColor</a> (int num))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>&nbsp;</td><td><a href="#_InitGame-" name="InitGame" title="go to the details">InitGame</a> (string Options, out string Error ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_InitGameReplicationInfo-" name="InitGameReplicationInfo" title="go to the details">InitGameReplicationInfo</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Killed-" name="Killed" title="go to the details">Killed</a> (<a href="../engine/pawn.html">pawn</a> killer, <a href="../engine/pawn.html">pawn</a> Other, name damageType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../engine/playerpawn.html">playerpawn</a>&nbsp;</td><td><a href="#_Login-" name="Login" title="go to the details">Login</a> (string Portal, string Options, out string Error, class&lt;<a href="../engine/playerpawn.html">playerpawn</a>&gt; SpawnClass
+))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Logout-" name="Logout" title="go to the details">Logout</a> (<a href="../engine/pawn.html">pawn</a> Exiting))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PostBeginPlay-" name="PostBeginPlay" title="go to the details">PostBeginPlay</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ReduceDamage-" name="ReduceDamage" title="go to the details">ReduceDamage</a> (out int BluntDamage, out int SeverDamage, name DamageType, <a href="../engine/pawn.html">pawn</a> injured, <a href="../engine/pawn.html">pawn</a> instigatedBy))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runemultiplayer.html">RuneMultiPlayer</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/runemultiplayer.html#AcceptInventory">AcceptInventory</a>, <a href="../runei/runemultiplayer.html#AddBot">AddBot</a>, <a href="../runei/runemultiplayer.html#CanSpectate">CanSpectate</a>, <a href="../runei/runemultiplayer.html#ChangeName">ChangeName</a>, <a href="../runei/runemultiplayer.html#Debug">Debug</a>, <a href="../runei/runemultiplayer.html#EndGame">EndGame</a>, <a href="../runei/runemultiplayer.html#EndSpree">EndSpree</a>, <a href="../runei/runemultiplayer.html#FindPlayerStart">FindPlayerStart</a>, <a href="../runei/runemultiplayer.html#GetIntOption">GetIntOption</a>, <a href="../runei/runemultiplayer.html#GetRules">GetRules</a>, <a href="../runei/runemultiplayer.html#InitGame">InitGame</a>, <a href="../runei/runemultiplayer.html#IsRelevant">IsRelevant</a>, <a href="../runei/runemultiplayer.html#Killed">Killed</a>, <a href="../runei/runemultiplayer.html#KillMessage">KillMessage</a>, <a href="../runei/runemultiplayer.html#LogGameParameters">LogGameParameters</a>, <a href="../runei/runemultiplayer.html#Login">Login</a>, <a href="../runei/runemultiplayer.html#Logout">Logout</a>, <a href="../runei/runemultiplayer.html#NotifySpree">NotifySpree</a>, <a href="../runei/runemultiplayer.html#PlayerJumpZScaling">PlayerJumpZScaling</a>, <a href="../runei/runemultiplayer.html#PlaySpawnEffect">PlaySpawnEffect</a>, <a href="../runei/runemultiplayer.html#PlayTeleportEffect">PlayTeleportEffect</a>, <a href="../runei/runemultiplayer.html#PostBeginPlay">PostBeginPlay</a>, <a href="../runei/runemultiplayer.html#PreCacheReferences">PreCacheReferences</a>, <a href="../runei/runemultiplayer.html#ReduceDamage">ReduceDamage</a>, <a href="../runei/runemultiplayer.html#RestartGame">RestartGame</a>, <a href="../runei/runemultiplayer.html#SendCountdownMessage">SendCountdownMessage</a>, <a href="../runei/runemultiplayer.html#SetGameSpeed">SetGameSpeed</a>, <a href="../runei/runemultiplayer.html#ShouldRespawn">ShouldRespawn</a>, <a href="../runei/runemultiplayer.html#Timer">Timer</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runegameinfo.html">RuneGameInfo</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/runegameinfo.html#KillMessage">KillMessage</a>, <a href="../runei/runegameinfo.html#RestartPlayer">RestartPlayer</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_NewTeamMessage" class="hidden"></a>NewTeamMessage <a href="../Source_runei/teamgame.html#13" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> NewTeamMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NextBotTeam" class="hidden"></a>NextBotTeam <a href="../Source_runei/teamgame.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> NextBotTeam;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TeamColor[4]" class="hidden"></a>TeamColor[4] <a href="../Source_runei/teamgame.html#16" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> TeamColor[<span class="source_int">4</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TeamSupported[4]" class="hidden"></a>TeamSupported[4] <a href="../Source_runei/teamgame.html#18" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> TeamSupported[<span class="source_int">4</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Teams[4]" class="hidden"></a>Teams[4] <a href="../Source_runei/teamgame.html#10" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../runei/teaminfo.html" class="source">TeamInfo</a></span> Teams[<span class="source_int">4</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TEAM_Blue" class="hidden"></a>TEAM_Blue <a href="../Source_runei/teamgame.html#15" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">byte</span> TEAM_Blue;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TEAM_Gold" class="hidden"></a>TEAM_Gold <a href="../Source_runei/teamgame.html#15" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">byte</span> TEAM_Gold;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TEAM_Green" class="hidden"></a>TEAM_Green <a href="../Source_runei/teamgame.html#15" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">byte</span> TEAM_Green;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TEAM_Red" class="hidden"></a>TEAM_Red <a href="../Source_runei/teamgame.html#15" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">byte</span> TEAM_Red;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_VColorBlue" class="hidden"></a>VColorBlue <a href="../Source_runei/teamgame.html#17" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> VColorBlue;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_VColorGold" class="hidden"></a>VColorGold <a href="../Source_runei/teamgame.html#17" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> VColorGold;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_VColorGreen" class="hidden"></a>VColorGreen <a href="../Source_runei/teamgame.html#17" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> VColorGreen;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_VColorRed" class="hidden"></a>VColorRed <a href="../Source_runei/teamgame.html#17" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> VColorRed;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_VColorWhite" class="hidden"></a>VColorWhite <a href="../Source_runei/teamgame.html#17" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> VColorWhite;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">TeamGame</h3>
+<h4><a name="_bNoTeamChanges" class="hidden"></a>bNoTeamChanges <a href="../Source_runei/teamgame.html#7" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/teamgame.html" class="source">TeamGame</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">bool</span> bNoTeamChanges;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bSpawnInTeamArea" class="hidden"></a>bSpawnInTeamArea <a href="../Source_runei/teamgame.html#6" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/teamgame.html" class="source">TeamGame</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">bool</span> bSpawnInTeamArea;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FriendlyFireScale" class="hidden"></a>FriendlyFireScale <a href="../Source_runei/teamgame.html#8" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/teamgame.html" class="source">TeamGame</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">float</span> FriendlyFireScale;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GoalTeamScore" class="hidden"></a>GoalTeamScore <a href="../Source_runei/teamgame.html#11" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/teamgame.html" class="source">TeamGame</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">float</span> GoalTeamScore;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MaxTeams" class="hidden"></a>MaxTeams <a href="../Source_runei/teamgame.html#9" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/teamgame.html" class="source">TeamGame</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">int</span> MaxTeams;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MaxTeamSize" class="hidden"></a>MaxTeamSize <a href="../Source_runei/teamgame.html#12" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/teamgame.html" class="source">TeamGame</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">int</span> MaxTeamSize;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_AddBot-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> AddBot <span class="function_state"></span> <a href="../Source_runei/teamgame.html#285" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> AddBot ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AddToTeam-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> AddToTeam <span class="function_state"></span> <a href="../Source_runei/teamgame.html#442" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  AddToTeam ( <span class="source_keyword">int</span> <span class="source_type">num</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">Other</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CanSpectate-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CanSpectate <span class="function_state"></span> <a href="../Source_runei/teamgame.html#498" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> CanSpectate ( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> Viewer, <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">ViewTarget</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ChangeTeam-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ChangeTeam <span class="function_state"></span> <a href="../Source_runei/teamgame.html#385" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> ChangeTeam ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">Other</span>, <span class="source_keyword">int</span> NewTeam) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FindPlayerStart-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> FindPlayerStart <span class="function_state"></span> <a href="../Source_runei/teamgame.html#171" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_type"><a href="../engine/navigationpoint.html" class="source">NavigationPoint</a></span> FindPlayerStart ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type"><a href="../engine/player.html" class="source">Player</a></span>, <span class="source_keyword2">optional</span> <span class="source_keyword">byte</span> InTeam, <span class="source_keyword2">optional</span> <span class="source_keyword">string</span> <span class="source_type">incomingName</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ForceTeam-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ForceTeam <span class="function_state"></span> <a href="../Source_runei/teamgame.html#128" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">byte</span> ForceTeam ( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">aPlayer</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetRules-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetRules <span class="function_state"></span> <a href="../Source_runei/teamgame.html#70" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">string</span> GetRules ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetTeamVectorColor-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetTeamVectorColor <span class="function_state"></span> <a href="../Source_runei/teamgame.html#480" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> GetTeamVectorColor ( <span class="source_keyword">int</span> <span class="source_type">num</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_InitGame-" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> InitGame <span class="function_state"></span> <a href="../Source_runei/teamgame.html#58" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span>  InitGame ( <span class="source_keyword">string</span> Options, <span class="source_keyword2">out</span> <span class="source_keyword">string</span> <span class="source_type">Error</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_InitGameReplicationInfo-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> InitGameReplicationInfo <span class="function_state"></span> <a href="../Source_runei/teamgame.html#64" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  InitGameReplicationInfo ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Killed-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Killed <span class="function_state"></span> <a href="../Source_runei/teamgame.html#370" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Killed ( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">killer</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">Other</span>, <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">damageType</a></span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Login-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Login <span class="function_state"></span> <a href="../Source_runei/teamgame.html#89" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_type"><a href="../engine/playerpawn.html" class="source">playerpawn</a></span> Login ( <span class="source_keyword">string</span> Portal,
+    <span class="source_keyword">string</span> Options,
+    <span class="source_keyword2">out</span> <span class="source_keyword">string</span> <span class="source_type">Error</span>,
+    <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/playerpawn.html" class="source">playerpawn</a></span>&gt; SpawnClass
+) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Logout-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Logout <span class="function_state"></span> <a href="../Source_runei/teamgame.html#163" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Logout ( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">Exiting</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PostBeginPlay-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PostBeginPlay <span class="function_state"></span> <a href="../Source_runei/teamgame.html#20" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PostBeginPlay ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ReduceDamage-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ReduceDamage <span class="function_state"></span> <a href="../Source_runei/teamgame.html#355" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ReduceDamage ( <span class="source_keyword2">out</span> <span class="source_keyword">int</span> BluntDamage, <span class="source_keyword2">out</span> <span class="source_keyword">int</span> SeverDamage, <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">DamageType</a></span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> injured, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">instigatedBy</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     MaxTeams=<span class="source_int">4</span>
+     MaxTeamSize=<span class="source_int">16</span>
+     NewTeamMessage=<span class="source_string">" is now on "</span>
+     TEAM_Blue=<span class="source_int">1</span>
+     TEAM_Green=<span class="source_int">2</span>
+     TEAM_Gold=<span class="source_int">3</span>
+     TeamColor(<span class="source_int">0</span>)=<span class="source_string">"Red"</span>
+     TeamColor(<span class="source_int">1</span>)=<span class="source_string">"Blue"</span>
+     TeamColor(<span class="source_int">2</span>)=<span class="source_string">"Green"</span>
+     TeamColor(<span class="source_int">3</span>)=<span class="source_string">"Gold"</span>
+     VColorRed=(X=<span class="source_int">255.000000</span>)
+     VColorBlue=(Z=<span class="source_int">255.000000</span>)
+     VColorGreen=(<span class="source_type">Y</span>=<span class="source_int">255.000000</span>)
+     VColorGold=(X=<span class="source_int">255.000000</span>,<span class="source_type">Y</span>=<span class="source_int">255.000000</span>)
+     VColorWhite=(X=<span class="source_int">255.000000</span>,<span class="source_type">Y</span>=<span class="source_int">255.000000</span>,Z=<span class="source_int">255.000000</span>)
+     bCanChangeSkin=<span class="source_keyword">False</span>
+     bTeamGame=<span class="source_keyword">True</span>
+     ScoreBoardType=<span class="source_keyword">Class</span><span class="source_name">'RuneI.RuneScoreboardTeam'</span>
+     BeaconName=<span class="source_string">"Team"</span>
+     GameName=<span class="source_string">"Team Game"</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/teamgame.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#TeamGame">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/tarpframe.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/teaminfo.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:27:24.269 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

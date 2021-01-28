@@ -1,0 +1,1012 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - Arena.ArenaGameInfo</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../arena/arena-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_arena/arenagameinfo.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#ArenaGameInfo">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../arena/matchresultmessage.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../arena/arenagamereplicationinfo.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#arena/arenagameinfo.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../arena/arena-overview.html">Arena</a>.ArenaGameInfo</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../runei/runemultiplayer.html">RuneMultiPlayer</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a>
+   |   
+   +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/info.html">Info</a>
+      |   
+      +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/gameinfo.html">GameInfo</a>
+         |   
+         +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runegameinfo.html">RuneGameInfo</a>
+            |   
+            +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runemultiplayer.html">RuneMultiPlayer</a>
+               |   
+               +-- <a href="../arena/arena-overview.html">Arena</a>.<a href="../arena/arenagameinfo.html">ArenaGameInfo</a>
+</pre>
+
+
+
+<hr />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Constants Summary</th>
+</tr>
+<tr><td width="40%"><a href="#_LTYPE_Challenger" name="LTYPE_Challenger" title="go to the details">LTYPE_Challenger</a></td><td width="10%">=</td><td width="50%">1</td></tr>
+<tr><td width="40%"><a href="#_LTYPE_Champion" name="LTYPE_Champion" title="go to the details">LTYPE_Champion</a></td><td width="10%">=</td><td width="50%">0</td></tr>
+
+</table>
+
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%">Sound</td><td width="66%"><a href="#_ArenaLeadInSound[4]" name="ArenaLeadInSound[4]" title="go to the details">ArenaLeadInSound[4]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../arena/arenagameinfo.html#ArenaPlayerInfo">ArenaPlayerInfo</a></td><td width="66%"><a href="#_ArenaQueue[16]" name="ArenaQueue[16]" title="go to the details">ArenaQueue[16]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bStartedTimer" name="bStartedTimer" title="go to the details">bStartedTimer</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_BurnedDeathMessage" name="BurnedDeathMessage" title="go to the details">BurnedDeathMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../arena/arenagameinfo.html#FighterList">FighterList</a></td><td width="66%"><a href="#_ChallengerList[4]" name="ChallengerList[4]" title="go to the details">ChallengerList[4]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_ChallengersLeft" name="ChallengersLeft" title="go to the details">ChallengersLeft</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../arena/arenagameinfo.html#FighterList">FighterList</a></td><td width="66%"><a href="#_ChampionList[4]" name="ChampionList[4]" title="go to the details">ChampionList[4]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_ChampionsLeft" name="ChampionsLeft" title="go to the details">ChampionsLeft</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">Sound</td><td width="66%"><a href="#_CountdownSound[3]" name="CountdownSound[3]" title="go to the details">CountdownSound[3]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_CrushDeathMessage" name="CrushDeathMessage" title="go to the details">CrushDeathMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">byte</td><td width="66%"><a href="#_CurrentCountdownIndex" name="CurrentCountdownIndex" title="go to the details">CurrentCountdownIndex</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_CurrentMatch" name="CurrentMatch" title="go to the details">CurrentMatch</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_curTimer" name="curTimer" title="go to the details">curTimer</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_DrownDeathMessage" name="DrownDeathMessage" title="go to the details">DrownDeathMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_FellDeathMessage" name="FellDeathMessage" title="go to the details">FellDeathMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_FightMessage" name="FightMessage" title="go to the details">FightMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../arena/arenagameinfo.html#ArenaState">ArenaState</a></td><td width="66%"><a href="#_GameState" name="GameState" title="go to the details">GameState</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_GenericDeathMessage" name="GenericDeathMessage" title="go to the details">GenericDeathMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_GetReadyMessage" name="GetReadyMessage" title="go to the details">GetReadyMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HeadDeathMessage" name="HeadDeathMessage" title="go to the details">HeadDeathMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_KillDeathMessage" name="KillDeathMessage" title="go to the details">KillDeathMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/playerpawn.html">PlayerPawn</a></td><td width="66%"><a href="#_LastRestarted" name="LastRestarted" title="go to the details">LastRestarted</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">byte</td><td width="66%"><a href="#_ListColor[2]" name="ListColor[2]" title="go to the details">ListColor[2]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">Sound</td><td width="66%"><a href="#_MatchEndSound[4]" name="MatchEndSound[4]" title="go to the details">MatchEndSound[4]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">Sound</td><td width="66%"><a href="#_MatchStartSound[4]" name="MatchStartSound[4]" title="go to the details">MatchStartSound[4]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_MaxArenaPlayers" name="MaxArenaPlayers" title="go to the details">MaxArenaPlayers</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_maxArenaTeam" name="maxArenaTeam" title="go to the details">maxArenaTeam</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_SuicideDeathMessage" name="SuicideDeathMessage" title="go to the details">SuicideDeathMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">byte</td><td width="66%"><a href="#_TeamCurrentColor[2]" name="TeamCurrentColor[2]" title="go to the details">TeamCurrentColor[2]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ThrownDeathMessage" name="ThrownDeathMessage" title="go to the details">ThrownDeathMessage</a></td></tr>
+<tr><th colspan="2" class="small">ArenaGameInfo</th></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_MaxTeamSupport" name="MaxTeamSupport" title="go to the details">MaxTeamSupport</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_TimeBetweenMatch" name="TimeBetweenMatch" title="go to the details">TimeBetweenMatch</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runemultiplayer.html">RuneMultiPlayer</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/runemultiplayer.html#bAlreadyChanged">bAlreadyChanged</a>, <a href="../runei/runemultiplayer.html#bChangeLevels">bChangeLevels</a>, <a href="../runei/runemultiplayer.html#bDontRestart">bDontRestart</a>, <a href="../runei/runemultiplayer.html#bFirstBlood">bFirstBlood</a>, <a href="../runei/runemultiplayer.html#bHardCoreMode">bHardCoreMode</a>, <a href="../runei/runemultiplayer.html#bLevelHasTeamOnly">bLevelHasTeamOnly</a>, <a href="../runei/runemultiplayer.html#bMegaSpeed">bMegaSpeed</a>, <a href="../runei/runemultiplayer.html#CrushedMessage">CrushedMessage</a>, <a href="../runei/runemultiplayer.html#DrownedMessage">DrownedMessage</a>, <a href="../runei/runemultiplayer.html#FellMessage">FellMessage</a>, <a href="../runei/runemultiplayer.html#FireMessage">FireMessage</a>, <a href="../runei/runemultiplayer.html#FirstBloodMsg">FirstBloodMsg</a>, <a href="../runei/runemultiplayer.html#FragLimit">FragLimit</a>, <a href="../runei/runemultiplayer.html#GlobalNameChange">GlobalNameChange</a>, <a href="../runei/runemultiplayer.html#GlobalNameChangeTrailer">GlobalNameChangeTrailer</a>, <a href="../runei/runemultiplayer.html#HeadKillMsg">HeadKillMsg</a>, <a href="../runei/runemultiplayer.html#HeadMessage">HeadMessage</a>, <a href="../runei/runemultiplayer.html#LastStartSpot">LastStartSpot</a>, <a href="../runei/runemultiplayer.html#NoNameChange">NoNameChange</a>, <a href="../runei/runemultiplayer.html#NormalMessage">NormalMessage</a>, <a href="../runei/runemultiplayer.html#RemainingTime">RemainingTime</a>, <a href="../runei/runemultiplayer.html#SpreeEndMsg">SpreeEndMsg</a>, <a href="../runei/runemultiplayer.html#SpreeEndTrailer">SpreeEndTrailer</a>, <a href="../runei/runemultiplayer.html#SpreeMsg">SpreeMsg</a>, <a href="../runei/runemultiplayer.html#SuicidedMessage">SuicidedMessage</a>, <a href="../runei/runemultiplayer.html#ThrownMessage">ThrownMessage</a>, <a href="../runei/runemultiplayer.html#TimeLimit">TimeLimit</a>, <a href="../runei/runemultiplayer.html#TimeMessage[16]">TimeMessage[16]</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runegameinfo.html">RuneGameInfo</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/runegameinfo.html#GenericDiedMessage">GenericDiedMessage</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Enumerations Summary</th>
+</tr>
+<tr><td><a href="#_ArenaState" name="ArenaState" title="go to the details">ArenaState</a><br /><span class="small">ASTATE_WaitingPlayers,
+ASTATE_DuringMatch,
+ASTATE_PreMatch,
+ASTATE_PostMatch</span></td></tr>
+
+</table>
+
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Structures Summary</th>
+</tr>
+<tr><td><a href="#_ArenaPlayerInfo" name="ArenaPlayerInfo" title="go to the details">ArenaPlayerInfo</a><br /><span class="small">aPlayer, bUsed</span></td></tr>
+<tr><td><a href="#_FighterList" name="FighterList" title="go to the details">FighterList</a><br /><span class="small">Fighter, bNewFighter, FighterInventory</span></td></tr>
+<tr><td><a href="#_PlayerInventory" name="PlayerInventory" title="go to the details">PlayerInventory</a><br /><span class="small">StowedWeapons[14], HeldWeapon, HeldShield</span></td></tr>
+
+</table>
+
+
+
+<br />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../engine/pawn.html">Pawn</a>&nbsp;</td><td><a href="#_AddFighter-" name="AddFighter" title="go to the details">AddFighter</a> (byte aType, <a href="../engine/pawn.html">Pawn</a> aPawn))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_AnnounceResults-" name="AnnounceResults" title="go to the details">AnnounceResults</a> (byte lType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_CanStartMatch-" name="CanStartMatch" title="go to the details">CanStartMatch</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_ChangeTeam-" name="ChangeTeam" title="go to the details">ChangeTeam</a> (<a href="../engine/pawn.html">Pawn</a> Other, int N))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_CheckWinState-" name="CheckWinState" title="go to the details">CheckWinState</a> (byte aType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ClearFighterList-" name="ClearFighterList" title="go to the details">ClearFighterList</a> (out <a href="../arena/arenagameinfo.html#FighterList">FighterList</a> myList))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_ClearList-" name="ClearList" title="go to the details">ClearList</a> (byte lType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ClearWeaponInfo-" name="ClearWeaponInfo" title="go to the details">ClearWeaponInfo</a> (out <a href="../arena/arenagameinfo.html#PlayerInventory">PlayerInventory</a> myInventory))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_CopyFighterList-" name="CopyFighterList" title="go to the details">CopyFighterList</a> (out <a href="../arena/arenagameinfo.html#FighterList">FighterList</a> dest, <a href="../arena/arenagameinfo.html#FighterList">FighterList</a> src))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_CopyPlayerInfo-" name="CopyPlayerInfo" title="go to the details">CopyPlayerInfo</a> (out <a href="../arena/arenagameinfo.html#ArenaPlayerInfo">ArenaPlayerInfo</a> dest, <a href="../arena/arenagameinfo.html#ArenaPlayerInfo">ArenaPlayerInfo</a> src))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_CopyWeaponInfo-" name="CopyWeaponInfo" title="go to the details">CopyWeaponInfo</a> (out <a href="../arena/arenagameinfo.html#PlayerInventory">PlayerInventory</a> dest, <a href="../arena/arenagameinfo.html#PlayerInventory">PlayerInventory</a> src))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Debug-" name="Debug" title="go to the details">Debug</a> (<a href="../engine/canvas.html">Canvas</a> canvas, int mode))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DestroyArenaWeapons-" name="DestroyArenaWeapons" title="go to the details">DestroyArenaWeapons</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DestroyPawnsWeapons-" name="DestroyPawnsWeapons" title="go to the details">DestroyPawnsWeapons</a> (<a href="../engine/pawn.html">Pawn</a> PlayerPawn))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>byte&nbsp;</td><td><a href="#_DetermineLoser-" name="DetermineLoser" title="go to the details">DetermineLoser</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>byte&nbsp;</td><td><a href="#_DetermineWinner-" name="DetermineWinner" title="go to the details">DetermineWinner</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_EnteredQueueZone-" name="EnteredQueueZone" title="go to the details">EnteredQueueZone</a> (<a href="../engine/pawn.html">Pawn</a> aPawn))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_EquipPawn-" name="EquipPawn" title="go to the details">EquipPawn</a> (<a href="../engine/pawn.html">Pawn</a> aPlayerPawn, <a href="../arena/arenagameinfo.html#PlayerInventory">PlayerInventory</a> myInventory))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../arena/arenastart.html">ArenaStart</a>&nbsp;</td><td><a href="#_FindArenaStart-" name="FindArenaStart" title="go to the details">FindArenaStart</a> (<a href="../engine/pawn.html">Pawn</a> Player, byte lType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../arena/arenastart.html">ArenaStart</a>&nbsp;</td><td><a href="#_FindOneOnOneStart-" name="FindOneOnOneStart" title="go to the details">FindOneOnOneStart</a> (<a href="../engine/pawn.html">Pawn</a> Player, byte lType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../engine/navigationpoint.html">NavigationPoint</a>&nbsp;</td><td><a href="#_FindPlayerStart-" name="FindPlayerStart" title="go to the details">FindPlayerStart</a> (<a href="../engine/pawn.html">Pawn</a> Player, optional byte InTeam, optional string incomingName ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>byte&nbsp;</td><td><a href="#_GetListColor-" name="GetListColor" title="go to the details">GetListColor</a> (byte aType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>int&nbsp;</td><td><a href="#_GetListSize-" name="GetListSize" title="go to the details">GetListSize</a> (byte aType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_GetNewChampions-" name="GetNewChampions" title="go to the details">GetNewChampions</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_GetNextChallengers-" name="GetNextChallengers" title="go to the details">GetNextChallengers</a> (int startIndex))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>int&nbsp;</td><td><a href="#_GetQueueSize-" name="GetQueueSize" title="go to the details">GetQueueSize</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../core/object.html#Vector">vector</a>&nbsp;</td><td><a href="#_GetTeamVectorColor-" name="GetTeamVectorColor" title="go to the details">GetTeamVectorColor</a> (int num))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_HandleKill-" name="HandleKill" title="go to the details">HandleKill</a> (<a href="../engine/pawn.html">Pawn</a> Died, <a href="../engine/pawn.html">Pawn</a> Killer, name DamageType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_InterruptMatchStart-" name="InterruptMatchStart" title="go to the details">InterruptMatchStart</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_IsEmpty-" name="IsEmpty" title="go to the details">IsEmpty</a> (byte aType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_IsFull-" name="IsFull" title="go to the details">IsFull</a> (byte aType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_IsPlaying-" name="IsPlaying" title="go to the details">IsPlaying</a> (<a href="../engine/pawn.html">Pawn</a> aPawn, byte aType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Killed-" name="Killed" title="go to the details">Killed</a> (<a href="../engine/pawn.html">Pawn</a> Killer, <a href="../engine/pawn.html">Pawn</a> Other, name damageType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>string&nbsp;</td><td><a href="#_KillMessage-" name="KillMessage" title="go to the details">KillMessage</a> (name damageType, pawn killer ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_LeftQueueZone-" name="LeftQueueZone" title="go to the details">LeftQueueZone</a> (<a href="../engine/pawn.html">Pawn</a> aPawn))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../engine/playerpawn.html">playerpawn</a>&nbsp;</td><td><a href="#_Login-" name="Login" title="go to the details">Login</a> (string Portal, string Options, out string Error, class&lt;<a href="../engine/playerpawn.html">playerpawn</a>&gt; SpawnClass))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Logout-" name="Logout" title="go to the details">Logout</a> (pawn Exiting ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_MoveChallengers-" name="MoveChallengers" title="go to the details">MoveChallengers</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlaceFighterInArena-" name="PlaceFighterInArena" title="go to the details">PlaceFighterInArena</a> (<a href="../engine/pawn.html">Pawn</a> aFighter, byte aType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayBeginMatch-" name="PlayBeginMatch" title="go to the details">PlayBeginMatch</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayCountdown-" name="PlayCountdown" title="go to the details">PlayCountdown</a> (int currentIndex))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayEndMatch-" name="PlayEndMatch" title="go to the details">PlayEndMatch</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PostBeginPlay-" name="PostBeginPlay" title="go to the details">PostBeginPlay</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ReduceDamage-" name="ReduceDamage" title="go to the details">ReduceDamage</a> (out int BluntDamage, out int SeverDamage, name DamageType, <a href="../engine/pawn.html">pawn</a> injured, pawn instigatedBy ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../engine/pawn.html">Pawn</a>&nbsp;</td><td><a href="#_RemoveFighter-" name="RemoveFighter" title="go to the details">RemoveFighter</a> (byte aType, <a href="../engine/pawn.html">Pawn</a> aPawn))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_RemoveFromQueue-" name="RemoveFromQueue" title="go to the details">RemoveFromQueue</a> (<a href="../engine/pawn.html">Pawn</a> aPawn))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_RemoveQueueElement-" name="RemoveQueueElement" title="go to the details">RemoveQueueElement</a> (int element))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ResetDeadPlayers-" name="ResetDeadPlayers" title="go to the details">ResetDeadPlayers</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ResetMatchVariables-" name="ResetMatchVariables" title="go to the details">ResetMatchVariables</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ResetStateChange-" name="ResetStateChange" title="go to the details">ResetStateChange</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_RestartFighter-" name="RestartFighter" title="go to the details">RestartFighter</a> (<a href="../engine/pawn.html">Pawn</a> aPlayer))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_RestartPlayer-" name="RestartPlayer" title="go to the details">RestartPlayer</a> (<a href="../engine/pawn.html">pawn</a> aPlayer))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_RestorePawnHealth-" name="RestorePawnHealth" title="go to the details">RestorePawnHealth</a> (<a href="../engine/pawn.html">Pawn</a> aPlayer))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SavePawnsWeapons-" name="SavePawnsWeapons" title="go to the details">SavePawnsWeapons</a> (<a href="../engine/pawn.html">Pawn</a> aPawn, out <a href="../arena/arenagameinfo.html#PlayerInventory">PlayerInventory</a> myInventory))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ScoreKill-" name="ScoreKill" title="go to the details">ScoreKill</a> (<a href="../engine/pawn.html">pawn</a> Killer, <a href="../engine/pawn.html">pawn</a> Other))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SendFightMessage-" name="SendFightMessage" title="go to the details">SendFightMessage</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SendGetReadyMsg-" name="SendGetReadyMsg" title="go to the details">SendGetReadyMsg</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SetArenaTeleportSpot-" name="SetArenaTeleportSpot" title="go to the details">SetArenaTeleportSpot</a> (<a href="../engine/navigationpoint.html">NavigationPoint</a> N, <a href="../engine/pawn.html">Pawn</a> aPlayer))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_SetupMatch-" name="SetupMatch" title="go to the details">SetupMatch</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_StartMatch-" name="StartMatch" title="go to the details">StartMatch</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_StateChangeFighters-" name="StateChangeFighters" title="go to the details">StateChangeFighters</a> (bool bStop))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Timer-" name="Timer" title="go to the details">Timer</a> ()))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runemultiplayer.html">RuneMultiPlayer</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/runemultiplayer.html#AcceptInventory">AcceptInventory</a>, <a href="../runei/runemultiplayer.html#AddBot">AddBot</a>, <a href="../runei/runemultiplayer.html#CanSpectate">CanSpectate</a>, <a href="../runei/runemultiplayer.html#ChangeName">ChangeName</a>, <a href="../runei/runemultiplayer.html#Debug">Debug</a>, <a href="../runei/runemultiplayer.html#EndGame">EndGame</a>, <a href="../runei/runemultiplayer.html#EndSpree">EndSpree</a>, <a href="../runei/runemultiplayer.html#FindPlayerStart">FindPlayerStart</a>, <a href="../runei/runemultiplayer.html#GetIntOption">GetIntOption</a>, <a href="../runei/runemultiplayer.html#GetRules">GetRules</a>, <a href="../runei/runemultiplayer.html#InitGame">InitGame</a>, <a href="../runei/runemultiplayer.html#IsRelevant">IsRelevant</a>, <a href="../runei/runemultiplayer.html#Killed">Killed</a>, <a href="../runei/runemultiplayer.html#KillMessage">KillMessage</a>, <a href="../runei/runemultiplayer.html#LogGameParameters">LogGameParameters</a>, <a href="../runei/runemultiplayer.html#Login">Login</a>, <a href="../runei/runemultiplayer.html#Logout">Logout</a>, <a href="../runei/runemultiplayer.html#NotifySpree">NotifySpree</a>, <a href="../runei/runemultiplayer.html#PlayerJumpZScaling">PlayerJumpZScaling</a>, <a href="../runei/runemultiplayer.html#PlaySpawnEffect">PlaySpawnEffect</a>, <a href="../runei/runemultiplayer.html#PlayTeleportEffect">PlayTeleportEffect</a>, <a href="../runei/runemultiplayer.html#PostBeginPlay">PostBeginPlay</a>, <a href="../runei/runemultiplayer.html#PreCacheReferences">PreCacheReferences</a>, <a href="../runei/runemultiplayer.html#ReduceDamage">ReduceDamage</a>, <a href="../runei/runemultiplayer.html#RestartGame">RestartGame</a>, <a href="../runei/runemultiplayer.html#SendCountdownMessage">SendCountdownMessage</a>, <a href="../runei/runemultiplayer.html#SetGameSpeed">SetGameSpeed</a>, <a href="../runei/runemultiplayer.html#ShouldRespawn">ShouldRespawn</a>, <a href="../runei/runemultiplayer.html#Timer">Timer</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runegameinfo.html">RuneGameInfo</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/runegameinfo.html#KillMessage">KillMessage</a>, <a href="../runei/runegameinfo.html#ProcessServerTravel">ProcessServerTravel</a>, <a href="../runei/runegameinfo.html#RestartPlayer">RestartPlayer</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Constants Detail</th>
+</tr>
+</table>
+
+<h4><a name="_LTYPE_Challenger" class="hidden"></a>LTYPE_Challenger <a href="../Source_arena/arenagameinfo.html#11" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">const</span> LTYPE_Challenger = <span class="source_int">1</span>;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LTYPE_Champion" class="hidden"></a>LTYPE_Champion <a href="../Source_arena/arenagameinfo.html#10" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">const</span> LTYPE_Champion = <span class="source_int">0</span>;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_ArenaLeadInSound[4]" class="hidden"></a>ArenaLeadInSound[4] <a href="../Source_arena/arenagameinfo.html#56" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type">Sound</span> ArenaLeadInSound[<span class="source_int">4</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ArenaQueue[16]" class="hidden"></a>ArenaQueue[16] <a href="../Source_arena/arenagameinfo.html#28" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../arena/arenagameinfo.html#ArenaPlayerInfo" class="source">ArenaPlayerInfo</a></span> ArenaQueue[<span class="source_int">16</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bStartedTimer" class="hidden"></a>bStartedTimer <a href="../Source_arena/arenagameinfo.html#44" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bStartedTimer;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BurnedDeathMessage" class="hidden"></a>BurnedDeathMessage <a href="../Source_arena/arenagameinfo.html#69" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> BurnedDeathMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ChallengerList[4]" class="hidden"></a>ChallengerList[4] <a href="../Source_arena/arenagameinfo.html#36" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../arena/arenagameinfo.html#FighterList" class="source">FighterList</a></span> ChallengerList[<span class="source_int">4</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ChallengersLeft" class="hidden"></a>ChallengersLeft <a href="../Source_arena/arenagameinfo.html#49" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> ChallengersLeft;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ChampionList[4]" class="hidden"></a>ChampionList[4] <a href="../Source_arena/arenagameinfo.html#36" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../arena/arenagameinfo.html#FighterList" class="source">FighterList</a></span> ChampionList[<span class="source_int">4</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ChampionsLeft" class="hidden"></a>ChampionsLeft <a href="../Source_arena/arenagameinfo.html#50" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> ChampionsLeft;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CountdownSound[3]" class="hidden"></a>CountdownSound[3] <a href="../Source_arena/arenagameinfo.html#55" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type">Sound</span> CountdownSound[<span class="source_int">3</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CrushDeathMessage" class="hidden"></a>CrushDeathMessage <a href="../Source_arena/arenagameinfo.html#64" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> CrushDeathMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CurrentCountdownIndex" class="hidden"></a>CurrentCountdownIndex <a href="../Source_arena/arenagameinfo.html#54" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">byte</span> CurrentCountdownIndex;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CurrentMatch" class="hidden"></a>CurrentMatch <a href="../Source_arena/arenagameinfo.html#60" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> CurrentMatch;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_curTimer" class="hidden"></a>curTimer <a href="../Source_arena/arenagameinfo.html#45" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> curTimer;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DrownDeathMessage" class="hidden"></a>DrownDeathMessage <a href="../Source_arena/arenagameinfo.html#66" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> DrownDeathMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FellDeathMessage" class="hidden"></a>FellDeathMessage <a href="../Source_arena/arenagameinfo.html#65" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> FellDeathMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FightMessage" class="hidden"></a>FightMessage <a href="../Source_arena/arenagameinfo.html#62" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> FightMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GameState" class="hidden"></a>GameState <a href="../Source_arena/arenagameinfo.html#20" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../arena/arenagameinfo.html#ArenaState" class="source">ArenaState</a></span> GameState;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GenericDeathMessage" class="hidden"></a>GenericDeathMessage <a href="../Source_arena/arenagameinfo.html#71" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> GenericDeathMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetReadyMessage" class="hidden"></a>GetReadyMessage <a href="../Source_arena/arenagameinfo.html#61" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> GetReadyMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HeadDeathMessage" class="hidden"></a>HeadDeathMessage <a href="../Source_arena/arenagameinfo.html#70" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> HeadDeathMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_KillDeathMessage" class="hidden"></a>KillDeathMessage <a href="../Source_arena/arenagameinfo.html#68" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> KillDeathMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LastRestarted" class="hidden"></a>LastRestarted <a href="../Source_arena/arenagameinfo.html#59" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/playerpawn.html" class="source">PlayerPawn</a></span> LastRestarted;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ListColor[2]" class="hidden"></a>ListColor[2] <a href="../Source_arena/arenagameinfo.html#34" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">byte</span> ListColor[<span class="source_int">2</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MatchEndSound[4]" class="hidden"></a>MatchEndSound[4] <a href="../Source_arena/arenagameinfo.html#58" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type">Sound</span> MatchEndSound[<span class="source_int">4</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MatchStartSound[4]" class="hidden"></a>MatchStartSound[4] <a href="../Source_arena/arenagameinfo.html#57" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type">Sound</span> MatchStartSound[<span class="source_int">4</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MaxArenaPlayers" class="hidden"></a>MaxArenaPlayers <a href="../Source_arena/arenagameinfo.html#47" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> MaxArenaPlayers;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_maxArenaTeam" class="hidden"></a>maxArenaTeam <a href="../Source_arena/arenagameinfo.html#46" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> maxArenaTeam;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SuicideDeathMessage" class="hidden"></a>SuicideDeathMessage <a href="../Source_arena/arenagameinfo.html#63" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> SuicideDeathMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TeamCurrentColor[2]" class="hidden"></a>TeamCurrentColor[2] <a href="../Source_arena/arenagameinfo.html#53" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">byte</span> TeamCurrentColor[<span class="source_int">2</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ThrownDeathMessage" class="hidden"></a>ThrownDeathMessage <a href="../Source_arena/arenagameinfo.html#67" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> ThrownDeathMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">ArenaGameInfo</h3>
+<h4><a name="_MaxTeamSupport" class="hidden"></a>MaxTeamSupport <a href="../Source_arena/arenagameinfo.html#8" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../arena/arenagameinfo.html" class="source">ArenaGameInfo</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">int</span> MaxTeamSupport;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TimeBetweenMatch" class="hidden"></a>TimeBetweenMatch <a href="../Source_arena/arenagameinfo.html#7" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../arena/arenagameinfo.html" class="source">ArenaGameInfo</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">int</span> TimeBetweenMatch;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th class="title">Enumerations Detail</th>
+</tr>
+</table>
+
+<h4><a name="_ArenaState" class="hidden"></a>ArenaState <a href="../Source_arena/arenagameinfo.html#20" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">enum</span> <span class="source_type"><a href="../arena/arenagameinfo.html#ArenaState" class="source">ArenaState</a></span><br />
+{<blockquote>ASTATE_WaitingPlayers,
+ASTATE_DuringMatch,
+ASTATE_PreMatch,
+ASTATE_PostMatch</blockquote>};
+</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th class="title">Structures Detail</th>
+</tr>
+</table>
+
+<h4><a name="_ArenaPlayerInfo" class="hidden"></a>ArenaPlayerInfo <a href="../Source_arena/arenagameinfo.html#28" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">struct</span> <span class="source_type"><a href="../arena/arenagameinfo.html#ArenaPlayerInfo" class="source">ArenaPlayerInfo</a></span><br />
+{<blockquote><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/playerpawn.html" class="source">PlayerPawn</a></span> aPlayer;<br />
+<span class="source_keyword">var</span> <span class="source_keyword">bool</span> bUsed;<br />
+</blockquote>};
+</div>
+<blockquote class="comment">
+
+<br />
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FighterList" class="hidden"></a>FighterList <a href="../Source_arena/arenagameinfo.html#36" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">struct</span> <span class="source_type"><a href="../arena/arenagameinfo.html#FighterList" class="source">FighterList</a></span><br />
+{<blockquote><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bNewFighter;<br />
+<span class="source_keyword">var</span> <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> Fighter;<br />
+<span class="source_keyword">var</span> <span class="source_type"><a href="../arena/arenagameinfo.html#PlayerInventory" class="source">PlayerInventory</a></span> FighterInventory;<br />
+</blockquote>};
+</div>
+<blockquote class="comment">
+
+<br />
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayerInventory" class="hidden"></a>PlayerInventory <a href="../Source_arena/arenagameinfo.html#13" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">struct</span> <span class="source_type"><a href="../arena/arenagameinfo.html#PlayerInventory" class="source">PlayerInventory</a></span><br />
+{<blockquote><span class="source_keyword">var</span> <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/inventory.html" class="source">Inventory</a></span>&gt; HeldShield;<br />
+<span class="source_keyword">var</span> <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/inventory.html" class="source">Inventory</a></span>&gt; HeldWeapon;<br />
+<span class="source_keyword">var</span> <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/inventory.html" class="source">Inventory</a></span>&gt; StowedWeapons[<span class="source_int">14</span>];<br />
+</blockquote>};
+</div>
+<blockquote class="comment">
+
+<br />
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_AddFighter-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> AddFighter <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1133" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> AddFighter ( <span class="source_keyword">byte</span> aType, <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> aPawn) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AnnounceResults-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> AnnounceResults <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#789" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  AnnounceResults ( <span class="source_keyword">byte</span> lType) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CanStartMatch-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CanStartMatch <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#142" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> CanStartMatch ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ChangeTeam-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ChangeTeam <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1431" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> ChangeTeam ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> Other, <span class="source_keyword">int</span> N) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CheckWinState-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CheckWinState <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#957" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> CheckWinState ( <span class="source_keyword">byte</span> aType) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ClearFighterList-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ClearFighterList <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1803" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ClearFighterList ( <span class="source_keyword2">out</span> <span class="source_type"><a href="../arena/arenagameinfo.html#FighterList" class="source">FighterList</a></span> myList) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ClearList-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ClearList <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#2124" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> ClearList ( <span class="source_keyword">byte</span> lType) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ClearWeaponInfo-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ClearWeaponInfo <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1875" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ClearWeaponInfo ( <span class="source_keyword2">out</span> <span class="source_type"><a href="../arena/arenagameinfo.html#PlayerInventory" class="source">PlayerInventory</a></span> myInventory) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CopyFighterList-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CopyFighterList <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1815" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  CopyFighterList ( <span class="source_keyword2">out</span> <span class="source_type"><a href="../arena/arenagameinfo.html#FighterList" class="source">FighterList</a></span> dest, <span class="source_type"><a href="../arena/arenagameinfo.html#FighterList" class="source">FighterList</a></span> src) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CopyPlayerInfo-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CopyPlayerInfo <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1792" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  CopyPlayerInfo ( <span class="source_keyword2">out</span> <span class="source_type"><a href="../arena/arenagameinfo.html#ArenaPlayerInfo" class="source">ArenaPlayerInfo</a></span> dest, <span class="source_type"><a href="../arena/arenagameinfo.html#ArenaPlayerInfo" class="source">ArenaPlayerInfo</a></span> src) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CopyWeaponInfo-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CopyWeaponInfo <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1859" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  CopyWeaponInfo ( <span class="source_keyword2">out</span> <span class="source_type"><a href="../arena/arenagameinfo.html#PlayerInventory" class="source">PlayerInventory</a></span> dest, <span class="source_type"><a href="../arena/arenagameinfo.html#PlayerInventory" class="source">PlayerInventory</a></span> src) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Debug-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Debug <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#2182" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span>  Debug ( <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span>, <span class="source_keyword">int</span> mode) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DestroyArenaWeapons-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DestroyArenaWeapons <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1559" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  DestroyArenaWeapons ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DestroyPawnsWeapons-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DestroyPawnsWeapons <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1535" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  DestroyPawnsWeapons ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type"><a href="../engine/playerpawn.html" class="source">PlayerPawn</a></span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DetermineLoser-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DetermineLoser <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#997" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">byte</span> DetermineLoser ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DetermineWinner-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DetermineWinner <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#980" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">byte</span> DetermineWinner ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EnteredQueueZone-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> EnteredQueueZone <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#2087" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  EnteredQueueZone ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> aPawn) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EquipPawn-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> EquipPawn <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1474" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  EquipPawn ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> aPlayerPawn, <span class="source_type"><a href="../arena/arenagameinfo.html#PlayerInventory" class="source">PlayerInventory</a></span> myInventory) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FindArenaStart-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> FindArenaStart <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#475" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_type"><a href="../arena/arenastart.html" class="source">ArenaStart</a></span> FindArenaStart ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type"><a href="../engine/player.html" class="source">Player</a></span>, <span class="source_keyword">byte</span> lType) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FindOneOnOneStart-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> FindOneOnOneStart <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#444" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_type"><a href="../arena/arenastart.html" class="source">ArenaStart</a></span> FindOneOnOneStart ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type"><a href="../engine/player.html" class="source">Player</a></span>, <span class="source_keyword">byte</span> lType) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FindPlayerStart-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> FindPlayerStart <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1612" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_type"><a href="../engine/navigationpoint.html" class="source">NavigationPoint</a></span> FindPlayerStart ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type"><a href="../engine/player.html" class="source">Player</a></span>, <span class="source_keyword2">optional</span> <span class="source_keyword">byte</span> InTeam, <span class="source_keyword2">optional</span> <span class="source_keyword">string</span> <span class="source_type">incomingName</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetListColor-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetListColor <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#556" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">byte</span> GetListColor ( <span class="source_keyword">byte</span> aType) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetListSize-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetListSize <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1922" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">int</span> GetListSize ( <span class="source_keyword">byte</span> aType) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetNewChampions-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetNewChampions <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#881" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  GetNewChampions ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetNextChallengers-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetNextChallengers <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#910" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  GetNextChallengers ( <span class="source_keyword">int</span> startIndex) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetQueueSize-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetQueueSize <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1767" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">int</span> GetQueueSize ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetTeamVectorColor-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetTeamVectorColor <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#584" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> GetTeamVectorColor ( <span class="source_keyword">int</span> num) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HandleKill-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> HandleKill <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#729" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> HandleKill ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> Died, <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">Killer</span>, <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">DamageType</a></span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_InterruptMatchStart-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> InterruptMatchStart <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#938" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  InterruptMatchStart ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_IsEmpty-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> IsEmpty <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1956" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> IsEmpty ( <span class="source_keyword">byte</span> aType) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_IsFull-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> IsFull <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1891" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> IsFull ( <span class="source_keyword">byte</span> aType) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_IsPlaying-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> IsPlaying <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1386" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> IsPlaying ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> aPawn, <span class="source_keyword">byte</span> aType) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Killed-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Killed <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1441" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Killed ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">Killer</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> Other, <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">damageType</a></span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_KillMessage-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> KillMessage <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1315" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">static</span> <span class="source_keyword">function</span> <span class="source_keyword">string</span> KillMessage ( <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">damageType</a></span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">killer</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LeftQueueZone-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> LeftQueueZone <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#2050" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  LeftQueueZone ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> aPawn) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Login-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Login <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1262" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_type"><a href="../engine/playerpawn.html" class="source">playerpawn</a></span> Login ( <span class="source_keyword">string</span> Portal, <span class="source_keyword">string</span> Options, <span class="source_keyword2">out</span> <span class="source_keyword">string</span> Error, <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/playerpawn.html" class="source">playerpawn</a></span>&gt; SpawnClass) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Logout-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Logout <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#659" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Logout ( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">Exiting</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MoveChallengers-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> MoveChallengers <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#840" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  MoveChallengers ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlaceFighterInArena-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlaceFighterInArena <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#567" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlaceFighterInArena ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> aFighter, <span class="source_keyword">byte</span> aType) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayBeginMatch-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayBeginMatch <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#241" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayBeginMatch ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayCountdown-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayCountdown <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#220" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayCountdown ( <span class="source_keyword">int</span> currentIndex) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayEndMatch-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayEndMatch <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#265" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayEndMatch ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PostBeginPlay-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PostBeginPlay <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#78" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PostBeginPlay ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ReduceDamage-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ReduceDamage <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#186" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ReduceDamage ( <span class="source_keyword2">out</span> <span class="source_keyword">int</span> BluntDamage, <span class="source_keyword2">out</span> <span class="source_keyword">int</span> SeverDamage, <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">DamageType</a></span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> injured, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">instigatedBy</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RemoveFighter-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> RemoveFighter <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1979" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> RemoveFighter ( <span class="source_keyword">byte</span> aType, <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> aPawn) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RemoveFromQueue-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> RemoveFromQueue <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1721" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  RemoveFromQueue ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> aPawn) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RemoveQueueElement-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> RemoveQueueElement <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1692" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  RemoveQueueElement ( <span class="source_keyword">int</span> element) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ResetDeadPlayers-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ResetDeadPlayers <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#289" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ResetDeadPlayers ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ResetMatchVariables-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ResetMatchVariables <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#209" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ResetMatchVariables ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ResetStateChange-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ResetStateChange <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1181" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ResetStateChange ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RestartFighter-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> RestartFighter <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1014" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  RestartFighter ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> aPlayer) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RestartPlayer-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> RestartPlayer <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1281" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> RestartPlayer ( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> aPlayer) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RestorePawnHealth-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> RestorePawnHealth <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1056" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  RestorePawnHealth ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> aPlayer) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SavePawnsWeapons-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SavePawnsWeapons <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1827" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SavePawnsWeapons ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> aPawn, <span class="source_keyword2">out</span> <span class="source_type"><a href="../arena/arenagameinfo.html#PlayerInventory" class="source">PlayerInventory</a></span> myInventory) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ScoreKill-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ScoreKill <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1358" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ScoreKill ( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">Killer</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> Other) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SendFightMessage-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SendFightMessage <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#311" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SendFightMessage ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SendGetReadyMsg-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SendGetReadyMsg <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1410" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SendGetReadyMsg ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SetArenaTeleportSpot-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SetArenaTeleportSpot <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1585" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SetArenaTeleportSpot ( <span class="source_type"><a href="../engine/navigationpoint.html" class="source">NavigationPoint</a></span> N, <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> aPlayer) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SetupMatch-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SetupMatch <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#166" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> SetupMatch ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StartMatch-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> StartMatch <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#603" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  StartMatch ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StateChangeFighters-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> StateChangeFighters <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#1212" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  StateChangeFighters ( <span class="source_keyword">bool</span> bStop) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Timer-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Timer <span class="function_state"></span> <a href="../Source_arena/arenagameinfo.html#330" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Timer ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     TimeBetweenMatch=<span class="source_int">5</span>
+     MaxTeamSupport=<span class="source_int">1</span>
+     maxArenaTeam=<span class="source_int">1</span>
+     MaxArenaPlayers=<span class="source_int">4</span>
+     TeamCurrentColor(<span class="source_int">1</span>)=<span class="source_int">1</span>
+     CountDownSound(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Arena.countdown01'</span>
+     CountDownSound(<span class="source_int">1</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Arena.countdown02'</span>
+     CountDownSound(<span class="source_int">2</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Arena.countdown03'</span>
+     ArenaLeadInSound(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Arena.lead01'</span>
+     ArenaLeadInSound(<span class="source_int">1</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Arena.lead02'</span>
+     ArenaLeadInSound(<span class="source_int">2</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Arena.lead03'</span>
+     ArenaLeadInSound(<span class="source_int">3</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Arena.lead04'</span>
+     MatchStartSound(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Arena.start01'</span>
+     MatchStartSound(<span class="source_int">1</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Arena.start02'</span>
+     MatchStartSound(<span class="source_int">2</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Arena.start03'</span>
+     MatchStartSound(<span class="source_int">3</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Arena.start04'</span>
+     MatchEndSound(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Arena.end01'</span>
+     MatchEndSound(<span class="source_int">1</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Arena.end02'</span>
+     MatchEndSound(<span class="source_int">2</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Arena.end03'</span>
+     GetReadyMessage=<span class="source_string">"Its Your Turn to fight! Get Ready!"</span>
+     FightMessage=<span class="source_string">"THE BATTLE BEGINS!!"</span>
+     SuicideDeathMessage=<span class="source_string">" suicided!!"</span>
+     CrushDeathMessage=<span class="source_string">" got crushed!!"</span>
+     FellDeathMessage=<span class="source_string">" fell to death!!"</span>
+     DrownDeathMessage=<span class="source_string">"%o drowned!!"</span>
+     ThrownDeathMessage=<span class="source_string">"%o died by a thrown weapon from %k"</span>
+     KillDeathMessage=<span class="source_string">"%o was killed by %k"</span>
+     BurnedDeathMessage=<span class="source_string">"%o was burned by %k"</span>
+     HeadDeathMessage=<span class="source_string">"%o has given up a head to %k!!"</span>
+     GenericDeathMessage=<span class="source_string">" died!!"</span>
+     DefaultWeapon=<span class="source_keyword">None</span>
+     ScoreBoardType=<span class="source_keyword">Class</span><span class="source_name">'Arena.ArenaScoreboard'</span>
+     RulesMenuType=<span class="source_string">"Arena.ArenaMenuRulesSC"</span>
+     HUDType=<span class="source_keyword">Class</span><span class="source_name">'Arena.ArenaHUD'</span>
+     MapListType=<span class="source_keyword">Class</span><span class="source_name">'Arena.ARMapList'</span>
+     MapPrefix=<span class="source_string">"AR"</span>
+     BeaconName=<span class="source_string">"AR"</span>
+     GameName=<span class="source_string">"Arena Match"</span>
+     GameReplicationInfoClass=<span class="source_keyword">Class</span><span class="source_name">'Arena.ArenaGameReplicationInfo'</span>
+     bAllowLimbSever=<span class="source_keyword">False</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../arena/arena-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_arena/arenagameinfo.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#ArenaGameInfo">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../arena/matchresultmessage.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../arena/arenagamereplicationinfo.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:41:01.070 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

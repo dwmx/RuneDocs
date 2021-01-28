@@ -1,0 +1,396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - RuneI.Rope</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/rope.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#Rope">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/romansword.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/ropepoint.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#runei/rope.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../runei/runei-overview.html">RuneI</a>.Rope</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../runei/beamsystem.html">BeamSystem</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a>
+   |   
+   +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/particlesystem.html">ParticleSystem</a>
+      |   
+      +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/beamsystem.html">BeamSystem</a>
+         |   
+         +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/rope.html">Rope</a>
+</pre>
+
+<h4>Direct Known Subclasses:</h4>
+<blockquote>
+	<a href="../runei/climbablechain.html">ClimbableChain</a>, <a href="../runei/climbablevine.html">ClimbableVine</a>
+</blockquote>
+
+<hr />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Constants Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Contants from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/particlesystem.html">ParticleSystem</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/particlesystem.html#MAX_PARTICLE_COUNT">MAX_PARTICLE_COUNT</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/actor.html">Actor</a></td><td width="66%"><a href="#_AttachedActor" name="AttachedActor" title="go to the details">AttachedActor</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bActorAttached" name="bActorAttached" title="go to the details">bActorAttached</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_CurMultiplier" name="CurMultiplier" title="go to the details">CurMultiplier</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_ElapsedTime" name="ElapsedTime" title="go to the details">ElapsedTime</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Vector">vector</a></td><td width="66%"><a href="#_LocationAttached" name="LocationAttached" title="go to the details">LocationAttached</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Vector">vector</a></td><td width="66%"><a href="#_RopeBottom" name="RopeBottom" title="go to the details">RopeBottom</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Vector">vector</a></td><td width="66%"><a href="#_RopeClimbBottom" name="RopeClimbBottom" title="go to the details">RopeClimbBottom</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Vector">vector</a></td><td width="66%"><a href="#_RopeClimbTop" name="RopeClimbTop" title="go to the details">RopeClimbTop</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Vector">vector</a></td><td width="66%"><a href="#_RopeTop" name="RopeTop" title="go to the details">RopeTop</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_ValidControlPoint" name="ValidControlPoint" title="go to the details">ValidControlPoint</a></td></tr>
+<tr><th colspan="2" class="small">Rope</th></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bDisableSway" name="bDisableSway" title="go to the details">bDisableSway</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_IdleSway" name="IdleSway" title="go to the details">IdleSway</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_MaxSway" name="MaxSway" title="go to the details">MaxSway</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/beamsystem.html">BeamSystem</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/beamsystem.html#BeamTime">BeamTime</a>, <a href="../runei/beamsystem.html#TargetTag">TargetTag</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/particlesystem.html">ParticleSystem</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/particlesystem.html#AlphaEnd">AlphaEnd</a>, <a href="../engine/particlesystem.html#AlphaStart">AlphaStart</a>, <a href="../engine/particlesystem.html#bAlphaFade">bAlphaFade</a>, <a href="../engine/particlesystem.html#bApplyGravity">bApplyGravity</a>, <a href="../engine/particlesystem.html#bApplyZoneVelocity">bApplyZoneVelocity</a>, <a href="../engine/particlesystem.html#BaseJointIndex">BaseJointIndex</a>, <a href="../engine/particlesystem.html#bConstrainToBounds">bConstrainToBounds</a>, <a href="../engine/particlesystem.html#bConvergeX">bConvergeX</a>, <a href="../engine/particlesystem.html#bConvergeY">bConvergeY</a>, <a href="../engine/particlesystem.html#bConvergeZ">bConvergeZ</a>, <a href="../engine/particlesystem.html#BeamTextureScale">BeamTextureScale</a>, <a href="../engine/particlesystem.html#BeamThickness">BeamThickness</a>, <a href="../engine/particlesystem.html#bEventDeath">bEventDeath</a>, <a href="../engine/particlesystem.html#bEventParticleTick">bEventParticleTick</a>, <a href="../engine/particlesystem.html#bEventSystemInit">bEventSystemInit</a>, <a href="../engine/particlesystem.html#bEventSystemTick">bEventSystemTick</a>, <a href="../engine/particlesystem.html#bOneShot">bOneShot</a>, <a href="../engine/particlesystem.html#bRandomTexture">bRandomTexture</a>, <a href="../engine/particlesystem.html#bRelativeToSystem">bRelativeToSystem</a>, <a href="../engine/particlesystem.html#bSpriteInEditor">bSpriteInEditor</a>, <a href="../engine/particlesystem.html#bSystemOneShot">bSystemOneShot</a>, <a href="../engine/particlesystem.html#bSystemTicks">bSystemTicks</a>, <a href="../engine/particlesystem.html#bTaperEndPoint">bTaperEndPoint</a>, <a href="../engine/particlesystem.html#bTaperStartPoint">bTaperStartPoint</a>, <a href="../engine/particlesystem.html#bUseTargetLocation">bUseTargetLocation</a>, <a href="../engine/particlesystem.html#bWaterOnly">bWaterOnly</a>, <a href="../engine/particlesystem.html#ConnectionOffset[32]">ConnectionOffset[32]</a>, <a href="../engine/particlesystem.html#ConnectionPoint[32]">ConnectionPoint[32]</a>, <a href="../engine/particlesystem.html#CurrentDelay">CurrentDelay</a>, <a href="../engine/particlesystem.html#CurrentTime">CurrentTime</a>, <a href="../engine/particlesystem.html#GravityScale">GravityScale</a>, <a href="../engine/particlesystem.html#HasValidCoords">HasValidCoords</a>, <a href="../engine/particlesystem.html#IsLoaded">IsLoaded</a>, <a href="../engine/particlesystem.html#LastTime">LastTime</a>, <a href="../engine/particlesystem.html#LifeSpanMax">LifeSpanMax</a>, <a href="../engine/particlesystem.html#LifeSpanMin">LifeSpanMin</a>, <a href="../engine/particlesystem.html#NumConPts">NumConPts</a>, <a href="../engine/particlesystem.html#OffsetJointIndex">OffsetJointIndex</a>, <a href="../engine/particlesystem.html#OldBaseLocation">OldBaseLocation</a>, <a href="../engine/particlesystem.html#OldOffsetLocation">OldOffsetLocation</a>, <a href="../engine/particlesystem.html#OldParticleCount">OldParticleCount</a>, <a href="../engine/particlesystem.html#OriginOffset">OriginOffset</a>, <a href="../engine/particlesystem.html#ParticleArray[64]">ParticleArray[64]</a>, <a href="../engine/particlesystem.html#ParticleCount">ParticleCount</a>, <a href="../engine/particlesystem.html#ParticleSpriteType">ParticleSpriteType</a>, <a href="../engine/particlesystem.html#ParticleTexture[4]">ParticleTexture[4]</a>, <a href="../engine/particlesystem.html#ParticleType">ParticleType</a>, <a href="../engine/particlesystem.html#PercentOffset">PercentOffset</a>, <a href="../engine/particlesystem.html#RandomDelay">RandomDelay</a>, <a href="../engine/particlesystem.html#ScaleDeltaX">ScaleDeltaX</a>, <a href="../engine/particlesystem.html#ScaleDeltaY">ScaleDeltaY</a>, <a href="../engine/particlesystem.html#ScaleMax">ScaleMax</a>, <a href="../engine/particlesystem.html#ScaleMin">ScaleMin</a>, <a href="../engine/particlesystem.html#ShapeVector">ShapeVector</a>, <a href="../engine/particlesystem.html#SpawnDelay">SpawnDelay</a>, <a href="../engine/particlesystem.html#SpawnOverTime">SpawnOverTime</a>, <a href="../engine/particlesystem.html#SpawnShape">SpawnShape</a>, <a href="../engine/particlesystem.html#SwipeSpeed">SwipeSpeed</a>, <a href="../engine/particlesystem.html#SystemCoords">SystemCoords</a>, <a href="../engine/particlesystem.html#SystemLifeSpan">SystemLifeSpan</a>, <a href="../engine/particlesystem.html#TargetJointIndex">TargetJointIndex</a>, <a href="../engine/particlesystem.html#TargetLocation">TargetLocation</a>, <a href="../engine/particlesystem.html#TextureChangeTime">TextureChangeTime</a>, <a href="../engine/particlesystem.html#VelocityMax">VelocityMax</a>, <a href="../engine/particlesystem.html#VelocityMin">VelocityMin</a>, <a href="../engine/particlesystem.html#ZoneVelocityScale">ZoneVelocityScale</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Enumerations Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Enumerations from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/particlesystem.html">ParticleSystem</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/particlesystem.html#EParticleSpawnShape">EParticleSpawnShape</a>, <a href="../engine/particlesystem.html#EParticleSpriteType">EParticleSpriteType</a>, <a href="../engine/particlesystem.html#EParticleType">EParticleType</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Structures Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Structures from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/particlesystem.html">ParticleSystem</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/particlesystem.html#Particle">Particle</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_AttachedToRope-" name="AttachedToRope" title="go to the details">AttachedToRope</a> (<a href="../engine/actor.html">actor</a> Other))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ComputeClimbingEndpoints-" name="ComputeClimbingEndpoints" title="go to the details">ComputeClimbingEndpoints</a> (float tracestartz))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Debug-" name="Debug" title="go to the details">Debug</a> (<a href="../engine/canvas.html">Canvas</a> canvas, int mode))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DetachFromRope-" name="DetachFromRope" title="go to the details">DetachFromRope</a> (<a href="../engine/actor.html">actor</a> Other))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>int&nbsp;</td><td><a href="#_GetValidPoint-" name="GetValidPoint" title="go to the details">GetValidPoint</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PostBeginPlay-" name="PostBeginPlay" title="go to the details">PostBeginPlay</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>&nbsp;</td><td><a href="#_SystemTick-" name="SystemTick" title="go to the details">SystemTick</a> (float DeltaSeconds))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/beamsystem.html">BeamSystem</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/beamsystem.html#Debug">Debug</a>, <a href="../runei/beamsystem.html#PreBeginPlay">PreBeginPlay</a>, <a href="../runei/beamsystem.html#SpawnBeamDebris">SpawnBeamDebris</a>, <a href="../runei/beamsystem.html#SystemTick">SystemTick</a>, <a href="../runei/beamsystem.html#Timer">Timer</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/particlesystem.html">ParticleSystem</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/particlesystem.html#debug">debug</a>, <a href="../engine/particlesystem.html#ParticleTick">ParticleTick</a>, <a href="../engine/particlesystem.html#SystemInit">SystemInit</a>, <a href="../engine/particlesystem.html#SystemTick">SystemTick</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_AttachedActor" class="hidden"></a>AttachedActor <a href="../Source_runei/rope.html#18" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> AttachedActor;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bActorAttached" class="hidden"></a>bActorAttached <a href="../Source_runei/rope.html#16" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bActorAttached;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CurMultiplier" class="hidden"></a>CurMultiplier <a href="../Source_runei/rope.html#21" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">float</span> CurMultiplier;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ElapsedTime" class="hidden"></a>ElapsedTime <a href="../Source_runei/rope.html#20" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">float</span> ElapsedTime;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LocationAttached" class="hidden"></a>LocationAttached <a href="../Source_runei/rope.html#17" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> LocationAttached;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RopeBottom" class="hidden"></a>RopeBottom <a href="../Source_runei/rope.html#12" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">private</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> RopeBottom;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RopeClimbBottom" class="hidden"></a>RopeClimbBottom <a href="../Source_runei/rope.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> RopeClimbBottom;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RopeClimbTop" class="hidden"></a>RopeClimbTop <a href="../Source_runei/rope.html#13" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> RopeClimbTop;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RopeTop" class="hidden"></a>RopeTop <a href="../Source_runei/rope.html#11" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">private</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> RopeTop;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ValidControlPoint" class="hidden"></a>ValidControlPoint <a href="../Source_runei/rope.html#22" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> ValidControlPoint;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">Rope</h3>
+<h4><a name="_bDisableSway" class="hidden"></a>bDisableSway <a href="../Source_runei/rope.html#24" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/rope.html" class="source">Rope</a></span>) <span class="source_keyword">bool</span> bDisableSway;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_IdleSway" class="hidden"></a>IdleSway <a href="../Source_runei/rope.html#26" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/rope.html" class="source">Rope</a></span>) <span class="source_keyword">float</span> IdleSway;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MaxSway" class="hidden"></a>MaxSway <a href="../Source_runei/rope.html#25" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/rope.html" class="source">Rope</a></span>) <span class="source_keyword">float</span> MaxSway;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_AttachedToRope-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> AttachedToRope <span class="function_state"></span> <a href="../Source_runei/rope.html#79" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  AttachedToRope ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ComputeClimbingEndpoints-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ComputeClimbingEndpoints <span class="function_state"></span> <a href="../Source_runei/rope.html#56" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span>  ComputeClimbingEndpoints ( <span class="source_keyword">float</span> tracestartz) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Debug-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Debug <span class="function_state"></span> <a href="../Source_runei/rope.html#169" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span>  Debug ( <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span>, <span class="source_keyword">int</span> mode) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DetachFromRope-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DetachFromRope <span class="function_state"></span> <a href="../Source_runei/rope.html#90" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  DetachFromRope ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetValidPoint-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetValidPoint <span class="function_state"></span> <a href="../Source_runei/rope.html#101" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">int</span> GetValidPoint ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PostBeginPlay-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PostBeginPlay <span class="function_state"></span> <a href="../Source_runei/rope.html#28" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span>  PostBeginPlay ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SystemTick-" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> SystemTick <span class="function_state"></span> <a href="../Source_runei/rope.html#121" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span>  SystemTick ( <span class="source_keyword">float</span> DeltaSeconds) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     MaxSway=<span class="source_int">0.800000</span>
+     IdleSway=<span class="source_int">0.100000</span>
+     ParticleCount=<span class="source_int">45</span>
+     ParticleTexture(<span class="source_int">0</span>)=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'RuneFX.chain1'</span>
+     NumConPts=<span class="source_int">15</span>
+     BeamThickness=<span class="source_int">2.500000</span>
+     BeamTextureScale=<span class="source_int">0.040000</span>
+     bUseTargetLocation=<span class="source_keyword">True</span>
+     bNet=<span class="source_keyword">False</span>
+     <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span>=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'Engine.S_Rope'</span>
+     CollisionRadius=<span class="source_int">15.000000</span>
+     CollisionHeight=<span class="source_int">500.000000</span>
+     bCollideActors=<span class="source_keyword">True</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/rope.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#Rope">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/romansword.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/ropepoint.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:41:08.008 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

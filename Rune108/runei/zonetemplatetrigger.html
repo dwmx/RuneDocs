@@ -1,0 +1,425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - RuneI.ZoneTemplateTrigger</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/zonetemplatetrigger.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#ZoneTemplateTrigger">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/zombierarm.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/zonevelocitytrigger.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#runei/zonetemplatetrigger.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../runei/runei-overview.html">RuneI</a>.ZoneTemplateTrigger</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../engine/trigger.html">Trigger</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a>
+   |   
+   +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/triggers.html">Triggers</a>
+      |   
+      +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/trigger.html">Trigger</a>
+         |   
+         +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/zonetemplatetrigger.html">ZoneTemplateTrigger</a>
+</pre>
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><th colspan="2" class="small">ZoneTemplateTrigger</th></tr>
+<tr><td nowrap="nowrap" width="33%">byte</td><td width="66%"><a href="#_AmbientBrightness" name="AmbientBrightness" title="go to the details">AmbientBrightness</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">byte</td><td width="66%"><a href="#_AmbientHue" name="AmbientHue" title="go to the details">AmbientHue</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">byte</td><td width="66%"><a href="#_AmbientSaturation" name="AmbientSaturation" title="go to the details">AmbientSaturation</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bFarClipZone" name="bFarClipZone" title="go to the details">bFarClipZone</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bFogZone" name="bFogZone" title="go to the details">bFogZone</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bGravityZone" name="bGravityZone" title="go to the details">bGravityZone</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bKillZone" name="bKillZone" title="go to the details">bKillZone</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bMoveProjectiles" name="bMoveProjectiles" title="go to the details">bMoveProjectiles</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bNeutralZone" name="bNeutralZone" title="go to the details">bNeutralZone</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bNoInventory" name="bNoInventory" title="go to the details">bNoInventory</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bPainZone" name="bPainZone" title="go to the details">bPainZone</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bTakeOverCamera" name="bTakeOverCamera" title="go to the details">bTakeOverCamera</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bWaterZone" name="bWaterZone" title="go to the details">bWaterZone</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_DamagePerSec" name="DamagePerSec" title="go to the details">DamagePerSec</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_DamageType" name="DamageType" title="go to the details">DamageType</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">class&lt;<a href="../engine/actor.html">actor</a>&gt;</td><td width="66%"><a href="#_EntryActor" name="EntryActor" title="go to the details">EntryActor</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">sound</td><td width="66%"><a href="#_EntrySound" name="EntrySound" title="go to the details">EntrySound</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">class&lt;<a href="../engine/actor.html">actor</a>&gt;</td><td width="66%"><a href="#_ExitActor" name="ExitActor" title="go to the details">ExitActor</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">sound</td><td width="66%"><a href="#_ExitSound" name="ExitSound" title="go to the details">ExitSound</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">byte</td><td width="66%"><a href="#_FogBrightness" name="FogBrightness" title="go to the details">FogBrightness</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_FogDistance" name="FogDistance" title="go to the details">FogDistance</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">byte</td><td width="66%"><a href="#_FogHue" name="FogHue" title="go to the details">FogHue</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">byte</td><td width="66%"><a href="#_FogSaturation" name="FogSaturation" title="go to the details">FogSaturation</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_TexUPanSpeed" name="TexUPanSpeed" title="go to the details">TexUPanSpeed</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_TexVPanSpeed" name="TexVPanSpeed" title="go to the details">TexVPanSpeed</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Vector">vector</a></td><td width="66%"><a href="#_ViewFlash" name="ViewFlash" title="go to the details">ViewFlash</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Vector">vector</a></td><td width="66%"><a href="#_ViewFog" name="ViewFog" title="go to the details">ViewFog</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Vector">vector</a></td><td width="66%"><a href="#_ZoneGravity" name="ZoneGravity" title="go to the details">ZoneGravity</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_ZonePlayerDiedEvent" name="ZonePlayerDiedEvent" title="go to the details">ZonePlayerDiedEvent</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Vector">vector</a></td><td width="66%"><a href="#_ZoneVelocity" name="ZoneVelocity" title="go to the details">ZoneVelocity</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/trigger.html">Trigger</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/trigger.html#bInitiallyActive">bInitiallyActive</a>, <a href="../engine/trigger.html#bTriggerOnceOnly">bTriggerOnceOnly</a>, <a href="../engine/trigger.html#ClassProximityType">ClassProximityType</a>, <a href="../engine/trigger.html#DamageThreshold">DamageThreshold</a>, <a href="../engine/trigger.html#Message">Message</a>, <a href="../engine/trigger.html#RepeatTriggerTime">RepeatTriggerTime</a>, <a href="../engine/trigger.html#ReTriggerDelay">ReTriggerDelay</a>, <a href="../engine/trigger.html#SightAngle">SightAngle</a>, <a href="../engine/trigger.html#SightDistance">SightDistance</a>, <a href="../engine/trigger.html#TriggerActor">TriggerActor</a>, <a href="../engine/trigger.html#TriggerActor2">TriggerActor2</a>, <a href="../engine/trigger.html#TriggerTime">TriggerTime</a>, <a href="../engine/trigger.html#TriggerType">TriggerType</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Enumerations Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Enumerations from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/trigger.html">Trigger</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/trigger.html#ETriggerType">ETriggerType</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Trigger-" name="Trigger" title="go to the details">Trigger</a> (<a href="../engine/actor.html">actor</a> Cause, <a href="../engine/pawn.html">Pawn</a> EventInstigator))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_TriggerAction-" name="TriggerAction" title="go to the details">TriggerAction</a> (<a href="../engine/actor.html">actor</a> Receiver, <a href="../engine/actor.html">actor</a> Cause, <a href="../engine/pawn.html">Pawn</a> EventInstigator))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_UnTriggerAction-" name="UnTriggerAction" title="go to the details">UnTriggerAction</a> (<a href="../engine/actor.html">actor</a> Receiver, <a href="../engine/actor.html">actor</a> Cause, <a href="../engine/pawn.html">Pawn</a> EventInstigator))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/trigger.html">Trigger</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/trigger.html#ChangedState">ChangedState</a>, <a href="../engine/trigger.html#CheckTouchList">CheckTouchList</a>, <a href="../engine/trigger.html#FindTriggerActor">FindTriggerActor</a>, <a href="../engine/trigger.html#Fired">Fired</a>, <a href="../engine/trigger.html#IsRelevant">IsRelevant</a>, <a href="../engine/trigger.html#JointDamaged">JointDamaged</a>, <a href="../engine/trigger.html#PostBeginPlay">PostBeginPlay</a>, <a href="../engine/trigger.html#SpecialHandling">SpecialHandling</a>, <a href="../engine/trigger.html#Timer">Timer</a>, <a href="../engine/trigger.html#Touch">Touch</a>, <a href="../engine/trigger.html#Trigger">Trigger</a>, <a href="../engine/trigger.html#TriggerAction">TriggerAction</a>, <a href="../engine/trigger.html#UnTouch">UnTouch</a>, <a href="../engine/trigger.html#UnTriggerAction">UnTriggerAction</a>, <a href="../engine/trigger.html#UseTrigger">UseTrigger</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h3 class="vartag">ZoneTemplateTrigger</h3>
+<h4><a name="_AmbientBrightness" class="hidden"></a>AmbientBrightness <a href="../Source_runei/zonetemplatetrigger.html#25" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_keyword">byte</span> AmbientBrightness;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AmbientHue" class="hidden"></a>AmbientHue <a href="../Source_runei/zonetemplatetrigger.html#26" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_keyword">byte</span> AmbientHue;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AmbientSaturation" class="hidden"></a>AmbientSaturation <a href="../Source_runei/zonetemplatetrigger.html#27" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_keyword">byte</span> AmbientSaturation;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bFarClipZone" class="hidden"></a>bFarClipZone <a href="../Source_runei/zonetemplatetrigger.html#6" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_keyword">bool</span> bFarClipZone;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bFogZone" class="hidden"></a>bFogZone <a href="../Source_runei/zonetemplatetrigger.html#7" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_keyword">bool</span> bFogZone;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bGravityZone" class="hidden"></a>bGravityZone <a href="../Source_runei/zonetemplatetrigger.html#8" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_keyword">bool</span> bGravityZone;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bKillZone" class="hidden"></a>bKillZone <a href="../Source_runei/zonetemplatetrigger.html#9" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_keyword">bool</span> bKillZone;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bMoveProjectiles" class="hidden"></a>bMoveProjectiles <a href="../Source_runei/zonetemplatetrigger.html#10" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_keyword">bool</span> bMoveProjectiles;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bNeutralZone" class="hidden"></a>bNeutralZone <a href="../Source_runei/zonetemplatetrigger.html#11" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_keyword">bool</span> bNeutralZone;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bNoInventory" class="hidden"></a>bNoInventory <a href="../Source_runei/zonetemplatetrigger.html#12" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_keyword">bool</span> bNoInventory;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bPainZone" class="hidden"></a>bPainZone <a href="../Source_runei/zonetemplatetrigger.html#13" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_keyword">bool</span> bPainZone;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bTakeOverCamera" class="hidden"></a>bTakeOverCamera <a href="../Source_runei/zonetemplatetrigger.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_keyword">bool</span> bTakeOverCamera;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bWaterZone" class="hidden"></a>bWaterZone <a href="../Source_runei/zonetemplatetrigger.html#15" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_keyword">bool</span> bWaterZone;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DamagePerSec" class="hidden"></a>DamagePerSec <a href="../Source_runei/zonetemplatetrigger.html#16" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_keyword">float</span> DamagePerSec;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DamageType" class="hidden"></a>DamageType <a href="../Source_runei/zonetemplatetrigger.html#17" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">DamageType</a></span>;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EntryActor" class="hidden"></a>EntryActor <a href="../Source_runei/zonetemplatetrigger.html#18" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span>&gt; EntryActor;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EntrySound" class="hidden"></a>EntrySound <a href="../Source_runei/zonetemplatetrigger.html#19" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_type">sound</span> EntrySound;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ExitActor" class="hidden"></a>ExitActor <a href="../Source_runei/zonetemplatetrigger.html#20" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span>&gt; ExitActor;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ExitSound" class="hidden"></a>ExitSound <a href="../Source_runei/zonetemplatetrigger.html#22" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_type">sound</span> ExitSound;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FogBrightness" class="hidden"></a>FogBrightness <a href="../Source_runei/zonetemplatetrigger.html#29" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_keyword">byte</span> FogBrightness;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FogDistance" class="hidden"></a>FogDistance <a href="../Source_runei/zonetemplatetrigger.html#31" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_keyword">float</span> FogDistance;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FogHue" class="hidden"></a>FogHue <a href="../Source_runei/zonetemplatetrigger.html#28" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_keyword">byte</span> FogHue;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FogSaturation" class="hidden"></a>FogSaturation <a href="../Source_runei/zonetemplatetrigger.html#30" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_keyword">byte</span> FogSaturation;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TexUPanSpeed" class="hidden"></a>TexUPanSpeed <a href="../Source_runei/zonetemplatetrigger.html#32" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_keyword">float</span> TexUPanSpeed;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TexVPanSpeed" class="hidden"></a>TexVPanSpeed <a href="../Source_runei/zonetemplatetrigger.html#33" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_keyword">float</span> TexVPanSpeed;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ViewFlash" class="hidden"></a>ViewFlash <a href="../Source_runei/zonetemplatetrigger.html#34" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> ViewFlash;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ViewFog" class="hidden"></a>ViewFog <a href="../Source_runei/zonetemplatetrigger.html#35" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> ViewFog;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ZoneGravity" class="hidden"></a>ZoneGravity <a href="../Source_runei/zonetemplatetrigger.html#23" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> ZoneGravity;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ZonePlayerDiedEvent" class="hidden"></a>ZonePlayerDiedEvent <a href="../Source_runei/zonetemplatetrigger.html#21" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_keyword">name</span> ZonePlayerDiedEvent;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ZoneVelocity" class="hidden"></a>ZoneVelocity <a href="../Source_runei/zonetemplatetrigger.html#24" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zonetemplatetrigger.html" class="source">ZoneTemplateTrigger</a></span>) <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> ZoneVelocity;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_Trigger-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Trigger <span class="function_state"></span> <a href="../Source_runei/zonetemplatetrigger.html#43" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  <span class="source_type"><a href="../engine/trigger.html" class="source">Trigger</a></span> ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> Cause, <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">EventInstigator</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TriggerAction-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> TriggerAction <span class="function_state"></span> <a href="../Source_runei/zonetemplatetrigger.html#59" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  TriggerAction ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> Receiver, <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> Cause, <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">EventInstigator</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_UnTriggerAction-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> UnTriggerAction <span class="function_state"></span> <a href="../Source_runei/zonetemplatetrigger.html#136" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  UnTriggerAction ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> Receiver, <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> Cause, <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">EventInstigator</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     ZoneGravity=(Z=-<span class="source_int">1150.000000</span>)
+     AmbientSaturation=<span class="source_int">255</span>
+     TexUPanSpeed=<span class="source_int">1.000000</span>
+     TexVPanSpeed=<span class="source_int">1.000000</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/zonetemplatetrigger.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#ZoneTemplateTrigger">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/zombierarm.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/zonevelocitytrigger.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:41:18.778 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

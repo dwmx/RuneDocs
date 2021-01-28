@@ -1,0 +1,402 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - RMenu.RuneMenuAdmin2ClientWindow</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../rmenu/rmenu-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_rmenu/runemenuadmin2clientwindow.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#RuneMenuAdmin2ClientWindow">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../rmenu/runemenuabouttop.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../rmenu/runemenuadmin2scrollclient.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#rmenu/runemenuadmin2clientwindow.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../rmenu/rmenu-overview.html">RMenu</a>.RuneMenuAdmin2ClientWindow</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../rmenu/runemenupagewindow.html">RuneMenuPageWindow</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowbase.html">UWindowBase</a>
+   |   
+   +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowwindow.html">UWindowWindow</a>
+      |   
+      +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowclientwindow.html">UWindowClientWindow</a>
+         |   
+         +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowdialogclientwindow.html">UWindowDialogClientWindow</a>
+            |   
+            +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowpagewindow.html">UWindowPageWindow</a>
+               |   
+               +-- <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runemenupagewindow.html">RuneMenuPageWindow</a>
+                  |   
+                  +-- <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runemenuadmin2clientwindow.html">RuneMenuAdmin2ClientWindow</a>
+</pre>
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindoweditcontrol.html">UWindowEditControl</a></td><td width="66%"><a href="#_AdminPasswordEdit" name="AdminPasswordEdit" title="go to the details">AdminPasswordEdit</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_AdminPasswordHelp" name="AdminPasswordHelp" title="go to the details">AdminPasswordHelp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_AdminPasswordText" name="AdminPasswordText" title="go to the details">AdminPasswordText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bInitialized" name="bInitialized" title="go to the details">bInitialized</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_ControlOffset" name="ControlOffset" title="go to the details">ControlOffset</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindowcheckbox.html">UWindowCheckbox</a></td><td width="66%"><a href="#_EnableWebserverCheck" name="EnableWebserverCheck" title="go to the details">EnableWebserverCheck</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_EnableWebserverHelp" name="EnableWebserverHelp" title="go to the details">EnableWebserverHelp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_EnableWebserverText" name="EnableWebserverText" title="go to the details">EnableWebserverText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindoweditcontrol.html">UWindowEditControl</a></td><td width="66%"><a href="#_GamePasswordEdit" name="GamePasswordEdit" title="go to the details">GamePasswordEdit</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_GamePasswordHelp" name="GamePasswordHelp" title="go to the details">GamePasswordHelp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_GamePasswordText" name="GamePasswordText" title="go to the details">GamePasswordText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindoweditcontrol.html">UWindowEditControl</a></td><td width="66%"><a href="#_ListenPortEdit" name="ListenPortEdit" title="go to the details">ListenPortEdit</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ListenPortHelp" name="ListenPortHelp" title="go to the details">ListenPortHelp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ListenPortText" name="ListenPortText" title="go to the details">ListenPortText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">class</td><td width="66%"><a href="#_rsaClass" name="rsaClass" title="go to the details">rsaClass</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_rsaPassword" name="rsaPassword" title="go to the details">rsaPassword</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_rsaUsername" name="rsaUsername" title="go to the details">rsaUsername</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindoweditcontrol.html">UWindowEditControl</a></td><td width="66%"><a href="#_WebAdminPasswordEdit" name="WebAdminPasswordEdit" title="go to the details">WebAdminPasswordEdit</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_WebAdminPasswordHelp" name="WebAdminPasswordHelp" title="go to the details">WebAdminPasswordHelp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_WebAdminPasswordText" name="WebAdminPasswordText" title="go to the details">WebAdminPasswordText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindoweditcontrol.html">UWindowEditControl</a></td><td width="66%"><a href="#_WebAdminServerNameEdit" name="WebAdminServerNameEdit" title="go to the details">WebAdminServerNameEdit</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_WebAdminServerNameHelp" name="WebAdminServerNameHelp" title="go to the details">WebAdminServerNameHelp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_WebAdminServerNameText" name="WebAdminServerNameText" title="go to the details">WebAdminServerNameText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindoweditcontrol.html">UWindowEditControl</a></td><td width="66%"><a href="#_WebAdminUsernameEdit" name="WebAdminUsernameEdit" title="go to the details">WebAdminUsernameEdit</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_WebAdminUsernameHelp" name="WebAdminUsernameHelp" title="go to the details">WebAdminUsernameHelp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_WebAdminUsernameText" name="WebAdminUsernameText" title="go to the details">WebAdminUsernameText</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowpagewindow.html">UWindowPageWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowpagewindow.html#OwnerTab">OwnerTab</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_BeforePaint-" name="BeforePaint" title="go to the details">BeforePaint</a> (<a href="../engine/canvas.html">Canvas</a> C, float X, float Y))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Created-" name="Created" title="go to the details">Created</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Notify-" name="Notify" title="go to the details">Notify</a> (<a href="../uwindow/uwindowdialogcontrol.html">UWindowDialogControl</a> C, byte E))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runemenupagewindow.html">RuneMenuPageWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../rmenu/runemenupagewindow.html#Notify">Notify</a>, <a href="../rmenu/runemenupagewindow.html#Paint">Paint</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowpagewindow.html">UWindowPageWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowpagewindow.html#RightClickTab">RightClickTab</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_AdminPasswordEdit" class="hidden"></a>AdminPasswordEdit <a href="../Source_rmenu/runemenuadmin2clientwindow.html#7" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindoweditcontrol.html" class="source">UWindowEditControl</a></span> AdminPasswordEdit;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AdminPasswordHelp" class="hidden"></a>AdminPasswordHelp <a href="../Source_rmenu/runemenuadmin2clientwindow.html#9" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> AdminPasswordHelp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AdminPasswordText" class="hidden"></a>AdminPasswordText <a href="../Source_rmenu/runemenuadmin2clientwindow.html#8" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> AdminPasswordText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bInitialized" class="hidden"></a>bInitialized <a href="../Source_rmenu/runemenuadmin2clientwindow.html#32" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bInitialized;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ControlOffset" class="hidden"></a>ControlOffset <a href="../Source_rmenu/runemenuadmin2clientwindow.html#31" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> ControlOffset;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EnableWebserverCheck" class="hidden"></a>EnableWebserverCheck <a href="../Source_rmenu/runemenuadmin2clientwindow.html#11" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowcheckbox.html" class="source">UWindowCheckbox</a></span> EnableWebserverCheck;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EnableWebserverHelp" class="hidden"></a>EnableWebserverHelp <a href="../Source_rmenu/runemenuadmin2clientwindow.html#13" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> EnableWebserverHelp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EnableWebserverText" class="hidden"></a>EnableWebserverText <a href="../Source_rmenu/runemenuadmin2clientwindow.html#12" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> EnableWebserverText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GamePasswordEdit" class="hidden"></a>GamePasswordEdit <a href="../Source_rmenu/runemenuadmin2clientwindow.html#3" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindoweditcontrol.html" class="source">UWindowEditControl</a></span> GamePasswordEdit;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GamePasswordHelp" class="hidden"></a>GamePasswordHelp <a href="../Source_rmenu/runemenuadmin2clientwindow.html#5" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> GamePasswordHelp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GamePasswordText" class="hidden"></a>GamePasswordText <a href="../Source_rmenu/runemenuadmin2clientwindow.html#4" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> GamePasswordText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ListenPortEdit" class="hidden"></a>ListenPortEdit <a href="../Source_rmenu/runemenuadmin2clientwindow.html#27" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindoweditcontrol.html" class="source">UWindowEditControl</a></span> ListenPortEdit;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ListenPortHelp" class="hidden"></a>ListenPortHelp <a href="../Source_rmenu/runemenuadmin2clientwindow.html#29" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> ListenPortHelp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ListenPortText" class="hidden"></a>ListenPortText <a href="../Source_rmenu/runemenuadmin2clientwindow.html#28" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> ListenPortText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_rsaClass" class="hidden"></a>rsaClass <a href="../Source_rmenu/runemenuadmin2clientwindow.html#33" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">class</span> rsaClass;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_rsaPassword" class="hidden"></a>rsaPassword <a href="../Source_rmenu/runemenuadmin2clientwindow.html#34" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> rsaPassword;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_rsaUsername" class="hidden"></a>rsaUsername <a href="../Source_rmenu/runemenuadmin2clientwindow.html#34" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> rsaUsername;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_WebAdminPasswordEdit" class="hidden"></a>WebAdminPasswordEdit <a href="../Source_rmenu/runemenuadmin2clientwindow.html#19" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindoweditcontrol.html" class="source">UWindowEditControl</a></span> WebAdminPasswordEdit;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_WebAdminPasswordHelp" class="hidden"></a>WebAdminPasswordHelp <a href="../Source_rmenu/runemenuadmin2clientwindow.html#21" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> WebAdminPasswordHelp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_WebAdminPasswordText" class="hidden"></a>WebAdminPasswordText <a href="../Source_rmenu/runemenuadmin2clientwindow.html#20" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> WebAdminPasswordText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_WebAdminServerNameEdit" class="hidden"></a>WebAdminServerNameEdit <a href="../Source_rmenu/runemenuadmin2clientwindow.html#23" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindoweditcontrol.html" class="source">UWindowEditControl</a></span> WebAdminServerNameEdit;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_WebAdminServerNameHelp" class="hidden"></a>WebAdminServerNameHelp <a href="../Source_rmenu/runemenuadmin2clientwindow.html#25" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> WebAdminServerNameHelp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_WebAdminServerNameText" class="hidden"></a>WebAdminServerNameText <a href="../Source_rmenu/runemenuadmin2clientwindow.html#24" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> WebAdminServerNameText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_WebAdminUsernameEdit" class="hidden"></a>WebAdminUsernameEdit <a href="../Source_rmenu/runemenuadmin2clientwindow.html#15" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindoweditcontrol.html" class="source">UWindowEditControl</a></span> WebAdminUsernameEdit;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_WebAdminUsernameHelp" class="hidden"></a>WebAdminUsernameHelp <a href="../Source_rmenu/runemenuadmin2clientwindow.html#17" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> WebAdminUsernameHelp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_WebAdminUsernameText" class="hidden"></a>WebAdminUsernameText <a href="../Source_rmenu/runemenuadmin2clientwindow.html#16" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> WebAdminUsernameText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_BeforePaint-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BeforePaint <span class="function_state"></span> <a href="../Source_rmenu/runemenuadmin2clientwindow.html#174" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  BeforePaint ( <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type">C</span>, <span class="source_keyword">float</span> X, <span class="source_keyword">float</span> <span class="source_type">Y</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Created-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Created <span class="function_state"></span> <a href="../Source_rmenu/runemenuadmin2clientwindow.html#36" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Created ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Notify-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Notify <span class="function_state"></span> <a href="../Source_rmenu/runemenuadmin2clientwindow.html#130" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Notify ( <span class="source_type"><a href="../uwindow/uwindowdialogcontrol.html" class="source">UWindowDialogControl</a></span> <span class="source_type">C</span>, <span class="source_keyword">byte</span> E) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     GamePasswordText=<span class="source_string">"Game Password "</span>
+     GamePasswordHelp=<span class="source_string">"If this is set, a player needs use this password to be allowed to login to the server."</span>
+     AdminPasswordText=<span class="source_string">"Admin Password "</span>
+     AdminPasswordHelp=<span class="source_string">"If this is set, a player can join your server using this password and have access to admin-only console commands."</span>
+     EnableWebserverText=<span class="source_string">"Enable Web Admin "</span>
+     EnableWebserverHelp=<span class="source_string">"If checked, you will be able to administer your Rune server remotely using a web browser."</span>
+     WebAdminUsernameText=<span class="source_string">"Web Admin Username "</span>
+     WebAdminUsernameHelp=<span class="source_string">"The username needed to login to the Web-based remote server administration."</span>
+     WebAdminPasswordText=<span class="source_string">"Web Admin Password "</span>
+     WebAdminPasswordHelp=<span class="source_string">"The password needed to login to the Web-based remote server administration."</span>
+     WebAdminServerNameText=<span class="source_string">"WAN IP or DNS Name"</span>
+     WebAdminServerNameHelp=<span class="source_string">"Usually leave blank.  Your WAN side IP or DNS name is only needed when running behind some NAT based routers and firewalls."</span>
+     ListenPortText=<span class="source_string">"Web Admin Port # "</span>
+     ListenPortHelp=<span class="source_string">"The port number that the remote administration webserver will listen on for incoming connections."</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../rmenu/rmenu-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_rmenu/runemenuadmin2clientwindow.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#RuneMenuAdmin2ClientWindow">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../rmenu/runemenuabouttop.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../rmenu/runemenuadmin2scrollclient.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:41:08.296 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

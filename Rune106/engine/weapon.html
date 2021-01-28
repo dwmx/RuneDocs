@@ -1,0 +1,1820 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - Engine.Weapon</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../engine/engine-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_engine/weapon.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#Weapon">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../engine/waybeacondest.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../engine/weaponswipe.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#engine/weapon.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../engine/engine-overview.html">Engine</a>.Weapon</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../engine/inventory.html">Inventory</a></dd>
+<dt>Modifiers</dt><dd>abstract native </dd>
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a>
+   |   
+   +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/inventory.html">Inventory</a>
+      |   
+      +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/weapon.html">Weapon</a>
+</pre>
+
+<h4>Direct Known Subclasses:</h4>
+<blockquote>
+	<a href="../runei/axe.html">Axe</a>, <a href="../runei/hammer.html">Hammer</a>, <a href="../runei/invisibleweapon.html">InvisibleWeapon</a>, <a href="../runei/nonstow.html">NonStow</a>, <a href="../runei/sword.html">Sword</a>
+</blockquote>
+
+<hr />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Constants Summary</th>
+</tr>
+<tr><td width="40%"><a href="#_HitCount" name="HitCount" title="go to the details">HitCount</a></td><td width="10%">=</td><td width="50%">16</td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Contants from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/actor.html#ANGLE_1">ANGLE_1</a>, <a href="../engine/actor.html#ANGLE_180">ANGLE_180</a>, <a href="../engine/actor.html#ANGLE_360">ANGLE_360</a>, <a href="../engine/actor.html#ANGLE_45">ANGLE_45</a>, <a href="../engine/actor.html#ANGLE_90">ANGLE_90</a>, <a href="../engine/actor.html#bDebug">bDebug</a>, <a href="../engine/actor.html#BODYPART_BODY">BODYPART_BODY</a>, <a href="../engine/actor.html#BODYPART_HEAD">BODYPART_HEAD</a>, <a href="../engine/actor.html#BODYPART_LARM1">BODYPART_LARM1</a>, <a href="../engine/actor.html#BODYPART_LARM2">BODYPART_LARM2</a>, <a href="../engine/actor.html#BODYPART_LLEG1">BODYPART_LLEG1</a>, <a href="../engine/actor.html#BODYPART_LLEG2">BODYPART_LLEG2</a>, <a href="../engine/actor.html#BODYPART_MISC1">BODYPART_MISC1</a>, <a href="../engine/actor.html#BODYPART_MISC2">BODYPART_MISC2</a>, <a href="../engine/actor.html#BODYPART_MISC3">BODYPART_MISC3</a>, <a href="../engine/actor.html#BODYPART_MISC4">BODYPART_MISC4</a>, <a href="../engine/actor.html#BODYPART_RARM1">BODYPART_RARM1</a>, <a href="../engine/actor.html#BODYPART_RARM2">BODYPART_RARM2</a>, <a href="../engine/actor.html#BODYPART_RLEG1">BODYPART_RLEG1</a>, <a href="../engine/actor.html#BODYPART_RLEG2">BODYPART_RLEG2</a>, <a href="../engine/actor.html#BODYPART_TORSO">BODYPART_TORSO</a>, <a href="../engine/actor.html#DEBUG_AI">DEBUG_AI</a>, <a href="../engine/actor.html#DEBUG_CONSTANT">DEBUG_CONSTANT</a>, <a href="../engine/actor.html#DEBUG_LEVEL">DEBUG_LEVEL</a>, <a href="../engine/actor.html#DEBUG_LIGHTS">DEBUG_LIGHTS</a>, <a href="../engine/actor.html#DEBUG_MAX">DEBUG_MAX</a>, <a href="../engine/actor.html#DEBUG_MULTIPLE">DEBUG_MULTIPLE</a>, <a href="../engine/actor.html#DEBUG_NAVPOINTS">DEBUG_NAVPOINTS</a>, <a href="../engine/actor.html#DEBUG_NONE">DEBUG_NONE</a>, <a href="../engine/actor.html#DEBUG_PLAYER">DEBUG_PLAYER</a>, <a href="../engine/actor.html#DEBUG_TARGET">DEBUG_TARGET</a>, <a href="../engine/actor.html#DEBUG_TRIGGERS">DEBUG_TRIGGERS</a>, <a href="../engine/actor.html#DEBUG_VISIBLE">DEBUG_VISIBLE</a>, <a href="../engine/actor.html#DEBUG_ZONE">DEBUG_ZONE</a>, <a href="../engine/actor.html#HUD_ACTOR">HUD_ACTOR</a>, <a href="../engine/actor.html#HUD_LOD">HUD_LOD</a>, <a href="../engine/actor.html#HUD_MAX">HUD_MAX</a>, <a href="../engine/actor.html#HUD_NETWORK">HUD_NETWORK</a>, <a href="../engine/actor.html#HUD_NONE">HUD_NONE</a>, <a href="../engine/actor.html#HUD_POV">HUD_POV</a>, <a href="../engine/actor.html#HUD_SCRIPT">HUD_SCRIPT</a>, <a href="../engine/actor.html#HUD_SKELAXES">HUD_SKELAXES</a>, <a href="../engine/actor.html#HUD_SKELETON">HUD_SKELETON</a>, <a href="../engine/actor.html#HUD_SKELJOINTS">HUD_SKELJOINTS</a>, <a href="../engine/actor.html#HUD_SKELNAMES">HUD_SKELNAMES</a>, <a href="../engine/actor.html#JOINT_FLAG_ABSPOSITION">JOINT_FLAG_ABSPOSITION</a>, <a href="../engine/actor.html#JOINT_FLAG_ABSROTATION">JOINT_FLAG_ABSROTATION</a>, <a href="../engine/actor.html#JOINT_FLAG_ACCELERATIVE">JOINT_FLAG_ACCELERATIVE</a>, <a href="../engine/actor.html#JOINT_FLAG_BLENDJOINT">JOINT_FLAG_BLENDJOINT</a>, <a href="../engine/actor.html#JOINT_FLAG_COLLISION">JOINT_FLAG_COLLISION</a>, <a href="../engine/actor.html#JOINT_FLAG_GRAVJOINT">JOINT_FLAG_GRAVJOINT</a>, <a href="../engine/actor.html#JOINT_FLAG_IKCHAIN">JOINT_FLAG_IKCHAIN</a>, <a href="../engine/actor.html#JOINT_FLAG_SPRINGPOINT">JOINT_FLAG_SPRINGPOINT</a>, <a href="../engine/actor.html#NUM_BODYPARTS">NUM_BODYPARTS</a>, <a href="../engine/actor.html#NUM_JOINT_FLAGS">NUM_JOINT_FLAGS</a>, <a href="../engine/actor.html#POLYFLAG_ENVIRONMENT">POLYFLAG_ENVIRONMENT</a>, <a href="../engine/actor.html#POLYFLAG_INVISIBLE">POLYFLAG_INVISIBLE</a>, <a href="../engine/actor.html#POLYFLAG_MASKED">POLYFLAG_MASKED</a>, <a href="../engine/actor.html#POLYFLAG_MODULATED">POLYFLAG_MODULATED</a>, <a href="../engine/actor.html#POLYFLAG_TRANSLUCENT">POLYFLAG_TRANSLUCENT</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bCanBePoweredUp" name="bCanBePoweredUp" title="go to the details">bCanBePoweredUp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bClientPoweredUp" name="bClientPoweredUp" title="go to the details">bClientPoweredUp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bPlayedDropSound" name="bPlayedDropSound" title="go to the details">bPlayedDropSound</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_FrameOfAttackAnim" name="FrameOfAttackAnim" title="go to the details">FrameOfAttackAnim</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Vector">vector</a></td><td width="66%"><a href="#_gB1" name="gB1" title="go to the details">gB1</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Vector">vector</a></td><td width="66%"><a href="#_gB2" name="gB2" title="go to the details">gB2</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Vector">vector</a></td><td width="66%"><a href="#_gE1" name="gE1" title="go to the details">gE1</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Vector">vector</a></td><td width="66%"><a href="#_gE2" name="gE2" title="go to the details">gE2</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_HitMatterSoundCount" name="HitMatterSoundCount" title="go to the details">HitMatterSoundCount</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Vector">vector</a></td><td width="66%"><a href="#_lastpos1" name="lastpos1" title="go to the details">lastpos1</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Vector">vector</a></td><td width="66%"><a href="#_lastpos2" name="lastpos2" title="go to the details">lastpos2</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/actor.html">Actor</a></td><td width="66%"><a href="#_LastThrower" name="LastThrower" title="go to the details">LastThrower</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_NumEarthSounds" name="NumEarthSounds" title="go to the details">NumEarthSounds</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_NumFleshSounds" name="NumFleshSounds" title="go to the details">NumFleshSounds</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_NumMetalSounds" name="NumMetalSounds" title="go to the details">NumMetalSounds</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_NumStoneSounds" name="NumStoneSounds" title="go to the details">NumStoneSounds</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_NumThroughAirBerserkSounds" name="NumThroughAirBerserkSounds" title="go to the details">NumThroughAirBerserkSounds</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_NumThroughAirSounds" name="NumThroughAirSounds" title="go to the details">NumThroughAirSounds</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_NumWoodSounds" name="NumWoodSounds" title="go to the details">NumWoodSounds</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/actor.html">Actor</a></td><td width="66%"><a href="#_StabbedActor" name="StabbedActor" title="go to the details">StabbedActor</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/weaponswipe.html">WeaponSwipe</a></td><td width="66%"><a href="#_Swipe" name="Swipe" title="go to the details">Swipe</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/weapon.html#SwipeHit">SwipeHit</a></td><td width="66%"><a href="#_SwipeHits[16]" name="SwipeHits[16]" title="go to the details">SwipeHits[16]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_TimerCount" name="TimerCount" title="go to the details">TimerCount</a></td></tr>
+<tr><th colspan="2" class="small">Anims</th></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_AttackA" name="A_AttackA" title="go to the details">A_AttackA</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_AttackAReturn" name="A_AttackAReturn" title="go to the details">A_AttackAReturn</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_AttackB" name="A_AttackB" title="go to the details">A_AttackB</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_AttackBackupA" name="A_AttackBackupA" title="go to the details">A_AttackBackupA</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_AttackBackupAReturn" name="A_AttackBackupAReturn" title="go to the details">A_AttackBackupAReturn</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_AttackBackupB" name="A_AttackBackupB" title="go to the details">A_AttackBackupB</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_AttackBackupBReturn" name="A_AttackBackupBReturn" title="go to the details">A_AttackBackupBReturn</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_AttackBReturn" name="A_AttackBReturn" title="go to the details">A_AttackBReturn</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_AttackC" name="A_AttackC" title="go to the details">A_AttackC</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_AttackCReturn" name="A_AttackCReturn" title="go to the details">A_AttackCReturn</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_AttackD" name="A_AttackD" title="go to the details">A_AttackD</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_AttackDReturn" name="A_AttackDReturn" title="go to the details">A_AttackDReturn</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_AttackStandA" name="A_AttackStandA" title="go to the details">A_AttackStandA</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_AttackStandAReturn" name="A_AttackStandAReturn" title="go to the details">A_AttackStandAReturn</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_AttackStandB" name="A_AttackStandB" title="go to the details">A_AttackStandB</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_AttackStandBReturn" name="A_AttackStandBReturn" title="go to the details">A_AttackStandBReturn</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_AttackStrafeLeft" name="A_AttackStrafeLeft" title="go to the details">A_AttackStrafeLeft</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_AttackStrafeRight" name="A_AttackStrafeRight" title="go to the details">A_AttackStrafeRight</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_Backward" name="A_Backward" title="go to the details">A_Backward</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_Backward45Left" name="A_Backward45Left" title="go to the details">A_Backward45Left</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_Backward45Right" name="A_Backward45Right" title="go to the details">A_Backward45Right</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_Defend" name="A_Defend" title="go to the details">A_Defend</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_DefendIdle" name="A_DefendIdle" title="go to the details">A_DefendIdle</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_Forward" name="A_Forward" title="go to the details">A_Forward</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_Forward45Left" name="A_Forward45Left" title="go to the details">A_Forward45Left</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_Forward45Right" name="A_Forward45Right" title="go to the details">A_Forward45Right</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_ForwardAttack" name="A_ForwardAttack" title="go to the details">A_ForwardAttack</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_Idle" name="A_Idle" title="go to the details">A_Idle</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_Jump" name="A_Jump" title="go to the details">A_Jump</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_JumpAttack" name="A_JumpAttack" title="go to the details">A_JumpAttack</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_LeverTrigger" name="A_LeverTrigger" title="go to the details">A_LeverTrigger</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_PainBack" name="A_PainBack" title="go to the details">A_PainBack</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_PainFront" name="A_PainFront" title="go to the details">A_PainFront</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_PainLeft" name="A_PainLeft" title="go to the details">A_PainLeft</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_PainRight" name="A_PainRight" title="go to the details">A_PainRight</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_PickupGroundLeft" name="A_PickupGroundLeft" title="go to the details">A_PickupGroundLeft</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_PickupHighLeft" name="A_PickupHighLeft" title="go to the details">A_PickupHighLeft</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_Powerup" name="A_Powerup" title="go to the details">A_Powerup</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_PumpTrigger" name="A_PumpTrigger" title="go to the details">A_PumpTrigger</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_StrafeLeft" name="A_StrafeLeft" title="go to the details">A_StrafeLeft</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_StrafeRight" name="A_StrafeRight" title="go to the details">A_StrafeRight</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_Taunt" name="A_Taunt" title="go to the details">A_Taunt</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_Throw" name="A_Throw" title="go to the details">A_Throw</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_TurnLeft" name="A_TurnLeft" title="go to the details">A_TurnLeft</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_A_TurnRight" name="A_TurnRight" title="go to the details">A_TurnRight</a></td></tr>
+<tr><th colspan="2" class="small">Sounds</th></tr>
+<tr><td nowrap="nowrap" width="33%">Sound</td><td width="66%"><a href="#_HitBreakableStone" name="HitBreakableStone" title="go to the details">HitBreakableStone</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">Sound</td><td width="66%"><a href="#_HitBreakableWood" name="HitBreakableWood" title="go to the details">HitBreakableWood</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">Sound</td><td width="66%"><a href="#_HitDirt[3]" name="HitDirt[3]" title="go to the details">HitDirt[3]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">Sound</td><td width="66%"><a href="#_HitFlesh[3]" name="HitFlesh[3]" title="go to the details">HitFlesh[3]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">Sound</td><td width="66%"><a href="#_HitMetal[3]" name="HitMetal[3]" title="go to the details">HitMetal[3]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">Sound</td><td width="66%"><a href="#_HitShield" name="HitShield" title="go to the details">HitShield</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">Sound</td><td width="66%"><a href="#_HitStone[3]" name="HitStone[3]" title="go to the details">HitStone[3]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">Sound</td><td width="66%"><a href="#_HitWeapon" name="HitWeapon" title="go to the details">HitWeapon</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">Sound</td><td width="66%"><a href="#_HitWood[3]" name="HitWood[3]" title="go to the details">HitWood[3]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_PitchDeviation" name="PitchDeviation" title="go to the details">PitchDeviation</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">Sound</td><td width="66%"><a href="#_PoweredUpEndingSound" name="PoweredUpEndingSound" title="go to the details">PoweredUpEndingSound</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">Sound</td><td width="66%"><a href="#_PoweredUpEndSound" name="PoweredUpEndSound" title="go to the details">PoweredUpEndSound</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">Sound</td><td width="66%"><a href="#_PoweredUpSoundLOOP" name="PoweredUpSoundLOOP" title="go to the details">PoweredUpSoundLOOP</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">Sound</td><td width="66%"><a href="#_PowerUpSound" name="PowerUpSound" title="go to the details">PowerUpSound</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">Sound</td><td width="66%"><a href="#_SheathSound" name="SheathSound" title="go to the details">SheathSound</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">Sound</td><td width="66%"><a href="#_ThroughAirBerserk[3]" name="ThroughAirBerserk[3]" title="go to the details">ThroughAirBerserk[3]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">Sound</td><td width="66%"><a href="#_ThroughAir[3]" name="ThroughAir[3]" title="go to the details">ThroughAir[3]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">Sound</td><td width="66%"><a href="#_ThrownSoundLOOP" name="ThrownSoundLOOP" title="go to the details">ThrownSoundLOOP</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">Sound</td><td width="66%"><a href="#_UnsheathSound" name="UnsheathSound" title="go to the details">UnsheathSound</a></td></tr>
+<tr><th colspan="2" class="small">Weapon</th></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bCrouchTwoHands" name="bCrouchTwoHands" title="go to the details">bCrouchTwoHands</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/texture.html">Texture</a></td><td width="66%"><a href="#_BloodTexture" name="BloodTexture" title="go to the details">BloodTexture</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bPoweredUp" name="bPoweredUp" title="go to the details">bPoweredUp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bWeaponStay" name="bWeaponStay" title="go to the details">bWeaponStay</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_Damage" name="Damage" title="go to the details">Damage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_DamageType" name="DamageType" title="go to the details">DamageType</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_ExtendedLength" name="ExtendedLength" title="go to the details">ExtendedLength</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/weapon.html#EMeleeType">EMeleeType</a></td><td width="66%"><a href="#_MeleeType" name="MeleeType" title="go to the details">MeleeType</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">class&lt;<a href="../engine/weaponswipe.html">WeaponSwipe</a>&gt;</td><td width="66%"><a href="#_PoweredUpSwipeClass" name="PoweredUpSwipeClass" title="go to the details">PoweredUpSwipeClass</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/texture.html">Texture</a></td><td width="66%"><a href="#_PowerupIcon" name="PowerupIcon" title="go to the details">PowerupIcon</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/texture.html">Texture</a></td><td width="66%"><a href="#_PowerupIconAnim" name="PowerupIconAnim" title="go to the details">PowerupIconAnim</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_PowerupMessage" name="PowerupMessage" title="go to the details">PowerupMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_Rating" name="Rating" title="go to the details">Rating</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_RunePowerDuration" name="RunePowerDuration" title="go to the details">RunePowerDuration</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_RunePowerRequired" name="RunePowerRequired" title="go to the details">RunePowerRequired</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">byte</td><td width="66%"><a href="#_StabMesh" name="StabMesh" title="go to the details">StabMesh</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">byte</td><td width="66%"><a href="#_StowMesh" name="StowMesh" title="go to the details">StowMesh</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_SweepJoint1" name="SweepJoint1" title="go to the details">SweepJoint1</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_SweepJoint2" name="SweepJoint2" title="go to the details">SweepJoint2</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Vector">vector</a></td><td width="66%"><a href="#_SweepVector" name="SweepVector" title="go to the details">SweepVector</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">class&lt;<a href="../engine/weaponswipe.html">WeaponSwipe</a>&gt;</td><td width="66%"><a href="#_SwipeClass" name="SwipeClass" title="go to the details">SwipeClass</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_ThrownDamageType" name="ThrownDamageType" title="go to the details">ThrownDamageType</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_WeaponSweepExtent" name="WeaponSweepExtent" title="go to the details">WeaponSweepExtent</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/inventory.html">Inventory</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/inventory.html#AbsorptionPriority">AbsorptionPriority</a>, <a href="../engine/inventory.html#ActivateSound">ActivateSound</a>, <a href="../engine/inventory.html#ArmorAbsorption">ArmorAbsorption</a>, <a href="../engine/inventory.html#AutoSwitchPriority">AutoSwitchPriority</a>, <a href="../engine/inventory.html#bActivatable">bActivatable</a>, <a href="../engine/inventory.html#bActive">bActive</a>, <a href="../engine/inventory.html#bAmbientGlow">bAmbientGlow</a>, <a href="../engine/inventory.html#bDisplayableInv">bDisplayableInv</a>, <a href="../engine/inventory.html#bExpireWhenTossed">bExpireWhenTossed</a>, <a href="../engine/inventory.html#bFirstFrame">bFirstFrame</a>, <a href="../engine/inventory.html#bHeldItem">bHeldItem</a>, <a href="../engine/inventory.html#bInstantRespawn">bInstantRespawn</a>, <a href="../engine/inventory.html#bIsAnArmor">bIsAnArmor</a>, <a href="../engine/inventory.html#bMuzzleFlashParticles">bMuzzleFlashParticles</a>, <a href="../engine/inventory.html#BobDamping">BobDamping</a>, <a href="../engine/inventory.html#bRotatingPickup">bRotatingPickup</a>, <a href="../engine/inventory.html#bSleepTouch">bSleepTouch</a>, <a href="../engine/inventory.html#bSteadyFlash3rd">bSteadyFlash3rd</a>, <a href="../engine/inventory.html#bSteadyToggle">bSteadyToggle</a>, <a href="../engine/inventory.html#bToggleSteadyFlash">bToggleSteadyFlash</a>, <a href="../engine/inventory.html#bTossedOut">bTossedOut</a>, <a href="../engine/inventory.html#Charge">Charge</a>, <a href="../engine/inventory.html#DeActivateSound">DeActivateSound</a>, <a href="../engine/inventory.html#DropSound">DropSound</a>, <a href="../engine/inventory.html#ExpireTime">ExpireTime</a>, <a href="../engine/inventory.html#FlashCount">FlashCount</a>, <a href="../engine/inventory.html#Icon">Icon</a>, <a href="../engine/inventory.html#InventoryGroup">InventoryGroup</a>, <a href="../engine/inventory.html#ItemArticle">ItemArticle</a>, <a href="../engine/inventory.html#ItemMessageClass">ItemMessageClass</a>, <a href="../engine/inventory.html#ItemName">ItemName</a>, <a href="../engine/inventory.html#MaxDesireability">MaxDesireability</a>, <a href="../engine/inventory.html#MuzzleFlashMesh">MuzzleFlashMesh</a>, <a href="../engine/inventory.html#MuzzleFlashScale">MuzzleFlashScale</a>, <a href="../engine/inventory.html#MuzzleFlashStyle">MuzzleFlashStyle</a>, <a href="../engine/inventory.html#MuzzleFlashTexture">MuzzleFlashTexture</a>, <a href="../engine/inventory.html#MyMarker">MyMarker</a>, <a href="../engine/inventory.html#M_Activated">M_Activated</a>, <a href="../engine/inventory.html#M_Deactivated">M_Deactivated</a>, <a href="../engine/inventory.html#M_Selected">M_Selected</a>, <a href="../engine/inventory.html#NextArmor">NextArmor</a>, <a href="../engine/inventory.html#OldFlashCount">OldFlashCount</a>, <a href="../engine/inventory.html#PickupMessage">PickupMessage</a>, <a href="../engine/inventory.html#PickupMessageClass">PickupMessageClass</a>, <a href="../engine/inventory.html#PickupSound">PickupSound</a>, <a href="../engine/inventory.html#PickupViewMesh">PickupViewMesh</a>, <a href="../engine/inventory.html#PickupViewScale">PickupViewScale</a>, <a href="../engine/inventory.html#PlayerLastTouched">PlayerLastTouched</a>, <a href="../engine/inventory.html#PlayerViewMesh">PlayerViewMesh</a>, <a href="../engine/inventory.html#PlayerViewOffset">PlayerViewOffset</a>, <a href="../engine/inventory.html#PlayerViewScale">PlayerViewScale</a>, <a href="../engine/inventory.html#ProtectionType1">ProtectionType1</a>, <a href="../engine/inventory.html#ProtectionType2">ProtectionType2</a>, <a href="../engine/inventory.html#RespawnSound">RespawnSound</a>, <a href="../engine/inventory.html#RespawnTime">RespawnTime</a>, <a href="../engine/inventory.html#StatusIcon">StatusIcon</a>, <a href="../engine/inventory.html#ThirdPersonMesh">ThirdPersonMesh</a>, <a href="../engine/inventory.html#ThirdPersonScale">ThirdPersonScale</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/actor.html#Acceleration">Acceleration</a>, <a href="../engine/actor.html#AlphaScale">AlphaScale</a>, <a href="../engine/actor.html#AmbientGlow">AmbientGlow</a>, <a href="../engine/actor.html#AmbientSound">AmbientSound</a>, <a href="../engine/actor.html#AnimFrame">AnimFrame</a>, <a href="../engine/actor.html#AnimLast">AnimLast</a>, <a href="../engine/actor.html#AnimMinRate">AnimMinRate</a>, <a href="../engine/actor.html#AnimProxy">AnimProxy</a>, <a href="../engine/actor.html#AnimRate">AnimRate</a>, <a href="../engine/actor.html#AnimSequence">AnimSequence</a>, <a href="../engine/actor.html#AttachParent">AttachParent</a>, <a href="../engine/actor.html#AttachParentJoint">AttachParentJoint</a>, <a href="../engine/actor.html#AttachTag">AttachTag</a>, <a href="../engine/actor.html#bActorShadows">bActorShadows</a>, <a href="../engine/actor.html#bAffectActors">bAffectActors</a>, <a href="../engine/actor.html#bAffectWorld">bAffectWorld</a>, <a href="../engine/actor.html#bAlwaysRelevant">bAlwaysRelevant</a>, <a href="../engine/actor.html#bAlwaysTick">bAlwaysTick</a>, <a href="../engine/actor.html#bAnimByOwner">bAnimByOwner</a>, <a href="../engine/actor.html#bAnimFinished">bAnimFinished</a>, <a href="../engine/actor.html#bAnimLoop">bAnimLoop</a>, <a href="../engine/actor.html#bAnimNotify">bAnimNotify</a>, <a href="../engine/actor.html#bApplyLagToAccelerators">bApplyLagToAccelerators</a>, <a href="../engine/actor.html#Base">Base</a>, <a href="../engine/actor.html#BaseJoint">BaseJoint</a>, <a href="../engine/actor.html#BaseMatterType">BaseMatterType</a>, <a href="../engine/actor.html#BaseScrollDir">BaseScrollDir</a>, <a href="../engine/actor.html#bAssimilated">bAssimilated</a>, <a href="../engine/actor.html#bBlockActors">bBlockActors</a>, <a href="../engine/actor.html#bBlockPlayers">bBlockPlayers</a>, <a href="../engine/actor.html#bBounce">bBounce</a>, <a href="../engine/actor.html#bCanTeleport">bCanTeleport</a>, <a href="../engine/actor.html#bCarriedItem">bCarriedItem</a>, <a href="../engine/actor.html#bClientAnim">bClientAnim</a>, <a href="../engine/actor.html#bClientDemoNetFunc">bClientDemoNetFunc</a>, <a href="../engine/actor.html#bClientDemoRecording">bClientDemoRecording</a>, <a href="../engine/actor.html#bCollideActors">bCollideActors</a>, <a href="../engine/actor.html#bCollideWhenPlacing">bCollideWhenPlacing</a>, <a href="../engine/actor.html#bCollideWorld">bCollideWorld</a>, <a href="../engine/actor.html#bComplexOcclusion">bComplexOcclusion</a>, <a href="../engine/actor.html#bCorona">bCorona</a>, <a href="../engine/actor.html#bDeleteMe">bDeleteMe</a>, <a href="../engine/actor.html#bDemoRecording">bDemoRecording</a>, <a href="../engine/actor.html#bDifficulty0">bDifficulty0</a>, <a href="../engine/actor.html#bDifficulty1">bDifficulty1</a>, <a href="../engine/actor.html#bDifficulty2">bDifficulty2</a>, <a href="../engine/actor.html#bDifficulty3">bDifficulty3</a>, <a href="../engine/actor.html#bDirectional">bDirectional</a>, <a href="../engine/actor.html#bDrawAxes">bDrawAxes</a>, <a href="../engine/actor.html#bDrawJoints">bDrawJoints</a>, <a href="../engine/actor.html#bDrawSkel">bDrawSkel</a>, <a href="../engine/actor.html#bDynamicLight">bDynamicLight</a>, <a href="../engine/actor.html#bEdLocked">bEdLocked</a>, <a href="../engine/actor.html#bEdShouldSnap">bEdShouldSnap</a>, <a href="../engine/actor.html#bEdSnap">bEdSnap</a>, <a href="../engine/actor.html#bFilterByVolume">bFilterByVolume</a>, <a href="../engine/actor.html#bFixedRotationDir">bFixedRotationDir</a>, <a href="../engine/actor.html#bForcePhysicsUpdate">bForcePhysicsUpdate</a>, <a href="../engine/actor.html#bForceRender">bForceRender</a>, <a href="../engine/actor.html#bForceStasis">bForceStasis</a>, <a href="../engine/actor.html#bFrameNotifies">bFrameNotifies</a>, <a href="../engine/actor.html#bGameRelevant">bGameRelevant</a>, <a href="../engine/actor.html#bHasShadow">bHasShadow</a>, <a href="../engine/actor.html#bHidden">bHidden</a>, <a href="../engine/actor.html#bHiddenEd">bHiddenEd</a>, <a href="../engine/actor.html#bHighDetail">bHighDetail</a>, <a href="../engine/actor.html#bHighlighted">bHighlighted</a>, <a href="../engine/actor.html#bInterpolating">bInterpolating</a>, <a href="../engine/actor.html#bIsItemGoal">bIsItemGoal</a>, <a href="../engine/actor.html#bIsKillGoal">bIsKillGoal</a>, <a href="../engine/actor.html#bIsMover">bIsMover</a>, <a href="../engine/actor.html#bIsPawn">bIsPawn</a>, <a href="../engine/actor.html#bIsSecretGoal">bIsSecretGoal</a>, <a href="../engine/actor.html#bJointsBlock">bJointsBlock</a>, <a href="../engine/actor.html#bJointsTouch">bJointsTouch</a>, <a href="../engine/actor.html#bJustTeleported">bJustTeleported</a>, <a href="../engine/actor.html#BlendAnimAlpha">BlendAnimAlpha</a>, <a href="../engine/actor.html#BlendAnimFrame">BlendAnimFrame</a>, <a href="../engine/actor.html#BlendAnimSequence">BlendAnimSequence</a>, <a href="../engine/actor.html#bLensFlare">bLensFlare</a>, <a href="../engine/actor.html#bLightChanged">bLightChanged</a>, <a href="../engine/actor.html#bLookFocusCreature">bLookFocusCreature</a>, <a href="../engine/actor.html#bLookFocusPlayer">bLookFocusPlayer</a>, <a href="../engine/actor.html#bMemorized">bMemorized</a>, <a href="../engine/actor.html#bMeshCurvy">bMeshCurvy</a>, <a href="../engine/actor.html#bMeshEnviroMap">bMeshEnviroMap</a>, <a href="../engine/actor.html#bMirrored">bMirrored</a>, <a href="../engine/actor.html#bMovable">bMovable</a>, <a href="../engine/actor.html#bNegativeLight">bNegativeLight</a>, <a href="../engine/actor.html#bNet">bNet</a>, <a href="../engine/actor.html#bNetFeel">bNetFeel</a>, <a href="../engine/actor.html#bNetHear">bNetHear</a>, <a href="../engine/actor.html#bNetInitial">bNetInitial</a>, <a href="../engine/actor.html#bNetOptional">bNetOptional</a>, <a href="../engine/actor.html#bNetOwner">bNetOwner</a>, <a href="../engine/actor.html#bNetRelevant">bNetRelevant</a>, <a href="../engine/actor.html#bNetSee">bNetSee</a>, <a href="../engine/actor.html#bNetSpecial">bNetSpecial</a>, <a href="../engine/actor.html#bNetTemporary">bNetTemporary</a>, <a href="../engine/actor.html#bNoDelete">bNoDelete</a>, <a href="../engine/actor.html#bNoSmooth">bNoSmooth</a>, <a href="../engine/actor.html#bNoSurfaceBob">bNoSurfaceBob</a>, <a href="../engine/actor.html#bOnlyOwnerSee">bOnlyOwnerSee</a>, <a href="../engine/actor.html#bOwnerNoSee">bOwnerNoSee</a>, <a href="../engine/actor.html#bParticles">bParticles</a>, <a href="../engine/actor.html#bPointLight">bPointLight</a>, <a href="../engine/actor.html#bPreLight">bPreLight</a>, <a href="../engine/actor.html#bProjTarget">bProjTarget</a>, <a href="../engine/actor.html#bRandomFrame">bRandomFrame</a>, <a href="../engine/actor.html#bReleaseLock">bReleaseLock</a>, <a href="../engine/actor.html#bRenderedLastFrame">bRenderedLastFrame</a>, <a href="../engine/actor.html#bReplicateInstigator">bReplicateInstigator</a>, <a href="../engine/actor.html#bRotateToDesired">bRotateToDesired</a>, <a href="../engine/actor.html#Brush">Brush</a>, <a href="../engine/actor.html#bSelected">bSelected</a>, <a href="../engine/actor.html#bShadowCast">bShadowCast</a>, <a href="../engine/actor.html#bSimFall">bSimFall</a>, <a href="../engine/actor.html#bSimulatedPawn">bSimulatedPawn</a>, <a href="../engine/actor.html#bSinglePlayer">bSinglePlayer</a>, <a href="../engine/actor.html#bSpecialLit">bSpecialLit</a>, <a href="../engine/actor.html#bSpecialLit2">bSpecialLit2</a>, <a href="../engine/actor.html#bSpecialLit3">bSpecialLit3</a>, <a href="../engine/actor.html#bSpecialRender">bSpecialRender</a>, <a href="../engine/actor.html#bStasis">bStasis</a>, <a href="../engine/actor.html#bStatic">bStatic</a>, <a href="../engine/actor.html#bSweepable">bSweepable</a>, <a href="../engine/actor.html#bTempEditor">bTempEditor</a>, <a href="../engine/actor.html#bTicked">bTicked</a>, <a href="../engine/actor.html#bTimerLoop">bTimerLoop</a>, <a href="../engine/actor.html#bTrailerPrePivot">bTrailerPrePivot</a>, <a href="../engine/actor.html#bTrailerSameRotation">bTrailerSameRotation</a>, <a href="../engine/actor.html#bTravel">bTravel</a>, <a href="../engine/actor.html#bUnlit">bUnlit</a>, <a href="../engine/actor.html#Buoyancy">Buoyancy</a>, <a href="../engine/actor.html#CollisionHeight">CollisionHeight</a>, <a href="../engine/actor.html#CollisionRadius">CollisionRadius</a>, <a href="../engine/actor.html#CollisionTag">CollisionTag</a>, <a href="../engine/actor.html#ColLocation">ColLocation</a>, <a href="../engine/actor.html#ColorAdjust">ColorAdjust</a>, <a href="../engine/actor.html#Deleted">Deleted</a>, <a href="../engine/actor.html#DesiredColorAdjust">DesiredColorAdjust</a>, <a href="../engine/actor.html#DesiredFatness">DesiredFatness</a>, <a href="../engine/actor.html#DesiredRotation">DesiredRotation</a>, <a href="../engine/actor.html#DodgeDir">DodgeDir</a>, <a href="../engine/actor.html#DrawScale">DrawScale</a>, <a href="../engine/actor.html#DrawType">DrawType</a>, <a href="../engine/actor.html#Event">Event</a>, <a href="../engine/actor.html#ExtraTag">ExtraTag</a>, <a href="../engine/actor.html#Fatness">Fatness</a>, <a href="../engine/actor.html#Group">Group</a>, <a href="../engine/actor.html#InitialState">InitialState</a>, <a href="../engine/actor.html#Instigator">Instigator</a>, <a href="../engine/actor.html#Inventory">Inventory</a>, <a href="../engine/actor.html#JointChild[50]">JointChild[50]</a>, <a href="../engine/actor.html#JointFlags[50]">JointFlags[50]</a>, <a href="../engine/actor.html#LatentActor">LatentActor</a>, <a href="../engine/actor.html#LatentByte">LatentByte</a>, <a href="../engine/actor.html#LatentFloat">LatentFloat</a>, <a href="../engine/actor.html#LatentInt">LatentInt</a>, <a href="../engine/actor.html#Level">Level</a>, <a href="../engine/actor.html#LifeSpan">LifeSpan</a>, <a href="../engine/actor.html#LightBrightness">LightBrightness</a>, <a href="../engine/actor.html#LightCone">LightCone</a>, <a href="../engine/actor.html#LightEffect">LightEffect</a>, <a href="../engine/actor.html#LightHue">LightHue</a>, <a href="../engine/actor.html#LightingTag">LightingTag</a>, <a href="../engine/actor.html#LightPeriod">LightPeriod</a>, <a href="../engine/actor.html#LightPhase">LightPhase</a>, <a href="../engine/actor.html#LightRadius">LightRadius</a>, <a href="../engine/actor.html#LightSaturation">LightSaturation</a>, <a href="../engine/actor.html#LightType">LightType</a>, <a href="../engine/actor.html#Location">Location</a>, <a href="../engine/actor.html#LODBias">LODBias</a>, <a href="../engine/actor.html#LODCurve">LODCurve</a>, <a href="../engine/actor.html#LODDistMax">LODDistMax</a>, <a href="../engine/actor.html#LODDistMin">LODDistMin</a>, <a href="../engine/actor.html#LODPercentMax">LODPercentMax</a>, <a href="../engine/actor.html#LODPercentMin">LODPercentMin</a>, <a href="../engine/actor.html#LODPolyCount">LODPolyCount</a>, <a href="../engine/actor.html#Mass">Mass</a>, <a href="../engine/actor.html#Mesh">Mesh</a>, <a href="../engine/actor.html#MiscNumber">MiscNumber</a>, <a href="../engine/actor.html#MultiSkins[8]">MultiSkins[8]</a>, <a href="../engine/actor.html#NetPriority">NetPriority</a>, <a href="../engine/actor.html#NetTag">NetTag</a>, <a href="../engine/actor.html#NetUpdateFrequency">NetUpdateFrequency</a>, <a href="../engine/actor.html#OddsOfAppearing">OddsOfAppearing</a>, <a href="../engine/actor.html#OldAnimRate">OldAnimRate</a>, <a href="../engine/actor.html#OldLocation">OldLocation</a>, <a href="../engine/actor.html#OtherTag">OtherTag</a>, <a href="../engine/actor.html#Owner">Owner</a>, <a href="../engine/actor.html#PendingTouch">PendingTouch</a>, <a href="../engine/actor.html#PhysAlpha">PhysAlpha</a>, <a href="../engine/actor.html#Physics">Physics</a>, <a href="../engine/actor.html#PhysRate">PhysRate</a>, <a href="../engine/actor.html#PrePivot">PrePivot</a>, <a href="../engine/actor.html#Region">Region</a>, <a href="../engine/actor.html#RemoteRole">RemoteRole</a>, <a href="../engine/actor.html#RenderInterface">RenderInterface</a>, <a href="../engine/actor.html#RenderIteratorClass">RenderIteratorClass</a>, <a href="../engine/actor.html#Role">Role</a>, <a href="../engine/actor.html#Rotation">Rotation</a>, <a href="../engine/actor.html#RotationRate">RotationRate</a>, <a href="../engine/actor.html#ScaleGlow">ScaleGlow</a>, <a href="../engine/actor.html#ShadowTexture">ShadowTexture</a>, <a href="../engine/actor.html#ShadowVector">ShadowVector</a>, <a href="../engine/actor.html#SimAnim">SimAnim</a>, <a href="../engine/actor.html#Skeletal">Skeletal</a>, <a href="../engine/actor.html#SkelGroupFlags[16]">SkelGroupFlags[16]</a>, <a href="../engine/actor.html#SkelGroupSkins[16]">SkelGroupSkins[16]</a>, <a href="../engine/actor.html#SkelMesh">SkelMesh</a>, <a href="../engine/actor.html#Skin">Skin</a>, <a href="../engine/actor.html#SoundPitch">SoundPitch</a>, <a href="../engine/actor.html#SoundRadius">SoundRadius</a>, <a href="../engine/actor.html#SoundVolume">SoundVolume</a>, <a href="../engine/actor.html#SpecialTag">SpecialTag</a>, <a href="../engine/actor.html#Sprite">Sprite</a>, <a href="../engine/actor.html#SpriteProjForward">SpriteProjForward</a>, <a href="../engine/actor.html#StandingCount">StandingCount</a>, <a href="../engine/actor.html#Style">Style</a>, <a href="../engine/actor.html#SubstituteMesh">SubstituteMesh</a>, <a href="../engine/actor.html#Tag">Tag</a>, <a href="../engine/actor.html#Target">Target</a>, <a href="../engine/actor.html#Texture">Texture</a>, <a href="../engine/actor.html#TimerCounter">TimerCounter</a>, <a href="../engine/actor.html#TimerRate">TimerRate</a>, <a href="../engine/actor.html#Touching[4]">Touching[4]</a>, <a href="../engine/actor.html#TransientSoundRadius">TransientSoundRadius</a>, <a href="../engine/actor.html#TransientSoundVolume">TransientSoundVolume</a>, <a href="../engine/actor.html#TweenRate">TweenRate</a>, <a href="../engine/actor.html#Velocity">Velocity</a>, <a href="../engine/actor.html#VisibilityHeight">VisibilityHeight</a>, <a href="../engine/actor.html#VisibilityRadius">VisibilityRadius</a>, <a href="../engine/actor.html#VolumeBrightness">VolumeBrightness</a>, <a href="../engine/actor.html#VolumeFog">VolumeFog</a>, <a href="../engine/actor.html#VolumeRadius">VolumeRadius</a>, <a href="../engine/actor.html#XLevel">XLevel</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Enumerations Summary</th>
+</tr>
+<tr><td><a href="#_EMeleeType" name="EMeleeType" title="go to the details">EMeleeType</a><br /><span class="small">MELEE_SWORD,
+MELEE_HAMMER,
+MELEE_AXE,
+MELEE_NON_STOW</span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Enumerations from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/actor.html#EDodgeDir">EDodgeDir</a>, <a href="../engine/actor.html#EDrawType">EDrawType</a>, <a href="../engine/actor.html#EInputAction">EInputAction</a>, <a href="../engine/actor.html#EInputKey">EInputKey</a>, <a href="../engine/actor.html#ELightEffect">ELightEffect</a>, <a href="../engine/actor.html#ELightType">ELightType</a>, <a href="../engine/actor.html#ELODCurve">ELODCurve</a>, <a href="../engine/actor.html#EMusicTransition">EMusicTransition</a>, <a href="../engine/actor.html#ENetRole">ENetRole</a>, <a href="../engine/actor.html#EPhysics">EPhysics</a>, <a href="../engine/actor.html#ERenderStyle">ERenderStyle</a>, <a href="../engine/actor.html#ESoundSlot">ESoundSlot</a>, <a href="../engine/actor.html#ETravelType">ETravelType</a>, <a href="../engine/actor.html#E_RMAlign">E_RMAlign</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Structures Summary</th>
+</tr>
+<tr><td><a href="#_SwipeHit" name="SwipeHit" title="go to the details">SwipeHit</a><br /><span class="small">Actor, HighMask, LowMask</span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Structures from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/actor.html#PointRegion">PointRegion</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_BeginState-Active" name="BeginState" title="go to the details">BeginState</a> ()))<br /><span class="function_state">Active</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_BeginState-Drop" name="BeginState" title="go to the details">BeginState</a> ()))<br /><span class="function_state">Drop</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_BeginState-Pickup" name="BeginState" title="go to the details">BeginState</a> ()))<br /><span class="function_state">Pickup</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_BeginState-Settling" name="BeginState" title="go to the details">BeginState</a> ()))<br /><span class="function_state">Settling</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_BeginState-Stow" name="BeginState" title="go to the details">BeginState</a> ()))<br /><span class="function_state">Stow</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_BeginState-Swinging" name="BeginState" title="go to the details">BeginState</a> ()))<br /><span class="function_state">Swinging</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_BeginState-Throw" name="BeginState" title="go to the details">BeginState</a> ()))<br /><span class="function_state">Throw</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>int&nbsp;</td><td><a href="#_CalculateDamage-" name="CalculateDamage" title="go to the details">CalculateDamage</a> (<a href="../engine/actor.html">actor</a> Victim))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_CanBeUsed-Settling" name="CanBeUsed" title="go to the details">CanBeUsed</a> (<a href="../engine/actor.html">Actor</a> Other))<br /><span class="function_state">Settling</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_CanBeUsed-Throw" name="CanBeUsed" title="go to the details">CanBeUsed</a> (<a href="../engine/actor.html">Actor</a> Other))<br /><span class="function_state">Throw</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ClearSwipeArray-" name="ClearSwipeArray" title="go to the details">ClearSwipeArray</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ClearSwipeArray-Swinging" name="ClearSwipeArray" title="go to the details">ClearSwipeArray</a> ()))<br /><span class="function_state">Swinging</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_ClientAltFire-" name="ClientAltFire" title="go to the details">ClientAltFire</a> (float Value ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_ClientFire-" name="ClientFire" title="go to the details">ClientFire</a> (float Value ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ClientWeaponEvent-" name="ClientWeaponEvent" title="go to the details">ClientWeaponEvent</a> (name EventType)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Debug-" name="Debug" title="go to the details">Debug</a> (<a href="../engine/canvas.html">Canvas</a> canvas, int mode))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Destroyed-" name="Destroyed" title="go to the details">Destroyed</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DisableSwipeTrail-" name="DisableSwipeTrail" title="go to the details">DisableSwipeTrail</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_DoWeaponSwipe-" name="DoWeaponSwipe" title="go to the details">DoWeaponSwipe</a> (<a href="../engine/actor.html">Actor</a> A, int LowMask, int HighMask, <a href="../core/object.html#Vector">vector</a> HitLoc, <a href="../core/object.html#Vector">vector</a> HitNorm, <a href="../core/object.html#Vector">vector</a> Momentum))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DropFrom-" name="DropFrom" title="go to the details">DropFrom</a> (<a href="../core/object.html#Vector">vector</a> StartLocation))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_EnableSwipeTrail-" name="EnableSwipeTrail" title="go to the details">EnableSwipeTrail</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_EndState-Active" name="EndState" title="go to the details">EndState</a> ()))<br /><span class="function_state">Active</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_EndState-Drop" name="EndState" title="go to the details">EndState</a> ()))<br /><span class="function_state">Drop</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_EndState-Pickup" name="EndState" title="go to the details">EndState</a> ()))<br /><span class="function_state">Pickup</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_EndState-Settling" name="EndState" title="go to the details">EndState</a> ()))<br /><span class="function_state">Settling</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_EndState-Stow" name="EndState" title="go to the details">EndState</a> ()))<br /><span class="function_state">Stow</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_EndState-Throw" name="EndState" title="go to the details">EndState</a> ()))<br /><span class="function_state">Throw</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_FinishAttack-" name="FinishAttack" title="go to the details">FinishAttack</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_FinishAttack-Swinging" name="FinishAttack" title="go to the details">FinishAttack</a> ()))<br /><span class="function_state">Swinging</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ForceAltFire-" name="ForceAltFire" title="go to the details">ForceAltFire</a> ()<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ForceFire-" name="ForceFire" title="go to the details">ForceFire</a> ()<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_FrameNotify-Swinging" name="FrameNotify" title="go to the details">FrameNotify</a> (int framepassed))<br /><span class="function_state">Swinging</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>&nbsp;</td><td><a href="#_FrameSwept-Swinging" name="FrameSwept" title="go to the details">FrameSwept</a> (<a href="../core/object.html#Vector">vector</a> B1, <a href="../core/object.html#Vector">vector</a> E1, <a href="../core/object.html#Vector">vector</a> B2, <a href="../core/object.html#Vector">vector</a> E2))<br /><span class="function_state">Swinging</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>int&nbsp;</td><td><a href="#_GetUsePriority-" name="GetUsePriority" title="go to the details">GetUsePriority</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_HandlePickupQuery-" name="HandlePickupQuery" title="go to the details">HandlePickupQuery</a> (inventory Item ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_HitWall-Drop" name="HitWall" title="go to the details">HitWall</a> (<a href="../core/object.html#Vector">vector</a> HitNormal, <a href="../engine/actor.html">actor</a> HitWall))<br /><span class="function_state">Drop</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_HitWall-Settling" name="HitWall" title="go to the details">HitWall</a> (<a href="../core/object.html#Vector">vector</a> HitNormal, <a href="../engine/actor.html">actor</a> HitWall))<br /><span class="function_state">Settling</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_HitWall-Throw" name="HitWall" title="go to the details">HitWall</a> (<a href="../core/object.html#Vector">vector</a> HitNormal, <a href="../engine/actor.html">actor</a> HitWall))<br /><span class="function_state">Throw</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Landed-Drop" name="Landed" title="go to the details">Landed</a> (<a href="../core/object.html#Vector">vector</a> HitNormal, <a href="../engine/actor.html">actor</a> HitActor))<br /><span class="function_state">Drop</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Landed-Settling" name="Landed" title="go to the details">Landed</a> (<a href="../core/object.html#Vector">vector</a> HitNormal, <a href="../engine/actor.html">actor</a> HitActor))<br /><span class="function_state">Settling</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Landed-Throw" name="Landed" title="go to the details">Landed</a> (<a href="../core/object.html#Vector">vector</a> HitNormal, <a href="../engine/actor.html">actor</a> HitActor))<br /><span class="function_state">Throw</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../core/object.html#EMatterType">EMatterType</a>&nbsp;</td><td><a href="#_MatterForJoint-" name="MatterForJoint" title="go to the details">MatterForJoint</a> (int joint))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayHitMatterSound-" name="PlayHitMatterSound" title="go to the details">PlayHitMatterSound</a> (<a href="../core/object.html#EMatterType">EMatterType</a> matter))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayNormalFrame-" name="PlayNormalFrame" title="go to the details">PlayNormalFrame</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlaySwipeSound-" name="PlaySwipeSound" title="go to the details">PlaySwipeSound</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayThrowFrame-" name="PlayThrowFrame" title="go to the details">PlayThrowFrame</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PostBeginPlay-" name="PostBeginPlay" title="go to the details">PostBeginPlay</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PostRender-" name="PostRender" title="go to the details">PostRender</a> (<a href="../engine/canvas.html">canvas</a> Canvas)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PoweredUpCallback1-" name="PoweredUpCallback1" title="go to the details">PoweredUpCallback1</a> ()<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PoweredUpCallback2-" name="PoweredUpCallback2" title="go to the details">PoweredUpCallback2</a> ()<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PowerUp-" name="PowerUp" title="go to the details">PowerUp</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PowerupEnd-" name="PowerupEnd" title="go to the details">PowerupEnd</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PowerupEnded-" name="PowerupEnded" title="go to the details">PowerupEnded</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PowerupEndingPulseOff-" name="PowerupEndingPulseOff" title="go to the details">PowerupEndingPulseOff</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PowerupEndingPulseOn-" name="PowerupEndingPulseOn" title="go to the details">PowerupEndingPulseOn</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PowerupInit-" name="PowerupInit" title="go to the details">PowerupInit</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PowerUpNotify1-" name="PowerUpNotify1" title="go to the details">PowerUpNotify1</a> ()<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PowerUpNotify2-" name="PowerUpNotify2" title="go to the details">PowerUpNotify2</a> ()<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>&nbsp;</td><td><a href="#_PowerupStatusChanged-" name="PowerupStatusChanged" title="go to the details">PowerupStatusChanged</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PreRender-" name="PreRender" title="go to the details">PreRender</a> (<a href="../engine/canvas.html">canvas</a> Canvas)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_RateSelf-" name="RateSelf" title="go to the details">RateSelf</a> (out int bUseAltMode))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_RemovePowerupEffect-" name="RemovePowerupEffect" title="go to the details">RemovePowerupEffect</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_RemoveStab-" name="RemoveStab" title="go to the details">RemoveStab</a> (<a href="../engine/carcass.html">Carcass</a> Victim, int JointIndex))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SetWeaponStay-" name="SetWeaponStay" title="go to the details">SetWeaponStay</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../engine/inventory.html">inventory</a>&nbsp;</td><td><a href="#_SpawnCopy-" name="SpawnCopy" title="go to the details">SpawnCopy</a> (pawn Other ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SpawnHitEffect-" name="SpawnHitEffect" title="go to the details">SpawnHitEffect</a> (<a href="../core/object.html#Vector">vector</a> HitLoc, <a href="../core/object.html#Vector">vector</a> HitNorm, int LowMask, int HighMask, <a href="../engine/actor.html">Actor</a> HitActor))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SpawnPowerupEffect-" name="SpawnPowerupEffect" title="go to the details">SpawnPowerupEffect</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_SplashJump-" name="SplashJump" title="go to the details">SplashJump</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_StabActor-" name="StabActor" title="go to the details">StabActor</a> (<a href="../engine/pawn.html">Pawn</a> Victim))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_StartAttack-" name="StartAttack" title="go to the details">StartAttack</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_StartAttack-Active" name="StartAttack" title="go to the details">StartAttack</a> ()))<br /><span class="function_state">Active</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_StartAttack-Swinging" name="StartAttack" title="go to the details">StartAttack</a> ()))<br /><span class="function_state">Swinging</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_StartDamageCheck-" name="StartDamageCheck" title="go to the details">StartDamageCheck</a> ()<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_StickInWall-" name="StickInWall" title="go to the details">StickInWall</a> (<a href="../core/object.html#EMatterType">EMatterType</a> matter))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_SuggestAttackStyle-" name="SuggestAttackStyle" title="go to the details">SuggestAttackStyle</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_SuggestDefenseStyle-" name="SuggestDefenseStyle" title="go to the details">SuggestDefenseStyle</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_SwipeArrayCheck-" name="SwipeArrayCheck" title="go to the details">SwipeArrayCheck</a> (<a href="../engine/actor.html">Actor</a> A, int LowMask, int HighMask))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Timer-" name="Timer" title="go to the details">Timer</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Touch-Drop" name="Touch" title="go to the details">Touch</a> (<a href="../engine/actor.html">Actor</a> Other))<br /><span class="function_state">Drop</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Touch-Pickup" name="Touch" title="go to the details">Touch</a> (<a href="../engine/actor.html">Actor</a> Other))<br /><span class="function_state">Pickup</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Touch-Settling" name="Touch" title="go to the details">Touch</a> (<a href="../engine/actor.html">Actor</a> Other))<br /><span class="function_state">Settling</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Touch-Throw" name="Touch" title="go to the details">Touch</a> (<a href="../engine/actor.html">Actor</a> Other))<br /><span class="function_state">Throw</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>&nbsp;</td><td><a href="#_TravelPostAccept-" name="TravelPostAccept" title="go to the details">TravelPostAccept</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_TweenToStill-" name="TweenToStill" title="go to the details">TweenToStill</a> ()<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_WeaponFire-" name="WeaponFire" title="go to the details">WeaponFire</a> (int SwingCount)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ZoneChange-" name="ZoneChange" title="go to the details">ZoneChange</a> (<a href="../engine/zoneinfo.html">ZoneInfo</a> newZone))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ZoneChange-Throw" name="ZoneChange" title="go to the details">ZoneChange</a> (<a href="../engine/zoneinfo.html">ZoneInfo</a> newZone))<br /><span class="function_state">Throw</span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/inventory.html">Inventory</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/inventory.html#Activate">Activate</a>, <a href="../engine/inventory.html#AltFire">AltFire</a>, <a href="../engine/inventory.html#ArmorAbsorbDamage">ArmorAbsorbDamage</a>, <a href="../engine/inventory.html#ArmorImpactEffect">ArmorImpactEffect</a>, <a href="../engine/inventory.html#ArmorPriority">ArmorPriority</a>, <a href="../engine/inventory.html#BecomeItem">BecomeItem</a>, <a href="../engine/inventory.html#BecomePickup">BecomePickup</a>, <a href="../engine/inventory.html#BeginState">BeginState</a>, <a href="../engine/inventory.html#BotDesireability">BotDesireability</a>, <a href="../engine/inventory.html#CanBeUsed">CanBeUsed</a>, <a href="../engine/inventory.html#ChangedWeapon">ChangedWeapon</a>, <a href="../engine/inventory.html#CheckTouching">CheckTouching</a>, <a href="../engine/inventory.html#Destroyed">Destroyed</a>, <a href="../engine/inventory.html#DrawStatusIconAt">DrawStatusIconAt</a>, <a href="../engine/inventory.html#DropFrom">DropFrom</a>, <a href="../engine/inventory.html#DropInventory">DropInventory</a>, <a href="../engine/inventory.html#EndState">EndState</a>, <a href="../engine/inventory.html#Fire">Fire</a>, <a href="../engine/inventory.html#GetHumanName">GetHumanName</a>, <a href="../engine/inventory.html#GetUsePriority">GetUsePriority</a>, <a href="../engine/inventory.html#GiveTo">GiveTo</a>, <a href="../engine/inventory.html#HandlePickupQuery">HandlePickupQuery</a>, <a href="../engine/inventory.html#InventoryCapsFloat">InventoryCapsFloat</a>, <a href="../engine/inventory.html#InventoryCapsString">InventoryCapsString</a>, <a href="../engine/inventory.html#InventorySpecial1">InventorySpecial1</a>, <a href="../engine/inventory.html#InventorySpecial2">InventorySpecial2</a>, <a href="../engine/inventory.html#InventorySpecial3">InventorySpecial3</a>, <a href="../engine/inventory.html#Landed">Landed</a>, <a href="../engine/inventory.html#OwnerJumped">OwnerJumped</a>, <a href="../engine/inventory.html#PostBeginPlay">PostBeginPlay</a>, <a href="../engine/inventory.html#PrioritizeArmor">PrioritizeArmor</a>, <a href="../engine/inventory.html#RecommendWeapon">RecommendWeapon</a>, <a href="../engine/inventory.html#ReduceDamage">ReduceDamage</a>, <a href="../engine/inventory.html#SelectNext">SelectNext</a>, <a href="../engine/inventory.html#SetOwnerDisplay">SetOwnerDisplay</a>, <a href="../engine/inventory.html#SetRespawn">SetRespawn</a>, <a href="../engine/inventory.html#SpawnCopy">SpawnCopy</a>, <a href="../engine/inventory.html#Touch">Touch</a>, <a href="../engine/inventory.html#TravelPreAccept">TravelPreAccept</a>, <a href="../engine/inventory.html#Use">Use</a>, <a href="../engine/inventory.html#ValidTouch">ValidTouch</a>, <a href="../engine/inventory.html#WeaponChange">WeaponChange</a>, <a href="../engine/inventory.html#ZoneChange">ZoneChange</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/actor.html#*">*</a>, <a href="../engine/actor.html#+">+</a>, <a href="../engine/actor.html#-">-</a>, <a href="../engine/actor.html#ActorAttachedTo">ActorAttachedTo</a>, <a href="../engine/actor.html#ActorInSector">ActorInSector</a>, <a href="../engine/actor.html#AddVelocity">AddVelocity</a>, <a href="../engine/actor.html#AllActors">AllActors</a>, <a href="../engine/actor.html#AnimEnd">AnimEnd</a>, <a href="../engine/actor.html#AnimProxyEnd">AnimProxyEnd</a>, <a href="../engine/actor.html#ApplyDamageToActor">ApplyDamageToActor</a>, <a href="../engine/actor.html#ApplyJointForce">ApplyJointForce</a>, <a href="../engine/actor.html#Attach">Attach</a>, <a href="../engine/actor.html#AttachActorToJoint">AttachActorToJoint</a>, <a href="../engine/actor.html#AutonomousPhysics">AutonomousPhysics</a>, <a href="../engine/actor.html#BaseChange">BaseChange</a>, <a href="../engine/actor.html#BasedActors">BasedActors</a>, <a href="../engine/actor.html#BecomeViewTarget">BecomeViewTarget</a>, <a href="../engine/actor.html#BeginEvent">BeginEvent</a>, <a href="../engine/actor.html#BeginPlay">BeginPlay</a>, <a href="../engine/actor.html#BodyPartForJoint">BodyPartForJoint</a>, <a href="../engine/actor.html#BroadcastLocalizedMessage">BroadcastLocalizedMessage</a>, <a href="../engine/actor.html#BroadcastMessage">BroadcastMessage</a>, <a href="../engine/actor.html#Bump">Bump</a>, <a href="../engine/actor.html#CalcArcVelocity">CalcArcVelocity</a>, <a href="../engine/actor.html#CanBeUsed">CanBeUsed</a>, <a href="../engine/actor.html#CheckDefending">CheckDefending</a>, <a href="../engine/actor.html#ChildActors">ChildActors</a>, <a href="../engine/actor.html#ClosestJointTo">ClosestJointTo</a>, <a href="../engine/actor.html#ConsoleCommand">ConsoleCommand</a>, <a href="../engine/actor.html#DamageBodyPart">DamageBodyPart</a>, <a href="../engine/actor.html#debug">debug</a>, <a href="../engine/actor.html#DebugStop">DebugStop</a>, <a href="../engine/actor.html#DemoPlaySound">DemoPlaySound</a>, <a href="../engine/actor.html#Destroy">Destroy</a>, <a href="../engine/actor.html#DestroyAnimationProxy">DestroyAnimationProxy</a>, <a href="../engine/actor.html#Destroyed">Destroyed</a>, <a href="../engine/actor.html#Detach">Detach</a>, <a href="../engine/actor.html#DetachActorFromJoint">DetachActorFromJoint</a>, <a href="../engine/actor.html#EncroachedBy">EncroachedBy</a>, <a href="../engine/actor.html#EncroachingOn">EncroachingOn</a>, <a href="../engine/actor.html#EndedRotation">EndedRotation</a>, <a href="../engine/actor.html#EndEvent">EndEvent</a>, <a href="../engine/actor.html#Error">Error</a>, <a href="../engine/actor.html#Expired">Expired</a>, <a href="../engine/actor.html#Falling">Falling</a>, <a href="../engine/actor.html#FastTrace">FastTrace</a>, <a href="../engine/actor.html#FellOutOfWorld">FellOutOfWorld</a>, <a href="../engine/actor.html#FinishAnim">FinishAnim</a>, <a href="../engine/actor.html#FinishInterpolation">FinishInterpolation</a>, <a href="../engine/actor.html#FireEvent">FireEvent</a>, <a href="../engine/actor.html#FrameNotify">FrameNotify</a>, <a href="../engine/actor.html#FrameSweep">FrameSweep</a>, <a href="../engine/actor.html#FrameSwept">FrameSwept</a>, <a href="../engine/actor.html#GainedChild">GainedChild</a>, <a href="../engine/actor.html#GetAccelJointMagnitude">GetAccelJointMagnitude</a>, <a href="../engine/actor.html#GetAccelJointParms">GetAccelJointParms</a>, <a href="../engine/actor.html#GetAnimGroup">GetAnimGroup</a>, <a href="../engine/actor.html#GetDamageValues">GetDamageValues</a>, <a href="../engine/actor.html#GetHumanName">GetHumanName</a>, <a href="../engine/actor.html#GetItemName">GetItemName</a>, <a href="../engine/actor.html#GetJointName">GetJointName</a>, <a href="../engine/actor.html#GetJointPos">GetJointPos</a>, <a href="../engine/actor.html#GetJointRot">GetJointRot</a>, <a href="../engine/actor.html#GetMapName">GetMapName</a>, <a href="../engine/actor.html#GetNextInt">GetNextInt</a>, <a href="../engine/actor.html#GetNextIntDesc">GetNextIntDesc</a>, <a href="../engine/actor.html#GetNextSkin">GetNextSkin</a>, <a href="../engine/actor.html#GetSoundDuration">GetSoundDuration</a>, <a href="../engine/actor.html#GetSpringJointParms">GetSpringJointParms</a>, <a href="../engine/actor.html#GetURLMap">GetURLMap</a>, <a href="../engine/actor.html#GetUseAnim">GetUseAnim</a>, <a href="../engine/actor.html#GetUsePriority">GetUsePriority</a>, <a href="../engine/actor.html#HandleConsoleCommand">HandleConsoleCommand</a>, <a href="../engine/actor.html#HasAnim">HasAnim</a>, <a href="../engine/actor.html#HitWall">HitWall</a>, <a href="../engine/actor.html#HurtRadius">HurtRadius</a>, <a href="../engine/actor.html#InterpolateEnd">InterpolateEnd</a>, <a href="../engine/actor.html#IsAnimating">IsAnimating</a>, <a href="../engine/actor.html#JointChangedDirection">JointChangedDirection</a>, <a href="../engine/actor.html#JointDamaged">JointDamaged</a>, <a href="../engine/actor.html#JointNamed">JointNamed</a>, <a href="../engine/actor.html#JointTouchedBy">JointTouchedBy</a>, <a href="../engine/actor.html#KillCredit">KillCredit</a>, <a href="../engine/actor.html#KilledBy">KilledBy</a>, <a href="../engine/actor.html#Landed">Landed</a>, <a href="../engine/actor.html#LipSyncString">LipSyncString</a>, <a href="../engine/actor.html#LoopAnim">LoopAnim</a>, <a href="../engine/actor.html#LostChild">LostChild</a>, <a href="../engine/actor.html#MakeNoise">MakeNoise</a>, <a href="../engine/actor.html#MatterForJoint">MatterForJoint</a>, <a href="../engine/actor.html#MatterTrace">MatterTrace</a>, <a href="../engine/actor.html#Move">Move</a>, <a href="../engine/actor.html#MoveSmooth">MoveSmooth</a>, <a href="../engine/actor.html#NumJoints">NumJoints</a>, <a href="../engine/actor.html#PainSkin">PainSkin</a>, <a href="../engine/actor.html#PlayAnim">PlayAnim</a>, <a href="../engine/actor.html#PlayerCanSeeMe">PlayerCanSeeMe</a>, <a href="../engine/actor.html#PlayOwnedSound">PlayOwnedSound</a>, <a href="../engine/actor.html#PlaySound">PlaySound</a>, <a href="../engine/actor.html#PlayStabRemove">PlayStabRemove</a>, <a href="../engine/actor.html#PostBeginPlay">PostBeginPlay</a>, <a href="../engine/actor.html#PostNetBeginPlay">PostNetBeginPlay</a>, <a href="../engine/actor.html#PostTeleport">PostTeleport</a>, <a href="../engine/actor.html#PostTouch">PostTouch</a>, <a href="../engine/actor.html#PreBeginPlay">PreBeginPlay</a>, <a href="../engine/actor.html#PreTeleport">PreTeleport</a>, <a href="../engine/actor.html#RadiusActors">RadiusActors</a>, <a href="../engine/actor.html#Release">Release</a>, <a href="../engine/actor.html#ReleaseTagged">ReleaseTagged</a>, <a href="../engine/actor.html#RenderOverlays">RenderOverlays</a>, <a href="../engine/actor.html#RenderTexture">RenderTexture</a>, <a href="../engine/actor.html#ResetAnimationCache">ResetAnimationCache</a>, <a href="../engine/actor.html#SetBase">SetBase</a>, <a href="../engine/actor.html#SetCollision">SetCollision</a>, <a href="../engine/actor.html#SetCollisionSize">SetCollisionSize</a>, <a href="../engine/actor.html#SetDefaultDisplayProperties">SetDefaultDisplayProperties</a>, <a href="../engine/actor.html#SetDefaultJointFlags">SetDefaultJointFlags</a>, <a href="../engine/actor.html#SetDefaultPolygroups">SetDefaultPolygroups</a>, <a href="../engine/actor.html#SetDisplayProperties">SetDisplayProperties</a>, <a href="../engine/actor.html#SetInitialState">SetInitialState</a>, <a href="../engine/actor.html#SetJointRot">SetJointRot</a>, <a href="../engine/actor.html#SetLocation">SetLocation</a>, <a href="../engine/actor.html#SetOnFire">SetOnFire</a>, <a href="../engine/actor.html#SetOwner">SetOwner</a>, <a href="../engine/actor.html#SetPhysics">SetPhysics</a>, <a href="../engine/actor.html#SetRotation">SetRotation</a>, <a href="../engine/actor.html#SetTimer">SetTimer</a>, <a href="../engine/actor.html#Sleep">Sleep</a>, <a href="../engine/actor.html#SLog">SLog</a>, <a href="../engine/actor.html#Spawn">Spawn</a>, <a href="../engine/actor.html#SpawnAnimationProxy">SpawnAnimationProxy</a>, <a href="../engine/actor.html#Spawned">Spawned</a>, <a href="../engine/actor.html#SpecialHandling">SpecialHandling</a>, <a href="../engine/actor.html#StopAllSound">StopAllSound</a>, <a href="../engine/actor.html#StopSound">StopSound</a>, <a href="../engine/actor.html#SweepActors">SweepActors</a>, <a href="../engine/actor.html#TakeDamage">TakeDamage</a>, <a href="../engine/actor.html#Tick">Tick</a>, <a href="../engine/actor.html#Timer">Timer</a>, <a href="../engine/actor.html#Touch">Touch</a>, <a href="../engine/actor.html#TouchingActors">TouchingActors</a>, <a href="../engine/actor.html#TouchJointOf">TouchJointOf</a>, <a href="../engine/actor.html#Trace">Trace</a>, <a href="../engine/actor.html#TraceActors">TraceActors</a>, <a href="../engine/actor.html#TraceTexture">TraceTexture</a>, <a href="../engine/actor.html#TravelPostAccept">TravelPostAccept</a>, <a href="../engine/actor.html#TravelPreAccept">TravelPreAccept</a>, <a href="../engine/actor.html#Trigger">Trigger</a>, <a href="../engine/actor.html#TurnJointTo">TurnJointTo</a>, <a href="../engine/actor.html#TweenAnim">TweenAnim</a>, <a href="../engine/actor.html#UnlinkAttachments">UnlinkAttachments</a>, <a href="../engine/actor.html#UnTouch">UnTouch</a>, <a href="../engine/actor.html#UnTrigger">UnTrigger</a>, <a href="../engine/actor.html#UseTrigger">UseTrigger</a>, <a href="../engine/actor.html#VisibleActors">VisibleActors</a>, <a href="../engine/actor.html#VisibleCollidingActors">VisibleCollidingActors</a>, <a href="../engine/actor.html#WaitForRelease">WaitForRelease</a>, <a href="../engine/actor.html#ZoneChange">ZoneChange</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th class="title">States Summary</th>
+</tr>
+</table>
+
+<table>
+<tr>
+	<th>Active <a href="../Source_engine/weapon.html#848" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> Active <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_BeginState+Active">BeginState</a>, <a href="#_EndState+Active">EndState</a>, <a href="#_StartAttack+Active">StartAttack</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>Drop <a href="../Source_engine/weapon.html#1203" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> Drop <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_BeginState+Drop">BeginState</a>, <a href="#_EndState+Drop">EndState</a>, <a href="#_HitWall+Drop">HitWall</a>, <a href="#_Landed+Drop">Landed</a>, <a href="#_Touch+Drop">Touch</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>Pickup <a href="../Source_engine/weapon.html#758" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw">auto state</span> Pickup <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_BeginState+Pickup">BeginState</a>, <a href="#_EndState+Pickup">EndState</a>, <a href="#_Touch+Pickup">Touch</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>Settling <a href="../Source_engine/weapon.html#1333" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> Settling <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_BeginState+Settling">BeginState</a>, <a href="#_CanBeUsed+Settling">CanBeUsed</a>, <a href="#_EndState+Settling">EndState</a>, <a href="#_HitWall+Settling">HitWall</a>, <a href="#_Landed+Settling">Landed</a>, <a href="#_Touch+Settling">Touch</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>Stow <a href="../Source_engine/weapon.html#879" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> Stow <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_BeginState+Stow">BeginState</a>, <a href="#_EndState+Stow">EndState</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>Swinging <a href="../Source_engine/weapon.html#1733" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> Swinging <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_BeginState+Swinging">BeginState</a>, <a href="#_ClearSwipeArray+Swinging">ClearSwipeArray</a>, <a href="#_FinishAttack+Swinging">FinishAttack</a>, <a href="#_FrameNotify+Swinging">FrameNotify</a>, <a href="#_FrameSwept+Swinging">FrameSwept</a>, <a href="#_StartAttack+Swinging">StartAttack</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>Throw <a href="../Source_engine/weapon.html#915" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> Throw <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_BeginState+Throw">BeginState</a>, <a href="#_CanBeUsed+Throw">CanBeUsed</a>, <a href="#_EndState+Throw">EndState</a>, <a href="#_HitWall+Throw">HitWall</a>, <a href="#_Landed+Throw">Landed</a>, <a href="#_Touch+Throw">Touch</a>, <a href="#_ZoneChange+Throw">ZoneChange</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<hr />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Constants Detail</th>
+</tr>
+</table>
+
+<h4><a name="_HitCount" class="hidden"></a>HitCount <a href="../Source_engine/weapon.html#107" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">const</span> HitCount = <span class="source_int">16</span>;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_bCanBePoweredUp" class="hidden"></a>bCanBePoweredUp <a href="../Source_engine/weapon.html#44" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bCanBePoweredUp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bClientPoweredUp" class="hidden"></a>bClientPoweredUp <a href="../Source_engine/weapon.html#46" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bClientPoweredUp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bPlayedDropSound" class="hidden"></a>bPlayedDropSound <a href="../Source_engine/weapon.html#45" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bPlayedDropSound;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FrameOfAttackAnim" class="hidden"></a>FrameOfAttackAnim <a href="../Source_engine/weapon.html#66" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> FrameOfAttackAnim;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_gB1" class="hidden"></a>gB1 <a href="../Source_engine/weapon.html#67" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> gB1;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_gB2" class="hidden"></a>gB2 <a href="../Source_engine/weapon.html#67" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> gB2;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_gE1" class="hidden"></a>gE1 <a href="../Source_engine/weapon.html#67" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> gE1;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_gE2" class="hidden"></a>gE2 <a href="../Source_engine/weapon.html#67" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> gE2;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HitMatterSoundCount" class="hidden"></a>HitMatterSoundCount <a href="../Source_engine/weapon.html#47" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> HitMatterSoundCount;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_lastpos1" class="hidden"></a>lastpos1 <a href="../Source_engine/weapon.html#97" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> lastpos1;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_lastpos2" class="hidden"></a>lastpos2 <a href="../Source_engine/weapon.html#97" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> lastpos2;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LastThrower" class="hidden"></a>LastThrower <a href="../Source_engine/weapon.html#71" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> LastThrower;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NumEarthSounds" class="hidden"></a>NumEarthSounds <a href="../Source_engine/weapon.html#105" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> NumEarthSounds;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NumFleshSounds" class="hidden"></a>NumFleshSounds <a href="../Source_engine/weapon.html#101" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> NumFleshSounds;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NumMetalSounds" class="hidden"></a>NumMetalSounds <a href="../Source_engine/weapon.html#104" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> NumMetalSounds;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NumStoneSounds" class="hidden"></a>NumStoneSounds <a href="../Source_engine/weapon.html#103" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> NumStoneSounds;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NumThroughAirBerserkSounds" class="hidden"></a>NumThroughAirBerserkSounds <a href="../Source_engine/weapon.html#100" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> NumThroughAirBerserkSounds;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NumThroughAirSounds" class="hidden"></a>NumThroughAirSounds <a href="../Source_engine/weapon.html#99" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> NumThroughAirSounds;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NumWoodSounds" class="hidden"></a>NumWoodSounds <a href="../Source_engine/weapon.html#102" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> NumWoodSounds;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StabbedActor" class="hidden"></a>StabbedActor <a href="../Source_engine/weapon.html#69" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> StabbedActor;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Swipe" class="hidden"></a>Swipe <a href="../Source_engine/weapon.html#111" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/weaponswipe.html" class="source">WeaponSwipe</a></span> Swipe;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SwipeHits[16]" class="hidden"></a>SwipeHits[16] <a href="../Source_engine/weapon.html#108" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/weapon.html#SwipeHit" class="source">SwipeHit</a></span> SwipeHits[<span class="source_int">16</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TimerCount" class="hidden"></a>TimerCount <a href="../Source_engine/weapon.html#63" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> TimerCount;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">Anims</h3>
+<h4><a name="_A_AttackA" class="hidden"></a>A_AttackA <a href="../Source_engine/weapon.html#131" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_AttackA;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_AttackAReturn" class="hidden"></a>A_AttackAReturn <a href="../Source_engine/weapon.html#132" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_AttackAReturn;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_AttackB" class="hidden"></a>A_AttackB <a href="../Source_engine/weapon.html#133" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_AttackB;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_AttackBackupA" class="hidden"></a>A_AttackBackupA <a href="../Source_engine/weapon.html#145" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_AttackBackupA;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_AttackBackupAReturn" class="hidden"></a>A_AttackBackupAReturn <a href="../Source_engine/weapon.html#146" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_AttackBackupAReturn;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_AttackBackupB" class="hidden"></a>A_AttackBackupB <a href="../Source_engine/weapon.html#147" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_AttackBackupB;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_AttackBackupBReturn" class="hidden"></a>A_AttackBackupBReturn <a href="../Source_engine/weapon.html#148" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_AttackBackupBReturn;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_AttackBReturn" class="hidden"></a>A_AttackBReturn <a href="../Source_engine/weapon.html#134" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_AttackBReturn;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_AttackC" class="hidden"></a>A_AttackC <a href="../Source_engine/weapon.html#135" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_AttackC;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_AttackCReturn" class="hidden"></a>A_AttackCReturn <a href="../Source_engine/weapon.html#136" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_AttackCReturn;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_AttackD" class="hidden"></a>A_AttackD <a href="../Source_engine/weapon.html#137" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_AttackD;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_AttackDReturn" class="hidden"></a>A_AttackDReturn <a href="../Source_engine/weapon.html#138" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_AttackDReturn;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_AttackStandA" class="hidden"></a>A_AttackStandA <a href="../Source_engine/weapon.html#140" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_AttackStandA;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_AttackStandAReturn" class="hidden"></a>A_AttackStandAReturn <a href="../Source_engine/weapon.html#141" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_AttackStandAReturn;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_AttackStandB" class="hidden"></a>A_AttackStandB <a href="../Source_engine/weapon.html#142" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_AttackStandB;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_AttackStandBReturn" class="hidden"></a>A_AttackStandBReturn <a href="../Source_engine/weapon.html#143" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_AttackStandBReturn;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_AttackStrafeLeft" class="hidden"></a>A_AttackStrafeLeft <a href="../Source_engine/weapon.html#151" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_AttackStrafeLeft;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_AttackStrafeRight" class="hidden"></a>A_AttackStrafeRight <a href="../Source_engine/weapon.html#150" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_AttackStrafeRight;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_Backward" class="hidden"></a>A_Backward <a href="../Source_engine/weapon.html#121" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_Backward;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_Backward45Left" class="hidden"></a>A_Backward45Left <a href="../Source_engine/weapon.html#125" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_Backward45Left;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_Backward45Right" class="hidden"></a>A_Backward45Right <a href="../Source_engine/weapon.html#124" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_Backward45Right;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_Defend" class="hidden"></a>A_Defend <a href="../Source_engine/weapon.html#157" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_Defend;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_DefendIdle" class="hidden"></a>A_DefendIdle <a href="../Source_engine/weapon.html#158" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_DefendIdle;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_Forward" class="hidden"></a>A_Forward <a href="../Source_engine/weapon.html#120" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_Forward;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_Forward45Left" class="hidden"></a>A_Forward45Left <a href="../Source_engine/weapon.html#123" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_Forward45Left;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_Forward45Right" class="hidden"></a>A_Forward45Right <a href="../Source_engine/weapon.html#122" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_Forward45Right;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_ForwardAttack" class="hidden"></a>A_ForwardAttack <a href="../Source_engine/weapon.html#129" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_ForwardAttack;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_Idle" class="hidden"></a>A_Idle <a href="../Source_engine/weapon.html#117" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_Idle;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_Jump" class="hidden"></a>A_Jump <a href="../Source_engine/weapon.html#128" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_Jump;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_JumpAttack" class="hidden"></a>A_JumpAttack <a href="../Source_engine/weapon.html#152" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_JumpAttack;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_LeverTrigger" class="hidden"></a>A_LeverTrigger <a href="../Source_engine/weapon.html#171" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_LeverTrigger;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_PainBack" class="hidden"></a>A_PainBack <a href="../Source_engine/weapon.html#161" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_PainBack;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_PainFront" class="hidden"></a>A_PainFront <a href="../Source_engine/weapon.html#160" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_PainFront;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_PainLeft" class="hidden"></a>A_PainLeft <a href="../Source_engine/weapon.html#162" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_PainLeft;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_PainRight" class="hidden"></a>A_PainRight <a href="../Source_engine/weapon.html#163" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_PainRight;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_PickupGroundLeft" class="hidden"></a>A_PickupGroundLeft <a href="../Source_engine/weapon.html#165" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_PickupGroundLeft;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_PickupHighLeft" class="hidden"></a>A_PickupHighLeft <a href="../Source_engine/weapon.html#166" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_PickupHighLeft;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_Powerup" class="hidden"></a>A_Powerup <a href="../Source_engine/weapon.html#155" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_Powerup;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_PumpTrigger" class="hidden"></a>A_PumpTrigger <a href="../Source_engine/weapon.html#170" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_PumpTrigger;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_StrafeLeft" class="hidden"></a>A_StrafeLeft <a href="../Source_engine/weapon.html#127" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_StrafeLeft;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_StrafeRight" class="hidden"></a>A_StrafeRight <a href="../Source_engine/weapon.html#126" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_StrafeRight;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_Taunt" class="hidden"></a>A_Taunt <a href="../Source_engine/weapon.html#168" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_Taunt;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_Throw" class="hidden"></a>A_Throw <a href="../Source_engine/weapon.html#153" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_Throw;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_TurnLeft" class="hidden"></a>A_TurnLeft <a href="../Source_engine/weapon.html#118" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_TurnLeft;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_A_TurnRight" class="hidden"></a>A_TurnRight <a href="../Source_engine/weapon.html#119" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Anims) <span class="source_keyword">name</span> A_TurnRight;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">Sounds</h3>
+<h4><a name="_HitBreakableStone" class="hidden"></a>HitBreakableStone <a href="../Source_engine/weapon.html#83" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Sounds) <span class="source_type">Sound</span> HitBreakableStone;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HitBreakableWood" class="hidden"></a>HitBreakableWood <a href="../Source_engine/weapon.html#82" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Sounds) <span class="source_type">Sound</span> HitBreakableWood;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HitDirt[3]" class="hidden"></a>HitDirt[3] <a href="../Source_engine/weapon.html#79" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Sounds) <span class="source_type">Sound</span> HitDirt[<span class="source_int">3</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HitFlesh[3]" class="hidden"></a>HitFlesh[3] <a href="../Source_engine/weapon.html#75" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Sounds) <span class="source_type">Sound</span> HitFlesh[<span class="source_int">3</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HitMetal[3]" class="hidden"></a>HitMetal[3] <a href="../Source_engine/weapon.html#78" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Sounds) <span class="source_type">Sound</span> <span class="source_type"><a href="../runei/hitmetal.html" class="source">HitMetal</a></span>[<span class="source_int">3</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HitShield" class="hidden"></a>HitShield <a href="../Source_engine/weapon.html#80" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Sounds) <span class="source_type">Sound</span> HitShield;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HitStone[3]" class="hidden"></a>HitStone[3] <a href="../Source_engine/weapon.html#77" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Sounds) <span class="source_type">Sound</span> <span class="source_type"><a href="../runei/hitstone.html" class="source">HitStone</a></span>[<span class="source_int">3</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HitWeapon" class="hidden"></a>HitWeapon <a href="../Source_engine/weapon.html#81" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Sounds) <span class="source_type">Sound</span> <span class="source_type"><a href="../runei/hitweapon.html" class="source">HitWeapon</a></span>;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HitWood[3]" class="hidden"></a>HitWood[3] <a href="../Source_engine/weapon.html#76" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Sounds) <span class="source_type">Sound</span> <span class="source_type"><a href="../runei/hitwood.html" class="source">HitWood</a></span>[<span class="source_int">3</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PitchDeviation" class="hidden"></a>PitchDeviation <a href="../Source_engine/weapon.html#92" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Sounds) <span class="source_keyword">float</span> PitchDeviation;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PoweredUpEndingSound" class="hidden"></a>PoweredUpEndingSound <a href="../Source_engine/weapon.html#89" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Sounds) <span class="source_type">Sound</span> PoweredUpEndingSound;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PoweredUpEndSound" class="hidden"></a>PoweredUpEndSound <a href="../Source_engine/weapon.html#90" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Sounds) <span class="source_type">Sound</span> PoweredUpEndSound;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PoweredUpSoundLOOP" class="hidden"></a>PoweredUpSoundLOOP <a href="../Source_engine/weapon.html#88" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Sounds) <span class="source_type">Sound</span> PoweredUpSoundLOOP;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PowerUpSound" class="hidden"></a>PowerUpSound <a href="../Source_engine/weapon.html#87" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Sounds) <span class="source_type">Sound</span> PowerUpSound;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SheathSound" class="hidden"></a>SheathSound <a href="../Source_engine/weapon.html#84" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Sounds) <span class="source_type">Sound</span> SheathSound;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ThroughAirBerserk[3]" class="hidden"></a>ThroughAirBerserk[3] <a href="../Source_engine/weapon.html#74" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Sounds) <span class="source_type">Sound</span> ThroughAirBerserk[<span class="source_int">3</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ThroughAir[3]" class="hidden"></a>ThroughAir[3] <a href="../Source_engine/weapon.html#73" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Sounds) <span class="source_type">Sound</span> ThroughAir[<span class="source_int">3</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ThrownSoundLOOP" class="hidden"></a>ThrownSoundLOOP <a href="../Source_engine/weapon.html#86" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Sounds) <span class="source_type">Sound</span> ThrownSoundLOOP;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_UnsheathSound" class="hidden"></a>UnsheathSound <a href="../Source_engine/weapon.html#85" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Sounds) <span class="source_type">Sound</span> UnsheathSound;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">Weapon</h3>
+<h4><a name="_bCrouchTwoHands" class="hidden"></a>bCrouchTwoHands <a href="../Source_engine/weapon.html#42" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span>) <span class="source_keyword">bool</span> bCrouchTwoHands;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BloodTexture" class="hidden"></a>BloodTexture <a href="../Source_engine/weapon.html#53" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span>) <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span> BloodTexture;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bPoweredUp" class="hidden"></a>bPoweredUp <a href="../Source_engine/weapon.html#43" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span>) <span class="source_keyword">bool</span> bPoweredUp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bWeaponStay" class="hidden"></a>bWeaponStay <a href="../Source_engine/weapon.html#41" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span>) <span class="source_keyword">bool</span> bWeaponStay;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Damage" class="hidden"></a>Damage <a href="../Source_engine/weapon.html#50" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span>) <span class="source_keyword">int</span> Damage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DamageType" class="hidden"></a>DamageType <a href="../Source_engine/weapon.html#51" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span>) <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">DamageType</a></span>;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ExtendedLength" class="hidden"></a>ExtendedLength <a href="../Source_engine/weapon.html#58" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span>) <span class="source_keyword">float</span> ExtendedLength;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MeleeType" class="hidden"></a>MeleeType <a href="../Source_engine/weapon.html#33" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span>) <span class="source_type"><a href="../engine/weapon.html#EMeleeType" class="source">EMeleeType</a></span> MeleeType;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PoweredUpSwipeClass" class="hidden"></a>PoweredUpSwipeClass <a href="../Source_engine/weapon.html#113" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span>) <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/weaponswipe.html" class="source">WeaponSwipe</a></span>&gt; PoweredUpSwipeClass;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PowerupIcon" class="hidden"></a>PowerupIcon <a href="../Source_engine/weapon.html#94" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span>) <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span> PowerupIcon;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PowerupIconAnim" class="hidden"></a>PowerupIconAnim <a href="../Source_engine/weapon.html#95" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span>) <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span> PowerupIconAnim;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PowerupMessage" class="hidden"></a>PowerupMessage <a href="../Source_engine/weapon.html#61" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span>) <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> PowerupMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Rating" class="hidden"></a>Rating <a href="../Source_engine/weapon.html#54" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span>) <span class="source_keyword">int</span> Rating;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RunePowerDuration" class="hidden"></a>RunePowerDuration <a href="../Source_engine/weapon.html#60" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span>) <span class="source_keyword">float</span> RunePowerDuration;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RunePowerRequired" class="hidden"></a>RunePowerRequired <a href="../Source_engine/weapon.html#59" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span>) <span class="source_keyword">int</span> RunePowerRequired;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StabMesh" class="hidden"></a>StabMesh <a href="../Source_engine/weapon.html#62" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span>) <span class="source_keyword">byte</span> StabMesh;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StowMesh" class="hidden"></a>StowMesh <a href="../Source_engine/weapon.html#49" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span>) <span class="source_keyword">byte</span> StowMesh;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SweepJoint1" class="hidden"></a>SweepJoint1 <a href="../Source_engine/weapon.html#56" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span>) <span class="source_keyword">int</span> SweepJoint1;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SweepJoint2" class="hidden"></a>SweepJoint2 <a href="../Source_engine/weapon.html#57" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span>) <span class="source_keyword">int</span> SweepJoint2;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SweepVector" class="hidden"></a>SweepVector <a href="../Source_engine/weapon.html#64" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span>) <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> SweepVector;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SwipeClass" class="hidden"></a>SwipeClass <a href="../Source_engine/weapon.html#112" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span>) <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/weaponswipe.html" class="source">WeaponSwipe</a></span>&gt; SwipeClass;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ThrownDamageType" class="hidden"></a>ThrownDamageType <a href="../Source_engine/weapon.html#52" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span>) <span class="source_keyword">name</span> ThrownDamageType;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_WeaponSweepExtent" class="hidden"></a>WeaponSweepExtent <a href="../Source_engine/weapon.html#55" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span>) <span class="source_keyword">float</span> WeaponSweepExtent;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th class="title">Enumerations Detail</th>
+</tr>
+</table>
+
+<h4><a name="_EMeleeType" class="hidden"></a>EMeleeType <a href="../Source_engine/weapon.html#33" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">enum</span> <span class="source_type"><a href="../engine/weapon.html#EMeleeType" class="source">EMeleeType</a></span><br />
+{<blockquote>MELEE_SWORD,
+MELEE_HAMMER,
+MELEE_AXE,
+MELEE_NON_STOW</blockquote>};
+</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th class="title">Structures Detail</th>
+</tr>
+</table>
+
+<h4><a name="_SwipeHit" class="hidden"></a>SwipeHit <a href="../Source_engine/weapon.html#24" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">struct</span> <span class="source_type"><a href="../engine/weapon.html#SwipeHit" class="source">SwipeHit</a></span><br />
+{<blockquote><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span>;<br />
+<span class="source_keyword">var</span> <span class="source_keyword">int</span> HighMask;<br />
+<span class="source_keyword">var</span> <span class="source_keyword">int</span> LowMask;<br />
+</blockquote>};
+</div>
+<blockquote class="comment">
+
+<br />
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_BeginState-Active" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BeginState <span class="function_state">Active</span> <a href="../Source_engine/weapon.html#850" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  BeginState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BeginState-Drop" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BeginState <span class="function_state">Drop</span> <a href="../Source_engine/weapon.html#1205" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  BeginState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BeginState-Pickup" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BeginState <span class="function_state">Pickup</span> <a href="../Source_engine/weapon.html#760" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  BeginState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BeginState-Settling" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BeginState <span class="function_state">Settling</span> <a href="../Source_engine/weapon.html#1335" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  BeginState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BeginState-Stow" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BeginState <span class="function_state">Stow</span> <a href="../Source_engine/weapon.html#881" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  BeginState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BeginState-Swinging" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BeginState <span class="function_state">Swinging</span> <a href="../Source_engine/weapon.html#1735" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  BeginState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BeginState-Throw" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BeginState <span class="function_state">Throw</span> <a href="../Source_engine/weapon.html#917" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  BeginState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CalculateDamage-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CalculateDamage <span class="function_state"></span> <a href="../Source_engine/weapon.html#243" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">int</span> CalculateDamage ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> Victim) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CanBeUsed-Settling" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CanBeUsed <span class="function_state">Settling</span> <a href="../Source_engine/weapon.html#1375" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> CanBeUsed ( <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> <span class="source_type">Other</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CanBeUsed-Throw" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CanBeUsed <span class="function_state">Throw</span> <a href="../Source_engine/weapon.html#981" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> CanBeUsed ( <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> <span class="source_type">Other</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ClearSwipeArray-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ClearSwipeArray <span class="function_state"></span> <a href="../Source_engine/weapon.html#1535" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ClearSwipeArray ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ClearSwipeArray-Swinging" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ClearSwipeArray <span class="function_state">Swinging</span> <a href="../Source_engine/weapon.html#1790" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ClearSwipeArray ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ClientAltFire-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ClientAltFire <span class="function_state"></span> <a href="../Source_engine/weapon.html#1522" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> ClientAltFire ( <span class="source_keyword">float</span> <span class="source_type">Value</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ClientFire-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ClientFire <span class="function_state"></span> <a href="../Source_engine/weapon.html#1517" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> ClientFire ( <span class="source_keyword">float</span> <span class="source_type">Value</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ClientWeaponEvent-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ClientWeaponEvent <span class="function_state"></span> <a href="../Source_engine/weapon.html#232" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ClientWeaponEvent ( <span class="source_keyword">name</span> EventType )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Debug-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Debug <span class="function_state"></span> <a href="../Source_engine/weapon.html#1857" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span>  Debug ( <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span>, <span class="source_keyword">int</span> mode) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Destroyed-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Destroyed <span class="function_state"></span> <a href="../Source_engine/weapon.html#482" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Destroyed ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DisableSwipeTrail-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DisableSwipeTrail <span class="function_state"></span> <a href="../Source_engine/weapon.html#677" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  DisableSwipeTrail ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DoWeaponSwipe-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DoWeaponSwipe <span class="function_state"></span> <a href="../Source_engine/weapon.html#1627" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> DoWeaponSwipe ( <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> <span class="source_type">A</span>, <span class="source_keyword">int</span> LowMask, <span class="source_keyword">int</span> HighMask, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitLoc, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitNorm, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> Momentum) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DropFrom-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DropFrom <span class="function_state"></span> <a href="../Source_engine/weapon.html#1497" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  DropFrom ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> StartLocation) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EnableSwipeTrail-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> EnableSwipeTrail <span class="function_state"></span> <a href="../Source_engine/weapon.html#656" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  EnableSwipeTrail ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EndState-Active" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> EndState <span class="function_state">Active</span> <a href="../Source_engine/weapon.html#855" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  EndState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EndState-Drop" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> EndState <span class="function_state">Drop</span> <a href="../Source_engine/weapon.html#1224" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  EndState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EndState-Pickup" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> EndState <span class="function_state">Pickup</span> <a href="../Source_engine/weapon.html#769" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  EndState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EndState-Settling" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> EndState <span class="function_state">Settling</span> <a href="../Source_engine/weapon.html#1357" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  EndState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EndState-Stow" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> EndState <span class="function_state">Stow</span> <a href="../Source_engine/weapon.html#893" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  EndState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EndState-Throw" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> EndState <span class="function_state">Throw</span> <a href="../Source_engine/weapon.html#966" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  EndState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FinishAttack-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> FinishAttack <span class="function_state"></span> <a href="../Source_engine/weapon.html#1487" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  FinishAttack ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FinishAttack-Swinging" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> FinishAttack <span class="function_state">Swinging</span> <a href="../Source_engine/weapon.html#1801" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  FinishAttack ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ForceAltFire-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ForceAltFire <span class="function_state"></span> <a href="../Source_engine/weapon.html#1528" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ForceAltFire (  )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ForceFire-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ForceFire <span class="function_state"></span> <a href="../Source_engine/weapon.html#1527" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ForceFire (  )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FrameNotify-Swinging" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> FrameNotify <span class="function_state">Swinging</span> <a href="../Source_engine/weapon.html#1742" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  FrameNotify ( <span class="source_keyword">int</span> framepassed) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FrameSwept-Swinging" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> FrameSwept <span class="function_state">Swinging</span> <a href="../Source_engine/weapon.html#1752" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span>  FrameSwept ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> B1, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> E1, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> B2, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> E2) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetUsePriority-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetUsePriority <span class="function_state"></span> <a href="../Source_engine/weapon.html#604" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">int</span> GetUsePriority ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HandlePickupQuery-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> HandlePickupQuery <span class="function_state"></span> <a href="../Source_engine/weapon.html#385" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> HandlePickupQuery ( <span class="source_type"><a href="../engine/inventory.html" class="source">inventory</a></span> <span class="source_type">Item</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HitWall-Drop" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> HitWall <span class="function_state">Drop</span> <a href="../Source_engine/weapon.html#1238" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  <span class="source_type">HitWall</span> ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitNormal, <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">HitWall</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HitWall-Settling" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> HitWall <span class="function_state">Settling</span> <a href="../Source_engine/weapon.html#1387" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  <span class="source_type">HitWall</span> ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitNormal, <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">HitWall</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HitWall-Throw" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> HitWall <span class="function_state">Throw</span> <a href="../Source_engine/weapon.html#991" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  <span class="source_type">HitWall</span> ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitNormal, <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">HitWall</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Landed-Drop" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Landed <span class="function_state">Drop</span> <a href="../Source_engine/weapon.html#1233" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Landed ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitNormal, <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> HitActor) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Landed-Settling" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Landed <span class="function_state">Settling</span> <a href="../Source_engine/weapon.html#1365" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Landed ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitNormal, <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> HitActor) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Landed-Throw" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Landed <span class="function_state">Throw</span> <a href="../Source_engine/weapon.html#986" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Landed ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitNormal, <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> HitActor) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MatterForJoint-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> MatterForJoint <span class="function_state"></span> <a href="../Source_engine/weapon.html#418" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_type"><a href="../core/object.html#EMatterType" class="source">EMatterType</a></span> MatterForJoint ( <span class="source_keyword">int</span> joint) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayHitMatterSound-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayHitMatterSound <span class="function_state"></span> <a href="../Source_engine/weapon.html#428" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayHitMatterSound ( <span class="source_type"><a href="../core/object.html#EMatterType" class="source">EMatterType</a></span> matter) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayNormalFrame-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayNormalFrame <span class="function_state"></span> <a href="../Source_engine/weapon.html#556" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayNormalFrame ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlaySwipeSound-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlaySwipeSound <span class="function_state"></span> <a href="../Source_engine/weapon.html#1716" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlaySwipeSound ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayThrowFrame-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayThrowFrame <span class="function_state"></span> <a href="../Source_engine/weapon.html#546" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayThrowFrame ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PostBeginPlay-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PostBeginPlay <span class="function_state"></span> <a href="../Source_engine/weapon.html#190" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PostBeginPlay ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PostRender-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PostRender <span class="function_state"></span> <a href="../Source_engine/weapon.html#230" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span>  PostRender ( <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PoweredUpCallback1-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PoweredUpCallback1 <span class="function_state"></span> <a href="../Source_engine/weapon.html#371" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PoweredUpCallback1 (  )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PoweredUpCallback2-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PoweredUpCallback2 <span class="function_state"></span> <a href="../Source_engine/weapon.html#372" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PoweredUpCallback2 (  )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PowerUp-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PowerUp <span class="function_state"></span> <a href="../Source_engine/weapon.html#326" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  <span class="source_type"><a href="../runei/powerup.html" class="source">PowerUp</a></span> ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PowerupEnd-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PowerupEnd <span class="function_state"></span> <a href="../Source_engine/weapon.html#337" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PowerupEnd ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PowerupEnded-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PowerupEnded <span class="function_state"></span> <a href="../Source_engine/weapon.html#293" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PowerupEnded ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PowerupEndingPulseOff-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PowerupEndingPulseOff <span class="function_state"></span> <a href="../Source_engine/weapon.html#287" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PowerupEndingPulseOff ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PowerupEndingPulseOn-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PowerupEndingPulseOn <span class="function_state"></span> <a href="../Source_engine/weapon.html#280" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PowerupEndingPulseOn ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PowerupInit-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PowerupInit <span class="function_state"></span> <a href="../Source_engine/weapon.html#272" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PowerupInit ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PowerUpNotify1-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PowerUpNotify1 <span class="function_state"></span> <a href="../Source_engine/weapon.html#369" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PowerUpNotify1 (  )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PowerUpNotify2-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PowerUpNotify2 <span class="function_state"></span> <a href="../Source_engine/weapon.html#370" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PowerUpNotify2 (  )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PowerupStatusChanged-" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> PowerupStatusChanged <span class="function_state"></span> <a href="../Source_engine/weapon.html#305" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">event</span>  PowerupStatusChanged ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PreRender-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PreRender <span class="function_state"></span> <a href="../Source_engine/weapon.html#229" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span>  PreRender ( <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RateSelf-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> RateSelf <span class="function_state"></span> <a href="../Source_engine/weapon.html#592" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">float</span> RateSelf ( <span class="source_keyword2">out</span> <span class="source_keyword">int</span> <span class="source_type">bUseAltMode</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RemovePowerupEffect-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> RemovePowerupEffect <span class="function_state"></span> <a href="../Source_engine/weapon.html#302" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span>  RemovePowerupEffect ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RemoveStab-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> RemoveStab <span class="function_state"></span> <a href="../Source_engine/weapon.html#735" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  RemoveStab ( <span class="source_type"><a href="../engine/carcass.html" class="source">Carcass</a></span> Victim, <span class="source_keyword">int</span> JointIndex) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SetWeaponStay-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SetWeaponStay <span class="function_state"></span> <a href="../Source_engine/weapon.html#379" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SetWeaponStay ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SpawnCopy-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SpawnCopy <span class="function_state"></span> <a href="../Source_engine/weapon.html#619" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_type"><a href="../engine/inventory.html" class="source">inventory</a></span> SpawnCopy ( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">Other</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SpawnHitEffect-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SpawnHitEffect <span class="function_state"></span> <a href="../Source_engine/weapon.html#1706" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SpawnHitEffect ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitLoc, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitNorm, <span class="source_keyword">int</span> LowMask, <span class="source_keyword">int</span> HighMask, <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> HitActor) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SpawnPowerupEffect-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SpawnPowerupEffect <span class="function_state"></span> <a href="../Source_engine/weapon.html#301" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span>  SpawnPowerupEffect ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SplashJump-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SplashJump <span class="function_state"></span> <a href="../Source_engine/weapon.html#224" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> SplashJump ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StabActor-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> StabActor <span class="function_state"></span> <a href="../Source_engine/weapon.html#717" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  StabActor ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> Victim) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StartAttack-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> StartAttack <span class="function_state"></span> <a href="../Source_engine/weapon.html#1477" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  StartAttack ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StartAttack-Active" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> StartAttack <span class="function_state">Active</span> <a href="../Source_engine/weapon.html#859" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  StartAttack ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StartAttack-Swinging" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> StartAttack <span class="function_state">Swinging</span> <a href="../Source_engine/weapon.html#1786" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  StartAttack ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StartDamageCheck-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> StartDamageCheck <span class="function_state"></span> <a href="../Source_engine/weapon.html#1725" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  StartDamageCheck (  )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StickInWall-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> StickInWall <span class="function_state"></span> <a href="../Source_engine/weapon.html#374" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> StickInWall ( <span class="source_type"><a href="../core/object.html#EMatterType" class="source">EMatterType</a></span> matter) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SuggestAttackStyle-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SuggestAttackStyle <span class="function_state"></span> <a href="../Source_engine/weapon.html#568" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">float</span> SuggestAttackStyle ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SuggestDefenseStyle-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SuggestDefenseStyle <span class="function_state"></span> <a href="../Source_engine/weapon.html#580" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">float</span> SuggestDefenseStyle ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SwipeArrayCheck-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SwipeArrayCheck <span class="function_state"></span> <a href="../Source_engine/weapon.html#1560" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> SwipeArrayCheck ( <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> <span class="source_type">A</span>, <span class="source_keyword">int</span> LowMask, <span class="source_keyword">int</span> HighMask) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Timer-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Timer <span class="function_state"></span> <a href="../Source_engine/weapon.html#346" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Timer ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Touch-Drop" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Touch <span class="function_state">Drop</span> <a href="../Source_engine/weapon.html#1293" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Touch ( <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> <span class="source_type">Other</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Touch-Pickup" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Touch <span class="function_state">Pickup</span> <a href="../Source_engine/weapon.html#783" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Touch ( <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> <span class="source_type">Other</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Touch-Settling" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Touch <span class="function_state">Settling</span> <a href="../Source_engine/weapon.html#1439" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Touch ( <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> <span class="source_type">Other</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Touch-Throw" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Touch <span class="function_state">Throw</span> <a href="../Source_engine/weapon.html#1095" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Touch ( <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> <span class="source_type">Other</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TravelPostAccept-" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> TravelPostAccept <span class="function_state"></span> <a href="../Source_engine/weapon.html#497" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span>  TravelPostAccept ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TweenToStill-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> TweenToStill <span class="function_state"></span> <a href="../Source_engine/weapon.html#1515" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span>  TweenToStill (  )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_WeaponFire-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> WeaponFire <span class="function_state"></span> <a href="../Source_engine/weapon.html#366" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  WeaponFire ( <span class="source_keyword">int</span> SwingCount )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ZoneChange-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ZoneChange <span class="function_state"></span> <a href="../Source_engine/weapon.html#694" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ZoneChange ( <span class="source_type"><a href="../engine/zoneinfo.html" class="source">ZoneInfo</a></span> <span class="source_type">newZone</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ZoneChange-Throw" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ZoneChange <span class="function_state">Throw</span> <a href="../Source_engine/weapon.html#957" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ZoneChange ( <span class="source_type"><a href="../engine/zoneinfo.html" class="source">ZoneInfo</a></span> <span class="source_type">newZone</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     ThrownDamageType=ThrownWeaponBlunt
+     WeaponSweepExtent=<span class="source_int">8.000000</span>
+     SweepJoint2=<span class="source_int">1</span>
+     ExtendedLength=<span class="source_int">10.000000</span>
+     RunePowerRequired=<span class="source_int">40</span>
+     RunePowerDuration=<span class="source_int">20.000000</span>
+     SweepVector=(<span class="source_type">Y</span>=<span class="source_int">1.000000</span>)
+     PitchDeviation=<span class="source_int">0.090000</span>
+     Icon=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'Engine.S_Weapon'</span>
+     <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span>=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'Engine.S_Weapon'</span>
+     LODDistMax=<span class="source_int">4000.000000</span>
+     LODCurve=LOD_CURVE_ULTRA_CONSERVATIVE
+     SoundRadius=<span class="source_int">38</span>
+     CollisionHeight=<span class="source_int">10.000000</span>
+     Mass=<span class="source_int">10.000000</span>
+     Buoyancy=<span class="source_int">4.000000</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../engine/engine-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_engine/weapon.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#Weapon">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../engine/waybeacondest.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../engine/weaponswipe.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:27:27.827 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

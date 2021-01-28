@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - Source: RuneI.Plants</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header"><a href="../runei/plants.html">Class</a></td>
+	<td class="header_hilight">Source</td>
+	<td class="header"><a class="header" href="../classtree.html#Plants">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../Source_runei/pinetreesnow.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../Source_runei/plate.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#Source_runei/plants.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/plants.html">Plants</a></h1>
+<br />
+<div class="source"><table class="source"><tr><td class="source_lineno"><span class="source_lineno">00001<br />00002<br />00003<br />00004<br />00005<br />00006<br />00007<br />00008<br />00009<br />00010<br />00011<br />00012<br />00013<br />00014<br />00015<br />00016<br />00017<br />00018<br />00019<br />00020<br />
+00021<br />00022<br />00023<br />00024<br />00025<br />00026<br />00027<br />00028<br />00029<br />00030<br />00031<br />00032<br />00033<br />00034<br />00035<br />00036<br />00037<br />00038<br />00039<br />00040<br />
+00041<br />00042<br />00043<br />00044<br />00045<br />00046<br />00047<br />00048<br />00049<br />00050<br />00051<br />00052<br />00053<br />00054<br />00055<br />00056<br />00057<br />00058<br />00059<br />00060<br />
+00061<br />00062<br />00063<br />00064<br />00065<br />00066<br />00067<br />00068<br />00069<br />00070<br />00071<br />00072<br />00073<br />00074<br />00075<br />00076<br />00077<br />00078<br />00079<br />00080<br />
+00081<br />00082<br />00083<br />00084<br />00085<br />00086<br />00087<br />00088<br />00089<br />00090<br />00091<br />00092<br />00093<br />00094<br />00095<br />00096<br />00097<br />00098<br />00099<br />00100<br />
+00101<br />00102<br />00103<br />00104<br />00105<br />00106<br />00107<br />00108<br />00109<br />00110<br />00111<br />00112<br />00113<br />00114<br />00115<br />00116<br />00117<br />00118<br />00119<br />00120<br />
+00121<br />00122<br />00123<br />00124<br />00125<br />00126<br />00127<br />00128<br />00129</span></td>
+<td class="source"><pre class="source"><a name="1"></a><span class="source_comment">//=============================================================================
+</span><a name="2"></a><span class="source_comment">// Plants.
+</span><a name="3"></a><span class="source_comment">//=============================================================================
+</span><a name="4"></a><span class="source_keyword">class</span> <span class="source_type"><a href="../runei/plants.html" class="source">Plants</a></span> <span class="source_keyword">extends</span> <span class="source_type"><a href="../runei/decorationrune.html" class="source">DecorationRune</a></span>
+<a name="5"></a>    <span class="source_keyword2">abstract</span>;
+<a name="6"></a>
+<a name="7"></a>
+<a name="8"></a><span class="source_keyword">var</span>(Dynamics) <span class="source_keyword">float</span> Dampening;
+<a name="9"></a><span class="source_keyword">var</span>(Dynamics) <span class="source_keyword">int</span>   RotAngle;
+<a name="10"></a><span class="source_keyword">var</span>(Dynamics) <span class="source_keyword">float</span> AccelMag;
+<a name="11"></a><span class="source_keyword">var</span>(Dynamics) <span class="source_keyword">float</span> TouchFactor;
+<a name="12"></a><span class="source_keyword">var</span>(Dynamics) <span class="source_keyword">float</span> HitFactor;
+<a name="13"></a><span class="source_keyword">var</span>() <span class="source_keyword">float</span> TimeBetweenBrushes;
+<a name="14"></a>
+<a name="15"></a><span class="source_keyword">var</span>(Sounds) <span class="source_type">sound</span> BrushSound;
+<a name="16"></a>
+<a name="17"></a><span class="source_keyword">var</span> <span class="source_keyword">float</span> LastSoundPlayed;
+<a name="18"></a>
+<a name="19"></a><span class="source_keyword2">simulated</span> <span class="source_keyword">event</span> GetAccelJointParms(<span class="source_keyword">int</span> joint, <span class="source_keyword2">out</span> <span class="source_keyword">float</span> DampFactor, <span class="source_keyword2">out</span> <span class="source_keyword">float</span> RotThreshold)
+<a name="20"></a>{
+<a name="21"></a>    DampFactor = Dampening;
+<a name="22"></a>    RotThreshold = RotAngle;
+<a name="23"></a>}
+<a name="24"></a>
+<a name="25"></a><span class="source_keyword2">simulated</span> <span class="source_keyword">event</span> <span class="source_keyword">float</span> GetAccelJointMagnitude(<span class="source_keyword">int</span> joint)
+<a name="26"></a>{
+<a name="27"></a>    <span class="source_keyword">return</span> AccelMag;
+<a name="28"></a>}
+<a name="29"></a>
+<a name="30"></a><span class="source_keyword">function</span> <span class="source_type"><a href="../core/object.html#EMatterType" class="source">EMatterType</a></span> MatterForJoint(<span class="source_keyword">int</span> joint)
+<a name="31"></a>{   
+<a name="32"></a>    <span class="source_keyword">return</span> MATTER_NONE;
+<a name="33"></a>}
+<a name="34"></a>
+<a name="35"></a><span class="source_keyword">function</span> PostBeginPlay()
+<a name="36"></a>{
+<a name="37"></a>    LastSoundPlayed = <span class="source_type">Level</span>.TimeSeconds;
+<a name="38"></a>    <span class="source_keyword">Super</span>.PreBeginPlay();
+<a name="39"></a>}
+<a name="40"></a>
+<a name="41"></a><span class="source_keyword">function</span> <span class="source_keyword">bool</span> JointDamaged(<span class="source_keyword">int</span> Damage, <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">EventInstigator</span>, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitLoc, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> Momentum, <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">DamageType</a></span>, <span class="source_keyword">int</span> joint)
+<a name="42"></a>{
+<a name="43"></a>    <span class="source_keyword">if</span> (joint != <span class="source_int">0</span>)
+<a name="44"></a>    {
+<a name="45"></a>        ApplyJointForce(joint, Momentum*HitFactor);
+<a name="46"></a>
+<a name="47"></a>        <span class="source_keyword">if</span> (<span class="source_type">Level</span>.TimeSeconds - LastSoundPlayed &gt; TimeBetweenBrushes)
+<a name="48"></a>        {
+<a name="49"></a>            LastSoundPlayed = <span class="source_type">Level</span>.TimeSeconds;
+<a name="50"></a>            PlaySound(BrushSound, SLOT_None);
+<a name="51"></a>        }
+<a name="52"></a>    }
+<a name="53"></a>
+<a name="54"></a>    <span class="source_keyword">Super</span>.JointDamaged(Damage, <span class="source_type">EventInstigator</span>, HitLoc, Momentum, <span class="source_type"><a href="../engine/damagetype.html" class="source">DamageType</a></span>, joint);
+<a name="55"></a>    <span class="source_keyword">return</span> <span class="source_keyword">true</span>;
+<a name="56"></a>}
+<a name="57"></a>
+<a name="58"></a><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span> JointTouchedBy(<span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span>, <span class="source_keyword">int</span> joint)
+<a name="59"></a>{
+<a name="60"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> vel;
+<a name="61"></a>
+<a name="62"></a>    vel = <span class="source_type">Other</span>.Velocity * TouchFactor;
+<a name="63"></a>    ApplyJointForce(joint, vel);
+<a name="64"></a>    PlayBrushSound(<span class="source_type">Other</span>);
+<a name="65"></a>}
+<a name="66"></a>
+<a name="67"></a><span class="source_keyword">function</span> PlayBrushSound(<span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span>)
+<a name="68"></a>{
+<a name="69"></a>    <span class="source_keyword">if</span> (<span class="source_type">Level</span>.TimeSeconds - LastSoundPlayed &gt; TimeBetweenBrushes)
+<a name="70"></a>    {
+<a name="71"></a>        PlaySound(BrushSound, SLOT_None);
+<a name="72"></a>        LastSoundPlayed = <span class="source_type">Level</span>.TimeSeconds;
+<a name="73"></a>        <span class="source_keyword">if</span> (<span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span>(<span class="source_type">Other</span>) != <span class="source_keyword">None</span> || <span class="source_type">Other</span>.Instigator != <span class="source_keyword">None</span>)
+<a name="74"></a>        {
+<a name="75"></a>            <span class="source_type">Other</span>.MakeNoise(<span class="source_int">1.0</span>);
+<a name="76"></a>        }
+<a name="77"></a>    }
+<a name="78"></a>}
+<a name="79"></a>
+<a name="80"></a><span class="source_keyword">function</span> AddVelocity(<span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> NewVelocity)
+<a name="81"></a>{
+<a name="82"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> ix,<span class="source_type">num</span>;
+<a name="83"></a>    <span class="source_type">num</span> = NumJoints();
+<a name="84"></a>    <span class="source_keyword">for</span> (ix=<span class="source_int">0</span>; ix&lt;<span class="source_type">num</span>; ix++)
+<a name="85"></a>    {
+<a name="86"></a>        <span class="source_keyword">if</span> ((JointFlags[ix] & JOINT_FLAG_COLLISION)!=<span class="source_int">0</span>)
+<a name="87"></a>        {
+<a name="88"></a>            ApplyJointForce(ix, NewVelocity);
+<a name="89"></a>        }
+<a name="90"></a>    }
+<a name="91"></a>}
+<a name="92"></a>
+<a name="93"></a><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span> Debug(<span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span>, <span class="source_keyword">int</span> mode)
+<a name="94"></a>{
+<a name="95"></a>    <span class="source_keyword">Super</span>.Debug(<span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span>, mode);
+<a name="96"></a>    
+<a name="97"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawText(<span class="source_string">"Dynamics:"</span>);
+<a name="98"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.CurY -= <span class="source_int">8</span>;
+<a name="99"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawText(<span class="source_string">" Dampening:   "</span>$Dampening);
+<a name="100"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.CurY -= <span class="source_int">8</span>;
+<a name="101"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawText(<span class="source_string">" RotAngle:    "</span>$RotAngle);
+<a name="102"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.CurY -= <span class="source_int">8</span>;
+<a name="103"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawText(<span class="source_string">" AccelMag:    "</span>$AccelMag);
+<a name="104"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.CurY -= <span class="source_int">8</span>;
+<a name="105"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawText(<span class="source_string">" TouchFactor: "</span>$TouchFactor);
+<a name="106"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.CurY -= <span class="source_int">8</span>;
+<a name="107"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawText(<span class="source_string">" HitFactor:   "</span>$HitFactor);
+<a name="108"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.CurY -= <span class="source_int">8</span>;
+<a name="109"></a>}
+<a name="110"></a>
+<a name="111"></a><span class="source_keyword">defaultproperties</span>
+<a name="112"></a>{
+<a name="113"></a>     Dampening=<span class="source_int">0.025000</span>
+<a name="114"></a>     RotAngle=<span class="source_int">8000</span>
+<a name="115"></a>     AccelMag=<span class="source_int">10000.000000</span>
+<a name="116"></a>     TouchFactor=<span class="source_int">0.100000</span>
+<a name="117"></a>     HitFactor=<span class="source_int">0.100000</span>
+<a name="118"></a>     TimeBetweenBrushes=<span class="source_int">1.500000</span>
+<a name="119"></a>     bBurnable=<span class="source_keyword">True</span>
+<a name="120"></a>     bStatic=<span class="source_keyword">False</span>
+<a name="121"></a>     DrawType=DT_SkeletalMesh
+<a name="122"></a>     TransientSoundRadius=<span class="source_int">1200.000000</span>
+<a name="123"></a>     bCollideActors=<span class="source_keyword">True</span>
+<a name="124"></a>     bCollideWorld=<span class="source_keyword">True</span>
+<a name="125"></a>     bBlockActors=<span class="source_keyword">True</span>
+<a name="126"></a>     bBlockPlayers=<span class="source_keyword">True</span>
+<a name="127"></a>     bJointsTouch=<span class="source_keyword">True</span>
+<a name="128"></a>}
+<a name="129"></a></pre></td></tr></table></div>
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header"><a href="../runei/plants.html">Class</a></td>
+	<td class="header_hilight">Source</td>
+	<td class="header"><a class="header" href="../classtree.html#Plants">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../Source_runei/pinetreesnow.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../Source_runei/plate.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Class file time: Thu 28/1/2021 11:38:04.000 - Creation time: Thu 28/1/2021 11:41:28.612 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

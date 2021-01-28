@@ -1,0 +1,356 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - Source: RMenu.RuneMenuAdminClientWindow</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../rmenu/rmenu-overview.html">Package</a></td>
+	<td class="header"><a href="../rmenu/runemenuadminclientwindow.html">Class</a></td>
+	<td class="header_hilight">Source</td>
+	<td class="header"><a class="header" href="../classtree.html#RuneMenuAdminClientWindow">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../Source_rmenu/runemenuabouttop.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../Source_rmenu/runemenuadminscrollclient.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#Source_rmenu/runemenuadminclientwindow.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runemenuadminclientwindow.html">RuneMenuAdminClientWindow</a></h1>
+<br />
+<div class="source"><table class="source"><tr><td class="source_lineno"><span class="source_lineno">00001<br />00002<br />00003<br />00004<br />00005<br />00006<br />00007<br />00008<br />00009<br />00010<br />00011<br />00012<br />00013<br />00014<br />00015<br />00016<br />00017<br />00018<br />00019<br />00020<br />
+00021<br />00022<br />00023<br />00024<br />00025<br />00026<br />00027<br />00028<br />00029<br />00030<br />00031<br />00032<br />00033<br />00034<br />00035<br />00036<br />00037<br />00038<br />00039<br />00040<br />
+00041<br />00042<br />00043<br />00044<br />00045<br />00046<br />00047<br />00048<br />00049<br />00050<br />00051<br />00052<br />00053<br />00054<br />00055<br />00056<br />00057<br />00058<br />00059<br />00060<br />
+00061<br />00062<br />00063<br />00064<br />00065<br />00066<br />00067<br />00068<br />00069<br />00070<br />00071<br />00072<br />00073<br />00074<br />00075<br />00076<br />00077<br />00078<br />00079<br />00080<br />
+00081<br />00082<br />00083<br />00084<br />00085<br />00086<br />00087<br />00088<br />00089<br />00090<br />00091<br />00092<br />00093<br />00094<br />00095<br />00096<br />00097<br />00098<br />00099<br />00100<br />
+00101<br />00102<br />00103<br />00104<br />00105<br />00106<br />00107<br />00108<br />00109<br />00110<br />00111<br />00112<br />00113<br />00114<br />00115<br />00116<br />00117<br />00118<br />00119<br />00120<br />
+00121<br />00122<br />00123<br />00124<br />00125<br />00126<br />00127<br />00128<br />00129<br />00130<br />00131<br />00132<br />00133<br />00134<br />00135<br />00136<br />00137<br />00138<br />00139<br />00140<br />
+00141<br />00142<br />00143<br />00144<br />00145<br />00146<br />00147<br />00148<br />00149<br />00150<br />00151<br />00152<br />00153<br />00154<br />00155<br />00156<br />00157<br />00158<br />00159<br />00160<br />
+00161<br />00162<br />00163<br />00164<br />00165<br />00166<br />00167<br />00168<br />00169<br />00170<br />00171<br />00172<br />00173<br />00174<br />00175<br />00176<br />00177<br />00178<br />00179<br />00180<br />
+00181<br />00182<br />00183<br />00184<br />00185<br />00186<br />00187<br />00188<br />00189<br />00190<br />00191<br />00192<br />00193<br />00194<br />00195<br />00196<br />00197<br />00198<br />00199<br />00200<br />
+00201<br />00202<br />00203<br />00204<br />00205<br />00206<br />00207<br />00208<br />00209<br />00210<br />00211<br />00212<br />00213<br />00214<br />00215<br />00216<br />00217<br />00218<br />00219<br />00220<br />
+00221<br />00222<br />00223<br />00224<br />00225<br />00226<br />00227<br />00228<br />00229<br />00230<br />00231<br />00232<br />00233<br />00234<br />00235<br />00236<br />00237<br />00238<br />00239<br />00240<br />
+00241<br />00242<br />00243<br />00244<br />00245<br />00246<br />00247<br />00248<br />00249<br />00250<br />00251<br />00252<br />00253<br />00254<br />00255<br />00256<br />00257<br />00258<br />00259<br />00260<br />
+00261<br />00262<br />00263<br />00264<br />00265<br />00266<br />00267<br />00268<br />00269<br />00270<br />00271<br />00272<br />00273<br />00274<br />00275<br />00276<br />00277<br />00278<br />00279<br />00280<br />
+00281<br />00282<br />00283<br />00284</span></td>
+<td class="source"><pre class="source"><a name="0"></a><span class="source_keyword">class</span> <span class="source_type"><a href="../rmenu/runemenuadminclientwindow.html" class="source">RuneMenuAdminClientWindow</a></span> <span class="source_keyword">extends</span> <span class="source_type"><a href="../rmenu/runemenupagewindow.html" class="source">RuneMenuPageWindow</a></span>;
+<a name="2"></a>
+<a name="3"></a><span class="source_keyword">var</span> <span class="source_keyword">int</span> ControlOffset;
+<a name="4"></a><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bInitialized;
+<a name="5"></a>
+<a name="6"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindoweditcontrol.html" class="source">UWindowEditControl</a></span> AdminEMailEdit;
+<a name="7"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> AdminEMailText;
+<a name="8"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> AdminEMailHelp;
+<a name="9"></a>
+<a name="10"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindoweditcontrol.html" class="source">UWindowEditControl</a></span> AdminNameEdit;
+<a name="11"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> AdminNameText;
+<a name="12"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> AdminNameHelp;
+<a name="13"></a>
+<a name="14"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindoweditcontrol.html" class="source">UWindowEditControl</a></span> MOTDLine1Edit;
+<a name="15"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> MOTDLine1Text;
+<a name="16"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> MOTDLine1Help;
+<a name="17"></a>
+<a name="18"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindoweditcontrol.html" class="source">UWindowEditControl</a></span> MOTDLine2Edit;
+<a name="19"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> MOTDLine2Text;
+<a name="20"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> MOTDLine2Help;
+<a name="21"></a>
+<a name="22"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindoweditcontrol.html" class="source">UWindowEditControl</a></span> MOTDLine3Edit;
+<a name="23"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> MOTDLine3Text;
+<a name="24"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> MOTDLine3Help;
+<a name="25"></a>
+<a name="26"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindoweditcontrol.html" class="source">UWindowEditControl</a></span> MOTDLine4Edit;
+<a name="27"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> MOTDLine4Text;
+<a name="28"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> MOTDLine4Help;
+<a name="29"></a>
+<a name="30"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindoweditcontrol.html" class="source">UWindowEditControl</a></span> ServerNameEdit;
+<a name="31"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> ServerNameText;
+<a name="32"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> ServerNameHelp;
+<a name="33"></a>
+<a name="34"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowcheckbox.html" class="source">UWindowCheckbox</a></span> DoUplinkCheck;
+<a name="35"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> DoUplinkText;
+<a name="36"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> DoUplinkHelp;
+<a name="37"></a>
+<a name="38"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowcheckbox.html" class="source">UWindowCheckbox</a></span> LanPlayCheck;
+<a name="39"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> LanPlayText;
+<a name="40"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> LanPlayHelp;
+<a name="41"></a>
+<a name="42"></a><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">bool</span> bLanPlay;
+<a name="43"></a><span class="source_keyword">var</span> <span class="source_keyword">Class</span> IpServerClass;
+<a name="44"></a>
+<a name="45"></a><span class="source_keyword">function</span> Created()
+<a name="46"></a>{
+<a name="47"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> ControlWidth, ControlLeft, ControlRight;
+<a name="48"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> CenterWidth, CenterPos;
+<a name="49"></a>
+<a name="50"></a>    ControlOffset = <span class="source_int">20</span>;
+<a name="51"></a>    bInitialized = <span class="source_keyword">False</span>;
+<a name="52"></a>
+<a name="53"></a>    <span class="source_keyword">Super</span>.Created();
+<a name="54"></a>
+<a name="55"></a>    ControlWidth = WinWidth/<span class="source_int">2.5</span>;
+<a name="56"></a>    ControlLeft = (WinWidth/<span class="source_int">2</span> - ControlWidth)/<span class="source_int">2</span>;
+<a name="57"></a>    ControlRight = WinWidth/<span class="source_int">2</span> + ControlLeft;
+<a name="58"></a>
+<a name="59"></a>    CenterWidth = (WinWidth/<span class="source_int">4</span>)*<span class="source_int">3</span>;
+<a name="60"></a>    CenterPos = (WinWidth - CenterWidth)/<span class="source_int">2</span>;
+<a name="61"></a>
+<a name="62"></a>    ServerNameEdit = <span class="source_type"><a href="../uwindow/uwindoweditcontrol.html" class="source">UWindowEditControl</a></span>(CreateControl(<span class="source_keyword">class</span><span class="source_name">'UWindowEditControl'</span>, CenterPos, ControlOffset, CenterWidth, <span class="source_int">1</span>));
+<a name="63"></a>    ServerNameEdit.SetText(ServerNameText);
+<a name="64"></a>    ServerNameEdit.SetHelpText(ServerNameHelp);
+<a name="65"></a>    ServerNameEdit.SetFont(F_Normal);
+<a name="66"></a>    ServerNameEdit.SetNumericOnly(<span class="source_keyword">False</span>);
+<a name="67"></a>    ServerNameEdit.SetMaxLength(<span class="source_int">205</span>);
+<a name="68"></a>    ServerNameEdit.SetDelayedNotify(<span class="source_keyword">True</span>);
+<a name="69"></a>    ServerNameEdit.SetValue(<span class="source_keyword">class</span><span class="source_name">'Engine.GameReplicationInfo'</span>.default.ServerName);
+<a name="70"></a>    ControlOffset += <span class="source_int">20</span>;
+<a name="71"></a>
+<a name="72"></a>    AdminNameEdit = <span class="source_type"><a href="../uwindow/uwindoweditcontrol.html" class="source">UWindowEditControl</a></span>(CreateControl(<span class="source_keyword">class</span><span class="source_name">'UWindowEditControl'</span>, CenterPos, ControlOffset, CenterWidth, <span class="source_int">1</span>));
+<a name="73"></a>    AdminNameEdit.SetText(AdminNameText);
+<a name="74"></a>    AdminNameEdit.SetHelpText(AdminNameHelp);
+<a name="75"></a>    AdminNameEdit.SetFont(F_Normal);
+<a name="76"></a>    AdminNameEdit.SetNumericOnly(<span class="source_keyword">False</span>);
+<a name="77"></a>    AdminNameEdit.SetMaxLength(<span class="source_int">205</span>);
+<a name="78"></a>    AdminNameEdit.SetDelayedNotify(<span class="source_keyword">True</span>);
+<a name="79"></a>    AdminNameEdit.SetValue(<span class="source_keyword">class</span><span class="source_name">'Engine.GameReplicationInfo'</span>.default.AdminName);
+<a name="80"></a>    ControlOffset += <span class="source_int">20</span>;
+<a name="81"></a>    
+<a name="82"></a>    AdminEmailEdit = <span class="source_type"><a href="../uwindow/uwindoweditcontrol.html" class="source">UWindowEditControl</a></span>(CreateControl(<span class="source_keyword">class</span><span class="source_name">'UWindowEditControl'</span>, CenterPos, ControlOffset, CenterWidth, <span class="source_int">1</span>));
+<a name="83"></a>    AdminEmailEdit.SetText(AdminEmailText);
+<a name="84"></a>    AdminEmailEdit.SetHelpText(AdminEmailHelp);
+<a name="85"></a>    AdminEmailEdit.SetFont(F_Normal);
+<a name="86"></a>    AdminEmailEdit.SetNumericOnly(<span class="source_keyword">False</span>);
+<a name="87"></a>    AdminEmailEdit.SetMaxLength(<span class="source_int">205</span>);
+<a name="88"></a>    AdminEmailEdit.SetDelayedNotify(<span class="source_keyword">True</span>);
+<a name="89"></a>    AdminEmailEdit.SetValue(<span class="source_keyword">class</span><span class="source_name">'Engine.GameReplicationInfo'</span>.default.AdminEmail);
+<a name="90"></a>    ControlOffset += <span class="source_int">20</span>;
+<a name="91"></a>
+<a name="92"></a>    MOTDLine1Edit = <span class="source_type"><a href="../uwindow/uwindoweditcontrol.html" class="source">UWindowEditControl</a></span>(CreateControl(<span class="source_keyword">class</span><span class="source_name">'UWindowEditControl'</span>, CenterPos, ControlOffset, CenterWidth, <span class="source_int">1</span>));
+<a name="93"></a>    MOTDLine1Edit.SetText(MOTDLine1Text);
+<a name="94"></a>    MOTDLine1Edit.SetHelpText(MOTDLine1Help);
+<a name="95"></a>    MOTDLine1Edit.SetFont(F_Normal);
+<a name="96"></a>    MOTDLine1Edit.SetNumericOnly(<span class="source_keyword">False</span>);
+<a name="97"></a>    MOTDLine1Edit.SetMaxLength(<span class="source_int">205</span>);
+<a name="98"></a>    MOTDLine1Edit.SetDelayedNotify(<span class="source_keyword">True</span>);
+<a name="99"></a>    MOTDLine1Edit.SetValue(<span class="source_keyword">class</span><span class="source_name">'Engine.GameReplicationInfo'</span>.default.MOTDLine1);
+<a name="100"></a>    ControlOffset += <span class="source_int">20</span>;
+<a name="101"></a>
+<a name="102"></a>    MOTDLine2Edit = <span class="source_type"><a href="../uwindow/uwindoweditcontrol.html" class="source">UWindowEditControl</a></span>(CreateControl(<span class="source_keyword">class</span><span class="source_name">'UWindowEditControl'</span>, CenterPos, ControlOffset, CenterWidth, <span class="source_int">1</span>));
+<a name="103"></a>    MOTDLine2Edit.SetText(MOTDLine2Text);
+<a name="104"></a>    MOTDLine2Edit.SetHelpText(MOTDLine2Help);
+<a name="105"></a>    MOTDLine2Edit.SetFont(F_Normal);
+<a name="106"></a>    MOTDLine2Edit.SetNumericOnly(<span class="source_keyword">False</span>);
+<a name="107"></a>    MOTDLine2Edit.SetMaxLength(<span class="source_int">205</span>);
+<a name="108"></a>    MOTDLine2Edit.SetDelayedNotify(<span class="source_keyword">True</span>);
+<a name="109"></a>    MOTDLine2Edit.SetValue(<span class="source_keyword">class</span><span class="source_name">'Engine.GameReplicationInfo'</span>.default.MOTDLine2);
+<a name="110"></a>    ControlOffset += <span class="source_int">20</span>;
+<a name="111"></a>
+<a name="112"></a>    MOTDLine3Edit = <span class="source_type"><a href="../uwindow/uwindoweditcontrol.html" class="source">UWindowEditControl</a></span>(CreateControl(<span class="source_keyword">class</span><span class="source_name">'UWindowEditControl'</span>, CenterPos, ControlOffset, CenterWidth, <span class="source_int">1</span>));
+<a name="113"></a>    MOTDLine3Edit.SetText(MOTDLine3Text);
+<a name="114"></a>    MOTDLine3Edit.SetHelpText(MOTDLine3Help);
+<a name="115"></a>    MOTDLine3Edit.SetFont(F_Normal);
+<a name="116"></a>    MOTDLine3Edit.SetNumericOnly(<span class="source_keyword">False</span>);
+<a name="117"></a>    MOTDLine3Edit.SetMaxLength(<span class="source_int">205</span>);
+<a name="118"></a>    MOTDLine3Edit.SetDelayedNotify(<span class="source_keyword">True</span>);
+<a name="119"></a>    MOTDLine3Edit.SetValue(<span class="source_keyword">class</span><span class="source_name">'Engine.GameReplicationInfo'</span>.default.MOTDLine3);
+<a name="120"></a>    ControlOffset += <span class="source_int">20</span>;
+<a name="121"></a>
+<a name="122"></a>    MOTDLine4Edit = <span class="source_type"><a href="../uwindow/uwindoweditcontrol.html" class="source">UWindowEditControl</a></span>(CreateControl(<span class="source_keyword">class</span><span class="source_name">'UWindowEditControl'</span>, CenterPos, ControlOffset, CenterWidth, <span class="source_int">1</span>));
+<a name="123"></a>    MOTDLine4Edit.SetText(MOTDLine4Text);
+<a name="124"></a>    MOTDLine4Edit.SetHelpText(MOTDLine4Help);
+<a name="125"></a>    MOTDLine4Edit.SetFont(F_Normal);
+<a name="126"></a>    MOTDLine4Edit.SetNumericOnly(<span class="source_keyword">False</span>);
+<a name="127"></a>    MOTDLine4Edit.SetMaxLength(<span class="source_int">205</span>);
+<a name="128"></a>    MOTDLine4Edit.SetDelayedNotify(<span class="source_keyword">True</span>);
+<a name="129"></a>    MOTDLine4Edit.SetValue(<span class="source_keyword">class</span><span class="source_name">'Engine.GameReplicationInfo'</span>.default.MOTDLine4);
+<a name="130"></a>    ControlOffset += <span class="source_int">20</span>;
+<a name="131"></a>
+<a name="132"></a>    DoUplinkCheck = <span class="source_type"><a href="../uwindow/uwindowcheckbox.html" class="source">UWindowCheckbox</a></span>(CreateControl(<span class="source_keyword">class</span><span class="source_name">'UWindowCheckbox'</span>, CenterPos, ControlOffset, CenterWidth, <span class="source_int">1</span>));
+<a name="133"></a>    DoUplinkCheck.SetText(DoUplinkText);
+<a name="134"></a>    DoUplinkCheck.SetHelpText(DoUplinkHelp);
+<a name="135"></a>    DoUplinkCheck.SetFont(F_Normal);
+<a name="136"></a>    DoUplinkCheck.Align = TA_Left;
+<a name="137"></a>    <span class="source_comment">// Force IPServer to load!!!
+</span><a name="138"></a>    IPServerClass = <span class="source_keyword">Class</span>(DynamicLoadObject(<span class="source_string">"IpServer.UdpServerUplink"</span>, <span class="source_keyword">class</span><span class="source_name">'Class'</span>));
+<a name="139"></a>    DoUplinkCheck.bChecked = GetPlayerOwner().ConsoleCommand(<span class="source_string">"get IpServer.UdpServerUplink DoUplink"</span>) ~= <span class="source_string">"True"</span>;
+<a name="140"></a>    ControlOffset += <span class="source_int">20</span>;
+<a name="141"></a>
+<a name="142"></a>    LanPlayCheck = <span class="source_type"><a href="../uwindow/uwindowcheckbox.html" class="source">UWindowCheckbox</a></span>(CreateControl(<span class="source_keyword">class</span><span class="source_name">'UWindowCheckbox'</span>, CenterPos, ControlOffset, CenterWidth, <span class="source_int">1</span>));
+<a name="143"></a>    LanPlayCheck.SetText(LanPlayText);
+<a name="144"></a>    LanPlayCheck.SetHelpText(LanPlayHelp);
+<a name="145"></a>    LanPlayCheck.SetFont(F_Normal);
+<a name="146"></a>    LanPlayCheck.Align = TA_Left;
+<a name="147"></a>    LanPlayCheck.bChecked = bLanPlay;
+<a name="148"></a>    ControlOffset += <span class="source_int">20</span>;
+<a name="149"></a>}
+<a name="150"></a>
+<a name="151"></a><span class="source_keyword">function</span> Notify(<span class="source_type"><a href="../uwindow/uwindowdialogcontrol.html" class="source">UWindowDialogControl</a></span> <span class="source_type">C</span>, <span class="source_keyword">byte</span> E)
+<a name="152"></a>{
+<a name="153"></a>    <span class="source_keyword">switch</span>(E)
+<a name="154"></a>    {
+<a name="155"></a>    <span class="source_keyword">case</span> DE_Change:
+<a name="156"></a>        <span class="source_keyword">switch</span>(<span class="source_type">C</span>)
+<a name="157"></a>        {
+<a name="158"></a>        <span class="source_keyword">case</span> AdminEMailEdit:
+<a name="159"></a>            <span class="source_keyword">class</span><span class="source_name">'Engine.GameReplicationInfo'</span>.default.AdminEmail = AdminEmailEdit.GetValue();
+<a name="160"></a>            <span class="source_keyword">break</span>;
+<a name="161"></a>        <span class="source_keyword">case</span> AdminNameEdit:
+<a name="162"></a>            <span class="source_keyword">class</span><span class="source_name">'Engine.GameReplicationInfo'</span>.default.AdminName = AdminNameEdit.GetValue();
+<a name="163"></a>            <span class="source_keyword">break</span>;
+<a name="164"></a>        <span class="source_keyword">case</span> MOTDLine1Edit:
+<a name="165"></a>            <span class="source_keyword">class</span><span class="source_name">'Engine.GameReplicationInfo'</span>.default.MOTDLine1 = MOTDLine1Edit.GetValue();
+<a name="166"></a>            <span class="source_keyword">break</span>;
+<a name="167"></a>        <span class="source_keyword">case</span> MOTDLine2Edit:
+<a name="168"></a>            <span class="source_keyword">class</span><span class="source_name">'Engine.GameReplicationInfo'</span>.default.MOTDLine2 = MOTDLine2Edit.GetValue();
+<a name="169"></a>            <span class="source_keyword">break</span>;
+<a name="170"></a>        <span class="source_keyword">case</span> MOTDLine3Edit:
+<a name="171"></a>            <span class="source_keyword">class</span><span class="source_name">'Engine.GameReplicationInfo'</span>.default.MOTDLine3 = MOTDLine3Edit.GetValue();
+<a name="172"></a>            <span class="source_keyword">break</span>;
+<a name="173"></a>        <span class="source_keyword">case</span> MOTDLine4Edit:
+<a name="174"></a>            <span class="source_keyword">class</span><span class="source_name">'Engine.GameReplicationInfo'</span>.default.MOTDLine4 = MOTDLine4Edit.GetValue();
+<a name="175"></a>            <span class="source_keyword">break</span>;
+<a name="176"></a>        <span class="source_keyword">case</span> ServerNameEdit:
+<a name="177"></a>            <span class="source_keyword">class</span><span class="source_name">'Engine.GameReplicationInfo'</span>.default.ServerName = ServerNameEdit.GetValue();
+<a name="178"></a>            <span class="source_keyword">break</span>;
+<a name="179"></a>        <span class="source_keyword">case</span> DoUplinkCheck:
+<a name="180"></a>            <span class="source_keyword">if</span>(DoUplinkCheck.bChecked)
+<a name="181"></a>                GetPlayerOwner().ConsoleCommand(<span class="source_string">"set IpServer.UdpServerUplink DoUplink True"</span>);
+<a name="182"></a>            <span class="source_keyword">else</span>
+<a name="183"></a>                GetPlayerOwner().ConsoleCommand(<span class="source_string">"set IpServer.UdpServerUplink DoUplink False"</span>);
+<a name="184"></a>            IPServerClass.<span class="source_keyword2">Static</span>.StaticSaveConfig();
+<a name="185"></a>            <span class="source_keyword">break</span>;
+<a name="186"></a>        <span class="source_keyword">case</span> LanPlayCheck:
+<a name="187"></a>            bLanPlay = LanPlayCheck.bChecked;
+<a name="188"></a>            <span class="source_keyword">break</span>;
+<a name="189"></a>        }
+<a name="190"></a>    }
+<a name="191"></a>    <span class="source_keyword">Super</span>.Notify(<span class="source_type">C</span>, E);
+<a name="192"></a>}
+<a name="193"></a>
+<a name="194"></a><span class="source_keyword">function</span> SaveConfigs()
+<a name="195"></a>{
+<a name="196"></a>    SaveConfig();
+<a name="197"></a>    <span class="source_keyword">Super</span>.SaveConfigs();
+<a name="198"></a>    <span class="source_keyword">class</span><span class="source_name">'Engine.GameReplicationInfo'</span>.<span class="source_keyword2">static</span>.StaticSaveConfig();
+<a name="199"></a>}
+<a name="200"></a>
+<a name="201"></a><span class="source_keyword">function</span> AfterCreate()
+<a name="202"></a>{
+<a name="203"></a>    <span class="source_keyword">Super</span>.AfterCreate();
+<a name="204"></a>
+<a name="205"></a>    DesiredWidth = <span class="source_int">270</span>;
+<a name="206"></a>    DesiredHeight = ControlOffset + <span class="source_int">5</span>;
+<a name="207"></a>
+<a name="208"></a>    bInitialized = <span class="source_keyword">True</span>;
+<a name="209"></a>}
+<a name="210"></a>
+<a name="211"></a><span class="source_keyword">function</span> BeforePaint(<span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type">C</span>, <span class="source_keyword">float</span> X, <span class="source_keyword">float</span> <span class="source_type">Y</span>)
+<a name="212"></a>{
+<a name="213"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> ControlWidth, ControlLeft, ControlRight;
+<a name="214"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> CenterWidth, CenterPos;
+<a name="215"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> EditWidth;
+<a name="216"></a>
+<a name="217"></a>    <span class="source_keyword">Super</span>.BeforePaint(<span class="source_type">C</span>, X, <span class="source_type">Y</span>);
+<a name="218"></a>
+<a name="219"></a>    ControlWidth = WinWidth/<span class="source_int">2.5</span>;
+<a name="220"></a>    ControlLeft = (WinWidth/<span class="source_int">2</span> - ControlWidth)/<span class="source_int">2</span>;
+<a name="221"></a>    ControlRight = WinWidth/<span class="source_int">2</span> + ControlLeft;
+<a name="222"></a>
+<a name="223"></a>    CenterWidth = (WinWidth/<span class="source_int">7</span>)*<span class="source_int">6</span>;
+<a name="224"></a>    CenterPos = (WinWidth - CenterWidth)/<span class="source_int">2</span>;
+<a name="225"></a>    
+<a name="226"></a>    EditWidth = CenterWidth - <span class="source_int">100</span>;
+<a name="227"></a>
+<a name="228"></a>    ServerNameEdit.SetSize(CenterWidth, <span class="source_int">1</span>);
+<a name="229"></a>    ServerNameEdit.WinLeft = CenterPos;
+<a name="230"></a>    ServerNameEdit.EditBoxWidth = EditWidth;
+<a name="231"></a>
+<a name="232"></a>    AdminNameEdit.SetSize(CenterWidth, <span class="source_int">1</span>);
+<a name="233"></a>    AdminNameEdit.WinLeft = CenterPos;
+<a name="234"></a>    AdminNameEdit.EditBoxWidth = EditWidth;
+<a name="235"></a>
+<a name="236"></a>    AdminEmailEdit.SetSize(CenterWidth, <span class="source_int">1</span>);
+<a name="237"></a>    AdminEmailEdit.WinLeft = CenterPos;
+<a name="238"></a>    AdminEmailEdit.EditBoxWidth = EditWidth;
+<a name="239"></a>
+<a name="240"></a>    MOTDLine1Edit.SetSize(CenterWidth, <span class="source_int">1</span>);
+<a name="241"></a>    MOTDLine1Edit.WinLeft = CenterPos;
+<a name="242"></a>    MOTDLine1Edit.EditBoxWidth = EditWidth;
+<a name="243"></a>
+<a name="244"></a>    MOTDLine2Edit.SetSize(CenterWidth, <span class="source_int">1</span>);
+<a name="245"></a>    MOTDLine2Edit.WinLeft = CenterPos;
+<a name="246"></a>    MOTDLine2Edit.EditBoxWidth = EditWidth;
+<a name="247"></a>    
+<a name="248"></a>    MOTDLine3Edit.SetSize(CenterWidth, <span class="source_int">1</span>);
+<a name="249"></a>    MOTDLine3Edit.WinLeft = CenterPos;
+<a name="250"></a>    MOTDLine3Edit.EditBoxWidth = EditWidth;
+<a name="251"></a>
+<a name="252"></a>    MOTDLine4Edit.SetSize(CenterWidth, <span class="source_int">1</span>);
+<a name="253"></a>    MOTDLine4Edit.WinLeft = CenterPos;
+<a name="254"></a>    MOTDLine4Edit.EditBoxWidth = EditWidth;
+<a name="255"></a>
+<a name="256"></a>    DoUplinkCheck.SetSize(CenterWidth-EditWidth+<span class="source_int">16</span>, <span class="source_int">1</span>);
+<a name="257"></a>    DoUplinkCheck.WinLeft = CenterPos;
+<a name="258"></a>
+<a name="259"></a>    LanPlayCheck.SetSize(CenterWidth-EditWidth+<span class="source_int">16</span>, <span class="source_int">1</span>);
+<a name="260"></a>    LanPlayCheck.WinLeft = CenterPos;
+<a name="261"></a>}
+<a name="262"></a>
+<a name="263"></a><span class="source_keyword">defaultproperties</span>
+<a name="264"></a>{
+<a name="265"></a>     AdminEmailText=<span class="source_string">"Admin Email"</span>
+<a name="266"></a>     AdminEMailHelp=<span class="source_string">"Enter an email address so users of this server can contact you."</span>
+<a name="267"></a>     AdminNameText=<span class="source_string">"Admin Name"</span>
+<a name="268"></a>     AdminNameHelp=<span class="source_string">"Enter the name of this server's administrator."</span>
+<a name="269"></a>     MOTDLine1Text=<span class="source_string">"MOTD Line 1"</span>
+<a name="270"></a>     MOTDLine1Help=<span class="source_string">"Enter a message of the day which will be presented to users upon joining your server."</span>
+<a name="271"></a>     MOTDLine2Text=<span class="source_string">"MOTD Line 2"</span>
+<a name="272"></a>     MOTDLine2Help=<span class="source_string">"Enter a message of the day which will be presented to users upon joining your server."</span>
+<a name="273"></a>     MOTDLine3Text=<span class="source_string">"MOTD Line 3"</span>
+<a name="274"></a>     MOTDLine3Help=<span class="source_string">"Enter a message of the day which will be presented to users upon joining your server."</span>
+<a name="275"></a>     MOTDLine4Text=<span class="source_string">"MOTD Line 4"</span>
+<a name="276"></a>     MOTDLine4Help=<span class="source_string">"Enter a message of the day which will be presented to users upon joining your server."</span>
+<a name="277"></a>     ServerNameText=<span class="source_string">"Server Name"</span>
+<a name="278"></a>     ServerNameHelp=<span class="source_string">"Enter the full description for your server, to appear in query tools such as UBrowser or GameSpy."</span>
+<a name="279"></a>     DoUplinkText=<span class="source_string">"Advertise Server"</span>
+<a name="280"></a>     DoUplinkHelp=<span class="source_string">"If checked, your server will be advertised to the Master Server, so your server will appear in the global server list."</span>
+<a name="281"></a>     LanPlayText=<span class="source_string">"Optimize for LAN"</span>
+<a name="282"></a>     LanPlayHelp=<span class="source_string">"If checked, a dedicated server started will be optimized for play on a LAN."</span>
+<a name="283"></a>}
+<a name="284"></a></pre></td></tr></table></div>
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../rmenu/rmenu-overview.html">Package</a></td>
+	<td class="header"><a href="../rmenu/runemenuadminclientwindow.html">Class</a></td>
+	<td class="header_hilight">Source</td>
+	<td class="header"><a class="header" href="../classtree.html#RuneMenuAdminClientWindow">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../Source_rmenu/runemenuabouttop.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../Source_rmenu/runemenuadminscrollclient.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Class file time: Thu 28/1/2021 11:08:54.000 - Creation time: Thu 28/1/2021 11:27:45.047 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

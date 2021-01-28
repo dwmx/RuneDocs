@@ -1,0 +1,611 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - Source: RuneI.TeamGame</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header"><a href="../runei/teamgame.html">Class</a></td>
+	<td class="header_hilight">Source</td>
+	<td class="header"><a class="header" href="../classtree.html#TeamGame">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../Source_runei/tarpframe.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../Source_runei/teaminfo.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#Source_runei/teamgame.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/teamgame.html">TeamGame</a></h1>
+<br />
+<div class="source"><table class="source"><tr><td class="source_lineno"><span class="source_lineno">00001<br />00002<br />00003<br />00004<br />00005<br />00006<br />00007<br />00008<br />00009<br />00010<br />00011<br />00012<br />00013<br />00014<br />00015<br />00016<br />00017<br />00018<br />00019<br />00020<br />
+00021<br />00022<br />00023<br />00024<br />00025<br />00026<br />00027<br />00028<br />00029<br />00030<br />00031<br />00032<br />00033<br />00034<br />00035<br />00036<br />00037<br />00038<br />00039<br />00040<br />
+00041<br />00042<br />00043<br />00044<br />00045<br />00046<br />00047<br />00048<br />00049<br />00050<br />00051<br />00052<br />00053<br />00054<br />00055<br />00056<br />00057<br />00058<br />00059<br />00060<br />
+00061<br />00062<br />00063<br />00064<br />00065<br />00066<br />00067<br />00068<br />00069<br />00070<br />00071<br />00072<br />00073<br />00074<br />00075<br />00076<br />00077<br />00078<br />00079<br />00080<br />
+00081<br />00082<br />00083<br />00084<br />00085<br />00086<br />00087<br />00088<br />00089<br />00090<br />00091<br />00092<br />00093<br />00094<br />00095<br />00096<br />00097<br />00098<br />00099<br />00100<br />
+00101<br />00102<br />00103<br />00104<br />00105<br />00106<br />00107<br />00108<br />00109<br />00110<br />00111<br />00112<br />00113<br />00114<br />00115<br />00116<br />00117<br />00118<br />00119<br />00120<br />
+00121<br />00122<br />00123<br />00124<br />00125<br />00126<br />00127<br />00128<br />00129<br />00130<br />00131<br />00132<br />00133<br />00134<br />00135<br />00136<br />00137<br />00138<br />00139<br />00140<br />
+00141<br />00142<br />00143<br />00144<br />00145<br />00146<br />00147<br />00148<br />00149<br />00150<br />00151<br />00152<br />00153<br />00154<br />00155<br />00156<br />00157<br />00158<br />00159<br />00160<br />
+00161<br />00162<br />00163<br />00164<br />00165<br />00166<br />00167<br />00168<br />00169<br />00170<br />00171<br />00172<br />00173<br />00174<br />00175<br />00176<br />00177<br />00178<br />00179<br />00180<br />
+00181<br />00182<br />00183<br />00184<br />00185<br />00186<br />00187<br />00188<br />00189<br />00190<br />00191<br />00192<br />00193<br />00194<br />00195<br />00196<br />00197<br />00198<br />00199<br />00200<br />
+00201<br />00202<br />00203<br />00204<br />00205<br />00206<br />00207<br />00208<br />00209<br />00210<br />00211<br />00212<br />00213<br />00214<br />00215<br />00216<br />00217<br />00218<br />00219<br />00220<br />
+00221<br />00222<br />00223<br />00224<br />00225<br />00226<br />00227<br />00228<br />00229<br />00230<br />00231<br />00232<br />00233<br />00234<br />00235<br />00236<br />00237<br />00238<br />00239<br />00240<br />
+00241<br />00242<br />00243<br />00244<br />00245<br />00246<br />00247<br />00248<br />00249<br />00250<br />00251<br />00252<br />00253<br />00254<br />00255<br />00256<br />00257<br />00258<br />00259<br />00260<br />
+00261<br />00262<br />00263<br />00264<br />00265<br />00266<br />00267<br />00268<br />00269<br />00270<br />00271<br />00272<br />00273<br />00274<br />00275<br />00276<br />00277<br />00278<br />00279<br />00280<br />
+00281<br />00282<br />00283<br />00284<br />00285<br />00286<br />00287<br />00288<br />00289<br />00290<br />00291<br />00292<br />00293<br />00294<br />00295<br />00296<br />00297<br />00298<br />00299<br />00300<br />
+00301<br />00302<br />00303<br />00304<br />00305<br />00306<br />00307<br />00308<br />00309<br />00310<br />00311<br />00312<br />00313<br />00314<br />00315<br />00316<br />00317<br />00318<br />00319<br />00320<br />
+00321<br />00322<br />00323<br />00324<br />00325<br />00326<br />00327<br />00328<br />00329<br />00330<br />00331<br />00332<br />00333<br />00334<br />00335<br />00336<br />00337<br />00338<br />00339<br />00340<br />
+00341<br />00342<br />00343<br />00344<br />00345<br />00346<br />00347<br />00348<br />00349<br />00350<br />00351<br />00352<br />00353<br />00354<br />00355<br />00356<br />00357<br />00358<br />00359<br />00360<br />
+00361<br />00362<br />00363<br />00364<br />00365<br />00366<br />00367<br />00368<br />00369<br />00370<br />00371<br />00372<br />00373<br />00374<br />00375<br />00376<br />00377<br />00378<br />00379<br />00380<br />
+00381<br />00382<br />00383<br />00384<br />00385<br />00386<br />00387<br />00388<br />00389<br />00390<br />00391<br />00392<br />00393<br />00394<br />00395<br />00396<br />00397<br />00398<br />00399<br />00400<br />
+00401<br />00402<br />00403<br />00404<br />00405<br />00406<br />00407<br />00408<br />00409<br />00410<br />00411<br />00412<br />00413<br />00414<br />00415<br />00416<br />00417<br />00418<br />00419<br />00420<br />
+00421<br />00422<br />00423<br />00424<br />00425<br />00426<br />00427<br />00428<br />00429<br />00430<br />00431<br />00432<br />00433<br />00434<br />00435<br />00436<br />00437<br />00438<br />00439<br />00440<br />
+00441<br />00442<br />00443<br />00444<br />00445<br />00446<br />00447<br />00448<br />00449<br />00450<br />00451<br />00452<br />00453<br />00454<br />00455<br />00456<br />00457<br />00458<br />00459<br />00460<br />
+00461<br />00462<br />00463<br />00464<br />00465<br />00466<br />00467<br />00468<br />00469<br />00470<br />00471<br />00472<br />00473<br />00474<br />00475<br />00476<br />00477<br />00478<br />00479<br />00480<br />
+00481<br />00482<br />00483<br />00484<br />00485<br />00486<br />00487<br />00488<br />00489<br />00490<br />00491<br />00492<br />00493<br />00494<br />00495<br />00496<br />00497<br />00498<br />00499<br />00500<br />
+00501<br />00502<br />00503<br />00504<br />00505<br />00506<br />00507<br />00508<br />00509<br />00510<br />00511<br />00512<br />00513<br />00514<br />00515<br />00516<br />00517<br />00518<br />00519<br />00520<br />
+00521<br />00522<br />00523<br />00524<br />00525<br />00526<br />00527</span></td>
+<td class="source"><pre class="source"><a name="1"></a><span class="source_comment">//=============================================================================
+</span><a name="2"></a><span class="source_comment">// TeamGame.
+</span><a name="3"></a><span class="source_comment">//=============================================================================
+</span><a name="4"></a><span class="source_keyword">class</span> <span class="source_type"><a href="../runei/teamgame.html" class="source">TeamGame</a></span> <span class="source_keyword">extends</span> <span class="source_type"><a href="../runei/runemultiplayer.html" class="source">RuneMultiPlayer</a></span>;
+<a name="5"></a>
+<a name="6"></a><span class="source_keyword">var</span>() <span class="source_keyword2">config</span> <span class="source_keyword">bool</span>   bSpawnInTeamArea;
+<a name="7"></a><span class="source_keyword">var</span>() <span class="source_keyword2">config</span> <span class="source_keyword">bool</span>   bNoTeamChanges;
+<a name="8"></a><span class="source_keyword">var</span>() <span class="source_keyword2">config</span> <span class="source_keyword">float</span>  FriendlyFireScale; <span class="source_comment">//scale friendly fire damage by this value
+</span><a name="9"></a><span class="source_keyword">var</span>() <span class="source_keyword2">config</span> <span class="source_keyword">int</span>    MaxTeams; <span class="source_comment">//Maximum number of teams allowed in (up to 4)
+</span><a name="10"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../runei/teaminfo.html" class="source">TeamInfo</a></span> Teams[<span class="source_int">4</span>];
+<a name="11"></a><span class="source_keyword">var</span>() <span class="source_keyword2">config</span> <span class="source_keyword">float</span>  GoalTeamScore; <span class="source_comment">//like fraglimit
+</span><a name="12"></a><span class="source_keyword">var</span>() <span class="source_keyword2">config</span> <span class="source_keyword">int</span>    MaxTeamSize;
+<a name="13"></a><span class="source_keyword">var</span>  <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> NewTeamMessage;
+<a name="14"></a><span class="source_keyword">var</span>     <span class="source_keyword">int</span>         NextBotTeam;
+<a name="15"></a><span class="source_keyword">var</span> <span class="source_keyword">byte</span> TEAM_Red, TEAM_Blue, TEAM_Green, TEAM_Gold;
+<a name="16"></a><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> TeamColor[<span class="source_int">4</span>];
+<a name="17"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> VColorRed, VColorBlue, VColorGreen, VColorGold, VColorWhite;
+<a name="18"></a><span class="source_keyword">var</span> <span class="source_keyword">int</span> TeamSupported[<span class="source_int">4</span>]; <span class="source_comment">// RUNE
+</span><a name="19"></a>
+<a name="20"></a><span class="source_keyword">function</span> PostBeginPlay()
+<a name="21"></a>{
+<a name="22"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> <span class="source_type">i</span>;
+<a name="23"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../engine/navigationpoint.html" class="source">NavigationPoint</a></span> <span class="source_type">N</span>;
+<a name="24"></a>
+<a name="25"></a>    <span class="source_keyword">for</span> (<span class="source_type">i</span>=<span class="source_int">0</span>;<span class="source_type">i</span>&lt;<span class="source_int">4</span>;<span class="source_type">i</span>++)
+<a name="26"></a>    {
+<a name="27"></a>        Teams[<span class="source_type">i</span>] = Spawn(<span class="source_keyword">class</span><span class="source_name">'TeamInfo'</span>);
+<a name="28"></a>        Teams[<span class="source_type">i</span>].Size = <span class="source_int">0</span>;
+<a name="29"></a>        Teams[<span class="source_type">i</span>].Score = <span class="source_int">0</span>;
+<a name="30"></a>        Teams[<span class="source_type">i</span>].TeamName = TeamColor[<span class="source_type">i</span>];
+<a name="31"></a>        Teams[<span class="source_type">i</span>].TeamIndex = <span class="source_type">i</span>;
+<a name="32"></a>        <span class="source_type"><a href="../runei/runegamereplicationinfo.html" class="source">RuneGameReplicationInfo</a></span>(<span class="source_type"><a href="../engine/gamereplicationinfo.html" class="source">GameReplicationInfo</a></span>).Teams[<span class="source_type">i</span>] = Teams[<span class="source_type">i</span>];
+<a name="33"></a>    }
+<a name="34"></a>
+<a name="35"></a>    <span class="source_keyword">Super</span>.PostBeginPlay();
+<a name="36"></a>
+<a name="37"></a>    <span class="source_keyword">if</span>(bLevelHasTeamOnly)
+<a name="38"></a>    {
+<a name="39"></a>        <span class="source_keyword">for</span> ( <span class="source_type">N</span>=<span class="source_type">Level</span>.NavigationPointList; <span class="source_type">N</span>!=<span class="source_keyword">None</span>; <span class="source_type">N</span>=<span class="source_type">N</span>.nextNavigationPoint )
+<a name="40"></a>        {
+<a name="41"></a>            <span class="source_keyword">if</span> (<span class="source_type">N</span>.IsA(<span class="source_name">'PlayerStart'</span>))
+<a name="42"></a>            {
+<a name="43"></a>                <span class="source_comment">//Only use TeamOnly starts to determine supported colors..
+</span><a name="44"></a>                <span class="source_keyword">if</span>(<span class="source_type"><a href="../engine/playerstart.html" class="source">PlayerStart</a></span>(<span class="source_type">N</span>).bTeamOnly)
+<a name="45"></a>                    TeamSupported[<span class="source_type"><a href="../engine/playerstart.html" class="source">PlayerStart</a></span>(<span class="source_type">N</span>).TeamNumber] = <span class="source_int">1</span>;
+<a name="46"></a>            }
+<a name="47"></a>        }
+<a name="48"></a>    }
+<a name="49"></a>    <span class="source_keyword">else</span>
+<a name="50"></a>    { <span class="source_comment">// RUNE:  Non-teamonly supports all colors
+</span><a name="51"></a>        <span class="source_keyword">for</span>(<span class="source_type">i</span> = <span class="source_int">0</span>; <span class="source_type">i</span> &lt; <span class="source_int">4</span>; <span class="source_type">i</span>++)
+<a name="52"></a>        {
+<a name="53"></a>            TeamSupported[<span class="source_type">i</span>] = <span class="source_int">1</span>;
+<a name="54"></a>        }
+<a name="55"></a>    }
+<a name="56"></a>}
+<a name="57"></a>
+<a name="58"></a><span class="source_keyword">event</span> InitGame( <span class="source_keyword">string</span> Options, <span class="source_keyword2">out</span> <span class="source_keyword">string</span> <span class="source_type">Error</span> )
+<a name="59"></a>{
+<a name="60"></a>    <span class="source_keyword">Super</span>.InitGame(Options, <span class="source_type">Error</span>);
+<a name="61"></a>    GoalTeamScore = FragLimit;
+<a name="62"></a>}
+<a name="63"></a>
+<a name="64"></a><span class="source_keyword">function</span> InitGameReplicationInfo()
+<a name="65"></a>{
+<a name="66"></a>    <span class="source_keyword">Super</span>.InitGameReplicationInfo();
+<a name="67"></a>    <span class="source_type"><a href="../runei/runegamereplicationinfo.html" class="source">RuneGameReplicationInfo</a></span>(<span class="source_type"><a href="../engine/gamereplicationinfo.html" class="source">GameReplicationInfo</a></span>).GoalTeamScore = GoalTeamScore;
+<a name="68"></a>}
+<a name="69"></a>
+<a name="70"></a><span class="source_keyword">function</span> <span class="source_keyword">string</span> GetRules()
+<a name="71"></a>{
+<a name="72"></a>    <span class="source_keyword">local</span> <span class="source_keyword">string</span> ResultSet;
+<a name="73"></a>    ResultSet = <span class="source_keyword">Super</span>.GetRules();
+<a name="74"></a>
+<a name="75"></a>    <span class="source_comment">// FriendlyFire
+</span><a name="76"></a>    ResultSet = ResultSet$<span class="source_string">"\\friendlyfire\\"</span>$<span class="source_keyword">int</span>(FriendlyFireScale*<span class="source_int">100</span>)$<span class="source_string">"%"</span>;
+<a name="77"></a>
+<a name="78"></a>    <span class="source_keyword">return</span> ResultSet;
+<a name="79"></a>}
+<a name="80"></a>
+<a name="81"></a><span class="source_comment">//------------------------------------------------------------------------------
+</span><a name="82"></a><span class="source_comment">// Player start functions
+</span><a name="83"></a>
+<a name="84"></a>
+<a name="85"></a><span class="source_comment">//FindPlayerStart
+</span><a name="86"></a><span class="source_comment">//- add teamnames as new teams enter
+</span><a name="87"></a><span class="source_comment">//- choose team spawn point if bSpawnInTeamArea
+</span><a name="88"></a>
+<a name="89"></a><span class="source_keyword">function</span> <span class="source_type"><a href="../engine/playerpawn.html" class="source">playerpawn</a></span> Login
+<a name="90"></a>(
+<a name="91"></a>    <span class="source_keyword">string</span> Portal,
+<a name="92"></a>    <span class="source_keyword">string</span> Options,
+<a name="93"></a>    <span class="source_keyword2">out</span> <span class="source_keyword">string</span> <span class="source_type">Error</span>,
+<a name="94"></a>    <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/playerpawn.html" class="source">playerpawn</a></span>&gt; SpawnClass
+<a name="95"></a>)
+<a name="96"></a>{
+<a name="97"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../engine/playerpawn.html" class="source">PlayerPawn</a></span> <span class="source_type">newPlayer</span>;
+<a name="98"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../engine/navigationpoint.html" class="source">NavigationPoint</a></span> StartSpot;
+<a name="99"></a>    <span class="source_keyword">local</span> <span class="source_keyword">byte</span> newTeam;
+<a name="100"></a>
+<a name="101"></a>    <span class="source_type">newPlayer</span> = <span class="source_keyword">Super</span>.Login(Portal, Options, <span class="source_type">Error</span>, SpawnClass);
+<a name="102"></a>    <span class="source_keyword">if</span> ( <span class="source_type">newPlayer</span> == <span class="source_keyword">None</span>)
+<a name="103"></a>        <span class="source_keyword">return</span> <span class="source_keyword">None</span>;
+<a name="104"></a>
+<a name="105"></a>    newTeam = <span class="source_type">newPlayer</span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.Team;
+<a name="106"></a>
+<a name="107"></a>    <span class="source_keyword">if</span>(newTeam &lt; <span class="source_int">0</span> || newTeam &gt;= MaxTeams || TeamSupported[newTeam] == <span class="source_int">0</span>)
+<a name="108"></a>    {
+<a name="109"></a>        newTeam = ForceTeam(<span class="source_type">newPlayer</span>);
+<a name="110"></a>    }
+<a name="111"></a>
+<a name="112"></a>    <span class="source_keyword">if</span> (bSpawnInTeamArea || bLevelHasTeamOnly)
+<a name="113"></a>    {                                   <span class="source_comment">//Attempt to fix Client spawn problem
+</span><a name="114"></a>        StartSpot = FindPlayerStart(<span class="source_type">newPlayer</span>, newTeam, Portal);
+<a name="115"></a>        <span class="source_keyword">if</span> ( StartSpot != <span class="source_keyword">None</span> )
+<a name="116"></a>        {
+<a name="117"></a>            <span class="source_type">NewPlayer</span>.SetLocation(StartSpot.Location);
+<a name="118"></a>            <span class="source_type">NewPlayer</span>.SetRotation(StartSpot.Rotation);
+<a name="119"></a>            <span class="source_type">NewPlayer</span>.ViewRotation = StartSpot.Rotation;
+<a name="120"></a>            <span class="source_type">NewPlayer</span>.ClientSetRotation(<span class="source_type">NewPlayer</span>.Rotation);
+<a name="121"></a>            StartSpot.PlayTeleportEffect( <span class="source_type">NewPlayer</span>, <span class="source_keyword">true</span> );
+<a name="122"></a>        }
+<a name="123"></a>    }
+<a name="124"></a>                
+<a name="125"></a>    <span class="source_keyword">return</span> <span class="source_type">newPlayer</span>;
+<a name="126"></a>}
+<a name="127"></a>
+<a name="128"></a><span class="source_keyword">function</span> <span class="source_keyword">byte</span> ForceTeam(<span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">aPlayer</span>)
+<a name="129"></a>{
+<a name="130"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> <span class="source_type">i</span>, <span class="source_type">s</span>;
+<a name="131"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> NewTeam;
+<a name="132"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../runei/teaminfo.html" class="source">teaminfo</a></span> SmallestTeam;
+<a name="133"></a>
+<a name="134"></a>    <span class="source_keyword">for</span>( <span class="source_type">i</span>=<span class="source_int">0</span>; <span class="source_type">i</span>&lt;MaxTeams; <span class="source_type">i</span>++ )
+<a name="135"></a>    {
+<a name="136"></a>        <span class="source_keyword">if</span>(TeamSupported[<span class="source_type">i</span>] != <span class="source_int">0</span>)
+<a name="137"></a>        {
+<a name="138"></a>            <span class="source_keyword">if</span> ((Teams[<span class="source_type">i</span>].Size &lt; MaxTeamSize) && ((SmallestTeam == <span class="source_keyword">None</span>) || (SmallestTeam.Size &gt; Teams[<span class="source_type">i</span>].Size)))
+<a name="139"></a>            {
+<a name="140"></a>                <span class="source_type">s</span> = <span class="source_type">i</span>;
+<a name="141"></a>                SmallestTeam = Teams[<span class="source_type">i</span>];
+<a name="142"></a>            }
+<a name="143"></a>        }
+<a name="144"></a>    }
+<a name="145"></a>
+<a name="146"></a>    NewTeam = <span class="source_type">s</span>;
+<a name="147"></a>
+<a name="148"></a>    <span class="source_keyword">if</span>(<span class="source_type">aPlayer</span>.IsA(<span class="source_name">'Spectator'</span>))
+<a name="149"></a>    {
+<a name="150"></a>        <span class="source_type">aPlayer</span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.Team = NewTeam;
+<a name="151"></a>        <span class="source_type">aPlayer</span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.TeamName = Teams[NewTeam].TeamName;
+<a name="152"></a>        <span class="source_keyword">return</span> NewTeam;
+<a name="153"></a>    }
+<a name="154"></a>
+<a name="155"></a>    <span class="source_keyword">if</span> (<span class="source_type">aPlayer</span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.TeamName != <span class="source_string">""</span> )
+<a name="156"></a>        Teams[<span class="source_type">aPlayer</span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.Team].Size--;
+<a name="157"></a>
+<a name="158"></a>    <span class="source_comment">//Add unconditionally 
+</span><a name="159"></a>    AddToTeam(NewTeam, <span class="source_type">aPlayer</span>);
+<a name="160"></a>    <span class="source_keyword">return</span> NewTeam;
+<a name="161"></a>}
+<a name="162"></a>
+<a name="163"></a><span class="source_keyword">function</span> Logout(<span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">Exiting</span>)
+<a name="164"></a>{
+<a name="165"></a>    <span class="source_keyword">Super</span>.Logout(<span class="source_type">Exiting</span>);
+<a name="166"></a>    <span class="source_keyword">if</span> ( <span class="source_type">Exiting</span>.IsA(<span class="source_name">'Spectator'</span>) )
+<a name="167"></a>        <span class="source_keyword">return</span>;
+<a name="168"></a>    Teams[<span class="source_type">Exiting</span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.Team].Size--;
+<a name="169"></a>}
+<a name="170"></a>    
+<a name="171"></a><span class="source_keyword">function</span> <span class="source_type"><a href="../engine/navigationpoint.html" class="source">NavigationPoint</a></span> FindPlayerStart( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type"><a href="../engine/player.html" class="source">Player</a></span>, <span class="source_keyword2">optional</span> <span class="source_keyword">byte</span> InTeam, <span class="source_keyword2">optional</span> <span class="source_keyword">string</span> <span class="source_type">incomingName</span> )
+<a name="172"></a>{
+<a name="173"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../engine/playerstart.html" class="source">PlayerStart</a></span> Dest, Candidate[<span class="source_int">16</span>], Best;
+<a name="174"></a>    <span class="source_keyword">local</span> <span class="source_keyword">float</span> Score[<span class="source_int">16</span>], BestScore, NextDist;
+<a name="175"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> OtherPlayer;
+<a name="176"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> <span class="source_type">i</span>, <span class="source_type">num</span>;
+<a name="177"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../engine/teleporter.html" class="source">Teleporter</a></span> Tel;
+<a name="178"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../engine/navigationpoint.html" class="source">NavigationPoint</a></span> <span class="source_type">N</span>;
+<a name="179"></a>    <span class="source_keyword">local</span> <span class="source_keyword">byte</span> Team;
+<a name="180"></a>
+<a name="181"></a>    <span class="source_keyword">if</span>(<span class="source_type"><a href="../engine/player.html" class="source">Player</a></span> != <span class="source_keyword">None</span> && <span class="source_type"><a href="../engine/player.html" class="source">Player</a></span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span> != <span class="source_keyword">None</span>)
+<a name="182"></a>    {
+<a name="183"></a>        Team = <span class="source_type"><a href="../engine/player.html" class="source">Player</a></span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.Team;
+<a name="184"></a>    }
+<a name="185"></a>    <span class="source_keyword">else</span>
+<a name="186"></a>    {
+<a name="187"></a>        Team = InTeam;
+<a name="188"></a>    }
+<a name="189"></a>
+<a name="190"></a>    <span class="source_keyword">if</span>( <span class="source_type">incomingName</span>!=<span class="source_string">""</span> )
+<a name="191"></a>        <span class="source_keyword">foreach</span> AllActors( <span class="source_keyword">class</span> <span class="source_name">'Teleporter'</span>, Tel )
+<a name="192"></a>            <span class="source_keyword">if</span>( <span class="source_keyword">string</span>(Tel.Tag)~=<span class="source_type">incomingName</span> )
+<a name="193"></a>                <span class="source_keyword">return</span> Tel;
+<a name="194"></a>    
+<a name="195"></a>    <span class="source_keyword">if</span> ( Team == <span class="source_int">255</span> || (Team &lt; MaxTeams && Team &gt;= <span class="source_int">0</span> && TeamSupported[Team] == <span class="source_int">0</span>))
+<a name="196"></a>    {
+<a name="197"></a>        <span class="source_keyword">for</span>(<span class="source_type">i</span> = <span class="source_int">0</span>; <span class="source_type">i</span> &lt; MaxTeams; <span class="source_type">i</span>++)
+<a name="198"></a>        {
+<a name="199"></a>            <span class="source_keyword">if</span>(TeamSupported[<span class="source_type">i</span>] != <span class="source_int">0</span>)
+<a name="200"></a>            {
+<a name="201"></a>                Team = <span class="source_type">i</span>;
+<a name="202"></a>                <span class="source_keyword">break</span>;
+<a name="203"></a>            }
+<a name="204"></a>        }
+<a name="205"></a>
+<a name="206"></a>        <span class="source_keyword">if</span>(Team == <span class="source_int">255</span>)
+<a name="207"></a>            Team = <span class="source_int">0</span>;
+<a name="208"></a>    }
+<a name="209"></a>        <span class="source_comment">//Team = 0;
+</span><a name="210"></a>
+<a name="211"></a>    <span class="source_type">num</span> = <span class="source_int">0</span>;
+<a name="212"></a>
+<a name="213"></a>    <span class="source_comment">//Altered to fix problem with Team-Starts, also to incorporate new bTeamOnly PlayerStart property
+</span><a name="214"></a>    <span class="source_keyword">for</span> ( <span class="source_type">N</span>=<span class="source_type">Level</span>.NavigationPointList; <span class="source_type">N</span>!=<span class="source_keyword">None</span>; <span class="source_type">N</span>=<span class="source_type">N</span>.nextNavigationPoint )
+<a name="215"></a>    {
+<a name="216"></a>        <span class="source_keyword">if</span> (<span class="source_type">N</span>.IsA(<span class="source_name">'PlayerStart'</span>) && (!bLevelHasTeamOnly || (bLevelHasTeamOnly && <span class="source_type"><a href="../engine/playerstart.html" class="source">PlayerStart</a></span>(<span class="source_type">N</span>).bTeamOnly)))
+<a name="217"></a>        {
+<a name="218"></a>            <span class="source_keyword">if</span>(Team == <span class="source_type"><a href="../engine/playerstart.html" class="source">PlayerStart</a></span>(<span class="source_type">N</span>).TeamNumber)
+<a name="219"></a>            {
+<a name="220"></a>                <span class="source_keyword">if</span> (<span class="source_type">num</span>&lt;<span class="source_int">16</span>)
+<a name="221"></a>                    Candidate[<span class="source_type">num</span>] = <span class="source_type"><a href="../engine/playerstart.html" class="source">PlayerStart</a></span>(<span class="source_type">N</span>);
+<a name="222"></a>                <span class="source_keyword">else</span> <span class="source_keyword">if</span> (Rand(<span class="source_type">num</span>) &lt; <span class="source_int">16</span>)
+<a name="223"></a>                    Candidate[Rand(<span class="source_int">16</span>)] = <span class="source_type"><a href="../engine/playerstart.html" class="source">PlayerStart</a></span>(<span class="source_type">N</span>);
+<a name="224"></a>                <span class="source_type">num</span>++;
+<a name="225"></a>            }
+<a name="226"></a>        }
+<a name="227"></a>    }
+<a name="228"></a>    
+<a name="229"></a>    <span class="source_keyword">if</span> (<span class="source_type">num</span> == <span class="source_int">0</span> )
+<a name="230"></a>    {
+<a name="231"></a>        log(<span class="source_string">"Didn't find any player starts in list for team"</span>@InTeam);
+<a name="232"></a>        <span class="source_keyword">foreach</span> AllActors( <span class="source_keyword">class</span><span class="source_name">'PlayerStart'</span>, Dest )
+<a name="233"></a>        {
+<a name="234"></a>            <span class="source_keyword">if</span> (<span class="source_type">num</span>&lt;<span class="source_int">16</span>)
+<a name="235"></a>                Candidate[<span class="source_type">num</span>] = Dest;
+<a name="236"></a>            <span class="source_keyword">else</span> <span class="source_keyword">if</span> (Rand(<span class="source_type">num</span>) &lt; <span class="source_int">16</span>)
+<a name="237"></a>                Candidate[Rand(<span class="source_int">16</span>)] = Dest;
+<a name="238"></a>            <span class="source_type">num</span>++;
+<a name="239"></a>        }
+<a name="240"></a>    }
+<a name="241"></a>
+<a name="242"></a>    <span class="source_keyword">if</span> (<span class="source_type">num</span>&gt;<span class="source_int">16</span>)
+<a name="243"></a>        <span class="source_type">num</span> = <span class="source_int">16</span>;
+<a name="244"></a>    <span class="source_keyword">else</span> <span class="source_keyword">if</span> (<span class="source_type">num</span> == <span class="source_int">0</span>)
+<a name="245"></a>        <span class="source_keyword">return</span> <span class="source_keyword">None</span>;
+<a name="246"></a>        
+<a name="247"></a>    <span class="source_comment">//assess candidates
+</span><a name="248"></a>    <span class="source_keyword">for</span> (<span class="source_type">i</span>=<span class="source_int">0</span>;<span class="source_type">i</span>&lt;<span class="source_type">num</span>;<span class="source_type">i</span>++)
+<a name="249"></a>    {
+<a name="250"></a>        <span class="source_keyword">if</span> (Candidate[<span class="source_type">i</span>] == LastStartSpot )
+<a name="251"></a>            Score[<span class="source_type">i</span>] = -<span class="source_int">6000.0</span>;
+<a name="252"></a>        <span class="source_keyword">else</span>
+<a name="253"></a>            Score[<span class="source_type">i</span>] = <span class="source_int">4000</span> * FRand(); <span class="source_comment">//randomize
+</span><a name="254"></a>    }
+<a name="255"></a>        
+<a name="256"></a>    <span class="source_keyword">for</span> ( OtherPlayer=<span class="source_type">Level</span>.PawnList; OtherPlayer!=<span class="source_keyword">None</span>; OtherPlayer=OtherPlayer.NextPawn)  
+<a name="257"></a>        <span class="source_keyword">if</span> ( OtherPlayer.bIsPlayer && (OtherPlayer.Health &gt; <span class="source_int">0</span>) && !OtherPlayer.IsA(<span class="source_name">'Spectator'</span>) )
+<a name="258"></a>            <span class="source_keyword">for</span> (<span class="source_type">i</span>=<span class="source_int">0</span>;<span class="source_type">i</span>&lt;<span class="source_type">num</span>;<span class="source_type">i</span>++)
+<a name="259"></a>                <span class="source_keyword">if</span> ( OtherPlayer.<span class="source_type"><a href="../uwindow/uwindowbase.html#Region" class="source">Region</a></span>.Zone == Candidate[<span class="source_type">i</span>].<span class="source_type"><a href="../uwindow/uwindowbase.html#Region" class="source">Region</a></span>.Zone )
+<a name="260"></a>                {
+<a name="261"></a>                    Score[<span class="source_type">i</span>] -= <span class="source_int">1500</span>;
+<a name="262"></a>                    NextDist = VSize(OtherPlayer.Location - Candidate[<span class="source_type">i</span>].Location);
+<a name="263"></a>                    <span class="source_keyword">if</span> (NextDist &lt; <span class="source_int">2</span> * (CollisionRadius + CollisionHeight))
+<a name="264"></a>                        Score[<span class="source_type">i</span>] -= <span class="source_int">1000000.0</span>;
+<a name="265"></a>                    <span class="source_keyword">else</span> <span class="source_keyword">if</span> ( (NextDist &lt; <span class="source_int">2000</span>) && (InTeam != OtherPlayer.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.Team) &&
+<a name="266"></a>                        FastTrace(Candidate[<span class="source_type">i</span>].Location, OtherPlayer.Location) )
+<a name="267"></a>                        Score[<span class="source_type">i</span>] -= <span class="source_int">10000.0</span> - NextDist;
+<a name="268"></a>                }
+<a name="269"></a>    
+<a name="270"></a>    BestScore = Score[<span class="source_int">0</span>];
+<a name="271"></a>    Best = Candidate[<span class="source_int">0</span>];
+<a name="272"></a>    <span class="source_keyword">for</span> (<span class="source_type">i</span>=<span class="source_int">1</span>;<span class="source_type">i</span>&lt;<span class="source_type">num</span>;<span class="source_type">i</span>++)
+<a name="273"></a>    {
+<a name="274"></a>        <span class="source_keyword">if</span> (Score[<span class="source_type">i</span>] &gt; BestScore)
+<a name="275"></a>        {
+<a name="276"></a>            BestScore = Score[<span class="source_type">i</span>];
+<a name="277"></a>            Best = Candidate[<span class="source_type">i</span>];
+<a name="278"></a>        }
+<a name="279"></a>    }
+<a name="280"></a>    LastStartSpot = Best;
+<a name="281"></a>                
+<a name="282"></a>    <span class="source_keyword">return</span> Best;
+<a name="283"></a>}
+<a name="284"></a>
+<a name="285"></a><span class="source_keyword">function</span> <span class="source_keyword">bool</span> AddBot()
+<a name="286"></a>{
+<a name="287"></a><span class="source_comment">/*  local NavigationPoint StartSpot;
+<a name="288"></a>    local bots NewBot;
+<a name="289"></a>    local int BotN, DesiredTeam;
+<a name="290"></a>
+<a name="291"></a>    BotN = BotConfig.ChooseBotInfo();
+<a name="292"></a>    
+<a name="293"></a>    // Find a start spot.
+<a name="294"></a>    StartSpot = FindPlayerStart(0);
+<a name="295"></a>    if( StartSpot == None )
+<a name="296"></a>    {
+<a name="297"></a>        log("Could not find starting spot for Bot");
+<a name="298"></a>        return false;
+<a name="299"></a>    }
+<a name="300"></a>
+<a name="301"></a>    // Try to spawn the player.
+<a name="302"></a>    NewBot = Spawn(BotConfig.GetBotClass(BotN),,,StartSpot.Location,StartSpot.Rotation);
+<a name="303"></a>
+<a name="304"></a>    if ( NewBot == None )
+<a name="305"></a>        return false;
+<a name="306"></a>
+<a name="307"></a>    if ( (bHumansOnly || Level.bHumansOnly) && !NewBot.bIsHuman )
+<a name="308"></a>    {
+<a name="309"></a>        NewBot.Destroy();
+<a name="310"></a>        log("Failed to spawn bot");
+<a name="311"></a>        return false;
+<a name="312"></a>    }
+<a name="313"></a>
+<a name="314"></a>    StartSpot.PlayTeleportEffect(NewBot, true);
+<a name="315"></a>
+<a name="316"></a>    // Init player's information.
+<a name="317"></a>    BotConfig.Individualize(NewBot, BotN, NumBots);
+<a name="318"></a>    NewBot.ViewRotation = StartSpot.Rotation;
+<a name="319"></a>
+<a name="320"></a>    // broadcast a welcome message.
+<a name="321"></a>    BroadcastMessage( NewBot.PlayerReplicationInfo.PlayerName$EnteredMessage, true );
+<a name="322"></a>
+<a name="323"></a>    AddDefaultInventory( NewBot );
+<a name="324"></a>    NumBots++;
+<a name="325"></a>
+<a name="326"></a>    DesiredTeam = BotConfig.GetBotTeam(BotN);
+<a name="327"></a>    if ( (DesiredTeam == 255) || !ChangeTeam(NewBot, DesiredTeam) )
+<a name="328"></a>    {
+<a name="329"></a>        ChangeTeam(NewBot, NextBotTeam);
+<a name="330"></a>        NextBotTeam++;
+<a name="331"></a>        if ( NextBotTeam &gt;= MaxTeams )
+<a name="332"></a>            NextBotTeam = 0;
+<a name="333"></a>    }
+<a name="334"></a>
+<a name="335"></a>    if ( bSpawnInTeamArea )
+<a name="336"></a>    {
+<a name="337"></a>        StartSpot = FindPlayerStart(newBot.PlayerReplicationInfo.Team);
+<a name="338"></a>        if ( StartSpot != None )
+<a name="339"></a>        {
+<a name="340"></a>            NewBot.SetLocation(StartSpot.Location);
+<a name="341"></a>            NewBot.SetRotation(StartSpot.Rotation);
+<a name="342"></a>            NewBot.ViewRotation = StartSpot.Rotation;
+<a name="343"></a>            NewBot.ClientSetRotation(NewBot.Rotation);
+<a name="344"></a>            StartSpot.PlayTeleportEffect( NewBot, true );
+<a name="345"></a>        }
+<a name="346"></a>    }
+<a name="347"></a>*/</span>
+<a name="348"></a>    <span class="source_keyword">return</span> <span class="source_keyword">true</span>;
+<a name="349"></a>}
+<a name="350"></a>
+<a name="351"></a><span class="source_comment">//-------------------------------------------------------------------------------------
+</span><a name="352"></a><span class="source_comment">// Level gameplay modification
+</span><a name="353"></a>
+<a name="354"></a><span class="source_comment">//Use reduce damage for teamplay modifications, etc.
+</span><a name="355"></a><span class="source_keyword">function</span> ReduceDamage(<span class="source_keyword2">out</span> <span class="source_keyword">int</span> BluntDamage, <span class="source_keyword2">out</span> <span class="source_keyword">int</span> SeverDamage, <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">DamageType</a></span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> injured, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">instigatedBy</span>)
+<a name="356"></a>{
+<a name="357"></a>    <span class="source_keyword">Super</span>.ReduceDamage(BluntDamage, SeverDamage, <span class="source_type"><a href="../engine/damagetype.html" class="source">DamageType</a></span>, injured, <span class="source_type">instigatedBy</span>);
+<a name="358"></a>
+<a name="359"></a>    <span class="source_keyword">if</span> ( <span class="source_type">instigatedBy</span> == <span class="source_keyword">None</span>)
+<a name="360"></a>        <span class="source_keyword">return</span>;
+<a name="361"></a>
+<a name="362"></a>    <span class="source_keyword">if</span> ( (<span class="source_type">instigatedBy</span> != injured) && injured.bIsPlayer && <span class="source_type">instigatedBy</span>.bIsPlayer &&
+<a name="363"></a>        (injured.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.Team ~= <span class="source_type">instigatedBy</span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.Team) )
+<a name="364"></a>    {
+<a name="365"></a>        BluntDamage *= FriendlyFireScale;
+<a name="366"></a>        SeverDamage *= FriendlyFireScale;
+<a name="367"></a>    }
+<a name="368"></a>}
+<a name="369"></a>
+<a name="370"></a><span class="source_keyword">function</span> Killed(<span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">killer</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">Other</span>, <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">damageType</a></span>)
+<a name="371"></a>{
+<a name="372"></a>    <span class="source_keyword">Super</span>.Killed(<span class="source_type">killer</span>, <span class="source_type">Other</span>, <span class="source_type"><a href="../engine/damagetype.html" class="source">damageType</a></span>);
+<a name="373"></a>
+<a name="374"></a>    <span class="source_keyword">if</span>( (<span class="source_type">killer</span> == <span class="source_type">Other</span>) || (<span class="source_type">killer</span> == <span class="source_keyword">None</span>) )
+<a name="375"></a>        Teams[<span class="source_type">Other</span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.Team].Score -= <span class="source_int">1.0</span>;
+<a name="376"></a>    <span class="source_keyword">else</span>
+<a name="377"></a>    {
+<a name="378"></a>        Teams[<span class="source_type">killer</span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.Team].Score += <span class="source_int">1.0</span>;
+<a name="379"></a>
+<a name="380"></a>        <span class="source_keyword">if</span> ( (GoalTeamScore &gt; <span class="source_int">0</span>) && (Teams[<span class="source_type">killer</span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.Team].Score &gt;= GoalTeamScore) )
+<a name="381"></a>            EndGame(<span class="source_string">"teamscorelimit"</span>);
+<a name="382"></a>    }
+<a name="383"></a>}
+<a name="384"></a>
+<a name="385"></a><span class="source_keyword">function</span> <span class="source_keyword">bool</span> ChangeTeam(<span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">Other</span>, <span class="source_keyword">int</span> NewTeam)
+<a name="386"></a>{
+<a name="387"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> <span class="source_type">i</span>, <span class="source_type">s</span>;
+<a name="388"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">APlayer</span>;
+<a name="389"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../runei/teaminfo.html" class="source">teaminfo</a></span> SmallestTeam;
+<a name="390"></a>    <span class="source_keyword">local</span> <span class="source_keyword">string</span> SkinName, FaceName;
+<a name="391"></a>
+<a name="392"></a>    <span class="source_keyword">for</span>( <span class="source_type">i</span>=<span class="source_int">0</span>; <span class="source_type">i</span>&lt;MaxTeams; <span class="source_type">i</span>++ )
+<a name="393"></a>    {
+<a name="394"></a>        <span class="source_keyword">if</span>(TeamSupported[<span class="source_type">i</span>] != <span class="source_int">0</span>)
+<a name="395"></a>        {
+<a name="396"></a>            <span class="source_keyword">if</span> ( (Teams[<span class="source_type">i</span>].Size &lt; MaxTeamSize) 
+<a name="397"></a>                    && ((SmallestTeam == <span class="source_keyword">None</span>) || (SmallestTeam.Size &gt; Teams[<span class="source_type">i</span>].Size)) )
+<a name="398"></a>            {
+<a name="399"></a>                <span class="source_type">s</span> = <span class="source_type">i</span>;
+<a name="400"></a>                SmallestTeam = Teams[<span class="source_type">i</span>];
+<a name="401"></a>            }
+<a name="402"></a>        }
+<a name="403"></a>    }
+<a name="404"></a>    <span class="source_keyword">if</span> ((NewTeam == <span class="source_int">255</span>) || (NewTeam &gt;= MaxTeams) || (TeamSupported[NewTeam] == <span class="source_int">0</span>))
+<a name="405"></a>        NewTeam = <span class="source_type">s</span>;
+<a name="406"></a>
+<a name="407"></a>    <span class="source_keyword">if</span> ( <span class="source_type">Other</span>.IsA(<span class="source_name">'Spectator'</span>))
+<a name="408"></a>    {
+<a name="409"></a>        <span class="source_type">Other</span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.Team = NewTeam;
+<a name="410"></a>        <span class="source_type">Other</span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.TeamName = Teams[NewTeam].TeamName;
+<a name="411"></a>        <span class="source_keyword">return</span> <span class="source_keyword">true</span>;
+<a name="412"></a>    }
+<a name="413"></a>    <span class="source_keyword">if</span> ( <span class="source_type">Other</span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.Team == NewTeam && bNoTeamChanges)
+<a name="414"></a>            <span class="source_keyword">return</span> <span class="source_keyword">false</span>;
+<a name="415"></a>    <span class="source_keyword">if</span> ( <span class="source_type">Other</span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.TeamName != <span class="source_string">""</span> )
+<a name="416"></a>        Teams[<span class="source_type">Other</span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.Team].Size--;
+<a name="417"></a>
+<a name="418"></a>    <span class="source_keyword">for</span>( <span class="source_type">i</span>=<span class="source_int">0</span>; <span class="source_type">i</span>&lt;MaxTeams; <span class="source_type">i</span>++ )
+<a name="419"></a>    {
+<a name="420"></a>        <span class="source_keyword">if</span> (<span class="source_type">i</span> == NewTeam && TeamSupported[<span class="source_type">i</span>] != <span class="source_int">0</span>)
+<a name="421"></a>        {
+<a name="422"></a>            <span class="source_keyword">if</span> (Teams[<span class="source_type">i</span>].Size &lt; MaxTeamSize)
+<a name="423"></a>            {
+<a name="424"></a>                AddToTeam(<span class="source_type">i</span>, <span class="source_type">Other</span>);
+<a name="425"></a>                <span class="source_keyword">return</span> <span class="source_keyword">true</span>;
+<a name="426"></a>            }
+<a name="427"></a>            <span class="source_keyword">else</span> 
+<a name="428"></a>                <span class="source_keyword">break</span>;
+<a name="429"></a>        }
+<a name="430"></a>    }
+<a name="431"></a>
+<a name="432"></a>    <span class="source_keyword">if</span> ( (SmallestTeam != <span class="source_keyword">None</span>) && (SmallestTeam.Size &lt; MaxTeamSize) )
+<a name="433"></a>    {
+<a name="434"></a>        AddToTeam(<span class="source_type">s</span>, <span class="source_type">Other</span>);
+<a name="435"></a>        <span class="source_keyword">return</span> <span class="source_keyword">true</span>;
+<a name="436"></a>    }
+<a name="437"></a>
+<a name="438"></a>
+<a name="439"></a>    <span class="source_keyword">return</span> <span class="source_keyword">false</span>;
+<a name="440"></a>}
+<a name="441"></a>
+<a name="442"></a><span class="source_keyword">function</span> AddToTeam( <span class="source_keyword">int</span> <span class="source_type">num</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">Other</span> )
+<a name="443"></a>{
+<a name="444"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../runei/teaminfo.html" class="source">teaminfo</a></span> aTeam;
+<a name="445"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">P</span>;
+<a name="446"></a>    <span class="source_keyword">local</span> <span class="source_keyword">bool</span> bSuccess;
+<a name="447"></a>    <span class="source_keyword">local</span> <span class="source_keyword">string</span> SkinName, FaceName;
+<a name="448"></a>
+<a name="449"></a>    aTeam = Teams[<span class="source_type">num</span>];
+<a name="450"></a>
+<a name="451"></a>    aTeam.Size++;
+<a name="452"></a>    <span class="source_type">Other</span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.Team = <span class="source_type">num</span>;
+<a name="453"></a>    <span class="source_type">Other</span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.TeamName = aTeam.TeamName;
+<a name="454"></a>    bSuccess = <span class="source_keyword">false</span>;
+<a name="455"></a>    <span class="source_keyword">if</span> ( <span class="source_type">Other</span>.IsA(<span class="source_name">'PlayerPawn'</span>) )
+<a name="456"></a>        <span class="source_type">Other</span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.TeamID = <span class="source_int">0</span>;
+<a name="457"></a>    <span class="source_keyword">else</span>
+<a name="458"></a>        <span class="source_type">Other</span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.TeamID = <span class="source_int">1</span>;
+<a name="459"></a>
+<a name="460"></a>    <span class="source_keyword">while</span> ( !bSuccess )
+<a name="461"></a>    {
+<a name="462"></a>        bSuccess = <span class="source_keyword">true</span>;
+<a name="463"></a>        <span class="source_keyword">for</span> ( <span class="source_type">P</span>=<span class="source_type">Level</span>.PawnList; <span class="source_type">P</span>!=<span class="source_keyword">None</span>; <span class="source_type">P</span>=<span class="source_type">P</span>.nextPawn )
+<a name="464"></a>                        <span class="source_keyword">if</span> ( <span class="source_type">P</span>.bIsPlayer && (<span class="source_type">P</span> != <span class="source_type">Other</span>) 
+<a name="465"></a>                            && (<span class="source_type">P</span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.Team == <span class="source_type">Other</span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.Team) 
+<a name="466"></a>                            && (<span class="source_type">P</span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.TeamId == <span class="source_type">Other</span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.TeamId) )
+<a name="467"></a>                bSuccess = <span class="source_keyword">false</span>;
+<a name="468"></a>        <span class="source_keyword">if</span> ( !bSuccess )
+<a name="469"></a>            <span class="source_type">Other</span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.TeamID++;
+<a name="470"></a>    }
+<a name="471"></a>
+<a name="472"></a>    BroadcastMessage(<span class="source_type">Other</span>.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.PlayerName$NewTeamMessage$aTeam.TeamName, <span class="source_keyword">false</span>);
+<a name="473"></a>
+<a name="474"></a><span class="source_comment">//	Other.static.GetMultiSkin(Other, SkinName, FaceName);
+</span><a name="475"></a><span class="source_comment">//	Other.static.SetMultiSkin(Other, SkinName, FaceName, num);
+</span><a name="476"></a>
+<a name="477"></a>    <span class="source_type">Other</span>.DesiredColorAdjust = GetTeamVectorColor(<span class="source_type">num</span>);
+<a name="478"></a>}
+<a name="479"></a>
+<a name="480"></a><span class="source_keyword">function</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> GetTeamVectorColor(<span class="source_keyword">int</span> <span class="source_type">num</span>)
+<a name="481"></a>{
+<a name="482"></a>    <span class="source_keyword">local</span> <span class="source_keyword">float</span> brightness;
+<a name="483"></a>    brightness = <span class="source_int">102</span>;
+<a name="484"></a>    <span class="source_keyword">switch</span>(<span class="source_type">num</span>)
+<a name="485"></a>    {
+<a name="486"></a>        <span class="source_keyword">case</span> <span class="source_int">0</span>:
+<a name="487"></a>            <span class="source_keyword">return</span> vect(<span class="source_int">1</span>,<span class="source_int">0</span>,<span class="source_int">0</span>)*brightness;
+<a name="488"></a>        <span class="source_keyword">case</span> <span class="source_int">1</span>:
+<a name="489"></a>            <span class="source_keyword">return</span> vect(<span class="source_int">0</span>,<span class="source_int">0</span>,<span class="source_int">1</span>)*brightness;
+<a name="490"></a>        <span class="source_keyword">case</span> <span class="source_int">2</span>:
+<a name="491"></a>            <span class="source_keyword">return</span> vect(<span class="source_int">0</span>,<span class="source_int">1</span>,<span class="source_int">0</span>)*brightness;
+<a name="492"></a>        <span class="source_keyword">case</span> <span class="source_int">3</span>:
+<a name="493"></a>            <span class="source_keyword">return</span> vect(<span class="source_int">1</span>,<span class="source_int">1</span>,<span class="source_int">0</span>)*brightness;
+<a name="494"></a>    }
+<a name="495"></a>    <span class="source_keyword">return</span> vect(<span class="source_int">0</span>,<span class="source_int">0</span>,<span class="source_int">0</span>);
+<a name="496"></a>}
+<a name="497"></a>
+<a name="498"></a><span class="source_keyword">function</span> <span class="source_keyword">bool</span> CanSpectate( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> Viewer, <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">ViewTarget</span> )
+<a name="499"></a>{
+<a name="500"></a>    <span class="source_keyword">return</span> ( (<span class="source_type"><a href="../engine/spectator.html" class="source">Spectator</a></span>(Viewer) != <span class="source_keyword">None</span>) 
+<a name="501"></a>            || ((<span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span>(<span class="source_type">ViewTarget</span>) != <span class="source_keyword">None</span>) && (<span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span>(<span class="source_type">ViewTarget</span>).<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.Team == Viewer.<span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span>.Team)) );
+<a name="502"></a>}
+<a name="503"></a>
+<a name="504"></a><span class="source_keyword">defaultproperties</span>
+<a name="505"></a>{
+<a name="506"></a>     MaxTeams=<span class="source_int">4</span>
+<a name="507"></a>     MaxTeamSize=<span class="source_int">16</span>
+<a name="508"></a>     NewTeamMessage=<span class="source_string">" is now on "</span>
+<a name="509"></a>     TEAM_Blue=<span class="source_int">1</span>
+<a name="510"></a>     TEAM_Green=<span class="source_int">2</span>
+<a name="511"></a>     TEAM_Gold=<span class="source_int">3</span>
+<a name="512"></a>     TeamColor(<span class="source_int">0</span>)=<span class="source_string">"Red"</span>
+<a name="513"></a>     TeamColor(<span class="source_int">1</span>)=<span class="source_string">"Blue"</span>
+<a name="514"></a>     TeamColor(<span class="source_int">2</span>)=<span class="source_string">"Green"</span>
+<a name="515"></a>     TeamColor(<span class="source_int">3</span>)=<span class="source_string">"Gold"</span>
+<a name="516"></a>     VColorRed=(X=<span class="source_int">255.000000</span>)
+<a name="517"></a>     VColorBlue=(Z=<span class="source_int">255.000000</span>)
+<a name="518"></a>     VColorGreen=(<span class="source_type">Y</span>=<span class="source_int">255.000000</span>)
+<a name="519"></a>     VColorGold=(X=<span class="source_int">255.000000</span>,<span class="source_type">Y</span>=<span class="source_int">255.000000</span>)
+<a name="520"></a>     VColorWhite=(X=<span class="source_int">255.000000</span>,<span class="source_type">Y</span>=<span class="source_int">255.000000</span>,Z=<span class="source_int">255.000000</span>)
+<a name="521"></a>     bCanChangeSkin=<span class="source_keyword">False</span>
+<a name="522"></a>     bTeamGame=<span class="source_keyword">True</span>
+<a name="523"></a>     ScoreBoardType=<span class="source_keyword">Class</span><span class="source_name">'RuneI.RuneScoreboardTeam'</span>
+<a name="524"></a>     BeaconName=<span class="source_string">"Team"</span>
+<a name="525"></a>     GameName=<span class="source_string">"Team Game"</span>
+<a name="526"></a>}
+<a name="527"></a></pre></td></tr></table></div>
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header"><a href="../runei/teamgame.html">Class</a></td>
+	<td class="header_hilight">Source</td>
+	<td class="header"><a class="header" href="../classtree.html#TeamGame">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../Source_runei/tarpframe.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../Source_runei/teaminfo.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Class file time: Thu 28/1/2021 11:08:48.000 - Creation time: Thu 28/1/2021 11:27:51.757 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

@@ -1,0 +1,1617 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - Core.Object</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../core/core-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_core/object.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#Object">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../core/locale.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../core/subsystem.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#core/object.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../core/core-overview.html">Core</a>.Object</h1>
+
+<dl>
+
+<dt>Modifiers</dt><dd>native noexport </dd>
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+</pre>
+
+<h4>Direct Known Subclasses:</h4>
+<blockquote>
+	<a href="../engine/actor.html">Actor</a>, <a href="../engine/bitmap.html">Bitmap</a>, <a href="../editor/brushbuilder.html">BrushBuilder</a>, <a href="../engine/canvas.html">Canvas</a>, <a href="../core/commandlet.html">Commandlet</a>, <a href="../engine/console.html">Console</a>, <a href="../engine/levelsummary.html">LevelSummary</a>, <a href="../runeserveradmin/listitem.html">ListItem</a>, <a href="../core/locale.html">Locale</a>, <a href="../engine/palette.html">Palette</a>, <a href="../engine/player.html">Player</a>, <a href="../core/subsystem.html">Subsystem</a>, <a href="../engine/testobj.html">TestObj</a>, <a href="../core/time.html">Time</a>, <a href="../uwindow/uwindowbase.html">UWindowBase</a>, <a href="../uweb/webapplication.html">WebApplication</a>, <a href="../uweb/webrequest.html">WebRequest</a>, <a href="../uweb/webresponse.html">WebResponse</a>
+</blockquote>
+
+<hr />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Constants Summary</th>
+</tr>
+<tr><td width="40%"><a href="#_MaxInt" name="MaxInt" title="go to the details">MaxInt</a></td><td width="10%">=</td><td width="50%">0x7fffffff</td></tr>
+<tr><td width="40%"><a href="#_Pi" name="Pi" title="go to the details">Pi</a></td><td width="10%">=</td><td width="50%">3.1415926535897932</td></tr>
+<tr><td width="40%"><a href="#_RF_NotForClient" name="RF_NotForClient" title="go to the details">RF_NotForClient</a></td><td width="10%">=</td><td width="50%">0x00100000</td></tr>
+<tr><td width="40%"><a href="#_RF_NotForEdit" name="RF_NotForEdit" title="go to the details">RF_NotForEdit</a></td><td width="10%">=</td><td width="50%">0x00400000</td></tr>
+<tr><td width="40%"><a href="#_RF_NotForServer" name="RF_NotForServer" title="go to the details">RF_NotForServer</a></td><td width="10%">=</td><td width="50%">0x00200000</td></tr>
+<tr><td width="40%"><a href="#_RF_Public" name="RF_Public" title="go to the details">RF_Public</a></td><td width="10%">=</td><td width="50%">0x00000004</td></tr>
+<tr><td width="40%"><a href="#_RF_Transactional" name="RF_Transactional" title="go to the details">RF_Transactional</a></td><td width="10%">=</td><td width="50%">0x00000001</td></tr>
+<tr><td width="40%"><a href="#_RF_Transient" name="RF_Transient" title="go to the details">RF_Transient</a></td><td width="10%">=</td><td width="50%">0x00004000</td></tr>
+
+</table>
+
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_ObjectFlags" name="ObjectFlags" title="go to the details">ObjectFlags</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_ObjectInternal[6]" name="ObjectInternal[6]" title="go to the details">ObjectInternal[6]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html">object</a></td><td width="66%"><a href="#_Outer" name="Outer" title="go to the details">Outer</a></td></tr>
+<tr><th colspan="2" class="small">Object</th></tr>
+<tr><td nowrap="nowrap" width="33%">class</td><td width="66%"><a href="#_Class" name="Class" title="go to the details">Class</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_Name" name="Name" title="go to the details">Name</a></td></tr>
+
+</table>
+
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Enumerations Summary</th>
+</tr>
+<tr><td><a href="#_EMatterType" name="EMatterType" title="go to the details">EMatterType</a><br /><span class="small">MATTER_NONE,
+MATTER_WOOD,
+MATTER_METAL,
+MATTER_STONE,
+MATTER_FLESH,
+MATTER_ICE,
+MATTER_WATER,
+MATTER_EARTH,
+MATTER_SNOW,
+MATTER_BREAKABLEWOOD,
+MATTER_BREAKABLESTONE,
+MATTER_SHIELD,
+MATTER_WEAPON,
+MATTER_MUD,
+MATTER_LAVA,
+</span></td></tr>
+<tr><td><a href="#_ESheerAxis" name="ESheerAxis" title="go to the details">ESheerAxis</a><br /><span class="small">SHEER_None,
+SHEER_XY,
+SHEER_XZ,
+SHEER_YX,
+SHEER_YZ,
+SHEER_ZX,
+SHEER_ZY,
+</span></td></tr>
+
+</table>
+
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Structures Summary</th>
+</tr>
+<tr><td><a href="#_BoundingBox" name="BoundingBox" title="go to the details">BoundingBox</a><br /><span class="small">Min, Max, IsValid</span></td></tr>
+<tr><td><a href="#_BoundingVolume" name="BoundingVolume" title="go to the details">BoundingVolume</a><br /><span class="small">Sphere</span></td></tr>
+<tr><td><a href="#_Color" name="Color" title="go to the details">Color</a><br /><span class="small">R, G, B, A</span></td></tr>
+<tr><td><a href="#_Coords" name="Coords" title="go to the details">Coords</a><br /><span class="small">Origin, XAxis, YAxis, ZAxis</span></td></tr>
+<tr><td><a href="#_Guid" name="Guid" title="go to the details">Guid</a><br /><span class="small">A, B, C, D</span></td></tr>
+<tr><td><a href="#_Plane" name="Plane" title="go to the details">Plane</a><br /><span class="small">W</span></td></tr>
+<tr><td><a href="#_Rotator" name="Rotator" title="go to the details">Rotator</a><br /><span class="small">Pitch, Yaw, Roll</span></td></tr>
+<tr><td><a href="#_Scale" name="Scale" title="go to the details">Scale</a><br /><span class="small">Scale, SheerRate, SheerAxis</span></td></tr>
+<tr><td><a href="#_Vector" name="Vector" title="go to the details">Vector</a><br /><span class="small">X, Y, Z</span></td></tr>
+
+</table>
+
+
+
+<br />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="preoperator" title="preoperator" /></td><td>bool&nbsp;</td><td><a href="#_!-" name="!" title="go to the details">!</a> (bool A)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_!=-" name="!=" title="go to the details">!=</a> (<a href="../core/object.html#Vector">vector</a> A, <a href="../core/object.html#Vector">vector</a> B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_!=-" name="!=" title="go to the details">!=</a> (<a href="../core/object.html#Rotator">rotator</a> A, <a href="../core/object.html#Rotator">rotator</a> B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_!=-" name="!=" title="go to the details">!=</a> (int A, int B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_!=-" name="!=" title="go to the details">!=</a> (float A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_!=-" name="!=" title="go to the details">!=</a> (string A, string B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_!=-" name="!=" title="go to the details">!=</a> (<a href="../core/object.html">Object</a> A, <a href="../core/object.html">Object</a> B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_!=-" name="!=" title="go to the details">!=</a> (bool A, bool B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_!=-" name="!=" title="go to the details">!=</a> (name A, name B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>string&nbsp;</td><td><a href="#_$-" name="$" title="go to the details">$</a> (coerce string A, coerce string B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>float&nbsp;</td><td><a href="#_%-" name="%" title="go to the details">%</a> (float A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>int&nbsp;</td><td><a href="#_&-" name="&" title="go to the details">&</a> (int A, int B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_&&-" name="&&" title="go to the details">&&</a> (bool A, skip bool B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>float&nbsp;</td><td><a href="#_*-" name="*" title="go to the details">*</a> (float A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td><a href="../core/object.html#Rotator">rotator</a>&nbsp;</td><td><a href="#_*-" name="*" title="go to the details">*</a> (<a href="../core/object.html#Rotator">rotator</a> A, float    B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td><a href="../core/object.html#Rotator">rotator</a>&nbsp;</td><td><a href="#_*-" name="*" title="go to the details">*</a> (float    A, <a href="../core/object.html#Rotator">rotator</a> B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td><a href="../core/object.html#Vector">vector</a>&nbsp;</td><td><a href="#_*-" name="*" title="go to the details">*</a> (<a href="../core/object.html#Vector">vector</a> A, <a href="../core/object.html#Vector">vector</a> B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td><a href="../core/object.html#Vector">vector</a>&nbsp;</td><td><a href="#_*-" name="*" title="go to the details">*</a> (<a href="../core/object.html#Vector">vector</a> A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td><a href="../core/object.html#Vector">vector</a>&nbsp;</td><td><a href="#_*-" name="*" title="go to the details">*</a> (float A, <a href="../core/object.html#Vector">vector</a> B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>int&nbsp;</td><td><a href="#_*-" name="*" title="go to the details">*</a> (int A, int B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>float&nbsp;</td><td><a href="#_**-" name="**" title="go to the details">**</a> (float A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td><a href="../core/object.html#Vector">vector</a>&nbsp;</td><td><a href="#_*=-" name="*=" title="go to the details">*=</a> (out <a href="../core/object.html#Vector">vector</a> A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td><a href="../core/object.html#Vector">vector</a>&nbsp;</td><td><a href="#_*=-" name="*=" title="go to the details">*=</a> (out <a href="../core/object.html#Vector">vector</a> A, <a href="../core/object.html#Vector">vector</a> B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>float&nbsp;</td><td><a href="#_*=-" name="*=" title="go to the details">*=</a> (out float A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>byte&nbsp;</td><td><a href="#_*=-" name="*=" title="go to the details">*=</a> (out byte A, byte B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td><a href="../core/object.html#Rotator">rotator</a>&nbsp;</td><td><a href="#_*=-" name="*=" title="go to the details">*=</a> (out <a href="../core/object.html#Rotator">rotator</a> A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>int&nbsp;</td><td><a href="#_*=-" name="*=" title="go to the details">*=</a> (out int A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>int&nbsp;</td><td><a href="#_+-" name="+" title="go to the details">+</a> (int A, int B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>float&nbsp;</td><td><a href="#_+-" name="+" title="go to the details">+</a> (float A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td><a href="../core/object.html#Rotator">rotator</a>&nbsp;</td><td><a href="#_+-" name="+" title="go to the details">+</a> (<a href="../core/object.html#Rotator">rotator</a> A, <a href="../core/object.html#Rotator">rotator</a> B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td><a href="../core/object.html#Vector">vector</a>&nbsp;</td><td><a href="#_+-" name="+" title="go to the details">+</a> (<a href="../core/object.html#Vector">vector</a> A, <a href="../core/object.html#Vector">vector</a> B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="postoperator" title="postoperator" /></td><td>int&nbsp;</td><td><a href="#_++-" name="++" title="go to the details">++</a> (out int A)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="preoperator" title="preoperator" /></td><td>int&nbsp;</td><td><a href="#_++-" name="++" title="go to the details">++</a> (out int A)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="preoperator" title="preoperator" /></td><td>byte&nbsp;</td><td><a href="#_++-" name="++" title="go to the details">++</a> (out byte A)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="postoperator" title="postoperator" /></td><td>byte&nbsp;</td><td><a href="#_++-" name="++" title="go to the details">++</a> (out byte A)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td><a href="../core/object.html#Rotator">rotator</a>&nbsp;</td><td><a href="#_+=-" name="+=" title="go to the details">+=</a> (out <a href="../core/object.html#Rotator">rotator</a> A, <a href="../core/object.html#Rotator">rotator</a> B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>byte&nbsp;</td><td><a href="#_+=-" name="+=" title="go to the details">+=</a> (out byte A, byte B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>float&nbsp;</td><td><a href="#_+=-" name="+=" title="go to the details">+=</a> (out float A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td><a href="../core/object.html#Vector">vector</a>&nbsp;</td><td><a href="#_+=-" name="+=" title="go to the details">+=</a> (out <a href="../core/object.html#Vector">vector</a> A, <a href="../core/object.html#Vector">vector</a> B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>int&nbsp;</td><td><a href="#_+=-" name="+=" title="go to the details">+=</a> (out int A, int B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>float&nbsp;</td><td><a href="#_--" name="-" title="go to the details">-</a> (float A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="preoperator" title="preoperator" /></td><td>int&nbsp;</td><td><a href="#_--" name="-" title="go to the details">-</a> (int A)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>int&nbsp;</td><td><a href="#_--" name="-" title="go to the details">-</a> (int A, int B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td><a href="../core/object.html#Rotator">rotator</a>&nbsp;</td><td><a href="#_--" name="-" title="go to the details">-</a> (<a href="../core/object.html#Rotator">rotator</a> A, <a href="../core/object.html#Rotator">rotator</a> B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="preoperator" title="preoperator" /></td><td><a href="../core/object.html#Vector">vector</a>&nbsp;</td><td><a href="#_--" name="-" title="go to the details">-</a> (<a href="../core/object.html#Vector">vector</a> A)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td><a href="../core/object.html#Vector">vector</a>&nbsp;</td><td><a href="#_--" name="-" title="go to the details">-</a> (<a href="../core/object.html#Vector">vector</a> A, <a href="../core/object.html#Vector">vector</a> B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="preoperator" title="preoperator" /></td><td>float&nbsp;</td><td><a href="#_--" name="-" title="go to the details">-</a> (float A)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="postoperator" title="postoperator" /></td><td>byte&nbsp;</td><td><a href="#_---" name="--" title="go to the details">--</a> (out byte A)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="preoperator" title="preoperator" /></td><td>byte&nbsp;</td><td><a href="#_---" name="--" title="go to the details">--</a> (out byte A)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="preoperator" title="preoperator" /></td><td>int&nbsp;</td><td><a href="#_---" name="--" title="go to the details">--</a> (out int A)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="postoperator" title="postoperator" /></td><td>int&nbsp;</td><td><a href="#_---" name="--" title="go to the details">--</a> (out int A)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td><a href="../core/object.html#Rotator">rotator</a>&nbsp;</td><td><a href="#_-=-" name="-=" title="go to the details">-=</a> (out <a href="../core/object.html#Rotator">rotator</a> A, <a href="../core/object.html#Rotator">rotator</a> B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>byte&nbsp;</td><td><a href="#_-=-" name="-=" title="go to the details">-=</a> (out byte A, byte B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td><a href="../core/object.html#Vector">vector</a>&nbsp;</td><td><a href="#_-=-" name="-=" title="go to the details">-=</a> (out <a href="../core/object.html#Vector">vector</a> A, <a href="../core/object.html#Vector">vector</a> B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>int&nbsp;</td><td><a href="#_-=-" name="-=" title="go to the details">-=</a> (out int A, int B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>float&nbsp;</td><td><a href="#_-=-" name="-=" title="go to the details">-=</a> (out float A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>float&nbsp;</td><td><a href="#_/ -" name="/ " title="go to the details">/ </a> (float A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td><a href="../core/object.html#Vector">vector</a>&nbsp;</td><td><a href="#_/ -" name="/ " title="go to the details">/ </a> (<a href="../core/object.html#Vector">vector</a> A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td><a href="../core/object.html#Rotator">rotator</a>&nbsp;</td><td><a href="#_/ -" name="/ " title="go to the details">/ </a> (<a href="../core/object.html#Rotator">rotator</a> A, float    B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>int&nbsp;</td><td><a href="#_/ -" name="/ " title="go to the details">/ </a> (int A, int B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td><a href="../core/object.html#Vector">vector</a>&nbsp;</td><td><a href="#_/=-" name="/=" title="go to the details">/=</a> (out <a href="../core/object.html#Vector">vector</a> A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>byte&nbsp;</td><td><a href="#_/=-" name="/=" title="go to the details">/=</a> (out byte A, byte B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td><a href="../core/object.html#Rotator">rotator</a>&nbsp;</td><td><a href="#_/=-" name="/=" title="go to the details">/=</a> (out <a href="../core/object.html#Rotator">rotator</a> A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>int&nbsp;</td><td><a href="#_/=-" name="/=" title="go to the details">/=</a> (out int A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>float&nbsp;</td><td><a href="#_/=-" name="/=" title="go to the details">/=</a> (out float A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_<-" name="<" title="go to the details"><</a> (float A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_<-" name="<" title="go to the details"><</a> (int A, int B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_<-" name="<" title="go to the details"><</a> (string A, string B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>int&nbsp;</td><td><a href="#_<<-" name="<<" title="go to the details"><<</a> (int A, int B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td><a href="../core/object.html#Vector">vector</a>&nbsp;</td><td><a href="#_<<-" name="<<" title="go to the details"><<</a> (<a href="../core/object.html#Vector">vector</a> A, <a href="../core/object.html#Rotator">rotator</a> B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_<=-" name="<=" title="go to the details"><=</a> (int A, int B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_<=-" name="<=" title="go to the details"><=</a> (string A, string B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_<=-" name="<=" title="go to the details"><=</a> (float A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_==-" name="==" title="go to the details">==</a> (<a href="../core/object.html">Object</a> A, <a href="../core/object.html">Object</a> B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_==-" name="==" title="go to the details">==</a> (float A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_==-" name="==" title="go to the details">==</a> (name A, name B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_==-" name="==" title="go to the details">==</a> (string A, string B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_==-" name="==" title="go to the details">==</a> (<a href="../core/object.html#Rotator">rotator</a> A, <a href="../core/object.html#Rotator">rotator</a> B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_==-" name="==" title="go to the details">==</a> (int A, int B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_==-" name="==" title="go to the details">==</a> (<a href="../core/object.html#Vector">vector</a> A, <a href="../core/object.html#Vector">vector</a> B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_==-" name="==" title="go to the details">==</a> (bool A, bool B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_>-" name=">" title="go to the details">></a> (int A, int B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_>-" name=">" title="go to the details">></a> (string A, string B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_>-" name=">" title="go to the details">></a> (float A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_>=-" name=">=" title="go to the details">>=</a> (int A, int B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_>=-" name=">=" title="go to the details">>=</a> (float A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_>=-" name=">=" title="go to the details">>=</a> (string A, string B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>int&nbsp;</td><td><a href="#_>>-" name=">>" title="go to the details">>></a> (int A, int B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td><a href="../core/object.html#Vector">vector</a>&nbsp;</td><td><a href="#_>>-" name=">>" title="go to the details">>></a> (<a href="../core/object.html#Vector">vector</a> A, <a href="../core/object.html#Rotator">rotator</a> B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>int&nbsp;</td><td><a href="#_>>>-" name=">>>" title="go to the details">>>></a> (int A, int B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>string&nbsp;</td><td><a href="#_@-" name="@" title="go to the details">@</a> (coerce string A, coerce string B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_Abs-" name="Abs" title="go to the details">Abs</a> (float A)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>int&nbsp;</td><td><a href="#_Asc-" name="Asc" title="go to the details">Asc</a> (string S)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_Atan-" name="Atan" title="go to the details">Atan</a> (float A)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>&nbsp;</td><td><a href="#_BeginState-" name="BeginState" title="go to the details">BeginState</a> ()<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>string&nbsp;</td><td><a href="#_Caps-" name="Caps" title="go to the details">Caps</a> (coerce string S)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>string&nbsp;</td><td><a href="#_Chr-" name="Chr" title="go to the details">Chr</a> (int i)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>int&nbsp;</td><td><a href="#_Clamp-" name="Clamp" title="go to the details">Clamp</a> (int V, int A, int B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_ClassIsChildOf-" name="ClassIsChildOf" title="go to the details">ClassIsChildOf</a> (class TestClass, class ParentClass)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_Cos-" name="Cos" title="go to the details">Cos</a> (float A)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td><a href="../core/object.html#Vector">vector</a>&nbsp;</td><td><a href="#_Cross-" name="Cross" title="go to the details">Cross</a> (<a href="../core/object.html#Vector">vector</a> A, <a href="../core/object.html#Vector">vector</a> B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Disable-" name="Disable" title="go to the details">Disable</a> (name ProbeFunc)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>float&nbsp;</td><td><a href="#_Dot-" name="Dot" title="go to the details">Dot</a> (<a href="../core/object.html#Vector">vector</a> A, <a href="../core/object.html#Vector">vector</a> B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../core/object.html">object</a>&nbsp;</td><td><a href="#_DynamicLoadObject-" name="DynamicLoadObject" title="go to the details">DynamicLoadObject</a> (string ObjectName, class ObjectClass, optional bool MayFail)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Enable-" name="Enable" title="go to the details">Enable</a> (name ProbeFunc)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>&nbsp;</td><td><a href="#_EndState-" name="EndState" title="go to the details">EndState</a> ()<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_Exp-" name="Exp" title="go to the details">Exp</a> (float A)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_FClamp-" name="FClamp" title="go to the details">FClamp</a> (float V, float A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_FMax-" name="FMax" title="go to the details">FMax</a> (float A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_FMin-" name="FMin" title="go to the details">FMin</a> (float A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_FRand-" name="FRand" title="go to the details">FRand</a> ()<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_GetAxes-" name="GetAxes" title="go to the details">GetAxes</a> (<a href="../core/object.html#Rotator">rotator</a> A, out <a href="../core/object.html#Vector">vector</a> X, out <a href="../core/object.html#Vector">vector</a> Y, out <a href="../core/object.html#Vector">vector</a> Z)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>name&nbsp;</td><td><a href="#_GetEnum-" name="GetEnum" title="go to the details">GetEnum</a> (<a href="../core/object.html">object</a> E, int i)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>string&nbsp;</td><td><a href="#_GetPropertyText-" name="GetPropertyText" title="go to the details">GetPropertyText</a> (string PropName)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>name&nbsp;</td><td><a href="#_GetStateName-" name="GetStateName" title="go to the details">GetStateName</a> ()<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>string&nbsp;</td><td><a href="#_GetToken-" name="GetToken" title="go to the details">GetToken</a> (out string s))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_GetUnAxes-" name="GetUnAxes" title="go to the details">GetUnAxes</a> (<a href="../core/object.html#Rotator">rotator</a> A, out <a href="../core/object.html#Vector">vector</a> X, out <a href="../core/object.html#Vector">vector</a> Y, out <a href="../core/object.html#Vector">vector</a> Z)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_GotoState-" name="GotoState" title="go to the details">GotoState</a> (optional name NewState, optional name Label)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>int&nbsp;</td><td><a href="#_InStr-" name="InStr" title="go to the details">InStr</a> (coerce string S, coerce string t)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Invert-" name="Invert" title="go to the details">Invert</a> (out <a href="../core/object.html#Vector">vector</a> X, out <a href="../core/object.html#Vector">vector</a> Y, out <a href="../core/object.html#Vector">vector</a> Z)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_IsA-" name="IsA" title="go to the details">IsA</a> (name ClassName)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_IsInState-" name="IsInState" title="go to the details">IsInState</a> (name TestState)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>string&nbsp;</td><td><a href="#_Left-" name="Left" title="go to the details">Left</a> (coerce string S, int i)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>int&nbsp;</td><td><a href="#_Len-" name="Len" title="go to the details">Len</a> (coerce string S)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_Lerp-" name="Lerp" title="go to the details">Lerp</a> (float Alpha, float A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>string&nbsp;</td><td><a href="#_Localize-" name="Localize" title="go to the details">Localize</a> (string SectionName, string KeyName, string PackageName)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Log-" name="Log" title="go to the details">Log</a> (coerce string S, optional name Tag)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_Loge-" name="Loge" title="go to the details">Loge</a> (float A)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>int&nbsp;</td><td><a href="#_Max-" name="Max" title="go to the details">Max</a> (int A, int B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>string&nbsp;</td><td><a href="#_Mid-" name="Mid" title="go to the details">Mid</a> (coerce string S, int i, optional int j)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>int&nbsp;</td><td><a href="#_Min-" name="Min" title="go to the details">Min</a> (int A, int B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../core/object.html#Vector">vector</a>&nbsp;</td><td><a href="#_MirrorVectorByNormal-" name="MirrorVectorByNormal" title="go to the details">MirrorVectorByNormal</a> (<a href="../core/object.html#Vector">vector</a> Vect, <a href="../core/object.html#Vector">vector</a> Normal)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../core/object.html#Vector">vector</a>&nbsp;</td><td><a href="#_Normal-" name="Normal" title="go to the details">Normal</a> (<a href="../core/object.html#Vector">vector</a> A)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../core/object.html#Rotator">rotator</a>&nbsp;</td><td><a href="#_Normalize-" name="Normalize" title="go to the details">Normalize</a> (<a href="../core/object.html#Rotator">rotator</a> Rot)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../core/object.html#Rotator">rotator</a>&nbsp;</td><td><a href="#_OrthoRotation-" name="OrthoRotation" title="go to the details">OrthoRotation</a> (<a href="../core/object.html#Vector">vector</a> X, <a href="../core/object.html#Vector">vector</a> Y, <a href="../core/object.html#Vector">vector</a> Z)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_Radians-" name="Radians" title="go to the details">Radians</a> (int theta))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>int&nbsp;</td><td><a href="#_Rand-" name="Rand" title="go to the details">Rand</a> (int Max)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_RandRange-" name="RandRange" title="go to the details">RandRange</a> (float Min, float Max ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ResetConfig-" name="ResetConfig" title="go to the details">ResetConfig</a> ()<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>string&nbsp;</td><td><a href="#_Right-" name="Right" title="go to the details">Right</a> (coerce string S, int i)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../core/object.html#Rotator">rotator</a>&nbsp;</td><td><a href="#_RotRand-" name="RotRand" title="go to the details">RotRand</a> (optional bool bRoll)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SaveConfig-" name="SaveConfig" title="go to the details">SaveConfig</a> ()<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SetPropertyText-" name="SetPropertyText" title="go to the details">SetPropertyText</a> (string PropName, string PropValue)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_Sin-" name="Sin" title="go to the details">Sin</a> (float A)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_Smerp-" name="Smerp" title="go to the details">Smerp</a> (float Alpha, float A, float B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_Sqrt-" name="Sqrt" title="go to the details">Sqrt</a> (float A)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_Square-" name="Square" title="go to the details">Square</a> (float A)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_StaticSaveConfig-" name="StaticSaveConfig" title="go to the details">StaticSaveConfig</a> ()<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_Tan-" name="Tan" title="go to the details">Tan</a> (float A)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../core/object.html#Vector">vector</a>&nbsp;</td><td><a href="#_VRand-" name="VRand" title="go to the details">VRand</a> ()<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_VSize-" name="VSize" title="go to the details">VSize</a> (<a href="../core/object.html#Vector">vector</a> A)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_VSize2D-" name="VSize2D" title="go to the details">VSize2D</a> (<a href="../core/object.html#Vector">vector</a> A)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Warn-" name="Warn" title="go to the details">Warn</a> (coerce string S)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>int&nbsp;</td><td><a href="#_^-" name="^" title="go to the details">^</a> (int A, int B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_^^-" name="^^" title="go to the details">^^</a> (bool A, bool B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>int&nbsp;</td><td><a href="#_|-" name="|" title="go to the details">|</a> (int A, int B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_||-" name="||" title="go to the details">||</a> (bool A, skip bool B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="preoperator" title="preoperator" /></td><td>int&nbsp;</td><td><a href="#_~-" name="~" title="go to the details">~</a> (int A)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_~=-" name="~=" title="go to the details">~=</a> (string A, string B)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_operator.gif" alt="operator" title="operator" /></td><td>bool&nbsp;</td><td><a href="#_~=-" name="~=" title="go to the details">~=</a> (float A, float B)<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+
+
+<br />
+
+
+
+<hr />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Constants Detail</th>
+</tr>
+</table>
+
+<h4><a name="_MaxInt" class="hidden"></a>MaxInt <a href="../Source_core/object.html#120" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">const</span> MaxInt = <span class="source_int">0x7fffffff</span>;</div>
+<blockquote class="comment">
+The maximum positive int value
+</blockquote>
+<hr class="small" />
+<h4><a name="_Pi" class="hidden"></a>Pi <a href="../Source_core/object.html#121" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">const</span> Pi = <span class="source_int">3.1415926535897932</span>;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RF_NotForClient" class="hidden"></a>RF_NotForClient <a href="../Source_core/object.html#26" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">const</span> RF_NotForClient = <span class="source_int">0x00100000</span>;</div>
+<blockquote class="comment">
+ObjectFlag<br />
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RF_NotForEdit" class="hidden"></a>RF_NotForEdit <a href="../Source_core/object.html#28" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">const</span> RF_NotForEdit = <span class="source_int">0x00400000</span>;</div>
+<blockquote class="comment">
+ObjectFlag<br />
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RF_NotForServer" class="hidden"></a>RF_NotForServer <a href="../Source_core/object.html#27" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">const</span> RF_NotForServer = <span class="source_int">0x00200000</span>;</div>
+<blockquote class="comment">
+ObjectFlag<br />
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RF_Public" class="hidden"></a>RF_Public <a href="../Source_core/object.html#24" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">const</span> RF_Public = <span class="source_int">0x00000004</span>;</div>
+<blockquote class="comment">
+Object Flag<br />
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RF_Transactional" class="hidden"></a>RF_Transactional <a href="../Source_core/object.html#23" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">const</span> RF_Transactional = <span class="source_int">0x00000001</span>;</div>
+<blockquote class="comment">
+Object flag<br />
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RF_Transient" class="hidden"></a>RF_Transient <a href="../Source_core/object.html#25" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">const</span> RF_Transient = <span class="source_int">0x00004000</span>;</div>
+<blockquote class="comment">
+ObjectFlag<br />
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_ObjectFlags" class="hidden"></a>ObjectFlags <a href="../Source_core/object.html#15" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">native</span> <span class="source_keyword">const</span> <span class="source_keyword">int</span> ObjectFlags;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ObjectInternal[6]" class="hidden"></a>ObjectInternal[6] <a href="../Source_core/object.html#13" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">native</span> <span class="source_keyword2">private</span> <span class="source_keyword">const</span> <span class="source_keyword">int</span> ObjectInternal[<span class="source_int">6</span>];</div>
+<blockquote class="comment">
+Internal variable
+</blockquote>
+<hr class="small" />
+<h4><a name="_Outer" class="hidden"></a>Outer <a href="../Source_core/object.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">native</span> <span class="source_keyword">const</span> <span class="source_type"><a href="../core/object.html" class="source">object</a></span> Outer;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">Object</h3>
+<h4><a name="_Class" class="hidden"></a>Class <a href="../Source_core/object.html#17" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../core/object.html" class="source">Object</a></span>) <span class="source_keyword2">native</span> <span class="source_keyword">const</span> <span class="source_keyword2">editconst</span> <span class="source_keyword">class</span> <span class="source_keyword">Class</span>;</div>
+<blockquote class="comment">
+The class of this object.
+</blockquote>
+<hr class="small" />
+<h4><a name="_Name" class="hidden"></a>Name <a href="../Source_core/object.html#16" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../core/object.html" class="source">Object</a></span>) <span class="source_keyword2">native</span> <span class="source_keyword">const</span> <span class="source_keyword2">editconst</span> <span class="source_keyword">name</span> <span class="source_keyword">Name</span>;</div>
+<blockquote class="comment">
+The name of this object. The string representation of this value is the same like the last part of the object's string representation.
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th class="title">Enumerations Detail</th>
+</tr>
+</table>
+
+<h4><a name="_EMatterType" class="hidden"></a>EMatterType <a href="../Source_core/object.html#32" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">enum</span> <span class="source_type"><a href="../core/object.html#EMatterType" class="source">EMatterType</a></span><br />
+{<blockquote>MATTER_NONE,
+MATTER_WOOD,
+MATTER_METAL,
+MATTER_STONE,
+MATTER_FLESH,
+MATTER_ICE,
+MATTER_WATER,
+MATTER_EARTH,
+MATTER_SNOW,
+MATTER_BREAKABLEWOOD,
+MATTER_BREAKABLESTONE,
+MATTER_SHIELD,
+MATTER_WEAPON,
+MATTER_MUD,
+MATTER_LAVA,
+</blockquote>};
+</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ESheerAxis" class="hidden"></a>ESheerAxis <a href="../Source_core/object.html#86" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">enum</span> <span class="source_type"><a href="../core/object.html#ESheerAxis" class="source">ESheerAxis</a></span><br />
+{<blockquote>SHEER_None,
+SHEER_XY,
+SHEER_XZ,
+SHEER_YX,
+SHEER_YZ,
+SHEER_ZX,
+SHEER_ZY,
+</blockquote>};
+</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th class="title">Structures Detail</th>
+</tr>
+</table>
+
+<h4><a name="_BoundingBox" class="hidden"></a>BoundingBox <a href="../Source_core/object.html#105" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">struct</span> <span class="source_type"><a href="../core/object.html#BoundingBox" class="source">BoundingBox</a></span><br />
+{<blockquote><span class="source_keyword">var</span> <span class="source_keyword">byte</span> IsValid;<br />
+<span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> <span class="source_type">Max</span>;<br />
+<span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> Min;<br />
+</blockquote>};
+</div>
+<blockquote class="comment">
+
+<br />
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BoundingVolume" class="hidden"></a>BoundingVolume <a href="../Source_core/object.html#112" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">struct</span> <span class="source_type"><a href="../core/object.html#BoundingVolume" class="source">BoundingVolume</a></span> <span class="source_keyword">extends</span> <span class="source_type"><a href="../core/object.html#BoundingBox" class="source">boundingbox</a></span><br />
+{<blockquote><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Plane" class="source">plane</a></span> Sphere;<br />
+</blockquote>};
+</div>
+<blockquote class="comment">
+A bounding box sphere together.
+<br />
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Color" class="hidden"></a>Color <a href="../Source_core/object.html#99" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">struct</span> <span class="source_type"><a href="../core/object.html#Color" class="source">Color</a></span><br />
+{<blockquote><span class="source_keyword">var</span>(<span class="source_type"><a href="../core/object.html" class="source">Object</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">byte</span> A;<br />
+<span class="source_keyword">var</span>(<span class="source_type"><a href="../core/object.html" class="source">Object</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">byte</span> <span class="source_type">B</span>;<br />
+<span class="source_keyword">var</span>(<span class="source_type"><a href="../core/object.html" class="source">Object</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">byte</span> G;<br />
+<span class="source_keyword">var</span>(<span class="source_type"><a href="../core/object.html" class="source">Object</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">byte</span> R;<br />
+</blockquote>};
+</div>
+<blockquote class="comment">
+An RGBA color
+<br />
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Coords" class="hidden"></a>Coords <a href="../Source_core/object.html#76" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">struct</span> <span class="source_type"><a href="../core/object.html#Coords" class="source">Coords</a></span><br />
+{<blockquote><span class="source_keyword">var</span>(<span class="source_type"><a href="../core/object.html" class="source">Object</a></span>) <span class="source_keyword2">config</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> Origin;<br />
+<span class="source_keyword">var</span>(<span class="source_type"><a href="../core/object.html" class="source">Object</a></span>) <span class="source_keyword2">config</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> XAxis;<br />
+<span class="source_keyword">var</span>(<span class="source_type"><a href="../core/object.html" class="source">Object</a></span>) <span class="source_keyword2">config</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> YAxis;<br />
+<span class="source_keyword">var</span>(<span class="source_type"><a href="../core/object.html" class="source">Object</a></span>) <span class="source_keyword2">config</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> ZAxis;<br />
+</blockquote>};
+</div>
+<blockquote class="comment">
+An arbitrary coordinate system in 3d space.
+<br />
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Guid" class="hidden"></a>Guid <a href="../Source_core/object.html#52" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">struct</span> <span class="source_type"><a href="../core/object.html#Guid" class="source">Guid</a></span><br />
+{<blockquote><span class="source_keyword">var</span> <span class="source_keyword">int</span> A;<br />
+<span class="source_keyword">var</span> <span class="source_keyword">int</span> <span class="source_type">B</span>;<br />
+<span class="source_keyword">var</span> <span class="source_keyword">int</span> <span class="source_type">C</span>;<br />
+<span class="source_keyword">var</span> <span class="source_keyword">int</span> D;<br />
+</blockquote>};
+</div>
+<blockquote class="comment">
+A globally unique identifier.
+<br />
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Plane" class="hidden"></a>Plane <a href="../Source_core/object.html#64" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">struct</span> <span class="source_type"><a href="../core/object.html#Plane" class="source">Plane</a></span> <span class="source_keyword">extends</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">Vector</a></span><br />
+{<blockquote><span class="source_keyword">var</span>(<span class="source_type"><a href="../core/object.html" class="source">Object</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">float</span> W;<br />
+</blockquote>};
+</div>
+<blockquote class="comment">
+A plane definition in 3d space.
+<br />
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Rotator" class="hidden"></a>Rotator <a href="../Source_core/object.html#70" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">struct</span> <span class="source_type"><a href="../core/object.html#Rotator" class="source">Rotator</a></span><br />
+{<blockquote><span class="source_keyword">var</span>(<span class="source_type"><a href="../core/object.html" class="source">Object</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">int</span> Pitch;<br />
+<span class="source_keyword">var</span>(<span class="source_type"><a href="../core/object.html" class="source">Object</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">int</span> Roll;<br />
+<span class="source_keyword">var</span>(<span class="source_type"><a href="../core/object.html" class="source">Object</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">int</span> Yaw;<br />
+</blockquote>};
+</div>
+<blockquote class="comment">
+An orthogonal rotation in 3d space.
+<br />
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Scale" class="hidden"></a>Scale <a href="../Source_core/object.html#82" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">struct</span> <span class="source_type"><a href="../core/object.html#Scale" class="source">Scale</a></span><br />
+{<blockquote><span class="source_keyword">var</span>(<span class="source_type"><a href="../core/object.html" class="source">Object</a></span>) <span class="source_keyword2">config</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> <span class="source_type"><a href="../core/object.html#Scale" class="source">Scale</a></span>;<br />
+<span class="source_keyword">var</span>(<span class="source_type"><a href="../core/object.html" class="source">Object</a></span>) <span class="source_type"><a href="../core/object.html#ESheerAxis" class="source">ESheerAxis</a></span> SheerAxis;<br />
+<span class="source_keyword">var</span>(<span class="source_type"><a href="../core/object.html" class="source">Object</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">float</span> SheerRate;<br />
+</blockquote>};
+</div>
+<blockquote class="comment">
+A scale and sheering.
+<br />
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Vector" class="hidden"></a>Vector <a href="../Source_core/object.html#58" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">struct</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">Vector</a></span><br />
+{<blockquote><span class="source_keyword">var</span>(<span class="source_type"><a href="../core/object.html" class="source">Object</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">float</span> X;<br />
+<span class="source_keyword">var</span>(<span class="source_type"><a href="../core/object.html" class="source">Object</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">float</span> <span class="source_type">Y</span>;<br />
+<span class="source_keyword">var</span>(<span class="source_type"><a href="../core/object.html" class="source">Object</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">float</span> Z;<br />
+</blockquote>};
+</div>
+<blockquote class="comment">
+A point or direction vector in 3d space.
+<br />
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_!-" class="hidden"></a><img src="../img_operator.gif" alt="" title="preoperator" /> ! <span class="function_state"></span> <a href="../Source_core/object.html#127" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">129</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">preoperator</span> <span class="source_keyword">bool</span> ! ( <span class="source_keyword">bool</span> A )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_!=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> != <span class="function_state"></span> <a href="../Source_core/object.html#226" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">218</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> != ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> A, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_!=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> != <span class="function_state"></span> <a href="../Source_core/object.html#245" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">203</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> != ( <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> A, <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_!=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> != <span class="function_state"></span> <a href="../Source_core/object.html#159" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">155</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> != ( <span class="source_keyword">int</span> A, <span class="source_keyword">int</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_!=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> != <span class="function_state"></span> <a href="../Source_core/object.html#192" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">181</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> != ( <span class="source_keyword">float</span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_!=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> != <span class="function_state"></span> <a href="../Source_core/object.html#269" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">123</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> != ( <span class="source_keyword">string</span> A, <span class="source_keyword">string</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_!=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> != <span class="function_state"></span> <a href="../Source_core/object.html#314" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">119</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> != ( <span class="source_type"><a href="../core/object.html" class="source">Object</a></span> A, <span class="source_type"><a href="../core/object.html" class="source">Object</a></span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_!=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> != <span class="function_state"></span> <a href="../Source_core/object.html#129" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">243</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> != ( <span class="source_keyword">bool</span> A, <span class="source_keyword">bool</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_!=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> != <span class="function_state"></span> <a href="../Source_core/object.html#318" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">255</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> != ( <span class="source_keyword">name</span> A, <span class="source_keyword">name</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_$-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> $ <span class="function_state"></span> <a href="../Source_core/object.html#262" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">112</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">string</span> $ ( <span class="source_keyword2">coerce</span> <span class="source_keyword">string</span> A, <span class="source_keyword2">coerce</span> <span class="source_keyword">string</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_%-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> % <span class="function_state"></span> <a href="../Source_core/object.html#183" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">173</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">float</span> % ( <span class="source_keyword">float</span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_&-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> & <span class="function_state"></span> <a href="../Source_core/object.html#160" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">156</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">int</span> & ( <span class="source_keyword">int</span> A, <span class="source_keyword">int</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_&&-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> && <span class="function_state"></span> <a href="../Source_core/object.html#130" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">130</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> && ( <span class="source_keyword">bool</span> A, skip <span class="source_keyword">bool</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_*-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> * <span class="function_state"></span> <a href="../Source_core/object.html#181" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">171</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">float</span> * ( <span class="source_keyword">float</span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_*-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> * <span class="function_state"></span> <a href="../Source_core/object.html#246" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">287</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> * ( <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> A, <span class="source_keyword">float</span>    <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_*-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> * <span class="function_state"></span> <a href="../Source_core/object.html#247" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">288</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> * ( <span class="source_keyword">float</span>    A, <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_*-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> * <span class="function_state"></span> <a href="../Source_core/object.html#219" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">296</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> * ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> A, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_*-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> * <span class="function_state"></span> <a href="../Source_core/object.html#217" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">212</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> * ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_*-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> * <span class="function_state"></span> <a href="../Source_core/object.html#218" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">213</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> * ( <span class="source_keyword">float</span> A, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_*-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> * <span class="function_state"></span> <a href="../Source_core/object.html#147" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">144</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">int</span> * ( <span class="source_keyword">int</span> A, <span class="source_keyword">int</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_**-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> ** <span class="function_state"></span> <a href="../Source_core/object.html#180" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">170</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">float</span> ** ( <span class="source_keyword">float</span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_*=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> *= <span class="function_state"></span> <a href="../Source_core/object.html#229" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">221</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> *= ( <span class="source_keyword2">out</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_*=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> *= <span class="function_state"></span> <a href="../Source_core/object.html#230" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">297</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> *= ( <span class="source_keyword2">out</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> A, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_*=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> *= <span class="function_state"></span> <a href="../Source_core/object.html#193" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">182</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">float</span> *= ( <span class="source_keyword2">out</span> <span class="source_keyword">float</span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_*=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> *= <span class="function_state"></span> <a href="../Source_core/object.html#135" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">133</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">byte</span> *= ( <span class="source_keyword2">out</span> <span class="source_keyword">byte</span> A, <span class="source_keyword">byte</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_*=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> *= <span class="function_state"></span> <a href="../Source_core/object.html#249" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">290</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> *= ( <span class="source_keyword2">out</span> <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_*=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> *= <span class="function_state"></span> <a href="../Source_core/object.html#163" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">159</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">int</span> *= ( <span class="source_keyword2">out</span> <span class="source_keyword">int</span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_+-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> + <span class="function_state"></span> <a href="../Source_core/object.html#149" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">146</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">int</span> + ( <span class="source_keyword">int</span> A, <span class="source_keyword">int</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_+-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> + <span class="function_state"></span> <a href="../Source_core/object.html#184" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">174</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">float</span> + ( <span class="source_keyword">float</span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_+-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> + <span class="function_state"></span> <a href="../Source_core/object.html#251" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">316</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> + ( <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> A, <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_+-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> + <span class="function_state"></span> <a href="../Source_core/object.html#221" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">215</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> + ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> A, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_++-" class="hidden"></a><img src="../img_operator.gif" alt="" title="postoperator" /> ++ <span class="function_state"></span> <a href="../Source_core/object.html#169" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">165</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">postoperator</span> <span class="source_keyword">int</span> ++ ( <span class="source_keyword2">out</span> <span class="source_keyword">int</span> A )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_++-" class="hidden"></a><img src="../img_operator.gif" alt="" title="preoperator" /> ++ <span class="function_state"></span> <a href="../Source_core/object.html#167" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">163</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">preoperator</span> <span class="source_keyword">int</span> ++ ( <span class="source_keyword2">out</span> <span class="source_keyword">int</span> A )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_++-" class="hidden"></a><img src="../img_operator.gif" alt="" title="preoperator" /> ++ <span class="function_state"></span> <a href="../Source_core/object.html#139" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">137</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">preoperator</span> <span class="source_keyword">byte</span> ++ ( <span class="source_keyword2">out</span> <span class="source_keyword">byte</span> A )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_++-" class="hidden"></a><img src="../img_operator.gif" alt="" title="postoperator" /> ++ <span class="function_state"></span> <a href="../Source_core/object.html#141" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">139</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">postoperator</span> <span class="source_keyword">byte</span> ++ ( <span class="source_keyword2">out</span> <span class="source_keyword">byte</span> A )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_+=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> += <span class="function_state"></span> <a href="../Source_core/object.html#253" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">318</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> += ( <span class="source_keyword2">out</span> <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> A, <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_+=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> += <span class="function_state"></span> <a href="../Source_core/object.html#137" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">135</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">byte</span> += ( <span class="source_keyword2">out</span> <span class="source_keyword">byte</span> A, <span class="source_keyword">byte</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_+=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> += <span class="function_state"></span> <a href="../Source_core/object.html#195" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">184</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">float</span> += ( <span class="source_keyword2">out</span> <span class="source_keyword">float</span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_+=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> += <span class="function_state"></span> <a href="../Source_core/object.html#232" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">223</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> += ( <span class="source_keyword2">out</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> A, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_+=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> += <span class="function_state"></span> <a href="../Source_core/object.html#165" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">161</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">int</span> += ( <span class="source_keyword2">out</span> <span class="source_keyword">int</span> A, <span class="source_keyword">int</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_--" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> - <span class="function_state"></span> <a href="../Source_core/object.html#185" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">175</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">float</span> - ( <span class="source_keyword">float</span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_--" class="hidden"></a><img src="../img_operator.gif" alt="" title="preoperator" /> - <span class="function_state"></span> <a href="../Source_core/object.html#146" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">143</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">preoperator</span> <span class="source_keyword">int</span> - ( <span class="source_keyword">int</span> A )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_--" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> - <span class="function_state"></span> <a href="../Source_core/object.html#150" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">147</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">int</span> - ( <span class="source_keyword">int</span> A, <span class="source_keyword">int</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_--" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> - <span class="function_state"></span> <a href="../Source_core/object.html#252" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">317</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> - ( <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> A, <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_--" class="hidden"></a><img src="../img_operator.gif" alt="" title="preoperator" /> - <span class="function_state"></span> <a href="../Source_core/object.html#216" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">211</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">preoperator</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> - ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> A )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_--" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> - <span class="function_state"></span> <a href="../Source_core/object.html#222" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">216</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> - ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> A, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_--" class="hidden"></a><img src="../img_operator.gif" alt="" title="preoperator" /> - <span class="function_state"></span> <a href="../Source_core/object.html#179" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">169</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">preoperator</span> <span class="source_keyword">float</span> - ( <span class="source_keyword">float</span> A )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_---" class="hidden"></a><img src="../img_operator.gif" alt="" title="postoperator" /> -- <span class="function_state"></span> <a href="../Source_core/object.html#142" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">140</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">postoperator</span> <span class="source_keyword">byte</span> -- ( <span class="source_keyword2">out</span> <span class="source_keyword">byte</span> A )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_---" class="hidden"></a><img src="../img_operator.gif" alt="" title="preoperator" /> -- <span class="function_state"></span> <a href="../Source_core/object.html#140" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">138</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">preoperator</span> <span class="source_keyword">byte</span> -- ( <span class="source_keyword2">out</span> <span class="source_keyword">byte</span> A )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_---" class="hidden"></a><img src="../img_operator.gif" alt="" title="preoperator" /> -- <span class="function_state"></span> <a href="../Source_core/object.html#168" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">164</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">preoperator</span> <span class="source_keyword">int</span> -- ( <span class="source_keyword2">out</span> <span class="source_keyword">int</span> A )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_---" class="hidden"></a><img src="../img_operator.gif" alt="" title="postoperator" /> -- <span class="function_state"></span> <a href="../Source_core/object.html#170" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">166</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">postoperator</span> <span class="source_keyword">int</span> -- ( <span class="source_keyword2">out</span> <span class="source_keyword">int</span> A )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_-=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> -= <span class="function_state"></span> <a href="../Source_core/object.html#254" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">319</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> -= ( <span class="source_keyword2">out</span> <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> A, <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_-=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> -= <span class="function_state"></span> <a href="../Source_core/object.html#138" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">136</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">byte</span> -= ( <span class="source_keyword2">out</span> <span class="source_keyword">byte</span> A, <span class="source_keyword">byte</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_-=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> -= <span class="function_state"></span> <a href="../Source_core/object.html#233" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">224</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> -= ( <span class="source_keyword2">out</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> A, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_-=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> -= <span class="function_state"></span> <a href="../Source_core/object.html#166" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">162</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">int</span> -= ( <span class="source_keyword2">out</span> <span class="source_keyword">int</span> A, <span class="source_keyword">int</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_-=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> -= <span class="function_state"></span> <a href="../Source_core/object.html#196" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">185</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">float</span> -= ( <span class="source_keyword2">out</span> <span class="source_keyword">float</span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_/ -" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> /  <span class="function_state"></span> <a href="../Source_core/object.html#182" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">172</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">float</span> /  ( <span class="source_keyword">float</span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_/ -" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> /  <span class="function_state"></span> <a href="../Source_core/object.html#220" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">214</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> /  ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_/ -" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> /  <span class="function_state"></span> <a href="../Source_core/object.html#248" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">289</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> /  ( <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> A, <span class="source_keyword">float</span>    <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_/ -" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> /  <span class="function_state"></span> <a href="../Source_core/object.html#148" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">145</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">int</span> /  ( <span class="source_keyword">int</span> A, <span class="source_keyword">int</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_/=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> /= <span class="function_state"></span> <a href="../Source_core/object.html#231" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">222</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> /= ( <span class="source_keyword2">out</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_/=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> /= <span class="function_state"></span> <a href="../Source_core/object.html#136" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">134</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">byte</span> /= ( <span class="source_keyword2">out</span> <span class="source_keyword">byte</span> A, <span class="source_keyword">byte</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_/=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> /= <span class="function_state"></span> <a href="../Source_core/object.html#250" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">291</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> /= ( <span class="source_keyword2">out</span> <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_/=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> /= <span class="function_state"></span> <a href="../Source_core/object.html#164" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">160</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">int</span> /= ( <span class="source_keyword2">out</span> <span class="source_keyword">int</span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_/=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> /= <span class="function_state"></span> <a href="../Source_core/object.html#194" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">183</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">float</span> /= ( <span class="source_keyword2">out</span> <span class="source_keyword">float</span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_<-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> < <span class="function_state"></span> <a href="../Source_core/object.html#186" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">176</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> &lt; ( <span class="source_keyword">float</span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_<-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> < <span class="function_state"></span> <a href="../Source_core/object.html#154" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">150</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> &lt; ( <span class="source_keyword">int</span> A, <span class="source_keyword">int</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_<-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> < <span class="function_state"></span> <a href="../Source_core/object.html#264" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">115</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> &lt; ( <span class="source_keyword">string</span> A, <span class="source_keyword">string</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_<<-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> << <span class="function_state"></span> <a href="../Source_core/object.html#151" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">148</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">int</span> &lt;&lt; ( <span class="source_keyword">int</span> A, <span class="source_keyword">int</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_<<-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> << <span class="function_state"></span> <a href="../Source_core/object.html#223" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">275</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> &lt;&lt; ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> A, <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_<=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> <= <span class="function_state"></span> <a href="../Source_core/object.html#156" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">152</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> &lt;= ( <span class="source_keyword">int</span> A, <span class="source_keyword">int</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_<=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> <= <span class="function_state"></span> <a href="../Source_core/object.html#266" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">120</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> &lt;= ( <span class="source_keyword">string</span> A, <span class="source_keyword">string</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_<=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> <= <span class="function_state"></span> <a href="../Source_core/object.html#188" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">178</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> &lt;= ( <span class="source_keyword">float</span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_==-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> == <span class="function_state"></span> <a href="../Source_core/object.html#313" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">114</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> == ( <span class="source_type"><a href="../core/object.html" class="source">Object</a></span> A, <span class="source_type"><a href="../core/object.html" class="source">Object</a></span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_==-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> == <span class="function_state"></span> <a href="../Source_core/object.html#190" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">180</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> == ( <span class="source_keyword">float</span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_==-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> == <span class="function_state"></span> <a href="../Source_core/object.html#317" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">254</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> == ( <span class="source_keyword">name</span> A, <span class="source_keyword">name</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_==-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> == <span class="function_state"></span> <a href="../Source_core/object.html#268" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">122</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> == ( <span class="source_keyword">string</span> A, <span class="source_keyword">string</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_==-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> == <span class="function_state"></span> <a href="../Source_core/object.html#244" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">142</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> == ( <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> A, <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_==-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> == <span class="function_state"></span> <a href="../Source_core/object.html#158" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">154</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> == ( <span class="source_keyword">int</span> A, <span class="source_keyword">int</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_==-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> == <span class="function_state"></span> <a href="../Source_core/object.html#225" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">217</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> == ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> A, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_==-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> == <span class="function_state"></span> <a href="../Source_core/object.html#128" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">242</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> == ( <span class="source_keyword">bool</span> A, <span class="source_keyword">bool</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_>-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> > <span class="function_state"></span> <a href="../Source_core/object.html#155" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">151</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> &gt; ( <span class="source_keyword">int</span> A, <span class="source_keyword">int</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_>-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> > <span class="function_state"></span> <a href="../Source_core/object.html#265" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">116</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> &gt; ( <span class="source_keyword">string</span> A, <span class="source_keyword">string</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_>-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> > <span class="function_state"></span> <a href="../Source_core/object.html#187" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">177</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> &gt; ( <span class="source_keyword">float</span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_>=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> >= <span class="function_state"></span> <a href="../Source_core/object.html#157" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">153</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> &gt;= ( <span class="source_keyword">int</span> A, <span class="source_keyword">int</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_>=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> >= <span class="function_state"></span> <a href="../Source_core/object.html#189" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">179</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> &gt;= ( <span class="source_keyword">float</span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_>=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> >= <span class="function_state"></span> <a href="../Source_core/object.html#267" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">121</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> &gt;= ( <span class="source_keyword">string</span> A, <span class="source_keyword">string</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_>>-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> >> <span class="function_state"></span> <a href="../Source_core/object.html#152" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">149</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">int</span> &gt;&gt; ( <span class="source_keyword">int</span> A, <span class="source_keyword">int</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_>>-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> >> <span class="function_state"></span> <a href="../Source_core/object.html#224" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">276</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> &gt;&gt; ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> A, <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_>>>-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> >>> <span class="function_state"></span> <a href="../Source_core/object.html#153" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">196</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">int</span> &gt;&gt;&gt; ( <span class="source_keyword">int</span> A, <span class="source_keyword">int</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_@-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> @ <span class="function_state"></span> <a href="../Source_core/object.html#263" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">168</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">string</span> @ ( <span class="source_keyword2">coerce</span> <span class="source_keyword">string</span> A, <span class="source_keyword2">coerce</span> <span class="source_keyword">string</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Abs-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Abs <span class="function_state"></span> <a href="../Source_core/object.html#199" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">186</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">float</span> Abs ( <span class="source_keyword">float</span> A )</div>
+<blockquote class="comment">
+Returns the absolute value (also known as the modulo) of <code>A</code>, usually written <code>|A|</code>. Eg: <code>Abs(5)== Abs(-5) == 5</code>.
+</blockquote>
+<hr class="small" />
+<h4><a name="_Asc-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Asc <span class="function_state"></span> <a href="../Source_core/object.html#280" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">237</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">int</span> Asc ( <span class="source_keyword">string</span> S )</div>
+<blockquote class="comment">
+Returns the ASCII code of the first character in <code>S</code>.
+</blockquote>
+<hr class="small" />
+<h4><a name="_Atan-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Atan <span class="function_state"></span> <a href="../Source_core/object.html#203" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">190</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">float</span> Atan ( <span class="source_keyword">float</span> A )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BeginState-" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> BeginState <span class="function_state"></span> <a href="../Source_core/object.html#370" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span>  BeginState (  )</div>
+<blockquote class="comment">
+Called immediately when entering a state, while within
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Caps-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Caps <span class="function_state"></span> <a href="../Source_core/object.html#278" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">235</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">string</span> Caps ( <span class="source_keyword2">coerce</span> <span class="source_keyword">string</span> S )</div>
+<blockquote class="comment">
+Returns <code>S</code> converted to uppercase.
+</blockquote>
+<hr class="small" />
+<h4><a name="_Chr-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Chr <span class="function_state"></span> <a href="../Source_core/object.html#279" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">236</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">string</span> Chr ( <span class="source_keyword">int</span> <span class="source_type">i</span> )</div>
+<blockquote class="comment">
+Returns the character matchin the given ASCII code.
+</blockquote>
+<hr class="small" />
+<h4><a name="_Clamp-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Clamp <span class="function_state"></span> <a href="../Source_core/object.html#176" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">251</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">int</span> Clamp ( <span class="source_keyword">int</span> V, <span class="source_keyword">int</span> A, <span class="source_keyword">int</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+If <code>V</code> is smaller than <code>A<code>, <code>A</code> is returned. If <code>V</code> is larger than <code>B</code>, <code>B</code> is returned. In any other case <code>V</code> is returned.
+</blockquote>
+<hr class="small" />
+<h4><a name="_ClassIsChildOf-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ClassIsChildOf <span class="function_state"></span> <a href="../Source_core/object.html#334" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">258</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> ClassIsChildOf ( <span class="source_keyword">class</span> TestClass, <span class="source_keyword">class</span> ParentClass )</div>
+<blockquote class="comment">
+Returns whether <code>TestClass</code> is a subclass of <code>Parentclass</code>. If the two classes are the same it returns true.
+</blockquote>
+<hr class="small" />
+<h4><a name="_Cos-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Cos <span class="function_state"></span> <a href="../Source_core/object.html#201" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">188</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">float</span> Cos ( <span class="source_keyword">float</span> A )</div>
+<blockquote class="comment">
+Returns <code>cosine( A )</code>
+</blockquote>
+<hr class="small" />
+<h4><a name="_Cross-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> Cross <span class="function_state"></span> <a href="../Source_core/object.html#228" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">220</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> Cross ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> A, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Disable-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Disable <span class="function_state"></span> <a href="../Source_core/object.html#339" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">118</span>) <span class="source_keyword2">final</span> <span class="source_keyword">function</span>  Disable ( <span class="source_keyword">name</span> ProbeFunc )</div>
+<blockquote class="comment">
+Disables a probe function.
+</blockquote>
+<hr class="small" />
+<h4><a name="_Dot-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> Dot <span class="function_state"></span> <a href="../Source_core/object.html#227" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">219</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">float</span> Dot ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> A, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DynamicLoadObject-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DynamicLoadObject <span class="function_state"></span> <a href="../Source_core/object.html#345" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span> <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_type"><a href="../core/object.html" class="source">object</a></span> DynamicLoadObject ( <span class="source_keyword">string</span> ObjectName, <span class="source_keyword">class</span> ObjectClass, <span class="source_keyword2">optional</span> <span class="source_keyword">bool</span> MayFail )</div>
+<blockquote class="comment">
+Returns a reference to a specified object, loading it if necessary.
+</blockquote>
+<hr class="small" />
+<h4><a name="_Enable-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Enable <span class="function_state"></span> <a href="../Source_core/object.html#338" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">117</span>) <span class="source_keyword2">final</span> <span class="source_keyword">function</span>  Enable ( <span class="source_keyword">name</span> ProbeFunc )</div>
+<blockquote class="comment">
+Enables a probe function.
+</blockquote>
+<hr class="small" />
+<h4><a name="_EndState-" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> EndState <span class="function_state"></span> <a href="../Source_core/object.html#376" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span>  EndState (  )</div>
+<blockquote class="comment">
+Called immediately before going out of the current state,
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Exp-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Exp <span class="function_state"></span> <a href="../Source_core/object.html#204" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">191</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">float</span> Exp ( <span class="source_keyword">float</span> A )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FClamp-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> FClamp <span class="function_state"></span> <a href="../Source_core/object.html#211" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">246</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">float</span> FClamp ( <span class="source_keyword">float</span> V, <span class="source_keyword">float</span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+If <code>V</code> is smaller than <code>A</code>, <code>A</code> is returned. If <code>V</code> is larger than <code>B</code>, <code>B</code> is returned. In any other case <code>V</code> is returned.
+</blockquote>
+<hr class="small" />
+<h4><a name="_FMax-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> FMax <span class="function_state"></span> <a href="../Source_core/object.html#210" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">245</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">float</span> FMax ( <span class="source_keyword">float</span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+Returns the higher of the two values.
+</blockquote>
+<hr class="small" />
+<h4><a name="_FMin-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> FMin <span class="function_state"></span> <a href="../Source_core/object.html#209" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">244</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">float</span> FMin ( <span class="source_keyword">float</span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+Returns the lower of the two values.
+</blockquote>
+<hr class="small" />
+<h4><a name="_FRand-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> FRand <span class="function_state"></span> <a href="../Source_core/object.html#208" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">195</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">float</span> FRand (  )</div>
+<blockquote class="comment">
+Returns a random number between 0 and 1.
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetAxes-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetAxes <span class="function_state"></span> <a href="../Source_core/object.html#255" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">229</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span>  GetAxes ( <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> A, <span class="source_keyword2">out</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> X, <span class="source_keyword2">out</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> <span class="source_type">Y</span>, <span class="source_keyword2">out</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> Z )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetEnum-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetEnum <span class="function_state"></span> <a href="../Source_core/object.html#344" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span> <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">name</span> GetEnum ( <span class="source_type"><a href="../core/object.html" class="source">object</a></span> E, <span class="source_keyword">int</span> <span class="source_type">i</span> )</div>
+<blockquote class="comment">
+Returns the <code>i</code>-th element of the given enumeration, as in <code>GetEnum(enum'MyEnum', 2)</code> or an empty name of the specified index exceeds the number of elements in the enumeration.
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetPropertyText-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetPropertyText <span class="function_state"></span> <a href="../Source_core/object.html#342" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">string</span> GetPropertyText ( <span class="source_keyword">string</span> PropName )</div>
+<blockquote class="comment">
+Returns the value of the specified property typecasted to string. It is not possible to access default properties in this manner. This is useful when you don't want any dependencies to the package of an object, but still need to access its public (i.e. neither private nor protected) properties.<br />
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetStateName-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetStateName <span class="function_state"></span> <a href="../Source_core/object.html#331" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">284</span>) <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">name</span> GetStateName (  )</div>
+<blockquote class="comment">
+Returns the object's current state name.
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetToken-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetToken <span class="function_state"></span> <a href="../Source_core/object.html#282" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">string</span> GetToken ( <span class="source_keyword2">out</span> <span class="source_keyword">string</span> s) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetUnAxes-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetUnAxes <span class="function_state"></span> <a href="../Source_core/object.html#256" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">230</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span>  GetUnAxes ( <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> A, <span class="source_keyword2">out</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> X, <span class="source_keyword2">out</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> <span class="source_type">Y</span>, <span class="source_keyword2">out</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> Z )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GotoState-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GotoState <span class="function_state"></span> <a href="../Source_core/object.html#329" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">113</span>) <span class="source_keyword2">final</span> <span class="source_keyword">function</span>  GotoState ( <span class="source_keyword2">optional</span> <span class="source_keyword">name</span> NewState, <span class="source_keyword2">optional</span> <span class="source_keyword">name</span> Label )</div>
+<blockquote class="comment">
+Switches to a new state. State code execution begins at the specified label or at <code>"Begin:"</code> if <code>Label</code> is not specified.<br />
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_InStr-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> InStr <span class="function_state"></span> <a href="../Source_core/object.html#274" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">126</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">int</span> InStr ( <span class="source_keyword2">coerce</span> <span class="source_keyword">string</span> S, <span class="source_keyword2">coerce</span> <span class="source_keyword">string</span> <span class="source_type">t</span> )</div>
+<blockquote class="comment">
+If the string t is found inside S InStr returns the starting position with the first character of S being 0. If t is not found InStr returns -1.
+</blockquote>
+<hr class="small" />
+<h4><a name="_Invert-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Invert <span class="function_state"></span> <a href="../Source_core/object.html#239" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">227</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span>  Invert ( <span class="source_keyword2">out</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> X, <span class="source_keyword2">out</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> <span class="source_type">Y</span>, <span class="source_keyword2">out</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> Z )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_IsA-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> IsA <span class="function_state"></span> <a href="../Source_core/object.html#335" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">303</span>) <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> IsA ( <span class="source_keyword">name</span> ClassName )</div>
+<blockquote class="comment">
+Returns whether the object's class is the specified class or a subclass. This function doesn't need a reference to the desired class, but just the class's name.
+</blockquote>
+<hr class="small" />
+<h4><a name="_IsInState-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> IsInState <span class="function_state"></span> <a href="../Source_core/object.html#330" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">281</span>) <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> IsInState ( <span class="source_keyword">name</span> TestState )</div>
+<blockquote class="comment">
+Returns whether the object's current state is the one specified.
+</blockquote>
+<hr class="small" />
+<h4><a name="_Left-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Left <span class="function_state"></span> <a href="../Source_core/object.html#276" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">128</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">string</span> Left ( <span class="source_keyword2">coerce</span> <span class="source_keyword">string</span> S, <span class="source_keyword">int</span> <span class="source_type">i</span> )</div>
+<blockquote class="comment">
+Returns the <code>i</code> leftmost characters of <code>S</code>.
+</blockquote>
+<hr class="small" />
+<h4><a name="_Len-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Len <span class="function_state"></span> <a href="../Source_core/object.html#273" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">125</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">int</span> <span class="source_type">Len</span> ( <span class="source_keyword2">coerce</span> <span class="source_keyword">string</span> S )</div>
+<blockquote class="comment">
+Returns the length of a string.
+</blockquote>
+<hr class="small" />
+<h4><a name="_Lerp-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Lerp <span class="function_state"></span> <a href="../Source_core/object.html#212" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">247</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">float</span> Lerp ( <span class="source_keyword">float</span> Alpha, <span class="source_keyword">float</span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+Returns the linear interpolation between A and B.<br />
+The return value is calculated through something like this:
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Localize-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Localize <span class="function_state"></span> <a href="../Source_core/object.html#326" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span> <span class="source_keyword2">static</span> <span class="source_keyword">function</span> <span class="source_keyword">string</span> Localize ( <span class="source_keyword">string</span> SectionName, <span class="source_keyword">string</span> KeyName, <span class="source_keyword">string</span> PackageName )</div>
+<blockquote class="comment">
+Returns the string found in <code>PackageName.int</code> in the <code>[SectionName]</code> section. Logs an error if no localization for the specified string is found.
+</blockquote>
+<hr class="small" />
+<h4><a name="_Log-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Log <span class="function_state"></span> <a href="../Source_core/object.html#324" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">231</span>) <span class="source_keyword2">final</span> <span class="source_keyword2">static</span> <span class="source_keyword">function</span>  Log ( <span class="source_keyword2">coerce</span> <span class="source_keyword">string</span> S, <span class="source_keyword2">optional</span> <span class="source_keyword">name</span> Tag )</div>
+<blockquote class="comment">
+Writes a line to the log file. The line begins with the <code>Tag</code> or <code>"ScriptLog:"</code> if <code>Tag</code> was not specified, followed by the log string.<br />
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Loge-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Loge <span class="function_state"></span> <a href="../Source_core/object.html#205" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">192</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">float</span> Loge ( <span class="source_keyword">float</span> A )</div>
+<blockquote class="comment">
+Returns <code>log(A)</code>, the natural logarithm
+</blockquote>
+<hr class="small" />
+<h4><a name="_Max-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Max <span class="function_state"></span> <a href="../Source_core/object.html#175" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">250</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">int</span> <span class="source_type">Max</span> ( <span class="source_keyword">int</span> A, <span class="source_keyword">int</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+Returns the higher of the two values.
+</blockquote>
+<hr class="small" />
+<h4><a name="_Mid-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Mid <span class="function_state"></span> <a href="../Source_core/object.html#275" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">127</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">string</span> Mid ( <span class="source_keyword2">coerce</span> <span class="source_keyword">string</span> S, <span class="source_keyword">int</span> <span class="source_type">i</span>, <span class="source_keyword2">optional</span> <span class="source_keyword">int</span> j )</div>
+<blockquote class="comment">
+Returns the middle part of S, starting at character i and including j characters (or all of them if j is not specified). Note: the 1st char has the number 0, this is diffrent then in visual basic, where the 1st char is 1.
+</blockquote>
+<hr class="small" />
+<h4><a name="_Min-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Min <span class="function_state"></span> <a href="../Source_core/object.html#174" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">249</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">int</span> Min ( <span class="source_keyword">int</span> A, <span class="source_keyword">int</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+Returns the lower of the two values.
+</blockquote>
+<hr class="small" />
+<h4><a name="_MirrorVectorByNormal-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> MirrorVectorByNormal <span class="function_state"></span> <a href="../Source_core/object.html#241" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">300</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> MirrorVectorByNormal ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> Vect, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> Normal )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Normal-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Normal <span class="function_state"></span> <a href="../Source_core/object.html#238" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">226</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> Normal ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> A )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Normalize-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Normalize <span class="function_state"></span> <a href="../Source_core/object.html#259" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span> <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> Normalize ( <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> Rot )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_OrthoRotation-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> OrthoRotation <span class="function_state"></span> <a href="../Source_core/object.html#258" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span> <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> OrthoRotation ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> X, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> <span class="source_type">Y</span>, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> Z )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Radians-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Radians <span class="function_state"></span> <a href="../Source_core/object.html#358" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">final</span> <span class="source_keyword2">simulated</span> <span class="source_keyword">function</span> <span class="source_keyword">float</span> Radians ( <span class="source_keyword">int</span> theta) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Rand-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Rand <span class="function_state"></span> <a href="../Source_core/object.html#173" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">167</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">int</span> Rand ( <span class="source_keyword">int</span> <span class="source_type">Max</span> )</div>
+<blockquote class="comment">
+Returns a random number ranging from 0 to Max-1.
+</blockquote>
+<hr class="small" />
+<h4><a name="_RandRange-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> RandRange <span class="function_state"></span> <a href="../Source_core/object.html#353" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">final</span> <span class="source_keyword2">simulated</span> <span class="source_keyword">function</span> <span class="source_keyword">float</span> RandRange ( <span class="source_keyword">float</span> Min, <span class="source_keyword">float</span> <span class="source_type">Max</span> ) )</div>
+<blockquote class="comment">
+Return a random number within the given range.
+</blockquote>
+<hr class="small" />
+<h4><a name="_ResetConfig-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ResetConfig <span class="function_state"></span> <a href="../Source_core/object.html#350" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span> <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span>  ResetConfig (  )</div>
+<blockquote class="comment">
+Resets the config and globalconfig variables of this object's class to the values stored in Default.ini or DefUser.ini.
+</blockquote>
+<hr class="small" />
+<h4><a name="_Right-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Right <span class="function_state"></span> <a href="../Source_core/object.html#277" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">234</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">string</span> Right ( <span class="source_keyword2">coerce</span> <span class="source_keyword">string</span> S, <span class="source_keyword">int</span> <span class="source_type">i</span> )</div>
+<blockquote class="comment">
+Returns the <code>i</code> rightmost characters of <code>S</code>.
+</blockquote>
+<hr class="small" />
+<h4><a name="_RotRand-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> RotRand <span class="function_state"></span> <a href="../Source_core/object.html#257" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">320</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> RotRand ( <span class="source_keyword2">optional</span> <span class="source_keyword">bool</span> bRoll )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SaveConfig-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SaveConfig <span class="function_state"></span> <a href="../Source_core/object.html#348" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">536</span>) <span class="source_keyword2">final</span> <span class="source_keyword">function</span>  SaveConfig (  )</div>
+<blockquote class="comment">
+Saves the current values of config and globalconfig variables of this object to the ini file and sets them as default values for the object's class.
+</blockquote>
+<hr class="small" />
+<h4><a name="_SetPropertyText-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SetPropertyText <span class="function_state"></span> <a href="../Source_core/object.html#343" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span>  SetPropertyText ( <span class="source_keyword">string</span> PropName, <span class="source_keyword">string</span> PropValue )</div>
+<blockquote class="comment">
+Assigns a value to the specified public non-constant property of an object. Only use this for properties that can be typecasted from string.<br />
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Sin-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Sin <span class="function_state"></span> <a href="../Source_core/object.html#200" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">187</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">float</span> Sin ( <span class="source_keyword">float</span> A )</div>
+<blockquote class="comment">
+Returns <code>sine( A )</code>
+</blockquote>
+<hr class="small" />
+<h4><a name="_Smerp-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Smerp <span class="function_state"></span> <a href="../Source_core/object.html#213" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">248</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">float</span> Smerp ( <span class="source_keyword">float</span> Alpha, <span class="source_keyword">float</span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+Returns an Alpha-smooth nonlinear interpolation between A and B.<br />
+The return value seems to be calculated through something like this:
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Sqrt-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Sqrt <span class="function_state"></span> <a href="../Source_core/object.html#206" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">193</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">float</span> Sqrt ( <span class="source_keyword">float</span> A )</div>
+<blockquote class="comment">
+Returns the square root of <code>A</code>.
+</blockquote>
+<hr class="small" />
+<h4><a name="_Square-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Square <span class="function_state"></span> <a href="../Source_core/object.html#207" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">194</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">float</span> Square ( <span class="source_keyword">float</span> A )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StaticSaveConfig-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> StaticSaveConfig <span class="function_state"></span> <a href="../Source_core/object.html#349" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span> <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span>  StaticSaveConfig (  )</div>
+<blockquote class="comment">
+Saves the default values of config and globalconfig variables of this object's class to the ini file.
+</blockquote>
+<hr class="small" />
+<h4><a name="_Tan-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Tan <span class="function_state"></span> <a href="../Source_core/object.html#202" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">189</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">float</span> Tan ( <span class="source_keyword">float</span> A )</div>
+<blockquote class="comment">
+Returns <code>tan( A )</code>
+</blockquote>
+<hr class="small" />
+<h4><a name="_VRand-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> VRand <span class="function_state"></span> <a href="../Source_core/object.html#240" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">252</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> VRand (  )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_VSize-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> VSize <span class="function_state"></span> <a href="../Source_core/object.html#236" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">225</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">float</span> VSize ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> A )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_VSize2D-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> VSize2D <span class="function_state"></span> <a href="../Source_core/object.html#237" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">662</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">function</span> <span class="source_keyword">float</span> VSize2D ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> A )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Warn-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Warn <span class="function_state"></span> <a href="../Source_core/object.html#325" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">232</span>) <span class="source_keyword2">final</span> <span class="source_keyword2">static</span> <span class="source_keyword">function</span>  Warn ( <span class="source_keyword2">coerce</span> <span class="source_keyword">string</span> S )</div>
+<blockquote class="comment">
+Same like <code>Log</code>, but the line starts with <code>"ScriptWarning:"</code> and contains information about the object, state and function that called Warn.
+</blockquote>
+<hr class="small" />
+<h4><a name="_^-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> ^ <span class="function_state"></span> <a href="../Source_core/object.html#161" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">157</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">int</span> ^ ( <span class="source_keyword">int</span> A, <span class="source_keyword">int</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_^^-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> ^^ <span class="function_state"></span> <a href="../Source_core/object.html#131" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">131</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> ^^ ( <span class="source_keyword">bool</span> A, <span class="source_keyword">bool</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_|-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> | <span class="function_state"></span> <a href="../Source_core/object.html#162" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">158</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">int</span> | ( <span class="source_keyword">int</span> A, <span class="source_keyword">int</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_||-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> || <span class="function_state"></span> <a href="../Source_core/object.html#132" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">132</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> || ( <span class="source_keyword">bool</span> A, skip <span class="source_keyword">bool</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_~-" class="hidden"></a><img src="../img_operator.gif" alt="" title="preoperator" /> ~ <span class="function_state"></span> <a href="../Source_core/object.html#145" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">141</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">preoperator</span> <span class="source_keyword">int</span> ~ ( <span class="source_keyword">int</span> A )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_~=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> ~= <span class="function_state"></span> <a href="../Source_core/object.html#270" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">124</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> ~= ( <span class="source_keyword">string</span> A, <span class="source_keyword">string</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_~=-" class="hidden"></a><img src="../img_operator.gif" alt="" title="operator" /> ~= <span class="function_state"></span> <a href="../Source_core/object.html#191" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">210</span>) <span class="source_keyword2">static</span> <span class="source_keyword2">final</span> <span class="source_keyword">operator</span> <span class="source_keyword">bool</span> ~= ( <span class="source_keyword">float</span> A, <span class="source_keyword">float</span> <span class="source_type">B</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../core/core-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_core/object.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#Object">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../core/locale.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../core/subsystem.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:41:05.950 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

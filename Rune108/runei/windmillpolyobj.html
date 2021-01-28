@@ -1,0 +1,499 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - RuneI.WindmillPolyobj</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/windmillpolyobj.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#WindmillPolyobj">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/weaponswipeyellow.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/wolfgar.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#runei/windmillpolyobj.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../runei/runei-overview.html">RuneI</a>.WindmillPolyobj</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../runei/runepolyobj.html">RunePolyobj</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a>
+   |   
+   +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/brush.html">Brush</a>
+      |   
+      +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/polyobj.html">Polyobj</a>
+         |   
+         +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runepolyobj.html">RunePolyobj</a>
+            |   
+            +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/windmillpolyobj.html">WindmillPolyobj</a>
+</pre>
+
+
+
+<hr />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Constants Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Contants from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/polyobj.html">Polyobj</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/polyobj.html#CCUTOFF">CCUTOFF</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_delta" name="delta" title="go to the details">delta</a></td></tr>
+<tr><th colspan="2" class="small">Sounds</th></tr>
+<tr><td nowrap="nowrap" width="33%">Sound</td><td width="66%"><a href="#_SafeSound" name="SafeSound" title="go to the details">SafeSound</a></td></tr>
+<tr><th colspan="2" class="small">WindmillPolyobj</th></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_DangerousTime" name="DangerousTime" title="go to the details">DangerousTime</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_InitialRotationRate" name="InitialRotationRate" title="go to the details">InitialRotationRate</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_SafeTime" name="SafeTime" title="go to the details">SafeTime</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_SlowRotationRate" name="SlowRotationRate" title="go to the details">SlowRotationRate</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runepolyobj.html">RunePolyobj</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/runepolyobj.html#DestroySound">DestroySound</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/polyobj.html">Polyobj</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/polyobj.html#BasePos">BasePos</a>, <a href="../engine/polyobj.html#BaseRot">BaseRot</a>, <a href="../engine/polyobj.html#bCanRender">bCanRender</a>, <a href="../engine/polyobj.html#bClientPause">bClientPause</a>, <a href="../engine/polyobj.html#bDamageTriggered">bDamageTriggered</a>, <a href="../engine/polyobj.html#bDelaying">bDelaying</a>, <a href="../engine/polyobj.html#bDestroyable">bDestroyable</a>, <a href="../engine/polyobj.html#bDynamicLightMover">bDynamicLightMover</a>, <a href="../engine/polyobj.html#bDynamicLightPolyobj">bDynamicLightPolyobj</a>, <a href="../engine/polyobj.html#bInitiallyOn">bInitiallyOn</a>, <a href="../engine/polyobj.html#bOpening">bOpening</a>, <a href="../engine/polyobj.html#bPlayerOnly">bPlayerOnly</a>, <a href="../engine/polyobj.html#BrushRaytraceKey">BrushRaytraceKey</a>, <a href="../engine/polyobj.html#bSlave">bSlave</a>, <a href="../engine/polyobj.html#bTriggerOnceOnly">bTriggerOnceOnly</a>, <a href="../engine/polyobj.html#BumpDamage">BumpDamage</a>, <a href="../engine/polyobj.html#BumpEvent">BumpEvent</a>, <a href="../engine/polyobj.html#bUseTriggered">bUseTriggered</a>, <a href="../engine/polyobj.html#CBase">CBase</a>, <a href="../engine/polyobj.html#CBaseName">CBaseName</a>, <a href="../engine/polyobj.html#CCycleTime">CCycleTime</a>, <a href="../engine/polyobj.html#CDelay">CDelay</a>, <a href="../engine/polyobj.html#CHeight">CHeight</a>, <a href="../engine/polyobj.html#CHeightVect">CHeightVect</a>, <a href="../engine/polyobj.html#ClientUpdate">ClientUpdate</a>, <a href="../engine/polyobj.html#ClosedSound">ClosedSound</a>, <a href="../engine/polyobj.html#ClosingSound">ClosingSound</a>, <a href="../engine/polyobj.html#CPhase">CPhase</a>, <a href="../engine/polyobj.html#CPrevV">CPrevV</a>, <a href="../engine/polyobj.html#CPulse">CPulse</a>, <a href="../engine/polyobj.html#CRotator">CRotator</a>, <a href="../engine/polyobj.html#CSize">CSize</a>, <a href="../engine/polyobj.html#CSound">CSound</a>, <a href="../engine/polyobj.html#CSpeed">CSpeed</a>, <a href="../engine/polyobj.html#CStartLocation">CStartLocation</a>, <a href="../engine/polyobj.html#CTimeCounter">CTimeCounter</a>, <a href="../engine/polyobj.html#DamageThreshold">DamageThreshold</a>, <a href="../engine/polyobj.html#DebrisSpawnRadius">DebrisSpawnRadius</a>, <a href="../engine/polyobj.html#DebrisTexture">DebrisTexture</a>, <a href="../engine/polyobj.html#DebrisType">DebrisType</a>, <a href="../engine/polyobj.html#DelayTime">DelayTime</a>, <a href="../engine/polyobj.html#EncroachDamage">EncroachDamage</a>, <a href="../engine/polyobj.html#flag1">flag1</a>, <a href="../engine/polyobj.html#flag2">flag2</a>, <a href="../engine/polyobj.html#Follower">Follower</a>, <a href="../engine/polyobj.html#InterpolateEvent[16]">InterpolateEvent[16]</a>, <a href="../engine/polyobj.html#KeyNum">KeyNum</a>, <a href="../engine/polyobj.html#KeyPos[16]">KeyPos[16]</a>, <a href="../engine/polyobj.html#KeyRot[16]">KeyRot[16]</a>, <a href="../engine/polyobj.html#Leader">Leader</a>, <a href="../engine/polyobj.html#matter">matter</a>, <a href="../engine/polyobj.html#MoveAmbientSound">MoveAmbientSound</a>, <a href="../engine/polyobj.html#MoveTime[16]">MoveTime[16]</a>, <a href="../engine/polyobj.html#myMarker">myMarker</a>, <a href="../engine/polyobj.html#NumDebrisChunks">NumDebrisChunks</a>, <a href="../engine/polyobj.html#NumKeys">NumKeys</a>, <a href="../engine/polyobj.html#numTriggerEvents">numTriggerEvents</a>, <a href="../engine/polyobj.html#OldPos">OldPos</a>, <a href="../engine/polyobj.html#OldPrePivot">OldPrePivot</a>, <a href="../engine/polyobj.html#OldRot">OldRot</a>, <a href="../engine/polyobj.html#OnMeCount">OnMeCount</a>, <a href="../engine/polyobj.html#OnMeList[4]">OnMeList[4]</a>, <a href="../engine/polyobj.html#OpenedSound">OpenedSound</a>, <a href="../engine/polyobj.html#OpeningSound">OpeningSound</a>, <a href="../engine/polyobj.html#OtherTime">OtherTime</a>, <a href="../engine/polyobj.html#PlayerBumpEvent">PlayerBumpEvent</a>, <a href="../engine/polyobj.html#PolyObjBumpType">PolyObjBumpType</a>, <a href="../engine/polyobj.html#PolyObjEncroachType">PolyObjEncroachType</a>, <a href="../engine/polyobj.html#PolyObjGlideType">PolyObjGlideType</a>, <a href="../engine/polyobj.html#PrevKeyNum">PrevKeyNum</a>, <a href="../engine/polyobj.html#RealPosition">RealPosition</a>, <a href="../engine/polyobj.html#RealRotation">RealRotation</a>, <a href="../engine/polyobj.html#RecommendedTrigger">RecommendedTrigger</a>, <a href="../engine/polyobj.html#ReturnGroup">ReturnGroup</a>, <a href="../engine/polyobj.html#SavedPos">SavedPos</a>, <a href="../engine/polyobj.html#SavedRot">SavedRot</a>, <a href="../engine/polyobj.html#SavedTrigger">SavedTrigger</a>, <a href="../engine/polyobj.html#SimInterpolate">SimInterpolate</a>, <a href="../engine/polyobj.html#SimOldPos">SimOldPos</a>, <a href="../engine/polyobj.html#SimOldRotPitch">SimOldRotPitch</a>, <a href="../engine/polyobj.html#SimOldRotRoll">SimOldRotRoll</a>, <a href="../engine/polyobj.html#SimOldRotYaw">SimOldRotYaw</a>, <a href="../engine/polyobj.html#SinkResting">SinkResting</a>, <a href="../engine/polyobj.html#StayOpenTime">StayOpenTime</a>, <a href="../engine/polyobj.html#ThrustVector">ThrustVector</a>, <a href="../engine/polyobj.html#TriggerActor">TriggerActor</a>, <a href="../engine/polyobj.html#TriggerActor2">TriggerActor2</a>, <a href="../engine/polyobj.html#WaitingPawn">WaitingPawn</a>, <a href="../engine/polyobj.html#WorldRaytraceKey">WorldRaytraceKey</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Enumerations Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Enumerations from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/polyobj.html">Polyobj</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/polyobj.html#EPolyObjBumpType">EPolyObjBumpType</a>, <a href="../engine/polyobj.html#EPolyObjEncroachType">EPolyObjEncroachType</a>, <a href="../engine/polyobj.html#EPolyObjGlideType">EPolyObjGlideType</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_BeginState-Safe" name="BeginState" title="go to the details">BeginState</a> ()))<br /><span class="function_state">Safe</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_BeginState-Spinning" name="BeginState" title="go to the details">BeginState</a> ()))<br /><span class="function_state">Spinning</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Bump-DangerousSlowing" name="Bump" title="go to the details">Bump</a> (<a href="../engine/actor.html">actor</a> Other))<br /><span class="function_state">DangerousSlowing</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Bump-DangerousSpeeding" name="Bump" title="go to the details">Bump</a> (<a href="../engine/actor.html">actor</a> Other))<br /><span class="function_state">DangerousSpeeding</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Bump-Spinning" name="Bump" title="go to the details">Bump</a> (<a href="../engine/actor.html">actor</a> Other))<br /><span class="function_state">Spinning</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_EncroachingOn-" name="EncroachingOn" title="go to the details">EncroachingOn</a> (actor Other ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PreBeginPlay-" name="PreBeginPlay" title="go to the details">PreBeginPlay</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ShredActor-" name="ShredActor" title="go to the details">ShredActor</a> (<a href="../engine/actor.html">actor</a> Other))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Tick-DangerousSlowing" name="Tick" title="go to the details">Tick</a> (float DeltaTime))<br /><span class="function_state">DangerousSlowing</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Tick-DangerousSpeeding" name="Tick" title="go to the details">Tick</a> (float DeltaTime))<br /><span class="function_state">DangerousSpeeding</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Tick-SafeSlowing" name="Tick" title="go to the details">Tick</a> (float DeltaTime))<br /><span class="function_state">SafeSlowing</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Tick-SafeSpeeding" name="Tick" title="go to the details">Tick</a> (float DeltaTime))<br /><span class="function_state">SafeSpeeding</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Trigger-DangerousSlowing" name="Trigger" title="go to the details">Trigger</a> (<a href="../engine/actor.html">Actor</a> other, Pawn EventInstigator ))<br /><span class="function_state">DangerousSlowing</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Trigger-DangerousSpeeding" name="Trigger" title="go to the details">Trigger</a> (<a href="../engine/actor.html">Actor</a> other, Pawn EventInstigator ))<br /><span class="function_state">DangerousSpeeding</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Trigger-Safe" name="Trigger" title="go to the details">Trigger</a> (<a href="../engine/actor.html">Actor</a> other, Pawn EventInstigator ))<br /><span class="function_state">Safe</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Trigger-SafeSlowing" name="Trigger" title="go to the details">Trigger</a> (<a href="../engine/actor.html">Actor</a> other, Pawn EventInstigator ))<br /><span class="function_state">SafeSlowing</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Trigger-SafeSpeeding" name="Trigger" title="go to the details">Trigger</a> (<a href="../engine/actor.html">Actor</a> other, Pawn EventInstigator ))<br /><span class="function_state">SafeSpeeding</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Trigger-Spinning" name="Trigger" title="go to the details">Trigger</a> (<a href="../engine/actor.html">Actor</a> other, Pawn EventInstigator ))<br /><span class="function_state">Spinning</span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runepolyobj.html">RunePolyobj</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/runepolyobj.html#Explode">Explode</a>, <a href="../runei/runepolyobj.html#PreBeginPlay">PreBeginPlay</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/polyobj.html">Polyobj</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/polyobj.html#Attach">Attach</a>, <a href="../engine/polyobj.html#BeginEvent">BeginEvent</a>, <a href="../engine/polyobj.html#BeginPlay">BeginPlay</a>, <a href="../engine/polyobj.html#BeginState">BeginState</a>, <a href="../engine/polyobj.html#Bump">Bump</a>, <a href="../engine/polyobj.html#Detach">Detach</a>, <a href="../engine/polyobj.html#DoClose">DoClose</a>, <a href="../engine/polyobj.html#DoOpen">DoOpen</a>, <a href="../engine/polyobj.html#EncroachingOn">EncroachingOn</a>, <a href="../engine/polyobj.html#EndEvent">EndEvent</a>, <a href="../engine/polyobj.html#Explode">Explode</a>, <a href="../engine/polyobj.html#FindTriggerActor">FindTriggerActor</a>, <a href="../engine/polyobj.html#FinishedClosing">FinishedClosing</a>, <a href="../engine/polyobj.html#FinishedOpening">FinishedOpening</a>, <a href="../engine/polyobj.html#FinishNotify">FinishNotify</a>, <a href="../engine/polyobj.html#GetCollisionRadius">GetCollisionRadius</a>, <a href="../engine/polyobj.html#GetTexture">GetTexture</a>, <a href="../engine/polyobj.html#HandleDoor">HandleDoor</a>, <a href="../engine/polyobj.html#HandleTriggerDoor">HandleTriggerDoor</a>, <a href="../engine/polyobj.html#InterpolateEnd">InterpolateEnd</a>, <a href="../engine/polyobj.html#InterpolateTo">InterpolateTo</a>, <a href="../engine/polyobj.html#JointDamaged">JointDamaged</a>, <a href="../engine/polyobj.html#MakeGroupReturn">MakeGroupReturn</a>, <a href="../engine/polyobj.html#MakeGroupStop">MakeGroupStop</a>, <a href="../engine/polyobj.html#MakeOnMeList">MakeOnMeList</a>, <a href="../engine/polyobj.html#PolyobjDestroy">PolyobjDestroy</a>, <a href="../engine/polyobj.html#PostBeginPlay">PostBeginPlay</a>, <a href="../engine/polyobj.html#SetKeyframe">SetKeyframe</a>, <a href="../engine/polyobj.html#SpecialHandling">SpecialHandling</a>, <a href="../engine/polyobj.html#Tick">Tick</a>, <a href="../engine/polyobj.html#Timer">Timer</a>, <a href="../engine/polyobj.html#Trigger">Trigger</a>, <a href="../engine/polyobj.html#UnTrigger">UnTrigger</a>, <a href="../engine/polyobj.html#UpdateSinkerZ">UpdateSinkerZ</a>, <a href="../engine/polyobj.html#UseTrigger">UseTrigger</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th class="title">States Summary</th>
+</tr>
+</table>
+
+<table>
+<tr>
+	<th>DangerousSlowing <a href="../Source_runei/windmillpolyobj.html#65" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> DangerousSlowing <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_Bump+DangerousSlowing">Bump</a>, <a href="#_Tick+DangerousSlowing">Tick</a>, <a href="#_Trigger+DangerousSlowing">Trigger</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>DangerousSpeeding <a href="../Source_runei/windmillpolyobj.html#155" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> DangerousSpeeding <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_Bump+DangerousSpeeding">Bump</a>, <a href="#_Tick+DangerousSpeeding">Tick</a>, <a href="#_Trigger+DangerousSpeeding">Trigger</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>Safe <a href="../Source_runei/windmillpolyobj.html#116" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> Safe <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_BeginState+Safe">BeginState</a>, <a href="#_Trigger+Safe">Trigger</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>SafeSlowing <a href="../Source_runei/windmillpolyobj.html#93" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> SafeSlowing <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_Tick+SafeSlowing">Tick</a>, <a href="#_Trigger+SafeSlowing">Trigger</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>SafeSpeeding <a href="../Source_runei/windmillpolyobj.html#132" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> SafeSpeeding <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_Tick+SafeSpeeding">Tick</a>, <a href="#_Trigger+SafeSpeeding">Trigger</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>Spinning <a href="../Source_runei/windmillpolyobj.html#42" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw">auto state</span> Spinning <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_BeginState+Spinning">BeginState</a>, <a href="#_Bump+Spinning">Bump</a>, <a href="#_Trigger+Spinning">Trigger</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_delta" class="hidden"></a>delta <a href="../Source_runei/windmillpolyobj.html#19" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">float</span> <span class="source_type">delta</span>;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">Sounds</h3>
+<h4><a name="_SafeSound" class="hidden"></a>SafeSound <a href="../Source_runei/windmillpolyobj.html#17" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Sounds) <span class="source_type">Sound</span> SafeSound;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">WindmillPolyobj</h3>
+<h4><a name="_DangerousTime" class="hidden"></a>DangerousTime <a href="../Source_runei/windmillpolyobj.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/windmillpolyobj.html" class="source">WindmillPolyobj</a></span>) <span class="source_keyword">float</span> DangerousTime;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_InitialRotationRate" class="hidden"></a>InitialRotationRate <a href="../Source_runei/windmillpolyobj.html#13" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/windmillpolyobj.html" class="source">WindmillPolyobj</a></span>) <span class="source_keyword">float</span> InitialRotationRate;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SafeTime" class="hidden"></a>SafeTime <a href="../Source_runei/windmillpolyobj.html#15" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/windmillpolyobj.html" class="source">WindmillPolyobj</a></span>) <span class="source_keyword">float</span> SafeTime;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SlowRotationRate" class="hidden"></a>SlowRotationRate <a href="../Source_runei/windmillpolyobj.html#16" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/windmillpolyobj.html" class="source">WindmillPolyobj</a></span>) <span class="source_keyword">float</span> SlowRotationRate;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_BeginState-Safe" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BeginState <span class="function_state">Safe</span> <a href="../Source_runei/windmillpolyobj.html#118" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  BeginState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BeginState-Spinning" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BeginState <span class="function_state">Spinning</span> <a href="../Source_runei/windmillpolyobj.html#44" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  BeginState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Bump-DangerousSlowing" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Bump <span class="function_state">DangerousSlowing</span> <a href="../Source_runei/windmillpolyobj.html#67" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Bump ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Bump-DangerousSpeeding" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Bump <span class="function_state">DangerousSpeeding</span> <a href="../Source_runei/windmillpolyobj.html#157" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Bump ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Bump-Spinning" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Bump <span class="function_state">Spinning</span> <a href="../Source_runei/windmillpolyobj.html#50" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Bump ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EncroachingOn-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> EncroachingOn <span class="function_state"></span> <a href="../Source_runei/windmillpolyobj.html#36" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> EncroachingOn ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PreBeginPlay-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PreBeginPlay <span class="function_state"></span> <a href="../Source_runei/windmillpolyobj.html#22" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PreBeginPlay ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ShredActor-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ShredActor <span class="function_state"></span> <a href="../Source_runei/windmillpolyobj.html#29" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ShredActor ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Tick-DangerousSlowing" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Tick <span class="function_state">DangerousSlowing</span> <a href="../Source_runei/windmillpolyobj.html#77" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Tick ( <span class="source_keyword">float</span> <span class="source_type">DeltaTime</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Tick-DangerousSpeeding" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Tick <span class="function_state">DangerousSpeeding</span> <a href="../Source_runei/windmillpolyobj.html#167" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Tick ( <span class="source_keyword">float</span> <span class="source_type">DeltaTime</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Tick-SafeSlowing" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Tick <span class="function_state">SafeSlowing</span> <a href="../Source_runei/windmillpolyobj.html#100" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Tick ( <span class="source_keyword">float</span> <span class="source_type">DeltaTime</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Tick-SafeSpeeding" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Tick <span class="function_state">SafeSpeeding</span> <a href="../Source_runei/windmillpolyobj.html#139" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Tick ( <span class="source_keyword">float</span> <span class="source_type">DeltaTime</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Trigger-DangerousSlowing" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Trigger <span class="function_state">DangerousSlowing</span> <a href="../Source_runei/windmillpolyobj.html#72" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  <span class="source_type"><a href="../engine/trigger.html" class="source">Trigger</a></span> ( <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> <span class="source_type">other</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">EventInstigator</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Trigger-DangerousSpeeding" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Trigger <span class="function_state">DangerousSpeeding</span> <a href="../Source_runei/windmillpolyobj.html#162" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  <span class="source_type"><a href="../engine/trigger.html" class="source">Trigger</a></span> ( <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> <span class="source_type">other</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">EventInstigator</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Trigger-Safe" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Trigger <span class="function_state">Safe</span> <a href="../Source_runei/windmillpolyobj.html#123" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  <span class="source_type"><a href="../engine/trigger.html" class="source">Trigger</a></span> ( <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> <span class="source_type">other</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">EventInstigator</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Trigger-SafeSlowing" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Trigger <span class="function_state">SafeSlowing</span> <a href="../Source_runei/windmillpolyobj.html#95" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  <span class="source_type"><a href="../engine/trigger.html" class="source">Trigger</a></span> ( <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> <span class="source_type">other</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">EventInstigator</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Trigger-SafeSpeeding" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Trigger <span class="function_state">SafeSpeeding</span> <a href="../Source_runei/windmillpolyobj.html#134" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  <span class="source_type"><a href="../engine/trigger.html" class="source">Trigger</a></span> ( <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> <span class="source_type">other</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">EventInstigator</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Trigger-Spinning" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Trigger <span class="function_state">Spinning</span> <a href="../Source_runei/windmillpolyobj.html#55" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  <span class="source_type"><a href="../engine/trigger.html" class="source">Trigger</a></span> ( <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> <span class="source_type">other</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">EventInstigator</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/windmillpolyobj.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#WindmillPolyobj">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/weaponswipeyellow.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/wolfgar.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:41:18.500 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

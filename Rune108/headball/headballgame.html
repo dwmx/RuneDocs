@@ -1,0 +1,486 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - Headball.HeadBallGame</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../headball/headball-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_headball/headballgame.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#HeadBallGame">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../headball/hbteamscoreboard.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../headball/headballgamereplicationinfo.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#headball/headballgame.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../headball/headball-overview.html">Headball</a>.HeadBallGame</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../runei/teamgame.html">TeamGame</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a>
+   |   
+   +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/info.html">Info</a>
+      |   
+      +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/gameinfo.html">GameInfo</a>
+         |   
+         +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runegameinfo.html">RuneGameInfo</a>
+            |   
+            +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runemultiplayer.html">RuneMultiPlayer</a>
+               |   
+               +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/teamgame.html">TeamGame</a>
+                  |   
+                  +-- <a href="../headball/headball-overview.html">Headball</a>.<a href="../headball/headballgame.html">HeadBallGame</a>
+</pre>
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bCountingDown" name="bCountingDown" title="go to the details">bCountingDown</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bGameStarted" name="bGameStarted" title="go to the details">bGameStarted</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">sound</td><td width="66%"><a href="#_CountDownSound[3]" name="CountDownSound[3]" title="go to the details">CountDownSound[3]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_CountTimer" name="CountTimer" title="go to the details">CountTimer</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">sound</td><td width="66%"><a href="#_CrowdBooSound[3]" name="CrowdBooSound[3]" title="go to the details">CrowdBooSound[3]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">sound</td><td width="66%"><a href="#_CrowdCheerSound[3]" name="CrowdCheerSound[3]" title="go to the details">CrowdCheerSound[3]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">sound</td><td width="66%"><a href="#_EndSound[3]" name="EndSound[3]" title="go to the details">EndSound[3]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">sound</td><td width="66%"><a href="#_HeadScoreSound[3]" name="HeadScoreSound[3]" title="go to the details">HeadScoreSound[3]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">sound</td><td width="66%"><a href="#_StartSound[3]" name="StartSound[3]" title="go to the details">StartSound[3]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_TeamLoginMessage" name="TeamLoginMessage" title="go to the details">TeamLoginMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">byte</td><td width="66%"><a href="#_TeamReady[4]" name="TeamReady[4]" title="go to the details">TeamReady[4]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">byte</td><td width="66%"><a href="#_TeamRequired[4]" name="TeamRequired[4]" title="go to the details">TeamRequired[4]</a></td></tr>
+<tr><th colspan="2" class="small">HeadBallGame</th></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bAutoPickupHead" name="bAutoPickupHead" title="go to the details">bAutoPickupHead</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bEvenTeams" name="bEvenTeams" title="go to the details">bEvenTeams</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bLimbsScore" name="bLimbsScore" title="go to the details">bLimbsScore</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_CountdownMax" name="CountdownMax" title="go to the details">CountdownMax</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/teamgame.html">TeamGame</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/teamgame.html#bNoTeamChanges">bNoTeamChanges</a>, <a href="../runei/teamgame.html#bSpawnInTeamArea">bSpawnInTeamArea</a>, <a href="../runei/teamgame.html#FriendlyFireScale">FriendlyFireScale</a>, <a href="../runei/teamgame.html#GoalTeamScore">GoalTeamScore</a>, <a href="../runei/teamgame.html#MaxTeams">MaxTeams</a>, <a href="../runei/teamgame.html#MaxTeamSize">MaxTeamSize</a>, <a href="../runei/teamgame.html#NewTeamMessage">NewTeamMessage</a>, <a href="../runei/teamgame.html#NextBotTeam">NextBotTeam</a>, <a href="../runei/teamgame.html#TeamColor[4]">TeamColor[4]</a>, <a href="../runei/teamgame.html#TeamSupported[4]">TeamSupported[4]</a>, <a href="../runei/teamgame.html#Teams[4]">Teams[4]</a>, <a href="../runei/teamgame.html#TEAM_Blue">TEAM_Blue</a>, <a href="../runei/teamgame.html#TEAM_Gold">TEAM_Gold</a>, <a href="../runei/teamgame.html#TEAM_Green">TEAM_Green</a>, <a href="../runei/teamgame.html#TEAM_Red">TEAM_Red</a>, <a href="../runei/teamgame.html#VColorBlue">VColorBlue</a>, <a href="../runei/teamgame.html#VColorGold">VColorGold</a>, <a href="../runei/teamgame.html#VColorGreen">VColorGreen</a>, <a href="../runei/teamgame.html#VColorRed">VColorRed</a>, <a href="../runei/teamgame.html#VColorWhite">VColorWhite</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runemultiplayer.html">RuneMultiPlayer</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/runemultiplayer.html#bAlreadyChanged">bAlreadyChanged</a>, <a href="../runei/runemultiplayer.html#bChangeLevels">bChangeLevels</a>, <a href="../runei/runemultiplayer.html#bDontRestart">bDontRestart</a>, <a href="../runei/runemultiplayer.html#bFirstBlood">bFirstBlood</a>, <a href="../runei/runemultiplayer.html#bHardCoreMode">bHardCoreMode</a>, <a href="../runei/runemultiplayer.html#bLevelHasTeamOnly">bLevelHasTeamOnly</a>, <a href="../runei/runemultiplayer.html#bMegaSpeed">bMegaSpeed</a>, <a href="../runei/runemultiplayer.html#CrushedMessage">CrushedMessage</a>, <a href="../runei/runemultiplayer.html#DrownedMessage">DrownedMessage</a>, <a href="../runei/runemultiplayer.html#FellMessage">FellMessage</a>, <a href="../runei/runemultiplayer.html#FireMessage">FireMessage</a>, <a href="../runei/runemultiplayer.html#FirstBloodMsg">FirstBloodMsg</a>, <a href="../runei/runemultiplayer.html#FragLimit">FragLimit</a>, <a href="../runei/runemultiplayer.html#GlobalNameChange">GlobalNameChange</a>, <a href="../runei/runemultiplayer.html#GlobalNameChangeTrailer">GlobalNameChangeTrailer</a>, <a href="../runei/runemultiplayer.html#HeadKillMsg">HeadKillMsg</a>, <a href="../runei/runemultiplayer.html#HeadMessage">HeadMessage</a>, <a href="../runei/runemultiplayer.html#LastStartSpot">LastStartSpot</a>, <a href="../runei/runemultiplayer.html#NoNameChange">NoNameChange</a>, <a href="../runei/runemultiplayer.html#NormalMessage">NormalMessage</a>, <a href="../runei/runemultiplayer.html#RemainingTime">RemainingTime</a>, <a href="../runei/runemultiplayer.html#SpreeEndMsg">SpreeEndMsg</a>, <a href="../runei/runemultiplayer.html#SpreeEndTrailer">SpreeEndTrailer</a>, <a href="../runei/runemultiplayer.html#SpreeMsg">SpreeMsg</a>, <a href="../runei/runemultiplayer.html#SuicidedMessage">SuicidedMessage</a>, <a href="../runei/runemultiplayer.html#ThrownMessage">ThrownMessage</a>, <a href="../runei/runemultiplayer.html#TimeLimit">TimeLimit</a>, <a href="../runei/runemultiplayer.html#TimeMessage[16]">TimeMessage[16]</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_ChangeTeam-" name="ChangeTeam" title="go to the details">ChangeTeam</a> (<a href="../engine/pawn.html">Pawn</a> Other, int NewTeam))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_CheckTeamsReady-" name="CheckTeamsReady" title="go to the details">CheckTeamsReady</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Debug-" name="Debug" title="go to the details">Debug</a> (<a href="../engine/canvas.html">Canvas</a> canvas, int mode))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>int&nbsp;</td><td><a href="#_FindSmallestTeam-" name="FindSmallestTeam" title="go to the details">FindSmallestTeam</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_IsRelevant-" name="IsRelevant" title="go to the details">IsRelevant</a> (actor Other ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Killed-" name="Killed" title="go to the details">Killed</a> (<a href="../engine/pawn.html">pawn</a> killer, <a href="../engine/pawn.html">pawn</a> Other, name damageType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../engine/playerpawn.html">playerpawn</a>&nbsp;</td><td><a href="#_Login-" name="Login" title="go to the details">Login</a> (string Portal, string Options, out string Error, class&lt;<a href="../engine/playerpawn.html">playerpawn</a>&gt; SpawnClass))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_LoginTeam-" name="LoginTeam" title="go to the details">LoginTeam</a> (<a href="../engine/pawn.html">Pawn</a> Instigator))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Logout-" name="Logout" title="go to the details">Logout</a> (pawn Exiting ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_NotifyEndGame-" name="NotifyEndGame" title="go to the details">NotifyEndGame</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayGameStarting-" name="PlayGameStarting" title="go to the details">PlayGameStarting</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayLastSecondsSound-" name="PlayLastSecondsSound" title="go to the details">PlayLastSecondsSound</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayLimbScoreSound-" name="PlayLimbScoreSound" title="go to the details">PlayLimbScoreSound</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PostBeginPlay-" name="PostBeginPlay" title="go to the details">PostBeginPlay</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ReduceDamage-" name="ReduceDamage" title="go to the details">ReduceDamage</a> (out int BluntDamage, out int SeverDamage, name DamageType, <a href="../engine/pawn.html">pawn</a> injured, pawn instigatedBy ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_RestartPlayer-" name="RestartPlayer" title="go to the details">RestartPlayer</a> (pawn aPlayer ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ScoreHead-" name="ScoreHead" title="go to the details">ScoreHead</a> (<a href="../engine/pawn.html">Pawn</a> Scorer, int ScoreAmount, bool bRestoreHealth))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ScoreLimb-" name="ScoreLimb" title="go to the details">ScoreLimb</a> (<a href="../engine/pawn.html">Pawn</a> Scorer))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_StartGame-" name="StartGame" title="go to the details">StartGame</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_StartTheCountdown-" name="StartTheCountdown" title="go to the details">StartTheCountdown</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Timer-" name="Timer" title="go to the details">Timer</a> ()))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/teamgame.html">TeamGame</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/teamgame.html#AddBot">AddBot</a>, <a href="../runei/teamgame.html#AddToTeam">AddToTeam</a>, <a href="../runei/teamgame.html#CanSpectate">CanSpectate</a>, <a href="../runei/teamgame.html#ChangeTeam">ChangeTeam</a>, <a href="../runei/teamgame.html#FindPlayerStart">FindPlayerStart</a>, <a href="../runei/teamgame.html#ForceTeam">ForceTeam</a>, <a href="../runei/teamgame.html#GetRules">GetRules</a>, <a href="../runei/teamgame.html#GetTeamVectorColor">GetTeamVectorColor</a>, <a href="../runei/teamgame.html#InitGame">InitGame</a>, <a href="../runei/teamgame.html#InitGameReplicationInfo">InitGameReplicationInfo</a>, <a href="../runei/teamgame.html#Killed">Killed</a>, <a href="../runei/teamgame.html#Login">Login</a>, <a href="../runei/teamgame.html#Logout">Logout</a>, <a href="../runei/teamgame.html#PostBeginPlay">PostBeginPlay</a>, <a href="../runei/teamgame.html#ReduceDamage">ReduceDamage</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runemultiplayer.html">RuneMultiPlayer</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/runemultiplayer.html#AcceptInventory">AcceptInventory</a>, <a href="../runei/runemultiplayer.html#AddBot">AddBot</a>, <a href="../runei/runemultiplayer.html#CanSpectate">CanSpectate</a>, <a href="../runei/runemultiplayer.html#ChangeName">ChangeName</a>, <a href="../runei/runemultiplayer.html#Debug">Debug</a>, <a href="../runei/runemultiplayer.html#EndGame">EndGame</a>, <a href="../runei/runemultiplayer.html#EndSpree">EndSpree</a>, <a href="../runei/runemultiplayer.html#FindPlayerStart">FindPlayerStart</a>, <a href="../runei/runemultiplayer.html#GetIntOption">GetIntOption</a>, <a href="../runei/runemultiplayer.html#GetRules">GetRules</a>, <a href="../runei/runemultiplayer.html#InitGame">InitGame</a>, <a href="../runei/runemultiplayer.html#IsRelevant">IsRelevant</a>, <a href="../runei/runemultiplayer.html#Killed">Killed</a>, <a href="../runei/runemultiplayer.html#KillMessage">KillMessage</a>, <a href="../runei/runemultiplayer.html#LogGameParameters">LogGameParameters</a>, <a href="../runei/runemultiplayer.html#Login">Login</a>, <a href="../runei/runemultiplayer.html#Logout">Logout</a>, <a href="../runei/runemultiplayer.html#NotifySpree">NotifySpree</a>, <a href="../runei/runemultiplayer.html#PlayerJumpZScaling">PlayerJumpZScaling</a>, <a href="../runei/runemultiplayer.html#PlaySpawnEffect">PlaySpawnEffect</a>, <a href="../runei/runemultiplayer.html#PlayTeleportEffect">PlayTeleportEffect</a>, <a href="../runei/runemultiplayer.html#PostBeginPlay">PostBeginPlay</a>, <a href="../runei/runemultiplayer.html#PreCacheReferences">PreCacheReferences</a>, <a href="../runei/runemultiplayer.html#ReduceDamage">ReduceDamage</a>, <a href="../runei/runemultiplayer.html#RestartGame">RestartGame</a>, <a href="../runei/runemultiplayer.html#SendCountdownMessage">SendCountdownMessage</a>, <a href="../runei/runemultiplayer.html#SetGameSpeed">SetGameSpeed</a>, <a href="../runei/runemultiplayer.html#ShouldRespawn">ShouldRespawn</a>, <a href="../runei/runemultiplayer.html#Timer">Timer</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_bCountingDown" class="hidden"></a>bCountingDown <a href="../Source_headball/headballgame.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bCountingDown;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bGameStarted" class="hidden"></a>bGameStarted <a href="../Source_headball/headballgame.html#13" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bGameStarted;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CountDownSound[3]" class="hidden"></a>CountDownSound[3] <a href="../Source_headball/headballgame.html#19" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type">sound</span> CountDownSound[<span class="source_int">3</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CountTimer" class="hidden"></a>CountTimer <a href="../Source_headball/headballgame.html#17" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> CountTimer;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CrowdBooSound[3]" class="hidden"></a>CrowdBooSound[3] <a href="../Source_headball/headballgame.html#23" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type">sound</span> CrowdBooSound[<span class="source_int">3</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CrowdCheerSound[3]" class="hidden"></a>CrowdCheerSound[3] <a href="../Source_headball/headballgame.html#22" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type">sound</span> CrowdCheerSound[<span class="source_int">3</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EndSound[3]" class="hidden"></a>EndSound[3] <a href="../Source_headball/headballgame.html#21" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type">sound</span> EndSound[<span class="source_int">3</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HeadScoreSound[3]" class="hidden"></a>HeadScoreSound[3] <a href="../Source_headball/headballgame.html#18" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type">sound</span> HeadScoreSound[<span class="source_int">3</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StartSound[3]" class="hidden"></a>StartSound[3] <a href="../Source_headball/headballgame.html#20" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type">sound</span> StartSound[<span class="source_int">3</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TeamLoginMessage" class="hidden"></a>TeamLoginMessage <a href="../Source_headball/headballgame.html#11" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> TeamLoginMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TeamReady[4]" class="hidden"></a>TeamReady[4] <a href="../Source_headball/headballgame.html#15" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">byte</span> TeamReady[<span class="source_int">4</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TeamRequired[4]" class="hidden"></a>TeamRequired[4] <a href="../Source_headball/headballgame.html#16" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">byte</span> TeamRequired[<span class="source_int">4</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">HeadBallGame</h3>
+<h4><a name="_bAutoPickupHead" class="hidden"></a>bAutoPickupHead <a href="../Source_headball/headballgame.html#8" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../headball/headballgame.html" class="source">HeadBallGame</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">bool</span> bAutoPickupHead;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bEvenTeams" class="hidden"></a>bEvenTeams <a href="../Source_headball/headballgame.html#7" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../headball/headballgame.html" class="source">HeadBallGame</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">bool</span> bEvenTeams;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bLimbsScore" class="hidden"></a>bLimbsScore <a href="../Source_headball/headballgame.html#9" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../headball/headballgame.html" class="source">HeadBallGame</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">bool</span> bLimbsScore;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CountdownMax" class="hidden"></a>CountdownMax <a href="../Source_headball/headballgame.html#6" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../headball/headballgame.html" class="source">HeadBallGame</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">int</span> CountdownMax;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_ChangeTeam-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ChangeTeam <span class="function_state"></span> <a href="../Source_headball/headballgame.html#391" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> ChangeTeam ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">Other</span>, <span class="source_keyword">int</span> NewTeam) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CheckTeamsReady-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CheckTeamsReady <span class="function_state"></span> <a href="../Source_headball/headballgame.html#255" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> CheckTeamsReady ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Debug-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Debug <span class="function_state"></span> <a href="../Source_headball/headballgame.html#558" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span>  Debug ( <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span>, <span class="source_keyword">int</span> mode) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FindSmallestTeam-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> FindSmallestTeam <span class="function_state"></span> <a href="../Source_headball/headballgame.html#367" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">int</span> FindSmallestTeam ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_IsRelevant-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> IsRelevant <span class="function_state"></span> <a href="../Source_headball/headballgame.html#187" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> IsRelevant ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Killed-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Killed <span class="function_state"></span> <a href="../Source_headball/headballgame.html#328" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Killed ( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">killer</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">Other</span>, <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">damageType</a></span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Login-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Login <span class="function_state"></span> <a href="../Source_headball/headballgame.html#272" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_type"><a href="../engine/playerpawn.html" class="source">playerpawn</a></span> Login ( <span class="source_keyword">string</span> Portal, <span class="source_keyword">string</span> Options, <span class="source_keyword2">out</span> <span class="source_keyword">string</span> <span class="source_type">Error</span>, <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/playerpawn.html" class="source">playerpawn</a></span>&gt; SpawnClass) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LoginTeam-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> LoginTeam <span class="function_state"></span> <a href="../Source_headball/headballgame.html#232" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  LoginTeam ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> Instigator) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Logout-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Logout <span class="function_state"></span> <a href="../Source_headball/headballgame.html#302" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Logout ( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">Exiting</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NotifyEndGame-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> NotifyEndGame <span class="function_state"></span> <a href="../Source_headball/headballgame.html#545" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  NotifyEndGame ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayGameStarting-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayGameStarting <span class="function_state"></span> <a href="../Source_headball/headballgame.html#527" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayGameStarting ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayLastSecondsSound-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayLastSecondsSound <span class="function_state"></span> <a href="../Source_headball/headballgame.html#490" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayLastSecondsSound ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayLimbScoreSound-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayLimbScoreSound <span class="function_state"></span> <a href="../Source_headball/headballgame.html#508" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayLimbScoreSound ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PostBeginPlay-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PostBeginPlay <span class="function_state"></span> <a href="../Source_headball/headballgame.html#30" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PostBeginPlay ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ReduceDamage-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ReduceDamage <span class="function_state"></span> <a href="../Source_headball/headballgame.html#468" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ReduceDamage ( <span class="source_keyword2">out</span> <span class="source_keyword">int</span> BluntDamage, <span class="source_keyword2">out</span> <span class="source_keyword">int</span> SeverDamage, <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">DamageType</a></span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> injured, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">instigatedBy</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RestartPlayer-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> RestartPlayer <span class="function_state"></span> <a href="../Source_headball/headballgame.html#349" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> RestartPlayer ( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">aPlayer</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ScoreHead-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ScoreHead <span class="function_state"></span> <a href="../Source_headball/headballgame.html#65" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ScoreHead ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> Scorer, <span class="source_keyword">int</span> ScoreAmount, <span class="source_keyword">bool</span> bRestoreHealth) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ScoreLimb-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ScoreLimb <span class="function_state"></span> <a href="../Source_headball/headballgame.html#119" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ScoreLimb ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> Scorer) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StartGame-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> StartGame <span class="function_state"></span> <a href="../Source_headball/headballgame.html#45" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  StartGame ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StartTheCountdown-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> StartTheCountdown <span class="function_state"></span> <a href="../Source_headball/headballgame.html#210" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  StartTheCountdown ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Timer-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Timer <span class="function_state"></span> <a href="../Source_headball/headballgame.html#138" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Timer ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     CountdownMax=<span class="source_int">25</span>
+     bEvenTeams=<span class="source_keyword">True</span>
+     bAutoPickupHead=<span class="source_keyword">True</span>
+     TeamLoginMessage=<span class="source_string">" Team has logged in."</span>
+     HeadScoreSound(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Headball.hbbasket01'</span>
+     HeadScoreSound(<span class="source_int">1</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Headball.hbbasket01'</span>
+     HeadScoreSound(<span class="source_int">2</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Headball.hbbasket01'</span>
+     CountDownSound(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Headball.hbcount01'</span>
+     CountDownSound(<span class="source_int">1</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Headball.hbcount01'</span>
+     CountDownSound(<span class="source_int">2</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Headball.hbcount01'</span>
+     StartSound(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Headball.hbthemestart'</span>
+     StartSound(<span class="source_int">1</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Headball.hbthemestart'</span>
+     StartSound(<span class="source_int">2</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Headball.hbthemestart'</span>
+     EndSound(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Headball.hbthemeend'</span>
+     EndSound(<span class="source_int">1</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Headball.hbthemeend'</span>
+     EndSound(<span class="source_int">2</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Headball.hbthemeend'</span>
+     CrowdCheerSound(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Headball.hbhappycrowd01'</span>
+     CrowdCheerSound(<span class="source_int">1</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Headball.hbhappycrowd02'</span>
+     CrowdCheerSound(<span class="source_int">2</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Headball.hbhappycrowd01'</span>
+     CrowdBooSound(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Headball.hbmadcrowd01'</span>
+     CrowdBooSound(<span class="source_int">1</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Headball.hbmadcrowd01'</span>
+     CrowdBooSound(<span class="source_int">2</span>)=<span class="source_type">Sound</span><span class="source_name">'AddOn.Headball.hbmadcrowd01'</span>
+     bSpawnInTeamArea=<span class="source_keyword">True</span>
+     DefaultWeapon=<span class="source_keyword">Class</span><span class="source_name">'RuneI.VikingBroadSword'</span>
+     ScoreBoardType=<span class="source_keyword">Class</span><span class="source_name">'Headball.HBTeamScoreboard'</span>
+     RulesMenuType=<span class="source_string">"HeadBall.HeadBallMenuRulesSC"</span>
+     HUDType=<span class="source_keyword">Class</span><span class="source_name">'Headball.HeadBallHUD'</span>
+     MapListType=<span class="source_keyword">Class</span><span class="source_name">'Headball.HBmaplist'</span>
+     MapPrefix=<span class="source_string">"HB"</span>
+     BeaconName=<span class="source_string">"HeadBall"</span>
+     GameName=<span class="source_string">"Head-Ball"</span>
+     GameReplicationInfoClass=<span class="source_keyword">Class</span><span class="source_name">'Headball.HeadBallGameReplicationInfo'</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../headball/headball-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_headball/headballgame.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#HeadBallGame">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../headball/hbteamscoreboard.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../headball/headballgamereplicationinfo.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:41:04.492 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

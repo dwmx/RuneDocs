@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - RuneI.DarkDwarfBolt</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/darkdwarfbolt.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#DarkDwarfBolt">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/darkdwarfblast.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/darkdwarfchargeup.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#runei/darkdwarfbolt.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../runei/runei-overview.html">RuneI</a>.DarkDwarfBolt</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../runei/electricity.html">Electricity</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a>
+   |   
+   +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/particlesystem.html">ParticleSystem</a>
+      |   
+      +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/beamsystem.html">BeamSystem</a>
+         |   
+         +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/electricity.html">Electricity</a>
+            |   
+            +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/darkdwarfbolt.html">DarkDwarfBolt</a>
+</pre>
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_alpha" name="alpha" title="go to the details">alpha</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_BeamCloseTime" name="BeamCloseTime" title="go to the details">BeamCloseTime</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_Damage" name="Damage" title="go to the details">Damage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Vector">vector</a></td><td width="66%"><a href="#_EndOfTrace" name="EndOfTrace" title="go to the details">EndOfTrace</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/actor.html">actor</a></td><td width="66%"><a href="#_TargetActor" name="TargetActor" title="go to the details">TargetActor</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Vector">vector</a></td><td width="66%"><a href="#_TryToHitLocation" name="TryToHitLocation" title="go to the details">TryToHitLocation</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/electricity.html">Electricity</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/electricity.html#amplitude">amplitude</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/beamsystem.html">BeamSystem</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/beamsystem.html#BeamTime">BeamTime</a>, <a href="../runei/beamsystem.html#TargetTag">TargetTag</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Debug-" name="Debug" title="go to the details">Debug</a> (<a href="../engine/canvas.html">Canvas</a> canvas, int mode))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DoDamage-" name="DoDamage" title="go to the details">DoDamage</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ResetTargetting-" name="ResetTargetting" title="go to the details">ResetTargetting</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SetPowerLevel-" name="SetPowerLevel" title="go to the details">SetPowerLevel</a> (int powerlevel))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SetTarget-" name="SetTarget" title="go to the details">SetTarget</a> (<a href="../engine/actor.html">actor</a> Targ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Tick-" name="Tick" title="go to the details">Tick</a> (float DeltaTime))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_UpdateTargetting-" name="UpdateTargetting" title="go to the details">UpdateTargetting</a> (float DeltaTime))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/electricity.html">Electricity</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/electricity.html#SystemTick">SystemTick</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/beamsystem.html">BeamSystem</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/beamsystem.html#Debug">Debug</a>, <a href="../runei/beamsystem.html#PreBeginPlay">PreBeginPlay</a>, <a href="../runei/beamsystem.html#SpawnBeamDebris">SpawnBeamDebris</a>, <a href="../runei/beamsystem.html#SystemTick">SystemTick</a>, <a href="../runei/beamsystem.html#Timer">Timer</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_alpha" class="hidden"></a>alpha <a href="../Source_runei/darkdwarfbolt.html#11" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">float</span> alpha;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BeamCloseTime" class="hidden"></a>BeamCloseTime <a href="../Source_runei/darkdwarfbolt.html#9" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">float</span> BeamCloseTime;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Damage" class="hidden"></a>Damage <a href="../Source_runei/darkdwarfbolt.html#7" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">float</span> Damage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EndOfTrace" class="hidden"></a>EndOfTrace <a href="../Source_runei/darkdwarfbolt.html#10" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> EndOfTrace;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TargetActor" class="hidden"></a>TargetActor <a href="../Source_runei/darkdwarfbolt.html#6" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> TargetActor;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TryToHitLocation" class="hidden"></a>TryToHitLocation <a href="../Source_runei/darkdwarfbolt.html#8" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> TryToHitLocation;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_Debug-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Debug <span class="function_state"></span> <a href="../Source_runei/darkdwarfbolt.html#96" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span>  Debug ( <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span>, <span class="source_keyword">int</span> mode) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DoDamage-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DoDamage <span class="function_state"></span> <a href="../Source_runei/darkdwarfbolt.html#40" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  DoDamage ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ResetTargetting-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ResetTargetting <span class="function_state"></span> <a href="../Source_runei/darkdwarfbolt.html#20" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ResetTargetting ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SetPowerLevel-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SetPowerLevel <span class="function_state"></span> <a href="../Source_runei/darkdwarfbolt.html#32" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SetPowerLevel ( <span class="source_keyword">int</span> powerlevel) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SetTarget-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SetTarget <span class="function_state"></span> <a href="../Source_runei/darkdwarfbolt.html#14" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SetTarget ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> Targ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Tick-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Tick <span class="function_state"></span> <a href="../Source_runei/darkdwarfbolt.html#90" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Tick ( <span class="source_keyword">float</span> DeltaTime) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_UpdateTargetting-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> UpdateTargetting <span class="function_state"></span> <a href="../Source_runei/darkdwarfbolt.html#63" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  UpdateTargetting ( <span class="source_keyword">float</span> DeltaTime) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     Damage=<span class="source_int">5.000000</span>
+     BeamCloseTime=<span class="source_int">1.000000</span>
+     Amplitude=<span class="source_int">20.000000</span>
+     ParticleCount=<span class="source_int">60</span>
+     ParticleTexture(<span class="source_int">0</span>)=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'RuneFX.Beam2'</span>
+     NumConPts=<span class="source_int">20</span>
+     bUseTargetLocation=<span class="source_keyword">True</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/darkdwarfbolt.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#DarkDwarfBolt">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/darkdwarfblast.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/darkdwarfchargeup.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:41:02.464 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

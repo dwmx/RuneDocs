@@ -1,0 +1,472 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - UWindow.UWindowServerQuery</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../uwindow/uwindow-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_uwindow/uwindowserverquery.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#UWindowServerQuery">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../uwindow/uwindowscrollingdialogclient.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../uwindow/uwindowsmallbutton.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#uwindow/uwindowserverquery.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../uwindow/uwindow-overview.html">UWindow</a>.UWindowServerQuery</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../ipdrv/udplink.html">UdpLink</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a>
+   |   
+   +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/info.html">Info</a>
+      |   
+      +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/internetinfo.html">InternetInfo</a>
+         |   
+         +-- <a href="../ipdrv/ipdrv-overview.html">IpDrv</a>.<a href="../ipdrv/internetlink.html">InternetLink</a>
+            |   
+            +-- <a href="../ipdrv/ipdrv-overview.html">IpDrv</a>.<a href="../ipdrv/udplink.html">UdpLink</a>
+               |   
+               +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowserverquery.html">UWindowServerQuery</a>
+</pre>
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_AttemptNumber" name="AttemptNumber" title="go to the details">AttemptNumber</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_BindAttempts" name="BindAttempts" title="go to the details">BindAttempts</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_BindRetryTime" name="BindRetryTime" title="go to the details">BindRetryTime</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_ImDone" name="ImDone" title="go to the details">ImDone</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_MaxBindAttempts" name="MaxBindAttempts" title="go to the details">MaxBindAttempts</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_PingAttempts" name="PingAttempts" title="go to the details">PingAttempts</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_PingTimeout" name="PingTimeout" title="go to the details">PingTimeout</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_QueryState" name="QueryState" title="go to the details">QueryState</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/windowconsole.html">WindowConsole</a></td><td width="66%"><a href="#_Server" name="Server" title="go to the details">Server</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../ipdrv/internetlink.html#IpAddr">IpAddr</a></td><td width="66%"><a href="#_ServerIPAddr" name="ServerIPAddr" title="go to the details">ServerIPAddr</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../ipdrv/ipdrv-overview.html">IpDrv</a>.<a href="../ipdrv/udplink.html">UdpLink</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../ipdrv/udplink.html#BroadcastAddr">BroadcastAddr</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../ipdrv/ipdrv-overview.html">IpDrv</a>.<a href="../ipdrv/internetlink.html">InternetLink</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../ipdrv/internetlink.html#DataPending">DataPending</a>, <a href="../ipdrv/internetlink.html#LinkMode">LinkMode</a>, <a href="../ipdrv/internetlink.html#Port">Port</a>, <a href="../ipdrv/internetlink.html#PrivateResolveInfo">PrivateResolveInfo</a>, <a href="../ipdrv/internetlink.html#ReceiveMode">ReceiveMode</a>, <a href="../ipdrv/internetlink.html#RemoteSocket">RemoteSocket</a>, <a href="../ipdrv/internetlink.html#Socket">Socket</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Enumerations Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Enumerations from <a href="../ipdrv/ipdrv-overview.html">IpDrv</a>.<a href="../ipdrv/internetlink.html">InternetLink</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../ipdrv/internetlink.html#ELinkMode">ELinkMode</a>, <a href="../ipdrv/internetlink.html#EReceiveMode">EReceiveMode</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Structures Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Structures from <a href="../ipdrv/ipdrv-overview.html">IpDrv</a>.<a href="../ipdrv/internetlink.html">InternetLink</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../ipdrv/internetlink.html#IpAddr">IpAddr</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_GetNextValue-" name="GetNextValue" title="go to the details">GetNextValue</a> (string In, out string Out, out string Result))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>string&nbsp;</td><td><a href="#_ParseReply-" name="ParseReply" title="go to the details">ParseReply</a> (string Text, string Key))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>&nbsp;</td><td><a href="#_ReceivedText-GetInfo" name="ReceivedText" title="go to the details">ReceivedText</a> (<a href="../ipdrv/internetlink.html#IpAddr">IpAddr</a> Addr, string Text ))<br /><span class="function_state">GetInfo</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>&nbsp;</td><td><a href="#_ReceivedText-GetVer" name="ReceivedText" title="go to the details">ReceivedText</a> (<a href="../ipdrv/internetlink.html#IpAddr">IpAddr</a> Addr, string Text))<br /><span class="function_state">GetVer</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Resolved-" name="Resolved" title="go to the details">Resolved</a> (IpAddr Addr ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_StartQuery-" name="StartQuery" title="go to the details">StartQuery</a> (name S, int InPingAttempts))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>&nbsp;</td><td><a href="#_Timer-BindFailed" name="Timer" title="go to the details">Timer</a> ()))<br /><span class="function_state">BindFailed</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>&nbsp;</td><td><a href="#_Timer-GetInfo" name="Timer" title="go to the details">Timer</a> ()))<br /><span class="function_state">GetInfo</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>&nbsp;</td><td><a href="#_Timer-GetVer" name="Timer" title="go to the details">Timer</a> ()))<br /><span class="function_state">GetVer</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ValidateServer-" name="ValidateServer" title="go to the details">ValidateServer</a> ()))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../ipdrv/ipdrv-overview.html">IpDrv</a>.<a href="../ipdrv/udplink.html">UdpLink</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../ipdrv/udplink.html#BindPort">BindPort</a>, <a href="../ipdrv/udplink.html#ReadBinary">ReadBinary</a>, <a href="../ipdrv/udplink.html#ReadText">ReadText</a>, <a href="../ipdrv/udplink.html#ReceivedBinary">ReceivedBinary</a>, <a href="../ipdrv/udplink.html#ReceivedLine">ReceivedLine</a>, <a href="../ipdrv/udplink.html#ReceivedText">ReceivedText</a>, <a href="../ipdrv/udplink.html#SendBinary">SendBinary</a>, <a href="../ipdrv/udplink.html#SendText">SendText</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../ipdrv/ipdrv-overview.html">IpDrv</a>.<a href="../ipdrv/internetlink.html">InternetLink</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../ipdrv/internetlink.html#GetLastError">GetLastError</a>, <a href="../ipdrv/internetlink.html#GetLocalIP">GetLocalIP</a>, <a href="../ipdrv/internetlink.html#IpAddrToString">IpAddrToString</a>, <a href="../ipdrv/internetlink.html#IsDataPending">IsDataPending</a>, <a href="../ipdrv/internetlink.html#ParseURL">ParseURL</a>, <a href="../ipdrv/internetlink.html#Resolve">Resolve</a>, <a href="../ipdrv/internetlink.html#Resolved">Resolved</a>, <a href="../ipdrv/internetlink.html#ResolveFailed">ResolveFailed</a>, <a href="../ipdrv/internetlink.html#StringToIpAddr">StringToIpAddr</a>, <a href="../ipdrv/internetlink.html#Validate">Validate</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th class="title">States Summary</th>
+</tr>
+</table>
+
+<table>
+<tr>
+	<th>BindFailed <a href="../Source_uwindow/uwindowserverquery.html#170" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> BindFailed <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_Timer+BindFailed">Timer</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>Binding <a href="../Source_uwindow/uwindowserverquery.html#149" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> Binding <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>GetInfo <a href="../Source_uwindow/uwindowserverquery.html#182" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> GetInfo <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_ReceivedText+GetInfo">ReceivedText</a>, <a href="#_Timer+GetInfo">Timer</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>GetVer <a href="../Source_uwindow/uwindowserverquery.html#41" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> GetVer <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_ReceivedText+GetVer">ReceivedText</a>, <a href="#_Timer+GetVer">Timer</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>ReRoute <a href="../Source_uwindow/uwindowserverquery.html#253" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> ReRoute <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>Resolving <a href="../Source_uwindow/uwindowserverquery.html#259" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> Resolving <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td></td>
+</tr>
+</table>
+
+
+<br />
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_AttemptNumber" class="hidden"></a>AttemptNumber <a href="../Source_uwindow/uwindowserverquery.html#12" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> AttemptNumber;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BindAttempts" class="hidden"></a>BindAttempts <a href="../Source_uwindow/uwindowserverquery.html#13" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> BindAttempts;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BindRetryTime" class="hidden"></a>BindRetryTime <a href="../Source_uwindow/uwindowserverquery.html#17" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">int</span> BindRetryTime;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ImDone" class="hidden"></a>ImDone <a href="../Source_uwindow/uwindowserverquery.html#20" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> ImDone;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MaxBindAttempts" class="hidden"></a>MaxBindAttempts <a href="../Source_uwindow/uwindowserverquery.html#16" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">int</span> MaxBindAttempts;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PingAttempts" class="hidden"></a>PingAttempts <a href="../Source_uwindow/uwindowserverquery.html#11" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> PingAttempts;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PingTimeout" class="hidden"></a>PingTimeout <a href="../Source_uwindow/uwindowserverquery.html#18" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">int</span> PingTimeout;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_QueryState" class="hidden"></a>QueryState <a href="../Source_uwindow/uwindowserverquery.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">name</span> QueryState;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Server" class="hidden"></a>Server <a href="../Source_uwindow/uwindowserverquery.html#7" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/windowconsole.html" class="source">WindowConsole</a></span> <span class="source_type">Server</span>;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ServerIPAddr" class="hidden"></a>ServerIPAddr <a href="../Source_uwindow/uwindowserverquery.html#9" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../ipdrv/internetlink.html#IpAddr" class="source">IpAddr</a></span> ServerIPAddr;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_GetNextValue-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetNextValue <span class="function_state"></span> <a href="../Source_uwindow/uwindowserverquery.html#115" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> GetNextValue ( <span class="source_keyword">string</span> In, <span class="source_keyword2">out</span> <span class="source_keyword">string</span> <span class="source_keyword2">Out</span>, <span class="source_keyword2">out</span> <span class="source_keyword">string</span> <span class="source_type">Result</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ParseReply-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ParseReply <span class="function_state"></span> <a href="../Source_uwindow/uwindowserverquery.html#31" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">string</span> ParseReply ( <span class="source_keyword">string</span> <span class="source_type">Text</span>, <span class="source_keyword">string</span> <span class="source_type">Key</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ReceivedText-GetInfo" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> ReceivedText <span class="function_state">GetInfo</span> <a href="../Source_uwindow/uwindowserverquery.html#184" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span>  ReceivedText ( <span class="source_type"><a href="../ipdrv/internetlink.html#IpAddr" class="source">IpAddr</a></span> <span class="source_type">Addr</span>, <span class="source_keyword">string</span> <span class="source_type">Text</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ReceivedText-GetVer" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> ReceivedText <span class="function_state">GetVer</span> <a href="../Source_uwindow/uwindowserverquery.html#43" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span>  ReceivedText ( <span class="source_type"><a href="../ipdrv/internetlink.html#IpAddr" class="source">IpAddr</a></span> <span class="source_type">Addr</span>, <span class="source_keyword">string</span> <span class="source_type">Text</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Resolved-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Resolved <span class="function_state"></span> <a href="../Source_uwindow/uwindowserverquery.html#109" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Resolved ( <span class="source_type"><a href="../ipdrv/internetlink.html#IpAddr" class="source">IpAddr</a></span> <span class="source_type">Addr</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StartQuery-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> StartQuery <span class="function_state"></span> <a href="../Source_uwindow/uwindowserverquery.html#98" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  StartQuery ( <span class="source_keyword">name</span> <span class="source_type">S</span>, <span class="source_keyword">int</span> InPingAttempts) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Timer-BindFailed" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> Timer <span class="function_state">BindFailed</span> <a href="../Source_uwindow/uwindowserverquery.html#172" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span>  Timer ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Timer-GetInfo" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> Timer <span class="function_state">GetInfo</span> <a href="../Source_uwindow/uwindowserverquery.html#227" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span>  Timer ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Timer-GetVer" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> Timer <span class="function_state">GetVer</span> <a href="../Source_uwindow/uwindowserverquery.html#71" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span>  Timer ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ValidateServer-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ValidateServer <span class="function_state"></span> <a href="../Source_uwindow/uwindowserverquery.html#22" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ValidateServer ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     MaxBindAttempts=<span class="source_int">2</span>
+     BindRetryTime=<span class="source_int">2</span>
+     PingTimeout=<span class="source_int">5</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../uwindow/uwindow-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_uwindow/uwindowserverquery.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#UWindowServerQuery">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../uwindow/uwindowscrollingdialogclient.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../uwindow/uwindowsmallbutton.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:41:17.363 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

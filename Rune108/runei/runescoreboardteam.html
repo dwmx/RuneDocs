@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - RuneI.RuneScoreBoardTeam</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/runescoreboardteam.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#RuneScoreBoardTeam">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/runescoreboard.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/runesingleplayer.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#runei/runescoreboardteam.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../runei/runei-overview.html">RuneI</a>.RuneScoreBoardTeam</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../runei/runescoreboard.html">RuneScoreBoard</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a>
+   |   
+   +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/info.html">Info</a>
+      |   
+      +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/scoreboard.html">ScoreBoard</a>
+         |   
+         +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runescoreboard.html">RuneScoreBoard</a>
+            |   
+            +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runescoreboardteam.html">RuneScoreBoardTeam</a>
+</pre>
+
+<h4>Direct Known Subclasses:</h4>
+<blockquote>
+	<a href="../headball/hbteamscoreboard.html">HBTeamScoreboard</a>
+</blockquote>
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../runei/teaminfo.html">TeamInfo</a></td><td width="66%"><a href="#_OrderedTeams[4]" name="OrderedTeams[4]" title="go to the details">OrderedTeams[4]</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runescoreboard.html">RuneScoreBoard</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/runescoreboard.html#AwardsText">AwardsText</a>, <a href="../runei/runescoreboard.html#Background">Background</a>, <a href="../runei/runescoreboard.html#BackgroundAlpha">BackgroundAlpha</a>, <a href="../runei/runescoreboard.html#BackgroundColor">BackgroundColor</a>, <a href="../runei/runescoreboard.html#BlueColor">BlueColor</a>, <a href="../runei/runescoreboard.html#bTimeDown">bTimeDown</a>, <a href="../runei/runescoreboard.html#ContinueMsg">ContinueMsg</a>, <a href="../runei/runescoreboard.html#ContinueTrailer">ContinueTrailer</a>, <a href="../runei/runescoreboard.html#CyanColor">CyanColor</a>, <a href="../runei/runescoreboard.html#DeathsText">DeathsText</a>, <a href="../runei/runescoreboard.html#ElapsedTimeMsg">ElapsedTimeMsg</a>, <a href="../runei/runescoreboard.html#FirstBloodIcon">FirstBloodIcon</a>, <a href="../runei/runescoreboard.html#FontInfoClass">FontInfoClass</a>, <a href="../runei/runescoreboard.html#FragsText">FragsText</a>, <a href="../runei/runescoreboard.html#GameTypeMsg">GameTypeMsg</a>, <a href="../runei/runescoreboard.html#GoldColor">GoldColor</a>, <a href="../runei/runescoreboard.html#GreenColor">GreenColor</a>, <a href="../runei/runescoreboard.html#HeadIcon">HeadIcon</a>, <a href="../runei/runescoreboard.html#IdealPlayerCountMsg">IdealPlayerCountMsg</a>, <a href="../runei/runescoreboard.html#LightCyanColor">LightCyanColor</a>, <a href="../runei/runescoreboard.html#LightGreenColor">LightGreenColor</a>, <a href="../runei/runescoreboard.html#MapTitleMsg">MapTitleMsg</a>, <a href="../runei/runescoreboard.html#MyFonts">MyFonts</a>, <a href="../runei/runescoreboard.html#NameText">NameText</a>, <a href="../runei/runescoreboard.html#NumPlayersMsg">NumPlayersMsg</a>, <a href="../runei/runescoreboard.html#Ordered[32]">Ordered[32]</a>, <a href="../runei/runescoreboard.html#PingText">PingText</a>, <a href="../runei/runescoreboard.html#ReadyText">ReadyText</a>, <a href="../runei/runescoreboard.html#RedColor">RedColor</a>, <a href="../runei/runescoreboard.html#RemainingTimeMsg">RemainingTimeMsg</a>, <a href="../runei/runescoreboard.html#RestartMsg">RestartMsg</a>, <a href="../runei/runescoreboard.html#Seperator">Seperator</a>, <a href="../runei/runescoreboard.html#SpreeIcon">SpreeIcon</a>, <a href="../runei/runescoreboard.html#VioletColor">VioletColor</a>, <a href="../runei/runescoreboard.html#WhiteColor">WhiteColor</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/scoreboard.html">ScoreBoard</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/scoreboard.html#OwnerHUD">OwnerHUD</a>, <a href="../engine/scoreboard.html#RegFont">RegFont</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DrawBackground-" name="DrawBackground" title="go to the details">DrawBackground</a> (<a href="../engine/canvas.html">canvas</a> Canvas, int X, int Y, int W, int H))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DrawPlayerInfo-" name="DrawPlayerInfo" title="go to the details">DrawPlayerInfo</a> (<a href="../engine/canvas.html">canvas</a> Canvas, <a href="../engine/playerreplicationinfo.html">PlayerReplicationInfo</a> PRI, float XOffset, float YOffset))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DrawTableHeadings-" name="DrawTableHeadings" title="go to the details">DrawTableHeadings</a> (<a href="../engine/canvas.html">canvas</a> Canvas))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DrawTeamInfo-" name="DrawTeamInfo" title="go to the details">DrawTeamInfo</a> (<a href="../engine/canvas.html">canvas</a> Canvas, <a href="../runei/teaminfo.html">TeamInfo</a> TI, float XOffset, float YOffset))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../core/object.html#Color">color</a>&nbsp;</td><td><a href="#_GetTeamColor-" name="GetTeamColor" title="go to the details">GetTeamColor</a> (int team))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ShowScores-" name="ShowScores" title="go to the details">ShowScores</a> (canvas <a href="../engine/canvas.html">Canvas</a> ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SortScores-" name="SortScores" title="go to the details">SortScores</a> (int N))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SortTeams-" name="SortTeams" title="go to the details">SortTeams</a> (int N))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runescoreboard.html">RuneScoreBoard</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/runescoreboard.html#DrawBackground">DrawBackground</a>, <a href="../runei/runescoreboard.html#DrawHeader">DrawHeader</a>, <a href="../runei/runescoreboard.html#DrawPlayerInfo">DrawPlayerInfo</a>, <a href="../runei/runescoreboard.html#DrawTableHeadings">DrawTableHeadings</a>, <a href="../runei/runescoreboard.html#DrawTrailer">DrawTrailer</a>, <a href="../runei/runescoreboard.html#PostBeginPlay">PostBeginPlay</a>, <a href="../runei/runescoreboard.html#ShowScores">ShowScores</a>, <a href="../runei/runescoreboard.html#SortScores">SortScores</a>, <a href="../runei/runescoreboard.html#TwoDigitString">TwoDigitString</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/scoreboard.html">ScoreBoard</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/scoreboard.html#PreBeginPlay">PreBeginPlay</a>, <a href="../engine/scoreboard.html#ShowMiniScores">ShowMiniScores</a>, <a href="../engine/scoreboard.html#ShowScores">ShowScores</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_OrderedTeams[4]" class="hidden"></a>OrderedTeams[4] <a href="../Source_runei/runescoreboardteam.html#6" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../runei/teaminfo.html" class="source">TeamInfo</a></span> OrderedTeams[<span class="source_int">4</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_DrawBackground-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DrawBackground <span class="function_state"></span> <a href="../Source_runei/runescoreboardteam.html#25" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  DrawBackground ( <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>, <span class="source_keyword">int</span> X, <span class="source_keyword">int</span> <span class="source_type">Y</span>, <span class="source_keyword">int</span> W, <span class="source_keyword">int</span> H) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DrawPlayerInfo-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DrawPlayerInfo <span class="function_state"></span> <a href="../Source_runei/runescoreboardteam.html#154" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  DrawPlayerInfo ( <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>, <span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span> <span class="source_type">PRI</span>, <span class="source_keyword">float</span> XOffset, <span class="source_keyword">float</span> YOffset) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DrawTableHeadings-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DrawTableHeadings <span class="function_state"></span> <a href="../Source_runei/runescoreboardteam.html#88" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  DrawTableHeadings ( <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DrawTeamInfo-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DrawTeamInfo <span class="function_state"></span> <a href="../Source_runei/runescoreboardteam.html#129" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  DrawTeamInfo ( <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>, <span class="source_type"><a href="../runei/teaminfo.html" class="source">TeamInfo</a></span> TI, <span class="source_keyword">float</span> XOffset, <span class="source_keyword">float</span> YOffset) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetTeamColor-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetTeamColor <span class="function_state"></span> <a href="../Source_runei/runescoreboardteam.html#9" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_type"><a href="../core/object.html#Color" class="source">color</a></span> GetTeamColor ( <span class="source_keyword">int</span> team) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ShowScores-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ShowScores <span class="function_state"></span> <a href="../Source_runei/runescoreboardteam.html#291" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ShowScores ( <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SortScores-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SortScores <span class="function_state"></span> <a href="../Source_runei/runescoreboardteam.html#62" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SortScores ( <span class="source_keyword">int</span> <span class="source_type">N</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SortTeams-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SortTeams <span class="function_state"></span> <a href="../Source_runei/runescoreboardteam.html#33" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SortTeams ( <span class="source_keyword">int</span> <span class="source_type">N</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     BackgroundAlpha=<span class="source_int">0.200000</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/runescoreboardteam.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#RuneScoreBoardTeam">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/runescoreboard.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/runesingleplayer.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:41:09.600 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

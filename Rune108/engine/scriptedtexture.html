@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - Engine.ScriptedTexture</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../engine/engine-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_engine/scriptedtexture.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#ScriptedTexture">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../engine/scriptdispatcher.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../engine/sequencer.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#engine/scriptedtexture.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../engine/engine-overview.html">Engine</a>.ScriptedTexture</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../engine/texture.html">Texture</a></dd>
+<dt>Modifiers</dt><dd>safereplace native noexport </dd>
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/bitmap.html">Bitmap</a>
+   |   
+   +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/texture.html">Texture</a>
+      |   
+      +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/scriptedtexture.html">ScriptedTexture</a>
+</pre>
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_Junk1" name="Junk1" title="go to the details">Junk1</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_Junk2" name="Junk2" title="go to the details">Junk2</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_Junk3" name="Junk3" title="go to the details">Junk3</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_LocalTime" name="LocalTime" title="go to the details">LocalTime</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/actor.html">Actor</a></td><td width="66%"><a href="#_NotifyActor" name="NotifyActor" title="go to the details">NotifyActor</a></td></tr>
+<tr><th colspan="2" class="small">ScriptedTexture</th></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/texture.html">Texture</a></td><td width="66%"><a href="#_SourceTexture" name="SourceTexture" title="go to the details">SourceTexture</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/texture.html">Texture</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/texture.html#Accumulator">Accumulator</a>, <a href="../engine/texture.html#Alpha">Alpha</a>, <a href="../engine/texture.html#AnimCurrent">AnimCurrent</a>, <a href="../engine/texture.html#AnimNext">AnimNext</a>, <a href="../engine/texture.html#bAutoUPan">bAutoUPan</a>, <a href="../engine/texture.html#bAutoVPan">bAutoVPan</a>, <a href="../engine/texture.html#bBigWavy">bBigWavy</a>, <a href="../engine/texture.html#bCloudWavy">bCloudWavy</a>, <a href="../engine/texture.html#bDirtyShadows">bDirtyShadows</a>, <a href="../engine/texture.html#bEnvironment">bEnvironment</a>, <a href="../engine/texture.html#bFakeBackdrop">bFakeBackdrop</a>, <a href="../engine/texture.html#bGouraud">bGouraud</a>, <a href="../engine/texture.html#bHasComp">bHasComp</a>, <a href="../engine/texture.html#bHighColorQuality">bHighColorQuality</a>, <a href="../engine/texture.html#bHighLedge">bHighLedge</a>, <a href="../engine/texture.html#bHighShadowDetail">bHighShadowDetail</a>, <a href="../engine/texture.html#bHighTextureQuality">bHighTextureQuality</a>, <a href="../engine/texture.html#bInvisible">bInvisible</a>, <a href="../engine/texture.html#bLowShadowDetail">bLowShadowDetail</a>, <a href="../engine/texture.html#bMasked">bMasked</a>, <a href="../engine/texture.html#bMirrored">bMirrored</a>, <a href="../engine/texture.html#bModulate">bModulate</a>, <a href="../engine/texture.html#bNoMerge">bNoMerge</a>, <a href="../engine/texture.html#bNoSmooth">bNoSmooth</a>, <a href="../engine/texture.html#bNotSolid">bNotSolid</a>, <a href="../engine/texture.html#bParametric">bParametric</a>, <a href="../engine/texture.html#bPortal">bPortal</a>, <a href="../engine/texture.html#bRealtime">bRealtime</a>, <a href="../engine/texture.html#bRealtimeChanged">bRealtimeChanged</a>, <a href="../engine/texture.html#bSemisolid">bSemisolid</a>, <a href="../engine/texture.html#bSmallWavy">bSmallWavy</a>, <a href="../engine/texture.html#bSpecialLit">bSpecialLit</a>, <a href="../engine/texture.html#bTransparent">bTransparent</a>, <a href="../engine/texture.html#bTwoSided">bTwoSided</a>, <a href="../engine/texture.html#BumpMap">BumpMap</a>, <a href="../engine/texture.html#bUnlit">bUnlit</a>, <a href="../engine/texture.html#bWaterWavy">bWaterWavy</a>, <a href="../engine/texture.html#bX2">bX2</a>, <a href="../engine/texture.html#bX3">bX3</a>, <a href="../engine/texture.html#bX4">bX4</a>, <a href="../engine/texture.html#bX5">bX5</a>, <a href="../engine/texture.html#bX6">bX6</a>, <a href="../engine/texture.html#bX7">bX7</a>, <a href="../engine/texture.html#CompFormat">CompFormat</a>, <a href="../engine/texture.html#CompMips">CompMips</a>, <a href="../engine/texture.html#DetailTexture">DetailTexture</a>, <a href="../engine/texture.html#Diffuse">Diffuse</a>, <a href="../engine/texture.html#DrawScale">DrawScale</a>, <a href="../engine/texture.html#FootstepSound">FootstepSound</a>, <a href="../engine/texture.html#Friction">Friction</a>, <a href="../engine/texture.html#HitSound">HitSound</a>, <a href="../engine/texture.html#LODSet">LODSet</a>, <a href="../engine/texture.html#MacroTexture">MacroTexture</a>, <a href="../engine/texture.html#MaxFrameRate">MaxFrameRate</a>, <a href="../engine/texture.html#MinFrameRate">MinFrameRate</a>, <a href="../engine/texture.html#MipMult">MipMult</a>, <a href="../engine/texture.html#Mips">Mips</a>, <a href="../engine/texture.html#PrimeCount">PrimeCount</a>, <a href="../engine/texture.html#PrimeCurrent">PrimeCurrent</a>, <a href="../engine/texture.html#Specular">Specular</a>, <a href="../engine/texture.html#TextureMaterial">TextureMaterial</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/bitmap.html">Bitmap</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/bitmap.html#Format">Format</a>, <a href="../engine/bitmap.html#InternalTime[2]">InternalTime[2]</a>, <a href="../engine/bitmap.html#MaxColor">MaxColor</a>, <a href="../engine/bitmap.html#MipZero">MipZero</a>, <a href="../engine/bitmap.html#Palette">Palette</a>, <a href="../engine/bitmap.html#UBits">UBits</a>, <a href="../engine/bitmap.html#UClamp">UClamp</a>, <a href="../engine/bitmap.html#USize">USize</a>, <a href="../engine/bitmap.html#VBits">VBits</a>, <a href="../engine/bitmap.html#VClamp">VClamp</a>, <a href="../engine/bitmap.html#VSize">VSize</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Enumerations Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Enumerations from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/texture.html">Texture</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/texture.html#ELODSet">ELODSet</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Enumerations from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/bitmap.html">Bitmap</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/bitmap.html#ETextureFormat">ETextureFormat</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DrawColoredText-" name="DrawColoredText" title="go to the details">DrawColoredText</a> (float X, float Y, string Text, Font Font, <a href="../core/object.html#Color">color</a> FontColor)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DrawText-" name="DrawText" title="go to the details">DrawText</a> (float X, float Y, string Text, Font Font)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DrawTile-" name="DrawTile" title="go to the details">DrawTile</a> (float X, float Y, float XL, float YL, float U, float V, float UL, float VL, <a href="../engine/texture.html">Texture</a> Tex, bool bMasked)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ReplaceTexture-" name="ReplaceTexture" title="go to the details">ReplaceTexture</a> (<a href="../engine/texture.html">Texture</a> Tex)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_TextSize-" name="TextSize" title="go to the details">TextSize</a> (string Text, out float XL, out float YL, Font Font)<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+
+
+<br />
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_Junk1" class="hidden"></a>Junk1 <a href="../Source_engine/scriptedtexture.html#15" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">transient</span> <span class="source_keyword">const</span> <span class="source_keyword">int</span> Junk1;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Junk2" class="hidden"></a>Junk2 <a href="../Source_engine/scriptedtexture.html#16" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">transient</span> <span class="source_keyword">const</span> <span class="source_keyword">int</span> Junk2;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Junk3" class="hidden"></a>Junk3 <a href="../Source_engine/scriptedtexture.html#17" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">transient</span> <span class="source_keyword">const</span> <span class="source_keyword">int</span> Junk3;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LocalTime" class="hidden"></a>LocalTime <a href="../Source_engine/scriptedtexture.html#18" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">transient</span> <span class="source_keyword">const</span> <span class="source_keyword">float</span> LocalTime;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NotifyActor" class="hidden"></a>NotifyActor <a href="../Source_engine/scriptedtexture.html#12" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> NotifyActor;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">ScriptedTexture</h3>
+<h4><a name="_SourceTexture" class="hidden"></a>SourceTexture <a href="../Source_engine/scriptedtexture.html#13" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/scriptedtexture.html" class="source">ScriptedTexture</a></span>) <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span> SourceTexture;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_DrawColoredText-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DrawColoredText <span class="function_state"></span> <a href="../Source_engine/scriptedtexture.html#23" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">474</span>) <span class="source_keyword2">final</span> <span class="source_keyword">function</span>  DrawColoredText ( <span class="source_keyword">float</span> X, <span class="source_keyword">float</span> <span class="source_type">Y</span>, <span class="source_keyword">string</span> <span class="source_type">Text</span>, <span class="source_type">Font</span> <span class="source_type">Font</span>, <span class="source_type"><a href="../core/object.html#Color" class="source">color</a></span> FontColor )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DrawText-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DrawText <span class="function_state"></span> <a href="../Source_engine/scriptedtexture.html#22" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">472</span>) <span class="source_keyword2">final</span> <span class="source_keyword">function</span>  DrawText ( <span class="source_keyword">float</span> X, <span class="source_keyword">float</span> <span class="source_type">Y</span>, <span class="source_keyword">string</span> <span class="source_type">Text</span>, <span class="source_type">Font</span> <span class="source_type">Font</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DrawTile-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DrawTile <span class="function_state"></span> <a href="../Source_engine/scriptedtexture.html#21" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">473</span>) <span class="source_keyword2">final</span> <span class="source_keyword">function</span>  DrawTile ( <span class="source_keyword">float</span> X, <span class="source_keyword">float</span> <span class="source_type">Y</span>, <span class="source_keyword">float</span> XL, <span class="source_keyword">float</span> YL, <span class="source_keyword">float</span> U, <span class="source_keyword">float</span> V, <span class="source_keyword">float</span> UL, <span class="source_keyword">float</span> VL, <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span> Tex, <span class="source_keyword">bool</span> bMasked )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ReplaceTexture-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ReplaceTexture <span class="function_state"></span> <a href="../Source_engine/scriptedtexture.html#24" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">475</span>) <span class="source_keyword2">final</span> <span class="source_keyword">function</span>  ReplaceTexture ( <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span> Tex )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TextSize-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> TextSize <span class="function_state"></span> <a href="../Source_engine/scriptedtexture.html#25" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span>(<span class="source_int">476</span>) <span class="source_keyword2">final</span> <span class="source_keyword">function</span>  TextSize ( <span class="source_keyword">string</span> <span class="source_type">Text</span>, <span class="source_keyword2">out</span> <span class="source_keyword">float</span> XL, <span class="source_keyword2">out</span> <span class="source_keyword">float</span> YL, <span class="source_type">Font</span> <span class="source_type">Font</span> )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../engine/engine-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_engine/scriptedtexture.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#ScriptedTexture">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../engine/scriptdispatcher.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../engine/sequencer.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:41:10.562 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

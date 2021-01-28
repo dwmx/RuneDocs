@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - UBrowser.UBrowserOpenCW</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../ubrowser/ubrowser-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_ubrowser/ubrowseropencw.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#UBrowserOpenCW">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../ubrowser/ubrowsernewfavoritewindow.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../ubrowser/ubrowseropenwindow.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#ubrowser/ubrowseropencw.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../ubrowser/ubrowser-overview.html">UBrowser</a>.UBrowserOpenCW</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../uwindow/uwindowdialogclientwindow.html">UWindowDialogClientWindow</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowbase.html">UWindowBase</a>
+   |   
+   +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowwindow.html">UWindowWindow</a>
+      |   
+      +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowclientwindow.html">UWindowClientWindow</a>
+         |   
+         +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowdialogclientwindow.html">UWindowDialogClientWindow</a>
+            |   
+            +-- <a href="../ubrowser/ubrowser-overview.html">UBrowser</a>.<a href="../ubrowser/ubrowseropencw.html">UBrowserOpenCW</a>
+</pre>
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindowcombocontrol.html">UWindowComboControl</a></td><td width="66%"><a href="#_OpenCombo" name="OpenCombo" title="go to the details">OpenCombo</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_OpenHelp" name="OpenHelp" title="go to the details">OpenHelp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_OpenHistory[10]" name="OpenHistory[10]" title="go to the details">OpenHistory[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_OpenText" name="OpenText" title="go to the details">OpenText</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowdialogclientwindow.html">UWindowDialogClientWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowdialogclientwindow.html#DesiredHeight">DesiredHeight</a>, <a href="../uwindow/uwindowdialogclientwindow.html#DesiredWidth">DesiredWidth</a>, <a href="../uwindow/uwindowdialogclientwindow.html#TabLast">TabLast</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_BeforePaint-" name="BeforePaint" title="go to the details">BeforePaint</a> (<a href="../engine/canvas.html">Canvas</a> C, float X, float Y))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Created-" name="Created" title="go to the details">Created</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Notify-" name="Notify" title="go to the details">Notify</a> (<a href="../uwindow/uwindowdialogcontrol.html">UWindowDialogControl</a> C, byte E))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_OpenURL-" name="OpenURL" title="go to the details">OpenURL</a> ()))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowdialogclientwindow.html">UWindowDialogClientWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowdialogclientwindow.html#CreateControl">CreateControl</a>, <a href="../uwindow/uwindowdialogclientwindow.html#GetDesiredDimensions">GetDesiredDimensions</a>, <a href="../uwindow/uwindowdialogclientwindow.html#Notify">Notify</a>, <a href="../uwindow/uwindowdialogclientwindow.html#OKPressed">OKPressed</a>, <a href="../uwindow/uwindowdialogclientwindow.html#Paint">Paint</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowclientwindow.html">UWindowClientWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowclientwindow.html#Close">Close</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_OpenCombo" class="hidden"></a>OpenCombo <a href="../Source_ubrowser/ubrowseropencw.html#3" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowcombocontrol.html" class="source">UWindowComboControl</a></span> OpenCombo;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_OpenHelp" class="hidden"></a>OpenHelp <a href="../Source_ubrowser/ubrowseropencw.html#5" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> OpenHelp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_OpenHistory[10]" class="hidden"></a>OpenHistory[10] <a href="../Source_ubrowser/ubrowseropencw.html#7" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> OpenHistory[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_OpenText" class="hidden"></a>OpenText <a href="../Source_ubrowser/ubrowseropencw.html#4" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> OpenText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_BeforePaint-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BeforePaint <span class="function_state"></span> <a href="../Source_ubrowser/ubrowseropencw.html#28" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  BeforePaint ( <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type">C</span>, <span class="source_keyword">float</span> X, <span class="source_keyword">float</span> <span class="source_type">Y</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Created-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Created <span class="function_state"></span> <a href="../Source_ubrowser/ubrowseropencw.html#9" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Created ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Notify-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Notify <span class="function_state"></span> <a href="../Source_ubrowser/ubrowseropencw.html#46" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Notify ( <span class="source_type"><a href="../uwindow/uwindowdialogcontrol.html" class="source">UWindowDialogControl</a></span> <span class="source_type">C</span>, <span class="source_keyword">byte</span> E) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_OpenURL-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> OpenURL <span class="function_state"></span> <a href="../Source_ubrowser/ubrowseropencw.html#55" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  OpenURL ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     OpenText=<span class="source_string">"Open:"</span>
+     OpenHelp=<span class="source_string">"Enter a standard URL, or select one from the URL history.  Press Enter to activate."</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../ubrowser/ubrowser-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_ubrowser/ubrowseropencw.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#UBrowserOpenCW">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../ubrowser/ubrowsernewfavoritewindow.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../ubrowser/ubrowseropenwindow.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:27:26.027 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

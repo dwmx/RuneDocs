@@ -1,0 +1,819 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - RMenu.RuneMenuCustomizeClientWindow</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../rmenu/rmenu-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_rmenu/runemenucustomizeclientwindow.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#RuneMenuCustomizeClientWindow">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../rmenu/runemenucreditsscrollclient.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../rmenu/runemenucustomizescrollclient.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#rmenu/runemenucustomizeclientwindow.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../rmenu/rmenu-overview.html">RMenu</a>.RuneMenuCustomizeClientWindow</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../rmenu/runemenupagewindow.html">RuneMenuPageWindow</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowbase.html">UWindowBase</a>
+   |   
+   +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowwindow.html">UWindowWindow</a>
+      |   
+      +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowclientwindow.html">UWindowClientWindow</a>
+         |   
+         +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowdialogclientwindow.html">UWindowDialogClientWindow</a>
+            |   
+            +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowpagewindow.html">UWindowPageWindow</a>
+               |   
+               +-- <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runemenupagewindow.html">RuneMenuPageWindow</a>
+                  |   
+                  +-- <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runemenucustomizeclientwindow.html">RuneMenuCustomizeClientWindow</a>
+</pre>
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_AliasCount" name="AliasCount" title="go to the details">AliasCount</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_AliasNames[70]" name="AliasNames[70]" title="go to the details">AliasNames[70]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bJoystick" name="bJoystick" title="go to the details">bJoystick</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bLoadedExisting" name="bLoadedExisting" title="go to the details">bLoadedExisting</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_BoundKey1[70]" name="BoundKey1[70]" title="go to the details">BoundKey1[70]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_BoundKey2[70]" name="BoundKey2[70]" title="go to the details">BoundKey2[70]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bPolling" name="bPolling" title="go to the details">bPolling</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_CustomizeHelp" name="CustomizeHelp" title="go to the details">CustomizeHelp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindowsmallbutton.html">UWindowSmallButton</a></td><td width="66%"><a href="#_DefaultsButton" name="DefaultsButton" title="go to the details">DefaultsButton</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_DefaultsHelp" name="DefaultsHelp" title="go to the details">DefaultsHelp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_DefaultsText" name="DefaultsText" title="go to the details">DefaultsText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_JoyDesiredHeight" name="JoyDesiredHeight" title="go to the details">JoyDesiredHeight</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_JoystickHeading" name="JoystickHeading" title="go to the details">JoystickHeading</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_JoystickText" name="JoystickText" title="go to the details">JoystickText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_JoyXBinding[2]" name="JoyXBinding[2]" title="go to the details">JoyXBinding[2]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindowcombocontrol.html">UWindowComboControl</a></td><td width="66%"><a href="#_JoyXCombo" name="JoyXCombo" title="go to the details">JoyXCombo</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_JoyXHelp" name="JoyXHelp" title="go to the details">JoyXHelp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_JoyXOptions[2]" name="JoyXOptions[2]" title="go to the details">JoyXOptions[2]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_JoyXText" name="JoyXText" title="go to the details">JoyXText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_JoyYBinding[2]" name="JoyYBinding[2]" title="go to the details">JoyYBinding[2]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindowcombocontrol.html">UWindowComboControl</a></td><td width="66%"><a href="#_JoyYCombo" name="JoyYCombo" title="go to the details">JoyYCombo</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_JoyYHelp" name="JoyYHelp" title="go to the details">JoyYHelp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_JoyYOptions[2]" name="JoyYOptions[2]" title="go to the details">JoyYOptions[2]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_JoyYText" name="JoyYText" title="go to the details">JoyYText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenuraisedbutton.html">RuneMenuRaisedButton</a></td><td width="66%"><a href="#_KeyButtons[70]" name="KeyButtons[70]" title="go to the details">KeyButtons[70]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenulabelcontrol.html">RuneMenuLabelControl</a></td><td width="66%"><a href="#_KeyNames[70]" name="KeyNames[70]" title="go to the details">KeyNames[70]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_LabelList[70]" name="LabelList[70]" title="go to the details">LabelList[70]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_LocalizedKeyName[255]" name="LocalizedKeyName[255]" title="go to the details">LocalizedKeyName[255]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_NoJoyDesiredHeight" name="NoJoyDesiredHeight" title="go to the details">NoJoyDesiredHeight</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_OrString" name="OrString" title="go to the details">OrString</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_RealKeyName[255]" name="RealKeyName[255]" title="go to the details">RealKeyName[255]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenuraisedbutton.html">RuneMenuRaisedButton</a></td><td width="66%"><a href="#_SelectedButton" name="SelectedButton" title="go to the details">SelectedButton</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_Selection" name="Selection" title="go to the details">Selection</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowpagewindow.html">UWindowPageWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowpagewindow.html#OwnerTab">OwnerTab</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_BeforePaint-" name="BeforePaint" title="go to the details">BeforePaint</a> (<a href="../engine/canvas.html">Canvas</a> C, float X, float Y))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Created-" name="Created" title="go to the details">Created</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_GetDesiredDimensions-" name="GetDesiredDimensions" title="go to the details">GetDesiredDimensions</a> (out float W, out float H))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_KeyDown-" name="KeyDown" title="go to the details">KeyDown</a> (int Key, float X, float Y ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_LoadExistingKeys-" name="LoadExistingKeys" title="go to the details">LoadExistingKeys</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Notify-" name="Notify" title="go to the details">Notify</a> (<a href="../uwindow/uwindowdialogcontrol.html">UWindowDialogControl</a> C, byte E))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ProcessMenuKey-" name="ProcessMenuKey" title="go to the details">ProcessMenuKey</a> (int KeyNo, string KeyName ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_RemoveExistingKey-" name="RemoveExistingKey" title="go to the details">RemoveExistingKey</a> (int KeyNo, string KeyName))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SetKey-" name="SetKey" title="go to the details">SetKey</a> (int KeyNo, string KeyName))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_WindowShown-" name="WindowShown" title="go to the details">WindowShown</a> ()))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runemenupagewindow.html">RuneMenuPageWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../rmenu/runemenupagewindow.html#Notify">Notify</a>, <a href="../rmenu/runemenupagewindow.html#Paint">Paint</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowpagewindow.html">UWindowPageWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowpagewindow.html#RightClickTab">RightClickTab</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_AliasCount" class="hidden"></a>AliasCount <a href="../Source_rmenu/runemenucustomizeclientwindow.html#36" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> AliasCount;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AliasNames[70]" class="hidden"></a>AliasNames[70] <a href="../Source_rmenu/runemenucustomizeclientwindow.html#11" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> AliasNames[<span class="source_int">70</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bJoystick" class="hidden"></a>bJoystick <a href="../Source_rmenu/runemenucustomizeclientwindow.html#38" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bJoystick;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bLoadedExisting" class="hidden"></a>bLoadedExisting <a href="../Source_rmenu/runemenucustomizeclientwindow.html#37" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bLoadedExisting;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BoundKey1[70]" class="hidden"></a>BoundKey1[70] <a href="../Source_rmenu/runemenucustomizeclientwindow.html#5" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> BoundKey1[<span class="source_int">70</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BoundKey2[70]" class="hidden"></a>BoundKey2[70] <a href="../Source_rmenu/runemenucustomizeclientwindow.html#6" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> BoundKey2[<span class="source_int">70</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bPolling" class="hidden"></a>bPolling <a href="../Source_rmenu/runemenucustomizeclientwindow.html#13" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bPolling;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CustomizeHelp" class="hidden"></a>CustomizeHelp <a href="../Source_rmenu/runemenucustomizeclientwindow.html#15" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> CustomizeHelp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DefaultsButton" class="hidden"></a>DefaultsButton <a href="../Source_rmenu/runemenucustomizeclientwindow.html#17" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowsmallbutton.html" class="source">UWindowSmallButton</a></span> DefaultsButton;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DefaultsHelp" class="hidden"></a>DefaultsHelp <a href="../Source_rmenu/runemenucustomizeclientwindow.html#19" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> DefaultsHelp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DefaultsText" class="hidden"></a>DefaultsText <a href="../Source_rmenu/runemenucustomizeclientwindow.html#18" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> DefaultsText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_JoyDesiredHeight" class="hidden"></a>JoyDesiredHeight <a href="../Source_rmenu/runemenucustomizeclientwindow.html#39" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">float</span> JoyDesiredHeight;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_JoystickHeading" class="hidden"></a>JoystickHeading <a href="../Source_rmenu/runemenucustomizeclientwindow.html#21" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> JoystickHeading;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_JoystickText" class="hidden"></a>JoystickText <a href="../Source_rmenu/runemenucustomizeclientwindow.html#22" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> JoystickText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_JoyXBinding[2]" class="hidden"></a>JoyXBinding[2] <a href="../Source_rmenu/runemenucustomizeclientwindow.html#28" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> JoyXBinding[<span class="source_int">2</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_JoyXCombo" class="hidden"></a>JoyXCombo <a href="../Source_rmenu/runemenucustomizeclientwindow.html#24" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowcombocontrol.html" class="source">UWindowComboControl</a></span> JoyXCombo;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_JoyXHelp" class="hidden"></a>JoyXHelp <a href="../Source_rmenu/runemenucustomizeclientwindow.html#26" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> JoyXHelp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_JoyXOptions[2]" class="hidden"></a>JoyXOptions[2] <a href="../Source_rmenu/runemenucustomizeclientwindow.html#27" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> JoyXOptions[<span class="source_int">2</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_JoyXText" class="hidden"></a>JoyXText <a href="../Source_rmenu/runemenucustomizeclientwindow.html#25" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> JoyXText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_JoyYBinding[2]" class="hidden"></a>JoyYBinding[2] <a href="../Source_rmenu/runemenucustomizeclientwindow.html#34" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> JoyYBinding[<span class="source_int">2</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_JoyYCombo" class="hidden"></a>JoyYCombo <a href="../Source_rmenu/runemenucustomizeclientwindow.html#30" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowcombocontrol.html" class="source">UWindowComboControl</a></span> JoyYCombo;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_JoyYHelp" class="hidden"></a>JoyYHelp <a href="../Source_rmenu/runemenucustomizeclientwindow.html#32" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> JoyYHelp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_JoyYOptions[2]" class="hidden"></a>JoyYOptions[2] <a href="../Source_rmenu/runemenucustomizeclientwindow.html#33" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> JoyYOptions[<span class="source_int">2</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_JoyYText" class="hidden"></a>JoyYText <a href="../Source_rmenu/runemenucustomizeclientwindow.html#31" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> JoyYText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_KeyButtons[70]" class="hidden"></a>KeyButtons[70] <a href="../Source_rmenu/runemenucustomizeclientwindow.html#8" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenuraisedbutton.html" class="source">RuneMenuRaisedButton</a></span> KeyButtons[<span class="source_int">70</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_KeyNames[70]" class="hidden"></a>KeyNames[70] <a href="../Source_rmenu/runemenucustomizeclientwindow.html#7" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenulabelcontrol.html" class="source">RuneMenuLabelControl</a></span> KeyNames[<span class="source_int">70</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LabelList[70]" class="hidden"></a>LabelList[70] <a href="../Source_rmenu/runemenucustomizeclientwindow.html#10" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> LabelList[<span class="source_int">70</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LocalizedKeyName[255]" class="hidden"></a>LocalizedKeyName[255] <a href="../Source_rmenu/runemenucustomizeclientwindow.html#3" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> LocalizedKeyName[<span class="source_int">255</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NoJoyDesiredHeight" class="hidden"></a>NoJoyDesiredHeight <a href="../Source_rmenu/runemenucustomizeclientwindow.html#39" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">float</span> NoJoyDesiredHeight;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_OrString" class="hidden"></a>OrString <a href="../Source_rmenu/runemenucustomizeclientwindow.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> OrString;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RealKeyName[255]" class="hidden"></a>RealKeyName[255] <a href="../Source_rmenu/runemenucustomizeclientwindow.html#4" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> RealKeyName[<span class="source_int">255</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SelectedButton" class="hidden"></a>SelectedButton <a href="../Source_rmenu/runemenucustomizeclientwindow.html#9" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenuraisedbutton.html" class="source">RuneMenuRaisedButton</a></span> SelectedButton;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Selection" class="hidden"></a>Selection <a href="../Source_rmenu/runemenucustomizeclientwindow.html#12" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> Selection;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_BeforePaint-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BeforePaint <span class="function_state"></span> <a href="../Source_rmenu/runemenucustomizeclientwindow.html#209" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  BeforePaint ( <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type">C</span>, <span class="source_keyword">float</span> X, <span class="source_keyword">float</span> <span class="source_type">Y</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Created-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Created <span class="function_state"></span> <a href="../Source_rmenu/runemenucustomizeclientwindow.html#41" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Created ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetDesiredDimensions-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetDesiredDimensions <span class="function_state"></span> <a href="../Source_rmenu/runemenucustomizeclientwindow.html#436" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  GetDesiredDimensions ( <span class="source_keyword2">out</span> <span class="source_keyword">float</span> W, <span class="source_keyword2">out</span> <span class="source_keyword">float</span> H) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_KeyDown-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> KeyDown <span class="function_state"></span> <a href="../Source_rmenu/runemenucustomizeclientwindow.html#267" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  KeyDown ( <span class="source_keyword">int</span> <span class="source_type">Key</span>, <span class="source_keyword">float</span> X, <span class="source_keyword">float</span> <span class="source_type">Y</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LoadExistingKeys-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> LoadExistingKeys <span class="function_state"></span> <a href="../Source_rmenu/runemenucustomizeclientwindow.html#149" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  LoadExistingKeys ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Notify-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Notify <span class="function_state"></span> <a href="../Source_rmenu/runemenucustomizeclientwindow.html#354" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Notify ( <span class="source_type"><a href="../uwindow/uwindowdialogcontrol.html" class="source">UWindowDialogControl</a></span> <span class="source_type">C</span>, <span class="source_keyword">byte</span> E) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ProcessMenuKey-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ProcessMenuKey <span class="function_state"></span> <a href="../Source_rmenu/runemenucustomizeclientwindow.html#343" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ProcessMenuKey ( <span class="source_keyword">int</span> KeyNo, <span class="source_keyword">string</span> <span class="source_type">KeyName</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RemoveExistingKey-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> RemoveExistingKey <span class="function_state"></span> <a href="../Source_rmenu/runemenucustomizeclientwindow.html#277" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  RemoveExistingKey ( <span class="source_keyword">int</span> KeyNo, <span class="source_keyword">string</span> <span class="source_type">KeyName</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SetKey-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SetKey <span class="function_state"></span> <a href="../Source_rmenu/runemenucustomizeclientwindow.html#298" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SetKey ( <span class="source_keyword">int</span> KeyNo, <span class="source_keyword">string</span> <span class="source_type">KeyName</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_WindowShown-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> WindowShown <span class="function_state"></span> <a href="../Source_rmenu/runemenucustomizeclientwindow.html#143" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  WindowShown ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     LocalizedKeyName(<span class="source_int">1</span>)=<span class="source_string">"LeftMouse"</span>
+     LocalizedKeyName(<span class="source_int">2</span>)=<span class="source_string">"RightMouse"</span>
+     LocalizedKeyName(<span class="source_int">3</span>)=<span class="source_string">"Cancel"</span>
+     LocalizedKeyName(<span class="source_int">4</span>)=<span class="source_string">"MiddleMouse"</span>
+     LocalizedKeyName(<span class="source_int">5</span>)=<span class="source_string">"Unknown05"</span>
+     LocalizedKeyName(<span class="source_int">6</span>)=<span class="source_string">"Unknown06"</span>
+     LocalizedKeyName(<span class="source_int">7</span>)=<span class="source_string">"Unknown07"</span>
+     LocalizedKeyName(<span class="source_int">8</span>)=<span class="source_string">"Backspace"</span>
+     LocalizedKeyName(<span class="source_int">9</span>)=<span class="source_string">"Tab"</span>
+     LocalizedKeyName(<span class="source_int">10</span>)=<span class="source_string">"Unknown0A"</span>
+     LocalizedKeyName(<span class="source_int">11</span>)=<span class="source_string">"Unknown0B"</span>
+     LocalizedKeyName(<span class="source_int">12</span>)=<span class="source_string">"Unknown0C"</span>
+     LocalizedKeyName(<span class="source_int">13</span>)=<span class="source_string">"Enter"</span>
+     LocalizedKeyName(<span class="source_int">14</span>)=<span class="source_string">"Unknown0E"</span>
+     LocalizedKeyName(<span class="source_int">15</span>)=<span class="source_string">"Unknown0F"</span>
+     LocalizedKeyName(<span class="source_int">16</span>)=<span class="source_string">"Shift"</span>
+     LocalizedKeyName(<span class="source_int">17</span>)=<span class="source_string">"Ctrl"</span>
+     LocalizedKeyName(<span class="source_int">18</span>)=<span class="source_string">"Alt"</span>
+     LocalizedKeyName(<span class="source_int">19</span>)=<span class="source_string">"Pause"</span>
+     LocalizedKeyName(<span class="source_int">20</span>)=<span class="source_string">"CapsLock"</span>
+     LocalizedKeyName(<span class="source_int">21</span>)=<span class="source_string">"Unknown15"</span>
+     LocalizedKeyName(<span class="source_int">22</span>)=<span class="source_string">"Unknown16"</span>
+     LocalizedKeyName(<span class="source_int">23</span>)=<span class="source_string">"Unknown17"</span>
+     LocalizedKeyName(<span class="source_int">24</span>)=<span class="source_string">"Unknown18"</span>
+     LocalizedKeyName(<span class="source_int">25</span>)=<span class="source_string">"Unknown19"</span>
+     LocalizedKeyName(<span class="source_int">26</span>)=<span class="source_string">"Unknown1A"</span>
+     LocalizedKeyName(<span class="source_int">27</span>)=<span class="source_string">"Escape"</span>
+     LocalizedKeyName(<span class="source_int">28</span>)=<span class="source_string">"Unknown1C"</span>
+     LocalizedKeyName(<span class="source_int">29</span>)=<span class="source_string">"Unknown1D"</span>
+     LocalizedKeyName(<span class="source_int">30</span>)=<span class="source_string">"Unknown1E"</span>
+     LocalizedKeyName(<span class="source_int">31</span>)=<span class="source_string">"Unknown1F"</span>
+     LocalizedKeyName(<span class="source_int">32</span>)=<span class="source_string">"Space"</span>
+     LocalizedKeyName(<span class="source_int">33</span>)=<span class="source_string">"PageUp"</span>
+     LocalizedKeyName(<span class="source_int">34</span>)=<span class="source_string">"PageDown"</span>
+     LocalizedKeyName(<span class="source_int">35</span>)=<span class="source_string">"End"</span>
+     LocalizedKeyName(<span class="source_int">36</span>)=<span class="source_string">"Home"</span>
+     LocalizedKeyName(<span class="source_int">37</span>)=<span class="source_string">"Left"</span>
+     LocalizedKeyName(<span class="source_int">38</span>)=<span class="source_string">"Up"</span>
+     LocalizedKeyName(<span class="source_int">39</span>)=<span class="source_string">"Right"</span>
+     LocalizedKeyName(<span class="source_int">40</span>)=<span class="source_string">"Down"</span>
+     LocalizedKeyName(<span class="source_int">41</span>)=<span class="source_string">"Select"</span>
+     LocalizedKeyName(<span class="source_int">42</span>)=<span class="source_string">"Print"</span>
+     LocalizedKeyName(<span class="source_int">43</span>)=<span class="source_string">"Execute"</span>
+     LocalizedKeyName(<span class="source_int">44</span>)=<span class="source_string">"PrintScrn"</span>
+     LocalizedKeyName(<span class="source_int">45</span>)=<span class="source_string">"Insert"</span>
+     LocalizedKeyName(<span class="source_int">46</span>)=<span class="source_string">"Delete"</span>
+     LocalizedKeyName(<span class="source_int">47</span>)=<span class="source_string">"Help"</span>
+     LocalizedKeyName(<span class="source_int">48</span>)=<span class="source_string">"0"</span>
+     LocalizedKeyName(<span class="source_int">49</span>)=<span class="source_string">"1"</span>
+     LocalizedKeyName(<span class="source_int">50</span>)=<span class="source_string">"2"</span>
+     LocalizedKeyName(<span class="source_int">51</span>)=<span class="source_string">"3"</span>
+     LocalizedKeyName(<span class="source_int">52</span>)=<span class="source_string">"4"</span>
+     LocalizedKeyName(<span class="source_int">53</span>)=<span class="source_string">"5"</span>
+     LocalizedKeyName(<span class="source_int">54</span>)=<span class="source_string">"6"</span>
+     LocalizedKeyName(<span class="source_int">55</span>)=<span class="source_string">"7"</span>
+     LocalizedKeyName(<span class="source_int">56</span>)=<span class="source_string">"8"</span>
+     LocalizedKeyName(<span class="source_int">57</span>)=<span class="source_string">"9"</span>
+     LocalizedKeyName(<span class="source_int">58</span>)=<span class="source_string">"Unknown3A"</span>
+     LocalizedKeyName(<span class="source_int">59</span>)=<span class="source_string">"Unknown3B"</span>
+     LocalizedKeyName(<span class="source_int">60</span>)=<span class="source_string">"Unknown3C"</span>
+     LocalizedKeyName(<span class="source_int">61</span>)=<span class="source_string">"Unknown3D"</span>
+     LocalizedKeyName(<span class="source_int">62</span>)=<span class="source_string">"Unknown3E"</span>
+     LocalizedKeyName(<span class="source_int">63</span>)=<span class="source_string">"Unknown3F"</span>
+     LocalizedKeyName(<span class="source_int">64</span>)=<span class="source_string">"Unknown40"</span>
+     LocalizedKeyName(<span class="source_int">65</span>)=<span class="source_string">"A"</span>
+     LocalizedKeyName(<span class="source_int">66</span>)=<span class="source_string">"B"</span>
+     LocalizedKeyName(<span class="source_int">67</span>)=<span class="source_string">"C"</span>
+     LocalizedKeyName(<span class="source_int">68</span>)=<span class="source_string">"D"</span>
+     LocalizedKeyName(<span class="source_int">69</span>)=<span class="source_string">"E"</span>
+     LocalizedKeyName(<span class="source_int">70</span>)=<span class="source_string">"F"</span>
+     LocalizedKeyName(<span class="source_int">71</span>)=<span class="source_string">"G"</span>
+     LocalizedKeyName(<span class="source_int">72</span>)=<span class="source_string">"H"</span>
+     LocalizedKeyName(<span class="source_int">73</span>)=<span class="source_string">"I"</span>
+     LocalizedKeyName(<span class="source_int">74</span>)=<span class="source_string">"J"</span>
+     LocalizedKeyName(<span class="source_int">75</span>)=<span class="source_string">"K"</span>
+     LocalizedKeyName(<span class="source_int">76</span>)=<span class="source_string">"L"</span>
+     LocalizedKeyName(<span class="source_int">77</span>)=<span class="source_string">"M"</span>
+     LocalizedKeyName(<span class="source_int">78</span>)=<span class="source_string">"N"</span>
+     LocalizedKeyName(<span class="source_int">79</span>)=<span class="source_string">"O"</span>
+     LocalizedKeyName(<span class="source_int">80</span>)=<span class="source_string">"P"</span>
+     LocalizedKeyName(<span class="source_int">81</span>)=<span class="source_string">"Q"</span>
+     LocalizedKeyName(<span class="source_int">82</span>)=<span class="source_string">"R"</span>
+     LocalizedKeyName(<span class="source_int">83</span>)=<span class="source_string">"S"</span>
+     LocalizedKeyName(<span class="source_int">84</span>)=<span class="source_string">"T"</span>
+     LocalizedKeyName(<span class="source_int">85</span>)=<span class="source_string">"U"</span>
+     LocalizedKeyName(<span class="source_int">86</span>)=<span class="source_string">"V"</span>
+     LocalizedKeyName(<span class="source_int">87</span>)=<span class="source_string">"W"</span>
+     LocalizedKeyName(<span class="source_int">88</span>)=<span class="source_string">"X"</span>
+     LocalizedKeyName(<span class="source_int">89</span>)=<span class="source_string">"Y"</span>
+     LocalizedKeyName(<span class="source_int">90</span>)=<span class="source_string">"Z"</span>
+     LocalizedKeyName(<span class="source_int">91</span>)=<span class="source_string">"Unknown5B"</span>
+     LocalizedKeyName(<span class="source_int">92</span>)=<span class="source_string">"Unknown5C"</span>
+     LocalizedKeyName(<span class="source_int">93</span>)=<span class="source_string">"Unknown5D"</span>
+     LocalizedKeyName(<span class="source_int">94</span>)=<span class="source_string">"Unknown5E"</span>
+     LocalizedKeyName(<span class="source_int">95</span>)=<span class="source_string">"Unknown5F"</span>
+     LocalizedKeyName(<span class="source_int">96</span>)=<span class="source_string">"NumPad0"</span>
+     LocalizedKeyName(<span class="source_int">97</span>)=<span class="source_string">"NumPad1"</span>
+     LocalizedKeyName(<span class="source_int">98</span>)=<span class="source_string">"NumPad2"</span>
+     LocalizedKeyName(<span class="source_int">99</span>)=<span class="source_string">"NumPad3"</span>
+     LocalizedKeyName(<span class="source_int">100</span>)=<span class="source_string">"NumPad4"</span>
+     LocalizedKeyName(<span class="source_int">101</span>)=<span class="source_string">"NumPad5"</span>
+     LocalizedKeyName(<span class="source_int">102</span>)=<span class="source_string">"NumPad6"</span>
+     LocalizedKeyName(<span class="source_int">103</span>)=<span class="source_string">"NumPad7"</span>
+     LocalizedKeyName(<span class="source_int">104</span>)=<span class="source_string">"NumPad8"</span>
+     LocalizedKeyName(<span class="source_int">105</span>)=<span class="source_string">"NumPad9"</span>
+     LocalizedKeyName(<span class="source_int">106</span>)=<span class="source_string">"GreyStar"</span>
+     LocalizedKeyName(<span class="source_int">107</span>)=<span class="source_string">"GreyPlus"</span>
+     LocalizedKeyName(<span class="source_int">108</span>)=<span class="source_string">"Separator"</span>
+     LocalizedKeyName(<span class="source_int">109</span>)=<span class="source_string">"GreyMinus"</span>
+     LocalizedKeyName(<span class="source_int">110</span>)=<span class="source_string">"NumPadPeriod"</span>
+     LocalizedKeyName(<span class="source_int">111</span>)=<span class="source_string">"GreySlash"</span>
+     LocalizedKeyName(<span class="source_int">112</span>)=<span class="source_string">"F1"</span>
+     LocalizedKeyName(<span class="source_int">113</span>)=<span class="source_string">"F2"</span>
+     LocalizedKeyName(<span class="source_int">114</span>)=<span class="source_string">"F3"</span>
+     LocalizedKeyName(<span class="source_int">115</span>)=<span class="source_string">"F4"</span>
+     LocalizedKeyName(<span class="source_int">116</span>)=<span class="source_string">"F5"</span>
+     LocalizedKeyName(<span class="source_int">117</span>)=<span class="source_string">"F6"</span>
+     LocalizedKeyName(<span class="source_int">118</span>)=<span class="source_string">"F7"</span>
+     LocalizedKeyName(<span class="source_int">119</span>)=<span class="source_string">"F8"</span>
+     LocalizedKeyName(<span class="source_int">120</span>)=<span class="source_string">"F9"</span>
+     LocalizedKeyName(<span class="source_int">121</span>)=<span class="source_string">"F10"</span>
+     LocalizedKeyName(<span class="source_int">122</span>)=<span class="source_string">"F11"</span>
+     LocalizedKeyName(<span class="source_int">123</span>)=<span class="source_string">"F12"</span>
+     LocalizedKeyName(<span class="source_int">124</span>)=<span class="source_string">"F13"</span>
+     LocalizedKeyName(<span class="source_int">125</span>)=<span class="source_string">"F14"</span>
+     LocalizedKeyName(<span class="source_int">126</span>)=<span class="source_string">"F15"</span>
+     LocalizedKeyName(<span class="source_int">127</span>)=<span class="source_string">"F16"</span>
+     LocalizedKeyName(<span class="source_int">128</span>)=<span class="source_string">"F17"</span>
+     LocalizedKeyName(<span class="source_int">129</span>)=<span class="source_string">"F18"</span>
+     LocalizedKeyName(<span class="source_int">130</span>)=<span class="source_string">"F19"</span>
+     LocalizedKeyName(<span class="source_int">131</span>)=<span class="source_string">"F20"</span>
+     LocalizedKeyName(<span class="source_int">132</span>)=<span class="source_string">"F21"</span>
+     LocalizedKeyName(<span class="source_int">133</span>)=<span class="source_string">"F22"</span>
+     LocalizedKeyName(<span class="source_int">134</span>)=<span class="source_string">"F23"</span>
+     LocalizedKeyName(<span class="source_int">135</span>)=<span class="source_string">"F24"</span>
+     LocalizedKeyName(<span class="source_int">136</span>)=<span class="source_string">"Unknown88"</span>
+     LocalizedKeyName(<span class="source_int">137</span>)=<span class="source_string">"Unknown89"</span>
+     LocalizedKeyName(<span class="source_int">138</span>)=<span class="source_string">"Unknown8A"</span>
+     LocalizedKeyName(<span class="source_int">139</span>)=<span class="source_string">"Unknown8B"</span>
+     LocalizedKeyName(<span class="source_int">140</span>)=<span class="source_string">"Unknown8C"</span>
+     LocalizedKeyName(<span class="source_int">141</span>)=<span class="source_string">"Unknown8D"</span>
+     LocalizedKeyName(<span class="source_int">142</span>)=<span class="source_string">"Unknown8E"</span>
+     LocalizedKeyName(<span class="source_int">143</span>)=<span class="source_string">"Unknown8F"</span>
+     LocalizedKeyName(<span class="source_int">144</span>)=<span class="source_string">"NumLock"</span>
+     LocalizedKeyName(<span class="source_int">145</span>)=<span class="source_string">"ScrollLock"</span>
+     LocalizedKeyName(<span class="source_int">146</span>)=<span class="source_string">"Unknown92"</span>
+     LocalizedKeyName(<span class="source_int">147</span>)=<span class="source_string">"Unknown93"</span>
+     LocalizedKeyName(<span class="source_int">148</span>)=<span class="source_string">"Unknown94"</span>
+     LocalizedKeyName(<span class="source_int">149</span>)=<span class="source_string">"Unknown95"</span>
+     LocalizedKeyName(<span class="source_int">150</span>)=<span class="source_string">"Unknown96"</span>
+     LocalizedKeyName(<span class="source_int">151</span>)=<span class="source_string">"Unknown97"</span>
+     LocalizedKeyName(<span class="source_int">152</span>)=<span class="source_string">"Unknown98"</span>
+     LocalizedKeyName(<span class="source_int">153</span>)=<span class="source_string">"Unknown99"</span>
+     LocalizedKeyName(<span class="source_int">154</span>)=<span class="source_string">"Unknown9A"</span>
+     LocalizedKeyName(<span class="source_int">155</span>)=<span class="source_string">"Unknown9B"</span>
+     LocalizedKeyName(<span class="source_int">156</span>)=<span class="source_string">"Unknown9C"</span>
+     LocalizedKeyName(<span class="source_int">157</span>)=<span class="source_string">"Unknown9D"</span>
+     LocalizedKeyName(<span class="source_int">158</span>)=<span class="source_string">"Unknown9E"</span>
+     LocalizedKeyName(<span class="source_int">159</span>)=<span class="source_string">"Unknown9F"</span>
+     LocalizedKeyName(<span class="source_int">160</span>)=<span class="source_string">"LShift"</span>
+     LocalizedKeyName(<span class="source_int">161</span>)=<span class="source_string">"RShift"</span>
+     LocalizedKeyName(<span class="source_int">162</span>)=<span class="source_string">"LControl"</span>
+     LocalizedKeyName(<span class="source_int">163</span>)=<span class="source_string">"RControl"</span>
+     LocalizedKeyName(<span class="source_int">164</span>)=<span class="source_string">"UnknownA4"</span>
+     LocalizedKeyName(<span class="source_int">165</span>)=<span class="source_string">"UnknownA5"</span>
+     LocalizedKeyName(<span class="source_int">166</span>)=<span class="source_string">"UnknownA6"</span>
+     LocalizedKeyName(<span class="source_int">167</span>)=<span class="source_string">"UnknownA7"</span>
+     LocalizedKeyName(<span class="source_int">168</span>)=<span class="source_string">"UnknownA8"</span>
+     LocalizedKeyName(<span class="source_int">169</span>)=<span class="source_string">"UnknownA9"</span>
+     LocalizedKeyName(<span class="source_int">170</span>)=<span class="source_string">"UnknownAA"</span>
+     LocalizedKeyName(<span class="source_int">171</span>)=<span class="source_string">"UnknownAB"</span>
+     LocalizedKeyName(<span class="source_int">172</span>)=<span class="source_string">"UnknownAC"</span>
+     LocalizedKeyName(<span class="source_int">173</span>)=<span class="source_string">"UnknownAD"</span>
+     LocalizedKeyName(<span class="source_int">174</span>)=<span class="source_string">"UnknownAE"</span>
+     LocalizedKeyName(<span class="source_int">175</span>)=<span class="source_string">"UnknownAF"</span>
+     LocalizedKeyName(<span class="source_int">176</span>)=<span class="source_string">"UnknownB0"</span>
+     LocalizedKeyName(<span class="source_int">177</span>)=<span class="source_string">"UnknownB1"</span>
+     LocalizedKeyName(<span class="source_int">178</span>)=<span class="source_string">"UnknownB2"</span>
+     LocalizedKeyName(<span class="source_int">179</span>)=<span class="source_string">"UnknownB3"</span>
+     LocalizedKeyName(<span class="source_int">180</span>)=<span class="source_string">"UnknownB4"</span>
+     LocalizedKeyName(<span class="source_int">181</span>)=<span class="source_string">"UnknownB5"</span>
+     LocalizedKeyName(<span class="source_int">182</span>)=<span class="source_string">"UnknownB6"</span>
+     LocalizedKeyName(<span class="source_int">183</span>)=<span class="source_string">"UnknownB7"</span>
+     LocalizedKeyName(<span class="source_int">184</span>)=<span class="source_string">"UnknownB8"</span>
+     LocalizedKeyName(<span class="source_int">185</span>)=<span class="source_string">"UnknownB9"</span>
+     LocalizedKeyName(<span class="source_int">186</span>)=<span class="source_string">"Semicolon"</span>
+     LocalizedKeyName(<span class="source_int">187</span>)=<span class="source_string">"Equals"</span>
+     LocalizedKeyName(<span class="source_int">188</span>)=<span class="source_string">"Comma"</span>
+     LocalizedKeyName(<span class="source_int">189</span>)=<span class="source_string">"Minus"</span>
+     LocalizedKeyName(<span class="source_int">190</span>)=<span class="source_string">"Period"</span>
+     LocalizedKeyName(<span class="source_int">191</span>)=<span class="source_string">"Slash"</span>
+     LocalizedKeyName(<span class="source_int">192</span>)=<span class="source_string">"Tilde"</span>
+     LocalizedKeyName(<span class="source_int">193</span>)=<span class="source_string">"UnknownC1"</span>
+     LocalizedKeyName(<span class="source_int">194</span>)=<span class="source_string">"UnknownC2"</span>
+     LocalizedKeyName(<span class="source_int">195</span>)=<span class="source_string">"UnknownC3"</span>
+     LocalizedKeyName(<span class="source_int">196</span>)=<span class="source_string">"UnknownC4"</span>
+     LocalizedKeyName(<span class="source_int">197</span>)=<span class="source_string">"UnknownC5"</span>
+     LocalizedKeyName(<span class="source_int">198</span>)=<span class="source_string">"UnknownC6"</span>
+     LocalizedKeyName(<span class="source_int">199</span>)=<span class="source_string">"UnknownC7"</span>
+     LocalizedKeyName(<span class="source_int">200</span>)=<span class="source_string">"Joy1"</span>
+     LocalizedKeyName(<span class="source_int">201</span>)=<span class="source_string">"Joy2"</span>
+     LocalizedKeyName(<span class="source_int">202</span>)=<span class="source_string">"Joy3"</span>
+     LocalizedKeyName(<span class="source_int">203</span>)=<span class="source_string">"Joy4"</span>
+     LocalizedKeyName(<span class="source_int">204</span>)=<span class="source_string">"Joy5"</span>
+     LocalizedKeyName(<span class="source_int">205</span>)=<span class="source_string">"Joy6"</span>
+     LocalizedKeyName(<span class="source_int">206</span>)=<span class="source_string">"Joy7"</span>
+     LocalizedKeyName(<span class="source_int">207</span>)=<span class="source_string">"Joy8"</span>
+     LocalizedKeyName(<span class="source_int">208</span>)=<span class="source_string">"Joy9"</span>
+     LocalizedKeyName(<span class="source_int">209</span>)=<span class="source_string">"Joy10"</span>
+     LocalizedKeyName(<span class="source_int">210</span>)=<span class="source_string">"Joy11"</span>
+     LocalizedKeyName(<span class="source_int">211</span>)=<span class="source_string">"Joy12"</span>
+     LocalizedKeyName(<span class="source_int">212</span>)=<span class="source_string">"Joy13"</span>
+     LocalizedKeyName(<span class="source_int">213</span>)=<span class="source_string">"Joy14"</span>
+     LocalizedKeyName(<span class="source_int">214</span>)=<span class="source_string">"Joy15"</span>
+     LocalizedKeyName(<span class="source_int">215</span>)=<span class="source_string">"Joy16"</span>
+     LocalizedKeyName(<span class="source_int">216</span>)=<span class="source_string">"UnknownD8"</span>
+     LocalizedKeyName(<span class="source_int">217</span>)=<span class="source_string">"UnknownD9"</span>
+     LocalizedKeyName(<span class="source_int">218</span>)=<span class="source_string">"UnknownDA"</span>
+     LocalizedKeyName(<span class="source_int">219</span>)=<span class="source_string">"LeftBracket"</span>
+     LocalizedKeyName(<span class="source_int">220</span>)=<span class="source_string">"Backslash"</span>
+     LocalizedKeyName(<span class="source_int">221</span>)=<span class="source_string">"RightBracket"</span>
+     LocalizedKeyName(<span class="source_int">222</span>)=<span class="source_string">"SingleQuote"</span>
+     LocalizedKeyName(<span class="source_int">223</span>)=<span class="source_string">"UnknownDF"</span>
+     LocalizedKeyName(<span class="source_int">224</span>)=<span class="source_string">"JoyX"</span>
+     LocalizedKeyName(<span class="source_int">225</span>)=<span class="source_string">"JoyY"</span>
+     LocalizedKeyName(<span class="source_int">226</span>)=<span class="source_string">"JoyZ"</span>
+     LocalizedKeyName(<span class="source_int">227</span>)=<span class="source_string">"JoyR"</span>
+     LocalizedKeyName(<span class="source_int">228</span>)=<span class="source_string">"MouseX"</span>
+     LocalizedKeyName(<span class="source_int">229</span>)=<span class="source_string">"MouseY"</span>
+     LocalizedKeyName(<span class="source_int">230</span>)=<span class="source_string">"MouseZ"</span>
+     LocalizedKeyName(<span class="source_int">231</span>)=<span class="source_string">"MouseW"</span>
+     LocalizedKeyName(<span class="source_int">232</span>)=<span class="source_string">"JoyU"</span>
+     LocalizedKeyName(<span class="source_int">233</span>)=<span class="source_string">"JoyV"</span>
+     LocalizedKeyName(<span class="source_int">234</span>)=<span class="source_string">"UnknownEA"</span>
+     LocalizedKeyName(<span class="source_int">235</span>)=<span class="source_string">"UnknownEB"</span>
+     LocalizedKeyName(<span class="source_int">236</span>)=<span class="source_string">"MouseWheelUp"</span>
+     LocalizedKeyName(<span class="source_int">237</span>)=<span class="source_string">"MouseWheelDown"</span>
+     LocalizedKeyName(<span class="source_int">238</span>)=<span class="source_string">"Unknown10E"</span>
+     LocalizedKeyName(<span class="source_int">239</span>)=<span class="source_string">"Unknown10F"</span>
+     LocalizedKeyName(<span class="source_int">240</span>)=<span class="source_string">"JoyPovUp"</span>
+     LocalizedKeyName(<span class="source_int">241</span>)=<span class="source_string">"JoyPovDown"</span>
+     LocalizedKeyName(<span class="source_int">242</span>)=<span class="source_string">"JoyPovLeft"</span>
+     LocalizedKeyName(<span class="source_int">243</span>)=<span class="source_string">"JoyPovRight"</span>
+     LocalizedKeyName(<span class="source_int">244</span>)=<span class="source_string">"UnknownF4"</span>
+     LocalizedKeyName(<span class="source_int">245</span>)=<span class="source_string">"UnknownF5"</span>
+     LocalizedKeyName(<span class="source_int">246</span>)=<span class="source_string">"Attn"</span>
+     LocalizedKeyName(<span class="source_int">247</span>)=<span class="source_string">"CrSel"</span>
+     LocalizedKeyName(<span class="source_int">248</span>)=<span class="source_string">"ExSel"</span>
+     LocalizedKeyName(<span class="source_int">249</span>)=<span class="source_string">"ErEof"</span>
+     LocalizedKeyName(<span class="source_int">250</span>)=<span class="source_string">"Play"</span>
+     LocalizedKeyName(<span class="source_int">251</span>)=<span class="source_string">"Zoom"</span>
+     LocalizedKeyName(<span class="source_int">252</span>)=<span class="source_string">"NoName"</span>
+     LocalizedKeyName(<span class="source_int">253</span>)=<span class="source_string">"PA1"</span>
+     LocalizedKeyName(<span class="source_int">254</span>)=<span class="source_string">"OEMClear"</span>
+     LabelList(<span class="source_int">0</span>)=<span class="source_string">"Move Forward"</span>
+     LabelList(<span class="source_int">1</span>)=<span class="source_string">"Move Backward"</span>
+     LabelList(<span class="source_int">2</span>)=<span class="source_string">"Move Left"</span>
+     LabelList(<span class="source_int">3</span>)=<span class="source_string">"Move Right"</span>
+     LabelList(<span class="source_int">4</span>)=<span class="source_string">"Strafe"</span>
+     LabelList(<span class="source_int">5</span>)=<span class="source_string">"Turn Left"</span>
+     LabelList(<span class="source_int">6</span>)=<span class="source_string">"Turn Right"</span>
+     LabelList(<span class="source_int">7</span>)=<span class="source_string">"Jump/Up"</span>
+     LabelList(<span class="source_int">8</span>)=<span class="source_string">"Crouch/Down"</span>
+     LabelList(<span class="source_int">9</span>)=<span class="source_string">"Mouse Look"</span>
+     LabelList(<span class="source_int">10</span>)=<span class="source_string">"Look Up"</span>
+     LabelList(<span class="source_int">11</span>)=<span class="source_string">"Look Down"</span>
+     LabelList(<span class="source_int">12</span>)=<span class="source_string">"Center View"</span>
+     LabelList(<span class="source_int">13</span>)=<span class="source_string">"Zoom In"</span>
+     LabelList(<span class="source_int">14</span>)=<span class="source_string">"Zoom Out"</span>
+     LabelList(<span class="source_int">15</span>)=<span class="source_string">"Use"</span>
+     LabelList(<span class="source_int">16</span>)=<span class="source_string">"Attack"</span>
+     LabelList(<span class="source_int">17</span>)=<span class="source_string">"Defend"</span>
+     LabelList(<span class="source_int">18</span>)=<span class="source_string">"Throw Weapon"</span>
+     LabelList(<span class="source_int">19</span>)=<span class="source_string">"RUNE Power"</span>
+     LabelList(<span class="source_int">20</span>)=<span class="source_string">"Stow Weapon"</span>
+     LabelList(<span class="source_int">21</span>)=<span class="source_string">"Select Next Sword"</span>
+     LabelList(<span class="source_int">22</span>)=<span class="source_string">"Select Next Hammer"</span>
+     LabelList(<span class="source_int">23</span>)=<span class="source_string">"Select Next Axe"</span>
+     LabelList(<span class="source_int">24</span>)=<span class="source_string">"Send Message"</span>
+     LabelList(<span class="source_int">25</span>)=<span class="source_string">"Send Team Message"</span>
+     LabelList(<span class="source_int">26</span>)=<span class="source_string">"Taunt"</span>
+     LabelList(<span class="source_int">27</span>)=<span class="source_string">"Toggle Scoreboard"</span>
+     LabelList(<span class="source_int">28</span>)=<span class="source_string">"Toggle TargetStrafe"</span>
+     LabelList(<span class="source_int">29</span>)=<span class="source_string">"Quick Save"</span>
+     LabelList(<span class="source_int">30</span>)=<span class="source_string">"Quick Load"</span>
+     AliasNames(<span class="source_int">0</span>)=<span class="source_string">"MoveForward"</span>
+     AliasNames(<span class="source_int">1</span>)=<span class="source_string">"MoveBackward"</span>
+     AliasNames(<span class="source_int">2</span>)=<span class="source_string">"StrafeLeft"</span>
+     AliasNames(<span class="source_int">3</span>)=<span class="source_string">"StrafeRight"</span>
+     AliasNames(<span class="source_int">4</span>)=<span class="source_string">"Strafe"</span>
+     AliasNames(<span class="source_int">5</span>)=<span class="source_string">"TurnLeft"</span>
+     AliasNames(<span class="source_int">6</span>)=<span class="source_string">"TurnRight"</span>
+     AliasNames(<span class="source_int">7</span>)=<span class="source_string">"Jump"</span>
+     AliasNames(<span class="source_int">8</span>)=<span class="source_string">"Duck"</span>
+     AliasNames(<span class="source_int">9</span>)=<span class="source_string">"Look"</span>
+     AliasNames(<span class="source_int">10</span>)=<span class="source_string">"LookUp"</span>
+     AliasNames(<span class="source_int">11</span>)=<span class="source_string">"LookDown"</span>
+     AliasNames(<span class="source_int">12</span>)=<span class="source_string">"CenterView"</span>
+     AliasNames(<span class="source_int">13</span>)=<span class="source_string">"camerain"</span>
+     AliasNames(<span class="source_int">14</span>)=<span class="source_string">"cameraout"</span>
+     AliasNames(<span class="source_int">15</span>)=<span class="source_string">"Use"</span>
+     AliasNames(<span class="source_int">16</span>)=<span class="source_string">"Fire"</span>
+     AliasNames(<span class="source_int">17</span>)=<span class="source_string">"AltFire"</span>
+     AliasNames(<span class="source_int">18</span>)=<span class="source_string">"Throw"</span>
+     AliasNames(<span class="source_int">19</span>)=<span class="source_string">"Powerup"</span>
+     AliasNames(<span class="source_int">20</span>)=<span class="source_string">"SwitchWeapon 1"</span>
+     AliasNames(<span class="source_int">21</span>)=<span class="source_string">"SwitchWeapon 2"</span>
+     AliasNames(<span class="source_int">22</span>)=<span class="source_string">"SwitchWeapon 3"</span>
+     AliasNames(<span class="source_int">23</span>)=<span class="source_string">"SwitchWeapon 4"</span>
+     AliasNames(<span class="source_int">24</span>)=<span class="source_string">"Talk"</span>
+     AliasNames(<span class="source_int">25</span>)=<span class="source_string">"TeamTalk"</span>
+     AliasNames(<span class="source_int">26</span>)=<span class="source_string">"Taunt"</span>
+     AliasNames(<span class="source_int">27</span>)=<span class="source_string">"Showscores"</span>
+     AliasNames(<span class="source_int">28</span>)=<span class="source_string">"ZTargetToggle"</span>
+     AliasNames(<span class="source_int">29</span>)=<span class="source_string">"QuickSave"</span>
+     AliasNames(<span class="source_int">30</span>)=<span class="source_string">"QuickLoad"</span>
+     OrString=<span class="source_string">" or "</span>
+     CustomizeHelp=<span class="source_string">"Click the rectangle on the right and then press a key to bind to this control."</span>
+     DefaultsText=<span class="source_string">"Reset"</span>
+     DefaultsHelp=<span class="source_string">"Reset all controls to their default settings."</span>
+     JoystickText=<span class="source_string">"Joystick"</span>
+     JoyXText=<span class="source_string">"X Axis"</span>
+     JoyXHelp=<span class="source_string">"Select the behavior for the left-right axis of your joystick."</span>
+     JoyXOptions(<span class="source_int">0</span>)=<span class="source_string">"Strafe Left/Right"</span>
+     JoyXOptions(<span class="source_int">1</span>)=<span class="source_string">"Turn Left/Right"</span>
+     JoyXBinding(<span class="source_int">0</span>)=<span class="source_string">"Axis aStrafe speed=2"</span>
+     JoyXBinding(<span class="source_int">1</span>)=<span class="source_string">"Axis aBaseX speed=0.7"</span>
+     JoyYText=<span class="source_string">"Y Axis"</span>
+     JoyYHelp=<span class="source_string">"Select the behavior for the up-down axis of your joystick."</span>
+     JoyYOptions(<span class="source_int">0</span>)=<span class="source_string">"Move Forward/Back"</span>
+     JoyYOptions(<span class="source_int">1</span>)=<span class="source_string">"Look Up/Down"</span>
+     JoyYBinding(<span class="source_int">0</span>)=<span class="source_string">"Axis aBaseY speed=2"</span>
+     JoyYBinding(<span class="source_int">1</span>)=<span class="source_string">"Axis aLookup speed=-0.4"</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../rmenu/rmenu-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_rmenu/runemenucustomizeclientwindow.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#RuneMenuCustomizeClientWindow">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../rmenu/runemenucreditsscrollclient.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../rmenu/runemenucustomizescrollclient.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:27:21.157 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

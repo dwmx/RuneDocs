@@ -1,0 +1,613 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - RuneI.SpecialEventRune</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/specialeventrune.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#SpecialEventRune">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/spawnablelight.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/spiderbomb.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#runei/specialeventrune.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../runei/runei-overview.html">RuneI</a>.SpecialEventRune</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../engine/specialevent.html">SpecialEvent</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a>
+   |   
+   +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/triggers.html">Triggers</a>
+      |   
+      +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/specialevent.html">SpecialEvent</a>
+         |   
+         +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/specialeventrune.html">SpecialEventRune</a>
+</pre>
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><th colspan="2" class="small">ChangePlayerClass</th></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_DestTeleporterTag" name="DestTeleporterTag" title="go to the details">DestTeleporterTag</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_DestURL" name="DestURL" title="go to the details">DestURL</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">class&lt;<a href="../runei/runeplayer.html">RunePlayer</a>&gt;</td><td width="66%"><a href="#_NewPlayerClass" name="NewPlayerClass" title="go to the details">NewPlayerClass</a></td></tr>
+<tr><th colspan="2" class="small">Cinematic</th></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bAllowSkip" name="bAllowSkip" title="go to the details">bAllowSkip</a></td></tr>
+<tr><th colspan="2" class="small">PushObject</th></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Vector">vector</a></td><td width="66%"><a href="#_PushVector" name="PushVector" title="go to the details">PushVector</a></td></tr>
+<tr><th colspan="2" class="small">Quake</th></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_QuakeFalloff" name="QuakeFalloff" title="go to the details">QuakeFalloff</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_QuakeMagnitude" name="QuakeMagnitude" title="go to the details">QuakeMagnitude</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_QuakeRadius" name="QuakeRadius" title="go to the details">QuakeRadius</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_QuakeTime" name="QuakeTime" title="go to the details">QuakeTime</a></td></tr>
+<tr><th colspan="2" class="small">RuneMessage</th></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bMsgFade" name="bMsgFade" title="go to the details">bMsgFade</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_Msg" name="Msg" title="go to the details">Msg</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/actor.html#E_RMAlign">E_RMAlign</a></td><td width="66%"><a href="#_MsgAlignment" name="MsgAlignment" title="go to the details">MsgAlignment</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Color">color</a></td><td width="66%"><a href="#_MsgColor" name="MsgColor" title="go to the details">MsgColor</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_MsgFadeTime" name="MsgFadeTime" title="go to the details">MsgFadeTime</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">font</td><td width="66%"><a href="#_MsgFont" name="MsgFont" title="go to the details">MsgFont</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_MsgLifeTime" name="MsgLifeTime" title="go to the details">MsgLifeTime</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../core/object.html#Vector">vector</a></td><td width="66%"><a href="#_MsgLocation" name="MsgLocation" title="go to the details">MsgLocation</a></td></tr>
+<tr><th colspan="2" class="small">SetBeamTarget</th></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_OtherInt" name="OtherInt" title="go to the details">OtherInt</a></td></tr>
+<tr><th colspan="2" class="small">SpecialEventRune</th></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_OtherTag" name="OtherTag" title="go to the details">OtherTag</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/specialevent.html">SpecialEvent</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/specialevent.html#bBroadcast">bBroadcast</a>, <a href="../engine/specialevent.html#bPlayerViewRot">bPlayerViewRot</a>, <a href="../engine/specialevent.html#Damage">Damage</a>, <a href="../engine/specialevent.html#DamageJoint">DamageJoint</a>, <a href="../engine/specialevent.html#DamageString">DamageString</a>, <a href="../engine/specialevent.html#DamageType">DamageType</a>, <a href="../engine/specialevent.html#Message">Message</a>, <a href="../engine/specialevent.html#ObjectTag">ObjectTag</a>, <a href="../engine/specialevent.html#ScriptTag">ScriptTag</a>, <a href="../engine/specialevent.html#Sound">Sound</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Trigger-ChangePlayerClass" name="Trigger" title="go to the details">Trigger</a> (<a href="../engine/actor.html">actor</a> Triggerer, <a href="../engine/pawn.html">pawn</a> EventInstigator))<br /><span class="function_state">ChangePlayerClass</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Trigger-ClearOrdersObject" name="Trigger" title="go to the details">Trigger</a> (<a href="../engine/actor.html">actor</a> Other, pawn EventInstigator ))<br /><span class="function_state">ClearOrdersObject</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Trigger-ObjectHateOther" name="Trigger" title="go to the details">Trigger</a> (<a href="../engine/actor.html">actor</a> Triggerer, pawn EventInstigator ))<br /><span class="function_state">ObjectHateOther</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Trigger-PushObject" name="Trigger" title="go to the details">Trigger</a> (<a href="../engine/actor.html">actor</a> Other, <a href="../engine/pawn.html">pawn</a> EventInstigator))<br /><span class="function_state">PushObject</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Trigger-Quake" name="Trigger" title="go to the details">Trigger</a> (<a href="../engine/actor.html">actor</a> Other, <a href="../engine/pawn.html">pawn</a> EventInstigator))<br /><span class="function_state">Quake</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Trigger-RedSubtitle" name="Trigger" title="go to the details">Trigger</a> (<a href="../engine/actor.html">actor</a> Other, pawn EventInstigator ))<br /><span class="function_state">RedSubtitle</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Trigger-RuneMessage" name="Trigger" title="go to the details">Trigger</a> (<a href="../engine/actor.html">actor</a> Other, pawn EventInstigator ))<br /><span class="function_state">RuneMessage</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Trigger-SetBeamTarget" name="Trigger" title="go to the details">Trigger</a> (<a href="../engine/actor.html">actor</a> Other, pawn EventInstigator ))<br /><span class="function_state">SetBeamTarget</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Trigger-StartCinematic" name="Trigger" title="go to the details">Trigger</a> (<a href="../engine/actor.html">actor</a> Other, <a href="../engine/pawn.html">pawn</a> EventInstigator))<br /><span class="function_state">StartCinematic</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Trigger-StartCinematicSmooth" name="Trigger" title="go to the details">Trigger</a> (<a href="../engine/actor.html">actor</a> Other, <a href="../engine/pawn.html">pawn</a> EventInstigator))<br /><span class="function_state">StartCinematicSmooth</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Trigger-Subtitle" name="Trigger" title="go to the details">Trigger</a> (<a href="../engine/actor.html">actor</a> Other, pawn EventInstigator ))<br /><span class="function_state">Subtitle</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Trigger-UseObject" name="Trigger" title="go to the details">Trigger</a> (<a href="../engine/actor.html">actor</a> Other, pawn EventInstigator ))<br /><span class="function_state">UseObject</span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/specialevent.html">SpecialEvent</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/specialevent.html#debug">debug</a>, <a href="../engine/specialevent.html#Trigger">Trigger</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th class="title">States Summary</th>
+</tr>
+</table>
+
+<table>
+<tr>
+	<th>ChangePlayerClass <a href="../Source_runei/specialeventrune.html#287" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> ChangePlayerClass <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_Trigger+ChangePlayerClass">Trigger</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>ClearOrdersObject <a href="../Source_runei/specialeventrune.html#149" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> ClearOrdersObject <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_Trigger+ClearOrdersObject">Trigger</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>ObjectHateOther <a href="../Source_runei/specialeventrune.html#256" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> ObjectHateOther <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_Trigger+ObjectHateOther">Trigger</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>PushObject <a href="../Source_runei/specialeventrune.html#131" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> PushObject <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_Trigger+PushObject">Trigger</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>Quake <a href="../Source_runei/specialeventrune.html#68" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> Quake <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_Trigger+Quake">Trigger</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>RedSubtitle <a href="../Source_runei/specialeventrune.html#217" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> RedSubtitle <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_Trigger+RedSubtitle">Trigger</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>RuneMessage <a href="../Source_runei/specialeventrune.html#177" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> RuneMessage <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_Trigger+RuneMessage">Trigger</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>SetBeamTarget <a href="../Source_runei/specialeventrune.html#40" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> SetBeamTarget <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_Trigger+SetBeamTarget">Trigger</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>StartCinematic <a href="../Source_runei/specialeventrune.html#86" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> StartCinematic <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_Trigger+StartCinematic">Trigger</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>StartCinematicSmooth <a href="../Source_runei/specialeventrune.html#108" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> StartCinematicSmooth <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_Trigger+StartCinematicSmooth">Trigger</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>Subtitle <a href="../Source_runei/specialeventrune.html#202" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> Subtitle <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_Trigger+Subtitle">Trigger</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>UseObject <a href="../Source_runei/specialeventrune.html#232" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> UseObject <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_Trigger+UseObject">Trigger</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h3 class="vartag">ChangePlayerClass</h3>
+<h4><a name="_DestTeleporterTag" class="hidden"></a>DestTeleporterTag <a href="../Source_runei/specialeventrune.html#31" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(ChangePlayerClass) <span class="source_keyword">name</span> DestTeleporterTag;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DestURL" class="hidden"></a>DestURL <a href="../Source_runei/specialeventrune.html#29" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(ChangePlayerClass) <span class="source_keyword">string</span> DestURL;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NewPlayerClass" class="hidden"></a>NewPlayerClass <a href="../Source_runei/specialeventrune.html#30" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(ChangePlayerClass) <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../runei/runeplayer.html" class="source">RunePlayer</a></span>&gt; NewPlayerClass;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">Cinematic</h3>
+<h4><a name="_bAllowSkip" class="hidden"></a>bAllowSkip <a href="../Source_runei/specialeventrune.html#27" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Cinematic) <span class="source_keyword">bool</span> bAllowSkip;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">PushObject</h3>
+<h4><a name="_PushVector" class="hidden"></a>PushVector <a href="../Source_runei/specialeventrune.html#16" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(PushObject) <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> PushVector;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">Quake</h3>
+<h4><a name="_QuakeFalloff" class="hidden"></a>QuakeFalloff <a href="../Source_runei/specialeventrune.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Quake) <span class="source_keyword">float</span> QuakeFalloff;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_QuakeMagnitude" class="hidden"></a>QuakeMagnitude <a href="../Source_runei/specialeventrune.html#12" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Quake) <span class="source_keyword">float</span> QuakeMagnitude;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_QuakeRadius" class="hidden"></a>QuakeRadius <a href="../Source_runei/specialeventrune.html#13" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Quake) <span class="source_keyword">float</span> QuakeRadius;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_QuakeTime" class="hidden"></a>QuakeTime <a href="../Source_runei/specialeventrune.html#11" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Quake) <span class="source_keyword">float</span> QuakeTime;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">RuneMessage</h3>
+<h4><a name="_bMsgFade" class="hidden"></a>bMsgFade <a href="../Source_runei/specialeventrune.html#21" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(RuneMessage) <span class="source_keyword">bool</span> bMsgFade;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Msg" class="hidden"></a>Msg <a href="../Source_runei/specialeventrune.html#18" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(RuneMessage) <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> <span class="source_type">Msg</span>;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MsgAlignment" class="hidden"></a>MsgAlignment <a href="../Source_runei/specialeventrune.html#25" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(RuneMessage) <span class="source_type"><a href="../engine/actor.html#E_RMAlign" class="source">E_RMAlign</a></span> MsgAlignment;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MsgColor" class="hidden"></a>MsgColor <a href="../Source_runei/specialeventrune.html#24" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(RuneMessage) <span class="source_type"><a href="../core/object.html#Color" class="source">color</a></span> MsgColor;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MsgFadeTime" class="hidden"></a>MsgFadeTime <a href="../Source_runei/specialeventrune.html#22" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(RuneMessage) <span class="source_keyword">float</span> MsgFadeTime;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MsgFont" class="hidden"></a>MsgFont <a href="../Source_runei/specialeventrune.html#19" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(RuneMessage) <span class="source_type">font</span> MsgFont;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MsgLifeTime" class="hidden"></a>MsgLifeTime <a href="../Source_runei/specialeventrune.html#20" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(RuneMessage) <span class="source_keyword">float</span> MsgLifeTime;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MsgLocation" class="hidden"></a>MsgLocation <a href="../Source_runei/specialeventrune.html#23" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(RuneMessage) <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> MsgLocation;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">SetBeamTarget</h3>
+<h4><a name="_OtherInt" class="hidden"></a>OtherInt <a href="../Source_runei/specialeventrune.html#9" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(SetBeamTarget) <span class="source_keyword">int</span> OtherInt;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">SpecialEventRune</h3>
+<h4><a name="_OtherTag" class="hidden"></a>OtherTag <a href="../Source_runei/specialeventrune.html#8" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/specialeventrune.html" class="source">SpecialEventRune</a></span>) <span class="source_keyword">name</span> OtherTag;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_Trigger-ChangePlayerClass" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Trigger <span class="function_state">ChangePlayerClass</span> <a href="../Source_runei/specialeventrune.html#289" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  <span class="source_type"><a href="../engine/trigger.html" class="source">Trigger</a></span> ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> Triggerer, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">EventInstigator</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Trigger-ClearOrdersObject" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Trigger <span class="function_state">ClearOrdersObject</span> <a href="../Source_runei/specialeventrune.html#151" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  <span class="source_type"><a href="../engine/trigger.html" class="source">Trigger</a></span> ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">EventInstigator</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Trigger-ObjectHateOther" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Trigger <span class="function_state">ObjectHateOther</span> <a href="../Source_runei/specialeventrune.html#258" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  <span class="source_type"><a href="../engine/trigger.html" class="source">Trigger</a></span> ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> Triggerer, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">EventInstigator</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Trigger-PushObject" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Trigger <span class="function_state">PushObject</span> <a href="../Source_runei/specialeventrune.html#133" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  <span class="source_type"><a href="../engine/trigger.html" class="source">Trigger</a></span> ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">EventInstigator</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Trigger-Quake" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Trigger <span class="function_state">Quake</span> <a href="../Source_runei/specialeventrune.html#70" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  <span class="source_type"><a href="../engine/trigger.html" class="source">Trigger</a></span> ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">EventInstigator</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Trigger-RedSubtitle" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Trigger <span class="function_state">RedSubtitle</span> <a href="../Source_runei/specialeventrune.html#219" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  <span class="source_type"><a href="../engine/trigger.html" class="source">Trigger</a></span> ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">EventInstigator</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Trigger-RuneMessage" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Trigger <span class="function_state">RuneMessage</span> <a href="../Source_runei/specialeventrune.html#179" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  <span class="source_type"><a href="../engine/trigger.html" class="source">Trigger</a></span> ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">EventInstigator</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Trigger-SetBeamTarget" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Trigger <span class="function_state">SetBeamTarget</span> <a href="../Source_runei/specialeventrune.html#42" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  <span class="source_type"><a href="../engine/trigger.html" class="source">Trigger</a></span> ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">EventInstigator</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Trigger-StartCinematic" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Trigger <span class="function_state">StartCinematic</span> <a href="../Source_runei/specialeventrune.html#88" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  <span class="source_type"><a href="../engine/trigger.html" class="source">Trigger</a></span> ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">EventInstigator</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Trigger-StartCinematicSmooth" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Trigger <span class="function_state">StartCinematicSmooth</span> <a href="../Source_runei/specialeventrune.html#110" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  <span class="source_type"><a href="../engine/trigger.html" class="source">Trigger</a></span> ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">EventInstigator</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Trigger-Subtitle" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Trigger <span class="function_state">Subtitle</span> <a href="../Source_runei/specialeventrune.html#204" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  <span class="source_type"><a href="../engine/trigger.html" class="source">Trigger</a></span> ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">EventInstigator</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Trigger-UseObject" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Trigger <span class="function_state">UseObject</span> <a href="../Source_runei/specialeventrune.html#234" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  <span class="source_type"><a href="../engine/trigger.html" class="source">Trigger</a></span> ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">EventInstigator</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     QuakeTime=<span class="source_int">4.000000</span>
+     QuakeMagnitude=<span class="source_int">500.000000</span>
+     QuakeRadius=<span class="source_int">2000.000000</span>
+     QuakeFalloff=<span class="source_int">2.000000</span>
+     PushVector=(X=<span class="source_int">100.000000</span>,Z=<span class="source_int">10.000000</span>)
+     MsgFont=<span class="source_type">Font</span><span class="source_name">'Engine.RuneBig'</span>
+     MsgLifeTime=<span class="source_int">3.000000</span>
+     bMsgFade=<span class="source_keyword">True</span>
+     MsgFadeTime=<span class="source_int">1.000000</span>
+     MsgColor=(R=<span class="source_int">255</span>,G=<span class="source_int">255</span>,<span class="source_type">B</span>=<span class="source_int">255</span>,A=<span class="source_int">128</span>)
+     bAllowSkip=<span class="source_keyword">True</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/specialeventrune.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#SpecialEventRune">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/spawnablelight.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/spiderbomb.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:27:23.620 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

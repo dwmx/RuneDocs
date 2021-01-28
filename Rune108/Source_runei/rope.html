@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - Source: RuneI.Rope</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header"><a href="../runei/rope.html">Class</a></td>
+	<td class="header_hilight">Source</td>
+	<td class="header"><a class="header" href="../classtree.html#Rope">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../Source_runei/romansword.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../Source_runei/ropepoint.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#Source_runei/rope.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/rope.html">Rope</a></h1>
+<br />
+<div class="source"><table class="source"><tr><td class="source_lineno"><span class="source_lineno">00001<br />00002<br />00003<br />00004<br />00005<br />00006<br />00007<br />00008<br />00009<br />00010<br />00011<br />00012<br />00013<br />00014<br />00015<br />00016<br />00017<br />00018<br />00019<br />00020<br />
+00021<br />00022<br />00023<br />00024<br />00025<br />00026<br />00027<br />00028<br />00029<br />00030<br />00031<br />00032<br />00033<br />00034<br />00035<br />00036<br />00037<br />00038<br />00039<br />00040<br />
+00041<br />00042<br />00043<br />00044<br />00045<br />00046<br />00047<br />00048<br />00049<br />00050<br />00051<br />00052<br />00053<br />00054<br />00055<br />00056<br />00057<br />00058<br />00059<br />00060<br />
+00061<br />00062<br />00063<br />00064<br />00065<br />00066<br />00067<br />00068<br />00069<br />00070<br />00071<br />00072<br />00073<br />00074<br />00075<br />00076<br />00077<br />00078<br />00079<br />00080<br />
+00081<br />00082<br />00083<br />00084<br />00085<br />00086<br />00087<br />00088<br />00089<br />00090<br />00091<br />00092<br />00093<br />00094<br />00095<br />00096<br />00097<br />00098<br />00099<br />00100<br />
+00101<br />00102<br />00103<br />00104<br />00105<br />00106<br />00107<br />00108<br />00109<br />00110<br />00111<br />00112<br />00113<br />00114<br />00115<br />00116<br />00117<br />00118<br />00119<br />00120<br />
+00121<br />00122<br />00123<br />00124<br />00125<br />00126<br />00127<br />00128<br />00129<br />00130<br />00131<br />00132<br />00133<br />00134<br />00135<br />00136<br />00137<br />00138<br />00139<br />00140<br />
+00141<br />00142<br />00143<br />00144<br />00145<br />00146<br />00147<br />00148<br />00149<br />00150<br />00151<br />00152<br />00153<br />00154<br />00155<br />00156<br />00157<br />00158<br />00159<br />00160<br />
+00161<br />00162<br />00163<br />00164<br />00165<br />00166<br />00167<br />00168<br />00169<br />00170<br />00171<br />00172<br />00173<br />00174<br />00175<br />00176<br />00177<br />00178<br />00179<br />00180<br />
+00181<br />00182<br />00183<br />00184<br />00185<br />00186<br />00187<br />00188<br />00189<br />00190<br />00191<br />00192<br />00193<br />00194<br />00195<br />00196<br />00197<br />00198<br />00199<br />00200<br />
+00201<br />00202<br />00203<br />00204<br />00205<br />00206<br />00207<br />00208<br />00209<br />00210<br />00211<br />00212<br />00213<br />00214<br />00215<br />00216<br />00217<br />00218<br />00219<br />00220<br />
+00221<br />00222<br />00223<br />00224<br />00225<br />00226<br />00227</span></td>
+<td class="source"><pre class="source"><a name="1"></a><span class="source_comment">//=============================================================================
+</span><a name="2"></a><span class="source_comment">// Rope.
+</span><a name="3"></a><span class="source_comment">//=============================================================================
+</span><a name="4"></a><span class="source_comment">//NOTES FOR SWAYING EFFECT:
+</span><a name="5"></a><span class="source_comment">//To disable swaying, set bDisableSway to true.
+</span><a name="6"></a><span class="source_comment">//If Swaying is enabled, you can adjust the MaxSway and the IdleSway to suit your needs.
+</span><a name="7"></a><span class="source_comment">//Be carefull of setting MaxSway too high, as it will cause the rope to look bent almost...
+</span><a name="8"></a>
+<a name="9"></a><span class="source_keyword">class</span> <span class="source_type"><a href="../runei/rope.html" class="source">Rope</a></span> <span class="source_keyword">extends</span> <span class="source_type"><a href="../runei/beamsystem.html" class="source">BeamSystem</a></span>;
+<a name="10"></a>
+<a name="11"></a><span class="source_keyword">var</span> <span class="source_keyword2">private</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> RopeTop;     <span class="source_comment">// Top of visual rope as defined by Collision Height
+</span><a name="12"></a><span class="source_keyword">var</span> <span class="source_keyword2">private</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> RopeBottom;  <span class="source_comment">// Bottom of visual rope as defined by Collision Height
+</span><a name="13"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> RopeClimbTop;        <span class="source_comment">// Top of climbable portion of rope (determined by a trace)
+</span><a name="14"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> RopeClimbBottom;     <span class="source_comment">// Bottom of climbable portion of rope (determined by a trace)
+</span><a name="15"></a>
+<a name="16"></a><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bActorAttached;        <span class="source_comment">// Whether there's a pawn hanging on me
+</span><a name="17"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> LocationAttached;    <span class="source_comment">// position of attached actor
+</span><a name="18"></a><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> AttachedActor;
+<a name="19"></a>
+<a name="20"></a><span class="source_keyword">var</span> <span class="source_keyword">float</span> ElapsedTime;
+<a name="21"></a><span class="source_keyword">var</span> <span class="source_keyword">float</span> CurMultiplier;
+<a name="22"></a><span class="source_keyword">var</span> <span class="source_keyword">int</span> ValidControlPoint;
+<a name="23"></a>
+<a name="24"></a><span class="source_keyword">var</span> (<span class="source_type"><a href="../runei/rope.html" class="source">Rope</a></span>) <span class="source_keyword">bool</span> bDisableSway;
+<a name="25"></a><span class="source_keyword">var</span> (<span class="source_type"><a href="../runei/rope.html" class="source">Rope</a></span>) <span class="source_keyword">float</span> MaxSway;
+<a name="26"></a><span class="source_keyword">var</span> (<span class="source_type"><a href="../runei/rope.html" class="source">Rope</a></span>) <span class="source_keyword">float</span> IdleSway; 
+<a name="27"></a>
+<a name="28"></a><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span> PostBeginPlay()
+<a name="29"></a>{
+<a name="30"></a>    <span class="source_keyword">Super</span>.PostBeginPlay();
+<a name="31"></a>
+<a name="32"></a>    <span class="source_comment">// Precompute some constants
+</span><a name="33"></a>    RopeTop = Location + vect(<span class="source_int">0</span>,<span class="source_int">0</span>,<span class="source_int">1</span>)*CollisionHeight;
+<a name="34"></a>    RopeBottom = Location - vect(<span class="source_int">0</span>,<span class="source_int">0</span>,<span class="source_int">1</span>)*CollisionHeight;
+<a name="35"></a>
+<a name="36"></a>    <span class="source_comment">//LocationAttached = Location;
+</span><a name="37"></a>    OriginOffset = vect(<span class="source_int">0</span>,<span class="source_int">0</span>,<span class="source_int">1</span>)*CollisionHeight;
+<a name="38"></a>    TargetLocation = RopeBottom;
+<a name="39"></a>
+<a name="40"></a>    ComputeClimbingEndpoints(Location.Z);
+<a name="41"></a>
+<a name="42"></a>    LocationAttached = Location + vect(<span class="source_int">0</span>,<span class="source_int">0</span>,-<span class="source_int">1</span>) * CollisionHeight;
+<a name="43"></a> 
+<a name="44"></a>    <span class="source_keyword">if</span>(bDisableSway)
+<a name="45"></a>        bEventSystemTick = <span class="source_keyword">False</span>;
+<a name="46"></a>    <span class="source_keyword">else</span>
+<a name="47"></a>    {
+<a name="48"></a>        bEventSystemTick = <span class="source_keyword">True</span>;
+<a name="49"></a>        CurMultiplier = IdleSway;
+<a name="50"></a>        ValidControlPoint = <span class="source_int">0</span>;
+<a name="51"></a>    }
+<a name="52"></a>}
+<a name="53"></a>
+<a name="54"></a><span class="source_comment">// This is done everytime it get's touched because designers might put in breakable geometry (polyobjs)
+</span><a name="55"></a><span class="source_comment">// between the top and bottom, messing with the trace
+</span><a name="56"></a><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span> ComputeClimbingEndpoints(<span class="source_keyword">float</span> tracestartz)
+<a name="57"></a>{
+<a name="58"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> <span class="source_type">HitLocation</span>, HitNormal;
+<a name="59"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">A</span>;
+<a name="60"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> TraceStart;
+<a name="61"></a>
+<a name="62"></a>    TraceStart = Location;
+<a name="63"></a>    TraceStart.Z = tracestartz;
+<a name="64"></a>
+<a name="65"></a>    <span class="source_type">A</span> = Trace(<span class="source_type">HitLocation</span>, HitNormal, RopeTop, TraceStart, <span class="source_keyword">false</span>, vect(<span class="source_int">1</span>,<span class="source_int">1</span>,<span class="source_int">1</span>)*<span class="source_int">20</span>);
+<a name="66"></a>    <span class="source_keyword">if</span> (<span class="source_type">A</span>!=<span class="source_keyword">None</span>)
+<a name="67"></a>        RopeClimbTop = <span class="source_type">HitLocation</span>;
+<a name="68"></a>    <span class="source_keyword">else</span>
+<a name="69"></a>        RopeClimbTop = RopeTop;
+<a name="70"></a>
+<a name="71"></a>    <span class="source_type">A</span> = Trace(<span class="source_type">HitLocation</span>, HitNormal, RopeBottom, TraceStart, <span class="source_keyword">false</span>, vect(<span class="source_int">1</span>,<span class="source_int">1</span>,<span class="source_int">1</span>)*<span class="source_int">20</span>);
+<a name="72"></a>    <span class="source_keyword">if</span> (<span class="source_type">A</span>!=<span class="source_keyword">None</span>)
+<a name="73"></a>        RopeClimbBottom = <span class="source_type">HitLocation</span>;
+<a name="74"></a>    <span class="source_keyword">else</span>
+<a name="75"></a>        RopeClimbBottom = RopeBottom;
+<a name="76"></a>}
+<a name="77"></a>
+<a name="78"></a>
+<a name="79"></a><span class="source_keyword">function</span> AttachedToRope(<span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span>)
+<a name="80"></a>{
+<a name="81"></a>    <span class="source_keyword">if</span> (!bActorAttached)        <span class="source_comment">// Disallow if someone using rope already
+</span><a name="82"></a>    {
+<a name="83"></a>        bActorAttached = <span class="source_keyword">true</span>;
+<a name="84"></a>        AttachedActor = <span class="source_type">Other</span>;
+<a name="85"></a>        LocationAttached = AttachedActor.Location + vect(<span class="source_int">0</span>,<span class="source_int">0</span>,<span class="source_int">1</span>) * AttachedActor.CollisionHeight;
+<a name="86"></a>        CurMultiplier = MaxSway;
+<a name="87"></a>    }
+<a name="88"></a>}
+<a name="89"></a>
+<a name="90"></a><span class="source_keyword">function</span> DetachFromRope(<span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span>)
+<a name="91"></a>{
+<a name="92"></a>    bActorAttached = <span class="source_keyword">false</span>;
+<a name="93"></a>    LocationAttached = Location + vect(<span class="source_int">0</span>,<span class="source_int">0</span>,-<span class="source_int">1</span>) * CollisionHeight;
+<a name="94"></a>    AttachedActor = <span class="source_keyword">None</span>;
+<a name="95"></a>    ValidControlPoint = <span class="source_int">0</span>;
+<a name="96"></a>    CurMultiplier = MaxSway;
+<a name="97"></a>
+<a name="98"></a>    <span class="source_comment">//LocationAttached = Location;
+</span><a name="99"></a>}
+<a name="100"></a>
+<a name="101"></a><span class="source_keyword">function</span> <span class="source_keyword">int</span> GetValidPoint()
+<a name="102"></a>{
+<a name="103"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> <span class="source_type">i</span>;
+<a name="104"></a>    
+<a name="105"></a>    <span class="source_keyword">for</span>(<span class="source_type">i</span> = <span class="source_int">1</span>; <span class="source_type">i</span> &lt; NumConPts; <span class="source_type">i</span>++)
+<a name="106"></a>    {
+<a name="107"></a>        <span class="source_keyword">if</span>(ConnectionPoint[<span class="source_type">i</span>].Z &lt; LocationAttached.Z) 
+<a name="108"></a>            <span class="source_keyword">return</span> <span class="source_type">i</span>;
+<a name="109"></a>    }
+<a name="110"></a>    
+<a name="111"></a>    <span class="source_keyword">return</span> NumConPts;
+<a name="112"></a>}
+<a name="113"></a>
+<a name="114"></a>
+<a name="115"></a><span class="source_comment">//=============================================================================
+</span><a name="116"></a><span class="source_comment">//
+</span><a name="117"></a><span class="source_comment">// SystemTick 
+</span><a name="118"></a><span class="source_comment">//
+</span><a name="119"></a><span class="source_comment">// Update the rope to sway it (if allowed)
+</span><a name="120"></a><span class="source_comment">//=============================================================================
+</span><a name="121"></a><span class="source_keyword">event</span> SystemTick(<span class="source_keyword">float</span> DeltaSeconds)
+<a name="122"></a>{
+<a name="123"></a>    <span class="source_comment">/*
+<a name="124"></a>    local int i;
+<a name="125"></a>    local vector Delta;
+<a name="126"></a>
+<a name="127"></a>    // Locations of rope
+<a name="128"></a>    Delta = Normal(LocationAttached-RopeTop)*(2*CollisionHeight)/(NumConPts-1);
+<a name="129"></a>
+<a name="130"></a>    for(i = 0; i &lt; NumConPts; i++)
+<a name="131"></a>    {
+<a name="132"></a>        ConnectionPoint[i] = RopeTop + i * Delta;
+<a name="133"></a>    }
+<a name="134"></a>    */</span>
+<a name="135"></a>    
+<a name="136"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> <span class="source_type">i</span>;
+<a name="137"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> tempVect;
+<a name="138"></a>    ElapsedTime += DeltaSeconds;
+<a name="139"></a>    
+<a name="140"></a>    <span class="source_keyword">if</span>(bActorAttached)
+<a name="141"></a>    {                       
+<a name="142"></a>        tempVect = AttachedActor.Location + vect(<span class="source_int">0</span>,<span class="source_int">0</span>,-<span class="source_int">1</span>) * AttachedActor.CollisionHeight;
+<a name="143"></a>        <span class="source_keyword">if</span>(tempVect != LocationAttached)        <span class="source_comment">//Actor has moved....
+</span><a name="144"></a>        {
+<a name="145"></a>            LocationAttached = tempVect;
+<a name="146"></a>            CurMultiplier = MaxSway;            <span class="source_comment">//Put some power back into the sway...
+</span><a name="147"></a>            ValidControlPoint = GetValidPoint();        <span class="source_comment">//Find the point below the actor..
+</span><a name="148"></a>        }
+<a name="149"></a>    }
+<a name="150"></a>    
+<a name="151"></a>        <span class="source_keyword">for</span>(<span class="source_type">i</span> = <span class="source_int">1</span>; <span class="source_type">i</span> &lt; NumConPts; <span class="source_type">i</span>++)
+<a name="152"></a>        {
+<a name="153"></a>            <span class="source_keyword">if</span>(<span class="source_type">i</span> &gt; ValidControlPoint)
+<a name="154"></a>            {
+<a name="155"></a>                ConnectionOffset[<span class="source_type">i</span>].X = ConnectionOffset[<span class="source_type">i</span>-<span class="source_int">1</span>].X + CurMultiplier * Sin(ElapsedTime * <span class="source_int">2</span> + ((ValidControlPoint - <span class="source_type">i</span>)/<span class="source_int">4</span>)) * (ValidControlPoint - <span class="source_type">i</span>);
+<a name="156"></a>                ConnectionOffset[<span class="source_type">i</span>].<span class="source_type">Y</span> = ConnectionOffset[<span class="source_type">i</span>-<span class="source_int">1</span>].<span class="source_type">Y</span> + CurMultiplier * Cos(ElapsedTime * <span class="source_int">2</span> + ((ValidControlPoint - <span class="source_type">i</span>/<span class="source_int">4</span>))) * (ValidControlPoint - <span class="source_type">i</span>);
+<a name="157"></a>            }
+<a name="158"></a>            <span class="source_keyword">else</span>
+<a name="159"></a>            {
+<a name="160"></a>                ConnectionOffset[<span class="source_type">i</span>] = vect(<span class="source_int">0</span>,<span class="source_int">0</span>,<span class="source_int">0</span>);
+<a name="161"></a>            }   
+<a name="162"></a>        }
+<a name="163"></a>    
+<a name="164"></a>    <span class="source_keyword">if</span>(CurMultiplier &gt; (IdleSway + <span class="source_int">0.003</span>))      <span class="source_comment">//Slowly decrement the sway amount to let the rope's velocity die out..
+</span><a name="165"></a>        CurMultiplier -= <span class="source_int">0.003</span>;
+<a name="166"></a>}
+<a name="167"></a>
+<a name="168"></a>
+<a name="169"></a><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span> Debug(<span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span>, <span class="source_keyword">int</span> mode)
+<a name="170"></a>{
+<a name="171"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> offset;
+<a name="172"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> <span class="source_type">i</span>;
+<a name="173"></a>
+<a name="174"></a>    <span class="source_keyword">Super</span>.Debug(<span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span>, mode);
+<a name="175"></a>
+<a name="176"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawText(<span class="source_string">"Rope:"</span>);
+<a name="177"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.CurY -= <span class="source_int">8</span>;
+<a name="178"></a>    
+<a name="179"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawText(<span class="source_string">"Current Multiplier: "</span> @curMultiplier);
+<a name="180"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.CurY -= <span class="source_int">8</span>;
+<a name="181"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawText(<span class="source_string">"ValidControlPoint: "</span> @ValidControlPoint);
+<a name="182"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.CurY -= <span class="source_int">8</span>;
+<a name="183"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawText(<span class="source_string">"bDisableSway: "</span> @bDisableSway);
+<a name="184"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.CurY -= <span class="source_int">8</span>;       
+<a name="185"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawText(<span class="source_string">"bEventSystemTick: "</span> @bEventSystemTick);
+<a name="186"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.CurY -= <span class="source_int">8</span>;
+<a name="187"></a>
+<a name="188"></a>
+<a name="189"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawLine3D(RopeClimbTop + vect(<span class="source_int">20</span>, <span class="source_int">0</span>, <span class="source_int">0</span>), RopeClimbTop + vect(-<span class="source_int">20</span>, <span class="source_int">0</span>, <span class="source_int">0</span>), <span class="source_int">255</span>, <span class="source_int">0</span>, <span class="source_int">0</span>);
+<a name="190"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawLine3D(RopeClimbTop + vect(<span class="source_int">0</span>, <span class="source_int">20</span>, <span class="source_int">0</span>), RopeClimbTop + vect(<span class="source_int">0</span>, -<span class="source_int">20</span>, <span class="source_int">0</span>), <span class="source_int">255</span>, <span class="source_int">0</span>, <span class="source_int">0</span>);    
+<a name="191"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawLine3D(RopeClimbTop + vect(<span class="source_int">0</span>, <span class="source_int">0</span>, <span class="source_int">20</span>), RopeClimbTop + vect(<span class="source_int">0</span>, <span class="source_int">0</span>, -<span class="source_int">20</span>), <span class="source_int">255</span>, <span class="source_int">0</span>, <span class="source_int">0</span>);
+<a name="192"></a>
+<a name="193"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawLine3D(RopeClimbBottom + vect(<span class="source_int">20</span>, <span class="source_int">0</span>, <span class="source_int">0</span>), RopeClimbBottom + vect(-<span class="source_int">20</span>, <span class="source_int">0</span>, <span class="source_int">0</span>), <span class="source_int">0</span>, <span class="source_int">255</span>, <span class="source_int">0</span>);
+<a name="194"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawLine3D(RopeClimbBottom + vect(<span class="source_int">0</span>, <span class="source_int">20</span>, <span class="source_int">0</span>), RopeClimbBottom + vect(<span class="source_int">0</span>, -<span class="source_int">20</span>, <span class="source_int">0</span>), <span class="source_int">0</span>, <span class="source_int">255</span>, <span class="source_int">0</span>);  
+<a name="195"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawLine3D(RopeClimbBottom + vect(<span class="source_int">0</span>, <span class="source_int">0</span>, <span class="source_int">20</span>), RopeClimbBottom + vect(<span class="source_int">0</span>, <span class="source_int">0</span>, -<span class="source_int">20</span>), <span class="source_int">0</span>, <span class="source_int">255</span>, <span class="source_int">0</span>);
+<a name="196"></a>    
+<a name="197"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawLine3D(LocationAttached + vect(<span class="source_int">15</span>,<span class="source_int">15</span>,<span class="source_int">0</span>), LocationAttached + vect(-<span class="source_int">15</span>,-<span class="source_int">15</span>,<span class="source_int">0</span>),<span class="source_int">0</span>,<span class="source_int">255</span>,<span class="source_int">0</span>);
+<a name="198"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawLine3D(LocationAttached + vect(<span class="source_int">15</span>,-<span class="source_int">15</span>,<span class="source_int">0</span>), LocationAttached + vect(-<span class="source_int">15</span>,<span class="source_int">15</span>,<span class="source_int">0</span>),<span class="source_int">0</span>,<span class="source_int">255</span>,<span class="source_int">0</span>);
+<a name="199"></a>
+<a name="200"></a><span class="source_comment">/*
+<a name="201"></a>    // Locations of rope
+<a name="202"></a>    for(i = 0; i &lt; NumConPts; i++)
+<a name="203"></a>    {
+<a name="204"></a>        Canvas.DrawLine3D(ConnectionPoint[i] + vect(10, 0, 0), ConnectionPoint[i] + vect(-10, 0, 0), 0, 255, 0);
+<a name="205"></a>        Canvas.DrawLine3D(ConnectionPoint[i] + vect(0, 10, 0), ConnectionPoint[i] + vect(0, -10, 0), 0, 255, 0);    
+<a name="206"></a>        Canvas.DrawLine3D(ConnectionPoint[i] + vect(0, 0, 10), ConnectionPoint[i] + vect(0, 0, -10), 0, 255, 0);
+<a name="207"></a>    }
+<a name="208"></a>*/</span>
+<a name="209"></a>}
+<a name="210"></a>
+<a name="211"></a><span class="source_keyword">defaultproperties</span>
+<a name="212"></a>{
+<a name="213"></a>     MaxSway=<span class="source_int">0.800000</span>
+<a name="214"></a>     IdleSway=<span class="source_int">0.100000</span>
+<a name="215"></a>     ParticleCount=<span class="source_int">45</span>
+<a name="216"></a>     ParticleTexture(<span class="source_int">0</span>)=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'RuneFX.chain1'</span>
+<a name="217"></a>     NumConPts=<span class="source_int">15</span>
+<a name="218"></a>     BeamThickness=<span class="source_int">2.500000</span>
+<a name="219"></a>     BeamTextureScale=<span class="source_int">0.040000</span>
+<a name="220"></a>     bUseTargetLocation=<span class="source_keyword">True</span>
+<a name="221"></a>     bNet=<span class="source_keyword">False</span>
+<a name="222"></a>     <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span>=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'Engine.S_Rope'</span>
+<a name="223"></a>     CollisionRadius=<span class="source_int">15.000000</span>
+<a name="224"></a>     CollisionHeight=<span class="source_int">500.000000</span>
+<a name="225"></a>     bCollideActors=<span class="source_keyword">True</span>
+<a name="226"></a>}
+<a name="227"></a></pre></td></tr></table></div>
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header"><a href="../runei/rope.html">Class</a></td>
+	<td class="header_hilight">Source</td>
+	<td class="header"><a class="header" href="../classtree.html#Rope">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../Source_runei/romansword.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../Source_runei/ropepoint.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Class file time: Thu 28/1/2021 11:38:02.000 - Creation time: Thu 28/1/2021 11:41:29.939 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

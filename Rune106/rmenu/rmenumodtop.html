@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - RMenu.RMenuModTop</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../rmenu/rmenu-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_rmenu/rmenumodtop.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#RMenuModTop">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../rmenu/rmenumodscrollingdialogclient.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../rmenu/runebutton.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#rmenu/rmenumodtop.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../rmenu/rmenu-overview.html">RMenu</a>.RMenuModTop</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../rmenu/runemenutopwindow.html">RuneMenuTopWindow</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowbase.html">UWindowBase</a>
+   |   
+   +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowwindow.html">UWindowWindow</a>
+      |   
+      +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowclientwindow.html">UWindowClientWindow</a>
+         |   
+         +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowdialogclientwindow.html">UWindowDialogClientWindow</a>
+            |   
+            +-- <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runewindow.html">RuneWindow</a>
+               |   
+               +-- <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runemenutopwindow.html">RuneMenuTopWindow</a>
+                  |   
+                  +-- <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/rmenumodtop.html">RMenuModTop</a>
+</pre>
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bOpen" name="bOpen" title="go to the details">bOpen</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bOpening" name="bOpening" title="go to the details">bOpening</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ModBlank" name="ModBlank" title="go to the details">ModBlank</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindowcombocontrol.html">UWindowComboControl</a></td><td width="66%"><a href="#_ModCombo" name="ModCombo" title="go to the details">ModCombo</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindowcombolist.html">UWindowComboList</a></td><td width="66%"><a href="#_ModComboList" name="ModComboList" title="go to the details">ModComboList</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/rmenumodlist.html">RMenuModList</a></td><td width="66%"><a href="#_Modlist" name="Modlist" title="go to the details">Modlist</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ModText" name="ModText" title="go to the details">ModText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindowwindow.html">UWindowWindow</a></td><td width="66%"><a href="#_ModWindow" name="ModWindow" title="go to the details">ModWindow</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">class&lt;<a href="../uwindow/uwindowwindow.html">UWindowWindow</a>&gt;</td><td width="66%"><a href="#_PrevModClass" name="PrevModClass" title="go to the details">PrevModClass</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_SlideRate" name="SlideRate" title="go to the details">SlideRate</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_XAlpha" name="XAlpha" title="go to the details">XAlpha</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runemenutopwindow.html">RuneMenuTopWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../rmenu/runemenutopwindow.html#bOpen">bOpen</a>, <a href="../rmenu/runemenutopwindow.html#bOpening">bOpening</a>, <a href="../rmenu/runemenutopwindow.html#SlideRate">SlideRate</a>, <a href="../rmenu/runemenutopwindow.html#test1">test1</a>, <a href="../rmenu/runemenutopwindow.html#test2">test2</a>, <a href="../rmenu/runemenutopwindow.html#XAlpha">XAlpha</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runewindow.html">RuneWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../rmenu/runewindow.html#DefaultHeight">DefaultHeight</a>, <a href="../rmenu/runewindow.html#DefaultWidth">DefaultWidth</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_BeforePaint-" name="BeforePaint" title="go to the details">BeforePaint</a> (<a href="../engine/canvas.html">Canvas</a> C, float X, float Y))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Created-" name="Created" title="go to the details">Created</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DoneOpening-" name="DoneOpening" title="go to the details">DoneOpening</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_FillList-" name="FillList" title="go to the details">FillList</a> (<a href="../uwindow/uwindowcombocontrol.html">UWindowComboControl</a> MCControl))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_HideWindow-" name="HideWindow" title="go to the details">HideWindow</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ModComboSelect-" name="ModComboSelect" title="go to the details">ModComboSelect</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Notify-" name="Notify" title="go to the details">Notify</a> (<a href="../uwindow/uwindowdialogcontrol.html">UWindowDialogControl</a> C, byte E))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SlideOpen-" name="SlideOpen" title="go to the details">SlideOpen</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Tick-" name="Tick" title="go to the details">Tick</a> (float DeltaTime))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runemenutopwindow.html">RuneMenuTopWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../rmenu/runemenutopwindow.html#Created">Created</a>, <a href="../rmenu/runemenutopwindow.html#CubicBlend">CubicBlend</a>, <a href="../rmenu/runemenutopwindow.html#DebugString">DebugString</a>, <a href="../rmenu/runemenutopwindow.html#DoneOpening">DoneOpening</a>, <a href="../rmenu/runemenutopwindow.html#HermiteBlend">HermiteBlend</a>, <a href="../rmenu/runemenutopwindow.html#HideAllWindows">HideAllWindows</a>, <a href="../rmenu/runemenutopwindow.html#HideWindow">HideWindow</a>, <a href="../rmenu/runemenutopwindow.html#Paint">Paint</a>, <a href="../rmenu/runemenutopwindow.html#SlideOpen">SlideOpen</a>, <a href="../rmenu/runemenutopwindow.html#Tick">Tick</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runewindow.html">RuneWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../rmenu/runewindow.html#BeforePaint">BeforePaint</a>, <a href="../rmenu/runewindow.html#Created">Created</a>, <a href="../rmenu/runewindow.html#Paint">Paint</a>, <a href="../rmenu/runewindow.html#PreSize">PreSize</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_bOpen" class="hidden"></a>bOpen <a href="../Source_rmenu/rmenumodtop.html#10" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bOpen;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bOpening" class="hidden"></a>bOpening <a href="../Source_rmenu/rmenumodtop.html#9" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bOpening;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ModBlank" class="hidden"></a>ModBlank <a href="../Source_rmenu/rmenumodtop.html#20" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> ModBlank;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ModCombo" class="hidden"></a>ModCombo <a href="../Source_rmenu/rmenumodtop.html#12" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowcombocontrol.html" class="source">UWindowComboControl</a></span> ModCombo;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ModComboList" class="hidden"></a>ModComboList <a href="../Source_rmenu/rmenumodtop.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowcombolist.html" class="source">UWindowComboList</a></span> ModComboList;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Modlist" class="hidden"></a>Modlist <a href="../Source_rmenu/rmenumodtop.html#13" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/rmenumodlist.html" class="source">RMenuModList</a></span> Modlist;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ModText" class="hidden"></a>ModText <a href="../Source_rmenu/rmenumodtop.html#19" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> ModText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ModWindow" class="hidden"></a>ModWindow <a href="../Source_rmenu/rmenumodtop.html#16" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowwindow.html" class="source">UWindowWindow</a></span> ModWindow;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PrevModClass" class="hidden"></a>PrevModClass <a href="../Source_rmenu/rmenumodtop.html#17" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../uwindow/uwindowwindow.html" class="source">UWindowWindow</a></span>&gt; PrevModClass;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SlideRate" class="hidden"></a>SlideRate <a href="../Source_rmenu/rmenumodtop.html#7" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">float</span> SlideRate;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_XAlpha" class="hidden"></a>XAlpha <a href="../Source_rmenu/rmenumodtop.html#8" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">float</span> XAlpha;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_BeforePaint-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BeforePaint <span class="function_state"></span> <a href="../Source_rmenu/rmenumodtop.html#40" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  BeforePaint ( <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type">C</span>, <span class="source_keyword">float</span> X, <span class="source_keyword">float</span> <span class="source_type">Y</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Created-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Created <span class="function_state"></span> <a href="../Source_rmenu/rmenumodtop.html#22" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Created ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DoneOpening-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DoneOpening <span class="function_state"></span> <a href="../Source_rmenu/rmenumodtop.html#77" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  DoneOpening ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FillList-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> FillList <span class="function_state"></span> <a href="../Source_rmenu/rmenumodtop.html#172" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  FillList ( <span class="source_type"><a href="../uwindow/uwindowcombocontrol.html" class="source">UWindowComboControl</a></span> MCControl) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HideWindow-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> HideWindow <span class="function_state"></span> <a href="../Source_rmenu/rmenumodtop.html#53" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  HideWindow ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ModComboSelect-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ModComboSelect <span class="function_state"></span> <a href="../Source_rmenu/rmenumodtop.html#116" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ModComboSelect ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Notify-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Notify <span class="function_state"></span> <a href="../Source_rmenu/rmenumodtop.html#100" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Notify ( <span class="source_type"><a href="../uwindow/uwindowdialogcontrol.html" class="source">UWindowDialogControl</a></span> <span class="source_type">C</span>, <span class="source_keyword">byte</span> E) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SlideOpen-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SlideOpen <span class="function_state"></span> <a href="../Source_rmenu/rmenumodtop.html#65" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SlideOpen ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Tick-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Tick <span class="function_state"></span> <a href="../Source_rmenu/rmenumodtop.html#85" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Tick ( <span class="source_keyword">float</span> <span class="source_type">DeltaTime</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     SlideRate=<span class="source_int">1.500000</span>
+     ModText=<span class="source_string">"Select Mod: "</span>
+     ModBlank=<span class="source_string">"   "</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../rmenu/rmenu-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_rmenu/rmenumodtop.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#RMenuModTop">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../rmenu/rmenumodscrollingdialogclient.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../rmenu/runebutton.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:27:20.712 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

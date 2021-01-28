@@ -1,0 +1,473 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - RMenu.RuneMenuPlayerSetupClient</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../rmenu/rmenu-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_rmenu/runemenuplayersetupclient.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#RuneMenuPlayerSetupClient">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../rmenu/runemenuplayerscrollclient.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../rmenu/runemenuplayersetupscrollclient.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#rmenu/runemenuplayersetupclient.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../rmenu/rmenu-overview.html">RMenu</a>.RuneMenuPlayerSetupClient</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../rmenu/runemenupagewindow.html">RuneMenuPageWindow</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowbase.html">UWindowBase</a>
+   |   
+   +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowwindow.html">UWindowWindow</a>
+      |   
+      +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowclientwindow.html">UWindowClientWindow</a>
+         |   
+         +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowdialogclientwindow.html">UWindowDialogClientWindow</a>
+            |   
+            +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowpagewindow.html">UWindowPageWindow</a>
+               |   
+               +-- <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runemenupagewindow.html">RuneMenuPageWindow</a>
+                  |   
+                  +-- <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runemenuplayersetupclient.html">RuneMenuPlayerSetupClient</a>
+</pre>
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindowcombocontrol.html">UWindowComboControl</a></td><td width="66%"><a href="#_ClassCombo" name="ClassCombo" title="go to the details">ClassCombo</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ClassHelp" name="ClassHelp" title="go to the details">ClassHelp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ClassText" name="ClassText" title="go to the details">ClassText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_Initialized" name="Initialized" title="go to the details">Initialized</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_MeshName" name="MeshName" title="go to the details">MeshName</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../rmenu/runemenuplayermeshclient.html">RuneMenuPlayerMeshClient</a></td><td width="66%"><a href="#_MeshWindow" name="MeshWindow" title="go to the details">MeshWindow</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindoweditcontrol.html">UWindowEditControl</a></td><td width="66%"><a href="#_NameEdit" name="NameEdit" title="go to the details">NameEdit</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_NameHelp" name="NameHelp" title="go to the details">NameHelp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_NameText" name="NameText" title="go to the details">NameText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindowcombocontrol.html">UWindowComboControl</a></td><td width="66%"><a href="#_NetSpeedCombo" name="NetSpeedCombo" title="go to the details">NetSpeedCombo</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_NetSpeedHelp" name="NetSpeedHelp" title="go to the details">NetSpeedHelp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_NetSpeeds[3]" name="NetSpeeds[3]" title="go to the details">NetSpeeds[3]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_NetSpeedText" name="NetSpeedText" title="go to the details">NetSpeedText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">class&lt;<a href="../engine/pawn.html">Pawn</a>&gt;</td><td width="66%"><a href="#_NewPlayerClass" name="NewPlayerClass" title="go to the details">NewPlayerClass</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_NoTeam" name="NoTeam" title="go to the details">NoTeam</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_PlayerBaseClass" name="PlayerBaseClass" title="go to the details">PlayerBaseClass</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindowcombocontrol.html">UWindowComboControl</a></td><td width="66%"><a href="#_SkinCombo" name="SkinCombo" title="go to the details">SkinCombo</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_SkinHelp" name="SkinHelp" title="go to the details">SkinHelp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_SkinText" name="SkinText" title="go to the details">SkinText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindowcombocontrol.html">UWindowComboControl</a></td><td width="66%"><a href="#_TeamCombo" name="TeamCombo" title="go to the details">TeamCombo</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_TeamHelp" name="TeamHelp" title="go to the details">TeamHelp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_Teams[4]" name="Teams[4]" title="go to the details">Teams[4]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_TeamText" name="TeamText" title="go to the details">TeamText</a></td></tr>
+<tr><th colspan="2" class="small">RuneMenuPlayerSetupClient</th></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_ControlOffset" name="ControlOffset" title="go to the details">ControlOffset</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowpagewindow.html">UWindowPageWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowpagewindow.html#OwnerTab">OwnerTab</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_AfterCreate-" name="AfterCreate" title="go to the details">AfterCreate</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_BeforePaint-" name="BeforePaint" title="go to the details">BeforePaint</a> (<a href="../engine/canvas.html">Canvas</a> C, float X, float Y))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ClassChanged-" name="ClassChanged" title="go to the details">ClassChanged</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Created-" name="Created" title="go to the details">Created</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_IterateSkins-" name="IterateSkins" title="go to the details">IterateSkins</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_LoadClasses-" name="LoadClasses" title="go to the details">LoadClasses</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_LoadCurrent-" name="LoadCurrent" title="go to the details">LoadCurrent</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_NameChanged-" name="NameChanged" title="go to the details">NameChanged</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_NetSpeedChanged-" name="NetSpeedChanged" title="go to the details">NetSpeedChanged</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Notify-" name="Notify" title="go to the details">Notify</a> (<a href="../uwindow/uwindowdialogcontrol.html">UWindowDialogControl</a> C, byte E))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SaveConfigs-" name="SaveConfigs" title="go to the details">SaveConfigs</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SkinChanged-" name="SkinChanged" title="go to the details">SkinChanged</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_TeamChanged-" name="TeamChanged" title="go to the details">TeamChanged</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_UseSelected-" name="UseSelected" title="go to the details">UseSelected</a> ()))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../rmenu/rmenu-overview.html">RMenu</a>.<a href="../rmenu/runemenupagewindow.html">RuneMenuPageWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../rmenu/runemenupagewindow.html#Notify">Notify</a>, <a href="../rmenu/runemenupagewindow.html#Paint">Paint</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowpagewindow.html">UWindowPageWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowpagewindow.html#RightClickTab">RightClickTab</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_ClassCombo" class="hidden"></a>ClassCombo <a href="../Source_rmenu/runemenuplayersetupclient.html#24" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowcombocontrol.html" class="source">UWindowComboControl</a></span> ClassCombo;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ClassHelp" class="hidden"></a>ClassHelp <a href="../Source_rmenu/runemenuplayersetupclient.html#26" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> ClassHelp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ClassText" class="hidden"></a>ClassText <a href="../Source_rmenu/runemenuplayersetupclient.html#25" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> ClassText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Initialized" class="hidden"></a>Initialized <a href="../Source_rmenu/runemenuplayersetupclient.html#7" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> Initialized;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MeshName" class="hidden"></a>MeshName <a href="../Source_rmenu/runemenuplayersetupclient.html#6" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> MeshName;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MeshWindow" class="hidden"></a>MeshWindow <a href="../Source_rmenu/runemenuplayersetupclient.html#8" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../rmenu/runemenuplayermeshclient.html" class="source">RuneMenuPlayerMeshClient</a></span> MeshWindow;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NameEdit" class="hidden"></a>NameEdit <a href="../Source_rmenu/runemenuplayersetupclient.html#12" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindoweditcontrol.html" class="source">UWindowEditControl</a></span> NameEdit;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NameHelp" class="hidden"></a>NameHelp <a href="../Source_rmenu/runemenuplayersetupclient.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> NameHelp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NameText" class="hidden"></a>NameText <a href="../Source_rmenu/runemenuplayersetupclient.html#13" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> NameText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NetSpeedCombo" class="hidden"></a>NetSpeedCombo <a href="../Source_rmenu/runemenuplayersetupclient.html#34" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowcombocontrol.html" class="source">UWindowComboControl</a></span> NetSpeedCombo;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NetSpeedHelp" class="hidden"></a>NetSpeedHelp <a href="../Source_rmenu/runemenuplayersetupclient.html#36" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> NetSpeedHelp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NetSpeeds[3]" class="hidden"></a>NetSpeeds[3] <a href="../Source_rmenu/runemenuplayersetupclient.html#37" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> NetSpeeds[<span class="source_int">3</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NetSpeedText" class="hidden"></a>NetSpeedText <a href="../Source_rmenu/runemenuplayersetupclient.html#35" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> NetSpeedText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NewPlayerClass" class="hidden"></a>NewPlayerClass <a href="../Source_rmenu/runemenuplayersetupclient.html#5" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span>&gt; NewPlayerClass;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NoTeam" class="hidden"></a>NoTeam <a href="../Source_rmenu/runemenuplayersetupclient.html#20" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> NoTeam;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayerBaseClass" class="hidden"></a>PlayerBaseClass <a href="../Source_rmenu/runemenuplayersetupclient.html#9" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> PlayerBaseClass;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SkinCombo" class="hidden"></a>SkinCombo <a href="../Source_rmenu/runemenuplayersetupclient.html#29" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowcombocontrol.html" class="source">UWindowComboControl</a></span> SkinCombo;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SkinHelp" class="hidden"></a>SkinHelp <a href="../Source_rmenu/runemenuplayersetupclient.html#31" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> SkinHelp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SkinText" class="hidden"></a>SkinText <a href="../Source_rmenu/runemenuplayersetupclient.html#30" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> SkinText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TeamCombo" class="hidden"></a>TeamCombo <a href="../Source_rmenu/runemenuplayersetupclient.html#17" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowcombocontrol.html" class="source">UWindowComboControl</a></span> TeamCombo;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TeamHelp" class="hidden"></a>TeamHelp <a href="../Source_rmenu/runemenuplayersetupclient.html#21" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> TeamHelp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Teams[4]" class="hidden"></a>Teams[4] <a href="../Source_rmenu/runemenuplayersetupclient.html#19" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> Teams[<span class="source_int">4</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TeamText" class="hidden"></a>TeamText <a href="../Source_rmenu/runemenuplayersetupclient.html#18" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> TeamText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">RuneMenuPlayerSetupClient</h3>
+<h4><a name="_ControlOffset" class="hidden"></a>ControlOffset <a href="../Source_rmenu/runemenuplayersetupclient.html#3" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../rmenu/runemenuplayersetupclient.html" class="source">RuneMenuPlayerSetupClient</a></span>) <span class="source_keyword">int</span> ControlOffset;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_AfterCreate-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> AfterCreate <span class="function_state"></span> <a href="../Source_rmenu/runemenuplayersetupclient.html#128" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  AfterCreate ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BeforePaint-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BeforePaint <span class="function_state"></span> <a href="../Source_rmenu/runemenuplayersetupclient.html#214" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  BeforePaint ( <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type">C</span>, <span class="source_keyword">float</span> X, <span class="source_keyword">float</span> <span class="source_type">Y</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ClassChanged-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ClassChanged <span class="function_state"></span> <a href="../Source_rmenu/runemenuplayersetupclient.html#312" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ClassChanged ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Created-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Created <span class="function_state"></span> <a href="../Source_rmenu/runemenuplayersetupclient.html#40" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Created ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_IterateSkins-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> IterateSkins <span class="function_state"></span> <a href="../Source_rmenu/runemenuplayersetupclient.html#191" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  IterateSkins ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LoadClasses-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> LoadClasses <span class="function_state"></span> <a href="../Source_rmenu/runemenuplayersetupclient.html#141" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  LoadClasses ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LoadCurrent-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> LoadCurrent <span class="function_state"></span> <a href="../Source_rmenu/runemenuplayersetupclient.html#175" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  LoadCurrent ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NameChanged-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> NameChanged <span class="function_state"></span> <a href="../Source_rmenu/runemenuplayersetupclient.html#283" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  NameChanged ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NetSpeedChanged-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> NetSpeedChanged <span class="function_state"></span> <a href="../Source_rmenu/runemenuplayersetupclient.html#333" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  NetSpeedChanged ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Notify-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Notify <span class="function_state"></span> <a href="../Source_rmenu/runemenuplayersetupclient.html#250" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Notify ( <span class="source_type"><a href="../uwindow/uwindowdialogcontrol.html" class="source">UWindowDialogControl</a></span> <span class="source_type">C</span>, <span class="source_keyword">byte</span> E) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SaveConfigs-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SaveConfigs <span class="function_state"></span> <a href="../Source_rmenu/runemenuplayersetupclient.html#381" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SaveConfigs ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SkinChanged-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SkinChanged <span class="function_state"></span> <a href="../Source_rmenu/runemenuplayersetupclient.html#305" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SkinChanged ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TeamChanged-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> TeamChanged <span class="function_state"></span> <a href="../Source_rmenu/runemenuplayersetupclient.html#299" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  TeamChanged ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_UseSelected-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> UseSelected <span class="function_state"></span> <a href="../Source_rmenu/runemenuplayersetupclient.html#355" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  UseSelected ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     ControlOffset=<span class="source_int">25</span>
+     PlayerBaseClass=<span class="source_string">"Runei.RunePlayer"</span>
+     NameText=<span class="source_string">"Name:"</span>
+     NameHelp=<span class="source_string">"Set your player name."</span>
+     TeamText=<span class="source_string">"Team:"</span>
+     Teams(<span class="source_int">0</span>)=<span class="source_string">"Red"</span>
+     Teams(<span class="source_int">1</span>)=<span class="source_string">"Blue"</span>
+     Teams(<span class="source_int">2</span>)=<span class="source_string">"Green"</span>
+     Teams(<span class="source_int">3</span>)=<span class="source_string">"Gold"</span>
+     NoTeam=<span class="source_string">"None"</span>
+     TeamHelp=<span class="source_string">"Select the team you wish to play on."</span>
+     ClassText=<span class="source_string">"Class:"</span>
+     ClassHelp=<span class="source_string">"Select your player class."</span>
+     SkinText=<span class="source_string">"Skin:"</span>
+     SkinHelp=<span class="source_string">"Choose a skin for your player."</span>
+     NetSpeedText=<span class="source_string">"Net Connection"</span>
+     NetSpeedHelp=<span class="source_string">"Select the closest match to your internet connection. Try selecting a lower setting if you're getting huge lag."</span>
+     NetSpeeds(<span class="source_int">0</span>)=<span class="source_string">"Modem (28.8K - 56K)"</span>
+     NetSpeeds(<span class="source_int">1</span>)=<span class="source_string">"ISDN"</span>
+     NetSpeeds(<span class="source_int">2</span>)=<span class="source_string">"LAN, Cable, DSL"</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../rmenu/rmenu-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_rmenu/runemenuplayersetupclient.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#RuneMenuPlayerSetupClient">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../rmenu/runemenuplayerscrollclient.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../rmenu/runemenuplayersetupscrollclient.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:41:08.822 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

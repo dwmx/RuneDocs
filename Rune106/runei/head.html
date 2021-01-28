@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - RuneI.Head</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/head.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#Head">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/hangingchain.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/healthfruit1.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#runei/head.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../runei/runei-overview.html">RuneI</a>.Head</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../runei/limbweapon.html">LimbWeapon</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a>
+   |   
+   +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/inventory.html">Inventory</a>
+      |   
+      +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/weapon.html">Weapon</a>
+         |   
+         +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/nonstow.html">NonStow</a>
+            |   
+            +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/limbweapon.html">LimbWeapon</a>
+               |   
+               +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/head.html">Head</a>
+</pre>
+
+<h4>Direct Known Subclasses:</h4>
+<blockquote>
+	<a href="../runei/alrichead.html">AlricHead</a>, <a href="../runei/berserkerhead.html">BerserkerHead</a>, <a href="../runei/conrackhead.html">ConrackHead</a>, <a href="../runei/darkvikinghead.html">DarkVikingHead</a>, <a href="../runei/elderhead.html">ElderHead</a>, <a href="../runei/goblinbhead.html">GoblinBHead</a>, <a href="../runei/goblinchead.html">GoblinCHead</a>, <a href="../runei/goblindhead.html">GoblinDHead</a>, <a href="../runei/goblinehead.html">GoblinEHead</a>, <a href="../runei/goblinhead.html">GoblinHead</a>, <a href="../runei/guardhead.html">GuardHead</a>, <a href="../runei/karlhead.html">KarlHead</a>, <a href="../runei/ragnarhead.html">RagnarHead</a>, <a href="../runei/sarkaxehead.html">SarkAxeHead</a>, <a href="../runei/sarkconhead.html">SarkConHead</a>, <a href="../runei/sarkhammerhead.html">SarkHammerHead</a>, <a href="../runei/sarkhead.html">SarkHead</a>, <a href="../runei/sarkragnarhead.html">SarkRagnarHead</a>, <a href="../runei/sarkswordhead.html">SarkSwordHead</a>, <a href="../runei/sigurdhead.html">SigurdHead</a>, <a href="../runei/svenhead.html">SvenHead</a>, <a href="../runei/townragnarhead.html">TownRagnarHead</a>, <a href="../runei/trialragnarhead.html">TrialRagnarHead</a>, <a href="../runei/ulfhead.html">UlfHead</a>, <a href="../runei/wardwarfahead.html">WarDwarfAHead</a>, <a href="../runei/wardwarfbhead.html">WarDwarfBHead</a>, <a href="../runei/wardwarfchead.html">WarDwarfCHead</a>, <a href="../runei/wardwarfdhead.html">WarDwarfDHead</a>, <a href="../runei/wardwarfehead.html">WarDwarfEHead</a>, <a href="../runei/wardwarffhead.html">WarDwarfFHead</a>, <a href="../runei/wolfhead.html">WolfHead</a>, <a href="../runei/womanhead.html">WomanHead</a>, <a href="../runei/wooddwarfahead.html">WoodDwarfAHead</a>, <a href="../runei/wooddwarfbhead.html">WoodDwarfBHead</a>, <a href="../runei/wooddwarfchead.html">WoodDwarfCHead</a>, <a href="../runei/zombiehead.html">ZombieHead</a>
+</blockquote>
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/actor.html">Actor</a></td><td width="66%"><a href="#_Blood" name="Blood" title="go to the details">Blood</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_landcount" name="landcount" title="go to the details">landcount</a></td></tr>
+<tr><th colspan="2" class="small">Head</th></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bBloodyHead" name="bBloodyHead" title="go to the details">bBloodyHead</a></td></tr>
+<tr><th colspan="2" class="small">Sounds</th></tr>
+<tr><td nowrap="nowrap" width="33%">Sound</td><td width="66%"><a href="#_LandSound[3]" name="LandSound[3]" title="go to the details">LandSound[3]</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/limbweapon.html">LimbWeapon</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/limbweapon.html#Blood">Blood</a>, <a href="../runei/limbweapon.html#bNeverExpire">bNeverExpire</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_BeginState-Active" name="BeginState" title="go to the details">BeginState</a> ()))<br /><span class="function_state">Active</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_EndState-Active" name="EndState" title="go to the details">EndState</a> ()))<br /><span class="function_state">Active</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_HitWall-" name="HitWall" title="go to the details">HitWall</a> (<a href="../core/object.html#Vector">vector</a> HitNormal, <a href="../engine/actor.html">actor</a> HitWall))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_HitWall-Throw" name="HitWall" title="go to the details">HitWall</a> (<a href="../core/object.html#Vector">vector</a> HitNormal, <a href="../engine/actor.html">actor</a> HitWall))<br /><span class="function_state">Throw</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Landed-" name="Landed" title="go to the details">Landed</a> (<a href="../core/object.html#Vector">vector</a> HitNormal, <a href="../engine/actor.html">actor</a> HitActor))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Landed-Throw" name="Landed" title="go to the details">Landed</a> (<a href="../core/object.html#Vector">vector</a> HitNormal, <a href="../engine/actor.html">actor</a> HitActor))<br /><span class="function_state">Throw</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PostBeginPlay-" name="PostBeginPlay" title="go to the details">PostBeginPlay</a> ()))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/limbweapon.html">LimbWeapon</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/limbweapon.html#BeginState">BeginState</a>, <a href="../runei/limbweapon.html#EndState">EndState</a>, <a href="../runei/limbweapon.html#MatterForJoint">MatterForJoint</a>, <a href="../runei/limbweapon.html#SpawnBloodSpray">SpawnBloodSpray</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/nonstow.html">NonStow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/nonstow.html#GetUsePriority">GetUsePriority</a>, <a href="../runei/nonstow.html#SpawnBloodSpray">SpawnBloodSpray</a>, <a href="../runei/nonstow.html#SpawnHitEffect">SpawnHitEffect</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th class="title">States Summary</th>
+</tr>
+</table>
+
+<table>
+<tr>
+	<th>Active <a href="../Source_runei/head.html#117" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> Active <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_BeginState+Active">BeginState</a>, <a href="#_EndState+Active">EndState</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>Throw <a href="../Source_runei/head.html#157" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> Throw <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_HitWall+Throw">HitWall</a>, <a href="#_Landed+Throw">Landed</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_Blood" class="hidden"></a>Blood <a href="../Source_runei/head.html#6" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> <span class="source_type"><a href="../runei/blood.html" class="source">Blood</a></span>;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_landcount" class="hidden"></a>landcount <a href="../Source_runei/head.html#9" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> landcount;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">Head</h3>
+<h4><a name="_bBloodyHead" class="hidden"></a>bBloodyHead <a href="../Source_runei/head.html#8" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/head.html" class="source">Head</a></span>) <span class="source_keyword">bool</span> bBloodyHead;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">Sounds</h3>
+<h4><a name="_LandSound[3]" class="hidden"></a>LandSound[3] <a href="../Source_runei/head.html#7" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Sounds) <span class="source_type">Sound</span> LandSound[<span class="source_int">3</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_BeginState-Active" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BeginState <span class="function_state">Active</span> <a href="../Source_runei/head.html#119" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  BeginState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EndState-Active" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> EndState <span class="function_state">Active</span> <a href="../Source_runei/head.html#133" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  EndState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HitWall-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> HitWall <span class="function_state"></span> <a href="../Source_runei/head.html#46" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span>  HitWall ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitNormal, <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> HitWall) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HitWall-Throw" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> HitWall <span class="function_state">Throw</span> <a href="../Source_runei/head.html#164" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span>  HitWall ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitNormal, <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> HitWall) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Landed-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Landed <span class="function_state"></span> <a href="../Source_runei/head.html#41" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span>  Landed ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitNormal, <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> HitActor) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Landed-Throw" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Landed <span class="function_state">Throw</span> <a href="../Source_runei/head.html#159" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span>  Landed ( <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitNormal, <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> HitActor) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PostBeginPlay-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PostBeginPlay <span class="function_state"></span> <a href="../Source_runei/head.html#12" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span>  PostBeginPlay ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     LandSound(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'OtherSnd.Gibs.gibhead01'</span>
+     LandSound(<span class="source_int">1</span>)=<span class="source_type">Sound</span><span class="source_name">'OtherSnd.Gibs.gibhead02'</span>
+     LandSound(<span class="source_int">2</span>)=<span class="source_type">Sound</span><span class="source_name">'OtherSnd.Gibs.gibhead03'</span>
+     bBloodyHead=<span class="source_keyword">True</span>
+     ThrownSoundLOOP=<span class="source_keyword">None</span>
+     <span class="source_type"><a href="../runei/pickupmessage.html" class="source">PickupMessage</a></span>=<span class="source_string">"You picked up a head"</span>
+     Physics=PHYS_Falling
+     LODCurve=LOD_CURVE_ULTRA_AGGRESSIVE
+     CollisionRadius=<span class="source_int">6.000000</span>
+     CollisionHeight=<span class="source_int">6.000000</span>
+     bCollideWorld=<span class="source_keyword">True</span>
+     bBounce=<span class="source_keyword">True</span>
+     Skeletal=<span class="source_type">SkelModel</span><span class="source_name">'objects.Heads'</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/head.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#Head">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/hangingchain.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/healthfruit1.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:27:17.428 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

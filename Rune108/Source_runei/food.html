@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - Source: RuneI.Food</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header"><a href="../runei/food.html">Class</a></td>
+	<td class="header_hilight">Source</td>
+	<td class="header"><a class="header" href="../classtree.html#Food">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../Source_runei/flockpawn.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../Source_runei/footbridge.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#Source_runei/food.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/food.html">Food</a></h1>
+<br />
+<div class="source"><table class="source"><tr><td class="source_lineno"><span class="source_lineno">00001<br />00002<br />00003<br />00004<br />00005<br />00006<br />00007<br />00008<br />00009<br />00010<br />00011<br />00012<br />00013<br />00014<br />00015<br />00016<br />00017<br />00018<br />00019<br />00020<br />
+00021<br />00022<br />00023<br />00024<br />00025<br />00026<br />00027<br />00028<br />00029<br />00030<br />00031<br />00032<br />00033<br />00034<br />00035<br />00036<br />00037<br />00038<br />00039<br />00040<br />
+00041<br />00042<br />00043<br />00044<br />00045<br />00046<br />00047<br />00048<br />00049<br />00050<br />00051<br />00052<br />00053<br />00054<br />00055<br />00056<br />00057<br />00058<br />00059<br />00060<br />
+00061<br />00062<br />00063<br />00064<br />00065<br />00066<br />00067<br />00068<br />00069<br />00070<br />00071<br />00072<br />00073<br />00074<br />00075<br />00076<br />00077<br />00078<br />00079<br />00080<br />
+00081<br />00082<br />00083<br />00084<br />00085<br />00086<br />00087<br />00088<br />00089<br />00090<br />00091<br />00092<br />00093<br />00094<br />00095<br />00096<br />00097<br />00098<br />00099<br />00100<br />
+00101<br />00102<br />00103<br />00104<br />00105<br />00106<br />00107<br />00108<br />00109<br />00110<br />00111<br />00112<br />00113<br />00114<br />00115<br />00116<br />00117<br />00118<br />00119<br />00120<br />
+00121<br />00122<br />00123<br />00124<br />00125<br />00126<br />00127<br />00128<br />00129<br />00130<br />00131<br />00132</span></td>
+<td class="source"><pre class="source"><a name="1"></a><span class="source_comment">//=============================================================================
+</span><a name="2"></a><span class="source_comment">// Food.
+</span><a name="3"></a><span class="source_comment">//=============================================================================
+</span><a name="4"></a><span class="source_keyword">class</span> <span class="source_type"><a href="../runei/food.html" class="source">Food</a></span> <span class="source_keyword">extends</span> <span class="source_type"><a href="../engine/pickup.html" class="source">Pickup</a></span>
+<a name="5"></a>    <span class="source_keyword2">abstract</span>;
+<a name="6"></a>
+<a name="7"></a>
+<a name="8"></a><span class="source_keyword">var</span>() <span class="source_keyword">int</span> Nutrition;
+<a name="9"></a><span class="source_keyword">var</span>() <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span>&gt; JunkActor;
+<a name="10"></a>
+<a name="11"></a><span class="source_keyword">var</span>(Sounds) <span class="source_type">sound</span> UseSound; <span class="source_comment">// The sound that is played when the item is immediately picked up
+</span><a name="12"></a>
+<a name="13"></a><span class="source_comment">//============================================================================
+</span><a name="14"></a><span class="source_comment">//
+</span><a name="15"></a><span class="source_comment">// GetUsePriority
+</span><a name="16"></a><span class="source_comment">//
+</span><a name="17"></a><span class="source_comment">// Returns the priority of the weapon, lower is better
+</span><a name="18"></a><span class="source_comment">//============================================================================
+</span><a name="19"></a>
+<a name="20"></a><span class="source_keyword">function</span> <span class="source_keyword">int</span> GetUsePriority()
+<a name="21"></a>{
+<a name="22"></a>    <span class="source_keyword">return</span>(<span class="source_int">3</span>);
+<a name="23"></a>}
+<a name="24"></a>
+<a name="25"></a><span class="source_keyword">function</span> PickupFunction(<span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">Other</span>)
+<a name="26"></a>{
+<a name="27"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> <span class="source_type">i</span>;
+<a name="28"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> adjNutrition;
+<a name="29"></a>
+<a name="30"></a>    adjNutrition = Nutrition;
+<a name="31"></a>
+<a name="32"></a>    <span class="source_keyword">switch</span>(<span class="source_type">Level</span>.Game.Difficulty)
+<a name="33"></a>    {
+<a name="34"></a>    <span class="source_keyword">case</span> <span class="source_int">0</span>: <span class="source_comment">// Easy mode, more health
+</span><a name="35"></a>        adjNutrition *= <span class="source_int">1.5</span>;
+<a name="36"></a>        <span class="source_keyword">break</span>;
+<a name="37"></a>    <span class="source_keyword">case</span> <span class="source_int">2</span>: <span class="source_comment">// Hard mode, less health
+</span><a name="38"></a>        adjNutrition *= <span class="source_int">0.75</span>;
+<a name="39"></a>        <span class="source_keyword">break</span>;
+<a name="40"></a>    }
+<a name="41"></a>
+<a name="42"></a>    <span class="source_type">Other</span>.Health += adjNutrition;
+<a name="43"></a>    <span class="source_keyword">if</span> (<span class="source_type">Other</span>.Health &gt; <span class="source_type">Other</span>.MaxHealth)
+<a name="44"></a>        <span class="source_type">Other</span>.Health = <span class="source_type">Other</span>.MaxHealth;
+<a name="45"></a>
+<a name="46"></a>    <span class="source_comment">// Cure eater of any ailments
+</span><a name="47"></a>    <span class="source_keyword">if</span>(<span class="source_type">Other</span>.Fatness != <span class="source_int">128</span>)
+<a name="48"></a>        <span class="source_type">Other</span>.DesiredFatness = <span class="source_int">128</span>;
+<a name="49"></a>    <span class="source_keyword">if</span>(<span class="source_type">Other</span>.ScaleGlow != <span class="source_int">1.0</span>)
+<a name="50"></a>        <span class="source_type">Other</span>.ScaleGlow = <span class="source_int">1.0</span>;
+<a name="51"></a>    <span class="source_keyword">if</span>(<span class="source_type">Other</span>.BodyPartMissing(BODYPART_LARM1))
+<a name="52"></a>        <span class="source_type">Other</span>.RestoreBodyPart(BODYPART_LARM1);
+<a name="53"></a>    <span class="source_keyword">if</span>(<span class="source_type">Other</span>.BodyPartMissing(BODYPART_RARM1))
+<a name="54"></a>        <span class="source_type">Other</span>.RestoreBodyPart(BODYPART_RARM1);
+<a name="55"></a>
+<a name="56"></a>    <span class="source_comment">// Restore health of bodyparts (must be after restoring limbs)
+</span><a name="57"></a>    <span class="source_keyword">for</span> (<span class="source_type">i</span>=<span class="source_int">0</span>; <span class="source_type">i</span>&lt;NUM_BODYPARTS; <span class="source_type">i</span>++)
+<a name="58"></a>        <span class="source_type">Other</span>.BodyPartHealth[<span class="source_type">i</span>] = <span class="source_type">Other</span>.Default.BodyPartHealth[<span class="source_type">i</span>];
+<a name="59"></a>
+<a name="60"></a>    <span class="source_comment">// Fire the event on the food item
+</span><a name="61"></a>    <span class="source_keyword">if</span>(<span class="source_type">Other</span>.bIsPawn)
+<a name="62"></a>        FireEvent(<span class="source_keyword">Event</span>);
+<a name="63"></a>
+<a name="64"></a>    Destroy();
+<a name="65"></a>}
+<a name="66"></a>
+<a name="67"></a><span class="source_keyword">function</span> InventorySpecial1()
+<a name="68"></a>{ <span class="source_comment">// Special1 - Eat/drink the food/mead
+</span><a name="69"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">P</span>;
+<a name="70"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> joint;
+<a name="71"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> junk;
+<a name="72"></a>
+<a name="73"></a>    <span class="source_keyword">if</span>(Owner == <span class="source_keyword">None</span>)
+<a name="74"></a>        <span class="source_keyword">return</span>;
+<a name="75"></a>
+<a name="76"></a>    <span class="source_type">P</span> = <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span>(Owner);
+<a name="77"></a>
+<a name="78"></a>    joint = <span class="source_type">P</span>.JointNamed(<span class="source_type">P</span>.WeaponJoint);
+<a name="79"></a>    <span class="source_keyword">if</span>(joint != <span class="source_int">0</span>)
+<a name="80"></a>    {
+<a name="81"></a>        <span class="source_type">P</span>.DetachActorFromJoint(joint);
+<a name="82"></a>
+<a name="83"></a>        <span class="source_keyword">if</span>(JunkActor != <span class="source_keyword">None</span>)
+<a name="84"></a>        {
+<a name="85"></a>            junk = Spawn(JunkActor, <span class="source_type">P</span>,, Location);
+<a name="86"></a>            <span class="source_keyword">if</span>(junk != <span class="source_keyword">None</span>)
+<a name="87"></a>                <span class="source_type">P</span>.AttachActorToJoint(junk, joint);
+<a name="88"></a>        }
+<a name="89"></a>    }
+<a name="90"></a>
+<a name="91"></a>    SetOwner(<span class="source_type">P</span>); <span class="source_comment">// Has to reset owner, as it is set to None by DetachActorFromJoint
+</span><a name="92"></a>
+<a name="93"></a>    <span class="source_keyword">if</span> ( PickupMessageClass == <span class="source_keyword">None</span> )
+<a name="94"></a>        <span class="source_type">P</span>.ClientMessage(<span class="source_type"><a href="../runei/pickupmessage.html" class="source">PickupMessage</a></span>, <span class="source_name">'Pickup'</span>);
+<a name="95"></a>    <span class="source_keyword">else</span>
+<a name="96"></a>        <span class="source_type">P</span>.ReceiveLocalizedMessage( PickupMessageClass, <span class="source_int">0</span>, <span class="source_keyword">None</span>, <span class="source_keyword">None</span>, Self.<span class="source_keyword">Class</span> );
+<a name="97"></a>    PlaySound(PickupSound,,<span class="source_int">2.0</span>);    
+<a name="98"></a>    PickupFunction(<span class="source_type">P</span>);
+<a name="99"></a>}
+<a name="100"></a>
+<a name="101"></a><span class="source_comment">/*
+<a name="102"></a>function InventorySpecial2()
+<a name="103"></a>{ // Drop the refuse (bone or empty stein)
+<a name="104"></a>    local Pawn P;
+<a name="105"></a>    local actor junk;
+<a name="106"></a>
+<a name="107"></a>    if(Owner == None)
+<a name="108"></a>        return;
+<a name="109"></a>        
+<a name="110"></a>    P = Pawn(Owner);
+<a name="111"></a>    junk = P.DetachActorFromJoint(P.JointNamed(P.WeaponJoint));
+<a name="112"></a>
+<a name="113"></a>    if(junk != None)
+<a name="114"></a>    {   
+<a name="115"></a>        junk.Velocity = DropVelocity(P);
+<a name="116"></a>        junk.SetPhysics(PHYS_Falling);
+<a name="117"></a>        junk.bCollideWorld = true;
+<a name="118"></a>    }
+<a name="119"></a>
+<a name="120"></a>    if (!bDeleteMe)
+<a name="121"></a>        Destroy();
+<a name="122"></a>}
+<a name="123"></a>*/</span>
+<a name="124"></a>
+<a name="125"></a><span class="source_keyword">defaultproperties</span>
+<a name="126"></a>{
+<a name="127"></a>     Nutrition=<span class="source_int">5</span>
+<a name="128"></a>     RespawnTime=<span class="source_int">30.000000</span>
+<a name="129"></a>     RespawnSound=<span class="source_type">Sound</span><span class="source_name">'OtherSnd.Respawns.respawn01'</span>
+<a name="130"></a>     PickupMessageClass=<span class="source_keyword">Class</span><span class="source_name">'RuneI.PickupMessage'</span>
+<a name="131"></a>}
+<a name="132"></a></pre></td></tr></table></div>
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header"><a href="../runei/food.html">Class</a></td>
+	<td class="header_hilight">Source</td>
+	<td class="header"><a class="header" href="../classtree.html#Food">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../Source_runei/flockpawn.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../Source_runei/footbridge.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Class file time: Thu 28/1/2021 11:38:02.000 - Creation time: Thu 28/1/2021 11:41:23.968 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

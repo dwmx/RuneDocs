@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - UBrowser.UBrowserIRCSetupClient</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../ubrowser/ubrowser-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_ubrowser/ubrowserircsetupclient.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#UBrowserIRCSetupClient">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../ubrowser/ubrowserircprivpage.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../ubrowser/ubrowserircsystemmenu.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#ubrowser/ubrowserircsetupclient.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../ubrowser/ubrowser-overview.html">UBrowser</a>.UBrowserIRCSetupClient</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../uwindow/uwindowdialogclientwindow.html">UWindowDialogClientWindow</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowbase.html">UWindowBase</a>
+   |   
+   +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowwindow.html">UWindowWindow</a>
+      |   
+      +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowclientwindow.html">UWindowClientWindow</a>
+         |   
+         +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowdialogclientwindow.html">UWindowDialogClientWindow</a>
+            |   
+            +-- <a href="../ubrowser/ubrowser-overview.html">UBrowser</a>.<a href="../ubrowser/ubrowserircsetupclient.html">UBrowserIRCSetupClient</a>
+</pre>
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bHasReadWarning" name="bHasReadWarning" title="go to the details">bHasReadWarning</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindowcombocontrol.html">UWindowComboControl</a></td><td width="66%"><a href="#_ChannelCombo" name="ChannelCombo" title="go to the details">ChannelCombo</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ChannelHelp" name="ChannelHelp" title="go to the details">ChannelHelp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ChannelText" name="ChannelText" title="go to the details">ChannelText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindowmessagebox.html">UWindowMessageBox</a></td><td width="66%"><a href="#_ConfirmJoin" name="ConfirmJoin" title="go to the details">ConfirmJoin</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindowsmallbutton.html">UWindowSmallButton</a></td><td width="66%"><a href="#_ConnectButton" name="ConnectButton" title="go to the details">ConnectButton</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ConnectHelp" name="ConnectHelp" title="go to the details">ConnectHelp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ConnectText" name="ConnectText" title="go to the details">ConnectText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_DisconnectHelp" name="DisconnectHelp" title="go to the details">DisconnectHelp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_DisconnectText" name="DisconnectText" title="go to the details">DisconnectText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_IRCChannelHistory[10]" name="IRCChannelHistory[10]" title="go to the details">IRCChannelHistory[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_IRCServerHistory[10]" name="IRCServerHistory[10]" title="go to the details">IRCServerHistory[10]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../uwindow/uwindowcombocontrol.html">UWindowComboControl</a></td><td width="66%"><a href="#_ServerCombo" name="ServerCombo" title="go to the details">ServerCombo</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ServerHelp" name="ServerHelp" title="go to the details">ServerHelp</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ServerText" name="ServerText" title="go to the details">ServerText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../ubrowser/ubrowserircsystempage.html">UBrowserIRCSystemPage</a></td><td width="66%"><a href="#_SystemPage" name="SystemPage" title="go to the details">SystemPage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_WarningText" name="WarningText" title="go to the details">WarningText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_WarningTitle" name="WarningTitle" title="go to the details">WarningTitle</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowdialogclientwindow.html">UWindowDialogClientWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowdialogclientwindow.html#DesiredHeight">DesiredHeight</a>, <a href="../uwindow/uwindowdialogclientwindow.html#DesiredWidth">DesiredWidth</a>, <a href="../uwindow/uwindowdialogclientwindow.html#TabLast">TabLast</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_BeforePaint-" name="BeforePaint" title="go to the details">BeforePaint</a> (<a href="../engine/canvas.html">Canvas</a> C, float X, float Y))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Created-" name="Created" title="go to the details">Created</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DoJoin-" name="DoJoin" title="go to the details">DoJoin</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_MessageBoxDone-" name="MessageBoxDone" title="go to the details">MessageBoxDone</a> (<a href="../uwindow/uwindowmessagebox.html">UWindowMessageBox</a> W, <a href="../uwindow/uwindowbase.html#MessageBoxResult">MessageBoxResult</a> Result))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_NewIRCServer-" name="NewIRCServer" title="go to the details">NewIRCServer</a> (string S))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Notify-" name="Notify" title="go to the details">Notify</a> (<a href="../uwindow/uwindowdialogcontrol.html">UWindowDialogControl</a> C, byte E))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Paint-" name="Paint" title="go to the details">Paint</a> (<a href="../engine/canvas.html">Canvas</a> C, float X, float Y))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SaveChannelCombo-" name="SaveChannelCombo" title="go to the details">SaveChannelCombo</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SaveServerCombo-" name="SaveServerCombo" title="go to the details">SaveServerCombo</a> ()))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowdialogclientwindow.html">UWindowDialogClientWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowdialogclientwindow.html#CreateControl">CreateControl</a>, <a href="../uwindow/uwindowdialogclientwindow.html#GetDesiredDimensions">GetDesiredDimensions</a>, <a href="../uwindow/uwindowdialogclientwindow.html#Notify">Notify</a>, <a href="../uwindow/uwindowdialogclientwindow.html#OKPressed">OKPressed</a>, <a href="../uwindow/uwindowdialogclientwindow.html#Paint">Paint</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowclientwindow.html">UWindowClientWindow</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowclientwindow.html#Close">Close</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_bHasReadWarning" class="hidden"></a>bHasReadWarning <a href="../Source_ubrowser/ubrowserircsetupclient.html#9" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">bool</span> bHasReadWarning;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ChannelCombo" class="hidden"></a>ChannelCombo <a href="../Source_ubrowser/ubrowserircsetupclient.html#4" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowcombocontrol.html" class="source">UWindowComboControl</a></span> ChannelCombo;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ChannelHelp" class="hidden"></a>ChannelHelp <a href="../Source_ubrowser/ubrowserircsetupclient.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> ChannelHelp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ChannelText" class="hidden"></a>ChannelText <a href="../Source_ubrowser/ubrowserircsetupclient.html#12" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> ChannelText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ConfirmJoin" class="hidden"></a>ConfirmJoin <a href="../Source_ubrowser/ubrowserircsetupclient.html#24" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowmessagebox.html" class="source">UWindowMessageBox</a></span> ConfirmJoin;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ConnectButton" class="hidden"></a>ConnectButton <a href="../Source_ubrowser/ubrowserircsetupclient.html#5" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowsmallbutton.html" class="source">UWindowSmallButton</a></span> ConnectButton;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ConnectHelp" class="hidden"></a>ConnectHelp <a href="../Source_ubrowser/ubrowserircsetupclient.html#18" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> ConnectHelp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ConnectText" class="hidden"></a>ConnectText <a href="../Source_ubrowser/ubrowserircsetupclient.html#16" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> ConnectText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DisconnectHelp" class="hidden"></a>DisconnectHelp <a href="../Source_ubrowser/ubrowserircsetupclient.html#19" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> DisconnectHelp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DisconnectText" class="hidden"></a>DisconnectText <a href="../Source_ubrowser/ubrowserircsetupclient.html#17" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> DisconnectText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_IRCChannelHistory[10]" class="hidden"></a>IRCChannelHistory[10] <a href="../Source_ubrowser/ubrowserircsetupclient.html#8" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> IRCChannelHistory[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_IRCServerHistory[10]" class="hidden"></a>IRCServerHistory[10] <a href="../Source_ubrowser/ubrowserircsetupclient.html#7" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">string</span> IRCServerHistory[<span class="source_int">10</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ServerCombo" class="hidden"></a>ServerCombo <a href="../Source_ubrowser/ubrowserircsetupclient.html#3" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../uwindow/uwindowcombocontrol.html" class="source">UWindowComboControl</a></span> ServerCombo;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ServerHelp" class="hidden"></a>ServerHelp <a href="../Source_ubrowser/ubrowserircsetupclient.html#13" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> ServerHelp;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ServerText" class="hidden"></a>ServerText <a href="../Source_ubrowser/ubrowserircsetupclient.html#11" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> ServerText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SystemPage" class="hidden"></a>SystemPage <a href="../Source_ubrowser/ubrowserircsetupclient.html#25" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../ubrowser/ubrowserircsystempage.html" class="source">UBrowserIRCSystemPage</a></span> SystemPage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_WarningText" class="hidden"></a>WarningText <a href="../Source_ubrowser/ubrowserircsetupclient.html#21" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> WarningText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_WarningTitle" class="hidden"></a>WarningTitle <a href="../Source_ubrowser/ubrowserircsetupclient.html#22" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> WarningTitle;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_BeforePaint-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BeforePaint <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserircsetupclient.html#68" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  BeforePaint ( <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type">C</span>, <span class="source_keyword">float</span> X, <span class="source_keyword">float</span> <span class="source_type">Y</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Created-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Created <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserircsetupclient.html#27" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Created ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DoJoin-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DoJoin <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserircsetupclient.html#92" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  DoJoin ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MessageBoxDone-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> MessageBoxDone <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserircsetupclient.html#103" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  MessageBoxDone ( <span class="source_type"><a href="../uwindow/uwindowmessagebox.html" class="source">UWindowMessageBox</a></span> W, <span class="source_type"><a href="../uwindow/uwindowbase.html#MessageBoxResult" class="source">MessageBoxResult</a></span> <span class="source_type">Result</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NewIRCServer-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> NewIRCServer <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserircsetupclient.html#137" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  NewIRCServer ( <span class="source_keyword">string</span> <span class="source_type">S</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Notify-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Notify <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserircsetupclient.html#112" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Notify ( <span class="source_type"><a href="../uwindow/uwindowdialogcontrol.html" class="source">UWindowDialogControl</a></span> <span class="source_type">C</span>, <span class="source_keyword">byte</span> E) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Paint-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Paint <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserircsetupclient.html#87" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Paint ( <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type">C</span>, <span class="source_keyword">float</span> X, <span class="source_keyword">float</span> <span class="source_type">Y</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SaveChannelCombo-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SaveChannelCombo <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserircsetupclient.html#173" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SaveChannelCombo ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SaveServerCombo-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SaveServerCombo <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserircsetupclient.html#150" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SaveServerCombo ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     IRCServerHistory(<span class="source_int">0</span>)=<span class="source_string">"irc.gameslink.net"</span>
+     bHasReadWarning=<span class="source_keyword">True</span>
+     ServerText=<span class="source_string">"IRC Server"</span>
+     ChannelText=<span class="source_string">"Default Channel"</span>
+     ServerHelp=<span class="source_string">"Choose an IRC server from the list or type in your own IRC server name or IP address."</span>
+     ChannelHelp=<span class="source_string">"Choose a default channel to join once the server has connected, or type in your own channel name."</span>
+     ConnectText=<span class="source_string">"Connect"</span>
+     DisconnectText=<span class="source_string">"Logoff"</span>
+     ConnectHelp=<span class="source_string">"Connect to the IRC chat server."</span>
+     DisconnectHelp=<span class="source_string">"Disconnect from the IRC chat server."</span>
+     WarningText=<span class="source_string">"The Chat facility will connect you to the Internet Relay Chat (IRC) network.\n\nEpic Games is not responsible for the content of any channels in IRC. You enter these channels at your own risk.\n\nAre you sure you still want to connect?"</span>
+     WarningTitle=<span class="source_string">"Warning"</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../ubrowser/ubrowser-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_ubrowser/ubrowserircsetupclient.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#UBrowserIRCSetupClient">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../ubrowser/ubrowserircprivpage.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../ubrowser/ubrowserircsystemmenu.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:27:25.865 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

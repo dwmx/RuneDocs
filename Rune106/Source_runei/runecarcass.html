@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - Source: RuneI.RuneCarcass</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header"><a href="../runei/runecarcass.html">Class</a></td>
+	<td class="header_hilight">Source</td>
+	<td class="header"><a class="header" href="../classtree.html#RuneCarcass">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../Source_runei/ropepoint.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../Source_runei/runeflight.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#Source_runei/runecarcass.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runecarcass.html">RuneCarcass</a></h1>
+<br />
+<div class="source"><table class="source"><tr><td class="source_lineno"><span class="source_lineno">00001<br />00002<br />00003<br />00004<br />00005<br />00006<br />00007<br />00008<br />00009<br />00010<br />00011<br />00012<br />00013<br />00014<br />00015<br />00016<br />00017<br />00018<br />00019<br />00020<br />
+00021<br />00022<br />00023<br />00024<br />00025<br />00026<br />00027<br />00028<br />00029<br />00030<br />00031<br />00032<br />00033<br />00034<br />00035<br />00036<br />00037<br />00038<br />00039<br />00040<br />
+00041<br />00042<br />00043<br />00044<br />00045<br />00046<br />00047<br />00048<br />00049<br />00050<br />00051<br />00052<br />00053<br />00054<br />00055<br />00056<br />00057<br />00058<br />00059<br />00060<br />
+00061<br />00062<br />00063<br />00064<br />00065<br />00066<br />00067<br />00068<br />00069<br />00070<br />00071<br />00072<br />00073<br />00074<br />00075<br />00076<br />00077<br />00078<br />00079<br />00080<br />
+00081<br />00082<br />00083<br />00084<br />00085<br />00086<br />00087<br />00088<br />00089<br />00090<br />00091<br />00092<br />00093<br />00094<br />00095<br />00096<br />00097<br />00098<br />00099<br />00100<br />
+00101<br />00102<br />00103<br />00104<br />00105<br />00106<br />00107<br />00108<br />00109<br />00110<br />00111<br />00112<br />00113<br />00114<br />00115<br />00116<br />00117<br />00118<br />00119<br />00120<br />
+00121<br />00122<br />00123<br />00124<br />00125<br />00126<br />00127<br />00128<br />00129<br />00130<br />00131<br />00132<br />00133<br />00134<br />00135<br />00136<br />00137<br />00138<br />00139<br />00140<br />
+00141<br />00142<br />00143<br />00144<br />00145<br />00146<br />00147<br />00148<br />00149<br />00150<br />00151<br />00152<br />00153<br />00154<br />00155<br />00156<br />00157<br />00158<br />00159<br />00160<br />
+00161<br />00162<br />00163<br />00164<br />00165<br />00166<br />00167<br />00168<br />00169<br />00170<br />00171<br />00172<br />00173<br />00174<br />00175<br />00176<br />00177<br />00178<br />00179<br />00180<br />
+00181<br />00182<br />00183<br />00184<br />00185<br />00186<br />00187<br />00188<br />00189<br />00190<br />00191<br />00192<br />00193<br />00194<br />00195<br />00196<br />00197<br />00198<br />00199<br />00200<br />
+00201<br />00202<br />00203<br />00204<br />00205<br />00206<br />00207<br />00208<br />00209<br />00210<br />00211<br />00212<br />00213<br />00214<br />00215<br />00216<br />00217<br />00218<br />00219<br />00220<br />
+00221<br />00222<br />00223<br />00224<br />00225<br />00226<br />00227<br />00228<br />00229<br />00230<br />00231<br />00232<br />00233<br />00234<br />00235<br />00236<br />00237<br />00238<br />00239<br />00240<br />
+00241<br />00242<br />00243<br />00244<br />00245<br />00246<br />00247<br />00248<br />00249<br />00250<br />00251<br />00252<br />00253<br />00254<br />00255<br />00256<br />00257<br />00258<br />00259<br />00260<br />
+00261<br />00262<br />00263<br />00264<br />00265<br />00266<br />00267<br />00268<br />00269<br />00270<br />00271<br />00272<br />00273<br />00274<br />00275<br />00276<br />00277<br />00278<br />00279<br />00280<br />
+00281<br />00282<br />00283<br />00284<br />00285<br />00286<br />00287<br />00288<br />00289<br />00290<br />00291<br />00292<br />00293<br />00294<br />00295<br />00296<br />00297<br />00298<br />00299<br />00300<br />
+00301<br />00302<br />00303<br />00304<br />00305<br />00306<br />00307<br />00308<br />00309<br />00310<br />00311<br />00312</span></td>
+<td class="source"><pre class="source"><a name="1"></a><span class="source_comment">//=============================================================================
+</span><a name="2"></a><span class="source_comment">// RuneCarcass.
+</span><a name="3"></a><span class="source_comment">//=============================================================================
+</span><a name="4"></a><span class="source_keyword">class</span> <span class="source_type"><a href="../runei/runecarcass.html" class="source">RuneCarcass</a></span> <span class="source_keyword">extends</span> <span class="source_type"><a href="../engine/carcass.html" class="source">Carcass</a></span>;
+<a name="5"></a>
+<a name="6"></a><span class="source_keyword">var</span>   <span class="source_type"><a href="../engine/zoneinfo.html" class="source">ZoneInfo</a></span> DeathZone;
+<a name="7"></a><span class="source_keyword">var</span>(Advanced) <span class="source_keyword">bool</span>        bBurnable;            <span class="source_comment">// RUNE: Can be set on fire
+</span><a name="8"></a><span class="source_keyword">var</span> <span class="source_keyword">int</span> GibCount;
+<a name="9"></a><span class="source_keyword">var</span> <span class="source_keyword">name</span> StabJoint; <span class="source_comment">// RUNE:  For skewer death on pawns
+</span><a name="10"></a><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bWasPlayer;
+<a name="11"></a>
+<a name="12"></a><span class="source_keyword">function</span> Initfor(<span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span>)
+<a name="13"></a>{
+<a name="14"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> <span class="source_type">i</span>;
+<a name="15"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">A</span>;
+<a name="16"></a>
+<a name="17"></a>    bDecorative = <span class="source_keyword">false</span>;
+<a name="18"></a>    <span class="source_keyword">if</span> ( !bDecorative )
+<a name="19"></a>    {
+<a name="20"></a>        DeathZone = <span class="source_type"><a href="../uwindow/uwindowbase.html#Region" class="source">Region</a></span>.Zone;
+<a name="21"></a>        DeathZone.NumCarcasses++;
+<a name="22"></a>    }
+<a name="23"></a>
+<a name="24"></a>    Skeletal = <span class="source_type">Other</span>.Skeletal;
+<a name="25"></a>    SkelMesh = <span class="source_type">Other</span>.SkelMesh;
+<a name="26"></a>    SubstituteMesh = <span class="source_type">Other</span>.SubstituteMesh; <span class="source_comment">// RUNE:  substitute mesh code
+</span><a name="27"></a>    DrawScale       = <span class="source_type">Other</span>.DrawScale;
+<a name="28"></a>    ScaleGlow       = <span class="source_type">Other</span>.ScaleGlow;
+<a name="29"></a>    Fatness         = <span class="source_type">Other</span>.Fatness;
+<a name="30"></a>    DesiredFatness  = <span class="source_type">Other</span>.DesiredFatness;
+<a name="31"></a>    DesiredColorAdjust = <span class="source_type">Other</span>.DesiredColorAdjust;
+<a name="32"></a>
+<a name="33"></a>    AnimSequence    = <span class="source_type">Other</span>.AnimSequence;
+<a name="34"></a>    AnimFrame       = <span class="source_type">Other</span>.AnimFrame;
+<a name="35"></a>    AnimRate        = <span class="source_type">Other</span>.AnimRate;
+<a name="36"></a>    TweenRate       = <span class="source_type">Other</span>.TweenRate;
+<a name="37"></a>    AnimMinRate     = <span class="source_type">Other</span>.AnimMinRate;
+<a name="38"></a>    AnimLast        = <span class="source_type">Other</span>.AnimLast;
+<a name="39"></a>    bAnimLoop       = <span class="source_type">Other</span>.bAnimLoop;
+<a name="40"></a>    SimAnim.X       = <span class="source_int">10000</span> * AnimFrame;
+<a name="41"></a>    SimAnim.<span class="source_type">Y</span>       = <span class="source_int">5000</span> * AnimRate;
+<a name="42"></a>    SimAnim.Z       = <span class="source_int">1000</span> * TweenRate;
+<a name="43"></a>    SimAnim.W       = <span class="source_int">10000</span> * AnimLast;
+<a name="44"></a>    bAnimFinished   = <span class="source_type">Other</span>.bAnimFinished;
+<a name="45"></a>    Velocity        = <span class="source_type">Other</span>.Velocity;
+<a name="46"></a>    bMirrored       = <span class="source_type">Other</span>.bMirrored;
+<a name="47"></a>    PrePivot        = <span class="source_type">Other</span>.PrePivot;
+<a name="48"></a>
+<a name="49"></a>    SetPhysics(<span class="source_type">Other</span>.Physics);
+<a name="50"></a>
+<a name="51"></a>    <span class="source_keyword">if</span> (<span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span>(<span class="source_type">Other</span>)!=<span class="source_keyword">None</span>)
+<a name="52"></a>    {
+<a name="53"></a>        GibCount        = <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span>(<span class="source_type">Other</span>).GibCount;
+<a name="54"></a>        StabJoint       = <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span>(<span class="source_type">Other</span>).StabJoint;
+<a name="55"></a>    }
+<a name="56"></a>
+<a name="57"></a>    <span class="source_keyword">for</span> (<span class="source_type">i</span>=<span class="source_int">0</span>; <span class="source_type">i</span>&lt;<span class="source_int">16</span>; <span class="source_type">i</span>++)
+<a name="58"></a>    {
+<a name="59"></a>        SkelGroupSkins[<span class="source_type">i</span>] = <span class="source_type">Other</span>.SkelGroupSkins[<span class="source_type">i</span>];
+<a name="60"></a>        SkelGroupFlags[<span class="source_type">i</span>] = <span class="source_type">Other</span>.SkelGroupFlags[<span class="source_type">i</span>];
+<a name="61"></a>    }
+<a name="62"></a>
+<a name="63"></a>    <span class="source_comment">// Transfer all attachments
+</span><a name="64"></a>    <span class="source_keyword">for</span> (<span class="source_type">i</span>=<span class="source_int">0</span>; <span class="source_type">i</span>&lt;NumJoints(); <span class="source_type">i</span>++)
+<a name="65"></a>    {
+<a name="66"></a>        <span class="source_keyword">if</span> (<span class="source_type">Other</span>.ActorAttachedTo(<span class="source_type">i</span>) != <span class="source_keyword">None</span>)
+<a name="67"></a>        {
+<a name="68"></a>            <span class="source_type">A</span> = <span class="source_type">Other</span>.DetachActorFromJoint(<span class="source_type">i</span>);
+<a name="69"></a>            AttachActorToJoint(<span class="source_type">A</span>, <span class="source_type">i</span>);
+<a name="70"></a>        }
+<a name="71"></a>    }
+<a name="72"></a>
+<a name="73"></a><span class="source_comment">//	for (i=0; i&lt;NumJoints(); i++)
+</span><a name="74"></a><span class="source_comment">//	{
+</span><a name="75"></a><span class="source_comment">//		JointFlags[i] = Other.JointFlags[i];
+</span><a name="76"></a><span class="source_comment">//	}
+</span><a name="77"></a>
+<a name="78"></a>    <span class="source_keyword">if</span> (<span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span>(<span class="source_type">Other</span>)!=<span class="source_keyword">None</span> && !<span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span>(<span class="source_type">Other</span>).bIsPlayer)
+<a name="79"></a>    {
+<a name="80"></a>        SetCollisionSize(<span class="source_type">Other</span>.CollisionRadius, <span class="source_type">Other</span>.CollisionHeight);
+<a name="81"></a>    }
+<a name="82"></a>    <span class="source_keyword">else</span>
+<a name="83"></a>    {
+<a name="84"></a>        SetCollisionSize(<span class="source_type">Other</span>.CollisionRadius, <span class="source_type">Other</span>.CollisionHeight);
+<a name="85"></a>        bWasPlayer=<span class="source_keyword">true</span>;
+<a name="86"></a>    }
+<a name="87"></a>}
+<a name="88"></a>
+<a name="89"></a><span class="source_keyword">function</span> UpdateRotation()
+<a name="90"></a>{
+<a name="91"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span> <span class="source_type">NewRotation</span>;
+<a name="92"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> X,<span class="source_type">Y</span>,Z, <span class="source_type">result</span>;
+<a name="93"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitLoc, GroundNormal;
+<a name="94"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">A</span>;
+<a name="95"></a>
+<a name="96"></a>    <span class="source_type">A</span> = Trace(HitLoc, GroundNormal, Location-vect(<span class="source_int">0</span>,<span class="source_int">0</span>,<span class="source_int">100</span>), Location, <span class="source_keyword">false</span>);
+<a name="97"></a>    <span class="source_keyword">if</span> (<span class="source_type">A</span>!=<span class="source_keyword">None</span>)
+<a name="98"></a>    {
+<a name="99"></a>        <span class="source_comment">// Adjust rotation so corpse is aligned to ground
+</span><a name="100"></a>        GetAxes(Rotation, X,<span class="source_type">Y</span>,Z);
+<a name="101"></a>        <span class="source_type">result</span> = <span class="source_type">Y</span> cross GroundNormal;
+<a name="102"></a>
+<a name="103"></a>        <span class="source_comment">//TODO: Change to desired rotation for smooth rotation
+</span><a name="104"></a>
+<a name="105"></a>        <span class="source_type">NewRotation</span>.Yaw = Rotation.Yaw;
+<a name="106"></a>        <span class="source_type">NewRotation</span>.Pitch = <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span>(<span class="source_type">result</span>).Pitch;
+<a name="107"></a>        <span class="source_type">NewRotation</span>.Roll = <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span>(<span class="source_type">result</span> cross GroundNormal).Pitch;
+<a name="108"></a>
+<a name="109"></a>        SetRotation(<span class="source_type">NewRotation</span>);
+<a name="110"></a>    }
+<a name="111"></a>}
+<a name="112"></a>
+<a name="113"></a><span class="source_comment">// Called after death anim ends (on ground)
+</span><a name="114"></a><span class="source_keyword">function</span> UpdateCollisionCyllinder()
+<a name="115"></a>{
+<a name="116"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> newloc;
+<a name="117"></a>    <span class="source_keyword">local</span> <span class="source_keyword">float</span> offset;
+<a name="118"></a>
+<a name="119"></a>    <span class="source_keyword">if</span> (!bWasPlayer)
+<a name="120"></a>        <span class="source_keyword">return</span>;
+<a name="121"></a>
+<a name="122"></a>    SetCollision(<span class="source_keyword">false</span>, <span class="source_keyword">false</span>, <span class="source_keyword">false</span>);
+<a name="123"></a>    bCollideWorld = <span class="source_keyword">false</span>;
+<a name="124"></a>
+<a name="125"></a>    <span class="source_comment">// Adjust so corpse is lying on ground
+</span><a name="126"></a>    offset = CollisionHeight - default.CollisionHeight;
+<a name="127"></a>    newloc = Location;
+<a name="128"></a>    newloc.Z -= offset;
+<a name="129"></a>    SetCollisionSize(CollisionRadius, default.CollisionHeight);
+<a name="130"></a>    SetLocation(newloc);
+<a name="131"></a>    PrePivot.Z += offset;
+<a name="132"></a>
+<a name="133"></a>    UpdateRotation();
+<a name="134"></a>
+<a name="135"></a>    SetCollision(<span class="source_keyword">true</span>, <span class="source_keyword">false</span>, <span class="source_keyword">false</span>);   <span class="source_comment">// Allow to clip through other corpses
+</span><a name="136"></a>    bCollideWorld = <span class="source_keyword">true</span>;
+<a name="137"></a>}
+<a name="138"></a>
+<a name="139"></a><span class="source_keyword">function</span> BaseChange()
+<a name="140"></a>{
+<a name="141"></a>    <span class="source_keyword">if</span>((Base == <span class="source_keyword">None</span>) && (Physics == PHYS_None))
+<a name="142"></a>        SetPhysics(PHYS_Falling);
+<a name="143"></a>}
+<a name="144"></a>
+<a name="145"></a><span class="source_keyword">function</span> Destroyed()
+<a name="146"></a>{
+<a name="147"></a>    <span class="source_keyword">if</span> ( !bDecorative )
+<a name="148"></a>        DeathZone.NumCarcasses--;
+<a name="149"></a>    <span class="source_keyword">Super</span>.Destroyed();
+<a name="150"></a>}
+<a name="151"></a>
+<a name="152"></a>
+<a name="153"></a><span class="source_keyword">function</span> SetOnFire(<span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">EventInstigator</span>, <span class="source_keyword">int</span> joint)
+<a name="154"></a>{
+<a name="155"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../runei/pawnfire.html" class="source">PawnFire</a></span> <span class="source_type">F</span>;
+<a name="156"></a>
+<a name="157"></a>    <span class="source_keyword">if</span> (bBurnable)
+<a name="158"></a>    {
+<a name="159"></a>        <span class="source_keyword">if</span> (ActorAttachedTo(joint) == <span class="source_keyword">None</span>)
+<a name="160"></a>        {
+<a name="161"></a>            <span class="source_type">F</span> = Spawn(<span class="source_keyword">class</span><span class="source_name">'PawnFire'</span>,<span class="source_type">EventInstigator</span>);
+<a name="162"></a>            AttachActorToJoint(<span class="source_type">F</span>, joint);
+<a name="163"></a>        }
+<a name="164"></a>    }
+<a name="165"></a>}
+<a name="166"></a>
+<a name="167"></a>
+<a name="168"></a><span class="source_comment">//============================================================
+</span><a name="169"></a><span class="source_comment">//
+</span><a name="170"></a><span class="source_comment">// MatterForJoint
+</span><a name="171"></a><span class="source_comment">//
+</span><a name="172"></a><span class="source_comment">// Returns what kind of material joint is associated with
+</span><a name="173"></a><span class="source_comment">//============================================================
+</span><a name="174"></a><span class="source_keyword">function</span> <span class="source_type"><a href="../core/object.html#EMatterType" class="source">EMatterType</a></span> MatterForJoint(<span class="source_keyword">int</span> joint)
+<a name="175"></a>{
+<a name="176"></a>    <span class="source_keyword">return</span> MATTER_FLESH;
+<a name="177"></a>}
+<a name="178"></a>
+<a name="179"></a>
+<a name="180"></a><span class="source_keyword">function</span> ApplyPainToJoint(<span class="source_keyword">int</span> joint, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> momentum)
+<a name="181"></a>{
+<a name="182"></a>    <span class="source_keyword">if</span> ((JointFlags[joint] & JOINT_FLAG_ACCELERATIVE) != <span class="source_int">0</span>)
+<a name="183"></a>    {
+<a name="184"></a>        <span class="source_comment">//slog("moving"@GetJointName(joint));
+</span><a name="185"></a>        ApplyJointForce(joint, Momentum);
+<a name="186"></a>    }
+<a name="187"></a>}
+<a name="188"></a>
+<a name="189"></a><span class="source_keyword">function</span> <span class="source_keyword">bool</span> JointDamaged(<span class="source_keyword">int</span> Damage, <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">EventInstigator</span>, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitLoc, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> Momentum, <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">DamageType</a></span>, <span class="source_keyword">int</span> joint)
+<a name="190"></a>{   <span class="source_comment">// Do spasm
+</span><a name="191"></a><span class="source_comment">//		ApplyPainToJoint(joint, Momentum);
+</span><a name="192"></a>    <span class="source_keyword">if</span> (bDeleteMe)
+<a name="193"></a>        <span class="source_keyword">return</span> <span class="source_keyword">true</span>;
+<a name="194"></a>
+<a name="195"></a>    <span class="source_keyword">Super</span>(<span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span>).JointDamaged(Damage, <span class="source_type">EventInstigator</span>, HitLoc, Momentum, <span class="source_type"><a href="../engine/damagetype.html" class="source">DamageType</a></span>, joint);    <span class="source_comment">// this for fire
+</span><a name="196"></a>    <span class="source_keyword">return</span> <span class="source_keyword">Super</span>.JointDamaged(Damage, <span class="source_type">EventInstigator</span>, HitLoc, Momentum, <span class="source_type"><a href="../engine/damagetype.html" class="source">DamageType</a></span>, joint);
+<a name="197"></a>}
+<a name="198"></a>
+<a name="199"></a><span class="source_keyword">function</span> SpawnBodyGibs(<span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> momentum)
+<a name="200"></a>{
+<a name="201"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> <span class="source_type">i</span>, NumSourceGroups;
+<a name="202"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../engine/debris.html" class="source">debris</a></span> <span class="source_type"><a href="../runei/gib.html" class="source">Gib</a></span>;
+<a name="203"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> loc;
+<a name="204"></a>    <span class="source_keyword">local</span> <span class="source_keyword">float</span> <span class="source_type"><a href="../core/object.html#Scale" class="source">scale</a></span>;
+<a name="205"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> numchunks;
+<a name="206"></a>
+<a name="207"></a>    <span class="source_keyword">if</span> (<span class="source_keyword">class</span><span class="source_name">'GameInfo'</span>.Default.bLowGore )
+<a name="208"></a>        <span class="source_keyword">return</span>;
+<a name="209"></a>
+<a name="210"></a>    <span class="source_comment">// Find appropriate size of chunks
+</span><a name="211"></a>    <span class="source_type"><a href="../core/object.html#Scale" class="source">scale</a></span> = (CollisionRadius*CollisionRadius*CollisionHeight) / (GibCount*<span class="source_int">500</span>);
+<a name="212"></a>    <span class="source_type"><a href="../core/object.html#Scale" class="source">scale</a></span> = <span class="source_type"><a href="../core/object.html#Scale" class="source">scale</a></span> ** <span class="source_int">0.3333333</span>;
+<a name="213"></a>
+<a name="214"></a>    <span class="source_keyword">for</span> (NumSourceGroups=<span class="source_int">1</span>; NumSourceGroups&lt;<span class="source_int">16</span>; NumSourceGroups++)
+<a name="215"></a>    {
+<a name="216"></a>        <span class="source_keyword">if</span> (SkelGroupSkins[NumSourceGroups] == <span class="source_keyword">None</span>)
+<a name="217"></a>            <span class="source_keyword">break</span>;
+<a name="218"></a>    }
+<a name="219"></a>
+<a name="220"></a>    numchunks = GibCount * <span class="source_type">Level</span>.Game.DebrisPercentage;
+<a name="221"></a>    <span class="source_keyword">for</span> (<span class="source_type">i</span> = <span class="source_int">0</span>; <span class="source_type">i</span> &lt; numchunks; <span class="source_type">i</span>++)
+<a name="222"></a>    {
+<a name="223"></a>        loc = VRand();
+<a name="224"></a>        loc.X *= CollisionRadius;
+<a name="225"></a>        loc.<span class="source_type">Y</span> *= CollisionRadius;
+<a name="226"></a>        loc.Z *= CollisionHeight;
+<a name="227"></a>        loc += Location;
+<a name="228"></a>
+<a name="229"></a>        <span class="source_type"><a href="../runei/gib.html" class="source">Gib</a></span> = spawn(<span class="source_keyword">class</span><span class="source_name">'DebrisFlesh'</span>,,, loc,);
+<a name="230"></a>        <span class="source_keyword">if</span> (<span class="source_type"><a href="../runei/gib.html" class="source">Gib</a></span> != <span class="source_keyword">None</span>)
+<a name="231"></a>        {
+<a name="232"></a>            <span class="source_type"><a href="../runei/gib.html" class="source">Gib</a></span>.SetSize(<span class="source_type"><a href="../core/object.html#Scale" class="source">scale</a></span>);
+<a name="233"></a>            <span class="source_type"><a href="../runei/gib.html" class="source">Gib</a></span>.SetMomentum(Momentum);
+<a name="234"></a>            <span class="source_keyword">if</span> (FRand()&lt;<span class="source_int">0.3</span>)
+<a name="235"></a>                <span class="source_type"><a href="../runei/gib.html" class="source">Gib</a></span>.SetTexture(SkelGroupSkins[<span class="source_type">i</span>%NumSourceGroups]);
+<a name="236"></a>        }
+<a name="237"></a>    }
+<a name="238"></a>}
+<a name="239"></a>
+<a name="240"></a><span class="source_keyword">function</span> ChunkUp(<span class="source_keyword">int</span> Damage)
+<a name="241"></a>{
+<a name="242"></a>    SpawnBodyGibs(Velocity);
+<a name="243"></a>    destroy();
+<a name="244"></a>}
+<a name="245"></a>
+<a name="246"></a><span class="source_comment">//------------------------------------------------------------
+</span><a name="247"></a><span class="source_comment">//
+</span><a name="248"></a><span class="source_comment">// RemovedStabbedWeapon
+</span><a name="249"></a><span class="source_comment">//
+</span><a name="250"></a><span class="source_comment">//------------------------------------------------------------
+</span><a name="251"></a>
+<a name="252"></a><span class="source_keyword">function</span> RemovedStabbedWeapon()
+<a name="253"></a>{
+<a name="254"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">A</span>;
+<a name="255"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> JointIndex;
+<a name="256"></a>
+<a name="257"></a>    <span class="source_keyword">if</span>(StabJoint == <span class="source_name">''</span>)
+<a name="258"></a>        <span class="source_keyword">return</span>;
+<a name="259"></a>
+<a name="260"></a>    JointIndex = JointNamed(StabJoint);
+<a name="261"></a>    <span class="source_type">A</span> = DetachActorFromJoint(JointIndex);
+<a name="262"></a>
+<a name="263"></a>    <span class="source_keyword">if</span>(<span class="source_type">A</span> != <span class="source_keyword">None</span> && <span class="source_type">A</span>.IsA(<span class="source_name">'Weapon'</span>))
+<a name="264"></a>    {
+<a name="265"></a>        <span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span>(<span class="source_type">A</span>).RemoveStab(self, JointIndex);
+<a name="266"></a>        <span class="source_type"><a href="../engine/weapon.html" class="source">Weapon</a></span>(<span class="source_type">A</span>).StabbedActor = self;
+<a name="267"></a>    }
+<a name="268"></a>}
+<a name="269"></a>
+<a name="270"></a><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span> Debug(<span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span>, <span class="source_keyword">int</span> mode)
+<a name="271"></a>{
+<a name="272"></a>    <span class="source_keyword">local</span> <span class="source_keyword">int</span> pitch, yaw, roll;
+<a name="273"></a>
+<a name="274"></a>    <span class="source_keyword">Super</span>.Debug(<span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span>, mode);
+<a name="275"></a>
+<a name="276"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawText(<span class="source_string">"RuneCarcass:"</span>);
+<a name="277"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.CurY -= <span class="source_int">8</span>;
+<a name="278"></a>
+<a name="279"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawText(<span class="source_string">"  Base:"</span>@Base);
+<a name="280"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.CurY -= <span class="source_int">8</span>;
+<a name="281"></a>
+<a name="282"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawText(<span class="source_string">"  Rotation:     "</span>@Rotation);
+<a name="283"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.CurY -= <span class="source_int">8</span>;
+<a name="284"></a>
+<a name="285"></a>    <span class="source_keyword">if</span> (Base != <span class="source_keyword">None</span>)
+<a name="286"></a>    {
+<a name="287"></a>        <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawText(<span class="source_string">"  Base Rotation:"</span>@Base.Rotation);
+<a name="288"></a>        <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.CurY -= <span class="source_int">8</span>;
+<a name="289"></a>    }
+<a name="290"></a>
+<a name="291"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawText(<span class="source_string">"  RotationRate: P="</span>$RotationRate.pitch$<span class="source_string">" Y="</span>$RotationRate.yaw$<span class="source_string">" R="</span>$RotationRate.roll);
+<a name="292"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.CurY -= <span class="source_int">8</span>;
+<a name="293"></a>
+<a name="294"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawText(<span class="source_string">"  DesiredRotation: P="</span>$desiredrotation.pitch$<span class="source_string">" Y="</span>$desiredrotation.yaw$<span class="source_string">" R="</span>$desiredrotation.roll);
+<a name="295"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.CurY -= <span class="source_int">8</span>;
+<a name="296"></a>
+<a name="297"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawText(<span class="source_string">"  bRotateToDesired: "</span>$bRotateToDesired);
+<a name="298"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.CurY -= <span class="source_int">8</span>;
+<a name="299"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.DrawText(<span class="source_string">"  bFixedRotationDir: "</span>$bFixedRotationDir);
+<a name="300"></a>    <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>.CurY -= <span class="source_int">8</span>;       
+<a name="301"></a>}
+<a name="302"></a>
+<a name="303"></a><span class="source_keyword">defaultproperties</span>
+<a name="304"></a>{
+<a name="305"></a>     bBurnable=<span class="source_keyword">True</span>
+<a name="306"></a>     Physics=PHYS_None
+<a name="307"></a>     DrawType=DT_SkeletalMesh
+<a name="308"></a>     LODPercentMax=<span class="source_int">0.600000</span>
+<a name="309"></a>     LODCurve=LOD_CURVE_AGGRESSIVE
+<a name="310"></a>     bSweepable=<span class="source_keyword">True</span>
+<a name="311"></a>}
+<a name="312"></a></pre></td></tr></table></div>
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header"><a href="../runei/runecarcass.html">Class</a></td>
+	<td class="header_hilight">Source</td>
+	<td class="header"><a class="header" href="../classtree.html#RuneCarcass">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../Source_runei/ropepoint.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../Source_runei/runeflight.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Class file time: Thu 28/1/2021 11:08:48.000 - Creation time: Thu 28/1/2021 11:27:44.636 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

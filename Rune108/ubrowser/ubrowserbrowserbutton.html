@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - UBrowser.UBrowserBrowserButton</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../ubrowser/ubrowser-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_ubrowser/ubrowserbrowserbutton.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#UBrowserBrowserButton">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../ubrowser/ubrowserbannerbar.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../ubrowser/ubrowserbufferedtcplink.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#ubrowser/ubrowserbrowserbutton.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../ubrowser/ubrowser-overview.html">UBrowser</a>.UBrowserBrowserButton</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../uwindow/uwindowbutton.html">UWindowButton</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowbase.html">UWindowBase</a>
+   |   
+   +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowwindow.html">UWindowWindow</a>
+      |   
+      +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowdialogcontrol.html">UWindowDialogControl</a>
+         |   
+         +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowbutton.html">UWindowButton</a>
+            |   
+            +-- <a href="../ubrowser/ubrowser-overview.html">UBrowser</a>.<a href="../ubrowser/ubrowserbrowserbutton.html">UBrowserBrowserButton</a>
+</pre>
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bSpin" name="bSpin" title="go to the details">bSpin</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ClickURL" name="ClickURL" title="go to the details">ClickURL</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_CurrentFrame" name="CurrentFrame" title="go to the details">CurrentFrame</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_CurrentTime" name="CurrentTime" title="go to the details">CurrentTime</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_LogoCount" name="LogoCount" title="go to the details">LogoCount</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/texture.html">Texture</a></td><td width="66%"><a href="#_LogoImages[30]" name="LogoImages[30]" title="go to the details">LogoImages[30]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_LogoNames[30]" name="LogoNames[30]" title="go to the details">LogoNames[30]</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowbutton.html">UWindowButton</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowbutton.html#bDisabled">bDisabled</a>, <a href="../uwindow/uwindowbutton.html#bStretched">bStretched</a>, <a href="../uwindow/uwindowbutton.html#bUseRegion">bUseRegion</a>, <a href="../uwindow/uwindowbutton.html#DisabledRegion">DisabledRegion</a>, <a href="../uwindow/uwindowbutton.html#DisabledTexture">DisabledTexture</a>, <a href="../uwindow/uwindowbutton.html#DownRegion">DownRegion</a>, <a href="../uwindow/uwindowbutton.html#DownSound">DownSound</a>, <a href="../uwindow/uwindowbutton.html#DownTexture">DownTexture</a>, <a href="../uwindow/uwindowbutton.html#ImageX">ImageX</a>, <a href="../uwindow/uwindowbutton.html#ImageY">ImageY</a>, <a href="../uwindow/uwindowbutton.html#OverRegion">OverRegion</a>, <a href="../uwindow/uwindowbutton.html#OverSound">OverSound</a>, <a href="../uwindow/uwindowbutton.html#OverTexture">OverTexture</a>, <a href="../uwindow/uwindowbutton.html#RegionScale">RegionScale</a>, <a href="../uwindow/uwindowbutton.html#ToolTipString">ToolTipString</a>, <a href="../uwindow/uwindowbutton.html#UpRegion">UpRegion</a>, <a href="../uwindow/uwindowbutton.html#UpTexture">UpTexture</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowdialogcontrol.html">UWindowDialogControl</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowdialogcontrol.html#Align">Align</a>, <a href="../uwindow/uwindowdialogcontrol.html#bAcceptExternalDragDrop">bAcceptExternalDragDrop</a>, <a href="../uwindow/uwindowdialogcontrol.html#bHasKeyboardFocus">bHasKeyboardFocus</a>, <a href="../uwindow/uwindowdialogcontrol.html#bNoKeyboard">bNoKeyboard</a>, <a href="../uwindow/uwindowdialogcontrol.html#Font">Font</a>, <a href="../uwindow/uwindowdialogcontrol.html#HelpText">HelpText</a>, <a href="../uwindow/uwindowdialogcontrol.html#MinHeight">MinHeight</a>, <a href="../uwindow/uwindowdialogcontrol.html#MinWidth">MinWidth</a>, <a href="../uwindow/uwindowdialogcontrol.html#NotifyWindow">NotifyWindow</a>, <a href="../uwindow/uwindowdialogcontrol.html#TabNext">TabNext</a>, <a href="../uwindow/uwindowdialogcontrol.html#TabPrev">TabPrev</a>, <a href="../uwindow/uwindowdialogcontrol.html#Text">Text</a>, <a href="../uwindow/uwindowdialogcontrol.html#TextColor">TextColor</a>, <a href="../uwindow/uwindowdialogcontrol.html#TextX">TextX</a>, <a href="../uwindow/uwindowdialogcontrol.html#TextY">TextY</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Click-" name="Click" title="go to the details">Click</a> (float X, float Y))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Created-" name="Created" title="go to the details">Created</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Tick-" name="Tick" title="go to the details">Tick</a> (float Delta))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowbutton.html">UWindowButton</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowbutton.html#BeforePaint">BeforePaint</a>, <a href="../uwindow/uwindowbutton.html#Click">Click</a>, <a href="../uwindow/uwindowbutton.html#Created">Created</a>, <a href="../uwindow/uwindowbutton.html#DoubleClick">DoubleClick</a>, <a href="../uwindow/uwindowbutton.html#KeyDown">KeyDown</a>, <a href="../uwindow/uwindowbutton.html#MClick">MClick</a>, <a href="../uwindow/uwindowbutton.html#MouseEnter">MouseEnter</a>, <a href="../uwindow/uwindowbutton.html#MouseLeave">MouseLeave</a>, <a href="../uwindow/uwindowbutton.html#Paint">Paint</a>, <a href="../uwindow/uwindowbutton.html#RClick">RClick</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowdialogcontrol.html">UWindowDialogControl</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowdialogcontrol.html#BeforePaint">BeforePaint</a>, <a href="../uwindow/uwindowdialogcontrol.html#CheckExternalDrag">CheckExternalDrag</a>, <a href="../uwindow/uwindowdialogcontrol.html#Created">Created</a>, <a href="../uwindow/uwindowdialogcontrol.html#ExternalDragOver">ExternalDragOver</a>, <a href="../uwindow/uwindowdialogcontrol.html#KeyDown">KeyDown</a>, <a href="../uwindow/uwindowdialogcontrol.html#KeyFocusEnter">KeyFocusEnter</a>, <a href="../uwindow/uwindowdialogcontrol.html#KeyFocusExit">KeyFocusExit</a>, <a href="../uwindow/uwindowdialogcontrol.html#MouseEnter">MouseEnter</a>, <a href="../uwindow/uwindowdialogcontrol.html#MouseLeave">MouseLeave</a>, <a href="../uwindow/uwindowdialogcontrol.html#MouseMove">MouseMove</a>, <a href="../uwindow/uwindowdialogcontrol.html#Notify">Notify</a>, <a href="../uwindow/uwindowdialogcontrol.html#Register">Register</a>, <a href="../uwindow/uwindowdialogcontrol.html#SetFont">SetFont</a>, <a href="../uwindow/uwindowdialogcontrol.html#SetHelpText">SetHelpText</a>, <a href="../uwindow/uwindowdialogcontrol.html#SetText">SetText</a>, <a href="../uwindow/uwindowdialogcontrol.html#SetTextColor">SetTextColor</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_bSpin" class="hidden"></a>bSpin <a href="../Source_ubrowser/ubrowserbrowserbutton.html#11" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bSpin;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ClickURL" class="hidden"></a>ClickURL <a href="../Source_ubrowser/ubrowserbrowserbutton.html#6" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> ClickURL;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CurrentFrame" class="hidden"></a>CurrentFrame <a href="../Source_ubrowser/ubrowserbrowserbutton.html#8" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> CurrentFrame;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CurrentTime" class="hidden"></a>CurrentTime <a href="../Source_ubrowser/ubrowserbrowserbutton.html#9" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">float</span> CurrentTime;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LogoCount" class="hidden"></a>LogoCount <a href="../Source_ubrowser/ubrowserbrowserbutton.html#5" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> LogoCount;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LogoImages[30]" class="hidden"></a>LogoImages[30] <a href="../Source_ubrowser/ubrowserbrowserbutton.html#4" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span> LogoImages[<span class="source_int">30</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LogoNames[30]" class="hidden"></a>LogoNames[30] <a href="../Source_ubrowser/ubrowserbrowserbutton.html#3" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> LogoNames[<span class="source_int">30</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_Click-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Click <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserbrowserbutton.html#56" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Click ( <span class="source_keyword">float</span> X, <span class="source_keyword">float</span> <span class="source_type">Y</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Created-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Created <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserbrowserbutton.html#13" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Created ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Tick-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Tick <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserbrowserbutton.html#30" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Tick ( <span class="source_keyword">float</span> <span class="source_type">Delta</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     LogoNames(<span class="source_int">0</span>)=<span class="source_string">"RotatingU.u_a00"</span>
+     LogoNames(<span class="source_int">1</span>)=<span class="source_string">"RotatingU.u_a01"</span>
+     LogoNames(<span class="source_int">2</span>)=<span class="source_string">"RotatingU.u_a02"</span>
+     LogoNames(<span class="source_int">3</span>)=<span class="source_string">"RotatingU.u_a03"</span>
+     LogoNames(<span class="source_int">4</span>)=<span class="source_string">"RotatingU.u_a04"</span>
+     LogoNames(<span class="source_int">5</span>)=<span class="source_string">"RotatingU.u_a05"</span>
+     LogoNames(<span class="source_int">6</span>)=<span class="source_string">"RotatingU.u_a06"</span>
+     LogoNames(<span class="source_int">7</span>)=<span class="source_string">"RotatingU.u_a07"</span>
+     LogoNames(<span class="source_int">8</span>)=<span class="source_string">"RotatingU.u_a08"</span>
+     LogoNames(<span class="source_int">9</span>)=<span class="source_string">"RotatingU.u_a09"</span>
+     LogoNames(<span class="source_int">10</span>)=<span class="source_string">"RotatingU.u_a10"</span>
+     LogoNames(<span class="source_int">11</span>)=<span class="source_string">"RotatingU.u_a11"</span>
+     LogoNames(<span class="source_int">12</span>)=<span class="source_string">"RotatingU.u_a12"</span>
+     LogoNames(<span class="source_int">13</span>)=<span class="source_string">"RotatingU.u_a13"</span>
+     LogoNames(<span class="source_int">14</span>)=<span class="source_string">"RotatingU.u_a14"</span>
+     LogoNames(<span class="source_int">15</span>)=<span class="source_string">"RotatingU.u_a15"</span>
+     LogoNames(<span class="source_int">16</span>)=<span class="source_string">"RotatingU.u_a16"</span>
+     LogoNames(<span class="source_int">17</span>)=<span class="source_string">"RotatingU.u_a17"</span>
+     LogoNames(<span class="source_int">18</span>)=<span class="source_string">"RotatingU.u_a18"</span>
+     LogoNames(<span class="source_int">19</span>)=<span class="source_string">"RotatingU.u_a19"</span>
+     LogoNames(<span class="source_int">20</span>)=<span class="source_string">"RotatingU.u_a20"</span>
+     LogoNames(<span class="source_int">21</span>)=<span class="source_string">"RotatingU.u_a21"</span>
+     LogoNames(<span class="source_int">22</span>)=<span class="source_string">"RotatingU.u_a22"</span>
+     LogoNames(<span class="source_int">23</span>)=<span class="source_string">"RotatingU.u_a23"</span>
+     LogoNames(<span class="source_int">24</span>)=<span class="source_string">"RotatingU.u_a24"</span>
+     LogoNames(<span class="source_int">25</span>)=<span class="source_string">"RotatingU.u_a25"</span>
+     LogoNames(<span class="source_int">26</span>)=<span class="source_string">"RotatingU.u_a26"</span>
+     LogoNames(<span class="source_int">27</span>)=<span class="source_string">"RotatingU.u_a27"</span>
+     LogoNames(<span class="source_int">28</span>)=<span class="source_string">"RotatingU.u_a28"</span>
+     LogoNames(<span class="source_int">29</span>)=<span class="source_string">"RotatingU.u_a29"</span>
+     LogoCount=<span class="source_int">30</span>
+     ClickURL=<span class="source_string">"http://www.runegame.com"</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../ubrowser/ubrowser-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_ubrowser/ubrowserbrowserbutton.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#UBrowserBrowserButton">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../ubrowser/ubrowserbannerbar.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../ubrowser/ubrowserbufferedtcplink.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:41:13.252 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

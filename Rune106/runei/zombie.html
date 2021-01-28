@@ -1,0 +1,1052 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - RuneI.Zombie</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/zombie.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#Zombie">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/worlddecal.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/zombie2.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#runei/zombie.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../runei/runei-overview.html">RuneI</a>.Zombie</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../runei/scriptpawn.html">ScriptPawn</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a>
+   |   
+   +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/pawn.html">Pawn</a>
+      |   
+      +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/scriptpawn.html">ScriptPawn</a>
+         |   
+         +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/zombie.html">Zombie</a>
+</pre>
+
+<h4>Direct Known Subclasses:</h4>
+<blockquote>
+	<a href="../runei/zombie2.html">Zombie2</a>
+</blockquote>
+
+<hr />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Constants Summary</th>
+</tr>
+<tr><td width="40%"><a href="#_DEFAULT_TWEEN" name="DEFAULT_TWEEN" title="go to the details">DEFAULT_TWEEN</a></td><td width="10%">=</td><td width="50%">0.15</td></tr>
+
+</table>
+
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../runei/zombieeye.html">ZombieEye</a></td><td width="66%"><a href="#_Eyes" name="Eyes" title="go to the details">Eyes</a></td></tr>
+<tr><th colspan="2" class="small">Sounds</th></tr>
+<tr><td nowrap="nowrap" width="33%">sound</td><td width="66%"><a href="#_DecapitateSound" name="DecapitateSound" title="go to the details">DecapitateSound</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">sound</td><td width="66%"><a href="#_GreenPuffSound" name="GreenPuffSound" title="go to the details">GreenPuffSound</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">sound</td><td width="66%"><a href="#_ZombieGetUpSound" name="ZombieGetUpSound" title="go to the details">ZombieGetUpSound</a></td></tr>
+<tr><th colspan="2" class="small">Zombie</th></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_CrucifiedAnim" name="CrucifiedAnim" title="go to the details">CrucifiedAnim</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_LungeChance" name="LungeChance" title="go to the details">LungeChance</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/scriptpawn.html">ScriptPawn</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/scriptpawn.html#AcquireSound">AcquireSound</a>, <a href="../runei/scriptpawn.html#AlertOrders">AlertOrders</a>, <a href="../runei/scriptpawn.html#AlertOrdersTag">AlertOrdersTag</a>, <a href="../runei/scriptpawn.html#Ally">Ally</a>, <a href="../runei/scriptpawn.html#AllyMaxTime">AllyMaxTime</a>, <a href="../runei/scriptpawn.html#AllyTime">AllyTime</a>, <a href="../runei/scriptpawn.html#AmbientFightSoundDelay">AmbientFightSoundDelay</a>, <a href="../runei/scriptpawn.html#AmbientFightSounds[3]">AmbientFightSounds[3]</a>, <a href="../runei/scriptpawn.html#AmbientWaitSoundDelay">AmbientWaitSoundDelay</a>, <a href="../runei/scriptpawn.html#AmbientWaitSounds[3]">AmbientWaitSounds[3]</a>, <a href="../runei/scriptpawn.html#AttackAction">AttackAction</a>, <a href="../runei/scriptpawn.html#AttackOrders">AttackOrders</a>, <a href="../runei/scriptpawn.html#A_PullUp">A_PullUp</a>, <a href="../runei/scriptpawn.html#A_StepUp">A_StepUp</a>, <a href="../runei/scriptpawn.html#bAlerted">bAlerted</a>, <a href="../runei/scriptpawn.html#bBurnable">bBurnable</a>, <a href="../runei/scriptpawn.html#bCanDefend">bCanDefend</a>, <a href="../runei/scriptpawn.html#bCanSwing">bCanSwing</a>, <a href="../runei/scriptpawn.html#bDisableCheckForEnemies">bDisableCheckForEnemies</a>, <a href="../runei/scriptpawn.html#bDodgeAfterAttack">bDodgeAfterAttack</a>, <a href="../runei/scriptpawn.html#bFallAtStartup">bFallAtStartup</a>, <a href="../runei/scriptpawn.html#bFrustrated">bFrustrated</a>, <a href="../runei/scriptpawn.html#bGlider">bGlider</a>, <a href="../runei/scriptpawn.html#bIsBoss">bIsBoss</a>, <a href="../runei/scriptpawn.html#BlockChance">BlockChance</a>, <a href="../runei/scriptpawn.html#bLungeAttack">bLungeAttack</a>, <a href="../runei/scriptpawn.html#bMoveWhenUnreachable">bMoveWhenUnreachable</a>, <a href="../runei/scriptpawn.html#bPaceAttack">bPaceAttack</a>, <a href="../runei/scriptpawn.html#bQuiet">bQuiet</a>, <a href="../runei/scriptpawn.html#BreathSound">BreathSound</a>, <a href="../runei/scriptpawn.html#bRoamHome">bRoamHome</a>, <a href="../runei/scriptpawn.html#bStatueCanWake">bStatueCanWake</a>, <a href="../runei/scriptpawn.html#bStatueDestructible">bStatueDestructible</a>, <a href="../runei/scriptpawn.html#bTaskLocked">bTaskLocked</a>, <a href="../runei/scriptpawn.html#bTeamLeader">bTeamLeader</a>, <a href="../runei/scriptpawn.html#bWaitLook">bWaitLook</a>, <a href="../runei/scriptpawn.html#bWillJoin">bWillJoin</a>, <a href="../runei/scriptpawn.html#CurrentPoint">CurrentPoint</a>, <a href="../runei/scriptpawn.html#debugstates">debugstates</a>, <a href="../runei/scriptpawn.html#DispatchAction">DispatchAction</a>, <a href="../runei/scriptpawn.html#EnemyDist">EnemyDist</a>, <a href="../runei/scriptpawn.html#EnemyFacing">EnemyFacing</a>, <a href="../runei/scriptpawn.html#EnemyIncidence">EnemyIncidence</a>, <a href="../runei/scriptpawn.html#EnemyMovement">EnemyMovement</a>, <a href="../runei/scriptpawn.html#EnemyVertical">EnemyVertical</a>, <a href="../runei/scriptpawn.html#FearSound">FearSound</a>, <a href="../runei/scriptpawn.html#FightOrDefend">FightOrDefend</a>, <a href="../runei/scriptpawn.html#FightOrFlight">FightOrFlight</a>, <a href="../runei/scriptpawn.html#Hated">Hated</a>, <a href="../runei/scriptpawn.html#HighOrLow">HighOrLow</a>, <a href="../runei/scriptpawn.html#HighOrLowBlock">HighOrLowBlock</a>, <a href="../runei/scriptpawn.html#HomeBase">HomeBase</a>, <a href="../runei/scriptpawn.html#HomeRot">HomeRot</a>, <a href="../runei/scriptpawn.html#HuntDistance">HuntDistance</a>, <a href="../runei/scriptpawn.html#HuntSound">HuntSound</a>, <a href="../runei/scriptpawn.html#HuntStartTime">HuntStartTime</a>, <a href="../runei/scriptpawn.html#HuntTime">HuntTime</a>, <a href="../runei/scriptpawn.html#i">i</a>, <a href="../runei/scriptpawn.html#IgnoreEnemy">IgnoreEnemy</a>, <a href="../runei/scriptpawn.html#LastAction">LastAction</a>, <a href="../runei/scriptpawn.html#LastNodeVisited">LastNodeVisited</a>, <a href="../runei/scriptpawn.html#LastPathTime">LastPathTime</a>, <a href="../runei/scriptpawn.html#LastPointVisited">LastPointVisited</a>, <a href="../runei/scriptpawn.html#LatOrVertDodge">LatOrVertDodge</a>, <a href="../runei/scriptpawn.html#lookIndex">lookIndex</a>, <a href="../runei/scriptpawn.html#LungeRange">LungeRange</a>, <a href="../runei/scriptpawn.html#MaxStopWait">MaxStopWait</a>, <a href="../runei/scriptpawn.html#MinStopWait">MinStopWait</a>, <a href="../runei/scriptpawn.html#NextAnim">NextAnim</a>, <a href="../runei/scriptpawn.html#NextPoint">NextPoint</a>, <a href="../runei/scriptpawn.html#NumAmbientFightSounds">NumAmbientFightSounds</a>, <a href="../runei/scriptpawn.html#NumAmbientWaitSounds">NumAmbientWaitSounds</a>, <a href="../runei/scriptpawn.html#numHuntPaths">numHuntPaths</a>, <a href="../runei/scriptpawn.html#OrderObject">OrderObject</a>, <a href="../runei/scriptpawn.html#Orders">Orders</a>, <a href="../runei/scriptpawn.html#OrdersTag">OrdersTag</a>, <a href="../runei/scriptpawn.html#PaceRange">PaceRange</a>, <a href="../runei/scriptpawn.html#ProtectionTimer">ProtectionTimer</a>, <a href="../runei/scriptpawn.html#RoamSound">RoamSound</a>, <a href="../runei/scriptpawn.html#ShadowScale">ShadowScale</a>, <a href="../runei/scriptpawn.html#SpeechPos">SpeechPos</a>, <a href="../runei/scriptpawn.html#StartShield">StartShield</a>, <a href="../runei/scriptpawn.html#StartWeapon">StartWeapon</a>, <a href="../runei/scriptpawn.html#StatueAnimFrame">StatueAnimFrame</a>, <a href="../runei/scriptpawn.html#StatueAnimSeq">StatueAnimSeq</a>, <a href="../runei/scriptpawn.html#TeamTag">TeamTag</a>, <a href="../runei/scriptpawn.html#testfloat">testfloat</a>, <a href="../runei/scriptpawn.html#teststring">teststring</a>, <a href="../runei/scriptpawn.html#teststring2">teststring2</a>, <a href="../runei/scriptpawn.html#ThreatenSound">ThreatenSound</a>, <a href="../runei/scriptpawn.html#ThrowTrajectory">ThrowTrajectory</a>, <a href="../runei/scriptpawn.html#TimeBetweenAttacks">TimeBetweenAttacks</a>, <a href="../runei/scriptpawn.html#TriggerOrders">TriggerOrders</a>, <a href="../runei/scriptpawn.html#TriggerOrdersTag">TriggerOrdersTag</a>, <a href="../runei/scriptpawn.html#VecFromEnemy">VecFromEnemy</a>, <a href="../runei/scriptpawn.html#VecToEnemy">VecToEnemy</a>, <a href="../runei/scriptpawn.html#WanderDistance">WanderDistance</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/pawn.html">Pawn</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/pawn.html#AccelRate">AccelRate</a>, <a href="../engine/pawn.html#AirControl">AirControl</a>, <a href="../engine/pawn.html#AirSpeed">AirSpeed</a>, <a href="../engine/pawn.html#Alertness">Alertness</a>, <a href="../engine/pawn.html#AmbientSoundTime">AmbientSoundTime</a>, <a href="../engine/pawn.html#AttitudeToPlayer">AttitudeToPlayer</a>, <a href="../engine/pawn.html#AvgPhysicsTime">AvgPhysicsTime</a>, <a href="../engine/pawn.html#bAdvancedTactics">bAdvancedTactics</a>, <a href="../engine/pawn.html#bAlignToFloor">bAlignToFloor</a>, <a href="../engine/pawn.html#bAllowStandOn">bAllowStandOn</a>, <a href="../engine/pawn.html#bAltFire">bAltFire</a>, <a href="../engine/pawn.html#BaseEyeHeight">BaseEyeHeight</a>, <a href="../engine/pawn.html#bAutoActivate">bAutoActivate</a>, <a href="../engine/pawn.html#bAvoidLedges">bAvoidLedges</a>, <a href="../engine/pawn.html#bBehindView">bBehindView</a>, <a href="../engine/pawn.html#bCanDoSpecial">bCanDoSpecial</a>, <a href="../engine/pawn.html#bCanFly">bCanFly</a>, <a href="../engine/pawn.html#bCanGrabEdges">bCanGrabEdges</a>, <a href="../engine/pawn.html#bCanJump">bCanJump</a>, <a href="../engine/pawn.html#bCanLook">bCanLook</a>, <a href="../engine/pawn.html#bCanOpenDoors">bCanOpenDoors</a>, <a href="../engine/pawn.html#bCanStrafe">bCanStrafe</a>, <a href="../engine/pawn.html#bCanSwim">bCanSwim</a>, <a href="../engine/pawn.html#bCanWalk">bCanWalk</a>, <a href="../engine/pawn.html#bCountJumps">bCountJumps</a>, <a href="../engine/pawn.html#bDrowning">bDrowning</a>, <a href="../engine/pawn.html#bDuck">bDuck</a>, <a href="../engine/pawn.html#bExtra0">bExtra0</a>, <a href="../engine/pawn.html#bExtra1">bExtra1</a>, <a href="../engine/pawn.html#bExtra2">bExtra2</a>, <a href="../engine/pawn.html#bExtra3">bExtra3</a>, <a href="../engine/pawn.html#bFire">bFire</a>, <a href="../engine/pawn.html#bFixedStart">bFixedStart</a>, <a href="../engine/pawn.html#bFootsteps">bFootsteps</a>, <a href="../engine/pawn.html#bFreeLook">bFreeLook</a>, <a href="../engine/pawn.html#bFromWall">bFromWall</a>, <a href="../engine/pawn.html#bGibbable">bGibbable</a>, <a href="../engine/pawn.html#bHeadLookUpDouble">bHeadLookUpDouble</a>, <a href="../engine/pawn.html#bHitSlopedWall">bHitSlopedWall</a>, <a href="../engine/pawn.html#bHunting">bHunting</a>, <a href="../engine/pawn.html#bHurrying">bHurrying</a>, <a href="../engine/pawn.html#bInvisible">bInvisible</a>, <a href="../engine/pawn.html#bIsFemale">bIsFemale</a>, <a href="../engine/pawn.html#bIsHuman">bIsHuman</a>, <a href="../engine/pawn.html#bIsMultiSkinned">bIsMultiSkinned</a>, <a href="../engine/pawn.html#bIsPlayer">bIsPlayer</a>, <a href="../engine/pawn.html#bIsWalking">bIsWalking</a>, <a href="../engine/pawn.html#bJumpOffPawn">bJumpOffPawn</a>, <a href="../engine/pawn.html#bJustLanded">bJustLanded</a>, <a href="../engine/pawn.html#bLeadEnemy">bLeadEnemy</a>, <a href="../engine/pawn.html#BloodSteps">BloodSteps</a>, <a href="../engine/pawn.html#BloodyFootprintClass">BloodyFootprintClass</a>, <a href="../engine/pawn.html#bLook">bLook</a>, <a href="../engine/pawn.html#bLOSflag">bLOSflag</a>, <a href="../engine/pawn.html#bNeverSwitchOnPickup">bNeverSwitchOnPickup</a>, <a href="../engine/pawn.html#BodyPartHealth[15]">BodyPartHealth[15]</a>, <a href="../engine/pawn.html#bOverrideLookTarget">bOverrideLookTarget</a>, <a href="../engine/pawn.html#bReducedSpeed">bReducedSpeed</a>, <a href="../engine/pawn.html#bRotateHead">bRotateHead</a>, <a href="../engine/pawn.html#bRotateTorso">bRotateTorso</a>, <a href="../engine/pawn.html#bRun">bRun</a>, <a href="../engine/pawn.html#bShootSpecial">bShootSpecial</a>, <a href="../engine/pawn.html#bSnapLevel">bSnapLevel</a>, <a href="../engine/pawn.html#bStopAtLedges">bStopAtLedges</a>, <a href="../engine/pawn.html#bStopMoveIfCombatRange">bStopMoveIfCombatRange</a>, <a href="../engine/pawn.html#bStrafe">bStrafe</a>, <a href="../engine/pawn.html#bSwingingHigh">bSwingingHigh</a>, <a href="../engine/pawn.html#bSwingingLow">bSwingingLow</a>, <a href="../engine/pawn.html#bUpAndOut">bUpAndOut</a>, <a href="../engine/pawn.html#bUpdatingDisplay">bUpdatingDisplay</a>, <a href="../engine/pawn.html#bViewTarget">bViewTarget</a>, <a href="../engine/pawn.html#bWarping">bWarping</a>, <a href="../engine/pawn.html#bZoom">bZoom</a>, <a href="../engine/pawn.html#CarcassType">CarcassType</a>, <a href="../engine/pawn.html#ClassID">ClassID</a>, <a href="../engine/pawn.html#CombatRange">CombatRange</a>, <a href="../engine/pawn.html#CombatStyle">CombatStyle</a>, <a href="../engine/pawn.html#CurrentSkin">CurrentSkin</a>, <a href="../engine/pawn.html#DamageScaling">DamageScaling</a>, <a href="../engine/pawn.html#DeathHeight">DeathHeight</a>, <a href="../engine/pawn.html#DeathRadius">DeathRadius</a>, <a href="../engine/pawn.html#DesiredMouthRot">DesiredMouthRot</a>, <a href="../engine/pawn.html#DesiredSpeed">DesiredSpeed</a>, <a href="../engine/pawn.html#Destination">Destination</a>, <a href="../engine/pawn.html#Die">Die</a>, <a href="../engine/pawn.html#Die2">Die2</a>, <a href="../engine/pawn.html#Die3">Die3</a>, <a href="../engine/pawn.html#DieCount">DieCount</a>, <a href="../engine/pawn.html#DropWhenKilled">DropWhenKilled</a>, <a href="../engine/pawn.html#Enemy">Enemy</a>, <a href="../engine/pawn.html#EyeHeight">EyeHeight</a>, <a href="../engine/pawn.html#FaceTarget">FaceTarget</a>, <a href="../engine/pawn.html#Floor">Floor</a>, <a href="../engine/pawn.html#Focus">Focus</a>, <a href="../engine/pawn.html#FootprintClass">FootprintClass</a>, <a href="../engine/pawn.html#FootRegion">FootRegion</a>, <a href="../engine/pawn.html#FootStepBreakableStone[3]">FootStepBreakableStone[3]</a>, <a href="../engine/pawn.html#FootStepBreakableWood[3]">FootStepBreakableWood[3]</a>, <a href="../engine/pawn.html#FootStepEarth[3]">FootStepEarth[3]</a>, <a href="../engine/pawn.html#FootStepFlesh[3]">FootStepFlesh[3]</a>, <a href="../engine/pawn.html#FootStepIce[3]">FootStepIce[3]</a>, <a href="../engine/pawn.html#FootStepLava[3]">FootStepLava[3]</a>, <a href="../engine/pawn.html#FootStepMetal[3]">FootStepMetal[3]</a>, <a href="../engine/pawn.html#FootStepMud[3]">FootStepMud[3]</a>, <a href="../engine/pawn.html#FootStepSnow[3]">FootStepSnow[3]</a>, <a href="../engine/pawn.html#FootStepStone[3]">FootStepStone[3]</a>, <a href="../engine/pawn.html#FootstepVolume">FootstepVolume</a>, <a href="../engine/pawn.html#FootStepWater[3]">FootStepWater[3]</a>, <a href="../engine/pawn.html#FootStepWood[3]">FootStepWood[3]</a>, <a href="../engine/pawn.html#FovAngle">FovAngle</a>, <a href="../engine/pawn.html#GibClass">GibClass</a>, <a href="../engine/pawn.html#GibCount">GibCount</a>, <a href="../engine/pawn.html#GibSound">GibSound</a>, <a href="../engine/pawn.html#GrabLocationIn">GrabLocationIn</a>, <a href="../engine/pawn.html#GrabLocationUp">GrabLocationUp</a>, <a href="../engine/pawn.html#GroundSpeed">GroundSpeed</a>, <a href="../engine/pawn.html#HeadRegion">HeadRegion</a>, <a href="../engine/pawn.html#Health">Health</a>, <a href="../engine/pawn.html#HearingThreshold">HearingThreshold</a>, <a href="../engine/pawn.html#HitSound1">HitSound1</a>, <a href="../engine/pawn.html#HitSound2">HitSound2</a>, <a href="../engine/pawn.html#HitSound3">HitSound3</a>, <a href="../engine/pawn.html#Intelligence">Intelligence</a>, <a href="../engine/pawn.html#ItemCount">ItemCount</a>, <a href="../engine/pawn.html#JumpZ">JumpZ</a>, <a href="../engine/pawn.html#KillCount">KillCount</a>, <a href="../engine/pawn.html#LandGrunt">LandGrunt</a>, <a href="../engine/pawn.html#LandSoundBreakableStone">LandSoundBreakableStone</a>, <a href="../engine/pawn.html#LandSoundBreakableWood">LandSoundBreakableWood</a>, <a href="../engine/pawn.html#LandSoundEarth">LandSoundEarth</a>, <a href="../engine/pawn.html#LandSoundFlesh">LandSoundFlesh</a>, <a href="../engine/pawn.html#LandSoundIce">LandSoundIce</a>, <a href="../engine/pawn.html#LandSoundLava">LandSoundLava</a>, <a href="../engine/pawn.html#LandSoundMetal">LandSoundMetal</a>, <a href="../engine/pawn.html#LandSoundMud">LandSoundMud</a>, <a href="../engine/pawn.html#LandSoundSnow">LandSoundSnow</a>, <a href="../engine/pawn.html#LandSoundStone">LandSoundStone</a>, <a href="../engine/pawn.html#LandSoundWater">LandSoundWater</a>, <a href="../engine/pawn.html#LandSoundWood">LandSoundWood</a>, <a href="../engine/pawn.html#LastPainSound">LastPainSound</a>, <a href="../engine/pawn.html#LastSeeingPos">LastSeeingPos</a>, <a href="../engine/pawn.html#LastSeenPos">LastSeenPos</a>, <a href="../engine/pawn.html#LastSeenTime">LastSeenTime</a>, <a href="../engine/pawn.html#LFootJoint">LFootJoint</a>, <a href="../engine/pawn.html#LookAngle">LookAngle</a>, <a href="../engine/pawn.html#LookDegPerSec">LookDegPerSec</a>, <a href="../engine/pawn.html#LookSpot">LookSpot</a>, <a href="../engine/pawn.html#LookTarget">LookTarget</a>, <a href="../engine/pawn.html#MaxBodyAngle">MaxBodyAngle</a>, <a href="../engine/pawn.html#MaxDesiredSpeed">MaxDesiredSpeed</a>, <a href="../engine/pawn.html#MaxHeadAngle">MaxHeadAngle</a>, <a href="../engine/pawn.html#MaxHealth">MaxHealth</a>, <a href="../engine/pawn.html#MaxMouthRot">MaxMouthRot</a>, <a href="../engine/pawn.html#MaxMouthRotRate">MaxMouthRotRate</a>, <a href="../engine/pawn.html#MaxPower">MaxPower</a>, <a href="../engine/pawn.html#MaxStepHeight">MaxStepHeight</a>, <a href="../engine/pawn.html#MaxStrength">MaxStrength</a>, <a href="../engine/pawn.html#MeleeRange">MeleeRange</a>, <a href="../engine/pawn.html#MenuName">MenuName</a>, <a href="../engine/pawn.html#MinHitWall">MinHitWall</a>, <a href="../engine/pawn.html#MouthRot">MouthRot</a>, <a href="../engine/pawn.html#MouthRotRate">MouthRotRate</a>, <a href="../engine/pawn.html#MovementSpeed">MovementSpeed</a>, <a href="../engine/pawn.html#MoveTarget">MoveTarget</a>, <a href="../engine/pawn.html#MoveTimer">MoveTimer</a>, <a href="../engine/pawn.html#NameArticle">NameArticle</a>, <a href="../engine/pawn.html#NextLabel">NextLabel</a>, <a href="../engine/pawn.html#nextPawn">nextPawn</a>, <a href="../engine/pawn.html#NextState">NextState</a>, <a href="../engine/pawn.html#NextStateAfterPain">NextStateAfterPain</a>, <a href="../engine/pawn.html#noise1loudness">noise1loudness</a>, <a href="../engine/pawn.html#noise1other">noise1other</a>, <a href="../engine/pawn.html#noise1spot">noise1spot</a>, <a href="../engine/pawn.html#noise1time">noise1time</a>, <a href="../engine/pawn.html#noise2loudness">noise2loudness</a>, <a href="../engine/pawn.html#noise2other">noise2other</a>, <a href="../engine/pawn.html#noise2spot">noise2spot</a>, <a href="../engine/pawn.html#noise2time">noise2time</a>, <a href="../engine/pawn.html#OldMessageTime">OldMessageTime</a>, <a href="../engine/pawn.html#OrthoZoom">OrthoZoom</a>, <a href="../engine/pawn.html#PainDelay">PainDelay</a>, <a href="../engine/pawn.html#PainTime">PainTime</a>, <a href="../engine/pawn.html#PendingWeapon">PendingWeapon</a>, <a href="../engine/pawn.html#PeripheralVision">PeripheralVision</a>, <a href="../engine/pawn.html#PlayerReplicationInfo">PlayerReplicationInfo</a>, <a href="../engine/pawn.html#PlayerReplicationInfoClass">PlayerReplicationInfoClass</a>, <a href="../engine/pawn.html#PlayerReStartState">PlayerReStartState</a>, <a href="../engine/pawn.html#ReducedDamagePct">ReducedDamagePct</a>, <a href="../engine/pawn.html#ReducedDamageType">ReducedDamageType</a>, <a href="../engine/pawn.html#RFootJoint">RFootJoint</a>, <a href="../engine/pawn.html#RouteCache[16]">RouteCache[16]</a>, <a href="../engine/pawn.html#RunePower">RunePower</a>, <a href="../engine/pawn.html#SecretCount">SecretCount</a>, <a href="../engine/pawn.html#SelectedItem">SelectedItem</a>, <a href="../engine/pawn.html#SelectionMesh">SelectionMesh</a>, <a href="../engine/pawn.html#Shadow">Shadow</a>, <a href="../engine/pawn.html#Shield">Shield</a>, <a href="../engine/pawn.html#ShieldJoint">ShieldJoint</a>, <a href="../engine/pawn.html#SightCounter">SightCounter</a>, <a href="../engine/pawn.html#SightRadius">SightRadius</a>, <a href="../engine/pawn.html#Skill">Skill</a>, <a href="../engine/pawn.html#SkinDefaultText">SkinDefaultText</a>, <a href="../engine/pawn.html#SoundDampening">SoundDampening</a>, <a href="../engine/pawn.html#SpecialGoal">SpecialGoal</a>, <a href="../engine/pawn.html#SpecialMesh">SpecialMesh</a>, <a href="../engine/pawn.html#SpecialPause">SpecialPause</a>, <a href="../engine/pawn.html#SpeechTime">SpeechTime</a>, <a href="../engine/pawn.html#SpeedScale">SpeedScale</a>, <a href="../engine/pawn.html#SplashTime">SplashTime</a>, <a href="../engine/pawn.html#Spree">Spree</a>, <a href="../engine/pawn.html#StabJoint">StabJoint</a>, <a href="../engine/pawn.html#StartEvent">StartEvent</a>, <a href="../engine/pawn.html#Stimulus">Stimulus</a>, <a href="../engine/pawn.html#Strength">Strength</a>, <a href="../engine/pawn.html#targetangle">targetangle</a>, <a href="../engine/pawn.html#UnderWaterTime">UnderWaterTime</a>, <a href="../engine/pawn.html#UninterruptedAnim">UninterruptedAnim</a>, <a href="../engine/pawn.html#UseActor">UseActor</a>, <a href="../engine/pawn.html#ViewLocation">ViewLocation</a>, <a href="../engine/pawn.html#ViewRotation">ViewRotation</a>, <a href="../engine/pawn.html#Visibility">Visibility</a>, <a href="../engine/pawn.html#VoicePitch">VoicePitch</a>, <a href="../engine/pawn.html#VoiceType">VoiceType</a>, <a href="../engine/pawn.html#WalkBob">WalkBob</a>, <a href="../engine/pawn.html#WalkingSpeed">WalkingSpeed</a>, <a href="../engine/pawn.html#WaterSpeed">WaterSpeed</a>, <a href="../engine/pawn.html#WaterStep">WaterStep</a>, <a href="../engine/pawn.html#WaterSteps">WaterSteps</a>, <a href="../engine/pawn.html#Weapon">Weapon</a>, <a href="../engine/pawn.html#WeaponJoint">WeaponJoint</a>, <a href="../engine/pawn.html#WetFootprintClass">WetFootprintClass</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Enumerations Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Enumerations from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/scriptpawn.html">ScriptPawn</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/scriptpawn.html#AttackAction_e">AttackAction_e</a>, <a href="../runei/scriptpawn.html#Facing_e">Facing_e</a>, <a href="../runei/scriptpawn.html#Incidence_e">Incidence_e</a>, <a href="../runei/scriptpawn.html#Movement_e">Movement_e</a>, <a href="../runei/scriptpawn.html#Vertical_e">Vertical_e</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Enumerations from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/pawn.html">Pawn</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/pawn.html#EAttitude">EAttitude</a>, <a href="../engine/pawn.html#EIntelligence">EIntelligence</a>, <a href="../engine/pawn.html#ESpeedScale">ESpeedScale</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_AltWeaponActivate-" name="AltWeaponActivate" title="go to the details">AltWeaponActivate</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_AmbientSoundTimer-Fighting" name="AmbientSoundTimer" title="go to the details">AmbientSoundTimer</a> ()))<br /><span class="function_state">Fighting</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ApplyGoreCap-" name="ApplyGoreCap" title="go to the details">ApplyGoreCap</a> (int BodyPart))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../engine/pawn.html#EAttitude">eAttitude</a>&nbsp;</td><td><a href="#_AttitudeToCreature-" name="AttitudeToCreature" title="go to the details">AttitudeToCreature</a> (<a href="../engine/pawn.html">Pawn</a> Other))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_BeginState-Crucified" name="BeginState" title="go to the details">BeginState</a> ()))<br /><span class="function_state">Crucified</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_BeginState-Fighting" name="BeginState" title="go to the details">BeginState</a> ()))<br /><span class="function_state">Fighting</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_BlockRatherThanDodge-Fighting" name="BlockRatherThanDodge" title="go to the details">BlockRatherThanDodge</a> ()))<br /><span class="function_state">Fighting</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_BodyPartCritical-" name="BodyPartCritical" title="go to the details">BodyPartCritical</a> (int BodyPart))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_BodyPartCritical-Crucified" name="BodyPartCritical" title="go to the details">BodyPartCritical</a> (int BodyPart))<br /><span class="function_state">Crucified</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>int&nbsp;</td><td><a href="#_BodyPartForJoint-" name="BodyPartForJoint" title="go to the details">BodyPartForJoint</a> (int joint))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>int&nbsp;</td><td><a href="#_BodyPartForPolyGroup-" name="BodyPartForPolyGroup" title="go to the details">BodyPartForPolyGroup</a> (int polygroup))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_BodyPartSeverable-" name="BodyPartSeverable" title="go to the details">BodyPartSeverable</a> (int BodyPart))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_CalcJumpVelocity-Fighting" name="CalcJumpVelocity" title="go to the details">CalcJumpVelocity</a> ()))<br /><span class="function_state">Fighting</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_CalcStrafePosition-Fighting" name="CalcStrafePosition" title="go to the details">CalcStrafePosition</a> ()))<br /><span class="function_state">Fighting</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_CalcStrafePosition2-Fighting" name="CalcStrafePosition2" title="go to the details">CalcStrafePosition2</a> ()))<br /><span class="function_state">Fighting</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_CanGotoPainState-Crucified" name="CanGotoPainState" title="go to the details">CanGotoPainState</a> ()))<br /><span class="function_state">Crucified</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_CanGotoPainState-Pain" name="CanGotoPainState" title="go to the details">CanGotoPainState</a> ()))<br /><span class="function_state">Pain</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_CanPickup-" name="CanPickup" title="go to the details">CanPickup</a> (<a href="../engine/inventory.html">Inventory</a> item))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_CanPickup-Crucified" name="CanPickup" title="go to the details">CanPickup</a> (<a href="../engine/inventory.html">Inventory</a> item))<br /><span class="function_state">Crucified</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_DamageBodyPart-" name="DamageBodyPart" title="go to the details">DamageBodyPart</a> (int Damage, <a href="../engine/pawn.html">Pawn</a> EventInstigator, <a href="../core/object.html#Vector">vector</a> HitLocation, <a href="../core/object.html#Vector">vector</a> Momentum, name DamageType, int bodypart))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Died-" name="Died" title="go to the details">Died</a> (<a href="../engine/pawn.html">pawn</a> Killer, name damageType, <a href="../core/object.html#Vector">vector</a> HitLocation))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_EndGetUpEffect-Pain" name="EndGetUpEffect" title="go to the details">EndGetUpEffect</a> ()))<br /><span class="function_state">Pain</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_EndState-Crucified" name="EndState" title="go to the details">EndState</a> ()))<br /><span class="function_state">Crucified</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_EndState-Fighting" name="EndState" title="go to the details">EndState</a> ()))<br /><span class="function_state">Fighting</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_EndState-Pain" name="EndState" title="go to the details">EndState</a> ()))<br /><span class="function_state">Pain</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_GlowEyes-" name="GlowEyes" title="go to the details">GlowEyes</a> (bool glow))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_InCombatRange-Fighting" name="InCombatRange" title="go to the details">InCombatRange</a> (<a href="../engine/actor.html">Actor</a> Other))<br /><span class="function_state">Fighting</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_InDangerFromAttack-Fighting" name="InDangerFromAttack" title="go to the details">InDangerFromAttack</a> ()))<br /><span class="function_state">Fighting</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_JointDamaged-" name="JointDamaged" title="go to the details">JointDamaged</a> (int Damage, <a href="../engine/pawn.html">Pawn</a> EventInstigator, <a href="../core/object.html#Vector">vector</a> HitLoc, <a href="../core/object.html#Vector">vector</a> Momentum, name DamageType, int joint))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_JointDamaged-Crucified" name="JointDamaged" title="go to the details">JointDamaged</a> (int damage, <a href="../engine/pawn.html">pawn</a> EventInstigator, <a href="../core/object.html#Vector">vector</a> HitLoc, <a href="../core/object.html#Vector">vector</a> Momentum, name DamageType, int joint))<br /><span class="function_state">Crucified</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>int&nbsp;</td><td><a href="#_JointForBodyPart-" name="JointForBodyPart" title="go to the details">JointForBodyPart</a> (int BodyPart))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_LimbSevered-" name="LimbSevered" title="go to the details">LimbSevered</a> (int BodyPart, <a href="../core/object.html#Vector">vector</a> Momentum))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_LongFall-" name="LongFall" title="go to the details">LongFall</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_MakeTwitchable-" name="MakeTwitchable" title="go to the details">MakeTwitchable</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../core/object.html#EMatterType">EMatterType</a>&nbsp;</td><td><a href="#_MatterForJoint-" name="MatterForJoint" title="go to the details">MatterForJoint</a> (int joint))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../engine/texture.html">Texture</a>&nbsp;</td><td><a href="#_PainSkin-" name="PainSkin" title="go to the details">PainSkin</a> (int BodyPart))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayBackup-" name="PlayBackup" title="go to the details">PlayBackup</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayBlockHigh-" name="PlayBlockHigh" title="go to the details">PlayBlockHigh</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayBlockLow-" name="PlayBlockLow" title="go to the details">PlayBlockLow</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayBodyHit-" name="PlayBodyHit" title="go to the details">PlayBodyHit</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayCower-" name="PlayCower" title="go to the details">PlayCower</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayDeath-" name="PlayDeath" title="go to the details">PlayDeath</a> (name DamageType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayDodgeBack-" name="PlayDodgeBack" title="go to the details">PlayDodgeBack</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayDodgeBackflip-" name="PlayDodgeBackflip" title="go to the details">PlayDodgeBackflip</a> (optional float tween)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayDodgeDuck-" name="PlayDodgeDuck" title="go to the details">PlayDodgeDuck</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayDodgeForward-" name="PlayDodgeForward" title="go to the details">PlayDodgeForward</a> (optional float tween)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayDodgeLeft-" name="PlayDodgeLeft" title="go to the details">PlayDodgeLeft</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayDodgeRight-" name="PlayDodgeRight" title="go to the details">PlayDodgeRight</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayDrownDeath-" name="PlayDrownDeath" title="go to the details">PlayDrownDeath</a> (name DamageType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayDrowning-" name="PlayDrowning" title="go to the details">PlayDrowning</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayDyingSound-" name="PlayDyingSound" title="go to the details">PlayDyingSound</a> (name damageType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayFrontHit-" name="PlayFrontHit" title="go to the details">PlayFrontHit</a> (float tweentime)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayHeadHit-" name="PlayHeadHit" title="go to the details">PlayHeadHit</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayHuntStop-" name="PlayHuntStop" title="go to the details">PlayHuntStop</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayInAir-" name="PlayInAir" title="go to the details">PlayInAir</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayJumping-" name="PlayJumping" title="go to the details">PlayJumping</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayLanding-" name="PlayLanding" title="go to the details">PlayLanding</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayLArmHit-" name="PlayLArmHit" title="go to the details">PlayLArmHit</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayLLegHit-" name="PlayLLegHit" title="go to the details">PlayLLegHit</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayMeleeHigh-" name="PlayMeleeHigh" title="go to the details">PlayMeleeHigh</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayMeleeLow-" name="PlayMeleeLow" title="go to the details">PlayMeleeLow</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayMoving-" name="PlayMoving" title="go to the details">PlayMoving</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayRArmHit-" name="PlayRArmHit" title="go to the details">PlayRArmHit</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayRLegHit-" name="PlayRLegHit" title="go to the details">PlayRLegHit</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayStrafeLeft-" name="PlayStrafeLeft" title="go to the details">PlayStrafeLeft</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayStrafeRight-" name="PlayStrafeRight" title="go to the details">PlayStrafeRight</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayTakeHit-" name="PlayTakeHit" title="go to the details">PlayTakeHit</a> (float tweentime, int damage, <a href="../core/object.html#Vector">vector</a> HitLoc, name damageType, <a href="../core/object.html#Vector">vector</a> Momentum, int BodyPart))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayTaunting-" name="PlayTaunting" title="go to the details">PlayTaunting</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayThrowing-" name="PlayThrowing" title="go to the details">PlayThrowing</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayTurning-" name="PlayTurning" title="go to the details">PlayTurning</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayWaiting-" name="PlayWaiting" title="go to the details">PlayWaiting</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PostBeginPlay-" name="PostBeginPlay" title="go to the details">PostBeginPlay</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SetOnFire-" name="SetOnFire" title="go to the details">SetOnFire</a> (<a href="../engine/pawn.html">Pawn</a> EventInstigator, int Joint))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>class&lt;<a href="../engine/actor.html">Actor</a>&gt;&nbsp;</td><td><a href="#_SeveredLimbClass-" name="SeveredLimbClass" title="go to the details">SeveredLimbClass</a> (int BodyPart))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_ShouldDefend-Fighting" name="ShouldDefend" title="go to the details">ShouldDefend</a> ()))<br /><span class="function_state">Fighting</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SpawnSark-Sarkify" name="SpawnSark" title="go to the details">SpawnSark</a> ()))<br /><span class="function_state">Sarkify</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_StartGetUpEffect-Pain" name="StartGetUpEffect" title="go to the details">StartGetUpEffect</a> ()))<br /><span class="function_state">Pain</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Timer-Fighting" name="Timer" title="go to the details">Timer</a> ()))<br /><span class="function_state">Fighting</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_TweenToJumping-" name="TweenToJumping" title="go to the details">TweenToJumping</a> (float time))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_TweenToMeleeHigh-" name="TweenToMeleeHigh" title="go to the details">TweenToMeleeHigh</a> (float time))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_TweenToMeleeLow-" name="TweenToMeleeLow" title="go to the details">TweenToMeleeLow</a> (float time))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_TweenToMoving-" name="TweenToMoving" title="go to the details">TweenToMoving</a> (float time))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_TweenToThrowing-" name="TweenToThrowing" title="go to the details">TweenToThrowing</a> (float time))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_TweenToTurning-" name="TweenToTurning" title="go to the details">TweenToTurning</a> (float time))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_TweenToWaiting-" name="TweenToWaiting" title="go to the details">TweenToWaiting</a> (float time))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ZoneChange-" name="ZoneChange" title="go to the details">ZoneChange</a> (<a href="../engine/zoneinfo.html">ZoneInfo</a> newZone))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/scriptpawn.html">ScriptPawn</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/scriptpawn.html#AddLocalVelocity">AddLocalVelocity</a>, <a href="../runei/scriptpawn.html#adjustJump">adjustJump</a>, <a href="../runei/scriptpawn.html#AfterSpawningInventory">AfterSpawningInventory</a>, <a href="../runei/scriptpawn.html#AllowWeaponToHitActor">AllowWeaponToHitActor</a>, <a href="../runei/scriptpawn.html#AmbientSoundTimer">AmbientSoundTimer</a>, <a href="../runei/scriptpawn.html#AnimEnd">AnimEnd</a>, <a href="../runei/scriptpawn.html#AssimilateVagrants">AssimilateVagrants</a>, <a href="../runei/scriptpawn.html#AttitudeTo">AttitudeTo</a>, <a href="../runei/scriptpawn.html#AttitudeToCreature">AttitudeToCreature</a>, <a href="../runei/scriptpawn.html#BeginState">BeginState</a>, <a href="../runei/scriptpawn.html#Breath">Breath</a>, <a href="../runei/scriptpawn.html#Bump">Bump</a>, <a href="../runei/scriptpawn.html#CanBeStatued">CanBeStatued</a>, <a href="../runei/scriptpawn.html#CanDirectlyThreaten">CanDirectlyThreaten</a>, <a href="../runei/scriptpawn.html#CanGotoPainState">CanGotoPainState</a>, <a href="../runei/scriptpawn.html#CheckDestination">CheckDestination</a>, <a href="../runei/scriptpawn.html#CheckElectLeader">CheckElectLeader</a>, <a href="../runei/scriptpawn.html#CheckForEnemies">CheckForEnemies</a>, <a href="../runei/scriptpawn.html#CheckReachable">CheckReachable</a>, <a href="../runei/scriptpawn.html#CreatureNormal">CreatureNormal</a>, <a href="../runei/scriptpawn.html#CreatureStatue">CreatureStatue</a>, <a href="../runei/scriptpawn.html#DamageAttitudeTo">DamageAttitudeTo</a>, <a href="../runei/scriptpawn.html#DebrisCloud">DebrisCloud</a>, <a href="../runei/scriptpawn.html#Debug">Debug</a>, <a href="../runei/scriptpawn.html#DecideOrders">DecideOrders</a>, <a href="../runei/scriptpawn.html#DoLanded">DoLanded</a>, <a href="../runei/scriptpawn.html#DoThrow">DoThrow</a>, <a href="../runei/scriptpawn.html#EndState">EndState</a>, <a href="../runei/scriptpawn.html#EnemyAcquired">EnemyAcquired</a>, <a href="../runei/scriptpawn.html#EnemyNotVisible">EnemyNotVisible</a>, <a href="../runei/scriptpawn.html#Evaluate">Evaluate</a>, <a href="../runei/scriptpawn.html#ExecuteScriptAction">ExecuteScriptAction</a>, <a href="../runei/scriptpawn.html#ExecuteScriptDispatcherAction">ExecuteScriptDispatcherAction</a>, <a href="../runei/scriptpawn.html#ExecuteScriptPoint">ExecuteScriptPoint</a>, <a href="../runei/scriptpawn.html#Falling">Falling</a>, <a href="../runei/scriptpawn.html#FearThisSpot">FearThisSpot</a>, <a href="../runei/scriptpawn.html#FindViewSpot">FindViewSpot</a>, <a href="../runei/scriptpawn.html#FinishScriptDispatcher">FinishScriptDispatcher</a>, <a href="../runei/scriptpawn.html#FollowOrders">FollowOrders</a>, <a href="../runei/scriptpawn.html#FrameNotify">FrameNotify</a>, <a href="../runei/scriptpawn.html#GetEnemyProximity">GetEnemyProximity</a>, <a href="../runei/scriptpawn.html#GiveAttackOrders">GiveAttackOrders</a>, <a href="../runei/scriptpawn.html#GiveFleeOrders">GiveFleeOrders</a>, <a href="../runei/scriptpawn.html#GiveNullOrders">GiveNullOrders</a>, <a href="../runei/scriptpawn.html#GrabEdge">GrabEdge</a>, <a href="../runei/scriptpawn.html#HeadZoneChange">HeadZoneChange</a>, <a href="../runei/scriptpawn.html#HearNoise">HearNoise</a>, <a href="../runei/scriptpawn.html#HitWall">HitWall</a>, <a href="../runei/scriptpawn.html#IAmLeader">IAmLeader</a>, <a href="../runei/scriptpawn.html#InAttackRange">InAttackRange</a>, <a href="../runei/scriptpawn.html#InformTeammates">InformTeammates</a>, <a href="../runei/scriptpawn.html#InLungeRange">InLungeRange</a>, <a href="../runei/scriptpawn.html#InMeleeRange">InMeleeRange</a>, <a href="../runei/scriptpawn.html#InPaceRange">InPaceRange</a>, <a href="../runei/scriptpawn.html#InRange">InRange</a>, <a href="../runei/scriptpawn.html#InventoryNormal">InventoryNormal</a>, <a href="../runei/scriptpawn.html#InventoryStatue">InventoryStatue</a>, <a href="../runei/scriptpawn.html#JointDamaged">JointDamaged</a>, <a href="../runei/scriptpawn.html#Landed">Landed</a>, <a href="../runei/scriptpawn.html#LimbSevered">LimbSevered</a>, <a href="../runei/scriptpawn.html#LongFall">LongFall</a>, <a href="../runei/scriptpawn.html#LookAtEndPoint">LookAtEndPoint</a>, <a href="../runei/scriptpawn.html#MatterForJoint">MatterForJoint</a>, <a href="../runei/scriptpawn.html#MayFall">MayFall</a>, <a href="../runei/scriptpawn.html#OrderFinished">OrderFinished</a>, <a href="../runei/scriptpawn.html#PainTimer">PainTimer</a>, <a href="../runei/scriptpawn.html#PickDestination">PickDestination</a>, <a href="../runei/scriptpawn.html#PickWaypoint">PickWaypoint</a>, <a href="../runei/scriptpawn.html#PlayAmbientFightSound">PlayAmbientFightSound</a>, <a href="../runei/scriptpawn.html#PlayAmbientWaitSound">PlayAmbientWaitSound</a>, <a href="../runei/scriptpawn.html#PlayBackup">PlayBackup</a>, <a href="../runei/scriptpawn.html#PlayBlockHigh">PlayBlockHigh</a>, <a href="../runei/scriptpawn.html#PlayBlockLow">PlayBlockLow</a>, <a href="../runei/scriptpawn.html#PlayCower">PlayCower</a>, <a href="../runei/scriptpawn.html#PlayDeath">PlayDeath</a>, <a href="../runei/scriptpawn.html#PlayDropWeapon">PlayDropWeapon</a>, <a href="../runei/scriptpawn.html#PlayFrontHit">PlayFrontHit</a>, <a href="../runei/scriptpawn.html#PlayHuntStop">PlayHuntStop</a>, <a href="../runei/scriptpawn.html#PlayInAir">PlayInAir</a>, <a href="../runei/scriptpawn.html#PlayJumping">PlayJumping</a>, <a href="../runei/scriptpawn.html#PlayLanding">PlayLanding</a>, <a href="../runei/scriptpawn.html#PlayMeleeHigh">PlayMeleeHigh</a>, <a href="../runei/scriptpawn.html#PlayMeleeLow">PlayMeleeLow</a>, <a href="../runei/scriptpawn.html#PlayMeleeVertical">PlayMeleeVertical</a>, <a href="../runei/scriptpawn.html#PlayMoving">PlayMoving</a>, <a href="../runei/scriptpawn.html#PlayMovingAttack">PlayMovingAttack</a>, <a href="../runei/scriptpawn.html#PlayPickupShield">PlayPickupShield</a>, <a href="../runei/scriptpawn.html#PlayPickupWeapon">PlayPickupWeapon</a>, <a href="../runei/scriptpawn.html#PlayPullUp">PlayPullUp</a>, <a href="../runei/scriptpawn.html#PlayStepUp">PlayStepUp</a>, <a href="../runei/scriptpawn.html#PlayStrafeLeft">PlayStrafeLeft</a>, <a href="../runei/scriptpawn.html#PlayStrafeRight">PlayStrafeRight</a>, <a href="../runei/scriptpawn.html#PlayTaunting">PlayTaunting</a>, <a href="../runei/scriptpawn.html#PlayThreatening">PlayThreatening</a>, <a href="../runei/scriptpawn.html#PlayThrowing">PlayThrowing</a>, <a href="../runei/scriptpawn.html#PlayTurning">PlayTurning</a>, <a href="../runei/scriptpawn.html#PlayWaiting">PlayWaiting</a>, <a href="../runei/scriptpawn.html#PowerupBlaze">PowerupBlaze</a>, <a href="../runei/scriptpawn.html#PowerupElectricity">PowerupElectricity</a>, <a href="../runei/scriptpawn.html#PowerupFire">PowerupFire</a>, <a href="../runei/scriptpawn.html#PowerupFriend">PowerupFriend</a>, <a href="../runei/scriptpawn.html#PowerupIce">PowerupIce</a>, <a href="../runei/scriptpawn.html#PowerupStone">PowerupStone</a>, <a href="../runei/scriptpawn.html#PreBeginPlay">PreBeginPlay</a>, <a href="../runei/scriptpawn.html#ProtectAlly">ProtectAlly</a>, <a href="../runei/scriptpawn.html#SeePlayer">SeePlayer</a>, <a href="../runei/scriptpawn.html#SetEnemy">SetEnemy</a>, <a href="../runei/scriptpawn.html#SetFall">SetFall</a>, <a href="../runei/scriptpawn.html#SetHome">SetHome</a>, <a href="../runei/scriptpawn.html#SetMovementPhysics">SetMovementPhysics</a>, <a href="../runei/scriptpawn.html#SetOnFire">SetOnFire</a>, <a href="../runei/scriptpawn.html#ShadowUpdate">ShadowUpdate</a>, <a href="../runei/scriptpawn.html#SoundChance">SoundChance</a>, <a href="../runei/scriptpawn.html#SpawnBloodSplot">SpawnBloodSplot</a>, <a href="../runei/scriptpawn.html#SpawnDebris">SpawnDebris</a>, <a href="../runei/scriptpawn.html#SpawnStartInventory">SpawnStartInventory</a>, <a href="../runei/scriptpawn.html#SpeechTimer">SpeechTimer</a>, <a href="../runei/scriptpawn.html#TestDirection">TestDirection</a>, <a href="../runei/scriptpawn.html#Tick">Tick</a>, <a href="../runei/scriptpawn.html#Timer">Timer</a>, <a href="../runei/scriptpawn.html#TouchSurroundingObjects">TouchSurroundingObjects</a>, <a href="../runei/scriptpawn.html#Trigger">Trigger</a>, <a href="../runei/scriptpawn.html#TryChargeEnemy">TryChargeEnemy</a>, <a href="../runei/scriptpawn.html#TweenToHuntStop">TweenToHuntStop</a>, <a href="../runei/scriptpawn.html#TweenToJumping">TweenToJumping</a>, <a href="../runei/scriptpawn.html#TweenToMeleeHigh">TweenToMeleeHigh</a>, <a href="../runei/scriptpawn.html#TweenToMeleeLow">TweenToMeleeLow</a>, <a href="../runei/scriptpawn.html#TweenToMoving">TweenToMoving</a>, <a href="../runei/scriptpawn.html#TweenToThrowing">TweenToThrowing</a>, <a href="../runei/scriptpawn.html#TweenToTurning">TweenToTurning</a>, <a href="../runei/scriptpawn.html#TweenToWaiting">TweenToWaiting</a>, <a href="../runei/scriptpawn.html#UnPowerupFriend">UnPowerupFriend</a>, <a href="../runei/scriptpawn.html#ValidEnemy">ValidEnemy</a>, <a href="../runei/scriptpawn.html#WantsToPickUp">WantsToPickUp</a>, <a href="../runei/scriptpawn.html#WeaponActivate">WeaponActivate</a>, <a href="../runei/scriptpawn.html#WeaponDeactivate">WeaponDeactivate</a>, <a href="../runei/scriptpawn.html#ZoneChange">ZoneChange</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/pawn.html">Pawn</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/pawn.html#AcquireInventory">AcquireInventory</a>, <a href="../engine/pawn.html#ActivateShield">ActivateShield</a>, <a href="../engine/pawn.html#actorReachable">actorReachable</a>, <a href="../engine/pawn.html#ActorTagged">ActorTagged</a>, <a href="../engine/pawn.html#AddInventory">AddInventory</a>, <a href="../engine/pawn.html#AddPawn">AddPawn</a>, <a href="../engine/pawn.html#AddVelocity">AddVelocity</a>, <a href="../engine/pawn.html#AdjustAim">AdjustAim</a>, <a href="../engine/pawn.html#AdjustDesireFor">AdjustDesireFor</a>, <a href="../engine/pawn.html#AdjustToss">AdjustToss</a>, <a href="../engine/pawn.html#AllowWeaponToHitActor">AllowWeaponToHitActor</a>, <a href="../engine/pawn.html#AlterDestination">AlterDestination</a>, <a href="../engine/pawn.html#AmbientSoundTimer">AmbientSoundTimer</a>, <a href="../engine/pawn.html#AngleTo">AngleTo</a>, <a href="../engine/pawn.html#AnimEnd">AnimEnd</a>, <a href="../engine/pawn.html#ApplyPainToJoint">ApplyPainToJoint</a>, <a href="../engine/pawn.html#BaseChange">BaseChange</a>, <a href="../engine/pawn.html#BecomeViewTarget">BecomeViewTarget</a>, <a href="../engine/pawn.html#BeginState">BeginState</a>, <a href="../engine/pawn.html#BodyPartCollision">BodyPartCollision</a>, <a href="../engine/pawn.html#BodyPartCritical">BodyPartCritical</a>, <a href="../engine/pawn.html#BodyPartForJoint">BodyPartForJoint</a>, <a href="../engine/pawn.html#BodyPartForPolyGroup">BodyPartForPolyGroup</a>, <a href="../engine/pawn.html#BodyPartMissing">BodyPartMissing</a>, <a href="../engine/pawn.html#BodyPartSeverable">BodyPartSeverable</a>, <a href="../engine/pawn.html#BodyPartVisibility">BodyPartVisibility</a>, <a href="../engine/pawn.html#BoostStrength">BoostStrength</a>, <a href="../engine/pawn.html#BotVoiceMessage">BotVoiceMessage</a>, <a href="../engine/pawn.html#CalcLookAngle">CalcLookAngle</a>, <a href="../engine/pawn.html#CanBeStatued">CanBeStatued</a>, <a href="../engine/pawn.html#CanGotoPainState">CanGotoPainState</a>, <a href="../engine/pawn.html#CanPickup">CanPickup</a>, <a href="../engine/pawn.html#CanSee">CanSee</a>, <a href="../engine/pawn.html#CanStabActor">CanStabActor</a>, <a href="../engine/pawn.html#ChangedWeapon">ChangedWeapon</a>, <a href="../engine/pawn.html#CheckDefending">CheckDefending</a>, <a href="../engine/pawn.html#CheckWaterJump">CheckWaterJump</a>, <a href="../engine/pawn.html#ClearPaths">ClearPaths</a>, <a href="../engine/pawn.html#ClearSwipeArray">ClearSwipeArray</a>, <a href="../engine/pawn.html#ClientDying">ClientDying</a>, <a href="../engine/pawn.html#ClientGameEnded">ClientGameEnded</a>, <a href="../engine/pawn.html#ClientHearSound">ClientHearSound</a>, <a href="../engine/pawn.html#ClientMessage">ClientMessage</a>, <a href="../engine/pawn.html#ClientPutDown">ClientPutDown</a>, <a href="../engine/pawn.html#ClientReStart">ClientReStart</a>, <a href="../engine/pawn.html#ClientSetLocation">ClientSetLocation</a>, <a href="../engine/pawn.html#ClientSetRotation">ClientSetRotation</a>, <a href="../engine/pawn.html#ClientVoiceMessage">ClientVoiceMessage</a>, <a href="../engine/pawn.html#CloserNavPointTo">CloserNavPointTo</a>, <a href="../engine/pawn.html#damageAttitudeTo">damageAttitudeTo</a>, <a href="../engine/pawn.html#DamageBodyPart">DamageBodyPart</a>, <a href="../engine/pawn.html#Debug">Debug</a>, <a href="../engine/pawn.html#DeleteInventory">DeleteInventory</a>, <a href="../engine/pawn.html#Destroyed">Destroyed</a>, <a href="../engine/pawn.html#Died">Died</a>, <a href="../engine/pawn.html#Done">Done</a>, <a href="../engine/pawn.html#DoThrow">DoThrow</a>, <a href="../engine/pawn.html#DropShield">DropShield</a>, <a href="../engine/pawn.html#DropWeapon">DropWeapon</a>, <a href="../engine/pawn.html#EAdjustJump">EAdjustJump</a>, <a href="../engine/pawn.html#EncroachedBy">EncroachedBy</a>, <a href="../engine/pawn.html#EncroachingOn">EncroachingOn</a>, <a href="../engine/pawn.html#EndState">EndState</a>, <a href="../engine/pawn.html#EnemyNotVisible">EnemyNotVisible</a>, <a href="../engine/pawn.html#ExpandCollisionRadius">ExpandCollisionRadius</a>, <a href="../engine/pawn.html#Falling">Falling</a>, <a href="../engine/pawn.html#FearThisSpot">FearThisSpot</a>, <a href="../engine/pawn.html#FellOutOfWorld">FellOutOfWorld</a>, <a href="../engine/pawn.html#FindBestInventoryPath">FindBestInventoryPath</a>, <a href="../engine/pawn.html#FindBestPathToward">FindBestPathToward</a>, <a href="../engine/pawn.html#FindInventoryType">FindInventoryType</a>, <a href="../engine/pawn.html#FindPathAwayFrom">FindPathAwayFrom</a>, <a href="../engine/pawn.html#FindPathTo">FindPathTo</a>, <a href="../engine/pawn.html#FindPathToward">FindPathToward</a>, <a href="../engine/pawn.html#FindRandomDest">FindRandomDest</a>, <a href="../engine/pawn.html#FindStairRotation">FindStairRotation</a>, <a href="../engine/pawn.html#FindWaterLine">FindWaterLine</a>, <a href="../engine/pawn.html#FollowOrders">FollowOrders</a>, <a href="../engine/pawn.html#FootStep">FootStep</a>, <a href="../engine/pawn.html#FootStepLeft">FootStepLeft</a>, <a href="../engine/pawn.html#FootStepPrint">FootStepPrint</a>, <a href="../engine/pawn.html#FootStepRight">FootStepRight</a>, <a href="../engine/pawn.html#FootZoneChange">FootZoneChange</a>, <a href="../engine/pawn.html#Gasp">Gasp</a>, <a href="../engine/pawn.html#GetFootstepSound">GetFootstepSound</a>, <a href="../engine/pawn.html#GetHumanName">GetHumanName</a>, <a href="../engine/pawn.html#GetNumSkins">GetNumSkins</a>, <a href="../engine/pawn.html#GetSkinName">GetSkinName</a>, <a href="../engine/pawn.html#GrabEdge">GrabEdge</a>, <a href="../engine/pawn.html#HandleHelpMessageFrom">HandleHelpMessageFrom</a>, <a href="../engine/pawn.html#HeadZoneChange">HeadZoneChange</a>, <a href="../engine/pawn.html#HearNoise">HearNoise</a>, <a href="../engine/pawn.html#HidePlayer">HidePlayer</a>, <a href="../engine/pawn.html#InitPlayerReplicationInfo">InitPlayerReplicationInfo</a>, <a href="../engine/pawn.html#Jaw">Jaw</a>, <a href="../engine/pawn.html#JointDamaged">JointDamaged</a>, <a href="../engine/pawn.html#JumpOffPawn">JumpOffPawn</a>, <a href="../engine/pawn.html#Killed">Killed</a>, <a href="../engine/pawn.html#KillMessage">KillMessage</a>, <a href="../engine/pawn.html#Landed">Landed</a>, <a href="../engine/pawn.html#LimbPassThrough">LimbPassThrough</a>, <a href="../engine/pawn.html#LimbSevered">LimbSevered</a>, <a href="../engine/pawn.html#LineOfSightTo">LineOfSightTo</a>, <a href="../engine/pawn.html#LongFall">LongFall</a>, <a href="../engine/pawn.html#LookAt">LookAt</a>, <a href="../engine/pawn.html#LookToward">LookToward</a>, <a href="../engine/pawn.html#MakeTwitchable">MakeTwitchable</a>, <a href="../engine/pawn.html#MatterForJoint">MatterForJoint</a>, <a href="../engine/pawn.html#MayFall">MayFall</a>, <a href="../engine/pawn.html#MoveTo">MoveTo</a>, <a href="../engine/pawn.html#MoveToward">MoveToward</a>, <a href="../engine/pawn.html#NearestNavPoint">NearestNavPoint</a>, <a href="../engine/pawn.html#NearWall">NearWall</a>, <a href="../engine/pawn.html#NeedToTurn">NeedToTurn</a>, <a href="../engine/pawn.html#NextItem">NextItem</a>, <a href="../engine/pawn.html#OpenMouth">OpenMouth</a>, <a href="../engine/pawn.html#PainTimer">PainTimer</a>, <a href="../engine/pawn.html#PawnDamageModifier">PawnDamageModifier</a>, <a href="../engine/pawn.html#PickAnyTarget">PickAnyTarget</a>, <a href="../engine/pawn.html#PickTarget">PickTarget</a>, <a href="../engine/pawn.html#PickWallAdjust">PickWallAdjust</a>, <a href="../engine/pawn.html#PlayBackDeath">PlayBackDeath</a>, <a href="../engine/pawn.html#PlayBackHit">PlayBackHit</a>, <a href="../engine/pawn.html#PlayCrawling">PlayCrawling</a>, <a href="../engine/pawn.html#PlayDeath">PlayDeath</a>, <a href="../engine/pawn.html#PlayDive">PlayDive</a>, <a href="../engine/pawn.html#PlayDrownDeath">PlayDrownDeath</a>, <a href="../engine/pawn.html#PlayDrowning">PlayDrowning</a>, <a href="../engine/pawn.html#PlayDuck">PlayDuck</a>, <a href="../engine/pawn.html#PlayDying">PlayDying</a>, <a href="../engine/pawn.html#PlayDyingSound">PlayDyingSound</a>, <a href="../engine/pawn.html#PlayerTimeOut">PlayerTimeOut</a>, <a href="../engine/pawn.html#PlayFrontHit">PlayFrontHit</a>, <a href="../engine/pawn.html#PlayGibDeath">PlayGibDeath</a>, <a href="../engine/pawn.html#PlayHeadDeath">PlayHeadDeath</a>, <a href="../engine/pawn.html#PlayHeadHit">PlayHeadHit</a>, <a href="../engine/pawn.html#PlayInAir">PlayInAir</a>, <a href="../engine/pawn.html#PlayJumping">PlayJumping</a>, <a href="../engine/pawn.html#PlayLanded">PlayLanded</a>, <a href="../engine/pawn.html#PlayLanding">PlayLanding</a>, <a href="../engine/pawn.html#PlayLandSound">PlayLandSound</a>, <a href="../engine/pawn.html#PlayLeftDeath">PlayLeftDeath</a>, <a href="../engine/pawn.html#PlayLeftHit">PlayLeftHit</a>, <a href="../engine/pawn.html#PlayMoving">PlayMoving</a>, <a href="../engine/pawn.html#PlayMovingAttack">PlayMovingAttack</a>, <a href="../engine/pawn.html#PlayOutOfWater">PlayOutOfWater</a>, <a href="../engine/pawn.html#PlayPullUp">PlayPullUp</a>, <a href="../engine/pawn.html#PlayRightDeath">PlayRightDeath</a>, <a href="../engine/pawn.html#PlayRightHit">PlayRightHit</a>, <a href="../engine/pawn.html#PlaySkewerDeath">PlaySkewerDeath</a>, <a href="../engine/pawn.html#PlayStepUp">PlayStepUp</a>, <a href="../engine/pawn.html#PlayTakeHit">PlayTakeHit</a>, <a href="../engine/pawn.html#PlayTakeHitSound">PlayTakeHitSound</a>, <a href="../engine/pawn.html#PlayThreatening">PlayThreatening</a>, <a href="../engine/pawn.html#PlayTurning">PlayTurning</a>, <a href="../engine/pawn.html#PlayUninterruptedAnim">PlayUninterruptedAnim</a>, <a href="../engine/pawn.html#PlayWaiting">PlayWaiting</a>, <a href="../engine/pawn.html#PlayWeaponSwitch">PlayWeaponSwitch</a>, <a href="../engine/pawn.html#pointReachable">pointReachable</a>, <a href="../engine/pawn.html#PostBeginPlay">PostBeginPlay</a>, <a href="../engine/pawn.html#PostNetBeginPlay">PostNetBeginPlay</a>, <a href="../engine/pawn.html#PowerupBlaze">PowerupBlaze</a>, <a href="../engine/pawn.html#PowerupElectricity">PowerupElectricity</a>, <a href="../engine/pawn.html#PowerupFire">PowerupFire</a>, <a href="../engine/pawn.html#PowerupFriend">PowerupFriend</a>, <a href="../engine/pawn.html#PowerupIce">PowerupIce</a>, <a href="../engine/pawn.html#PowerupStone">PowerupStone</a>, <a href="../engine/pawn.html#PowerUpWeapon">PowerUpWeapon</a>, <a href="../engine/pawn.html#PreBeginPlay">PreBeginPlay</a>, <a href="../engine/pawn.html#PreSetMovement">PreSetMovement</a>, <a href="../engine/pawn.html#ReceiveLocalizedMessage">ReceiveLocalizedMessage</a>, <a href="../engine/pawn.html#RemovePawn">RemovePawn</a>, <a href="../engine/pawn.html#RenderOverlays">RenderOverlays</a>, <a href="../engine/pawn.html#ReplaceWithCarcass">ReplaceWithCarcass</a>, <a href="../engine/pawn.html#RestartPlayer">RestartPlayer</a>, <a href="../engine/pawn.html#RestoreBodyPart">RestoreBodyPart</a>, <a href="../engine/pawn.html#SeePlayer">SeePlayer</a>, <a href="../engine/pawn.html#SendGlobalMessage">SendGlobalMessage</a>, <a href="../engine/pawn.html#SendTeamMessage">SendTeamMessage</a>, <a href="../engine/pawn.html#SendVoiceMessage">SendVoiceMessage</a>, <a href="../engine/pawn.html#SetDefaultDisplayProperties">SetDefaultDisplayProperties</a>, <a href="../engine/pawn.html#SetDisplayProperties">SetDisplayProperties</a>, <a href="../engine/pawn.html#SetMesh">SetMesh</a>, <a href="../engine/pawn.html#SetMovementPhysics">SetMovementPhysics</a>, <a href="../engine/pawn.html#SetSkinActor">SetSkinActor</a>, <a href="../engine/pawn.html#SetSkinElement">SetSkinElement</a>, <a href="../engine/pawn.html#SeveredLimbClass">SeveredLimbClass</a>, <a href="../engine/pawn.html#ShadowUpdate">ShadowUpdate</a>, <a href="../engine/pawn.html#ShrinkCollisionHeight">ShrinkCollisionHeight</a>, <a href="../engine/pawn.html#SkeletonLook">SkeletonLook</a>, <a href="../engine/pawn.html#SpawnBodyGibs">SpawnBodyGibs</a>, <a href="../engine/pawn.html#SpawnCarcass">SpawnCarcass</a>, <a href="../engine/pawn.html#SpecialPainSkin">SpecialPainSkin</a>, <a href="../engine/pawn.html#SpeechTimer">SpeechTimer</a>, <a href="../engine/pawn.html#StopAttack">StopAttack</a>, <a href="../engine/pawn.html#StopFiring">StopFiring</a>, <a href="../engine/pawn.html#StopLookingToward">StopLookingToward</a>, <a href="../engine/pawn.html#StopWaiting">StopWaiting</a>, <a href="../engine/pawn.html#StrafeFacing">StrafeFacing</a>, <a href="../engine/pawn.html#StrafeTo">StrafeTo</a>, <a href="../engine/pawn.html#SwipeEffectEnd">SwipeEffectEnd</a>, <a href="../engine/pawn.html#SwipeEffectStart">SwipeEffectStart</a>, <a href="../engine/pawn.html#SwitchToBestWeapon">SwitchToBestWeapon</a>, <a href="../engine/pawn.html#TeamBroadcast">TeamBroadcast</a>, <a href="../engine/pawn.html#TeamMessage">TeamMessage</a>, <a href="../engine/pawn.html#ThrowWeapon">ThrowWeapon</a>, <a href="../engine/pawn.html#Tick">Tick</a>, <a href="../engine/pawn.html#TossWeapon">TossWeapon</a>, <a href="../engine/pawn.html#TurnTo">TurnTo</a>, <a href="../engine/pawn.html#TurnToward">TurnToward</a>, <a href="../engine/pawn.html#TweenToMoving">TweenToMoving</a>, <a href="../engine/pawn.html#TweenToWaiting">TweenToWaiting</a>, <a href="../engine/pawn.html#UnderLift">UnderLift</a>, <a href="../engine/pawn.html#UpdateEyeHeight">UpdateEyeHeight</a>, <a href="../engine/pawn.html#UpdateMovementSpeed">UpdateMovementSpeed</a>, <a href="../engine/pawn.html#UpdateTactics">UpdateTactics</a>, <a href="../engine/pawn.html#UseNotify">UseNotify</a>, <a href="../engine/pawn.html#WaitForLanding">WaitForLanding</a>, <a href="../engine/pawn.html#WalkTexture">WalkTexture</a>, <a href="../engine/pawn.html#WantsToPickUp">WantsToPickUp</a>, <a href="../engine/pawn.html#WarnTarget">WarnTarget</a>, <a href="../engine/pawn.html#WeaponActivate">WeaponActivate</a>, <a href="../engine/pawn.html#WeaponDeactivate">WeaponDeactivate</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th class="title">States Summary</th>
+</tr>
+</table>
+
+<table>
+<tr>
+	<th>Crucified <a href="../Source_runei/zombie.html#1161" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> Crucified <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_BeginState+Crucified">BeginState</a>, <a href="#_BodyPartCritical+Crucified">BodyPartCritical</a>, <a href="#_CanGotoPainState+Crucified">CanGotoPainState</a>, <a href="#_CanPickup+Crucified">CanPickup</a>, <a href="#_EndState+Crucified">EndState</a>, <a href="#_JointDamaged+Crucified">JointDamaged</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>Fighting <a href="../Source_runei/zombie.html#814" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> Fighting <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_AmbientSoundTimer+Fighting">AmbientSoundTimer</a>, <a href="#_BeginState+Fighting">BeginState</a>, <a href="#_BlockRatherThanDodge+Fighting">BlockRatherThanDodge</a>, <a href="#_CalcJumpVelocity+Fighting">CalcJumpVelocity</a>, <a href="#_CalcStrafePosition+Fighting">CalcStrafePosition</a>, <a href="#_CalcStrafePosition2+Fighting">CalcStrafePosition2</a>, <a href="#_EndState+Fighting">EndState</a>, <a href="#_InCombatRange+Fighting">InCombatRange</a>, <a href="#_InDangerFromAttack+Fighting">InDangerFromAttack</a>, <a href="#_ShouldDefend+Fighting">ShouldDefend</a>, <a href="#_Timer+Fighting">Timer</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>Pain <a href="../Source_runei/zombie.html#1068" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> Pain <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_CanGotoPainState+Pain">CanGotoPainState</a>, <a href="#_EndGetUpEffect+Pain">EndGetUpEffect</a>, <a href="#_EndState+Pain">EndState</a>, <a href="#_StartGetUpEffect+Pain">StartGetUpEffect</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>Sarkify <a href="../Source_runei/zombie.html#761" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> Sarkify <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_SpawnSark+Sarkify">SpawnSark</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<hr />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Constants Detail</th>
+</tr>
+</table>
+
+<h4><a name="_DEFAULT_TWEEN" class="hidden"></a>DEFAULT_TWEEN <a href="../Source_runei/zombie.html#6" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">const</span> DEFAULT_TWEEN = <span class="source_int">0.15</span>;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_Eyes" class="hidden"></a>Eyes <a href="../Source_runei/zombie.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../runei/zombieeye.html" class="source">ZombieEye</a></span> Eyes;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">Sounds</h3>
+<h4><a name="_DecapitateSound" class="hidden"></a>DecapitateSound <a href="../Source_runei/zombie.html#10" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Sounds) <span class="source_type">sound</span> DecapitateSound;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GreenPuffSound" class="hidden"></a>GreenPuffSound <a href="../Source_runei/zombie.html#11" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Sounds) <span class="source_type">sound</span> GreenPuffSound;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ZombieGetUpSound" class="hidden"></a>ZombieGetUpSound <a href="../Source_runei/zombie.html#12" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(Sounds) <span class="source_type">sound</span> ZombieGetUpSound;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">Zombie</h3>
+<h4><a name="_CrucifiedAnim" class="hidden"></a>CrucifiedAnim <a href="../Source_runei/zombie.html#8" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zombie.html" class="source">Zombie</a></span>) <span class="source_keyword">name</span> CrucifiedAnim;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LungeChance" class="hidden"></a>LungeChance <a href="../Source_runei/zombie.html#9" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/zombie.html" class="source">Zombie</a></span>) <span class="source_keyword">float</span> LungeChance;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_AltWeaponActivate-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> AltWeaponActivate <span class="function_state"></span> <a href="../Source_runei/zombie.html#706" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  AltWeaponActivate ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AmbientSoundTimer-Fighting" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> AmbientSoundTimer <span class="function_state">Fighting</span> <a href="../Source_runei/zombie.html#858" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  AmbientSoundTimer ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ApplyGoreCap-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ApplyGoreCap <span class="function_state"></span> <a href="../Source_runei/zombie.html#368" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ApplyGoreCap ( <span class="source_keyword">int</span> BodyPart) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AttitudeToCreature-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> AttitudeToCreature <span class="function_state"></span> <a href="../Source_runei/zombie.html#36" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_type"><a href="../engine/pawn.html#EAttitude" class="source">eAttitude</a></span> AttitudeToCreature ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">Other</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BeginState-Crucified" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BeginState <span class="function_state">Crucified</span> <a href="../Source_runei/zombie.html#1165" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  BeginState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BeginState-Fighting" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BeginState <span class="function_state">Fighting</span> <a href="../Source_runei/zombie.html#818" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  BeginState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BlockRatherThanDodge-Fighting" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BlockRatherThanDodge <span class="function_state">Fighting</span> <a href="../Source_runei/zombie.html#863" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> BlockRatherThanDodge ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BodyPartCritical-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BodyPartCritical <span class="function_state"></span> <a href="../Source_runei/zombie.html#116" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> BodyPartCritical ( <span class="source_keyword">int</span> BodyPart) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BodyPartCritical-Crucified" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BodyPartCritical <span class="function_state">Crucified</span> <a href="../Source_runei/zombie.html#1212" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> BodyPartCritical ( <span class="source_keyword">int</span> BodyPart) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BodyPartForJoint-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BodyPartForJoint <span class="function_state"></span> <a href="../Source_runei/zombie.html#297" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">int</span> BodyPartForJoint ( <span class="source_keyword">int</span> joint) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BodyPartForPolyGroup-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BodyPartForPolyGroup <span class="function_state"></span> <a href="../Source_runei/zombie.html#328" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">int</span> BodyPartForPolyGroup ( <span class="source_keyword">int</span> polygroup) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BodyPartSeverable-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BodyPartSeverable <span class="function_state"></span> <a href="../Source_runei/zombie.html#100" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> BodyPartSeverable ( <span class="source_keyword">int</span> BodyPart) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CalcJumpVelocity-Fighting" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CalcJumpVelocity <span class="function_state">Fighting</span> <a href="../Source_runei/zombie.html#975" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  CalcJumpVelocity ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CalcStrafePosition-Fighting" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CalcStrafePosition <span class="function_state">Fighting</span> <a href="../Source_runei/zombie.html#939" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  CalcStrafePosition ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CalcStrafePosition2-Fighting" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CalcStrafePosition2 <span class="function_state">Fighting</span> <a href="../Source_runei/zombie.html#957" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  CalcStrafePosition2 ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CanGotoPainState-Crucified" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CanGotoPainState <span class="function_state">Crucified</span> <a href="../Source_runei/zombie.html#1175" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> CanGotoPainState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CanGotoPainState-Pain" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CanGotoPainState <span class="function_state">Pain</span> <a href="../Source_runei/zombie.html#1070" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> CanGotoPainState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CanPickup-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CanPickup <span class="function_state"></span> <a href="../Source_runei/zombie.html#51" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> CanPickup ( <span class="source_type"><a href="../engine/inventory.html" class="source">Inventory</a></span> <span class="source_type">item</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CanPickup-Crucified" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CanPickup <span class="function_state">Crucified</span> <a href="../Source_runei/zombie.html#1170" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> CanPickup ( <span class="source_type"><a href="../engine/inventory.html" class="source">Inventory</a></span> <span class="source_type">item</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DamageBodyPart-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DamageBodyPart <span class="function_state"></span> <a href="../Source_runei/zombie.html#128" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> DamageBodyPart ( <span class="source_keyword">int</span> Damage, <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">EventInstigator</span>, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> <span class="source_type">HitLocation</span>, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> Momentum, <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">DamageType</a></span>, <span class="source_keyword">int</span> bodypart) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Died-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Died <span class="function_state"></span> <a href="../Source_runei/zombie.html#731" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Died ( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">Killer</span>, <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">damageType</a></span>, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> <span class="source_type">HitLocation</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EndGetUpEffect-Pain" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> EndGetUpEffect <span class="function_state">Pain</span> <a href="../Source_runei/zombie.html#1111" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  EndGetUpEffect ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EndState-Crucified" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> EndState <span class="function_state">Crucified</span> <a href="../Source_runei/zombie.html#1207" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  EndState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EndState-Fighting" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> EndState <span class="function_state">Fighting</span> <a href="../Source_runei/zombie.html#827" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  EndState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EndState-Pain" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> EndState <span class="function_state">Pain</span> <a href="../Source_runei/zombie.html#1075" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  EndState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GlowEyes-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GlowEyes <span class="function_state"></span> <a href="../Source_runei/zombie.html#61" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  GlowEyes ( <span class="source_keyword">bool</span> glow) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_InCombatRange-Fighting" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> InCombatRange <span class="function_state">Fighting</span> <a href="../Source_runei/zombie.html#850" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> InCombatRange ( <span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span> <span class="source_type">Other</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_InDangerFromAttack-Fighting" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> InDangerFromAttack <span class="function_state">Fighting</span> <a href="../Source_runei/zombie.html#926" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> InDangerFromAttack ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_JointDamaged-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> JointDamaged <span class="function_state"></span> <a href="../Source_runei/zombie.html#456" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> JointDamaged ( <span class="source_keyword">int</span> Damage, <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">EventInstigator</span>, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitLoc, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> Momentum, <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">DamageType</a></span>, <span class="source_keyword">int</span> joint) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_JointDamaged-Crucified" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> JointDamaged <span class="function_state">Crucified</span> <a href="../Source_runei/zombie.html#1180" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> JointDamaged ( <span class="source_keyword">int</span> damage, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">EventInstigator</span>, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitLoc, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> Momentum, <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">DamageType</a></span>, <span class="source_keyword">int</span> joint) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_JointForBodyPart-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> JointForBodyPart <span class="function_state"></span> <a href="../Source_runei/zombie.html#310" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">int</span> JointForBodyPart ( <span class="source_keyword">int</span> BodyPart) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LimbSevered-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> LimbSevered <span class="function_state"></span> <a href="../Source_runei/zombie.html#377" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  LimbSevered ( <span class="source_keyword">int</span> BodyPart, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> Momentum) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LongFall-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> LongFall <span class="function_state"></span> <a href="../Source_runei/zombie.html#592" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  LongFall ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MakeTwitchable-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> MakeTwitchable <span class="function_state"></span> <a href="../Source_runei/zombie.html#431" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  MakeTwitchable ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MatterForJoint-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> MatterForJoint <span class="function_state"></span> <a href="../Source_runei/zombie.html#90" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_type"><a href="../core/object.html#EMatterType" class="source">EMatterType</a></span> MatterForJoint ( <span class="source_keyword">int</span> joint) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PainSkin-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PainSkin <span class="function_state"></span> <a href="../Source_runei/zombie.html#285" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span> PainSkin ( <span class="source_keyword">int</span> BodyPart) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayBackup-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayBackup <span class="function_state"></span> <a href="../Source_runei/zombie.html#542" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayBackup ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayBlockHigh-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayBlockHigh <span class="function_state"></span> <a href="../Source_runei/zombie.html#613" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayBlockHigh ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayBlockLow-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayBlockLow <span class="function_state"></span> <a href="../Source_runei/zombie.html#614" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayBlockLow ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayBodyHit-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayBodyHit <span class="function_state"></span> <a href="../Source_runei/zombie.html#618" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayBodyHit ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayCower-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayCower <span class="function_state"></span> <a href="../Source_runei/zombie.html#582" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayCower ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayDeath-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayDeath <span class="function_state"></span> <a href="../Source_runei/zombie.html#625" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayDeath ( <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">DamageType</a></span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayDodgeBack-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayDodgeBack <span class="function_state"></span> <a href="../Source_runei/zombie.html#610" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayDodgeBack ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayDodgeBackflip-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayDodgeBackflip <span class="function_state"></span> <a href="../Source_runei/zombie.html#611" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayDodgeBackflip ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayDodgeDuck-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayDodgeDuck <span class="function_state"></span> <a href="../Source_runei/zombie.html#612" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayDodgeDuck ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayDodgeForward-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayDodgeForward <span class="function_state"></span> <a href="../Source_runei/zombie.html#609" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayDodgeForward ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayDodgeLeft-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayDodgeLeft <span class="function_state"></span> <a href="../Source_runei/zombie.html#607" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayDodgeLeft ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayDodgeRight-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayDodgeRight <span class="function_state"></span> <a href="../Source_runei/zombie.html#608" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayDodgeRight ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayDrownDeath-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayDrownDeath <span class="function_state"></span> <a href="../Source_runei/zombie.html#630" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayDrownDeath ( <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">DamageType</a></span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayDrowning-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayDrowning <span class="function_state"></span> <a href="../Source_runei/zombie.html#623" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayDrowning ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayDyingSound-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayDyingSound <span class="function_state"></span> <a href="../Source_runei/zombie.html#72" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayDyingSound ( <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">damageType</a></span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayFrontHit-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayFrontHit <span class="function_state"></span> <a href="../Source_runei/zombie.html#616" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayFrontHit ( <span class="source_keyword">float</span> tweentime )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayHeadHit-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayHeadHit <span class="function_state"></span> <a href="../Source_runei/zombie.html#617" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayHeadHit ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayHuntStop-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayHuntStop <span class="function_state"></span> <a href="../Source_runei/zombie.html#564" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayHuntStop ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayInAir-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayInAir <span class="function_state"></span> <a href="../Source_runei/zombie.html#588" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayInAir ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayJumping-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayJumping <span class="function_state"></span> <a href="../Source_runei/zombie.html#563" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayJumping ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayLanding-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayLanding <span class="function_state"></span> <a href="../Source_runei/zombie.html#597" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayLanding ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayLArmHit-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayLArmHit <span class="function_state"></span> <a href="../Source_runei/zombie.html#619" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayLArmHit ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayLLegHit-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayLLegHit <span class="function_state"></span> <a href="../Source_runei/zombie.html#621" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayLLegHit ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayMeleeHigh-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayMeleeHigh <span class="function_state"></span> <a href="../Source_runei/zombie.html#566" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayMeleeHigh ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayMeleeLow-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayMeleeLow <span class="function_state"></span> <a href="../Source_runei/zombie.html#573" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayMeleeLow ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayMoving-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayMoving <span class="function_state"></span> <a href="../Source_runei/zombie.html#502" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayMoving ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayRArmHit-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayRArmHit <span class="function_state"></span> <a href="../Source_runei/zombie.html#620" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayRArmHit ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayRLegHit-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayRLegHit <span class="function_state"></span> <a href="../Source_runei/zombie.html#622" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayRLegHit ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayStrafeLeft-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayStrafeLeft <span class="function_state"></span> <a href="../Source_runei/zombie.html#520" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayStrafeLeft ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayStrafeRight-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayStrafeRight <span class="function_state"></span> <a href="../Source_runei/zombie.html#531" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayStrafeRight ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayTakeHit-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayTakeHit <span class="function_state"></span> <a href="../Source_runei/zombie.html#694" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayTakeHit ( <span class="source_keyword">float</span> tweentime, <span class="source_keyword">int</span> damage, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> HitLoc, <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">damageType</a></span>, <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> Momentum, <span class="source_keyword">int</span> BodyPart) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayTaunting-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayTaunting <span class="function_state"></span> <a href="../Source_runei/zombie.html#587" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayTaunting ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayThrowing-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayThrowing <span class="function_state"></span> <a href="../Source_runei/zombie.html#583" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayThrowing ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayTurning-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayTurning <span class="function_state"></span> <a href="../Source_runei/zombie.html#577" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayTurning ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayWaiting-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayWaiting <span class="function_state"></span> <a href="../Source_runei/zombie.html#491" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayWaiting ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PostBeginPlay-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PostBeginPlay <span class="function_state"></span> <a href="../Source_runei/zombie.html#22" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PostBeginPlay ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SetOnFire-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SetOnFire <span class="function_state"></span> <a href="../Source_runei/zombie.html#474" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SetOnFire ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">EventInstigator</span>, <span class="source_keyword">int</span> Joint) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SeveredLimbClass-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SeveredLimbClass <span class="function_state"></span> <a href="../Source_runei/zombie.html#347" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/actor.html" class="source">Actor</a></span>&gt; SeveredLimbClass ( <span class="source_keyword">int</span> BodyPart) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ShouldDefend-Fighting" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ShouldDefend <span class="function_state">Fighting</span> <a href="../Source_runei/zombie.html#921" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> ShouldDefend ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SpawnSark-Sarkify" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SpawnSark <span class="function_state">Sarkify</span> <a href="../Source_runei/zombie.html#765" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SpawnSark ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StartGetUpEffect-Pain" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> StartGetUpEffect <span class="function_state">Pain</span> <a href="../Source_runei/zombie.html#1082" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  StartGetUpEffect ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Timer-Fighting" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Timer <span class="function_state">Fighting</span> <a href="../Source_runei/zombie.html#875" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Timer ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TweenToJumping-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> TweenToJumping <span class="function_state"></span> <a href="../Source_runei/zombie.html#671" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  TweenToJumping ( <span class="source_keyword">float</span> <span class="source_type"><a href="../core/time.html" class="source">time</a></span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TweenToMeleeHigh-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> TweenToMeleeHigh <span class="function_state"></span> <a href="../Source_runei/zombie.html#672" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  TweenToMeleeHigh ( <span class="source_keyword">float</span> <span class="source_type"><a href="../core/time.html" class="source">time</a></span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TweenToMeleeLow-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> TweenToMeleeLow <span class="function_state"></span> <a href="../Source_runei/zombie.html#679" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  TweenToMeleeLow ( <span class="source_keyword">float</span> <span class="source_type"><a href="../core/time.html" class="source">time</a></span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TweenToMoving-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> TweenToMoving <span class="function_state"></span> <a href="../Source_runei/zombie.html#661" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  TweenToMoving ( <span class="source_keyword">float</span> <span class="source_type"><a href="../core/time.html" class="source">time</a></span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TweenToThrowing-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> TweenToThrowing <span class="function_state"></span> <a href="../Source_runei/zombie.html#686" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  TweenToThrowing ( <span class="source_keyword">float</span> <span class="source_type"><a href="../core/time.html" class="source">time</a></span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TweenToTurning-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> TweenToTurning <span class="function_state"></span> <a href="../Source_runei/zombie.html#666" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  TweenToTurning ( <span class="source_keyword">float</span> <span class="source_type"><a href="../core/time.html" class="source">time</a></span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TweenToWaiting-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> TweenToWaiting <span class="function_state"></span> <a href="../Source_runei/zombie.html#656" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  TweenToWaiting ( <span class="source_keyword">float</span> <span class="source_type"><a href="../core/time.html" class="source">time</a></span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ZoneChange-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ZoneChange <span class="function_state"></span> <a href="../Source_runei/zombie.html#743" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ZoneChange ( <span class="source_type"><a href="../engine/zoneinfo.html" class="source">ZoneInfo</a></span> <span class="source_type">newZone</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     LungeChance=<span class="source_int">0.200000</span>
+     DecapitateSound=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiedecap01'</span>
+     GreenPuffSound=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiepuff01'</span>
+     ZombieGetUpSound=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiegetup01'</span>
+     FightOrFlight=<span class="source_int">1.000000</span>
+     FightOrDefend=<span class="source_int">1.000000</span>
+     HighOrLow=<span class="source_int">1.000000</span>
+     LatOrVertDodge=<span class="source_int">1.000000</span>
+     HighOrLowBlock=<span class="source_int">1.000000</span>
+     LungeRange=<span class="source_int">100.000000</span>
+     PaceRange=<span class="source_int">100.000000</span>
+     TimeBetweenAttacks=<span class="source_int">0.100000</span>
+     AcquireSound=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiesee01'</span>
+     AmbientWaitSounds(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombieambient01'</span>
+     AmbientWaitSounds(<span class="source_int">1</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombieambient02'</span>
+     AmbientWaitSounds(<span class="source_int">2</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombieambient03'</span>
+     AmbientFightSounds(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombieattack01'</span>
+     AmbientFightSounds(<span class="source_int">1</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombieattack01'</span>
+     AmbientFightSounds(<span class="source_int">2</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombieattack01'</span>
+     AmbientFightSoundDelay=<span class="source_int">8.000000</span>
+     StartWeapon=<span class="source_keyword">Class</span><span class="source_name">'RuneI.ZombieClaw'</span>
+     ShadowScale=<span class="source_int">1.500000</span>
+     A_PullUp=intropullupA
+     A_StepUp=pullupTest
+     CarcassType=<span class="source_keyword">Class</span><span class="source_name">'RuneI.ZombieCarcass'</span>
+     MeleeRange=<span class="source_int">60.000000</span>
+     CombatRange=<span class="source_int">140.000000</span>
+     GroundSpeed=<span class="source_int">170.000000</span>
+     MaxStepHeight=<span class="source_int">30.000000</span>
+     ClassID=<span class="source_int">10</span>
+     PeripheralVision=-<span class="source_int">1.000000</span>
+     Health=<span class="source_int">80</span>
+     BodyPartHealth(<span class="source_int">1</span>)=<span class="source_int">30</span>
+     BodyPartHealth(<span class="source_int">3</span>)=<span class="source_int">30</span>
+     BodyPartHealth(<span class="source_int">5</span>)=<span class="source_int">30</span>
+     HitSound1=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiehit01'</span>
+     HitSound2=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiehit02'</span>
+     HitSound3=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiehit03'</span>
+     Die=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiedeath01'</span>
+     Die2=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiedeath02'</span>
+     Die3=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiedeath03'</span>
+     FootStepWood(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiefoot01'</span>
+     FootStepWood(<span class="source_int">1</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiefoot02'</span>
+     FootStepWood(<span class="source_int">2</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiefoot01'</span>
+     FootStepMetal(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiefoot01'</span>
+     FootStepMetal(<span class="source_int">1</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiefoot02'</span>
+     FootStepMetal(<span class="source_int">2</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiefoot01'</span>
+     FootStepStone(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiefoot01'</span>
+     FootStepStone(<span class="source_int">1</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiefoot02'</span>
+     FootStepStone(<span class="source_int">2</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiefoot01'</span>
+     FootStepFlesh(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiefoot01'</span>
+     FootStepFlesh(<span class="source_int">1</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiefoot02'</span>
+     FootStepFlesh(<span class="source_int">2</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiefoot01'</span>
+     FootStepIce(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiefoot01'</span>
+     FootStepIce(<span class="source_int">1</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiefoot02'</span>
+     FootStepIce(<span class="source_int">2</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiefoot01'</span>
+     FootStepEarth(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiefoot01'</span>
+     FootStepEarth(<span class="source_int">1</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiefoot02'</span>
+     FootStepEarth(<span class="source_int">2</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiefoot01'</span>
+     FootStepSnow(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiefoot01'</span>
+     FootStepSnow(<span class="source_int">1</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiefoot02'</span>
+     FootStepSnow(<span class="source_int">2</span>)=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Zombie.zombiefoot01'</span>
+     CombatStyle=<span class="source_int">1.000000</span>
+     WeaponJoint=rhand
+     bCanLook=<span class="source_keyword">True</span>
+     bHeadLookUpDouble=<span class="source_keyword">True</span>
+     MaxMouthRot=<span class="source_int">7000</span>
+     MaxMouthRotRate=<span class="source_int">65535</span>
+     LFootJoint=<span class="source_int">5</span>
+     RFootJoint=<span class="source_int">9</span>
+     bLeadEnemy=<span class="source_keyword">True</span>
+     DrawScale=<span class="source_int">1.250000</span>
+     TransientSoundRadius=<span class="source_int">1200.000000</span>
+     CollisionHeight=<span class="source_int">51.000000</span>
+     RotationRate=(Pitch=<span class="source_int">0</span>,Roll=<span class="source_int">0</span>)
+     SkelMesh=<span class="source_int">11</span>
+     Skeletal=<span class="source_type">SkelModel</span><span class="source_name">'Players.Ragnar'</span>
+     SkelGroupSkins(<span class="source_int">0</span>)=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'Players.Ragnarragd_arms'</span>
+     SkelGroupSkins(<span class="source_int">1</span>)=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'Players.Ragnarz_armleg'</span>
+     SkelGroupSkins(<span class="source_int">2</span>)=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'Players.Ragnarz_armleg'</span>
+     SkelGroupSkins(<span class="source_int">3</span>)=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'Players.Ragnarz_armleg'</span>
+     SkelGroupSkins(<span class="source_int">4</span>)=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'Players.Ragnarz_body'</span>
+     SkelGroupSkins(<span class="source_int">5</span>)=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'Players.Ragnarz_head'</span>
+     SkelGroupSkins(<span class="source_int">6</span>)=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'Players.Ragnarz_armleg'</span>
+     SkelGroupSkins(<span class="source_int">7</span>)=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'Players.Ragnarz_armleg'</span>
+     SkelGroupSkins(<span class="source_int">8</span>)=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'Players.Ragnarz_armleg'</span>
+     SkelGroupSkins(<span class="source_int">9</span>)=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'Players.Ragnarz_head'</span>
+     SkelGroupSkins(<span class="source_int">10</span>)=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'Players.Ragnarz_neckgore'</span>
+     SkelGroupSkins(<span class="source_int">11</span>)=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'Players.Ragnarragd_arms'</span>
+     SkelGroupSkins(<span class="source_int">12</span>)=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'Players.Ragnarragd_arms'</span>
+     SkelGroupSkins(<span class="source_int">13</span>)=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'Players.Ragnarragd_arms'</span>
+     SkelGroupSkins(<span class="source_int">14</span>)=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'Players.Ragnarragd_arms'</span>
+     SkelGroupSkins(<span class="source_int">15</span>)=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'Players.Ragnarragd_arms'</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/zombie.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#Zombie">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/worlddecal.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/zombie2.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:27:28.185 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - RuneI.TreeGrow</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/treegrow.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#TreeGrow">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/treefern.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/treepoint.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#runei/treegrow.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../runei/runei-overview.html">RuneI</a>.TreeGrow</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../runei/treept.html">TreePt</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a>
+   |   
+   +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/particlesystem.html">ParticleSystem</a>
+      |   
+      +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/beamsystem.html">BeamSystem</a>
+         |   
+         +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/treept.html">TreePt</a>
+            |   
+            +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/treegrow.html">TreeGrow</a>
+</pre>
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_Generation" name="Generation" title="go to the details">Generation</a></td></tr>
+<tr><th colspan="2" class="small">TreeGrow</th></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_BlossomRate" name="BlossomRate" title="go to the details">BlossomRate</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bPreGrow" name="bPreGrow" title="go to the details">bPreGrow</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_ComplexityOrder" name="ComplexityOrder" title="go to the details">ComplexityOrder</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_Fertility" name="Fertility" title="go to the details">Fertility</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_GrowthRate" name="GrowthRate" title="go to the details">GrowthRate</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_MatureBranchLength" name="MatureBranchLength" title="go to the details">MatureBranchLength</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/treept.html">TreePt</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/treept.html#bAffectsParent">bAffectsParent</a>, <a href="../runei/treept.html#bApplyAcceleration">bApplyAcceleration</a>, <a href="../runei/treept.html#bApplySway">bApplySway</a>, <a href="../runei/treept.html#bLeaf">bLeaf</a>, <a href="../runei/treept.html#BranchLength">BranchLength</a>, <a href="../runei/treept.html#bRestrictVelocity">bRestrictVelocity</a>, <a href="../runei/treept.html#bSpring">bSpring</a>, <a href="../runei/treept.html#bStiffRotation">bStiffRotation</a>, <a href="../runei/treept.html#DampFactor">DampFactor</a>, <a href="../runei/treept.html#GravAccel">GravAccel</a>, <a href="../runei/treept.html#GravDir">GravDir</a>, <a href="../runei/treept.html#HitAWall">HitAWall</a>, <a href="../runei/treept.html#MaximumVelocityPickup">MaximumVelocityPickup</a>, <a href="../runei/treept.html#MaxVelocityAllowed">MaxVelocityAllowed</a>, <a href="../runei/treept.html#Parent">Parent</a>, <a href="../runei/treept.html#ParentTag">ParentTag</a>, <a href="../runei/treept.html#SpringConstant">SpringConstant</a>, <a href="../runei/treept.html#SwayVelocity">SwayVelocity</a>, <a href="../runei/treept.html#WhileMoving">WhileMoving</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/beamsystem.html">BeamSystem</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/beamsystem.html#BeamTime">BeamTime</a>, <a href="../runei/beamsystem.html#TargetTag">TargetTag</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_BeginState-Growing" name="BeginState" title="go to the details">BeginState</a> ()))<br /><span class="function_state">Growing</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_BeginState-Seed" name="BeginState" title="go to the details">BeginState</a> ()))<br /><span class="function_state">Seed</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_EndState-Growing" name="EndState" title="go to the details">EndState</a> ()))<br /><span class="function_state">Growing</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Sprout-" name="Sprout" title="go to the details">Sprout</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Tick-Growing" name="Tick" title="go to the details">Tick</a> (float DeltaTime))<br /><span class="function_state">Growing</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Trigger-Seed" name="Trigger" title="go to the details">Trigger</a> (<a href="../engine/actor.html">actor</a> Other, <a href="../engine/pawn.html">Pawn</a> EventInstigator))<br /><span class="function_state">Seed</span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/treept.html">TreePt</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/treept.html#ApplySwing">ApplySwing</a>, <a href="../runei/treept.html#BeginState">BeginState</a>, <a href="../runei/treept.html#ElasticCollision">ElasticCollision</a>, <a href="../runei/treept.html#HitWall">HitWall</a>, <a href="../runei/treept.html#PostBeginPlay">PostBeginPlay</a>, <a href="../runei/treept.html#PreBeginPlay">PreBeginPlay</a>, <a href="../runei/treept.html#SetBranchLength">SetBranchLength</a>, <a href="../runei/treept.html#SetGravDir">SetGravDir</a>, <a href="../runei/treept.html#Tick">Tick</a>, <a href="../runei/treept.html#Touch">Touch</a>, <a href="../runei/treept.html#UnTouch">UnTouch</a>, <a href="../runei/treept.html#WakeSelfAndChildren">WakeSelfAndChildren</a>, <a href="../runei/treept.html#WakeSelfAndParents">WakeSelfAndParents</a>, <a href="../runei/treept.html#WakeUp">WakeUp</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/beamsystem.html">BeamSystem</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/beamsystem.html#Debug">Debug</a>, <a href="../runei/beamsystem.html#PreBeginPlay">PreBeginPlay</a>, <a href="../runei/beamsystem.html#SpawnBeamDebris">SpawnBeamDebris</a>, <a href="../runei/beamsystem.html#SystemTick">SystemTick</a>, <a href="../runei/beamsystem.html#Timer">Timer</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th class="title">States Summary</th>
+</tr>
+</table>
+
+<table>
+<tr>
+	<th>Growing <a href="../Source_runei/treegrow.html#85" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> Growing <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_BeginState+Growing">BeginState</a>, <a href="#_EndState+Growing">EndState</a>, <a href="#_Tick+Growing">Tick</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>PreGrowing <a href="../Source_runei/treegrow.html#142" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw"> state</span> PreGrowing <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th>Seed <a href="../Source_runei/treegrow.html#66" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw">auto state</span> Seed <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_BeginState+Seed">BeginState</a>, <a href="#_Trigger+Seed">Trigger</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_Generation" class="hidden"></a>Generation <a href="../Source_runei/treegrow.html#13" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> Generation;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">TreeGrow</h3>
+<h4><a name="_BlossomRate" class="hidden"></a>BlossomRate <a href="../Source_runei/treegrow.html#9" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/treegrow.html" class="source">TreeGrow</a></span>) <span class="source_keyword">float</span> BlossomRate;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bPreGrow" class="hidden"></a>bPreGrow <a href="../Source_runei/treegrow.html#7" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/treegrow.html" class="source">TreeGrow</a></span>) <span class="source_keyword">bool</span> bPreGrow;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ComplexityOrder" class="hidden"></a>ComplexityOrder <a href="../Source_runei/treegrow.html#11" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/treegrow.html" class="source">TreeGrow</a></span>) <span class="source_keyword">int</span> ComplexityOrder;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Fertility" class="hidden"></a>Fertility <a href="../Source_runei/treegrow.html#12" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/treegrow.html" class="source">TreeGrow</a></span>) <span class="source_keyword">int</span> Fertility;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GrowthRate" class="hidden"></a>GrowthRate <a href="../Source_runei/treegrow.html#8" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/treegrow.html" class="source">TreeGrow</a></span>) <span class="source_keyword">float</span> GrowthRate;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MatureBranchLength" class="hidden"></a>MatureBranchLength <a href="../Source_runei/treegrow.html#10" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../runei/treegrow.html" class="source">TreeGrow</a></span>) <span class="source_keyword">float</span> MatureBranchLength;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_BeginState-Growing" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BeginState <span class="function_state">Growing</span> <a href="../Source_runei/treegrow.html#117" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  BeginState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BeginState-Seed" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BeginState <span class="function_state">Seed</span> <a href="../Source_runei/treegrow.html#70" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  BeginState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EndState-Growing" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> EndState <span class="function_state">Growing</span> <a href="../Source_runei/treegrow.html#133" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  EndState ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Sprout-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Sprout <span class="function_state"></span> <a href="../Source_runei/treegrow.html#21" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Sprout ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Tick-Growing" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Tick <span class="function_state">Growing</span> <a href="../Source_runei/treegrow.html#87" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Tick ( <span class="source_keyword">float</span> <span class="source_type">DeltaTime</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Trigger-Seed" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Trigger <span class="function_state">Seed</span> <a href="../Source_runei/treegrow.html#76" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  <span class="source_type"><a href="../engine/trigger.html" class="source">Trigger</a></span> ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">EventInstigator</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     GrowthRate=<span class="source_int">50.000000</span>
+     BlossomRate=<span class="source_int">0.500000</span>
+     MatureBranchLength=<span class="source_int">40.000000</span>
+     ComplexityOrder=<span class="source_int">2</span>
+     Fertility=<span class="source_int">5</span>
+     bAffectsParent=<span class="source_keyword">False</span>
+     BranchLength=<span class="source_int">1.000000</span>
+     ParticleCount=<span class="source_int">6</span>
+     ParticleTexture(<span class="source_int">0</span>)=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'RuneFX.bark2'</span>
+     NumConPts=<span class="source_int">2</span>
+     BeamThickness=<span class="source_int">2.000000</span>
+     Physics=PHYS_None
+     DrawType=DT_SkeletalMesh
+     DrawScale=<span class="source_int">0.100000</span>
+     Skeletal=<span class="source_type">SkelModel</span><span class="source_name">'objects.Leaf'</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/treegrow.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#TreeGrow">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/treefern.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/treepoint.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:27:24.797 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

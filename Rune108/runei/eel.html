@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - RuneI.Eel</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/eel.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#Eel">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/eatenlizard.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/effectskelavalanchesword.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#runei/eel.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../runei/runei-overview.html">RuneI</a>.Eel</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../runei/scriptpawn.html">ScriptPawn</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a>
+   |   
+   +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/pawn.html">Pawn</a>
+      |   
+      +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/scriptpawn.html">ScriptPawn</a>
+         |   
+         +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/eel.html">Eel</a>
+</pre>
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bCoiled" name="bCoiled" title="go to the details">bCoiled</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/scriptpawn.html">ScriptPawn</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/scriptpawn.html#AcquireSound">AcquireSound</a>, <a href="../runei/scriptpawn.html#AlertOrders">AlertOrders</a>, <a href="../runei/scriptpawn.html#AlertOrdersTag">AlertOrdersTag</a>, <a href="../runei/scriptpawn.html#Ally">Ally</a>, <a href="../runei/scriptpawn.html#AllyMaxTime">AllyMaxTime</a>, <a href="../runei/scriptpawn.html#AllyTime">AllyTime</a>, <a href="../runei/scriptpawn.html#AmbientFightSoundDelay">AmbientFightSoundDelay</a>, <a href="../runei/scriptpawn.html#AmbientFightSounds[3]">AmbientFightSounds[3]</a>, <a href="../runei/scriptpawn.html#AmbientWaitSoundDelay">AmbientWaitSoundDelay</a>, <a href="../runei/scriptpawn.html#AmbientWaitSounds[3]">AmbientWaitSounds[3]</a>, <a href="../runei/scriptpawn.html#AttackAction">AttackAction</a>, <a href="../runei/scriptpawn.html#AttackOrders">AttackOrders</a>, <a href="../runei/scriptpawn.html#A_PullUp">A_PullUp</a>, <a href="../runei/scriptpawn.html#A_StepUp">A_StepUp</a>, <a href="../runei/scriptpawn.html#bAlerted">bAlerted</a>, <a href="../runei/scriptpawn.html#bBurnable">bBurnable</a>, <a href="../runei/scriptpawn.html#bCanDefend">bCanDefend</a>, <a href="../runei/scriptpawn.html#bCanSwing">bCanSwing</a>, <a href="../runei/scriptpawn.html#bDisableCheckForEnemies">bDisableCheckForEnemies</a>, <a href="../runei/scriptpawn.html#bDodgeAfterAttack">bDodgeAfterAttack</a>, <a href="../runei/scriptpawn.html#bFallAtStartup">bFallAtStartup</a>, <a href="../runei/scriptpawn.html#bFrustrated">bFrustrated</a>, <a href="../runei/scriptpawn.html#bGlider">bGlider</a>, <a href="../runei/scriptpawn.html#bIsBoss">bIsBoss</a>, <a href="../runei/scriptpawn.html#BlockChance">BlockChance</a>, <a href="../runei/scriptpawn.html#bLungeAttack">bLungeAttack</a>, <a href="../runei/scriptpawn.html#bMoveWhenUnreachable">bMoveWhenUnreachable</a>, <a href="../runei/scriptpawn.html#bPaceAttack">bPaceAttack</a>, <a href="../runei/scriptpawn.html#bQuiet">bQuiet</a>, <a href="../runei/scriptpawn.html#BreathSound">BreathSound</a>, <a href="../runei/scriptpawn.html#bRoamHome">bRoamHome</a>, <a href="../runei/scriptpawn.html#bStatueCanWake">bStatueCanWake</a>, <a href="../runei/scriptpawn.html#bStatueDestructible">bStatueDestructible</a>, <a href="../runei/scriptpawn.html#bTaskLocked">bTaskLocked</a>, <a href="../runei/scriptpawn.html#bTeamLeader">bTeamLeader</a>, <a href="../runei/scriptpawn.html#bWaitLook">bWaitLook</a>, <a href="../runei/scriptpawn.html#bWillJoin">bWillJoin</a>, <a href="../runei/scriptpawn.html#CurrentPoint">CurrentPoint</a>, <a href="../runei/scriptpawn.html#debugstates">debugstates</a>, <a href="../runei/scriptpawn.html#DispatchAction">DispatchAction</a>, <a href="../runei/scriptpawn.html#EnemyDist">EnemyDist</a>, <a href="../runei/scriptpawn.html#EnemyFacing">EnemyFacing</a>, <a href="../runei/scriptpawn.html#EnemyIncidence">EnemyIncidence</a>, <a href="../runei/scriptpawn.html#EnemyMovement">EnemyMovement</a>, <a href="../runei/scriptpawn.html#EnemyVertical">EnemyVertical</a>, <a href="../runei/scriptpawn.html#FearSound">FearSound</a>, <a href="../runei/scriptpawn.html#FightOrDefend">FightOrDefend</a>, <a href="../runei/scriptpawn.html#FightOrFlight">FightOrFlight</a>, <a href="../runei/scriptpawn.html#Hated">Hated</a>, <a href="../runei/scriptpawn.html#HighOrLow">HighOrLow</a>, <a href="../runei/scriptpawn.html#HighOrLowBlock">HighOrLowBlock</a>, <a href="../runei/scriptpawn.html#HomeBase">HomeBase</a>, <a href="../runei/scriptpawn.html#HomeRot">HomeRot</a>, <a href="../runei/scriptpawn.html#HuntDistance">HuntDistance</a>, <a href="../runei/scriptpawn.html#HuntSound">HuntSound</a>, <a href="../runei/scriptpawn.html#HuntStartTime">HuntStartTime</a>, <a href="../runei/scriptpawn.html#HuntTime">HuntTime</a>, <a href="../runei/scriptpawn.html#i">i</a>, <a href="../runei/scriptpawn.html#IgnoreEnemy">IgnoreEnemy</a>, <a href="../runei/scriptpawn.html#LastAction">LastAction</a>, <a href="../runei/scriptpawn.html#LastNodeVisited">LastNodeVisited</a>, <a href="../runei/scriptpawn.html#LastPathTime">LastPathTime</a>, <a href="../runei/scriptpawn.html#LastPointVisited">LastPointVisited</a>, <a href="../runei/scriptpawn.html#LatOrVertDodge">LatOrVertDodge</a>, <a href="../runei/scriptpawn.html#lookIndex">lookIndex</a>, <a href="../runei/scriptpawn.html#LungeRange">LungeRange</a>, <a href="../runei/scriptpawn.html#MaxStopWait">MaxStopWait</a>, <a href="../runei/scriptpawn.html#MinStopWait">MinStopWait</a>, <a href="../runei/scriptpawn.html#NextAnim">NextAnim</a>, <a href="../runei/scriptpawn.html#NextPoint">NextPoint</a>, <a href="../runei/scriptpawn.html#NumAmbientFightSounds">NumAmbientFightSounds</a>, <a href="../runei/scriptpawn.html#NumAmbientWaitSounds">NumAmbientWaitSounds</a>, <a href="../runei/scriptpawn.html#numHuntPaths">numHuntPaths</a>, <a href="../runei/scriptpawn.html#OrderObject">OrderObject</a>, <a href="../runei/scriptpawn.html#Orders">Orders</a>, <a href="../runei/scriptpawn.html#OrdersTag">OrdersTag</a>, <a href="../runei/scriptpawn.html#PaceRange">PaceRange</a>, <a href="../runei/scriptpawn.html#ProtectionTimer">ProtectionTimer</a>, <a href="../runei/scriptpawn.html#RoamSound">RoamSound</a>, <a href="../runei/scriptpawn.html#ShadowScale">ShadowScale</a>, <a href="../runei/scriptpawn.html#SpeechPos">SpeechPos</a>, <a href="../runei/scriptpawn.html#StartShield">StartShield</a>, <a href="../runei/scriptpawn.html#StartWeapon">StartWeapon</a>, <a href="../runei/scriptpawn.html#StatueAnimFrame">StatueAnimFrame</a>, <a href="../runei/scriptpawn.html#StatueAnimSeq">StatueAnimSeq</a>, <a href="../runei/scriptpawn.html#TeamTag">TeamTag</a>, <a href="../runei/scriptpawn.html#testfloat">testfloat</a>, <a href="../runei/scriptpawn.html#teststring">teststring</a>, <a href="../runei/scriptpawn.html#teststring2">teststring2</a>, <a href="../runei/scriptpawn.html#ThreatenSound">ThreatenSound</a>, <a href="../runei/scriptpawn.html#ThrowTrajectory">ThrowTrajectory</a>, <a href="../runei/scriptpawn.html#TimeBetweenAttacks">TimeBetweenAttacks</a>, <a href="../runei/scriptpawn.html#TriggerOrders">TriggerOrders</a>, <a href="../runei/scriptpawn.html#TriggerOrdersTag">TriggerOrdersTag</a>, <a href="../runei/scriptpawn.html#VecFromEnemy">VecFromEnemy</a>, <a href="../runei/scriptpawn.html#VecToEnemy">VecToEnemy</a>, <a href="../runei/scriptpawn.html#WanderDistance">WanderDistance</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/pawn.html">Pawn</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/pawn.html#AccelRate">AccelRate</a>, <a href="../engine/pawn.html#AirControl">AirControl</a>, <a href="../engine/pawn.html#AirSpeed">AirSpeed</a>, <a href="../engine/pawn.html#Alertness">Alertness</a>, <a href="../engine/pawn.html#AmbientSoundTime">AmbientSoundTime</a>, <a href="../engine/pawn.html#AttitudeToPlayer">AttitudeToPlayer</a>, <a href="../engine/pawn.html#AvgPhysicsTime">AvgPhysicsTime</a>, <a href="../engine/pawn.html#bAdvancedTactics">bAdvancedTactics</a>, <a href="../engine/pawn.html#bAlignToFloor">bAlignToFloor</a>, <a href="../engine/pawn.html#bAllowStandOn">bAllowStandOn</a>, <a href="../engine/pawn.html#bAltFire">bAltFire</a>, <a href="../engine/pawn.html#BaseEyeHeight">BaseEyeHeight</a>, <a href="../engine/pawn.html#bAutoActivate">bAutoActivate</a>, <a href="../engine/pawn.html#bAvoidLedges">bAvoidLedges</a>, <a href="../engine/pawn.html#bBehindView">bBehindView</a>, <a href="../engine/pawn.html#bCanDoSpecial">bCanDoSpecial</a>, <a href="../engine/pawn.html#bCanFly">bCanFly</a>, <a href="../engine/pawn.html#bCanGrabEdges">bCanGrabEdges</a>, <a href="../engine/pawn.html#bCanJump">bCanJump</a>, <a href="../engine/pawn.html#bCanLook">bCanLook</a>, <a href="../engine/pawn.html#bCanOpenDoors">bCanOpenDoors</a>, <a href="../engine/pawn.html#bCanStrafe">bCanStrafe</a>, <a href="../engine/pawn.html#bCanSwim">bCanSwim</a>, <a href="../engine/pawn.html#bCanWalk">bCanWalk</a>, <a href="../engine/pawn.html#bCountJumps">bCountJumps</a>, <a href="../engine/pawn.html#bDrowning">bDrowning</a>, <a href="../engine/pawn.html#bDuck">bDuck</a>, <a href="../engine/pawn.html#bExtra0">bExtra0</a>, <a href="../engine/pawn.html#bExtra1">bExtra1</a>, <a href="../engine/pawn.html#bExtra2">bExtra2</a>, <a href="../engine/pawn.html#bExtra3">bExtra3</a>, <a href="../engine/pawn.html#bFire">bFire</a>, <a href="../engine/pawn.html#bFixedStart">bFixedStart</a>, <a href="../engine/pawn.html#bFootsteps">bFootsteps</a>, <a href="../engine/pawn.html#bFreeLook">bFreeLook</a>, <a href="../engine/pawn.html#bFromWall">bFromWall</a>, <a href="../engine/pawn.html#bGibbable">bGibbable</a>, <a href="../engine/pawn.html#bHeadLookUpDouble">bHeadLookUpDouble</a>, <a href="../engine/pawn.html#bHitSlopedWall">bHitSlopedWall</a>, <a href="../engine/pawn.html#bHunting">bHunting</a>, <a href="../engine/pawn.html#bHurrying">bHurrying</a>, <a href="../engine/pawn.html#bInvisible">bInvisible</a>, <a href="../engine/pawn.html#bIsFemale">bIsFemale</a>, <a href="../engine/pawn.html#bIsHuman">bIsHuman</a>, <a href="../engine/pawn.html#bIsMultiSkinned">bIsMultiSkinned</a>, <a href="../engine/pawn.html#bIsPlayer">bIsPlayer</a>, <a href="../engine/pawn.html#bIsWalking">bIsWalking</a>, <a href="../engine/pawn.html#bJumpOffPawn">bJumpOffPawn</a>, <a href="../engine/pawn.html#bJustLanded">bJustLanded</a>, <a href="../engine/pawn.html#bLeadEnemy">bLeadEnemy</a>, <a href="../engine/pawn.html#BloodSteps">BloodSteps</a>, <a href="../engine/pawn.html#BloodyFootprintClass">BloodyFootprintClass</a>, <a href="../engine/pawn.html#bLook">bLook</a>, <a href="../engine/pawn.html#bLOSflag">bLOSflag</a>, <a href="../engine/pawn.html#bNeverSwitchOnPickup">bNeverSwitchOnPickup</a>, <a href="../engine/pawn.html#BodyPartHealth[15]">BodyPartHealth[15]</a>, <a href="../engine/pawn.html#bOverrideLookTarget">bOverrideLookTarget</a>, <a href="../engine/pawn.html#bReducedSpeed">bReducedSpeed</a>, <a href="../engine/pawn.html#bRotateHead">bRotateHead</a>, <a href="../engine/pawn.html#bRotateTorso">bRotateTorso</a>, <a href="../engine/pawn.html#bRun">bRun</a>, <a href="../engine/pawn.html#bShootSpecial">bShootSpecial</a>, <a href="../engine/pawn.html#bSnapLevel">bSnapLevel</a>, <a href="../engine/pawn.html#bStopAtLedges">bStopAtLedges</a>, <a href="../engine/pawn.html#bStopMoveIfCombatRange">bStopMoveIfCombatRange</a>, <a href="../engine/pawn.html#bStrafe">bStrafe</a>, <a href="../engine/pawn.html#bSwingingHigh">bSwingingHigh</a>, <a href="../engine/pawn.html#bSwingingLow">bSwingingLow</a>, <a href="../engine/pawn.html#bUpAndOut">bUpAndOut</a>, <a href="../engine/pawn.html#bUpdatingDisplay">bUpdatingDisplay</a>, <a href="../engine/pawn.html#bViewTarget">bViewTarget</a>, <a href="../engine/pawn.html#bWarping">bWarping</a>, <a href="../engine/pawn.html#bZoom">bZoom</a>, <a href="../engine/pawn.html#CarcassType">CarcassType</a>, <a href="../engine/pawn.html#ClassID">ClassID</a>, <a href="../engine/pawn.html#CombatRange">CombatRange</a>, <a href="../engine/pawn.html#CombatStyle">CombatStyle</a>, <a href="../engine/pawn.html#CurrentSkin">CurrentSkin</a>, <a href="../engine/pawn.html#DamageScaling">DamageScaling</a>, <a href="../engine/pawn.html#DeathHeight">DeathHeight</a>, <a href="../engine/pawn.html#DeathRadius">DeathRadius</a>, <a href="../engine/pawn.html#DesiredMouthRot">DesiredMouthRot</a>, <a href="../engine/pawn.html#DesiredSpeed">DesiredSpeed</a>, <a href="../engine/pawn.html#Destination">Destination</a>, <a href="../engine/pawn.html#Die">Die</a>, <a href="../engine/pawn.html#Die2">Die2</a>, <a href="../engine/pawn.html#Die3">Die3</a>, <a href="../engine/pawn.html#DieCount">DieCount</a>, <a href="../engine/pawn.html#DropWhenKilled">DropWhenKilled</a>, <a href="../engine/pawn.html#Enemy">Enemy</a>, <a href="../engine/pawn.html#EyeHeight">EyeHeight</a>, <a href="../engine/pawn.html#FaceTarget">FaceTarget</a>, <a href="../engine/pawn.html#Floor">Floor</a>, <a href="../engine/pawn.html#Focus">Focus</a>, <a href="../engine/pawn.html#FootprintClass">FootprintClass</a>, <a href="../engine/pawn.html#FootRegion">FootRegion</a>, <a href="../engine/pawn.html#FootStepBreakableStone[3]">FootStepBreakableStone[3]</a>, <a href="../engine/pawn.html#FootStepBreakableWood[3]">FootStepBreakableWood[3]</a>, <a href="../engine/pawn.html#FootStepEarth[3]">FootStepEarth[3]</a>, <a href="../engine/pawn.html#FootStepFlesh[3]">FootStepFlesh[3]</a>, <a href="../engine/pawn.html#FootStepIce[3]">FootStepIce[3]</a>, <a href="../engine/pawn.html#FootStepLava[3]">FootStepLava[3]</a>, <a href="../engine/pawn.html#FootStepMetal[3]">FootStepMetal[3]</a>, <a href="../engine/pawn.html#FootStepMud[3]">FootStepMud[3]</a>, <a href="../engine/pawn.html#FootStepSnow[3]">FootStepSnow[3]</a>, <a href="../engine/pawn.html#FootStepStone[3]">FootStepStone[3]</a>, <a href="../engine/pawn.html#FootstepVolume">FootstepVolume</a>, <a href="../engine/pawn.html#FootStepWater[3]">FootStepWater[3]</a>, <a href="../engine/pawn.html#FootStepWood[3]">FootStepWood[3]</a>, <a href="../engine/pawn.html#FovAngle">FovAngle</a>, <a href="../engine/pawn.html#GibClass">GibClass</a>, <a href="../engine/pawn.html#GibCount">GibCount</a>, <a href="../engine/pawn.html#GibSound">GibSound</a>, <a href="../engine/pawn.html#GrabLocationIn">GrabLocationIn</a>, <a href="../engine/pawn.html#GrabLocationUp">GrabLocationUp</a>, <a href="../engine/pawn.html#GroundSpeed">GroundSpeed</a>, <a href="../engine/pawn.html#HeadRegion">HeadRegion</a>, <a href="../engine/pawn.html#Health">Health</a>, <a href="../engine/pawn.html#HearingThreshold">HearingThreshold</a>, <a href="../engine/pawn.html#HitSound1">HitSound1</a>, <a href="../engine/pawn.html#HitSound2">HitSound2</a>, <a href="../engine/pawn.html#HitSound3">HitSound3</a>, <a href="../engine/pawn.html#Intelligence">Intelligence</a>, <a href="../engine/pawn.html#ItemCount">ItemCount</a>, <a href="../engine/pawn.html#JumpZ">JumpZ</a>, <a href="../engine/pawn.html#KillCount">KillCount</a>, <a href="../engine/pawn.html#LandGrunt">LandGrunt</a>, <a href="../engine/pawn.html#LandSoundBreakableStone">LandSoundBreakableStone</a>, <a href="../engine/pawn.html#LandSoundBreakableWood">LandSoundBreakableWood</a>, <a href="../engine/pawn.html#LandSoundEarth">LandSoundEarth</a>, <a href="../engine/pawn.html#LandSoundFlesh">LandSoundFlesh</a>, <a href="../engine/pawn.html#LandSoundIce">LandSoundIce</a>, <a href="../engine/pawn.html#LandSoundLava">LandSoundLava</a>, <a href="../engine/pawn.html#LandSoundMetal">LandSoundMetal</a>, <a href="../engine/pawn.html#LandSoundMud">LandSoundMud</a>, <a href="../engine/pawn.html#LandSoundSnow">LandSoundSnow</a>, <a href="../engine/pawn.html#LandSoundStone">LandSoundStone</a>, <a href="../engine/pawn.html#LandSoundWater">LandSoundWater</a>, <a href="../engine/pawn.html#LandSoundWood">LandSoundWood</a>, <a href="../engine/pawn.html#LastPainSound">LastPainSound</a>, <a href="../engine/pawn.html#LastSeeingPos">LastSeeingPos</a>, <a href="../engine/pawn.html#LastSeenPos">LastSeenPos</a>, <a href="../engine/pawn.html#LastSeenTime">LastSeenTime</a>, <a href="../engine/pawn.html#LFootJoint">LFootJoint</a>, <a href="../engine/pawn.html#LookAngle">LookAngle</a>, <a href="../engine/pawn.html#LookDegPerSec">LookDegPerSec</a>, <a href="../engine/pawn.html#LookSpot">LookSpot</a>, <a href="../engine/pawn.html#LookTarget">LookTarget</a>, <a href="../engine/pawn.html#MaxBodyAngle">MaxBodyAngle</a>, <a href="../engine/pawn.html#MaxDesiredSpeed">MaxDesiredSpeed</a>, <a href="../engine/pawn.html#MaxHeadAngle">MaxHeadAngle</a>, <a href="../engine/pawn.html#MaxHealth">MaxHealth</a>, <a href="../engine/pawn.html#MaxMouthRot">MaxMouthRot</a>, <a href="../engine/pawn.html#MaxMouthRotRate">MaxMouthRotRate</a>, <a href="../engine/pawn.html#MaxPower">MaxPower</a>, <a href="../engine/pawn.html#MaxStepHeight">MaxStepHeight</a>, <a href="../engine/pawn.html#MaxStrength">MaxStrength</a>, <a href="../engine/pawn.html#MeleeRange">MeleeRange</a>, <a href="../engine/pawn.html#MenuName">MenuName</a>, <a href="../engine/pawn.html#MinHitWall">MinHitWall</a>, <a href="../engine/pawn.html#MouthRot">MouthRot</a>, <a href="../engine/pawn.html#MouthRotRate">MouthRotRate</a>, <a href="../engine/pawn.html#MovementSpeed">MovementSpeed</a>, <a href="../engine/pawn.html#MoveTarget">MoveTarget</a>, <a href="../engine/pawn.html#MoveTimer">MoveTimer</a>, <a href="../engine/pawn.html#NameArticle">NameArticle</a>, <a href="../engine/pawn.html#NextLabel">NextLabel</a>, <a href="../engine/pawn.html#nextPawn">nextPawn</a>, <a href="../engine/pawn.html#NextState">NextState</a>, <a href="../engine/pawn.html#NextStateAfterPain">NextStateAfterPain</a>, <a href="../engine/pawn.html#noise1loudness">noise1loudness</a>, <a href="../engine/pawn.html#noise1other">noise1other</a>, <a href="../engine/pawn.html#noise1spot">noise1spot</a>, <a href="../engine/pawn.html#noise1time">noise1time</a>, <a href="../engine/pawn.html#noise2loudness">noise2loudness</a>, <a href="../engine/pawn.html#noise2other">noise2other</a>, <a href="../engine/pawn.html#noise2spot">noise2spot</a>, <a href="../engine/pawn.html#noise2time">noise2time</a>, <a href="../engine/pawn.html#OldMessageTime">OldMessageTime</a>, <a href="../engine/pawn.html#OrthoZoom">OrthoZoom</a>, <a href="../engine/pawn.html#PainDelay">PainDelay</a>, <a href="../engine/pawn.html#PainTime">PainTime</a>, <a href="../engine/pawn.html#PendingWeapon">PendingWeapon</a>, <a href="../engine/pawn.html#PeripheralVision">PeripheralVision</a>, <a href="../engine/pawn.html#PlayerReplicationInfo">PlayerReplicationInfo</a>, <a href="../engine/pawn.html#PlayerReplicationInfoClass">PlayerReplicationInfoClass</a>, <a href="../engine/pawn.html#PlayerReStartState">PlayerReStartState</a>, <a href="../engine/pawn.html#ReducedDamagePct">ReducedDamagePct</a>, <a href="../engine/pawn.html#ReducedDamageType">ReducedDamageType</a>, <a href="../engine/pawn.html#RFootJoint">RFootJoint</a>, <a href="../engine/pawn.html#RouteCache[16]">RouteCache[16]</a>, <a href="../engine/pawn.html#RunePower">RunePower</a>, <a href="../engine/pawn.html#SecretCount">SecretCount</a>, <a href="../engine/pawn.html#SelectedItem">SelectedItem</a>, <a href="../engine/pawn.html#SelectionMesh">SelectionMesh</a>, <a href="../engine/pawn.html#Shadow">Shadow</a>, <a href="../engine/pawn.html#Shield">Shield</a>, <a href="../engine/pawn.html#ShieldJoint">ShieldJoint</a>, <a href="../engine/pawn.html#SightCounter">SightCounter</a>, <a href="../engine/pawn.html#SightRadius">SightRadius</a>, <a href="../engine/pawn.html#Skill">Skill</a>, <a href="../engine/pawn.html#SkinDefaultText">SkinDefaultText</a>, <a href="../engine/pawn.html#SoundDampening">SoundDampening</a>, <a href="../engine/pawn.html#SpecialGoal">SpecialGoal</a>, <a href="../engine/pawn.html#SpecialMesh">SpecialMesh</a>, <a href="../engine/pawn.html#SpecialPause">SpecialPause</a>, <a href="../engine/pawn.html#SpeechTime">SpeechTime</a>, <a href="../engine/pawn.html#SpeedScale">SpeedScale</a>, <a href="../engine/pawn.html#SplashTime">SplashTime</a>, <a href="../engine/pawn.html#Spree">Spree</a>, <a href="../engine/pawn.html#StabJoint">StabJoint</a>, <a href="../engine/pawn.html#StartEvent">StartEvent</a>, <a href="../engine/pawn.html#Stimulus">Stimulus</a>, <a href="../engine/pawn.html#Strength">Strength</a>, <a href="../engine/pawn.html#targetangle">targetangle</a>, <a href="../engine/pawn.html#UnderWaterTime">UnderWaterTime</a>, <a href="../engine/pawn.html#UninterruptedAnim">UninterruptedAnim</a>, <a href="../engine/pawn.html#UseActor">UseActor</a>, <a href="../engine/pawn.html#ViewLocation">ViewLocation</a>, <a href="../engine/pawn.html#ViewRotation">ViewRotation</a>, <a href="../engine/pawn.html#Visibility">Visibility</a>, <a href="../engine/pawn.html#VoicePitch">VoicePitch</a>, <a href="../engine/pawn.html#VoiceType">VoiceType</a>, <a href="../engine/pawn.html#WalkBob">WalkBob</a>, <a href="../engine/pawn.html#WalkingSpeed">WalkingSpeed</a>, <a href="../engine/pawn.html#WaterSpeed">WaterSpeed</a>, <a href="../engine/pawn.html#WaterStep">WaterStep</a>, <a href="../engine/pawn.html#WaterSteps">WaterSteps</a>, <a href="../engine/pawn.html#Weapon">Weapon</a>, <a href="../engine/pawn.html#WeaponJoint">WeaponJoint</a>, <a href="../engine/pawn.html#WetFootprintClass">WetFootprintClass</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Enumerations Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Enumerations from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/scriptpawn.html">ScriptPawn</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/scriptpawn.html#AttackAction_e">AttackAction_e</a>, <a href="../runei/scriptpawn.html#Facing_e">Facing_e</a>, <a href="../runei/scriptpawn.html#Incidence_e">Incidence_e</a>, <a href="../runei/scriptpawn.html#Movement_e">Movement_e</a>, <a href="../runei/scriptpawn.html#Vertical_e">Vertical_e</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Enumerations from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/pawn.html">Pawn</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/pawn.html#EAttitude">EAttitude</a>, <a href="../engine/pawn.html#EIntelligence">EIntelligence</a>, <a href="../engine/pawn.html#ESpeedScale">ESpeedScale</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_ActorInRange-GuardHole" name="ActorInRange" title="go to the details">ActorInRange</a> (<a href="../engine/actor.html">actor</a> A))<br /><span class="function_state">GuardHole</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_AttachRagnar-GuardHole" name="AttachRagnar" title="go to the details">AttachRagnar</a> ()))<br /><span class="function_state">GuardHole</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Bump-GuardHole" name="Bump" title="go to the details">Bump</a> (<a href="../engine/actor.html">actor</a> Other))<br /><span class="function_state">GuardHole</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_CheckForEnemies-" name="CheckForEnemies" title="go to the details">CheckForEnemies</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Debug-" name="Debug" title="go to the details">Debug</a> (<a href="../engine/canvas.html">Canvas</a> canvas, int mode))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_EnemyNotVisible-GuardHole" name="EnemyNotVisible" title="go to the details">EnemyNotVisible</a> ()))<br /><span class="function_state">GuardHole</span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../engine/texture.html">Texture</a>&nbsp;</td><td><a href="#_PainSkin-" name="PainSkin" title="go to the details">PainSkin</a> (int BodyPart))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayAttack-" name="PlayAttack" title="go to the details">PlayAttack</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayDeath-" name="PlayDeath" title="go to the details">PlayDeath</a> (name DamageType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayWaiting-" name="PlayWaiting" title="go to the details">PlayWaiting</a> (optional float tween))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PreSetMovement-" name="PreSetMovement" title="go to the details">PreSetMovement</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SeePlayer-GuardHole" name="SeePlayer" title="go to the details">SeePlayer</a> (<a href="../engine/actor.html">actor</a> seen))<br /><span class="function_state">GuardHole</span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/scriptpawn.html">ScriptPawn</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/scriptpawn.html#AddLocalVelocity">AddLocalVelocity</a>, <a href="../runei/scriptpawn.html#adjustJump">adjustJump</a>, <a href="../runei/scriptpawn.html#AfterSpawningInventory">AfterSpawningInventory</a>, <a href="../runei/scriptpawn.html#AllowWeaponToHitActor">AllowWeaponToHitActor</a>, <a href="../runei/scriptpawn.html#AmbientSoundTimer">AmbientSoundTimer</a>, <a href="../runei/scriptpawn.html#AnimEnd">AnimEnd</a>, <a href="../runei/scriptpawn.html#AssimilateVagrants">AssimilateVagrants</a>, <a href="../runei/scriptpawn.html#AttitudeTo">AttitudeTo</a>, <a href="../runei/scriptpawn.html#AttitudeToCreature">AttitudeToCreature</a>, <a href="../runei/scriptpawn.html#BeginState">BeginState</a>, <a href="../runei/scriptpawn.html#Breath">Breath</a>, <a href="../runei/scriptpawn.html#Bump">Bump</a>, <a href="../runei/scriptpawn.html#CanBeStatued">CanBeStatued</a>, <a href="../runei/scriptpawn.html#CanDirectlyThreaten">CanDirectlyThreaten</a>, <a href="../runei/scriptpawn.html#CanGotoPainState">CanGotoPainState</a>, <a href="../runei/scriptpawn.html#CheckDestination">CheckDestination</a>, <a href="../runei/scriptpawn.html#CheckElectLeader">CheckElectLeader</a>, <a href="../runei/scriptpawn.html#CheckForEnemies">CheckForEnemies</a>, <a href="../runei/scriptpawn.html#CheckReachable">CheckReachable</a>, <a href="../runei/scriptpawn.html#CreatureNormal">CreatureNormal</a>, <a href="../runei/scriptpawn.html#CreatureStatue">CreatureStatue</a>, <a href="../runei/scriptpawn.html#DamageAttitudeTo">DamageAttitudeTo</a>, <a href="../runei/scriptpawn.html#DebrisCloud">DebrisCloud</a>, <a href="../runei/scriptpawn.html#Debug">Debug</a>, <a href="../runei/scriptpawn.html#DecideOrders">DecideOrders</a>, <a href="../runei/scriptpawn.html#DoLanded">DoLanded</a>, <a href="../runei/scriptpawn.html#DoThrow">DoThrow</a>, <a href="../runei/scriptpawn.html#EndState">EndState</a>, <a href="../runei/scriptpawn.html#EnemyAcquired">EnemyAcquired</a>, <a href="../runei/scriptpawn.html#EnemyNotVisible">EnemyNotVisible</a>, <a href="../runei/scriptpawn.html#Evaluate">Evaluate</a>, <a href="../runei/scriptpawn.html#ExecuteScriptAction">ExecuteScriptAction</a>, <a href="../runei/scriptpawn.html#ExecuteScriptDispatcherAction">ExecuteScriptDispatcherAction</a>, <a href="../runei/scriptpawn.html#ExecuteScriptPoint">ExecuteScriptPoint</a>, <a href="../runei/scriptpawn.html#Falling">Falling</a>, <a href="../runei/scriptpawn.html#FearThisSpot">FearThisSpot</a>, <a href="../runei/scriptpawn.html#FindViewSpot">FindViewSpot</a>, <a href="../runei/scriptpawn.html#FinishScriptDispatcher">FinishScriptDispatcher</a>, <a href="../runei/scriptpawn.html#FollowOrders">FollowOrders</a>, <a href="../runei/scriptpawn.html#FrameNotify">FrameNotify</a>, <a href="../runei/scriptpawn.html#GetEnemyProximity">GetEnemyProximity</a>, <a href="../runei/scriptpawn.html#GiveAttackOrders">GiveAttackOrders</a>, <a href="../runei/scriptpawn.html#GiveFleeOrders">GiveFleeOrders</a>, <a href="../runei/scriptpawn.html#GiveNullOrders">GiveNullOrders</a>, <a href="../runei/scriptpawn.html#GrabEdge">GrabEdge</a>, <a href="../runei/scriptpawn.html#HeadZoneChange">HeadZoneChange</a>, <a href="../runei/scriptpawn.html#HearNoise">HearNoise</a>, <a href="../runei/scriptpawn.html#HitWall">HitWall</a>, <a href="../runei/scriptpawn.html#IAmLeader">IAmLeader</a>, <a href="../runei/scriptpawn.html#InAttackRange">InAttackRange</a>, <a href="../runei/scriptpawn.html#InformTeammates">InformTeammates</a>, <a href="../runei/scriptpawn.html#InLungeRange">InLungeRange</a>, <a href="../runei/scriptpawn.html#InMeleeRange">InMeleeRange</a>, <a href="../runei/scriptpawn.html#InPaceRange">InPaceRange</a>, <a href="../runei/scriptpawn.html#InRange">InRange</a>, <a href="../runei/scriptpawn.html#InventoryNormal">InventoryNormal</a>, <a href="../runei/scriptpawn.html#InventoryStatue">InventoryStatue</a>, <a href="../runei/scriptpawn.html#JointDamaged">JointDamaged</a>, <a href="../runei/scriptpawn.html#Landed">Landed</a>, <a href="../runei/scriptpawn.html#LimbSevered">LimbSevered</a>, <a href="../runei/scriptpawn.html#LongFall">LongFall</a>, <a href="../runei/scriptpawn.html#LookAtEndPoint">LookAtEndPoint</a>, <a href="../runei/scriptpawn.html#MatterForJoint">MatterForJoint</a>, <a href="../runei/scriptpawn.html#MayFall">MayFall</a>, <a href="../runei/scriptpawn.html#OrderFinished">OrderFinished</a>, <a href="../runei/scriptpawn.html#PainTimer">PainTimer</a>, <a href="../runei/scriptpawn.html#PickDestination">PickDestination</a>, <a href="../runei/scriptpawn.html#PickWaypoint">PickWaypoint</a>, <a href="../runei/scriptpawn.html#PlayAmbientFightSound">PlayAmbientFightSound</a>, <a href="../runei/scriptpawn.html#PlayAmbientWaitSound">PlayAmbientWaitSound</a>, <a href="../runei/scriptpawn.html#PlayBackup">PlayBackup</a>, <a href="../runei/scriptpawn.html#PlayBlockHigh">PlayBlockHigh</a>, <a href="../runei/scriptpawn.html#PlayBlockLow">PlayBlockLow</a>, <a href="../runei/scriptpawn.html#PlayCower">PlayCower</a>, <a href="../runei/scriptpawn.html#PlayDeath">PlayDeath</a>, <a href="../runei/scriptpawn.html#PlayDropWeapon">PlayDropWeapon</a>, <a href="../runei/scriptpawn.html#PlayFrontHit">PlayFrontHit</a>, <a href="../runei/scriptpawn.html#PlayHuntStop">PlayHuntStop</a>, <a href="../runei/scriptpawn.html#PlayInAir">PlayInAir</a>, <a href="../runei/scriptpawn.html#PlayJumping">PlayJumping</a>, <a href="../runei/scriptpawn.html#PlayLanding">PlayLanding</a>, <a href="../runei/scriptpawn.html#PlayMeleeHigh">PlayMeleeHigh</a>, <a href="../runei/scriptpawn.html#PlayMeleeLow">PlayMeleeLow</a>, <a href="../runei/scriptpawn.html#PlayMeleeVertical">PlayMeleeVertical</a>, <a href="../runei/scriptpawn.html#PlayMoving">PlayMoving</a>, <a href="../runei/scriptpawn.html#PlayMovingAttack">PlayMovingAttack</a>, <a href="../runei/scriptpawn.html#PlayPickupShield">PlayPickupShield</a>, <a href="../runei/scriptpawn.html#PlayPickupWeapon">PlayPickupWeapon</a>, <a href="../runei/scriptpawn.html#PlayPullUp">PlayPullUp</a>, <a href="../runei/scriptpawn.html#PlayStepUp">PlayStepUp</a>, <a href="../runei/scriptpawn.html#PlayStrafeLeft">PlayStrafeLeft</a>, <a href="../runei/scriptpawn.html#PlayStrafeRight">PlayStrafeRight</a>, <a href="../runei/scriptpawn.html#PlayTaunting">PlayTaunting</a>, <a href="../runei/scriptpawn.html#PlayThreatening">PlayThreatening</a>, <a href="../runei/scriptpawn.html#PlayThrowing">PlayThrowing</a>, <a href="../runei/scriptpawn.html#PlayTurning">PlayTurning</a>, <a href="../runei/scriptpawn.html#PlayWaiting">PlayWaiting</a>, <a href="../runei/scriptpawn.html#PowerupBlaze">PowerupBlaze</a>, <a href="../runei/scriptpawn.html#PowerupElectricity">PowerupElectricity</a>, <a href="../runei/scriptpawn.html#PowerupFire">PowerupFire</a>, <a href="../runei/scriptpawn.html#PowerupFriend">PowerupFriend</a>, <a href="../runei/scriptpawn.html#PowerupIce">PowerupIce</a>, <a href="../runei/scriptpawn.html#PowerupStone">PowerupStone</a>, <a href="../runei/scriptpawn.html#PreBeginPlay">PreBeginPlay</a>, <a href="../runei/scriptpawn.html#ProtectAlly">ProtectAlly</a>, <a href="../runei/scriptpawn.html#SeePlayer">SeePlayer</a>, <a href="../runei/scriptpawn.html#SetEnemy">SetEnemy</a>, <a href="../runei/scriptpawn.html#SetFall">SetFall</a>, <a href="../runei/scriptpawn.html#SetHome">SetHome</a>, <a href="../runei/scriptpawn.html#SetMovementPhysics">SetMovementPhysics</a>, <a href="../runei/scriptpawn.html#SetOnFire">SetOnFire</a>, <a href="../runei/scriptpawn.html#ShadowUpdate">ShadowUpdate</a>, <a href="../runei/scriptpawn.html#SoundChance">SoundChance</a>, <a href="../runei/scriptpawn.html#SpawnBloodSplot">SpawnBloodSplot</a>, <a href="../runei/scriptpawn.html#SpawnDebris">SpawnDebris</a>, <a href="../runei/scriptpawn.html#SpawnStartInventory">SpawnStartInventory</a>, <a href="../runei/scriptpawn.html#SpeechTimer">SpeechTimer</a>, <a href="../runei/scriptpawn.html#TestDirection">TestDirection</a>, <a href="../runei/scriptpawn.html#Tick">Tick</a>, <a href="../runei/scriptpawn.html#Timer">Timer</a>, <a href="../runei/scriptpawn.html#TouchSurroundingObjects">TouchSurroundingObjects</a>, <a href="../runei/scriptpawn.html#Trigger">Trigger</a>, <a href="../runei/scriptpawn.html#TryChargeEnemy">TryChargeEnemy</a>, <a href="../runei/scriptpawn.html#TweenToHuntStop">TweenToHuntStop</a>, <a href="../runei/scriptpawn.html#TweenToJumping">TweenToJumping</a>, <a href="../runei/scriptpawn.html#TweenToMeleeHigh">TweenToMeleeHigh</a>, <a href="../runei/scriptpawn.html#TweenToMeleeLow">TweenToMeleeLow</a>, <a href="../runei/scriptpawn.html#TweenToMoving">TweenToMoving</a>, <a href="../runei/scriptpawn.html#TweenToThrowing">TweenToThrowing</a>, <a href="../runei/scriptpawn.html#TweenToTurning">TweenToTurning</a>, <a href="../runei/scriptpawn.html#TweenToWaiting">TweenToWaiting</a>, <a href="../runei/scriptpawn.html#UnPowerupFriend">UnPowerupFriend</a>, <a href="../runei/scriptpawn.html#ValidEnemy">ValidEnemy</a>, <a href="../runei/scriptpawn.html#WantsToPickUp">WantsToPickUp</a>, <a href="../runei/scriptpawn.html#WeaponActivate">WeaponActivate</a>, <a href="../runei/scriptpawn.html#WeaponDeactivate">WeaponDeactivate</a>, <a href="../runei/scriptpawn.html#ZoneChange">ZoneChange</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/pawn.html">Pawn</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/pawn.html#AcquireInventory">AcquireInventory</a>, <a href="../engine/pawn.html#ActivateShield">ActivateShield</a>, <a href="../engine/pawn.html#actorReachable">actorReachable</a>, <a href="../engine/pawn.html#ActorTagged">ActorTagged</a>, <a href="../engine/pawn.html#AddInventory">AddInventory</a>, <a href="../engine/pawn.html#AddPawn">AddPawn</a>, <a href="../engine/pawn.html#AddVelocity">AddVelocity</a>, <a href="../engine/pawn.html#AdjustAim">AdjustAim</a>, <a href="../engine/pawn.html#AdjustDesireFor">AdjustDesireFor</a>, <a href="../engine/pawn.html#AdjustToss">AdjustToss</a>, <a href="../engine/pawn.html#AllowWeaponToHitActor">AllowWeaponToHitActor</a>, <a href="../engine/pawn.html#AlterDestination">AlterDestination</a>, <a href="../engine/pawn.html#AmbientSoundTimer">AmbientSoundTimer</a>, <a href="../engine/pawn.html#AngleTo">AngleTo</a>, <a href="../engine/pawn.html#AnimEnd">AnimEnd</a>, <a href="../engine/pawn.html#ApplyPainToJoint">ApplyPainToJoint</a>, <a href="../engine/pawn.html#BaseChange">BaseChange</a>, <a href="../engine/pawn.html#BecomeViewTarget">BecomeViewTarget</a>, <a href="../engine/pawn.html#BeginState">BeginState</a>, <a href="../engine/pawn.html#BodyPartCollision">BodyPartCollision</a>, <a href="../engine/pawn.html#BodyPartCritical">BodyPartCritical</a>, <a href="../engine/pawn.html#BodyPartForJoint">BodyPartForJoint</a>, <a href="../engine/pawn.html#BodyPartForPolyGroup">BodyPartForPolyGroup</a>, <a href="../engine/pawn.html#BodyPartMissing">BodyPartMissing</a>, <a href="../engine/pawn.html#BodyPartSeverable">BodyPartSeverable</a>, <a href="../engine/pawn.html#BodyPartVisibility">BodyPartVisibility</a>, <a href="../engine/pawn.html#BoostStrength">BoostStrength</a>, <a href="../engine/pawn.html#BotVoiceMessage">BotVoiceMessage</a>, <a href="../engine/pawn.html#CalcLookAngle">CalcLookAngle</a>, <a href="../engine/pawn.html#CanBeStatued">CanBeStatued</a>, <a href="../engine/pawn.html#CanGotoPainState">CanGotoPainState</a>, <a href="../engine/pawn.html#CanPickup">CanPickup</a>, <a href="../engine/pawn.html#CanSee">CanSee</a>, <a href="../engine/pawn.html#CanStabActor">CanStabActor</a>, <a href="../engine/pawn.html#ChangedWeapon">ChangedWeapon</a>, <a href="../engine/pawn.html#CheckDefending">CheckDefending</a>, <a href="../engine/pawn.html#CheckWaterJump">CheckWaterJump</a>, <a href="../engine/pawn.html#ClearPaths">ClearPaths</a>, <a href="../engine/pawn.html#ClearSwipeArray">ClearSwipeArray</a>, <a href="../engine/pawn.html#ClientDying">ClientDying</a>, <a href="../engine/pawn.html#ClientGameEnded">ClientGameEnded</a>, <a href="../engine/pawn.html#ClientHearSound">ClientHearSound</a>, <a href="../engine/pawn.html#ClientMessage">ClientMessage</a>, <a href="../engine/pawn.html#ClientPutDown">ClientPutDown</a>, <a href="../engine/pawn.html#ClientReStart">ClientReStart</a>, <a href="../engine/pawn.html#ClientSetLocation">ClientSetLocation</a>, <a href="../engine/pawn.html#ClientSetRotation">ClientSetRotation</a>, <a href="../engine/pawn.html#ClientVoiceMessage">ClientVoiceMessage</a>, <a href="../engine/pawn.html#CloserNavPointTo">CloserNavPointTo</a>, <a href="../engine/pawn.html#damageAttitudeTo">damageAttitudeTo</a>, <a href="../engine/pawn.html#DamageBodyPart">DamageBodyPart</a>, <a href="../engine/pawn.html#Debug">Debug</a>, <a href="../engine/pawn.html#DeleteInventory">DeleteInventory</a>, <a href="../engine/pawn.html#Destroyed">Destroyed</a>, <a href="../engine/pawn.html#Died">Died</a>, <a href="../engine/pawn.html#Done">Done</a>, <a href="../engine/pawn.html#DoThrow">DoThrow</a>, <a href="../engine/pawn.html#DropShield">DropShield</a>, <a href="../engine/pawn.html#DropWeapon">DropWeapon</a>, <a href="../engine/pawn.html#EAdjustJump">EAdjustJump</a>, <a href="../engine/pawn.html#EncroachedBy">EncroachedBy</a>, <a href="../engine/pawn.html#EncroachingOn">EncroachingOn</a>, <a href="../engine/pawn.html#EndState">EndState</a>, <a href="../engine/pawn.html#EnemyNotVisible">EnemyNotVisible</a>, <a href="../engine/pawn.html#ExpandCollisionRadius">ExpandCollisionRadius</a>, <a href="../engine/pawn.html#Falling">Falling</a>, <a href="../engine/pawn.html#FearThisSpot">FearThisSpot</a>, <a href="../engine/pawn.html#FellOutOfWorld">FellOutOfWorld</a>, <a href="../engine/pawn.html#FindBestInventoryPath">FindBestInventoryPath</a>, <a href="../engine/pawn.html#FindBestPathToward">FindBestPathToward</a>, <a href="../engine/pawn.html#FindInventoryType">FindInventoryType</a>, <a href="../engine/pawn.html#FindPathAwayFrom">FindPathAwayFrom</a>, <a href="../engine/pawn.html#FindPathTo">FindPathTo</a>, <a href="../engine/pawn.html#FindPathToward">FindPathToward</a>, <a href="../engine/pawn.html#FindRandomDest">FindRandomDest</a>, <a href="../engine/pawn.html#FindStairRotation">FindStairRotation</a>, <a href="../engine/pawn.html#FindWaterLine">FindWaterLine</a>, <a href="../engine/pawn.html#FollowOrders">FollowOrders</a>, <a href="../engine/pawn.html#FootStep">FootStep</a>, <a href="../engine/pawn.html#FootStepLeft">FootStepLeft</a>, <a href="../engine/pawn.html#FootStepPrint">FootStepPrint</a>, <a href="../engine/pawn.html#FootStepRight">FootStepRight</a>, <a href="../engine/pawn.html#FootZoneChange">FootZoneChange</a>, <a href="../engine/pawn.html#Gasp">Gasp</a>, <a href="../engine/pawn.html#GetFootstepSound">GetFootstepSound</a>, <a href="../engine/pawn.html#GetHumanName">GetHumanName</a>, <a href="../engine/pawn.html#GetNumSkins">GetNumSkins</a>, <a href="../engine/pawn.html#GetSkinName">GetSkinName</a>, <a href="../engine/pawn.html#GrabEdge">GrabEdge</a>, <a href="../engine/pawn.html#HandleHelpMessageFrom">HandleHelpMessageFrom</a>, <a href="../engine/pawn.html#HeadZoneChange">HeadZoneChange</a>, <a href="../engine/pawn.html#HearNoise">HearNoise</a>, <a href="../engine/pawn.html#HidePlayer">HidePlayer</a>, <a href="../engine/pawn.html#InitPlayerReplicationInfo">InitPlayerReplicationInfo</a>, <a href="../engine/pawn.html#Jaw">Jaw</a>, <a href="../engine/pawn.html#JointDamaged">JointDamaged</a>, <a href="../engine/pawn.html#JumpOffPawn">JumpOffPawn</a>, <a href="../engine/pawn.html#Killed">Killed</a>, <a href="../engine/pawn.html#KillMessage">KillMessage</a>, <a href="../engine/pawn.html#Landed">Landed</a>, <a href="../engine/pawn.html#LimbPassThrough">LimbPassThrough</a>, <a href="../engine/pawn.html#LimbSevered">LimbSevered</a>, <a href="../engine/pawn.html#LineOfSightTo">LineOfSightTo</a>, <a href="../engine/pawn.html#LongFall">LongFall</a>, <a href="../engine/pawn.html#LookAt">LookAt</a>, <a href="../engine/pawn.html#LookToward">LookToward</a>, <a href="../engine/pawn.html#MakeTwitchable">MakeTwitchable</a>, <a href="../engine/pawn.html#MatterForJoint">MatterForJoint</a>, <a href="../engine/pawn.html#MayFall">MayFall</a>, <a href="../engine/pawn.html#MoveTo">MoveTo</a>, <a href="../engine/pawn.html#MoveToward">MoveToward</a>, <a href="../engine/pawn.html#NearestNavPoint">NearestNavPoint</a>, <a href="../engine/pawn.html#NearWall">NearWall</a>, <a href="../engine/pawn.html#NeedToTurn">NeedToTurn</a>, <a href="../engine/pawn.html#NextItem">NextItem</a>, <a href="../engine/pawn.html#OpenMouth">OpenMouth</a>, <a href="../engine/pawn.html#PainTimer">PainTimer</a>, <a href="../engine/pawn.html#PawnDamageModifier">PawnDamageModifier</a>, <a href="../engine/pawn.html#PickAnyTarget">PickAnyTarget</a>, <a href="../engine/pawn.html#PickTarget">PickTarget</a>, <a href="../engine/pawn.html#PickWallAdjust">PickWallAdjust</a>, <a href="../engine/pawn.html#PlayBackDeath">PlayBackDeath</a>, <a href="../engine/pawn.html#PlayBackHit">PlayBackHit</a>, <a href="../engine/pawn.html#PlayCrawling">PlayCrawling</a>, <a href="../engine/pawn.html#PlayDeath">PlayDeath</a>, <a href="../engine/pawn.html#PlayDive">PlayDive</a>, <a href="../engine/pawn.html#PlayDrownDeath">PlayDrownDeath</a>, <a href="../engine/pawn.html#PlayDrowning">PlayDrowning</a>, <a href="../engine/pawn.html#PlayDuck">PlayDuck</a>, <a href="../engine/pawn.html#PlayDying">PlayDying</a>, <a href="../engine/pawn.html#PlayDyingSound">PlayDyingSound</a>, <a href="../engine/pawn.html#PlayerTimeOut">PlayerTimeOut</a>, <a href="../engine/pawn.html#PlayFrontHit">PlayFrontHit</a>, <a href="../engine/pawn.html#PlayGibDeath">PlayGibDeath</a>, <a href="../engine/pawn.html#PlayHeadDeath">PlayHeadDeath</a>, <a href="../engine/pawn.html#PlayHeadHit">PlayHeadHit</a>, <a href="../engine/pawn.html#PlayInAir">PlayInAir</a>, <a href="../engine/pawn.html#PlayJumping">PlayJumping</a>, <a href="../engine/pawn.html#PlayLanded">PlayLanded</a>, <a href="../engine/pawn.html#PlayLanding">PlayLanding</a>, <a href="../engine/pawn.html#PlayLandSound">PlayLandSound</a>, <a href="../engine/pawn.html#PlayLeftDeath">PlayLeftDeath</a>, <a href="../engine/pawn.html#PlayLeftHit">PlayLeftHit</a>, <a href="../engine/pawn.html#PlayMoving">PlayMoving</a>, <a href="../engine/pawn.html#PlayMovingAttack">PlayMovingAttack</a>, <a href="../engine/pawn.html#PlayOutOfWater">PlayOutOfWater</a>, <a href="../engine/pawn.html#PlayPullUp">PlayPullUp</a>, <a href="../engine/pawn.html#PlayRightDeath">PlayRightDeath</a>, <a href="../engine/pawn.html#PlayRightHit">PlayRightHit</a>, <a href="../engine/pawn.html#PlaySkewerDeath">PlaySkewerDeath</a>, <a href="../engine/pawn.html#PlayStepUp">PlayStepUp</a>, <a href="../engine/pawn.html#PlayTakeHit">PlayTakeHit</a>, <a href="../engine/pawn.html#PlayTakeHitSound">PlayTakeHitSound</a>, <a href="../engine/pawn.html#PlayThreatening">PlayThreatening</a>, <a href="../engine/pawn.html#PlayTurning">PlayTurning</a>, <a href="../engine/pawn.html#PlayUninterruptedAnim">PlayUninterruptedAnim</a>, <a href="../engine/pawn.html#PlayWaiting">PlayWaiting</a>, <a href="../engine/pawn.html#PlayWeaponSwitch">PlayWeaponSwitch</a>, <a href="../engine/pawn.html#pointReachable">pointReachable</a>, <a href="../engine/pawn.html#PostBeginPlay">PostBeginPlay</a>, <a href="../engine/pawn.html#PostNetBeginPlay">PostNetBeginPlay</a>, <a href="../engine/pawn.html#PowerupBlaze">PowerupBlaze</a>, <a href="../engine/pawn.html#PowerupElectricity">PowerupElectricity</a>, <a href="../engine/pawn.html#PowerupFire">PowerupFire</a>, <a href="../engine/pawn.html#PowerupFriend">PowerupFriend</a>, <a href="../engine/pawn.html#PowerupIce">PowerupIce</a>, <a href="../engine/pawn.html#PowerupStone">PowerupStone</a>, <a href="../engine/pawn.html#PowerUpWeapon">PowerUpWeapon</a>, <a href="../engine/pawn.html#PreBeginPlay">PreBeginPlay</a>, <a href="../engine/pawn.html#PreSetMovement">PreSetMovement</a>, <a href="../engine/pawn.html#ReceiveLocalizedMessage">ReceiveLocalizedMessage</a>, <a href="../engine/pawn.html#RemovePawn">RemovePawn</a>, <a href="../engine/pawn.html#RenderOverlays">RenderOverlays</a>, <a href="../engine/pawn.html#ReplaceWithCarcass">ReplaceWithCarcass</a>, <a href="../engine/pawn.html#RestartPlayer">RestartPlayer</a>, <a href="../engine/pawn.html#RestoreBodyPart">RestoreBodyPart</a>, <a href="../engine/pawn.html#SeePlayer">SeePlayer</a>, <a href="../engine/pawn.html#SendGlobalMessage">SendGlobalMessage</a>, <a href="../engine/pawn.html#SendTeamMessage">SendTeamMessage</a>, <a href="../engine/pawn.html#SendVoiceMessage">SendVoiceMessage</a>, <a href="../engine/pawn.html#SetDefaultDisplayProperties">SetDefaultDisplayProperties</a>, <a href="../engine/pawn.html#SetDisplayProperties">SetDisplayProperties</a>, <a href="../engine/pawn.html#SetMesh">SetMesh</a>, <a href="../engine/pawn.html#SetMovementPhysics">SetMovementPhysics</a>, <a href="../engine/pawn.html#SetSkinActor">SetSkinActor</a>, <a href="../engine/pawn.html#SetSkinElement">SetSkinElement</a>, <a href="../engine/pawn.html#SeveredLimbClass">SeveredLimbClass</a>, <a href="../engine/pawn.html#ShadowUpdate">ShadowUpdate</a>, <a href="../engine/pawn.html#ShrinkCollisionHeight">ShrinkCollisionHeight</a>, <a href="../engine/pawn.html#SkeletonLook">SkeletonLook</a>, <a href="../engine/pawn.html#SpawnBodyGibs">SpawnBodyGibs</a>, <a href="../engine/pawn.html#SpawnCarcass">SpawnCarcass</a>, <a href="../engine/pawn.html#SpecialPainSkin">SpecialPainSkin</a>, <a href="../engine/pawn.html#SpeechTimer">SpeechTimer</a>, <a href="../engine/pawn.html#StopAttack">StopAttack</a>, <a href="../engine/pawn.html#StopFiring">StopFiring</a>, <a href="../engine/pawn.html#StopLookingToward">StopLookingToward</a>, <a href="../engine/pawn.html#StopWaiting">StopWaiting</a>, <a href="../engine/pawn.html#StrafeFacing">StrafeFacing</a>, <a href="../engine/pawn.html#StrafeTo">StrafeTo</a>, <a href="../engine/pawn.html#SwipeEffectEnd">SwipeEffectEnd</a>, <a href="../engine/pawn.html#SwipeEffectStart">SwipeEffectStart</a>, <a href="../engine/pawn.html#SwitchToBestWeapon">SwitchToBestWeapon</a>, <a href="../engine/pawn.html#TeamBroadcast">TeamBroadcast</a>, <a href="../engine/pawn.html#TeamMessage">TeamMessage</a>, <a href="../engine/pawn.html#ThrowWeapon">ThrowWeapon</a>, <a href="../engine/pawn.html#Tick">Tick</a>, <a href="../engine/pawn.html#TossWeapon">TossWeapon</a>, <a href="../engine/pawn.html#TurnTo">TurnTo</a>, <a href="../engine/pawn.html#TurnToward">TurnToward</a>, <a href="../engine/pawn.html#TweenToMoving">TweenToMoving</a>, <a href="../engine/pawn.html#TweenToWaiting">TweenToWaiting</a>, <a href="../engine/pawn.html#UnderLift">UnderLift</a>, <a href="../engine/pawn.html#UpdateEyeHeight">UpdateEyeHeight</a>, <a href="../engine/pawn.html#UpdateMovementSpeed">UpdateMovementSpeed</a>, <a href="../engine/pawn.html#UpdateTactics">UpdateTactics</a>, <a href="../engine/pawn.html#UseNotify">UseNotify</a>, <a href="../engine/pawn.html#WaitForLanding">WaitForLanding</a>, <a href="../engine/pawn.html#WalkTexture">WalkTexture</a>, <a href="../engine/pawn.html#WantsToPickUp">WantsToPickUp</a>, <a href="../engine/pawn.html#WarnTarget">WarnTarget</a>, <a href="../engine/pawn.html#WeaponActivate">WeaponActivate</a>, <a href="../engine/pawn.html#WeaponDeactivate">WeaponDeactivate</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th class="title">States Summary</th>
+</tr>
+</table>
+
+<table>
+<tr>
+	<th>GuardHole <a href="../Source_runei/eel.html#67" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw">auto state</span> GuardHole <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_ActorInRange+GuardHole">ActorInRange</a>, <a href="#_AttachRagnar+GuardHole">AttachRagnar</a>, <a href="#_Bump+GuardHole">Bump</a>, <a href="#_EnemyNotVisible+GuardHole">EnemyNotVisible</a>, <a href="#_SeePlayer+GuardHole">SeePlayer</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_bCoiled" class="hidden"></a>bCoiled <a href="../Source_runei/eel.html#18" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bCoiled;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_ActorInRange-GuardHole" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ActorInRange <span class="function_state">GuardHole</span> <a href="../Source_runei/eel.html#88" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> ActorInRange ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> A) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AttachRagnar-GuardHole" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> AttachRagnar <span class="function_state">GuardHole</span> <a href="../Source_runei/eel.html#121" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  AttachRagnar ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Bump-GuardHole" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Bump <span class="function_state">GuardHole</span> <a href="../Source_runei/eel.html#83" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Bump ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CheckForEnemies-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CheckForEnemies <span class="function_state"></span> <a href="../Source_runei/eel.html#32" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  CheckForEnemies ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Debug-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Debug <span class="function_state"></span> <a href="../Source_runei/eel.html#164" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span>  Debug ( <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span>, <span class="source_keyword">int</span> mode) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EnemyNotVisible-GuardHole" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> EnemyNotVisible <span class="function_state">GuardHole</span> <a href="../Source_runei/eel.html#75" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  EnemyNotVisible ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PainSkin-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PainSkin <span class="function_state"></span> <a href="../Source_runei/eel.html#36" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span> PainSkin ( <span class="source_keyword">int</span> BodyPart) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayAttack-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayAttack <span class="function_state"></span> <a href="../Source_runei/eel.html#54" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayAttack ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayDeath-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayDeath <span class="function_state"></span> <a href="../Source_runei/eel.html#44" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayDeath ( <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">DamageType</a></span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayWaiting-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayWaiting <span class="function_state"></span> <a href="../Source_runei/eel.html#46" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayWaiting ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> tween) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PreSetMovement-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PreSetMovement <span class="function_state"></span> <a href="../Source_runei/eel.html#21" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PreSetMovement ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SeePlayer-GuardHole" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SeePlayer <span class="function_state">GuardHole</span> <a href="../Source_runei/eel.html#69" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SeePlayer ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> seen) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     bBurnable=<span class="source_keyword">False</span>
+     MeleeRange=<span class="source_int">200.000000</span>
+     ClassID=<span class="source_int">21</span>
+     HitSound1=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Fish.fish01'</span>
+     HitSound2=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Fish.fish01'</span>
+     HitSound3=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Fish.fish01'</span>
+     Die=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Fish.fish08'</span>
+     Die2=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Fish.fish08'</span>
+     Die3=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Fish.fish08'</span>
+     bCanLook=<span class="source_keyword">True</span>
+     MaxBodyAngle=(Pitch=<span class="source_int">8000</span>,Yaw=<span class="source_int">14500</span>)
+     MaxHeadAngle=(Pitch=<span class="source_int">500</span>,Yaw=<span class="source_int">500</span>)
+     LookDegPerSec=<span class="source_int">200.000000</span>
+     DrawScale=<span class="source_int">4.000000</span>
+     SoundRadius=<span class="source_int">20</span>
+     SoundVolume=<span class="source_int">157</span>
+     SoundPitch=<span class="source_int">42</span>
+     <span class="source_type"><a href="../engine/ambientsound.html" class="source">AmbientSound</a></span>=<span class="source_type">Sound</span><span class="source_name">'CreaturesSnd.Fish.fish02L'</span>
+     TransientSoundRadius=<span class="source_int">800.000000</span>
+     CollisionRadius=<span class="source_int">11.000000</span>
+     CollisionHeight=<span class="source_int">13.000000</span>
+     Mass=<span class="source_int">400.000000</span>
+     Skeletal=<span class="source_type">SkelModel</span><span class="source_name">'creatures.eel'</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_runei/eel.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#Eel">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../runei/eatenlizard.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../runei/effectskelavalanchesword.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:41:03.303 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

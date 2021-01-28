@@ -1,0 +1,596 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - UBrowser.UBrowserServerList</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../ubrowser/ubrowser-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_ubrowser/ubrowserserverlist.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#UBrowserServerList">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../ubrowser/ubrowserservergrid.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../ubrowser/ubrowserserverlistfactory.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#ubrowser/ubrowserserverlist.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../ubrowser/ubrowser-overview.html">UBrowser</a>.UBrowserServerList</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../uwindow/uwindowlist.html">UWindowList</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowbase.html">UWindowBase</a>
+   |   
+   +-- <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowlist.html">UWindowList</a>
+      |   
+      +-- <a href="../ubrowser/ubrowser-overview.html">UBrowser</a>.<a href="../ubrowser/ubrowserserverlist.html">UBrowserServerList</a>
+</pre>
+
+<h4>Direct Known Subclasses:</h4>
+<blockquote>
+	<a href="../rbrowser/rbrowserserverlist.html">RBrowserServerList</a>
+</blockquote>
+
+<hr />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Constants Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Contants from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowbase.html">UWindowBase</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowbase.html#F_Bold">F_Bold</a>, <a href="../uwindow/uwindowbase.html#F_Large">F_Large</a>, <a href="../uwindow/uwindowbase.html#F_LargeBold">F_LargeBold</a>, <a href="../uwindow/uwindowbase.html#F_Normal">F_Normal</a>, <a href="../uwindow/uwindowbase.html#F_RuneBig">F_RuneBig</a>, <a href="../uwindow/uwindowbase.html#F_RuneButton">F_RuneButton</a>, <a href="../uwindow/uwindowbase.html#F_RuneLarge">F_RuneLarge</a>, <a href="../uwindow/uwindowbase.html#F_RuneMedium">F_RuneMedium</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bKeepDescription" name="bKeepDescription" title="go to the details">bKeepDescription</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bLocalServer" name="bLocalServer" title="go to the details">bLocalServer</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bNeedUpdateCount" name="bNeedUpdateCount" title="go to the details">bNeedUpdateCount</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bNoInitalPing" name="bNoInitalPing" title="go to the details">bNoInitalPing</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bOldServer" name="bOldServer" title="go to the details">bOldServer</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bPinged" name="bPinged" title="go to the details">bPinged</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bPingFailed" name="bPingFailed" title="go to the details">bPingFailed</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bPinging" name="bPinging" title="go to the details">bPinging</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_Category" name="Category" title="go to the details">Category</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_GameMode" name="GameMode" title="go to the details">GameMode</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_GameName" name="GameName" title="go to the details">GameName</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_GamePort" name="GamePort" title="go to the details">GamePort</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_GameType" name="GameType" title="go to the details">GameType</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_GameVer" name="GameVer" title="go to the details">GameVer</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_HostName" name="HostName" title="go to the details">HostName</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_IP" name="IP" title="go to the details">IP</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_MapDisplayName" name="MapDisplayName" title="go to the details">MapDisplayName</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_MapName" name="MapName" title="go to the details">MapName</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_MapTitle" name="MapTitle" title="go to the details">MapTitle</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_MaxPlayers" name="MaxPlayers" title="go to the details">MaxPlayers</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_MaxSimultaneousPing" name="MaxSimultaneousPing" title="go to the details">MaxSimultaneousPing</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_MinNetVer" name="MinNetVer" title="go to the details">MinNetVer</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_NumPlayers" name="NumPlayers" title="go to the details">NumPlayers</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_Options" name="Options" title="go to the details">Options</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../ubrowser/ubrowserserverlistwindow.html">UBrowserServerListWindow</a></td><td width="66%"><a href="#_Owner" name="Owner" title="go to the details">Owner</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_Ping" name="Ping" title="go to the details">Ping</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../ubrowser/ubrowserplayerlist.html">UBrowserPlayerList</a></td><td width="66%"><a href="#_PlayerList" name="PlayerList" title="go to the details">PlayerList</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_QueryPort" name="QueryPort" title="go to the details">QueryPort</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../ubrowser/ubrowserruleslist.html">UBrowserRulesList</a></td><td width="66%"><a href="#_RulesList" name="RulesList" title="go to the details">RulesList</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../ubrowser/ubrowserserverping.html">UBrowserServerPing</a></td><td width="66%"><a href="#_ServerPing" name="ServerPing" title="go to the details">ServerPing</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_TotalMaxPlayers" name="TotalMaxPlayers" title="go to the details">TotalMaxPlayers</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_TotalPlayers" name="TotalPlayers" title="go to the details">TotalPlayers</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_TotalServers" name="TotalServers" title="go to the details">TotalServers</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowlist.html">UWindowList</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowlist.html#bItemOrderChanged">bItemOrderChanged</a>, <a href="../uwindow/uwindowlist.html#BranchLeft">BranchLeft</a>, <a href="../uwindow/uwindowlist.html#BranchRight">BranchRight</a>, <a href="../uwindow/uwindowlist.html#bSortSuspended">bSortSuspended</a>, <a href="../uwindow/uwindowlist.html#bSuspendableSort">bSuspendableSort</a>, <a href="../uwindow/uwindowlist.html#bTreeSort">bTreeSort</a>, <a href="../uwindow/uwindowlist.html#CompareCount">CompareCount</a>, <a href="../uwindow/uwindowlist.html#CurrentSortItem">CurrentSortItem</a>, <a href="../uwindow/uwindowlist.html#InternalCount">InternalCount</a>, <a href="../uwindow/uwindowlist.html#Last">Last</a>, <a href="../uwindow/uwindowlist.html#Next">Next</a>, <a href="../uwindow/uwindowlist.html#ParentNode">ParentNode</a>, <a href="../uwindow/uwindowlist.html#Prev">Prev</a>, <a href="../uwindow/uwindowlist.html#Sentinel">Sentinel</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Enumerations Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Enumerations from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowbase.html">UWindowBase</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowbase.html#FrameHitTest">FrameHitTest</a>, <a href="../uwindow/uwindowbase.html#MenuSound">MenuSound</a>, <a href="../uwindow/uwindowbase.html#MessageBoxButtons">MessageBoxButtons</a>, <a href="../uwindow/uwindowbase.html#MessageBoxResult">MessageBoxResult</a>, <a href="../uwindow/uwindowbase.html#PropertyCondition">PropertyCondition</a>, <a href="../uwindow/uwindowbase.html#TextAlign">TextAlign</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Structures Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Structures from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowbase.html">UWindowBase</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowbase.html#HTMLStyle">HTMLStyle</a>, <a href="../uwindow/uwindowbase.html#Region">Region</a>, <a href="../uwindow/uwindowbase.html#TexRegion">TexRegion</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_AppendItem-" name="AppendItem" title="go to the details">AppendItem</a> (<a href="../uwindow/uwindowlist.html">UWindowList</a> L))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_CancelPing-" name="CancelPing" title="go to the details">CancelPing</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>int&nbsp;</td><td><a href="#_Compare-" name="Compare" title="go to the details">Compare</a> (<a href="../uwindow/uwindowlist.html">UWindowList</a> T, <a href="../uwindow/uwindowlist.html">UWindowList</a> B))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ConsiderForSubsets-" name="ConsiderForSubsets" title="go to the details">ConsiderForSubsets</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../uwindow/uwindowlist.html">UWindowList</a>&nbsp;</td><td><a href="#_CopyExistingListItem-" name="CopyExistingListItem" title="go to the details">CopyExistingListItem</a> (Class&lt;<a href="../uwindow/uwindowlist.html">UWindowList</a>&gt; ItemClass, <a href="../uwindow/uwindowlist.html">UWindowList</a> SourceItem))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_DecodeServerProperties-" name="DecodeServerProperties" title="go to the details">DecodeServerProperties</a> (string Data))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DestroyListItem-" name="DestroyListItem" title="go to the details">DestroyListItem</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../ubrowser/ubrowserserverlist.html">UBrowserServerList</a>&nbsp;</td><td><a href="#_FindExistingServer-" name="FindExistingServer" title="go to the details">FindExistingServer</a> (string FindIP, int FindQueryPort))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../engine/playerpawn.html">PlayerPawn</a>&nbsp;</td><td><a href="#_GetPlayerOwner-" name="GetPlayerOwner" title="go to the details">GetPlayerOwner</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_InvalidatePings-" name="InvalidatePings" title="go to the details">InvalidatePings</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PingDone-" name="PingDone" title="go to the details">PingDone</a> (bool bInitial, bool bJustThisServer, bool bSuccess, bool bNoSort))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PingNext-" name="PingNext" title="go to the details">PingNext</a> (bool bInitial, bool bNoSort))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PingServer-" name="PingServer" title="go to the details">PingServer</a> (bool bInitial, bool bJustThisServer, bool bNoSort))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PingServers-" name="PingServers" title="go to the details">PingServers</a> (bool bInitial, bool bNoSort))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_QueryFinished-" name="QueryFinished" title="go to the details">QueryFinished</a> (<a href="../ubrowser/ubrowserserverlistfactory.html">UBrowserServerListFactory</a> Fact, bool bSuccess, optional string ErrorMsg))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Remove-" name="Remove" title="go to the details">Remove</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ServerStatus-" name="ServerStatus" title="go to the details">ServerStatus</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_StatusDone-" name="StatusDone" title="go to the details">StatusDone</a> (bool bSuccess))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_UpdateServerCount-" name="UpdateServerCount" title="go to the details">UpdateServerCount</a> ()))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowlist.html">UWindowList</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowlist.html#Append">Append</a>, <a href="../uwindow/uwindowlist.html#AppendItem">AppendItem</a>, <a href="../uwindow/uwindowlist.html#AppendListCopy">AppendListCopy</a>, <a href="../uwindow/uwindowlist.html#Clear">Clear</a>, <a href="../uwindow/uwindowlist.html#Compare">Compare</a>, <a href="../uwindow/uwindowlist.html#ContinueSort">ContinueSort</a>, <a href="../uwindow/uwindowlist.html#CopyExistingListItem">CopyExistingListItem</a>, <a href="../uwindow/uwindowlist.html#Count">Count</a>, <a href="../uwindow/uwindowlist.html#CountShown">CountShown</a>, <a href="../uwindow/uwindowlist.html#CreateItem">CreateItem</a>, <a href="../uwindow/uwindowlist.html#DestroyList">DestroyList</a>, <a href="../uwindow/uwindowlist.html#DestroyListItem">DestroyListItem</a>, <a href="../uwindow/uwindowlist.html#DisconnectList">DisconnectList</a>, <a href="../uwindow/uwindowlist.html#DoAppendItem">DoAppendItem</a>, <a href="../uwindow/uwindowlist.html#FindEntry">FindEntry</a>, <a href="../uwindow/uwindowlist.html#GraftLeft">GraftLeft</a>, <a href="../uwindow/uwindowlist.html#GraftRight">GraftRight</a>, <a href="../uwindow/uwindowlist.html#Insert">Insert</a>, <a href="../uwindow/uwindowlist.html#InsertAfter">InsertAfter</a>, <a href="../uwindow/uwindowlist.html#InsertBefore">InsertBefore</a>, <a href="../uwindow/uwindowlist.html#InsertItem">InsertItem</a>, <a href="../uwindow/uwindowlist.html#InsertItemAfter">InsertItemAfter</a>, <a href="../uwindow/uwindowlist.html#InsertItemBefore">InsertItemBefore</a>, <a href="../uwindow/uwindowlist.html#LeftMost">LeftMost</a>, <a href="../uwindow/uwindowlist.html#MoveItemSorted">MoveItemSorted</a>, <a href="../uwindow/uwindowlist.html#Remove">Remove</a>, <a href="../uwindow/uwindowlist.html#RightMost">RightMost</a>, <a href="../uwindow/uwindowlist.html#SetupSentinel">SetupSentinel</a>, <a href="../uwindow/uwindowlist.html#ShowThisItem">ShowThisItem</a>, <a href="../uwindow/uwindowlist.html#Sort">Sort</a>, <a href="../uwindow/uwindowlist.html#Tick">Tick</a>, <a href="../uwindow/uwindowlist.html#Validate">Validate</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../uwindow/uwindow-overview.html">UWindow</a>.<a href="../uwindow/uwindowbase.html">UWindowBase</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../uwindow/uwindowbase.html#BuildObjectWithProperties">BuildObjectWithProperties</a>, <a href="../uwindow/uwindowbase.html#GetRegion">GetRegion</a>, <a href="../uwindow/uwindowbase.html#InStrAfter">InStrAfter</a>, <a href="../uwindow/uwindowbase.html#NewRegion">NewRegion</a>, <a href="../uwindow/uwindowbase.html#NewTexRegion">NewTexRegion</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_bKeepDescription" class="hidden"></a>bKeepDescription <a href="../Source_ubrowser/ubrowserserverlist.html#35" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bKeepDescription;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bLocalServer" class="hidden"></a>bLocalServer <a href="../Source_ubrowser/ubrowserserverlist.html#38" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bLocalServer;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bNeedUpdateCount" class="hidden"></a>bNeedUpdateCount <a href="../Source_ubrowser/ubrowserserverlist.html#13" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bNeedUpdateCount;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bNoInitalPing" class="hidden"></a>bNoInitalPing <a href="../Source_ubrowser/ubrowserserverlist.html#29" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bNoInitalPing;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bOldServer" class="hidden"></a>bOldServer <a href="../Source_ubrowser/ubrowserserverlist.html#30" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bOldServer;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bPinged" class="hidden"></a>bPinged <a href="../Source_ubrowser/ubrowserserverlist.html#28" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bPinged;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bPingFailed" class="hidden"></a>bPingFailed <a href="../Source_ubrowser/ubrowserserverlist.html#27" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bPingFailed;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bPinging" class="hidden"></a>bPinging <a href="../Source_ubrowser/ubrowserserverlist.html#26" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bPinging;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Category" class="hidden"></a>Category <a href="../Source_ubrowser/ubrowserserverlist.html#21" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> Category;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GameMode" class="hidden"></a>GameMode <a href="../Source_ubrowser/ubrowserserverlist.html#46" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> GameMode;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GameName" class="hidden"></a>GameName <a href="../Source_ubrowser/ubrowserserverlist.html#22" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> GameName;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GamePort" class="hidden"></a>GamePort <a href="../Source_ubrowser/ubrowserserverlist.html#41" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> GamePort;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GameType" class="hidden"></a>GameType <a href="../Source_ubrowser/ubrowserserverlist.html#45" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> GameType;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GameVer" class="hidden"></a>GameVer <a href="../Source_ubrowser/ubrowserserverlist.html#49" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> GameVer;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HostName" class="hidden"></a>HostName <a href="../Source_ubrowser/ubrowserserverlist.html#40" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> HostName;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_IP" class="hidden"></a>IP <a href="../Source_ubrowser/ubrowserserverlist.html#19" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> IP;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MapDisplayName" class="hidden"></a>MapDisplayName <a href="../Source_ubrowser/ubrowserserverlist.html#44" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> MapDisplayName;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MapName" class="hidden"></a>MapName <a href="../Source_ubrowser/ubrowserserverlist.html#42" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> MapName;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MapTitle" class="hidden"></a>MapTitle <a href="../Source_ubrowser/ubrowserserverlist.html#43" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> MapTitle;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MaxPlayers" class="hidden"></a>MaxPlayers <a href="../Source_ubrowser/ubrowserserverlist.html#48" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> MaxPlayers;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MaxSimultaneousPing" class="hidden"></a>MaxSimultaneousPing <a href="../Source_ubrowser/ubrowserserverlist.html#16" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">config</span> <span class="source_keyword">int</span> MaxSimultaneousPing;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MinNetVer" class="hidden"></a>MinNetVer <a href="../Source_ubrowser/ubrowserserverlist.html#50" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> MinNetVer;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NumPlayers" class="hidden"></a>NumPlayers <a href="../Source_ubrowser/ubrowserserverlist.html#47" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> NumPlayers;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Options" class="hidden"></a>Options <a href="../Source_ubrowser/ubrowserserverlist.html#53" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> Options;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Owner" class="hidden"></a>Owner <a href="../Source_ubrowser/ubrowserserverlist.html#9" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../ubrowser/ubrowserserverlistwindow.html" class="source">UBrowserServerListWindow</a></span> Owner;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Ping" class="hidden"></a>Ping <a href="../Source_ubrowser/ubrowserserverlist.html#39" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">float</span> Ping;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayerList" class="hidden"></a>PlayerList <a href="../Source_ubrowser/ubrowserserverlist.html#34" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../ubrowser/ubrowserplayerlist.html" class="source">UBrowserPlayerList</a></span> PlayerList;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_QueryPort" class="hidden"></a>QueryPort <a href="../Source_ubrowser/ubrowserserverlist.html#20" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> QueryPort;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RulesList" class="hidden"></a>RulesList <a href="../Source_ubrowser/ubrowserserverlist.html#33" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../ubrowser/ubrowserruleslist.html" class="source">UBrowserRulesList</a></span> RulesList;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ServerPing" class="hidden"></a>ServerPing <a href="../Source_ubrowser/ubrowserserverlist.html#25" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../ubrowser/ubrowserserverping.html" class="source">UBrowserServerPing</a></span> ServerPing;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TotalMaxPlayers" class="hidden"></a>TotalMaxPlayers <a href="../Source_ubrowser/ubrowserserverlist.html#12" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> TotalMaxPlayers;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TotalPlayers" class="hidden"></a>TotalPlayers <a href="../Source_ubrowser/ubrowserserverlist.html#11" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> TotalPlayers;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_TotalServers" class="hidden"></a>TotalServers <a href="../Source_ubrowser/ubrowserserverlist.html#10" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> TotalServers;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_AppendItem-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> AppendItem <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserserverlist.html#299" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  AppendItem ( <span class="source_type"><a href="../uwindow/uwindowlist.html" class="source">UWindowList</a></span> L) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CancelPing-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CancelPing <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserserverlist.html#107" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  CancelPing ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Compare-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Compare <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserserverlist.html#293" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">int</span> Compare ( <span class="source_type"><a href="../uwindow/uwindowlist.html" class="source">UWindowList</a></span> <span class="source_type">T</span>, <span class="source_type"><a href="../uwindow/uwindowlist.html" class="source">UWindowList</a></span> <span class="source_type">B</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ConsiderForSubsets-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ConsiderForSubsets <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserserverlist.html#169" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ConsiderForSubsets ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CopyExistingListItem-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CopyExistingListItem <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserserverlist.html#265" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_type"><a href="../uwindow/uwindowlist.html" class="source">UWindowList</a></span> CopyExistingListItem ( <span class="source_keyword">Class</span>&lt;<span class="source_type"><a href="../uwindow/uwindowlist.html" class="source">UWindowList</a></span>&gt; ItemClass, <span class="source_type"><a href="../uwindow/uwindowlist.html" class="source">UWindowList</a></span> SourceItem) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DecodeServerProperties-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DecodeServerProperties <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserserverlist.html#334" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> DecodeServerProperties ( <span class="source_keyword">string</span> Data) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DestroyListItem-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DestroyListItem <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserserverlist.html#55" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  DestroyListItem ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FindExistingServer-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> FindExistingServer <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserserverlist.html#248" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_type"><a href="../ubrowser/ubrowserserverlist.html" class="source">UBrowserServerList</a></span> FindExistingServer ( <span class="source_keyword">string</span> FindIP, <span class="source_keyword">int</span> FindQueryPort) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetPlayerOwner-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetPlayerOwner <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserserverlist.html#260" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_type"><a href="../engine/playerpawn.html" class="source">PlayerPawn</a></span> GetPlayerOwner ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_InvalidatePings-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> InvalidatePings <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserserverlist.html#181" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  InvalidatePings ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PingDone-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PingDone <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserserverlist.html#113" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PingDone ( <span class="source_keyword">bool</span> bInitial, <span class="source_keyword">bool</span> bJustThisServer, <span class="source_keyword">bool</span> bSuccess, <span class="source_keyword">bool</span> bNoSort) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PingNext-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PingNext <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserserverlist.html#205" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PingNext ( <span class="source_keyword">bool</span> bInitial, <span class="source_keyword">bool</span> bNoSort) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PingServer-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PingServer <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserserverlist.html#74" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PingServer ( <span class="source_keyword">bool</span> bInitial, <span class="source_keyword">bool</span> bJustThisServer, <span class="source_keyword">bool</span> bNoSort) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PingServers-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PingServers <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserserverlist.html#189" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PingServers ( <span class="source_keyword">bool</span> bInitial, <span class="source_keyword">bool</span> bNoSort) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_QueryFinished-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> QueryFinished <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserserverlist.html#67" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  QueryFinished ( <span class="source_type"><a href="../ubrowser/ubrowserserverlistfactory.html" class="source">UBrowserServerListFactory</a></span> Fact, <span class="source_keyword">bool</span> bSuccess, <span class="source_keyword2">optional</span> <span class="source_keyword">string</span> ErrorMsg) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Remove-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Remove <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserserverlist.html#305" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Remove ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ServerStatus-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ServerStatus <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserserverlist.html#86" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ServerStatus ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StatusDone-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> StatusDone <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserserverlist.html#95" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  StatusDone ( <span class="source_keyword">bool</span> bSuccess) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_UpdateServerCount-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> UpdateServerCount <span class="function_state"></span> <a href="../Source_ubrowser/ubrowserserverlist.html#318" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  UpdateServerCount ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     MaxSimultaneousPing=<span class="source_int">10</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../ubrowser/ubrowser-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_ubrowser/ubrowserserverlist.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#UBrowserServerList">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../ubrowser/ubrowserservergrid.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../ubrowser/ubrowserserverlistfactory.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:41:14.914 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

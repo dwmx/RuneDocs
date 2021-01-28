@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - Headball.HBPlayerProxy</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../headball/headball-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_headball/hbplayerproxy.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#HBPlayerProxy">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../headball/hbmaplist.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../headball/hbprestartmessage.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#headball/hbplayerproxy.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../headball/headball-overview.html">Headball</a>.HBPlayerProxy</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../runei/runeplayerproxy.html">RunePlayerProxy</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a>
+   |   
+   +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/keypoint.html">Keypoint</a>
+      |   
+      +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/animationproxy.html">AnimationProxy</a>
+         |   
+         +-- <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runeplayerproxy.html">RunePlayerProxy</a>
+            |   
+            +-- <a href="../headball/headball-overview.html">Headball</a>.<a href="../headball/hbplayerproxy.html">HBPlayerProxy</a>
+</pre>
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runeplayerproxy.html">RunePlayerProxy</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/runeplayerproxy.html#curWeapon">curWeapon</a>, <a href="../runei/runeplayerproxy.html#DoStowIndex">DoStowIndex</a>, <a href="../runei/runeplayerproxy.html#DoStowType">DoStowType</a>, <a href="../runei/runeplayerproxy.html#index">index</a>, <a href="../runei/runeplayerproxy.html#newWeapon">newWeapon</a>, <a href="../runei/runeplayerproxy.html#nextWeapon">nextWeapon</a>, <a href="../runei/runeplayerproxy.html#PendingItem">PendingItem</a>, <a href="../runei/runeplayerproxy.html#PendingSwitchWeapon">PendingSwitchWeapon</a>, <a href="../runei/runeplayerproxy.html#PushMovementMode">PushMovementMode</a>, <a href="../runei/runeplayerproxy.html#stowWeapon">stowWeapon</a>, <a href="../runei/runeplayerproxy.html#TorsoAnim">TorsoAnim</a>, <a href="../runei/runeplayerproxy.html#TorsoIntroAnim">TorsoIntroAnim</a>, <a href="../runei/runeplayerproxy.html#TorsoLoop">TorsoLoop</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/animationproxy.html">AnimationProxy</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/animationproxy.html#curShield">curShield</a>, <a href="../engine/animationproxy.html#curWeapon">curWeapon</a>, <a href="../engine/animationproxy.html#newShield">newShield</a>, <a href="../engine/animationproxy.html#newWeapon">newWeapon</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Enumerations Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Enumerations from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runeplayerproxy.html">RunePlayerProxy</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/runeplayerproxy.html#DoStowType_e">DoStowType_e</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_CanPickup-Idle" name="CanPickup" title="go to the details">CanPickup</a> (<a href="../engine/inventory.html">Inventory</a> item))<br /><span class="function_state">Idle</span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/runeplayerproxy.html">RunePlayerProxy</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../runei/runeplayerproxy.html#AcquireInventory">AcquireInventory</a>, <a href="../runei/runeplayerproxy.html#AnimEnd">AnimEnd</a>, <a href="../runei/runeplayerproxy.html#Attack">Attack</a>, <a href="../runei/runeplayerproxy.html#BeginState">BeginState</a>, <a href="../runei/runeplayerproxy.html#CanGotoPainState">CanGotoPainState</a>, <a href="../runei/runeplayerproxy.html#CanPickup">CanPickup</a>, <a href="../runei/runeplayerproxy.html#ClearSwipeArray">ClearSwipeArray</a>, <a href="../runei/runeplayerproxy.html#Debug">Debug</a>, <a href="../runei/runeplayerproxy.html#Defend">Defend</a>, <a href="../runei/runeplayerproxy.html#DoStow">DoStow</a>, <a href="../runei/runeplayerproxy.html#DoThrow">DoThrow</a>, <a href="../runei/runeplayerproxy.html#EndState">EndState</a>, <a href="../runei/runeplayerproxy.html#FindPickupItem">FindPickupItem</a>, <a href="../runei/runeplayerproxy.html#FrameNotify">FrameNotify</a>, <a href="../runei/runeplayerproxy.html#GetGroup">GetGroup</a>, <a href="../runei/runeplayerproxy.html#GetStowIndex">GetStowIndex</a>, <a href="../runei/runeplayerproxy.html#InventorySpecial1">InventorySpecial1</a>, <a href="../runei/runeplayerproxy.html#InventorySpecial2">InventorySpecial2</a>, <a href="../runei/runeplayerproxy.html#InventorySpecial3">InventorySpecial3</a>, <a href="../runei/runeplayerproxy.html#PlayAttack">PlayAttack</a>, <a href="../runei/runeplayerproxy.html#PlayDefend">PlayDefend</a>, <a href="../runei/runeplayerproxy.html#PlayDefendIdle">PlayDefendIdle</a>, <a href="../runei/runeplayerproxy.html#PlayThrowAnim">PlayThrowAnim</a>, <a href="../runei/runeplayerproxy.html#PostBeginPlay">PostBeginPlay</a>, <a href="../runei/runeplayerproxy.html#ProxyDonePickup">ProxyDonePickup</a>, <a href="../runei/runeplayerproxy.html#ProxyDropWeapon">ProxyDropWeapon</a>, <a href="../runei/runeplayerproxy.html#ProxyPickup">ProxyPickup</a>, <a href="../runei/runeplayerproxy.html#ProxyStowWeapon">ProxyStowWeapon</a>, <a href="../runei/runeplayerproxy.html#ProxyThrowWeapon">ProxyThrowWeapon</a>, <a href="../runei/runeplayerproxy.html#RetrieveLastHeldWeapon">RetrieveLastHeldWeapon</a>, <a href="../runei/runeplayerproxy.html#RopeClimb">RopeClimb</a>, <a href="../runei/runeplayerproxy.html#StopAttack">StopAttack</a>, <a href="../runei/runeplayerproxy.html#SwimSplash">SwimSplash</a>, <a href="../runei/runeplayerproxy.html#SwipeEffectCombo">SwipeEffectCombo</a>, <a href="../runei/runeplayerproxy.html#SwipeEffectEnd">SwipeEffectEnd</a>, <a href="../runei/runeplayerproxy.html#SwipeEffectStart">SwipeEffectStart</a>, <a href="../runei/runeplayerproxy.html#SwitchWeapon">SwitchWeapon</a>, <a href="../runei/runeplayerproxy.html#SyncAnimation">SyncAnimation</a>, <a href="../runei/runeplayerproxy.html#Throw">Throw</a>, <a href="../runei/runeplayerproxy.html#ThrowGhost">ThrowGhost</a>, <a href="../runei/runeplayerproxy.html#Timer">Timer</a>, <a href="../runei/runeplayerproxy.html#TryLoopAnim">TryLoopAnim</a>, <a href="../runei/runeplayerproxy.html#TryPlayAnim">TryPlayAnim</a>, <a href="../runei/runeplayerproxy.html#TryTweenAnim">TryTweenAnim</a>, <a href="../runei/runeplayerproxy.html#Use">Use</a>, <a href="../runei/runeplayerproxy.html#UseNotify">UseNotify</a>, <a href="../runei/runeplayerproxy.html#WantsToPickup">WantsToPickup</a>, <a href="../runei/runeplayerproxy.html#WeaponActivate">WeaponActivate</a>, <a href="../runei/runeplayerproxy.html#WeaponDeactivate">WeaponDeactivate</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/animationproxy.html">AnimationProxy</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/animationproxy.html#AcquireInventory">AcquireInventory</a>, <a href="../engine/animationproxy.html#AnimEnd">AnimEnd</a>, <a href="../engine/animationproxy.html#Attack">Attack</a>, <a href="../engine/animationproxy.html#CanGotoPainState">CanGotoPainState</a>, <a href="../engine/animationproxy.html#CanPickup">CanPickup</a>, <a href="../engine/animationproxy.html#Defend">Defend</a>, <a href="../engine/animationproxy.html#DoThrow">DoThrow</a>, <a href="../engine/animationproxy.html#EndState">EndState</a>, <a href="../engine/animationproxy.html#GetGroup">GetGroup</a>, <a href="../engine/animationproxy.html#Pickup">Pickup</a>, <a href="../engine/animationproxy.html#PlayAttackAnim">PlayAttackAnim</a>, <a href="../engine/animationproxy.html#PlayAttackHigh">PlayAttackHigh</a>, <a href="../engine/animationproxy.html#PlayAttackLow">PlayAttackLow</a>, <a href="../engine/animationproxy.html#PlayAttackVertical">PlayAttackVertical</a>, <a href="../engine/animationproxy.html#PlayDeath">PlayDeath</a>, <a href="../engine/animationproxy.html#PlayDefendHigh">PlayDefendHigh</a>, <a href="../engine/animationproxy.html#PlayDefendLow">PlayDefendLow</a>, <a href="../engine/animationproxy.html#PlayDropShield">PlayDropShield</a>, <a href="../engine/animationproxy.html#PlayDropWeapon">PlayDropWeapon</a>, <a href="../engine/animationproxy.html#PlayIdle">PlayIdle</a>, <a href="../engine/animationproxy.html#PlayPickupShield">PlayPickupShield</a>, <a href="../engine/animationproxy.html#PlayPickupWeapon">PlayPickupWeapon</a>, <a href="../engine/animationproxy.html#PlayThrowWeapon">PlayThrowWeapon</a>, <a href="../engine/animationproxy.html#PostBeginPlay">PostBeginPlay</a>, <a href="../engine/animationproxy.html#StopAttack">StopAttack</a>, <a href="../engine/animationproxy.html#StopDefending">StopDefending</a>, <a href="../engine/animationproxy.html#SyncAnimation">SyncAnimation</a>, <a href="../engine/animationproxy.html#Throw">Throw</a>, <a href="../engine/animationproxy.html#TryLoopAnim">TryLoopAnim</a>, <a href="../engine/animationproxy.html#TryPlayAnim">TryPlayAnim</a>, <a href="../engine/animationproxy.html#TryTweenAnim">TryTweenAnim</a>, <a href="../engine/animationproxy.html#Use">Use</a>, <a href="../engine/animationproxy.html#WantsToPickup">WantsToPickup</a>, <a href="../engine/animationproxy.html#WeaponActivate">WeaponActivate</a>, <a href="../engine/animationproxy.html#WeaponDeactivate">WeaponDeactivate</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th class="title">States Summary</th>
+</tr>
+</table>
+
+<table>
+<tr>
+	<th>Idle <a href="../Source_headball/hbplayerproxy.html#6" class="small">Source code</a></th>
+</tr>
+<tr>
+	<td>
+	<span class="declaration"><span class="us_keyw">auto state</span> Idle <span class="us_keyw"></span> </span><br />
+	<blockquote class="comment">
+	
+	</blockquote>
+	</td>
+</tr>
+<tr>
+	<td><a href="#_CanPickup+Idle">CanPickup</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_CanPickup-Idle" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CanPickup <span class="function_state">Idle</span> <a href="../Source_headball/hbplayerproxy.html#16" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> CanPickup ( <span class="source_type"><a href="../engine/inventory.html" class="source">Inventory</a></span> <span class="source_type">item</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../headball/headball-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_headball/hbplayerproxy.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#HBPlayerProxy">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../headball/hbmaplist.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../headball/hbprestartmessage.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:41:04.429 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

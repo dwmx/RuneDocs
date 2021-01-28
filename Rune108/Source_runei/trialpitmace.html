@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - Source: RuneI.TrialPitMace</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header"><a href="../runei/trialpitmace.html">Class</a></td>
+	<td class="header_hilight">Source</td>
+	<td class="header"><a class="header" href="../classtree.html#TrialPitMace">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../Source_runei/trialpitfire.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../Source_runei/trialpitragnar.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#Source_runei/trialpitmace.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../runei/runei-overview.html">RuneI</a>.<a href="../runei/trialpitmace.html">TrialPitMace</a></h1>
+<br />
+<div class="source"><table class="source"><tr><td class="source_lineno"><span class="source_lineno">00001<br />00002<br />00003<br />00004<br />00005<br />00006<br />00007<br />00008<br />00009<br />00010<br />00011<br />00012<br />00013<br />00014<br />00015<br />00016<br />00017<br />00018<br />00019<br />00020<br />
+00021<br />00022<br />00023<br />00024<br />00025<br />00026<br />00027<br />00028<br />00029<br />00030<br />00031<br />00032<br />00033<br />00034<br />00035<br />00036<br />00037<br />00038<br />00039<br />00040<br />
+00041<br />00042<br />00043<br />00044<br />00045<br />00046<br />00047<br />00048<br />00049<br />00050<br />00051<br />00052<br />00053<br />00054<br />00055<br />00056<br />00057<br />00058<br />00059<br />00060<br />
+00061<br />00062<br />00063<br />00064<br />00065<br />00066<br />00067<br />00068<br />00069<br />00070<br />00071<br />00072<br />00073<br />00074<br />00075<br />00076<br />00077<br />00078<br />00079<br />00080<br />
+00081<br />00082<br />00083<br />00084<br />00085<br />00086<br />00087<br />00088<br />00089<br />00090<br />00091<br />00092<br />00093<br />00094<br />00095<br />00096<br />00097<br />00098<br />00099<br />00100<br />
+00101<br />00102<br />00103<br />00104<br />00105<br />00106<br />00107<br />00108<br />00109<br />00110<br />00111<br />00112<br />00113<br />00114<br />00115<br />00116<br />00117<br />00118<br />00119<br />00120<br />
+00121<br />00122<br />00123<br />00124<br />00125<br />00126<br />00127<br />00128<br />00129<br />00130<br />00131<br />00132<br />00133<br />00134<br />00135<br />00136<br />00137<br />00138<br />00139<br />00140<br />
+00141<br />00142<br />00143<br />00144<br />00145<br />00146<br />00147<br />00148<br />00149<br />00150<br />00151<br />00152<br />00153<br />00154<br />00155<br />00156<br />00157<br />00158<br />00159<br />00160<br />
+00161<br />00162<br />00163<br />00164<br />00165<br />00166<br />00167<br />00168<br />00169<br />00170<br />00171<br />00172<br />00173<br />00174<br />00175<br />00176<br />00177<br />00178<br />00179<br />00180<br />
+00181<br />00182<br />00183<br />00184<br />00185<br />00186<br />00187<br />00188<br />00189<br />00190<br />00191<br />00192<br />00193<br />00194<br />00195<br />00196<br />00197<br />00198<br />00199<br />00200<br />
+00201<br />00202<br />00203<br />00204<br />00205<br />00206<br />00207<br />00208<br />00209<br />00210<br />00211<br />00212<br />00213<br />00214<br />00215<br />00216<br />00217<br />00218<br />00219<br />00220<br />
+00221<br />00222<br />00223<br />00224<br />00225<br />00226<br />00227<br />00228<br />00229<br />00230<br />00231<br />00232<br />00233<br />00234<br />00235<br />00236<br />00237<br />00238<br />00239<br />00240<br />
+00241<br />00242<br />00243<br />00244<br />00245<br />00246<br />00247<br />00248<br />00249<br />00250<br />00251<br />00252<br />00253<br />00254<br />00255<br />00256<br />00257<br />00258<br />00259<br />00260<br />
+00261<br />00262<br />00263<br />00264<br />00265<br />00266<br />00267<br />00268<br />00269<br />00270<br />00271<br />00272<br />00273</span></td>
+<td class="source"><pre class="source"><a name="1"></a><span class="source_comment">//=============================================================================
+</span><a name="2"></a><span class="source_comment">// TrialPitMace.
+</span><a name="3"></a><span class="source_comment">//=============================================================================
+</span><a name="4"></a><span class="source_keyword">class</span> <span class="source_type"><a href="../runei/trialpitmace.html" class="source">TrialPitMace</a></span> <span class="source_keyword">expands</span> <span class="source_type"><a href="../runei/hammer.html" class="source">Hammer</a></span>;
+<a name="5"></a>
+<a name="6"></a><span class="source_keyword">var</span>(Sounds) <span class="source_type">Sound</span> PoweredUpFireSound;
+<a name="7"></a><span class="source_keyword">var</span> <span class="source_keyword">float</span> <span class="source_type"><a href="../runei/fireradius.html" class="source">FireRadius</a></span>;
+<a name="8"></a>
+<a name="9"></a><span class="source_keyword">function</span> PreBeginPlay() {
+<a name="10"></a>    <span class="source_keyword">if</span> (<span class="source_keyword">class</span><span class="source_name">'ServerOptions'</span>.default.RetroWeaponPowerups) { <span class="source_comment">// 108  optional retro values
+</span><a name="11"></a>        RunePowerDuration = <span class="source_int">15.0</span>;
+<a name="12"></a>    }
+<a name="13"></a>    <span class="source_keyword">Super</span>.PreBeginPlay();
+<a name="14"></a>}
+<a name="15"></a>
+<a name="16"></a><span class="source_comment">//=============================================================================
+</span><a name="17"></a><span class="source_comment">//
+</span><a name="18"></a><span class="source_comment">// PowerupInit
+</span><a name="19"></a><span class="source_comment">//
+</span><a name="20"></a><span class="source_comment">//=============================================================================
+</span><a name="21"></a>
+<a name="22"></a><span class="source_keyword">function</span> PowerupInit()
+<a name="23"></a>{
+<a name="24"></a><span class="source_comment">//	local int joint;
+</span><a name="25"></a><span class="source_comment">//	local actor glow;
+</span><a name="26"></a>
+<a name="27"></a>    <span class="source_keyword">Super</span>.PowerupInit();
+<a name="28"></a>
+<a name="29"></a>    DesiredColorAdjust.X = <span class="source_int">128</span>;
+<a name="30"></a>    DesiredColorAdjust.<span class="source_type">Y</span> = <span class="source_int">70</span>;
+<a name="31"></a>
+<a name="32"></a><span class="source_comment">/*
+<a name="33"></a>    joint = JointNamed('offset');
+<a name="34"></a>    glow = Spawn(class'trialpitfire', self,, GetJointPos(joint));
+<a name="35"></a>    if(glow != None)
+<a name="36"></a>    {
+<a name="37"></a>        AttachActorToJoint(glow, joint);
+<a name="38"></a>    }
+<a name="39"></a>*/</span>
+<a name="40"></a>}   
+<a name="41"></a>
+<a name="42"></a><span class="source_comment">//=============================================================================
+</span><a name="43"></a><span class="source_comment">//
+</span><a name="44"></a><span class="source_comment">// PowerupEndingPulseOn
+</span><a name="45"></a><span class="source_comment">//
+</span><a name="46"></a><span class="source_comment">//=============================================================================
+</span><a name="47"></a>
+<a name="48"></a><span class="source_keyword">function</span> PowerupEndingPulseOn()
+<a name="49"></a>{
+<a name="50"></a>    DesiredFatness = <span class="source_int">140</span>;
+<a name="51"></a>    DesiredColorAdjust.X = <span class="source_int">0</span>;
+<a name="52"></a>    DesiredColorAdjust.<span class="source_type">Y</span> = <span class="source_int">0</span>;
+<a name="53"></a>    PlaySound(PoweredUpEndingSound, SLOT_None);
+<a name="54"></a>}
+<a name="55"></a>
+<a name="56"></a><span class="source_comment">//=============================================================================
+</span><a name="57"></a><span class="source_comment">//
+</span><a name="58"></a><span class="source_comment">// PowerupEndingPulseOff
+</span><a name="59"></a><span class="source_comment">//
+</span><a name="60"></a><span class="source_comment">//=============================================================================
+</span><a name="61"></a>
+<a name="62"></a><span class="source_keyword">function</span> PowerupEndingPulseOff()
+<a name="63"></a>{
+<a name="64"></a>    DesiredFatness = <span class="source_int">128</span>;
+<a name="65"></a>    DesiredColorAdjust.X = <span class="source_int">128</span>;
+<a name="66"></a>    DesiredColorAdjust.<span class="source_type">Y</span> = <span class="source_int">70</span>;
+<a name="67"></a>}
+<a name="68"></a>
+<a name="69"></a><span class="source_comment">//=============================================================================
+</span><a name="70"></a><span class="source_comment">//
+</span><a name="71"></a><span class="source_comment">// PowerupEnded
+</span><a name="72"></a><span class="source_comment">//
+</span><a name="73"></a><span class="source_comment">//=============================================================================
+</span><a name="74"></a>
+<a name="75"></a><span class="source_keyword">function</span> PowerupEnded()
+<a name="76"></a>{
+<a name="77"></a><span class="source_comment">//	local int joint;
+</span><a name="78"></a><span class="source_comment">//	local actor glow;
+</span><a name="79"></a>
+<a name="80"></a>    <span class="source_keyword">Super</span>.PowerupEnded();
+<a name="81"></a>
+<a name="82"></a>    DesiredColorAdjust.X = <span class="source_int">0</span>;
+<a name="83"></a>    DesiredColorAdjust.<span class="source_type">Y</span> = <span class="source_int">0</span>;
+<a name="84"></a>
+<a name="85"></a><span class="source_comment">/*
+<a name="86"></a>    joint = JointNamed('offset');
+<a name="87"></a>    glow = DetachActorFromJoint(joint);
+<a name="88"></a>    if(glow != None)
+<a name="89"></a>        glow.Destroy();
+<a name="90"></a>*/</span>
+<a name="91"></a>}   
+<a name="92"></a>
+<a name="93"></a><span class="source_comment">//=============================================================================
+</span><a name="94"></a><span class="source_comment">//
+</span><a name="95"></a><span class="source_comment">// SpawnPowerupEffect
+</span><a name="96"></a><span class="source_comment">//
+</span><a name="97"></a><span class="source_comment">//=============================================================================
+</span><a name="98"></a><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span> SpawnPowerupEffect()
+<a name="99"></a>{
+<a name="100"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../runei/effectskeleton.html" class="source">EffectSkeleton</a></span> ES;
+<a name="101"></a>
+<a name="102"></a>    <span class="source_comment">// Spawn an EffectSkeleton that will display all powered up effects
+</span><a name="103"></a>    ES = Spawn(<span class="source_keyword">class</span><span class="source_name">'EffectSkelTrialMace'</span>, self);
+<a name="104"></a>    <span class="source_keyword">if</span> (ES != <span class="source_keyword">None</span>)
+<a name="105"></a>    {
+<a name="106"></a>        AttachActorToJoint(ES, <span class="source_int">0</span>);
+<a name="107"></a>    }
+<a name="108"></a>}
+<a name="109"></a>
+<a name="110"></a><span class="source_comment">//=============================================================================
+</span><a name="111"></a><span class="source_comment">//
+</span><a name="112"></a><span class="source_comment">// RemovePowerupEffect
+</span><a name="113"></a><span class="source_comment">//
+</span><a name="114"></a><span class="source_comment">//=============================================================================
+</span><a name="115"></a><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span> RemovePowerupEffect()
+<a name="116"></a>{
+<a name="117"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">A</span>;
+<a name="118"></a>    <span class="source_comment">// Remove Effect skeleton
+</span><a name="119"></a>    <span class="source_type">A</span> = DetachActorFromJoint(<span class="source_int">0</span>);
+<a name="120"></a>    <span class="source_type">A</span>.Destroy();
+<a name="121"></a>}
+<a name="122"></a>
+<a name="123"></a><span class="source_comment">//=============================================================================
+</span><a name="124"></a><span class="source_comment">//
+</span><a name="125"></a><span class="source_comment">// Powerup: BlastRadius
+</span><a name="126"></a><span class="source_comment">//
+</span><a name="127"></a><span class="source_comment">// This function is called when the weapon is initially powered up
+</span><a name="128"></a><span class="source_comment">//=============================================================================
+</span><a name="129"></a>
+<a name="130"></a><span class="source_keyword">function</span> WeaponFire(<span class="source_keyword">int</span> SwingCount)
+<a name="131"></a>{
+<a name="132"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../runei/fireradius.html" class="source">FireRadius</a></span> <span class="source_type">B</span>;
+<a name="133"></a>    <span class="source_keyword">local</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> loc;
+<a name="134"></a>
+<a name="135"></a>    <span class="source_keyword">if</span> (bPoweredUp && SwingCount == <span class="source_int">0</span>)
+<a name="136"></a>    {
+<a name="137"></a>        loc = Location;
+<a name="138"></a>        loc.Z -= <span class="source_int">10</span>;
+<a name="139"></a>        <span class="source_type">B</span> = Spawn(<span class="source_keyword">class</span><span class="source_name">'FireRadius'</span>, Owner,, loc, <span class="source_type"><a href="../core/object.html#Rotator" class="source">rotator</a></span>(vect(<span class="source_int">0</span>,<span class="source_int">0</span>,<span class="source_int">1</span>)));
+<a name="140"></a>        <span class="source_type">B</span>.Instigator = <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span>(Owner);
+<a name="141"></a>        PlaySound(PoweredUpFireSound, SLOT_Interface);
+<a name="142"></a>    }
+<a name="143"></a>}
+<a name="144"></a>
+<a name="145"></a><span class="source_comment">/*
+<a name="146"></a>//=============================================================================
+<a name="147"></a>//
+<a name="148"></a>// Powerup: FireRadius
+<a name="149"></a>//
+<a name="150"></a>//=============================================================================
+<a name="151"></a>
+<a name="152"></a>function WeaponFire(int SwingCount)
+<a name="153"></a>{
+<a name="154"></a>    local actor A;
+<a name="155"></a>    local int i;
+<a name="156"></a>    local bool bCollisionJoints;
+<a name="157"></a>    local ParticleSystem P;
+<a name="158"></a>
+<a name="159"></a>    if (bPoweredUp)
+<a name="160"></a>    {
+<a name="161"></a>        // Spawn fire effects
+<a name="162"></a>        for (i=0; i&lt;65535; i+=8192)
+<a name="163"></a>        {
+<a name="164"></a>            P = spawn(class'BlazeEffect',,,Owner.Location);
+<a name="165"></a>            P.Velocity = vector(rot(0,1,0)*i)*200;
+<a name="166"></a>        }
+<a name="167"></a>
+<a name="168"></a>        foreach RadiusActors(class'actor', A, FireRadius, Owner.Location)
+<a name="169"></a>        {
+<a name="170"></a>            if (A == self || A==Owner || A.Owner==Owner)
+<a name="171"></a>                continue;
+<a name="172"></a>
+<a name="173"></a>            if (A.bHidden)
+<a name="174"></a>                continue;
+<a name="175"></a>
+<a name="176"></a>            if (ScriptPawn(A) != None && ScriptPawn(A).bIsBoss)
+<a name="177"></a>                continue;
+<a name="178"></a>
+<a name="179"></a>            if (!FastTrace(Location, A.Location))
+<a name="180"></a>                continue;
+<a name="181"></a>
+<a name="182"></a>            if (A.IsA('Pawn'))
+<a name="183"></a>            {
+<a name="184"></a>                // Set on fire
+<a name="185"></a>                Pawn(A).PowerupBlaze(Pawn(Owner));
+<a name="186"></a>
+<a name="187"></a>                // Do some damage
+<a name="188"></a>                A.JointDamaged(15, Pawn(Owner), A.Location, Normal(A.Location-Owner.Location)*50, 'blunt', 0);
+<a name="189"></a>                A.AddVelocity((Normal(A.Location-Owner.Location)+vect(0,0,1))*300);
+<a name="190"></a>            }
+<a name="191"></a>            else if (A.IsA('Decoration') || A.IsA('Inventory'))
+<a name="192"></a>            {
+<a name="193"></a>                // Set all collision joints on fire
+<a name="194"></a>                for (i=0; i&lt;A.NumJoints(); i++)
+<a name="195"></a>                {
+<a name="196"></a>                    if ((A.JointFlags[i] & JOINT_FLAG_COLLISION)!=0)
+<a name="197"></a>                    {
+<a name="198"></a>                        bCollisionJoints = true;
+<a name="199"></a>                        A.SetOnFire(Pawn(Owner), i);
+<a name="200"></a>                    }
+<a name="201"></a>                }
+<a name="202"></a>                if (!bCollisionJoints)
+<a name="203"></a>                    A.SetOnFire(Pawn(Owner), 1);
+<a name="204"></a>            }
+<a name="205"></a>        }
+<a name="206"></a>    }
+<a name="207"></a>}
+<a name="208"></a>*/</span>
+<a name="209"></a>
+<a name="210"></a><span class="source_keyword">defaultproperties</span>
+<a name="211"></a>{
+<a name="212"></a>     PoweredUpFireSound=<span class="source_type">Sound</span><span class="source_name">'WeaponsSnd.PowerUps.afire01'</span>
+<a name="213"></a>     <span class="source_type"><a href="../runei/fireradius.html" class="source">FireRadius</a></span>=<span class="source_int">300.000000</span>
+<a name="214"></a>     StowMesh=<span class="source_int">1</span>
+<a name="215"></a>     Damage=<span class="source_int">30</span>
+<a name="216"></a>     BloodTexture=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'weapons.TrialMacetrialpit_maceblood'</span>
+<a name="217"></a>     rating=<span class="source_int">2</span>
+<a name="218"></a>     ExtendedLength=<span class="source_int">5.000000</span>
+<a name="219"></a>     RunePowerRequired=<span class="source_int">50</span>
+<a name="220"></a>     RunePowerDuration=<span class="source_int">5.000000</span>
+<a name="221"></a>     PowerupMessage=<span class="source_string">"Blaze!"</span>
+<a name="222"></a>     ThroughAir(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'WeaponsSnd.Swings.swing07'</span>
+<a name="223"></a>     ThroughAirBerserk(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'WeaponsSnd.Swings.bswing08'</span>
+<a name="224"></a>     HitFlesh(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'WeaponsSnd.ImpFlesh.impfleshhammer04'</span>
+<a name="225"></a>     <span class="source_type"><a href="../runei/hitwood.html" class="source">HitWood</a></span>(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'WeaponsSnd.ImpWood.impactwood03'</span>
+<a name="226"></a>     <span class="source_type"><a href="../runei/hitstone.html" class="source">HitStone</a></span>(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'WeaponsSnd.ImpStone.impactstone19'</span>
+<a name="227"></a>     <span class="source_type"><a href="../runei/hitmetal.html" class="source">HitMetal</a></span>(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'WeaponsSnd.ImpMetal.impactmetal09'</span>
+<a name="228"></a>     HitDirt(<span class="source_int">0</span>)=<span class="source_type">Sound</span><span class="source_name">'WeaponsSnd.ImpEarth.impactearth06'</span>
+<a name="229"></a>     HitShield=<span class="source_type">Sound</span><span class="source_name">'WeaponsSnd.Shields.shield08'</span>
+<a name="230"></a>     <span class="source_type"><a href="../runei/hitweapon.html" class="source">HitWeapon</a></span>=<span class="source_type">Sound</span><span class="source_name">'WeaponsSnd.Swords.sword08'</span>
+<a name="231"></a>     HitBreakableWood=<span class="source_type">Sound</span><span class="source_name">'WeaponsSnd.ImpWood.impactwood12'</span>
+<a name="232"></a>     HitBreakableStone=<span class="source_type">Sound</span><span class="source_name">'WeaponsSnd.ImpStone.impactstone11'</span>
+<a name="233"></a>     SheathSound=<span class="source_type">Sound</span><span class="source_name">'WeaponsSnd.Stows.xstow01'</span>
+<a name="234"></a>     UnsheathSound=<span class="source_type">Sound</span><span class="source_name">'WeaponsSnd.Stows.xunstow01'</span>
+<a name="235"></a>     PowerUpSound=<span class="source_type">Sound</span><span class="source_name">'WeaponsSnd.PowerUps.powerstart38'</span>
+<a name="236"></a>     PoweredUpSoundLOOP=<span class="source_type">Sound</span><span class="source_name">'WeaponsSnd.PowerUps.power02L'</span>
+<a name="237"></a>     PitchDeviation=<span class="source_int">0.080000</span>
+<a name="238"></a>     PowerupIcon=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'RuneFX2.tmace'</span>
+<a name="239"></a>     PowerupIconAnim=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'RuneFX2.tmace1a'</span>
+<a name="240"></a>     PoweredUpSwipeClass=<span class="source_keyword">Class</span><span class="source_name">'RuneI.WeaponSwipeFire'</span>
+<a name="241"></a>     A_Idle=H3_idle
+<a name="242"></a>     A_AttackA=H3_attackA
+<a name="243"></a>     A_AttackAReturn=H3_attackAreturn
+<a name="244"></a>     A_AttackB=H3_attackB
+<a name="245"></a>     A_AttackBReturn=H3_attackBreturn
+<a name="246"></a>     A_AttackC=H3_attackC
+<a name="247"></a>     A_AttackCReturn=H3_attackCreturn
+<a name="248"></a>     A_AttackStandA=H3_StandingattackA
+<a name="249"></a>     A_AttackStandAReturn=H3_StandingattackAReturn
+<a name="250"></a>     A_AttackStandB=H3_StandingattackB
+<a name="251"></a>     A_AttackStandBReturn=H3_StandingattackBReturn
+<a name="252"></a>     A_AttackBackupA=H3_BackupAttackA
+<a name="253"></a>     A_AttackBackupAReturn=H3_BackupAttackAReturn
+<a name="254"></a>     A_AttackBackupB=H3_BackupAttackB
+<a name="255"></a>     A_AttackBackupBReturn=H3_BackupAttackBReturn
+<a name="256"></a>     A_AttackStrafeRight=S1_StrafeRightAttack
+<a name="257"></a>     A_AttackStrafeLeft=S1_StrafeLeftAttack
+<a name="258"></a>     A_Throw=H3_throw
+<a name="259"></a>     A_Powerup=s2_powerup
+<a name="260"></a>     A_PainFront=H3_painFront
+<a name="261"></a>     A_PainRight=S1_painBack
+<a name="262"></a>     A_Taunt=H3_taunt
+<a name="263"></a>     A_PumpTrigger=H3_PumpTrigger
+<a name="264"></a>     A_LeverTrigger=H3_LeverTrigger
+<a name="265"></a>     <span class="source_type"><a href="../runei/pickupmessage.html" class="source">PickupMessage</a></span>=<span class="source_string">"You now carry the Trial Pit Mace"</span>
+<a name="266"></a>     PickupSound=<span class="source_type">Sound</span><span class="source_name">'OtherSnd.Pickups.grab03'</span>
+<a name="267"></a>     DropSound=<span class="source_type">Sound</span><span class="source_name">'WeaponsSnd.Drops.hammerdrop03'</span>
+<a name="268"></a>     Mass=<span class="source_int">14.000000</span>
+<a name="269"></a>     Skeletal=<span class="source_type">SkelModel</span><span class="source_name">'weapons.TrialMace'</span>
+<a name="270"></a>     SkelGroupSkins(<span class="source_int">0</span>)=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'weapons.TrialMacetrialpit_mace'</span>
+<a name="271"></a>     SkelGroupSkins(<span class="source_int">1</span>)=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'weapons.TrialMacetrialpit_mace'</span>
+<a name="272"></a>}
+<a name="273"></a></pre></td></tr></table></div>
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../runei/runei-overview.html">Package</a></td>
+	<td class="header"><a href="../runei/trialpitmace.html">Class</a></td>
+	<td class="header_hilight">Source</td>
+	<td class="header"><a class="header" href="../classtree.html#TrialPitMace">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../Source_runei/trialpitfire.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../Source_runei/trialpitragnar.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Class file time: Thu 28/1/2021 11:38:04.000 - Creation time: Thu 28/1/2021 11:41:35.760 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

@@ -1,0 +1,1392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - Engine.GameInfo</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../engine/engine-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_engine/gameinfo.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#GameInfo">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../engine/fragment.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../engine/gamereplicationinfo.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#engine/gameinfo.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../engine/engine-overview.html">Engine</a>.GameInfo</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../engine/info.html">Info</a></dd>
+<dt>Modifiers</dt><dd>native </dd>
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a>
+   |   
+   +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/info.html">Info</a>
+      |   
+      +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/gameinfo.html">GameInfo</a>
+</pre>
+
+<h4>Direct Known Subclasses:</h4>
+<blockquote>
+	<a href="../runei/runegameinfo.html">RuneGameInfo</a>
+</blockquote>
+
+<hr />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Constants Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Contants from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/actor.html#ANGLE_1">ANGLE_1</a>, <a href="../engine/actor.html#ANGLE_180">ANGLE_180</a>, <a href="../engine/actor.html#ANGLE_360">ANGLE_360</a>, <a href="../engine/actor.html#ANGLE_45">ANGLE_45</a>, <a href="../engine/actor.html#ANGLE_90">ANGLE_90</a>, <a href="../engine/actor.html#bDebug">bDebug</a>, <a href="../engine/actor.html#BODYPART_BODY">BODYPART_BODY</a>, <a href="../engine/actor.html#BODYPART_HEAD">BODYPART_HEAD</a>, <a href="../engine/actor.html#BODYPART_LARM1">BODYPART_LARM1</a>, <a href="../engine/actor.html#BODYPART_LARM2">BODYPART_LARM2</a>, <a href="../engine/actor.html#BODYPART_LLEG1">BODYPART_LLEG1</a>, <a href="../engine/actor.html#BODYPART_LLEG2">BODYPART_LLEG2</a>, <a href="../engine/actor.html#BODYPART_MISC1">BODYPART_MISC1</a>, <a href="../engine/actor.html#BODYPART_MISC2">BODYPART_MISC2</a>, <a href="../engine/actor.html#BODYPART_MISC3">BODYPART_MISC3</a>, <a href="../engine/actor.html#BODYPART_MISC4">BODYPART_MISC4</a>, <a href="../engine/actor.html#BODYPART_RARM1">BODYPART_RARM1</a>, <a href="../engine/actor.html#BODYPART_RARM2">BODYPART_RARM2</a>, <a href="../engine/actor.html#BODYPART_RLEG1">BODYPART_RLEG1</a>, <a href="../engine/actor.html#BODYPART_RLEG2">BODYPART_RLEG2</a>, <a href="../engine/actor.html#BODYPART_TORSO">BODYPART_TORSO</a>, <a href="../engine/actor.html#DEBUG_AI">DEBUG_AI</a>, <a href="../engine/actor.html#DEBUG_CONSTANT">DEBUG_CONSTANT</a>, <a href="../engine/actor.html#DEBUG_LEVEL">DEBUG_LEVEL</a>, <a href="../engine/actor.html#DEBUG_LIGHTS">DEBUG_LIGHTS</a>, <a href="../engine/actor.html#DEBUG_MAX">DEBUG_MAX</a>, <a href="../engine/actor.html#DEBUG_MULTIPLE">DEBUG_MULTIPLE</a>, <a href="../engine/actor.html#DEBUG_NAVPOINTS">DEBUG_NAVPOINTS</a>, <a href="../engine/actor.html#DEBUG_NONE">DEBUG_NONE</a>, <a href="../engine/actor.html#DEBUG_PLAYER">DEBUG_PLAYER</a>, <a href="../engine/actor.html#DEBUG_TARGET">DEBUG_TARGET</a>, <a href="../engine/actor.html#DEBUG_TRIGGERS">DEBUG_TRIGGERS</a>, <a href="../engine/actor.html#DEBUG_VISIBLE">DEBUG_VISIBLE</a>, <a href="../engine/actor.html#DEBUG_ZONE">DEBUG_ZONE</a>, <a href="../engine/actor.html#HUD_ACTOR">HUD_ACTOR</a>, <a href="../engine/actor.html#HUD_LOD">HUD_LOD</a>, <a href="../engine/actor.html#HUD_MAX">HUD_MAX</a>, <a href="../engine/actor.html#HUD_NETWORK">HUD_NETWORK</a>, <a href="../engine/actor.html#HUD_NONE">HUD_NONE</a>, <a href="../engine/actor.html#HUD_POV">HUD_POV</a>, <a href="../engine/actor.html#HUD_SCRIPT">HUD_SCRIPT</a>, <a href="../engine/actor.html#HUD_SKELAXES">HUD_SKELAXES</a>, <a href="../engine/actor.html#HUD_SKELETON">HUD_SKELETON</a>, <a href="../engine/actor.html#HUD_SKELJOINTS">HUD_SKELJOINTS</a>, <a href="../engine/actor.html#HUD_SKELNAMES">HUD_SKELNAMES</a>, <a href="../engine/actor.html#JOINT_FLAG_ABSPOSITION">JOINT_FLAG_ABSPOSITION</a>, <a href="../engine/actor.html#JOINT_FLAG_ABSROTATION">JOINT_FLAG_ABSROTATION</a>, <a href="../engine/actor.html#JOINT_FLAG_ACCELERATIVE">JOINT_FLAG_ACCELERATIVE</a>, <a href="../engine/actor.html#JOINT_FLAG_BLENDJOINT">JOINT_FLAG_BLENDJOINT</a>, <a href="../engine/actor.html#JOINT_FLAG_COLLISION">JOINT_FLAG_COLLISION</a>, <a href="../engine/actor.html#JOINT_FLAG_GRAVJOINT">JOINT_FLAG_GRAVJOINT</a>, <a href="../engine/actor.html#JOINT_FLAG_IKCHAIN">JOINT_FLAG_IKCHAIN</a>, <a href="../engine/actor.html#JOINT_FLAG_SPRINGPOINT">JOINT_FLAG_SPRINGPOINT</a>, <a href="../engine/actor.html#NUM_BODYPARTS">NUM_BODYPARTS</a>, <a href="../engine/actor.html#NUM_JOINT_FLAGS">NUM_JOINT_FLAGS</a>, <a href="../engine/actor.html#POLYFLAG_ENVIRONMENT">POLYFLAG_ENVIRONMENT</a>, <a href="../engine/actor.html#POLYFLAG_INVISIBLE">POLYFLAG_INVISIBLE</a>, <a href="../engine/actor.html#POLYFLAG_MASKED">POLYFLAG_MASKED</a>, <a href="../engine/actor.html#POLYFLAG_MODULATED">POLYFLAG_MODULATED</a>, <a href="../engine/actor.html#POLYFLAG_TRANSLUCENT">POLYFLAG_TRANSLUCENT</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bAlternateMode" name="bAlternateMode" title="go to the details">bAlternateMode</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/mutator.html">Mutator</a></td><td width="66%"><a href="#_BaseMutator" name="BaseMutator" title="go to the details">BaseMutator</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bBatchLocal" name="bBatchLocal" title="go to the details">bBatchLocal</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bCanChangeSkin" name="bCanChangeSkin" title="go to the details">bCanChangeSkin</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bCanViewOthers" name="bCanViewOthers" title="go to the details">bCanViewOthers</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bGameEnded" name="bGameEnded" title="go to the details">bGameEnded</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bLocalLog" name="bLocalLog" title="go to the details">bLocalLog</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bLoggingGame" name="bLoggingGame" title="go to the details">bLoggingGame</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bLowGore" name="bLowGore" title="go to the details">bLowGore</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bOverTime" name="bOverTime" title="go to the details">bOverTime</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bSubtitles" name="bSubtitles" title="go to the details">bSubtitles</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bVeryLowGore" name="bVeryLowGore" title="go to the details">bVeryLowGore</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bWorldLog" name="bWorldLog" title="go to the details">bWorldLog</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_CurrentID" name="CurrentID" title="go to the details">CurrentID</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/mutator.html">Mutator</a></td><td width="66%"><a href="#_DamageMutator" name="DamageMutator" title="go to the details">DamageMutator</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">class&lt;<a href="../engine/localmessage.html">LocalMessage</a>&gt;</td><td width="66%"><a href="#_DeathMessageClass" name="DeathMessageClass" title="go to the details">DeathMessageClass</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_DebrisPercentage" name="DebrisPercentage" title="go to the details">DebrisPercentage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_DefaultPlayerName" name="DefaultPlayerName" title="go to the details">DefaultPlayerName</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">name</td><td width="66%"><a href="#_DefaultPlayerState" name="DefaultPlayerState" title="go to the details">DefaultPlayerState</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_DemoBuild" name="DemoBuild" title="go to the details">DemoBuild</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_DemoHasTuts" name="DemoHasTuts" title="go to the details">DemoHasTuts</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">byte</td><td width="66%"><a href="#_Difficulty" name="Difficulty" title="go to the details">Difficulty</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">class&lt;<a href="../engine/localmessage.html">LocalMessage</a>&gt;</td><td width="66%"><a href="#_DMMessageClass" name="DMMessageClass" title="go to the details">DMMessageClass</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_EnteredMessage" name="EnteredMessage" title="go to the details">EnteredMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_FailedPlaceMessage" name="FailedPlaceMessage" title="go to the details">FailedPlaceMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_FailedSpawnMessage" name="FailedSpawnMessage" title="go to the details">FailedSpawnMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_FailedTeamMessage" name="FailedTeamMessage" title="go to the details">FailedTeamMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_GameName" name="GameName" title="go to the details">GameName</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/gamereplicationinfo.html">GameReplicationInfo</a></td><td width="66%"><a href="#_GameReplicationInfo" name="GameReplicationInfo" title="go to the details">GameReplicationInfo</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_IPBanned" name="IPBanned" title="go to the details">IPBanned</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_ItemGoals" name="ItemGoals" title="go to the details">ItemGoals</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_KillGoals" name="KillGoals" title="go to the details">KillGoals</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_LeftMessage" name="LeftMessage" title="go to the details">LeftMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/statlog.html">StatLog</a></td><td width="66%"><a href="#_LocalLog" name="LocalLog" title="go to the details">LocalLog</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_LocalLogFileName" name="LocalLogFileName" title="go to the details">LocalLogFileName</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_MaxedOutMessage" name="MaxedOutMessage" title="go to the details">MaxedOutMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">class&lt;<a href="../engine/mutator.html">Mutator</a>&gt;</td><td width="66%"><a href="#_MutatorClass" name="MutatorClass" title="go to the details">MutatorClass</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_NameChangedMessage" name="NameChangedMessage" title="go to the details">NameChangedMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_NeedPassword" name="NeedPassword" title="go to the details">NeedPassword</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_NumPlayers" name="NumPlayers" title="go to the details">NumPlayers</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_NumSpectators" name="NumSpectators" title="go to the details">NumSpectators</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_ParticlePercentage" name="ParticlePercentage" title="go to the details">ParticlePercentage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_SecretGoals" name="SecretGoals" title="go to the details">SecretGoals</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_SentText" name="SentText" title="go to the details">SentText</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_ServerLogName" name="ServerLogName" title="go to the details">ServerLogName</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_StartTime" name="StartTime" title="go to the details">StartTime</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">class&lt;<a href="../engine/statlog.html">StatLog</a>&gt;</td><td width="66%"><a href="#_StatLogClass" name="StatLogClass" title="go to the details">StatLogClass</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_SwitchLevelMessage" name="SwitchLevelMessage" title="go to the details">SwitchLevelMessage</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">class&lt;<a href="../engine/zoneinfo.html">ZoneInfo</a>&gt;</td><td width="66%"><a href="#_WaterZoneType" name="WaterZoneType" title="go to the details">WaterZoneType</a></td></tr>
+<tr><td nowrap="nowrap" width="33%"><a href="../engine/statlog.html">StatLog</a></td><td width="66%"><a href="#_WorldLog" name="WorldLog" title="go to the details">WorldLog</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_WorldLogFileName" name="WorldLogFileName" title="go to the details">WorldLogFileName</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_WrongPassword" name="WrongPassword" title="go to the details">WrongPassword</a></td></tr>
+<tr><th colspan="2" class="small">GameInfo</th></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_AdminPassword" name="AdminPassword" title="go to the details">AdminPassword</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_AutoAim" name="AutoAim" title="go to the details">AutoAim</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bAllowFOV" name="bAllowFOV" title="go to the details">bAllowFOV</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bAllowLimbSever" name="bAllowLimbSever" title="go to the details">bAllowLimbSever</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bAllowShieldDrop" name="bAllowShieldDrop" title="go to the details">bAllowShieldDrop</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bAllowWeaponDrop" name="bAllowWeaponDrop" title="go to the details">bAllowWeaponDrop</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bAutoPickup" name="bAutoPickup" title="go to the details">bAutoPickup</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bClassicDeathmessages" name="bClassicDeathmessages" title="go to the details">bClassicDeathmessages</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bCoopWeaponMode" name="bCoopWeaponMode" title="go to the details">bCoopWeaponMode</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bDeathMatch" name="bDeathMatch" title="go to the details">bDeathMatch</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_BeaconName" name="BeaconName" title="go to the details">BeaconName</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bHumansOnly" name="bHumansOnly" title="go to the details">bHumansOnly</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bMuteSpectators" name="bMuteSpectators" title="go to the details">bMuteSpectators</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bNoCheating" name="bNoCheating" title="go to the details">bNoCheating</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bNoMonsters" name="bNoMonsters" title="go to the details">bNoMonsters</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_BotMenuType" name="BotMenuType" title="go to the details">BotMenuType</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bPauseable" name="bPauseable" title="go to the details">bPauseable</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bRestartLevel" name="bRestartLevel" title="go to the details">bRestartLevel</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bTeamGame" name="bTeamGame" title="go to the details">bTeamGame</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">class&lt;<a href="../engine/playerpawn.html">playerpawn</a>&gt;</td><td width="66%"><a href="#_DefaultPlayerClass" name="DefaultPlayerClass" title="go to the details">DefaultPlayerClass</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">class&lt;<a href="../engine/shield.html">shield</a>&gt;</td><td width="66%"><a href="#_DefaultShield" name="DefaultShield" title="go to the details">DefaultShield</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">class&lt;<a href="../engine/weapon.html">weapon</a>&gt;</td><td width="66%"><a href="#_DefaultWeapon" name="DefaultWeapon" title="go to the details">DefaultWeapon</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">class&lt;<a href="../engine/menu.html">menu</a>&gt;</td><td width="66%"><a href="#_GameMenuType" name="GameMenuType" title="go to the details">GameMenuType</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_GameOptionsMenuType" name="GameOptionsMenuType" title="go to the details">GameOptionsMenuType</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_GamePassword" name="GamePassword" title="go to the details">GamePassword</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">class&lt;<a href="../engine/gamereplicationinfo.html">GameReplicationInfo</a>&gt;</td><td width="66%"><a href="#_GameReplicationInfoClass" name="GameReplicationInfoClass" title="go to the details">GameReplicationInfoClass</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">float</td><td width="66%"><a href="#_GameSpeed" name="GameSpeed" title="go to the details">GameSpeed</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_GameUMenuType" name="GameUMenuType" title="go to the details">GameUMenuType</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">class&lt;<a href="../engine/hud.html">hud</a>&gt;</td><td width="66%"><a href="#_HUDType" name="HUDType" title="go to the details">HUDType</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_IPPolicies[50]" name="IPPolicies[50]" title="go to the details">IPPolicies[50]</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_MaplistMenuType" name="MaplistMenuType" title="go to the details">MaplistMenuType</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">class&lt;<a href="../engine/maplist.html">MapList</a>&gt;</td><td width="66%"><a href="#_MapListType" name="MapListType" title="go to the details">MapListType</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_MapPrefix" name="MapPrefix" title="go to the details">MapPrefix</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_MaxPlayers" name="MaxPlayers" title="go to the details">MaxPlayers</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">int</td><td width="66%"><a href="#_MaxSpectators" name="MaxSpectators" title="go to the details">MaxSpectators</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_MultiplayerUMenuType" name="MultiplayerUMenuType" title="go to the details">MultiplayerUMenuType</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_MutatorMenuType" name="MutatorMenuType" title="go to the details">MutatorMenuType</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_RulesMenuType" name="RulesMenuType" title="go to the details">RulesMenuType</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">class&lt;<a href="../engine/scoreboard.html">scoreboard</a>&gt;</td><td width="66%"><a href="#_ScoreBoardType" name="ScoreBoardType" title="go to the details">ScoreBoardType</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_SettingsMenuType" name="SettingsMenuType" title="go to the details">SettingsMenuType</a></td></tr>
+<tr><td nowrap="nowrap" width="33%">string</td><td width="66%"><a href="#_SpecialDamageString" name="SpecialDamageString" title="go to the details">SpecialDamageString</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/actor.html#Acceleration">Acceleration</a>, <a href="../engine/actor.html#AlphaScale">AlphaScale</a>, <a href="../engine/actor.html#AmbientGlow">AmbientGlow</a>, <a href="../engine/actor.html#AmbientSound">AmbientSound</a>, <a href="../engine/actor.html#AnimFrame">AnimFrame</a>, <a href="../engine/actor.html#AnimLast">AnimLast</a>, <a href="../engine/actor.html#AnimMinRate">AnimMinRate</a>, <a href="../engine/actor.html#AnimProxy">AnimProxy</a>, <a href="../engine/actor.html#AnimRate">AnimRate</a>, <a href="../engine/actor.html#AnimSequence">AnimSequence</a>, <a href="../engine/actor.html#AttachParent">AttachParent</a>, <a href="../engine/actor.html#AttachParentJoint">AttachParentJoint</a>, <a href="../engine/actor.html#AttachTag">AttachTag</a>, <a href="../engine/actor.html#bActorShadows">bActorShadows</a>, <a href="../engine/actor.html#bAffectActors">bAffectActors</a>, <a href="../engine/actor.html#bAffectWorld">bAffectWorld</a>, <a href="../engine/actor.html#bAlwaysRelevant">bAlwaysRelevant</a>, <a href="../engine/actor.html#bAlwaysTick">bAlwaysTick</a>, <a href="../engine/actor.html#bAnimByOwner">bAnimByOwner</a>, <a href="../engine/actor.html#bAnimFinished">bAnimFinished</a>, <a href="../engine/actor.html#bAnimLoop">bAnimLoop</a>, <a href="../engine/actor.html#bAnimNotify">bAnimNotify</a>, <a href="../engine/actor.html#bApplyLagToAccelerators">bApplyLagToAccelerators</a>, <a href="../engine/actor.html#Base">Base</a>, <a href="../engine/actor.html#BaseJoint">BaseJoint</a>, <a href="../engine/actor.html#BaseMatterType">BaseMatterType</a>, <a href="../engine/actor.html#BaseScrollDir">BaseScrollDir</a>, <a href="../engine/actor.html#bAssimilated">bAssimilated</a>, <a href="../engine/actor.html#bBlockActors">bBlockActors</a>, <a href="../engine/actor.html#bBlockPlayers">bBlockPlayers</a>, <a href="../engine/actor.html#bBounce">bBounce</a>, <a href="../engine/actor.html#bCanTeleport">bCanTeleport</a>, <a href="../engine/actor.html#bCarriedItem">bCarriedItem</a>, <a href="../engine/actor.html#bClientAnim">bClientAnim</a>, <a href="../engine/actor.html#bClientDemoNetFunc">bClientDemoNetFunc</a>, <a href="../engine/actor.html#bClientDemoRecording">bClientDemoRecording</a>, <a href="../engine/actor.html#bCollideActors">bCollideActors</a>, <a href="../engine/actor.html#bCollideWhenPlacing">bCollideWhenPlacing</a>, <a href="../engine/actor.html#bCollideWorld">bCollideWorld</a>, <a href="../engine/actor.html#bComplexOcclusion">bComplexOcclusion</a>, <a href="../engine/actor.html#bCorona">bCorona</a>, <a href="../engine/actor.html#bDeleteMe">bDeleteMe</a>, <a href="../engine/actor.html#bDemoRecording">bDemoRecording</a>, <a href="../engine/actor.html#bDifficulty0">bDifficulty0</a>, <a href="../engine/actor.html#bDifficulty1">bDifficulty1</a>, <a href="../engine/actor.html#bDifficulty2">bDifficulty2</a>, <a href="../engine/actor.html#bDifficulty3">bDifficulty3</a>, <a href="../engine/actor.html#bDirectional">bDirectional</a>, <a href="../engine/actor.html#bDrawAxes">bDrawAxes</a>, <a href="../engine/actor.html#bDrawJoints">bDrawJoints</a>, <a href="../engine/actor.html#bDrawSkel">bDrawSkel</a>, <a href="../engine/actor.html#bDynamicLight">bDynamicLight</a>, <a href="../engine/actor.html#bEdLocked">bEdLocked</a>, <a href="../engine/actor.html#bEdShouldSnap">bEdShouldSnap</a>, <a href="../engine/actor.html#bEdSnap">bEdSnap</a>, <a href="../engine/actor.html#bFilterByVolume">bFilterByVolume</a>, <a href="../engine/actor.html#bFixedRotationDir">bFixedRotationDir</a>, <a href="../engine/actor.html#bForcePhysicsUpdate">bForcePhysicsUpdate</a>, <a href="../engine/actor.html#bForceRender">bForceRender</a>, <a href="../engine/actor.html#bForceStasis">bForceStasis</a>, <a href="../engine/actor.html#bFrameNotifies">bFrameNotifies</a>, <a href="../engine/actor.html#bGameRelevant">bGameRelevant</a>, <a href="../engine/actor.html#bHasShadow">bHasShadow</a>, <a href="../engine/actor.html#bHidden">bHidden</a>, <a href="../engine/actor.html#bHiddenEd">bHiddenEd</a>, <a href="../engine/actor.html#bHighDetail">bHighDetail</a>, <a href="../engine/actor.html#bHighlighted">bHighlighted</a>, <a href="../engine/actor.html#bInterpolating">bInterpolating</a>, <a href="../engine/actor.html#bIsItemGoal">bIsItemGoal</a>, <a href="../engine/actor.html#bIsKillGoal">bIsKillGoal</a>, <a href="../engine/actor.html#bIsMover">bIsMover</a>, <a href="../engine/actor.html#bIsPawn">bIsPawn</a>, <a href="../engine/actor.html#bIsSecretGoal">bIsSecretGoal</a>, <a href="../engine/actor.html#bJointsBlock">bJointsBlock</a>, <a href="../engine/actor.html#bJointsTouch">bJointsTouch</a>, <a href="../engine/actor.html#bJustTeleported">bJustTeleported</a>, <a href="../engine/actor.html#BlendAnimAlpha">BlendAnimAlpha</a>, <a href="../engine/actor.html#BlendAnimFrame">BlendAnimFrame</a>, <a href="../engine/actor.html#BlendAnimSequence">BlendAnimSequence</a>, <a href="../engine/actor.html#bLensFlare">bLensFlare</a>, <a href="../engine/actor.html#bLightChanged">bLightChanged</a>, <a href="../engine/actor.html#bLookFocusCreature">bLookFocusCreature</a>, <a href="../engine/actor.html#bLookFocusPlayer">bLookFocusPlayer</a>, <a href="../engine/actor.html#bMemorized">bMemorized</a>, <a href="../engine/actor.html#bMeshCurvy">bMeshCurvy</a>, <a href="../engine/actor.html#bMeshEnviroMap">bMeshEnviroMap</a>, <a href="../engine/actor.html#bMirrored">bMirrored</a>, <a href="../engine/actor.html#bMovable">bMovable</a>, <a href="../engine/actor.html#bNegativeLight">bNegativeLight</a>, <a href="../engine/actor.html#bNet">bNet</a>, <a href="../engine/actor.html#bNetFeel">bNetFeel</a>, <a href="../engine/actor.html#bNetHear">bNetHear</a>, <a href="../engine/actor.html#bNetInitial">bNetInitial</a>, <a href="../engine/actor.html#bNetOptional">bNetOptional</a>, <a href="../engine/actor.html#bNetOwner">bNetOwner</a>, <a href="../engine/actor.html#bNetRelevant">bNetRelevant</a>, <a href="../engine/actor.html#bNetSee">bNetSee</a>, <a href="../engine/actor.html#bNetSpecial">bNetSpecial</a>, <a href="../engine/actor.html#bNetTemporary">bNetTemporary</a>, <a href="../engine/actor.html#bNoDelete">bNoDelete</a>, <a href="../engine/actor.html#bNoSmooth">bNoSmooth</a>, <a href="../engine/actor.html#bNoSurfaceBob">bNoSurfaceBob</a>, <a href="../engine/actor.html#bOnlyOwnerSee">bOnlyOwnerSee</a>, <a href="../engine/actor.html#bOwnerNoSee">bOwnerNoSee</a>, <a href="../engine/actor.html#bParticles">bParticles</a>, <a href="../engine/actor.html#bPointLight">bPointLight</a>, <a href="../engine/actor.html#bPreLight">bPreLight</a>, <a href="../engine/actor.html#bProjTarget">bProjTarget</a>, <a href="../engine/actor.html#bRandomFrame">bRandomFrame</a>, <a href="../engine/actor.html#bReleaseLock">bReleaseLock</a>, <a href="../engine/actor.html#bRenderedLastFrame">bRenderedLastFrame</a>, <a href="../engine/actor.html#bReplicateInstigator">bReplicateInstigator</a>, <a href="../engine/actor.html#bRotateToDesired">bRotateToDesired</a>, <a href="../engine/actor.html#Brush">Brush</a>, <a href="../engine/actor.html#bSelected">bSelected</a>, <a href="../engine/actor.html#bShadowCast">bShadowCast</a>, <a href="../engine/actor.html#bSimFall">bSimFall</a>, <a href="../engine/actor.html#bSimulatedPawn">bSimulatedPawn</a>, <a href="../engine/actor.html#bSinglePlayer">bSinglePlayer</a>, <a href="../engine/actor.html#bSpecialLit">bSpecialLit</a>, <a href="../engine/actor.html#bSpecialLit2">bSpecialLit2</a>, <a href="../engine/actor.html#bSpecialLit3">bSpecialLit3</a>, <a href="../engine/actor.html#bSpecialRender">bSpecialRender</a>, <a href="../engine/actor.html#bStasis">bStasis</a>, <a href="../engine/actor.html#bStatic">bStatic</a>, <a href="../engine/actor.html#bSweepable">bSweepable</a>, <a href="../engine/actor.html#bTempEditor">bTempEditor</a>, <a href="../engine/actor.html#bTicked">bTicked</a>, <a href="../engine/actor.html#bTimerLoop">bTimerLoop</a>, <a href="../engine/actor.html#bTrailerPrePivot">bTrailerPrePivot</a>, <a href="../engine/actor.html#bTrailerSameRotation">bTrailerSameRotation</a>, <a href="../engine/actor.html#bTravel">bTravel</a>, <a href="../engine/actor.html#bUnlit">bUnlit</a>, <a href="../engine/actor.html#Buoyancy">Buoyancy</a>, <a href="../engine/actor.html#CollisionHeight">CollisionHeight</a>, <a href="../engine/actor.html#CollisionRadius">CollisionRadius</a>, <a href="../engine/actor.html#CollisionTag">CollisionTag</a>, <a href="../engine/actor.html#ColLocation">ColLocation</a>, <a href="../engine/actor.html#ColorAdjust">ColorAdjust</a>, <a href="../engine/actor.html#Deleted">Deleted</a>, <a href="../engine/actor.html#DesiredColorAdjust">DesiredColorAdjust</a>, <a href="../engine/actor.html#DesiredFatness">DesiredFatness</a>, <a href="../engine/actor.html#DesiredRotation">DesiredRotation</a>, <a href="../engine/actor.html#DodgeDir">DodgeDir</a>, <a href="../engine/actor.html#DrawScale">DrawScale</a>, <a href="../engine/actor.html#DrawType">DrawType</a>, <a href="../engine/actor.html#Event">Event</a>, <a href="../engine/actor.html#ExtraTag">ExtraTag</a>, <a href="../engine/actor.html#Fatness">Fatness</a>, <a href="../engine/actor.html#Group">Group</a>, <a href="../engine/actor.html#InitialState">InitialState</a>, <a href="../engine/actor.html#Instigator">Instigator</a>, <a href="../engine/actor.html#Inventory">Inventory</a>, <a href="../engine/actor.html#JointChild[50]">JointChild[50]</a>, <a href="../engine/actor.html#JointFlags[50]">JointFlags[50]</a>, <a href="../engine/actor.html#LatentActor">LatentActor</a>, <a href="../engine/actor.html#LatentByte">LatentByte</a>, <a href="../engine/actor.html#LatentFloat">LatentFloat</a>, <a href="../engine/actor.html#LatentInt">LatentInt</a>, <a href="../engine/actor.html#Level">Level</a>, <a href="../engine/actor.html#LifeSpan">LifeSpan</a>, <a href="../engine/actor.html#LightBrightness">LightBrightness</a>, <a href="../engine/actor.html#LightCone">LightCone</a>, <a href="../engine/actor.html#LightEffect">LightEffect</a>, <a href="../engine/actor.html#LightHue">LightHue</a>, <a href="../engine/actor.html#LightingTag">LightingTag</a>, <a href="../engine/actor.html#LightPeriod">LightPeriod</a>, <a href="../engine/actor.html#LightPhase">LightPhase</a>, <a href="../engine/actor.html#LightRadius">LightRadius</a>, <a href="../engine/actor.html#LightSaturation">LightSaturation</a>, <a href="../engine/actor.html#LightType">LightType</a>, <a href="../engine/actor.html#Location">Location</a>, <a href="../engine/actor.html#LODBias">LODBias</a>, <a href="../engine/actor.html#LODCurve">LODCurve</a>, <a href="../engine/actor.html#LODDistMax">LODDistMax</a>, <a href="../engine/actor.html#LODDistMin">LODDistMin</a>, <a href="../engine/actor.html#LODPercentMax">LODPercentMax</a>, <a href="../engine/actor.html#LODPercentMin">LODPercentMin</a>, <a href="../engine/actor.html#LODPolyCount">LODPolyCount</a>, <a href="../engine/actor.html#Mass">Mass</a>, <a href="../engine/actor.html#Mesh">Mesh</a>, <a href="../engine/actor.html#MiscNumber">MiscNumber</a>, <a href="../engine/actor.html#MultiSkins[8]">MultiSkins[8]</a>, <a href="../engine/actor.html#NetPriority">NetPriority</a>, <a href="../engine/actor.html#NetTag">NetTag</a>, <a href="../engine/actor.html#NetUpdateFrequency">NetUpdateFrequency</a>, <a href="../engine/actor.html#OddsOfAppearing">OddsOfAppearing</a>, <a href="../engine/actor.html#OldAnimRate">OldAnimRate</a>, <a href="../engine/actor.html#OldLocation">OldLocation</a>, <a href="../engine/actor.html#OtherTag">OtherTag</a>, <a href="../engine/actor.html#Owner">Owner</a>, <a href="../engine/actor.html#PendingTouch">PendingTouch</a>, <a href="../engine/actor.html#PhysAlpha">PhysAlpha</a>, <a href="../engine/actor.html#Physics">Physics</a>, <a href="../engine/actor.html#PhysRate">PhysRate</a>, <a href="../engine/actor.html#PrePivot">PrePivot</a>, <a href="../engine/actor.html#Region">Region</a>, <a href="../engine/actor.html#RemoteRole">RemoteRole</a>, <a href="../engine/actor.html#RenderInterface">RenderInterface</a>, <a href="../engine/actor.html#RenderIteratorClass">RenderIteratorClass</a>, <a href="../engine/actor.html#Role">Role</a>, <a href="../engine/actor.html#Rotation">Rotation</a>, <a href="../engine/actor.html#RotationRate">RotationRate</a>, <a href="../engine/actor.html#ScaleGlow">ScaleGlow</a>, <a href="../engine/actor.html#ShadowTexture">ShadowTexture</a>, <a href="../engine/actor.html#ShadowVector">ShadowVector</a>, <a href="../engine/actor.html#SimAnim">SimAnim</a>, <a href="../engine/actor.html#Skeletal">Skeletal</a>, <a href="../engine/actor.html#SkelGroupFlags[16]">SkelGroupFlags[16]</a>, <a href="../engine/actor.html#SkelGroupSkins[16]">SkelGroupSkins[16]</a>, <a href="../engine/actor.html#SkelMesh">SkelMesh</a>, <a href="../engine/actor.html#Skin">Skin</a>, <a href="../engine/actor.html#SoundPitch">SoundPitch</a>, <a href="../engine/actor.html#SoundRadius">SoundRadius</a>, <a href="../engine/actor.html#SoundVolume">SoundVolume</a>, <a href="../engine/actor.html#SpecialTag">SpecialTag</a>, <a href="../engine/actor.html#Sprite">Sprite</a>, <a href="../engine/actor.html#SpriteProjForward">SpriteProjForward</a>, <a href="../engine/actor.html#StandingCount">StandingCount</a>, <a href="../engine/actor.html#Style">Style</a>, <a href="../engine/actor.html#SubstituteMesh">SubstituteMesh</a>, <a href="../engine/actor.html#Tag">Tag</a>, <a href="../engine/actor.html#Target">Target</a>, <a href="../engine/actor.html#Texture">Texture</a>, <a href="../engine/actor.html#TimerCounter">TimerCounter</a>, <a href="../engine/actor.html#TimerRate">TimerRate</a>, <a href="../engine/actor.html#Touching[4]">Touching[4]</a>, <a href="../engine/actor.html#TransientSoundRadius">TransientSoundRadius</a>, <a href="../engine/actor.html#TransientSoundVolume">TransientSoundVolume</a>, <a href="../engine/actor.html#TweenRate">TweenRate</a>, <a href="../engine/actor.html#Velocity">Velocity</a>, <a href="../engine/actor.html#VisibilityHeight">VisibilityHeight</a>, <a href="../engine/actor.html#VisibilityRadius">VisibilityRadius</a>, <a href="../engine/actor.html#VolumeBrightness">VolumeBrightness</a>, <a href="../engine/actor.html#VolumeFog">VolumeFog</a>, <a href="../engine/actor.html#VolumeRadius">VolumeRadius</a>, <a href="../engine/actor.html#XLevel">XLevel</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Enumerations Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Enumerations from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/actor.html#EDodgeDir">EDodgeDir</a>, <a href="../engine/actor.html#EDrawType">EDrawType</a>, <a href="../engine/actor.html#EInputAction">EInputAction</a>, <a href="../engine/actor.html#EInputKey">EInputKey</a>, <a href="../engine/actor.html#ELightEffect">ELightEffect</a>, <a href="../engine/actor.html#ELightType">ELightType</a>, <a href="../engine/actor.html#ELODCurve">ELODCurve</a>, <a href="../engine/actor.html#EMusicTransition">EMusicTransition</a>, <a href="../engine/actor.html#ENetRole">ENetRole</a>, <a href="../engine/actor.html#EPhysics">EPhysics</a>, <a href="../engine/actor.html#ERenderStyle">ERenderStyle</a>, <a href="../engine/actor.html#ESoundSlot">ESoundSlot</a>, <a href="../engine/actor.html#ETravelType">ETravelType</a>, <a href="../engine/actor.html#E_RMAlign">E_RMAlign</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Structures Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Structures from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/actor.html#PointRegion">PointRegion</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>&nbsp;</td><td><a href="#_AcceptInventory-" name="AcceptInventory" title="go to the details">AcceptInventory</a> (<a href="../engine/pawn.html">pawn</a> PlayerPawn))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_AddBot-" name="AddBot" title="go to the details">AddBot</a> ()<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_AddDefaultInventory-" name="AddDefaultInventory" title="go to the details">AddDefaultInventory</a> (pawn <a href="../engine/playerpawn.html">PlayerPawn</a> ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_AdminLogin-" name="AdminLogin" title="go to the details">AdminLogin</a> (<a href="../engine/playerpawn.html">PlayerPawn</a> P, string Password ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_AdminLogout-" name="AdminLogout" title="go to the details">AdminLogout</a> (PlayerPawn P ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_AllowsBroadcast-" name="AllowsBroadcast" title="go to the details">AllowsBroadcast</a> (<a href="../engine/actor.html">actor</a> broadcaster, int Len ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_AllowShieldDrop-" name="AllowShieldDrop" title="go to the details">AllowShieldDrop</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_AllowWeaponDrop-" name="AllowWeaponDrop" title="go to the details">AllowWeaponDrop</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_AtCapacity-" name="AtCapacity" title="go to the details">AtCapacity</a> (string Options))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_BroadcastRegularDeathMessage-" name="BroadcastRegularDeathMessage" title="go to the details">BroadcastRegularDeathMessage</a> (<a href="../engine/pawn.html">pawn</a> Killer, <a href="../engine/pawn.html">pawn</a> Other, name damageType))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_CanSpectate-" name="CanSpectate" title="go to the details">CanSpectate</a> (<a href="../engine/pawn.html">pawn</a> Viewer, actor ViewTarget ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ChangeName-" name="ChangeName" title="go to the details">ChangeName</a> (<a href="../engine/pawn.html">Pawn</a> Other, coerce string S, bool bNameChange ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_ChangeTeam-" name="ChangeTeam" title="go to the details">ChangeTeam</a> (<a href="../engine/pawn.html">Pawn</a> Other, int N))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_CheckIPPolicy-" name="CheckIPPolicy" title="go to the details">CheckIPPolicy</a> (string Address))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>string&nbsp;</td><td><a href="#_CreatureKillMessage-" name="CreatureKillMessage" title="go to the details">CreatureKillMessage</a> (name damageType, pawn Other ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Debug-" name="Debug" title="go to the details">Debug</a> (<a href="../engine/canvas.html">Canvas</a> canvas, int mode))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>&nbsp;</td><td><a href="#_DetailChange-" name="DetailChange" title="go to the details">DetailChange</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_DiscardInventory-" name="DiscardInventory" title="go to the details">DiscardInventory</a> (Pawn Other ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_EndGame-" name="EndGame" title="go to the details">EndGame</a> (string Reason ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../engine/navigationpoint.html">NavigationPoint</a>&nbsp;</td><td><a href="#_FindPlayerStart-" name="FindPlayerStart" title="go to the details">FindPlayerStart</a> (<a href="../engine/pawn.html">Pawn</a> Player, optional byte InTeam, optional string incomingName ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_ForceAddBot-" name="ForceAddBot" title="go to the details">ForceAddBot</a> ()<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>&nbsp;</td><td><a href="#_GameEnding-" name="GameEnding" title="go to the details">GameEnding</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>string&nbsp;</td><td><a href="#_GetBeaconText-" name="GetBeaconText" title="go to the details">GetBeaconText</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>string&nbsp;</td><td><a href="#_GetInfo-" name="GetInfo" title="go to the details">GetInfo</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>int&nbsp;</td><td><a href="#_GetIntOption-" name="GetIntOption" title="go to the details">GetIntOption</a> (string Options, string ParseString, int CurrentValue))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_GetKeyValue-" name="GetKeyValue" title="go to the details">GetKeyValue</a> (string Pair, out string Key, out string Value ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>string&nbsp;</td><td><a href="#_GetNetworkNumber-" name="GetNetworkNumber" title="go to the details">GetNetworkNumber</a> ()<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>string&nbsp;</td><td><a href="#_GetRules-" name="GetRules" title="go to the details">GetRules</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>int&nbsp;</td><td><a href="#_GetServerPort-" name="GetServerPort" title="go to the details">GetServerPort</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td><a href="../core/object.html#Vector">vector</a>&nbsp;</td><td><a href="#_GetTeamVectorColor-" name="GetTeamVectorColor" title="go to the details">GetTeamVectorColor</a> (int num))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_GrabOption-" name="GrabOption" title="go to the details">GrabOption</a> (out string Options, out string Result ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_HasOption-" name="HasOption" title="go to the details">HasOption</a> (string Options, string InKey ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>&nbsp;</td><td><a href="#_InitGame-" name="InitGame" title="go to the details">InitGame</a> (string Options, out string Error ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_InitGameReplicationInfo-" name="InitGameReplicationInfo" title="go to the details">InitGameReplicationInfo</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_InitLogging-" name="InitLogging" title="go to the details">InitLogging</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_IsRelevant-" name="IsRelevant" title="go to the details">IsRelevant</a> (actor Other ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Killed-" name="Killed" title="go to the details">Killed</a> (<a href="../engine/pawn.html">pawn</a> killer, <a href="../engine/pawn.html">pawn</a> Other, name <a href="../engine/damagetype.html">damageType</a> ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>string&nbsp;</td><td><a href="#_KillMessage-" name="KillMessage" title="go to the details">KillMessage</a> (name damageType, pawn killer ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_LogGameParameters-" name="LogGameParameters" title="go to the details">LogGameParameters</a> (<a href="../engine/statlog.html">StatLog</a> StatLog))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td><a href="../engine/playerpawn.html">playerpawn</a>&nbsp;</td><td><a href="#_Login-" name="Login" title="go to the details">Login</a> (string Portal, string Options, out string Error, class&lt;<a href="../engine/playerpawn.html">playerpawn</a>&gt; SpawnClass
+))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Logout-" name="Logout" title="go to the details">Logout</a> (pawn Exiting ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>string&nbsp;</td><td><a href="#_ParseKillMessage-" name="ParseKillMessage" title="go to the details">ParseKillMessage</a> (string KillerName, string VictimName, string WeaponName, string DeathMessage)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>string&nbsp;</td><td><a href="#_ParseOption-" name="ParseOption" title="go to the details">ParseOption</a> (string Options, string InKey ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_PickupQuery-" name="PickupQuery" title="go to the details">PickupQuery</a> (<a href="../engine/pawn.html">Pawn</a> Other, Inventory item ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_PlayerJumpZScaling-" name="PlayerJumpZScaling" title="go to the details">PlayerJumpZScaling</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>string&nbsp;</td><td><a href="#_PlayerKillMessage-" name="PlayerKillMessage" title="go to the details">PlayerKillMessage</a> (name damageType, PlayerReplicationInfo Other ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>float&nbsp;</td><td><a href="#_PlaySpawnEffect-" name="PlaySpawnEffect" title="go to the details">PlaySpawnEffect</a> (inventory Inv ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayTeleportEffect-" name="PlayTeleportEffect" title="go to the details">PlayTeleportEffect</a> (<a href="../engine/actor.html">actor</a> Incoming, bool bOut, bool bSound)<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PostBeginPlay-" name="PostBeginPlay" title="go to the details">PostBeginPlay</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>&nbsp;</td><td><a href="#_PostLogin-" name="PostLogin" title="go to the details">PostLogin</a> (playerpawn NewPlayer ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PreBeginPlay-" name="PreBeginPlay" title="go to the details">PreBeginPlay</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>&nbsp;</td><td><a href="#_PreLogin-" name="PreLogin" title="go to the details">PreLogin</a> (string Options, string Address, out string Error, out string FailCode
+))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ProcessServerTravel-" name="ProcessServerTravel" title="go to the details">ProcessServerTravel</a> (string URL, bool bItems ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ReduceDamage-" name="ReduceDamage" title="go to the details">ReduceDamage</a> (out int BluntDamage, out int SeverDamage, name DamageType, <a href="../engine/pawn.html">pawn</a> injured, pawn instigatedBy ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_RegisterDamageMutator-" name="RegisterDamageMutator" title="go to the details">RegisterDamageMutator</a> (<a href="../engine/mutator.html">Mutator</a> M))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ResetGame-" name="ResetGame" title="go to the details">ResetGame</a> ()<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_RestartGame-" name="RestartGame" title="go to the details">RestartGame</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_RestartPlayer-" name="RestartPlayer" title="go to the details">RestartPlayer</a> (pawn aPlayer ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ScoreEvent-" name="ScoreEvent" title="go to the details">ScoreEvent</a> (name EventName, <a href="../engine/actor.html">actor</a> EventActor, pawn InstigatedBy ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ScoreKill-" name="ScoreKill" title="go to the details">ScoreKill</a> (<a href="../engine/pawn.html">pawn</a> Killer, <a href="../engine/pawn.html">pawn</a> Other))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SendPlayer-" name="SendPlayer" title="go to the details">SendPlayer</a> (<a href="../engine/playerpawn.html">PlayerPawn</a> aPlayer, string URL ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_SetEndCams-" name="SetEndCams" title="go to the details">SetEndCams</a> (string Reason))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SetGameSpeed-" name="SetGameSpeed" title="go to the details">SetGameSpeed</a> (Float T ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_SetPause-" name="SetPause" title="go to the details">SetPause</a> (BOOL bPause, PlayerPawn P ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_ShouldRespawn-" name="ShouldRespawn" title="go to the details">ShouldRespawn</a> (actor Other ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_StartPlayer-" name="StartPlayer" title="go to the details">StartPlayer</a> (<a href="../engine/playerpawn.html">PlayerPawn</a> Other))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Timer-" name="Timer" title="go to the details">Timer</a> ()))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/actor.html#*">*</a>, <a href="../engine/actor.html#+">+</a>, <a href="../engine/actor.html#-">-</a>, <a href="../engine/actor.html#ActorAttachedTo">ActorAttachedTo</a>, <a href="../engine/actor.html#ActorInSector">ActorInSector</a>, <a href="../engine/actor.html#AddVelocity">AddVelocity</a>, <a href="../engine/actor.html#AllActors">AllActors</a>, <a href="../engine/actor.html#AnimEnd">AnimEnd</a>, <a href="../engine/actor.html#AnimProxyEnd">AnimProxyEnd</a>, <a href="../engine/actor.html#ApplyDamageToActor">ApplyDamageToActor</a>, <a href="../engine/actor.html#ApplyJointForce">ApplyJointForce</a>, <a href="../engine/actor.html#Attach">Attach</a>, <a href="../engine/actor.html#AttachActorToJoint">AttachActorToJoint</a>, <a href="../engine/actor.html#AutonomousPhysics">AutonomousPhysics</a>, <a href="../engine/actor.html#BaseChange">BaseChange</a>, <a href="../engine/actor.html#BasedActors">BasedActors</a>, <a href="../engine/actor.html#BecomeViewTarget">BecomeViewTarget</a>, <a href="../engine/actor.html#BeginEvent">BeginEvent</a>, <a href="../engine/actor.html#BeginPlay">BeginPlay</a>, <a href="../engine/actor.html#BodyPartForJoint">BodyPartForJoint</a>, <a href="../engine/actor.html#BroadcastLocalizedMessage">BroadcastLocalizedMessage</a>, <a href="../engine/actor.html#BroadcastMessage">BroadcastMessage</a>, <a href="../engine/actor.html#Bump">Bump</a>, <a href="../engine/actor.html#CalcArcVelocity">CalcArcVelocity</a>, <a href="../engine/actor.html#CanBeUsed">CanBeUsed</a>, <a href="../engine/actor.html#CheckDefending">CheckDefending</a>, <a href="../engine/actor.html#ChildActors">ChildActors</a>, <a href="../engine/actor.html#ClosestJointTo">ClosestJointTo</a>, <a href="../engine/actor.html#ConsoleCommand">ConsoleCommand</a>, <a href="../engine/actor.html#DamageBodyPart">DamageBodyPart</a>, <a href="../engine/actor.html#debug">debug</a>, <a href="../engine/actor.html#DebugStop">DebugStop</a>, <a href="../engine/actor.html#DemoPlaySound">DemoPlaySound</a>, <a href="../engine/actor.html#Destroy">Destroy</a>, <a href="../engine/actor.html#DestroyAnimationProxy">DestroyAnimationProxy</a>, <a href="../engine/actor.html#Destroyed">Destroyed</a>, <a href="../engine/actor.html#Detach">Detach</a>, <a href="../engine/actor.html#DetachActorFromJoint">DetachActorFromJoint</a>, <a href="../engine/actor.html#EncroachedBy">EncroachedBy</a>, <a href="../engine/actor.html#EncroachingOn">EncroachingOn</a>, <a href="../engine/actor.html#EndedRotation">EndedRotation</a>, <a href="../engine/actor.html#EndEvent">EndEvent</a>, <a href="../engine/actor.html#Error">Error</a>, <a href="../engine/actor.html#Expired">Expired</a>, <a href="../engine/actor.html#Falling">Falling</a>, <a href="../engine/actor.html#FastTrace">FastTrace</a>, <a href="../engine/actor.html#FellOutOfWorld">FellOutOfWorld</a>, <a href="../engine/actor.html#FinishAnim">FinishAnim</a>, <a href="../engine/actor.html#FinishInterpolation">FinishInterpolation</a>, <a href="../engine/actor.html#FireEvent">FireEvent</a>, <a href="../engine/actor.html#FrameNotify">FrameNotify</a>, <a href="../engine/actor.html#FrameSweep">FrameSweep</a>, <a href="../engine/actor.html#FrameSwept">FrameSwept</a>, <a href="../engine/actor.html#GainedChild">GainedChild</a>, <a href="../engine/actor.html#GetAccelJointMagnitude">GetAccelJointMagnitude</a>, <a href="../engine/actor.html#GetAccelJointParms">GetAccelJointParms</a>, <a href="../engine/actor.html#GetAnimGroup">GetAnimGroup</a>, <a href="../engine/actor.html#GetDamageValues">GetDamageValues</a>, <a href="../engine/actor.html#GetHumanName">GetHumanName</a>, <a href="../engine/actor.html#GetItemName">GetItemName</a>, <a href="../engine/actor.html#GetJointName">GetJointName</a>, <a href="../engine/actor.html#GetJointPos">GetJointPos</a>, <a href="../engine/actor.html#GetJointRot">GetJointRot</a>, <a href="../engine/actor.html#GetMapName">GetMapName</a>, <a href="../engine/actor.html#GetNextInt">GetNextInt</a>, <a href="../engine/actor.html#GetNextIntDesc">GetNextIntDesc</a>, <a href="../engine/actor.html#GetNextSkin">GetNextSkin</a>, <a href="../engine/actor.html#GetSoundDuration">GetSoundDuration</a>, <a href="../engine/actor.html#GetSpringJointParms">GetSpringJointParms</a>, <a href="../engine/actor.html#GetURLMap">GetURLMap</a>, <a href="../engine/actor.html#GetUseAnim">GetUseAnim</a>, <a href="../engine/actor.html#GetUsePriority">GetUsePriority</a>, <a href="../engine/actor.html#HandleConsoleCommand">HandleConsoleCommand</a>, <a href="../engine/actor.html#HasAnim">HasAnim</a>, <a href="../engine/actor.html#HitWall">HitWall</a>, <a href="../engine/actor.html#HurtRadius">HurtRadius</a>, <a href="../engine/actor.html#InterpolateEnd">InterpolateEnd</a>, <a href="../engine/actor.html#IsAnimating">IsAnimating</a>, <a href="../engine/actor.html#JointChangedDirection">JointChangedDirection</a>, <a href="../engine/actor.html#JointDamaged">JointDamaged</a>, <a href="../engine/actor.html#JointNamed">JointNamed</a>, <a href="../engine/actor.html#JointTouchedBy">JointTouchedBy</a>, <a href="../engine/actor.html#KillCredit">KillCredit</a>, <a href="../engine/actor.html#KilledBy">KilledBy</a>, <a href="../engine/actor.html#Landed">Landed</a>, <a href="../engine/actor.html#LipSyncString">LipSyncString</a>, <a href="../engine/actor.html#LoopAnim">LoopAnim</a>, <a href="../engine/actor.html#LostChild">LostChild</a>, <a href="../engine/actor.html#MakeNoise">MakeNoise</a>, <a href="../engine/actor.html#MatterForJoint">MatterForJoint</a>, <a href="../engine/actor.html#MatterTrace">MatterTrace</a>, <a href="../engine/actor.html#Move">Move</a>, <a href="../engine/actor.html#MoveSmooth">MoveSmooth</a>, <a href="../engine/actor.html#NumJoints">NumJoints</a>, <a href="../engine/actor.html#PainSkin">PainSkin</a>, <a href="../engine/actor.html#PlayAnim">PlayAnim</a>, <a href="../engine/actor.html#PlayerCanSeeMe">PlayerCanSeeMe</a>, <a href="../engine/actor.html#PlayOwnedSound">PlayOwnedSound</a>, <a href="../engine/actor.html#PlaySound">PlaySound</a>, <a href="../engine/actor.html#PlayStabRemove">PlayStabRemove</a>, <a href="../engine/actor.html#PostBeginPlay">PostBeginPlay</a>, <a href="../engine/actor.html#PostNetBeginPlay">PostNetBeginPlay</a>, <a href="../engine/actor.html#PostTeleport">PostTeleport</a>, <a href="../engine/actor.html#PostTouch">PostTouch</a>, <a href="../engine/actor.html#PreBeginPlay">PreBeginPlay</a>, <a href="../engine/actor.html#PreTeleport">PreTeleport</a>, <a href="../engine/actor.html#RadiusActors">RadiusActors</a>, <a href="../engine/actor.html#Release">Release</a>, <a href="../engine/actor.html#ReleaseTagged">ReleaseTagged</a>, <a href="../engine/actor.html#RenderOverlays">RenderOverlays</a>, <a href="../engine/actor.html#RenderTexture">RenderTexture</a>, <a href="../engine/actor.html#ResetAnimationCache">ResetAnimationCache</a>, <a href="../engine/actor.html#SetBase">SetBase</a>, <a href="../engine/actor.html#SetCollision">SetCollision</a>, <a href="../engine/actor.html#SetCollisionSize">SetCollisionSize</a>, <a href="../engine/actor.html#SetDefaultDisplayProperties">SetDefaultDisplayProperties</a>, <a href="../engine/actor.html#SetDefaultJointFlags">SetDefaultJointFlags</a>, <a href="../engine/actor.html#SetDefaultPolygroups">SetDefaultPolygroups</a>, <a href="../engine/actor.html#SetDisplayProperties">SetDisplayProperties</a>, <a href="../engine/actor.html#SetInitialState">SetInitialState</a>, <a href="../engine/actor.html#SetJointRot">SetJointRot</a>, <a href="../engine/actor.html#SetLocation">SetLocation</a>, <a href="../engine/actor.html#SetOnFire">SetOnFire</a>, <a href="../engine/actor.html#SetOwner">SetOwner</a>, <a href="../engine/actor.html#SetPhysics">SetPhysics</a>, <a href="../engine/actor.html#SetRotation">SetRotation</a>, <a href="../engine/actor.html#SetTimer">SetTimer</a>, <a href="../engine/actor.html#Sleep">Sleep</a>, <a href="../engine/actor.html#SLog">SLog</a>, <a href="../engine/actor.html#Spawn">Spawn</a>, <a href="../engine/actor.html#SpawnAnimationProxy">SpawnAnimationProxy</a>, <a href="../engine/actor.html#Spawned">Spawned</a>, <a href="../engine/actor.html#SpecialHandling">SpecialHandling</a>, <a href="../engine/actor.html#StopAllSound">StopAllSound</a>, <a href="../engine/actor.html#StopSound">StopSound</a>, <a href="../engine/actor.html#SweepActors">SweepActors</a>, <a href="../engine/actor.html#TakeDamage">TakeDamage</a>, <a href="../engine/actor.html#Tick">Tick</a>, <a href="../engine/actor.html#Timer">Timer</a>, <a href="../engine/actor.html#Touch">Touch</a>, <a href="../engine/actor.html#TouchingActors">TouchingActors</a>, <a href="../engine/actor.html#TouchJointOf">TouchJointOf</a>, <a href="../engine/actor.html#Trace">Trace</a>, <a href="../engine/actor.html#TraceActors">TraceActors</a>, <a href="../engine/actor.html#TraceTexture">TraceTexture</a>, <a href="../engine/actor.html#TravelPostAccept">TravelPostAccept</a>, <a href="../engine/actor.html#TravelPreAccept">TravelPreAccept</a>, <a href="../engine/actor.html#Trigger">Trigger</a>, <a href="../engine/actor.html#TurnJointTo">TurnJointTo</a>, <a href="../engine/actor.html#TweenAnim">TweenAnim</a>, <a href="../engine/actor.html#UnlinkAttachments">UnlinkAttachments</a>, <a href="../engine/actor.html#UnTouch">UnTouch</a>, <a href="../engine/actor.html#UnTrigger">UnTrigger</a>, <a href="../engine/actor.html#UseTrigger">UseTrigger</a>, <a href="../engine/actor.html#VisibleActors">VisibleActors</a>, <a href="../engine/actor.html#VisibleCollidingActors">VisibleCollidingActors</a>, <a href="../engine/actor.html#WaitForRelease">WaitForRelease</a>, <a href="../engine/actor.html#ZoneChange">ZoneChange</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_bAlternateMode" class="hidden"></a>bAlternateMode <a href="../Source_engine/gameinfo.html#31" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">bool</span> bAlternateMode;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BaseMutator" class="hidden"></a>BaseMutator <a href="../Source_engine/gameinfo.html#96" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/mutator.html" class="source">Mutator</a></span> BaseMutator;</div>
+<blockquote class="comment">
+Linked list of Mutators (for modifying actors as they enter the game)
+</blockquote>
+<hr class="small" />
+<h4><a name="_bBatchLocal" class="hidden"></a>bBatchLocal <a href="../Source_engine/gameinfo.html#117" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">globalconfig</span> <span class="source_keyword">bool</span> bBatchLocal;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bCanChangeSkin" class="hidden"></a>bCanChangeSkin <a href="../Source_engine/gameinfo.html#23" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bCanChangeSkin;</div>
+<blockquote class="comment">
+Allow player to change skins in game.
+</blockquote>
+<hr class="small" />
+<h4><a name="_bCanViewOthers" class="hidden"></a>bCanViewOthers <a href="../Source_engine/gameinfo.html#32" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bCanViewOthers;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bGameEnded" class="hidden"></a>bGameEnded <a href="../Source_engine/gameinfo.html#29" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bGameEnded;</div>
+<blockquote class="comment">
+Set when game ends.
+</blockquote>
+<hr class="small" />
+<h4><a name="_bLocalLog" class="hidden"></a>bLocalLog <a href="../Source_engine/gameinfo.html#115" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">globalconfig</span> <span class="source_keyword">bool</span> bLocalLog;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bLoggingGame" class="hidden"></a>bLoggingGame <a href="../Source_engine/gameinfo.html#119" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bLoggingGame;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bLowGore" class="hidden"></a>bLowGore <a href="../Source_engine/gameinfo.html#22" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">globalconfig</span> <span class="source_keyword">bool</span> bLowGore;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bOverTime" class="hidden"></a>bOverTime <a href="../Source_engine/gameinfo.html#30" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bOverTime;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bSubtitles" class="hidden"></a>bSubtitles <a href="../Source_engine/gameinfo.html#118" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">globalconfig</span> <span class="source_keyword">bool</span> bSubtitles;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bVeryLowGore" class="hidden"></a>bVeryLowGore <a href="../Source_engine/gameinfo.html#25" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">globalconfig</span> <span class="source_keyword">bool</span> bVeryLowGore;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bWorldLog" class="hidden"></a>bWorldLog <a href="../Source_engine/gameinfo.html#116" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">globalconfig</span> <span class="source_keyword">bool</span> bWorldLog;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CurrentID" class="hidden"></a>CurrentID <a href="../Source_engine/gameinfo.html#87" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> CurrentID;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DamageMutator" class="hidden"></a>DamageMutator <a href="../Source_engine/gameinfo.html#97" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/mutator.html" class="source">Mutator</a></span> DamageMutator;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DeathMessageClass" class="hidden"></a>DeathMessageClass <a href="../Source_engine/gameinfo.html#91" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/localmessage.html" class="source">LocalMessage</a></span>&gt; DeathMessageClass;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DebrisPercentage" class="hidden"></a>DebrisPercentage <a href="../Source_engine/gameinfo.html#128" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">globalconfig</span> <span class="source_keyword">float</span> DebrisPercentage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DefaultPlayerName" class="hidden"></a>DefaultPlayerName <a href="../Source_engine/gameinfo.html#72" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> DefaultPlayerName;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DefaultPlayerState" class="hidden"></a>DefaultPlayerState <a href="../Source_engine/gameinfo.html#103" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">name</span> DefaultPlayerState;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DemoBuild" class="hidden"></a>DemoBuild <a href="../Source_engine/gameinfo.html#125" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">globalconfig</span> <span class="source_keyword">int</span> DemoBuild;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DemoHasTuts" class="hidden"></a>DemoHasTuts <a href="../Source_engine/gameinfo.html#126" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">globalconfig</span> <span class="source_keyword">int</span> DemoHasTuts;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Difficulty" class="hidden"></a>Difficulty <a href="../Source_engine/gameinfo.html#14" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">byte</span> Difficulty;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DMMessageClass" class="hidden"></a>DMMessageClass <a href="../Source_engine/gameinfo.html#92" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/localmessage.html" class="source">LocalMessage</a></span>&gt; DMMessageClass;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EnteredMessage" class="hidden"></a>EnteredMessage <a href="../Source_engine/gameinfo.html#78" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> EnteredMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FailedPlaceMessage" class="hidden"></a>FailedPlaceMessage <a href="../Source_engine/gameinfo.html#75" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> FailedPlaceMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FailedSpawnMessage" class="hidden"></a>FailedSpawnMessage <a href="../Source_engine/gameinfo.html#74" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> FailedSpawnMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FailedTeamMessage" class="hidden"></a>FailedTeamMessage <a href="../Source_engine/gameinfo.html#76" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> FailedTeamMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GameName" class="hidden"></a>GameName <a href="../Source_engine/gameinfo.html#79" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> GameName;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GameReplicationInfo" class="hidden"></a>GameReplicationInfo <a href="../Source_engine/gameinfo.html#107" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/gamereplicationinfo.html" class="source">GameReplicationInfo</a></span> <span class="source_type"><a href="../engine/gamereplicationinfo.html" class="source">GameReplicationInfo</a></span>;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_IPBanned" class="hidden"></a>IPBanned <a href="../Source_engine/gameinfo.html#83" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> IPBanned;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ItemGoals" class="hidden"></a>ItemGoals <a href="../Source_engine/gameinfo.html#13" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> ItemGoals;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_KillGoals" class="hidden"></a>KillGoals <a href="../Source_engine/gameinfo.html#13" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> KillGoals;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LeftMessage" class="hidden"></a>LeftMessage <a href="../Source_engine/gameinfo.html#73" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> LeftMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LocalLog" class="hidden"></a>LocalLog <a href="../Source_engine/gameinfo.html#113" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/statlog.html" class="source">StatLog</a></span> LocalLog;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LocalLogFileName" class="hidden"></a>LocalLogFileName <a href="../Source_engine/gameinfo.html#120" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> LocalLogFileName;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MaxedOutMessage" class="hidden"></a>MaxedOutMessage <a href="../Source_engine/gameinfo.html#80" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> MaxedOutMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MutatorClass" class="hidden"></a>MutatorClass <a href="../Source_engine/gameinfo.html#95" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/mutator.html" class="source">Mutator</a></span>&gt; MutatorClass;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NameChangedMessage" class="hidden"></a>NameChangedMessage <a href="../Source_engine/gameinfo.html#77" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> NameChangedMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NeedPassword" class="hidden"></a>NeedPassword <a href="../Source_engine/gameinfo.html#82" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> NeedPassword;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NumPlayers" class="hidden"></a>NumPlayers <a href="../Source_engine/gameinfo.html#86" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> NumPlayers;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NumSpectators" class="hidden"></a>NumSpectators <a href="../Source_engine/gameinfo.html#49" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> NumSpectators;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ParticlePercentage" class="hidden"></a>ParticlePercentage <a href="../Source_engine/gameinfo.html#129" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">globalconfig</span> <span class="source_keyword">float</span> ParticlePercentage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SecretGoals" class="hidden"></a>SecretGoals <a href="../Source_engine/gameinfo.html#13" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> SecretGoals;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SentText" class="hidden"></a>SentText <a href="../Source_engine/gameinfo.html#71" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">int</span> SentText;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ServerLogName" class="hidden"></a>ServerLogName <a href="../Source_engine/gameinfo.html#110" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">globalconfig</span> <span class="source_keyword">string</span> ServerLogName;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StartTime" class="hidden"></a>StartTime <a href="../Source_engine/gameinfo.html#42" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">float</span> StartTime;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StatLogClass" class="hidden"></a>StatLogClass <a href="../Source_engine/gameinfo.html#122" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/statlog.html" class="source">StatLog</a></span>&gt; StatLogClass;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SwitchLevelMessage" class="hidden"></a>SwitchLevelMessage <a href="../Source_engine/gameinfo.html#70" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> SwitchLevelMessage;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_WaterZoneType" class="hidden"></a>WaterZoneType <a href="../Source_engine/gameinfo.html#100" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/zoneinfo.html" class="source">ZoneInfo</a></span>&gt; WaterZoneType;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_WorldLog" class="hidden"></a>WorldLog <a href="../Source_engine/gameinfo.html#114" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_type"><a href="../engine/statlog.html" class="source">StatLog</a></span> WorldLog;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_WorldLogFileName" class="hidden"></a>WorldLogFileName <a href="../Source_engine/gameinfo.html#121" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">string</span> WorldLogFileName;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_WrongPassword" class="hidden"></a>WrongPassword <a href="../Source_engine/gameinfo.html#81" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword2">localized</span> <span class="source_keyword">string</span> WrongPassword;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h3 class="vartag">GameInfo</h3>
+<h4><a name="_AdminPassword" class="hidden"></a>AdminPassword <a href="../Source_engine/gameinfo.html#51" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword2">private</span> <span class="source_keyword2">globalconfig</span> <span class="source_keyword">string</span> AdminPassword;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AutoAim" class="hidden"></a>AutoAim <a href="../Source_engine/gameinfo.html#38" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword2">globalconfig</span> <span class="source_keyword">float</span> AutoAim;</div>
+<blockquote class="comment">
+How much autoaiming to do (1=none, 0 = always).
+</blockquote>
+<hr class="small" />
+<h4><a name="_bAllowFOV" class="hidden"></a>bAllowFOV <a href="../Source_engine/gameinfo.html#27" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword2">globalconfig</span> <span class="source_keyword">bool</span> bAllowFOV;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bAllowLimbSever" class="hidden"></a>bAllowLimbSever <a href="../Source_engine/gameinfo.html#131" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">bool</span> bAllowLimbSever;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bAllowShieldDrop" class="hidden"></a>bAllowShieldDrop <a href="../Source_engine/gameinfo.html#34" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword">bool</span> bAllowShieldDrop;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bAllowWeaponDrop" class="hidden"></a>bAllowWeaponDrop <a href="../Source_engine/gameinfo.html#33" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword">bool</span> bAllowWeaponDrop;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bAutoPickup" class="hidden"></a>bAutoPickup <a href="../Source_engine/gameinfo.html#35" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword2">globalconfig</span> <span class="source_keyword">bool</span> bAutoPickup;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bClassicDeathmessages" class="hidden"></a>bClassicDeathmessages <a href="../Source_engine/gameinfo.html#21" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">bool</span> bClassicDeathmessages;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bCoopWeaponMode" class="hidden"></a>bCoopWeaponMode <a href="../Source_engine/gameinfo.html#20" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">bool</span> bCoopWeaponMode;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bDeathMatch" class="hidden"></a>bDeathMatch <a href="../Source_engine/gameinfo.html#28" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword">bool</span> bDeathMatch;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BeaconName" class="hidden"></a>BeaconName <a href="../Source_engine/gameinfo.html#68" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword">string</span> BeaconName;</div>
+<blockquote class="comment">
+Identifying string used for finding LAN servers.
+</blockquote>
+<hr class="small" />
+<h4><a name="_bHumansOnly" class="hidden"></a>bHumansOnly <a href="../Source_engine/gameinfo.html#17" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">bool</span> bHumansOnly;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bMuteSpectators" class="hidden"></a>bMuteSpectators <a href="../Source_engine/gameinfo.html#16" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword2">globalconfig</span> <span class="source_keyword">bool</span> bMuteSpectators;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bNoCheating" class="hidden"></a>bNoCheating <a href="../Source_engine/gameinfo.html#26" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword2">globalconfig</span> <span class="source_keyword">bool</span> bNoCheating;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bNoMonsters" class="hidden"></a>bNoMonsters <a href="../Source_engine/gameinfo.html#15" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword2">config</span> <span class="source_keyword">bool</span> bNoMonsters;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BotMenuType" class="hidden"></a>BotMenuType <a href="../Source_engine/gameinfo.html#56" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword">string</span> BotMenuType;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bPauseable" class="hidden"></a>bPauseable <a href="../Source_engine/gameinfo.html#19" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword">bool</span> bPauseable;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bRestartLevel" class="hidden"></a>bRestartLevel <a href="../Source_engine/gameinfo.html#18" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword">bool</span> bRestartLevel;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_bTeamGame" class="hidden"></a>bTeamGame <a href="../Source_engine/gameinfo.html#24" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword">bool</span> bTeamGame;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DefaultPlayerClass" class="hidden"></a>DefaultPlayerClass <a href="../Source_engine/gameinfo.html#44" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/playerpawn.html" class="source">playerpawn</a></span>&gt; DefaultPlayerClass;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DefaultShield" class="hidden"></a>DefaultShield <a href="../Source_engine/gameinfo.html#46" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/shield.html" class="source">shield</a></span>&gt; DefaultShield;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DefaultWeapon" class="hidden"></a>DefaultWeapon <a href="../Source_engine/gameinfo.html#45" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/weapon.html" class="source">weapon</a></span>&gt; DefaultWeapon;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GameMenuType" class="hidden"></a>GameMenuType <a href="../Source_engine/gameinfo.html#55" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/menu.html" class="source">menu</a></span>&gt; GameMenuType;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GameOptionsMenuType" class="hidden"></a>GameOptionsMenuType <a href="../Source_engine/gameinfo.html#63" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword">string</span> GameOptionsMenuType;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GamePassword" class="hidden"></a>GamePassword <a href="../Source_engine/gameinfo.html#52" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword2">private</span> <span class="source_keyword2">globalconfig</span> <span class="source_keyword">string</span> GamePassword;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GameReplicationInfoClass" class="hidden"></a>GameReplicationInfoClass <a href="../Source_engine/gameinfo.html#106" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/gamereplicationinfo.html" class="source">GameReplicationInfo</a></span>&gt; GameReplicationInfoClass;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GameSpeed" class="hidden"></a>GameSpeed <a href="../Source_engine/gameinfo.html#41" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword2">globalconfig</span> <span class="source_keyword">float</span> GameSpeed;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GameUMenuType" class="hidden"></a>GameUMenuType <a href="../Source_engine/gameinfo.html#61" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword">string</span> GameUMenuType;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HUDType" class="hidden"></a>HUDType <a href="../Source_engine/gameinfo.html#65" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/hud.html" class="source">hud</a></span>&gt; HUDType;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_IPPolicies[50]" class="hidden"></a>IPPolicies[50] <a href="../Source_engine/gameinfo.html#88" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword2">globalconfig</span> <span class="source_keyword">string</span> IPPolicies[<span class="source_int">50</span>];</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MaplistMenuType" class="hidden"></a>MaplistMenuType <a href="../Source_engine/gameinfo.html#60" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword">string</span> MaplistMenuType;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MapListType" class="hidden"></a>MapListType <a href="../Source_engine/gameinfo.html#66" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/maplist.html" class="source">MapList</a></span>&gt; MapListType;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MapPrefix" class="hidden"></a>MapPrefix <a href="../Source_engine/gameinfo.html#67" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword">string</span> MapPrefix;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MaxPlayers" class="hidden"></a>MaxPlayers <a href="../Source_engine/gameinfo.html#85" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword2">globalconfig</span> <span class="source_keyword">int</span> MaxPlayers;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MaxSpectators" class="hidden"></a>MaxSpectators <a href="../Source_engine/gameinfo.html#48" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword2">globalconfig</span> <span class="source_keyword">int</span> MaxSpectators;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MultiplayerUMenuType" class="hidden"></a>MultiplayerUMenuType <a href="../Source_engine/gameinfo.html#62" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword">string</span> MultiplayerUMenuType;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_MutatorMenuType" class="hidden"></a>MutatorMenuType <a href="../Source_engine/gameinfo.html#59" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword">string</span> MutatorMenuType;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RulesMenuType" class="hidden"></a>RulesMenuType <a href="../Source_engine/gameinfo.html#57" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword">string</span> RulesMenuType;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ScoreBoardType" class="hidden"></a>ScoreBoardType <a href="../Source_engine/gameinfo.html#54" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/scoreboard.html" class="source">scoreboard</a></span>&gt; ScoreBoardType;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SettingsMenuType" class="hidden"></a>SettingsMenuType <a href="../Source_engine/gameinfo.html#58" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword">string</span> SettingsMenuType;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SpecialDamageString" class="hidden"></a>SpecialDamageString <a href="../Source_engine/gameinfo.html#69" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span>(<span class="source_type"><a href="../engine/gameinfo.html" class="source">GameInfo</a></span>) <span class="source_keyword">string</span> SpecialDamageString;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_AcceptInventory-" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> AcceptInventory <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1060" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span>  AcceptInventory ( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type"><a href="../engine/playerpawn.html" class="source">PlayerPawn</a></span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AddBot-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> AddBot <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1018" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> AddBot (  )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AddDefaultInventory-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> AddDefaultInventory <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1075" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  AddDefaultInventory ( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type"><a href="../engine/playerpawn.html" class="source">PlayerPawn</a></span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AdminLogin-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> AdminLogin <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#136" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  AdminLogin ( <span class="source_type"><a href="../engine/playerpawn.html" class="source">PlayerPawn</a></span> <span class="source_type">P</span>, <span class="source_keyword">string</span> <span class="source_type">Password</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AdminLogout-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> AdminLogout <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#150" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  AdminLogout ( <span class="source_type"><a href="../engine/playerpawn.html" class="source">PlayerPawn</a></span> <span class="source_type">P</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AllowsBroadcast-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> AllowsBroadcast <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1646" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> AllowsBroadcast ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> broadcaster, <span class="source_keyword">int</span> <span class="source_type">Len</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AllowShieldDrop-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> AllowShieldDrop <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1514" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> AllowShieldDrop ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AllowWeaponDrop-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> AllowWeaponDrop <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1509" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> AllowWeaponDrop ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_AtCapacity-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> AtCapacity <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#697" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> AtCapacity ( <span class="source_keyword">string</span> Options) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BroadcastRegularDeathMessage-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BroadcastRegularDeathMessage <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1350" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  BroadcastRegularDeathMessage ( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">Killer</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">Other</span>, <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">damageType</a></span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CanSpectate-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CanSpectate <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1401" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> CanSpectate ( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> Viewer, <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">ViewTarget</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ChangeName-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ChangeName <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1569" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ChangeName ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">Other</span>, <span class="source_keyword2">coerce</span> <span class="source_keyword">string</span> S, <span class="source_keyword">bool</span> <span class="source_type">bNameChange</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ChangeTeam-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ChangeTeam <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1585" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> ChangeTeam ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">Other</span>, <span class="source_keyword">int</span> <span class="source_type">N</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CheckIPPolicy-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CheckIPPolicy <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#747" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> CheckIPPolicy ( <span class="source_keyword">string</span> Address) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CreatureKillMessage-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CreatureKillMessage <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1617" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">static</span> <span class="source_keyword">function</span> <span class="source_keyword">string</span> CreatureKillMessage ( <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">damageType</a></span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">Other</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Debug-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Debug <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1708" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span>  Debug ( <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span>, <span class="source_keyword">int</span> mode) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DetailChange-" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> DetailChange <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#427" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span>  DetailChange ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_DiscardInventory-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> DiscardInventory <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1522" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  DiscardInventory ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">Other</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_EndGame-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> EndGame <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1656" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  EndGame ( <span class="source_keyword">string</span> <span class="source_type">Reason</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FindPlayerStart-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> FindPlayerStart <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1136" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_type"><a href="../engine/navigationpoint.html" class="source">NavigationPoint</a></span> FindPlayerStart ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type"><a href="../engine/player.html" class="source">Player</a></span>, <span class="source_keyword2">optional</span> <span class="source_keyword">byte</span> InTeam, <span class="source_keyword2">optional</span> <span class="source_keyword">string</span> <span class="source_type">incomingName</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ForceAddBot-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ForceAddBot <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1019" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> ForceAddBot (  )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GameEnding-" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> GameEnding <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#262" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span>  GameEnding ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetBeaconText-" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> GetBeaconText <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#636" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span> <span class="source_keyword">string</span> GetBeaconText ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetInfo-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetInfo <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#297" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">string</span> GetInfo ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetIntOption-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetIntOption <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#799" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">int</span> GetIntOption ( <span class="source_keyword">string</span> Options, <span class="source_keyword">string</span> ParseString, <span class="source_keyword">int</span> CurrentValue) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetKeyValue-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetKeyValue <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#521" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  GetKeyValue ( <span class="source_keyword">string</span> Pair, <span class="source_keyword2">out</span> <span class="source_keyword">string</span> <span class="source_type">Key</span>, <span class="source_keyword2">out</span> <span class="source_keyword">string</span> <span class="source_type">Value</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetNetworkNumber-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetNetworkNumber <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#292" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">native</span> <span class="source_keyword">function</span> <span class="source_keyword">string</span> GetNetworkNumber (  )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetRules-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetRules <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#310" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">string</span> GetRules ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetServerPort-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetServerPort <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#359" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">int</span> GetServerPort ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GetTeamVectorColor-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GetTeamVectorColor <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1703" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_type"><a href="../core/object.html#Vector" class="source">vector</a></span> GetTeamVectorColor ( <span class="source_keyword">int</span> num) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_GrabOption-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> GrabOption <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#497" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> GrabOption ( <span class="source_keyword2">out</span> <span class="source_keyword">string</span> Options, <span class="source_keyword2">out</span> <span class="source_keyword">string</span> <span class="source_type">Result</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HasOption-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> HasOption <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#538" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> HasOption ( <span class="source_keyword">string</span> Options, <span class="source_keyword">string</span> <span class="source_type">InKey</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_InitGame-" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> InitGame <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#569" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span>  InitGame ( <span class="source_keyword">string</span> Options, <span class="source_keyword2">out</span> <span class="source_keyword">string</span> <span class="source_type">Error</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_InitGameReplicationInfo-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> InitGameReplicationInfo <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#284" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  InitGameReplicationInfo ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_InitLogging-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> InitLogging <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#216" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  InitLogging ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_IsRelevant-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> IsRelevant <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#448" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> IsRelevant ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Killed-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Killed <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1280" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Killed ( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">killer</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">Other</span>, <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">damageType</a></span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_KillMessage-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> KillMessage <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1389" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">static</span> <span class="source_keyword">function</span> <span class="source_keyword">string</span> KillMessage ( <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">damageType</a></span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">killer</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_LogGameParameters-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> LogGameParameters <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#387" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  LogGameParameters ( <span class="source_type"><a href="../engine/statlog.html" class="source">StatLog</a></span> <span class="source_type"><a href="../engine/statlog.html" class="source">StatLog</a></span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Login-" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> Login <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#818" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span> <span class="source_type"><a href="../engine/playerpawn.html" class="source">playerpawn</a></span> Login ( <span class="source_keyword">string</span> Portal,
+    <span class="source_keyword">string</span> Options,
+    <span class="source_keyword2">out</span> <span class="source_keyword">string</span> <span class="source_type">Error</span>,
+    <span class="source_keyword">class</span>&lt;<span class="source_type"><a href="../engine/playerpawn.html" class="source">playerpawn</a></span>&gt; SpawnClass
+) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Logout-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Logout <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1024" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Logout ( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">Exiting</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ParseKillMessage-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ParseKillMessage <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1358" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">static</span> <span class="source_keyword2">native</span> <span class="source_keyword">function</span> <span class="source_keyword">string</span> ParseKillMessage ( <span class="source_keyword">string</span> KillerName, <span class="source_keyword">string</span> VictimName, <span class="source_keyword">string</span> WeaponName, <span class="source_keyword">string</span> DeathMessage )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ParseOption-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ParseOption <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#553" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">string</span> ParseOption ( <span class="source_keyword">string</span> Options, <span class="source_keyword">string</span> <span class="source_type">InKey</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PickupQuery-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PickupQuery <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1495" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> PickupQuery ( <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">Other</span>, <span class="source_type"><a href="../engine/inventory.html" class="source">Inventory</a></span> <span class="source_type">item</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayerJumpZScaling-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayerJumpZScaling <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1561" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">float</span> PlayerJumpZScaling ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayerKillMessage-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayerKillMessage <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1606" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">static</span> <span class="source_keyword">function</span> <span class="source_keyword">string</span> PlayerKillMessage ( <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">damageType</a></span>, <span class="source_type"><a href="../engine/playerreplicationinfo.html" class="source">PlayerReplicationInfo</a></span> <span class="source_type">Other</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlaySpawnEffect-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlaySpawnEffect <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1598" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">float</span> PlaySpawnEffect ( <span class="source_type"><a href="../engine/inventory.html" class="source">inventory</a></span> <span class="source_type">Inv</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayTeleportEffect-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayTeleportEffect <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1633" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayTeleportEffect ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> Incoming, <span class="source_keyword">bool</span> bOut, <span class="source_keyword">bool</span> bSound )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PostBeginPlay-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PostBeginPlay <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#181" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PostBeginPlay ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PostLogin-" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> PostLogin <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#988" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span>  PostLogin ( <span class="source_type"><a href="../engine/playerpawn.html" class="source">playerpawn</a></span> <span class="source_type">NewPlayer</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PreBeginPlay-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PreBeginPlay <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#167" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PreBeginPlay ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PreLogin-" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> PreLogin <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#706" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span>  PreLogin ( <span class="source_keyword">string</span> Options,
+    <span class="source_keyword">string</span> Address,
+    <span class="source_keyword2">out</span> <span class="source_keyword">string</span> <span class="source_type">Error</span>,
+    <span class="source_keyword2">out</span> <span class="source_keyword">string</span> FailCode
+) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ProcessServerTravel-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ProcessServerTravel <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#653" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ProcessServerTravel ( <span class="source_keyword">string</span> <span class="source_type">URL</span>, <span class="source_keyword">bool</span> <span class="source_type">bItems</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ReduceDamage-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ReduceDamage <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1416" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ReduceDamage ( <span class="source_keyword2">out</span> <span class="source_keyword">int</span> BluntDamage, <span class="source_keyword2">out</span> <span class="source_keyword">int</span> SeverDamage, <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">DamageType</a></span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> injured, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">instigatedBy</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RegisterDamageMutator-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> RegisterDamageMutator <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1406" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  RegisterDamageMutator ( <span class="source_type"><a href="../engine/mutator.html" class="source">Mutator</a></span> M) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ResetGame-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ResetGame <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#422" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">static</span> <span class="source_keyword">function</span>  ResetGame (  )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RestartGame-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> RestartGame <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1638" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  RestartGame ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RestartPlayer-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> RestartPlayer <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1160" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> RestartPlayer ( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">aPlayer</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ScoreEvent-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ScoreEvent <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1476" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ScoreEvent ( <span class="source_keyword">name</span> EventName, <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> EventActor, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">InstigatedBy</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ScoreKill-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ScoreKill <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1360" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ScoreKill ( <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">Killer</span>, <span class="source_type"><a href="../engine/pawn.html" class="source">pawn</a></span> <span class="source_type">Other</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SendPlayer-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SendPlayer <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1625" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SendPlayer ( <span class="source_type"><a href="../engine/playerpawn.html" class="source">PlayerPawn</a></span> <span class="source_type">aPlayer</span>, <span class="source_keyword">string</span> <span class="source_type">URL</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SetEndCams-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SetEndCams <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1689" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> SetEndCams ( <span class="source_keyword">string</span> <span class="source_type">Reason</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SetGameSpeed-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SetGameSpeed <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#413" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  SetGameSpeed ( <span class="source_keyword">Float</span> <span class="source_type">T</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SetPause-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SetPause <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#371" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> SetPause ( <span class="source_keyword">BOOL</span> bPause, <span class="source_type"><a href="../engine/playerpawn.html" class="source">PlayerPawn</a></span> <span class="source_type">P</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ShouldRespawn-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ShouldRespawn <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1483" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> ShouldRespawn ( <span class="source_type"><a href="../engine/actor.html" class="source">actor</a></span> <span class="source_type">Other</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_StartPlayer-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> StartPlayer <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#1262" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  StartPlayer ( <span class="source_type"><a href="../engine/playerpawn.html" class="source">PlayerPawn</a></span> <span class="source_type">Other</span>) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Timer-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Timer <span class="function_state"></span> <a href="../Source_engine/gameinfo.html#256" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Timer ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     Difficulty=<span class="source_int">1</span>
+     bRestartLevel=<span class="source_keyword">True</span>
+     bPauseable=<span class="source_keyword">True</span>
+     bCanChangeSkin=<span class="source_keyword">True</span>
+     bNoCheating=<span class="source_keyword">True</span>
+     bCanViewOthers=<span class="source_keyword">True</span>
+     bAllowWeaponDrop=<span class="source_keyword">True</span>
+     bAllowShieldDrop=<span class="source_keyword">True</span>
+     AutoAim=<span class="source_int">0.930000</span>
+     GameSpeed=<span class="source_int">1.000000</span>
+     MaxSpectators=<span class="source_int">2</span>
+     SwitchLevelMessage=<span class="source_string">"Switching Levels"</span>
+     DefaultPlayerName=<span class="source_string">"Player"</span>
+     LeftMessage=<span class="source_string">" left the game."</span>
+     FailedSpawnMessage=<span class="source_string">"Failed to spawn player actor"</span>
+     FailedPlaceMessage=<span class="source_string">"Could not find starting spot (level might need a 'PlayerStart' actor)"</span>
+     FailedTeamMessage=<span class="source_string">"Could not find team for player"</span>
+     NameChangedMessage=<span class="source_string">"Name changed to "</span>
+     EnteredMessage=<span class="source_string">" entered the game."</span>
+     GameName=<span class="source_string">"Game"</span>
+     MaxedOutMessage=<span class="source_string">"Server is already at capacity."</span>
+     WrongPassword=<span class="source_string">"The password you entered is incorrect."</span>
+     NeedPassword=<span class="source_string">"You need to enter a password to join this game."</span>
+     IPBanned=<span class="source_string">"Your IP address has been banned on this server."</span>
+     MaxPlayers=<span class="source_int">16</span>
+     IPPolicies(<span class="source_int">0</span>)=<span class="source_string">"ACCEPT,*"</span>
+     DeathMessageClass=<span class="source_keyword">Class</span><span class="source_name">'Engine.LocalMessage'</span>
+     MutatorClass=<span class="source_keyword">Class</span><span class="source_name">'Engine.Mutator'</span>
+     DefaultPlayerState=PlayerWalking
+     ServerLogName=<span class="source_string">"server.log"</span>
+     bLocalLog=<span class="source_keyword">True</span>
+     bWorldLog=<span class="source_keyword">True</span>
+     bSubtitles=<span class="source_keyword">True</span>
+     StatLogClass=<span class="source_keyword">Class</span><span class="source_name">'Engine.StatLogFile'</span>
+     DebrisPercentage=<span class="source_int">0.900000</span>
+     ParticlePercentage=<span class="source_int">1.000000</span>
+     bAllowLimbSever=<span class="source_keyword">True</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../engine/engine-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_engine/gameinfo.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#GameInfo">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../engine/fragment.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../engine/gamereplicationinfo.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:41:03.870 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

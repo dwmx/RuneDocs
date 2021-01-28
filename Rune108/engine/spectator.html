@@ -1,0 +1,422 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - Engine.Spectator</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../engine/engine-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_engine/spectator.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#Spectator">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../engine/specialevent.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../engine/spewer.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#engine/spectator.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../engine/engine-overview.html">Engine</a>.Spectator</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../engine/playerpawn.html">PlayerPawn</a></dd>
+
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a>
+   |   
+   +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/pawn.html">Pawn</a>
+      |   
+      +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/playerpawn.html">PlayerPawn</a>
+         |   
+         +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/spectator.html">Spectator</a>
+</pre>
+
+<h4>Direct Known Subclasses:</h4>
+<blockquote>
+	<a href="../engine/messagingspectator.html">MessagingSpectator</a>
+</blockquote>
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+<tr><td nowrap="nowrap" width="33%">bool</td><td width="66%"><a href="#_bChaseCam" name="bChaseCam" title="go to the details">bChaseCam</a></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/playerpawn.html">PlayerPawn</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/playerpawn.html#aBaseX">aBaseX</a>, <a href="../engine/playerpawn.html#aBaseY">aBaseY</a>, <a href="../engine/playerpawn.html#aBaseZ">aBaseZ</a>, <a href="../engine/playerpawn.html#aExtra0">aExtra0</a>, <a href="../engine/playerpawn.html#aExtra1">aExtra1</a>, <a href="../engine/playerpawn.html#aExtra2">aExtra2</a>, <a href="../engine/playerpawn.html#aExtra3">aExtra3</a>, <a href="../engine/playerpawn.html#aExtra4">aExtra4</a>, <a href="../engine/playerpawn.html#aForward">aForward</a>, <a href="../engine/playerpawn.html#aLookUp">aLookUp</a>, <a href="../engine/playerpawn.html#aMouseX">aMouseX</a>, <a href="../engine/playerpawn.html#aMouseY">aMouseY</a>, <a href="../engine/playerpawn.html#AppliedBob">AppliedBob</a>, <a href="../engine/playerpawn.html#aStrafe">aStrafe</a>, <a href="../engine/playerpawn.html#AtrophyTimer">AtrophyTimer</a>, <a href="../engine/playerpawn.html#aTurn">aTurn</a>, <a href="../engine/playerpawn.html#aUp">aUp</a>, <a href="../engine/playerpawn.html#bAdmin">bAdmin</a>, <a href="../engine/playerpawn.html#bAlwaysMouseLook">bAlwaysMouseLook</a>, <a href="../engine/playerpawn.html#bAnimTransition">bAnimTransition</a>, <a href="../engine/playerpawn.html#bBadConnectionAlert">bBadConnectionAlert</a>, <a href="../engine/playerpawn.html#bBloodLust">bBloodLust</a>, <a href="../engine/playerpawn.html#bCenterView">bCenterView</a>, <a href="../engine/playerpawn.html#bCheatsEnabled">bCheatsEnabled</a>, <a href="../engine/playerpawn.html#bClientSideAlpha">bClientSideAlpha</a>, <a href="../engine/playerpawn.html#bDelayedCommand">bDelayedCommand</a>, <a href="../engine/playerpawn.html#bEdgeBack">bEdgeBack</a>, <a href="../engine/playerpawn.html#bEdgeForward">bEdgeForward</a>, <a href="../engine/playerpawn.html#bEdgeLeft">bEdgeLeft</a>, <a href="../engine/playerpawn.html#bEdgeRight">bEdgeRight</a>, <a href="../engine/playerpawn.html#bFixedCamera">bFixedCamera</a>, <a href="../engine/playerpawn.html#bFrozen">bFrozen</a>, <a href="../engine/playerpawn.html#bInvertMouse">bInvertMouse</a>, <a href="../engine/playerpawn.html#bIsCrouching">bIsCrouching</a>, <a href="../engine/playerpawn.html#bIsTurning">bIsTurning</a>, <a href="../engine/playerpawn.html#bIsTyping">bIsTyping</a>, <a href="../engine/playerpawn.html#bJumpStatus">bJumpStatus</a>, <a href="../engine/playerpawn.html#bJustAltFired">bJustAltFired</a>, <a href="../engine/playerpawn.html#bJustFired">bJustFired</a>, <a href="../engine/playerpawn.html#bJustSpawned">bJustSpawned</a>, <a href="../engine/playerpawn.html#bKeyboardLook">bKeyboardLook</a>, <a href="../engine/playerpawn.html#bLookUpStairs">bLookUpStairs</a>, <a href="../engine/playerpawn.html#bMaxMouseSmoothing">bMaxMouseSmoothing</a>, <a href="../engine/playerpawn.html#bMessageBeep">bMessageBeep</a>, <a href="../engine/playerpawn.html#bMouseZeroed">bMouseZeroed</a>, <a href="../engine/playerpawn.html#bNeverAutoSwitch">bNeverAutoSwitch</a>, <a href="../engine/playerpawn.html#bNoFlash">bNoFlash</a>, <a href="../engine/playerpawn.html#bNoVoices">bNoVoices</a>, <a href="../engine/playerpawn.html#Bob">Bob</a>, <a href="../engine/playerpawn.html#bobtime">bobtime</a>, <a href="../engine/playerpawn.html#BorrowedMouseX">BorrowedMouseX</a>, <a href="../engine/playerpawn.html#BorrowedMouseY">BorrowedMouseY</a>, <a href="../engine/playerpawn.html#bPressedJump">bPressedJump</a>, <a href="../engine/playerpawn.html#bReadyToPlay">bReadyToPlay</a>, <a href="../engine/playerpawn.html#bReducedVis">bReducedVis</a>, <a href="../engine/playerpawn.html#bRising">bRising</a>, <a href="../engine/playerpawn.html#bShakeDir">bShakeDir</a>, <a href="../engine/playerpawn.html#bShowMenu">bShowMenu</a>, <a href="../engine/playerpawn.html#bShowScores">bShowScores</a>, <a href="../engine/playerpawn.html#bSinglePlayer">bSinglePlayer</a>, <a href="../engine/playerpawn.html#bSnapToLevel">bSnapToLevel</a>, <a href="../engine/playerpawn.html#bSpecialMenu">bSpecialMenu</a>, <a href="../engine/playerpawn.html#bUpdatePosition">bUpdatePosition</a>, <a href="../engine/playerpawn.html#bUpdating">bUpdating</a>, <a href="../engine/playerpawn.html#bWasBack">bWasBack</a>, <a href="../engine/playerpawn.html#bWasForward">bWasForward</a>, <a href="../engine/playerpawn.html#bWasLeft">bWasLeft</a>, <a href="../engine/playerpawn.html#bWasRight">bWasRight</a>, <a href="../engine/playerpawn.html#bWokeUp">bWokeUp</a>, <a href="../engine/playerpawn.html#bZooming">bZooming</a>, <a href="../engine/playerpawn.html#CdTrack">CdTrack</a>, <a href="../engine/playerpawn.html#ClientSideAlphaScale">ClientSideAlphaScale</a>, <a href="../engine/playerpawn.html#ClientUpdateTime">ClientUpdateTime</a>, <a href="../engine/playerpawn.html#ConstantGlowFog">ConstantGlowFog</a>, <a href="../engine/playerpawn.html#ConstantGlowScale">ConstantGlowScale</a>, <a href="../engine/playerpawn.html#CurrentTimeStamp">CurrentTimeStamp</a>, <a href="../engine/playerpawn.html#DefaultFOV">DefaultFOV</a>, <a href="../engine/playerpawn.html#DelayedCommand">DelayedCommand</a>, <a href="../engine/playerpawn.html#DemoViewPitch">DemoViewPitch</a>, <a href="../engine/playerpawn.html#DemoViewYaw">DemoViewYaw</a>, <a href="../engine/playerpawn.html#DesiredFlashFog">DesiredFlashFog</a>, <a href="../engine/playerpawn.html#DesiredFlashScale">DesiredFlashScale</a>, <a href="../engine/playerpawn.html#DesiredFOV">DesiredFOV</a>, <a href="../engine/playerpawn.html#DesiredPolyColorAdjust">DesiredPolyColorAdjust</a>, <a href="../engine/playerpawn.html#DodgeClickTime">DodgeClickTime</a>, <a href="../engine/playerpawn.html#DodgeClickTimer">DodgeClickTimer</a>, <a href="../engine/playerpawn.html#FailedView">FailedView</a>, <a href="../engine/playerpawn.html#FlashFog">FlashFog</a>, <a href="../engine/playerpawn.html#FlashScale">FlashScale</a>, <a href="../engine/playerpawn.html#FreeMoves">FreeMoves</a>, <a href="../engine/playerpawn.html#GameReplicationInfo">GameReplicationInfo</a>, <a href="../engine/playerpawn.html#HudTranslucency">HudTranslucency</a>, <a href="../engine/playerpawn.html#HUDType">HUDType</a>, <a href="../engine/playerpawn.html#InstantFlash">InstantFlash</a>, <a href="../engine/playerpawn.html#InstantFog">InstantFog</a>, <a href="../engine/playerpawn.html#JumpSound">JumpSound</a>, <a href="../engine/playerpawn.html#LandBob">LandBob</a>, <a href="../engine/playerpawn.html#LastPlaySound">LastPlaySound</a>, <a href="../engine/playerpawn.html#LastUpdateTime">LastUpdateTime</a>, <a href="../engine/playerpawn.html#LevelFadeAlpha">LevelFadeAlpha</a>, <a href="../engine/playerpawn.html#maxshake">maxshake</a>, <a href="../engine/playerpawn.html#MaxTimeMargin">MaxTimeMargin</a>, <a href="../engine/playerpawn.html#Misc1">Misc1</a>, <a href="../engine/playerpawn.html#Misc2">Misc2</a>, <a href="../engine/playerpawn.html#MouseSensitivity">MouseSensitivity</a>, <a href="../engine/playerpawn.html#MouseSmoothThreshold">MouseSmoothThreshold</a>, <a href="../engine/playerpawn.html#MouseZeroTime">MouseZeroTime</a>, <a href="../engine/playerpawn.html#MyAutoAim">MyAutoAim</a>, <a href="../engine/playerpawn.html#myDebugHUD">myDebugHUD</a>, <a href="../engine/playerpawn.html#myHUD">myHUD</a>, <a href="../engine/playerpawn.html#ngWorldSecret">ngWorldSecret</a>, <a href="../engine/playerpawn.html#NoPauseMessage">NoPauseMessage</a>, <a href="../engine/playerpawn.html#OldScale">OldScale</a>, <a href="../engine/playerpawn.html#OldStyle">OldStyle</a>, <a href="../engine/playerpawn.html#OwnCamera">OwnCamera</a>, <a href="../engine/playerpawn.html#Password">Password</a>, <a href="../engine/playerpawn.html#PendingMove">PendingMove</a>, <a href="../engine/playerpawn.html#Player">Player</a>, <a href="../engine/playerpawn.html#PolyColorAdjust">PolyColorAdjust</a>, <a href="../engine/playerpawn.html#ProgressColor[8]">ProgressColor[8]</a>, <a href="../engine/playerpawn.html#ProgressMessage[8]">ProgressMessage[8]</a>, <a href="../engine/playerpawn.html#ProgressTimeOut">ProgressTimeOut</a>, <a href="../engine/playerpawn.html#QuickSaveString">QuickSaveString</a>, <a href="../engine/playerpawn.html#RendMap">RendMap</a>, <a href="../engine/playerpawn.html#SavedMoves">SavedMoves</a>, <a href="../engine/playerpawn.html#Scoring">Scoring</a>, <a href="../engine/playerpawn.html#ScoringType">ScoringType</a>, <a href="../engine/playerpawn.html#ServerTimeStamp">ServerTimeStamp</a>, <a href="../engine/playerpawn.html#shakemag">shakemag</a>, <a href="../engine/playerpawn.html#shaketimer">shaketimer</a>, <a href="../engine/playerpawn.html#shakevert">shakevert</a>, <a href="../engine/playerpawn.html#ShowFlags">ShowFlags</a>, <a href="../engine/playerpawn.html#SmoothMouseX">SmoothMouseX</a>, <a href="../engine/playerpawn.html#SmoothMouseY">SmoothMouseY</a>, <a href="../engine/playerpawn.html#Song">Song</a>, <a href="../engine/playerpawn.html#SongSection">SongSection</a>, <a href="../engine/playerpawn.html#SpecialMenu">SpecialMenu</a>, <a href="../engine/playerpawn.html#StowSpot[3]">StowSpot[3]</a>, <a href="../engine/playerpawn.html#TargetEyeHeight">TargetEyeHeight</a>, <a href="../engine/playerpawn.html#TargetViewRotation">TargetViewRotation</a>, <a href="../engine/playerpawn.html#TargetWeaponViewOffset">TargetWeaponViewOffset</a>, <a href="../engine/playerpawn.html#TimeMargin">TimeMargin</a>, <a href="../engine/playerpawn.html#Transition">Transition</a>, <a href="../engine/playerpawn.html#verttimer">verttimer</a>, <a href="../engine/playerpawn.html#ViewingFrom">ViewingFrom</a>, <a href="../engine/playerpawn.html#ViewTarget">ViewTarget</a>, <a href="../engine/playerpawn.html#WeaponPriority[20]">WeaponPriority[20]</a>, <a href="../engine/playerpawn.html#ZoomLevel">ZoomLevel</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/pawn.html">Pawn</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/pawn.html#AccelRate">AccelRate</a>, <a href="../engine/pawn.html#AirControl">AirControl</a>, <a href="../engine/pawn.html#AirSpeed">AirSpeed</a>, <a href="../engine/pawn.html#Alertness">Alertness</a>, <a href="../engine/pawn.html#AmbientSoundTime">AmbientSoundTime</a>, <a href="../engine/pawn.html#AttitudeToPlayer">AttitudeToPlayer</a>, <a href="../engine/pawn.html#AvgPhysicsTime">AvgPhysicsTime</a>, <a href="../engine/pawn.html#bAdvancedTactics">bAdvancedTactics</a>, <a href="../engine/pawn.html#bAlignToFloor">bAlignToFloor</a>, <a href="../engine/pawn.html#bAllowStandOn">bAllowStandOn</a>, <a href="../engine/pawn.html#bAltFire">bAltFire</a>, <a href="../engine/pawn.html#BaseEyeHeight">BaseEyeHeight</a>, <a href="../engine/pawn.html#bAutoActivate">bAutoActivate</a>, <a href="../engine/pawn.html#bAvoidLedges">bAvoidLedges</a>, <a href="../engine/pawn.html#bBehindView">bBehindView</a>, <a href="../engine/pawn.html#bCanDoSpecial">bCanDoSpecial</a>, <a href="../engine/pawn.html#bCanFly">bCanFly</a>, <a href="../engine/pawn.html#bCanGrabEdges">bCanGrabEdges</a>, <a href="../engine/pawn.html#bCanJump">bCanJump</a>, <a href="../engine/pawn.html#bCanLook">bCanLook</a>, <a href="../engine/pawn.html#bCanOpenDoors">bCanOpenDoors</a>, <a href="../engine/pawn.html#bCanStrafe">bCanStrafe</a>, <a href="../engine/pawn.html#bCanSwim">bCanSwim</a>, <a href="../engine/pawn.html#bCanWalk">bCanWalk</a>, <a href="../engine/pawn.html#bCountJumps">bCountJumps</a>, <a href="../engine/pawn.html#bDrowning">bDrowning</a>, <a href="../engine/pawn.html#bDuck">bDuck</a>, <a href="../engine/pawn.html#bExtra0">bExtra0</a>, <a href="../engine/pawn.html#bExtra1">bExtra1</a>, <a href="../engine/pawn.html#bExtra2">bExtra2</a>, <a href="../engine/pawn.html#bExtra3">bExtra3</a>, <a href="../engine/pawn.html#bFire">bFire</a>, <a href="../engine/pawn.html#bFixedStart">bFixedStart</a>, <a href="../engine/pawn.html#bFootsteps">bFootsteps</a>, <a href="../engine/pawn.html#bFreeLook">bFreeLook</a>, <a href="../engine/pawn.html#bFromWall">bFromWall</a>, <a href="../engine/pawn.html#bGibbable">bGibbable</a>, <a href="../engine/pawn.html#bHeadLookUpDouble">bHeadLookUpDouble</a>, <a href="../engine/pawn.html#bHitSlopedWall">bHitSlopedWall</a>, <a href="../engine/pawn.html#bHunting">bHunting</a>, <a href="../engine/pawn.html#bHurrying">bHurrying</a>, <a href="../engine/pawn.html#bInvisible">bInvisible</a>, <a href="../engine/pawn.html#bIsFemale">bIsFemale</a>, <a href="../engine/pawn.html#bIsHuman">bIsHuman</a>, <a href="../engine/pawn.html#bIsMultiSkinned">bIsMultiSkinned</a>, <a href="../engine/pawn.html#bIsPlayer">bIsPlayer</a>, <a href="../engine/pawn.html#bIsWalking">bIsWalking</a>, <a href="../engine/pawn.html#bJumpOffPawn">bJumpOffPawn</a>, <a href="../engine/pawn.html#bJustLanded">bJustLanded</a>, <a href="../engine/pawn.html#bLeadEnemy">bLeadEnemy</a>, <a href="../engine/pawn.html#BloodSteps">BloodSteps</a>, <a href="../engine/pawn.html#BloodyFootprintClass">BloodyFootprintClass</a>, <a href="../engine/pawn.html#bLook">bLook</a>, <a href="../engine/pawn.html#bLOSflag">bLOSflag</a>, <a href="../engine/pawn.html#bNeverSwitchOnPickup">bNeverSwitchOnPickup</a>, <a href="../engine/pawn.html#BodyPartHealth[15]">BodyPartHealth[15]</a>, <a href="../engine/pawn.html#bOverrideLookTarget">bOverrideLookTarget</a>, <a href="../engine/pawn.html#bReducedSpeed">bReducedSpeed</a>, <a href="../engine/pawn.html#bRotateHead">bRotateHead</a>, <a href="../engine/pawn.html#bRotateTorso">bRotateTorso</a>, <a href="../engine/pawn.html#bRun">bRun</a>, <a href="../engine/pawn.html#bShootSpecial">bShootSpecial</a>, <a href="../engine/pawn.html#bSnapLevel">bSnapLevel</a>, <a href="../engine/pawn.html#bStopAtLedges">bStopAtLedges</a>, <a href="../engine/pawn.html#bStopMoveIfCombatRange">bStopMoveIfCombatRange</a>, <a href="../engine/pawn.html#bStrafe">bStrafe</a>, <a href="../engine/pawn.html#bSwingingHigh">bSwingingHigh</a>, <a href="../engine/pawn.html#bSwingingLow">bSwingingLow</a>, <a href="../engine/pawn.html#bUpAndOut">bUpAndOut</a>, <a href="../engine/pawn.html#bUpdatingDisplay">bUpdatingDisplay</a>, <a href="../engine/pawn.html#bViewTarget">bViewTarget</a>, <a href="../engine/pawn.html#bWarping">bWarping</a>, <a href="../engine/pawn.html#bZoom">bZoom</a>, <a href="../engine/pawn.html#CarcassType">CarcassType</a>, <a href="../engine/pawn.html#ClassID">ClassID</a>, <a href="../engine/pawn.html#CombatRange">CombatRange</a>, <a href="../engine/pawn.html#CombatStyle">CombatStyle</a>, <a href="../engine/pawn.html#CurrentSkin">CurrentSkin</a>, <a href="../engine/pawn.html#DamageScaling">DamageScaling</a>, <a href="../engine/pawn.html#DeathHeight">DeathHeight</a>, <a href="../engine/pawn.html#DeathRadius">DeathRadius</a>, <a href="../engine/pawn.html#DesiredMouthRot">DesiredMouthRot</a>, <a href="../engine/pawn.html#DesiredSpeed">DesiredSpeed</a>, <a href="../engine/pawn.html#Destination">Destination</a>, <a href="../engine/pawn.html#Die">Die</a>, <a href="../engine/pawn.html#Die2">Die2</a>, <a href="../engine/pawn.html#Die3">Die3</a>, <a href="../engine/pawn.html#DieCount">DieCount</a>, <a href="../engine/pawn.html#DropWhenKilled">DropWhenKilled</a>, <a href="../engine/pawn.html#Enemy">Enemy</a>, <a href="../engine/pawn.html#EyeHeight">EyeHeight</a>, <a href="../engine/pawn.html#FaceTarget">FaceTarget</a>, <a href="../engine/pawn.html#Floor">Floor</a>, <a href="../engine/pawn.html#Focus">Focus</a>, <a href="../engine/pawn.html#FootprintClass">FootprintClass</a>, <a href="../engine/pawn.html#FootRegion">FootRegion</a>, <a href="../engine/pawn.html#FootStepBreakableStone[3]">FootStepBreakableStone[3]</a>, <a href="../engine/pawn.html#FootStepBreakableWood[3]">FootStepBreakableWood[3]</a>, <a href="../engine/pawn.html#FootStepEarth[3]">FootStepEarth[3]</a>, <a href="../engine/pawn.html#FootStepFlesh[3]">FootStepFlesh[3]</a>, <a href="../engine/pawn.html#FootStepIce[3]">FootStepIce[3]</a>, <a href="../engine/pawn.html#FootStepLava[3]">FootStepLava[3]</a>, <a href="../engine/pawn.html#FootStepMetal[3]">FootStepMetal[3]</a>, <a href="../engine/pawn.html#FootStepMud[3]">FootStepMud[3]</a>, <a href="../engine/pawn.html#FootStepSnow[3]">FootStepSnow[3]</a>, <a href="../engine/pawn.html#FootStepStone[3]">FootStepStone[3]</a>, <a href="../engine/pawn.html#FootstepVolume">FootstepVolume</a>, <a href="../engine/pawn.html#FootStepWater[3]">FootStepWater[3]</a>, <a href="../engine/pawn.html#FootStepWood[3]">FootStepWood[3]</a>, <a href="../engine/pawn.html#FovAngle">FovAngle</a>, <a href="../engine/pawn.html#GibClass">GibClass</a>, <a href="../engine/pawn.html#GibCount">GibCount</a>, <a href="../engine/pawn.html#GibSound">GibSound</a>, <a href="../engine/pawn.html#GrabLocationIn">GrabLocationIn</a>, <a href="../engine/pawn.html#GrabLocationUp">GrabLocationUp</a>, <a href="../engine/pawn.html#GroundSpeed">GroundSpeed</a>, <a href="../engine/pawn.html#HeadRegion">HeadRegion</a>, <a href="../engine/pawn.html#Health">Health</a>, <a href="../engine/pawn.html#HearingThreshold">HearingThreshold</a>, <a href="../engine/pawn.html#HitSound1">HitSound1</a>, <a href="../engine/pawn.html#HitSound2">HitSound2</a>, <a href="../engine/pawn.html#HitSound3">HitSound3</a>, <a href="../engine/pawn.html#Intelligence">Intelligence</a>, <a href="../engine/pawn.html#ItemCount">ItemCount</a>, <a href="../engine/pawn.html#JumpZ">JumpZ</a>, <a href="../engine/pawn.html#KillCount">KillCount</a>, <a href="../engine/pawn.html#LandGrunt">LandGrunt</a>, <a href="../engine/pawn.html#LandSoundBreakableStone">LandSoundBreakableStone</a>, <a href="../engine/pawn.html#LandSoundBreakableWood">LandSoundBreakableWood</a>, <a href="../engine/pawn.html#LandSoundEarth">LandSoundEarth</a>, <a href="../engine/pawn.html#LandSoundFlesh">LandSoundFlesh</a>, <a href="../engine/pawn.html#LandSoundIce">LandSoundIce</a>, <a href="../engine/pawn.html#LandSoundLava">LandSoundLava</a>, <a href="../engine/pawn.html#LandSoundMetal">LandSoundMetal</a>, <a href="../engine/pawn.html#LandSoundMud">LandSoundMud</a>, <a href="../engine/pawn.html#LandSoundSnow">LandSoundSnow</a>, <a href="../engine/pawn.html#LandSoundStone">LandSoundStone</a>, <a href="../engine/pawn.html#LandSoundWater">LandSoundWater</a>, <a href="../engine/pawn.html#LandSoundWood">LandSoundWood</a>, <a href="../engine/pawn.html#LastPainSound">LastPainSound</a>, <a href="../engine/pawn.html#LastSeeingPos">LastSeeingPos</a>, <a href="../engine/pawn.html#LastSeenPos">LastSeenPos</a>, <a href="../engine/pawn.html#LastSeenTime">LastSeenTime</a>, <a href="../engine/pawn.html#LFootJoint">LFootJoint</a>, <a href="../engine/pawn.html#LookAngle">LookAngle</a>, <a href="../engine/pawn.html#LookDegPerSec">LookDegPerSec</a>, <a href="../engine/pawn.html#LookSpot">LookSpot</a>, <a href="../engine/pawn.html#LookTarget">LookTarget</a>, <a href="../engine/pawn.html#MaxBodyAngle">MaxBodyAngle</a>, <a href="../engine/pawn.html#MaxDesiredSpeed">MaxDesiredSpeed</a>, <a href="../engine/pawn.html#MaxHeadAngle">MaxHeadAngle</a>, <a href="../engine/pawn.html#MaxHealth">MaxHealth</a>, <a href="../engine/pawn.html#MaxMouthRot">MaxMouthRot</a>, <a href="../engine/pawn.html#MaxMouthRotRate">MaxMouthRotRate</a>, <a href="../engine/pawn.html#MaxPower">MaxPower</a>, <a href="../engine/pawn.html#MaxStepHeight">MaxStepHeight</a>, <a href="../engine/pawn.html#MaxStrength">MaxStrength</a>, <a href="../engine/pawn.html#MeleeRange">MeleeRange</a>, <a href="../engine/pawn.html#MenuName">MenuName</a>, <a href="../engine/pawn.html#MinHitWall">MinHitWall</a>, <a href="../engine/pawn.html#MouthRot">MouthRot</a>, <a href="../engine/pawn.html#MouthRotRate">MouthRotRate</a>, <a href="../engine/pawn.html#MovementSpeed">MovementSpeed</a>, <a href="../engine/pawn.html#MoveTarget">MoveTarget</a>, <a href="../engine/pawn.html#MoveTimer">MoveTimer</a>, <a href="../engine/pawn.html#NameArticle">NameArticle</a>, <a href="../engine/pawn.html#NextLabel">NextLabel</a>, <a href="../engine/pawn.html#nextPawn">nextPawn</a>, <a href="../engine/pawn.html#NextState">NextState</a>, <a href="../engine/pawn.html#NextStateAfterPain">NextStateAfterPain</a>, <a href="../engine/pawn.html#noise1loudness">noise1loudness</a>, <a href="../engine/pawn.html#noise1other">noise1other</a>, <a href="../engine/pawn.html#noise1spot">noise1spot</a>, <a href="../engine/pawn.html#noise1time">noise1time</a>, <a href="../engine/pawn.html#noise2loudness">noise2loudness</a>, <a href="../engine/pawn.html#noise2other">noise2other</a>, <a href="../engine/pawn.html#noise2spot">noise2spot</a>, <a href="../engine/pawn.html#noise2time">noise2time</a>, <a href="../engine/pawn.html#OldMessageTime">OldMessageTime</a>, <a href="../engine/pawn.html#OrthoZoom">OrthoZoom</a>, <a href="../engine/pawn.html#PainDelay">PainDelay</a>, <a href="../engine/pawn.html#PainTime">PainTime</a>, <a href="../engine/pawn.html#PendingWeapon">PendingWeapon</a>, <a href="../engine/pawn.html#PeripheralVision">PeripheralVision</a>, <a href="../engine/pawn.html#PlayerReplicationInfo">PlayerReplicationInfo</a>, <a href="../engine/pawn.html#PlayerReplicationInfoClass">PlayerReplicationInfoClass</a>, <a href="../engine/pawn.html#PlayerReStartState">PlayerReStartState</a>, <a href="../engine/pawn.html#ReducedDamagePct">ReducedDamagePct</a>, <a href="../engine/pawn.html#ReducedDamageType">ReducedDamageType</a>, <a href="../engine/pawn.html#RFootJoint">RFootJoint</a>, <a href="../engine/pawn.html#RouteCache[16]">RouteCache[16]</a>, <a href="../engine/pawn.html#RunePower">RunePower</a>, <a href="../engine/pawn.html#SecretCount">SecretCount</a>, <a href="../engine/pawn.html#SelectedItem">SelectedItem</a>, <a href="../engine/pawn.html#SelectionMesh">SelectionMesh</a>, <a href="../engine/pawn.html#Shadow">Shadow</a>, <a href="../engine/pawn.html#Shield">Shield</a>, <a href="../engine/pawn.html#ShieldJoint">ShieldJoint</a>, <a href="../engine/pawn.html#SightCounter">SightCounter</a>, <a href="../engine/pawn.html#SightRadius">SightRadius</a>, <a href="../engine/pawn.html#Skill">Skill</a>, <a href="../engine/pawn.html#SkinDefaultText">SkinDefaultText</a>, <a href="../engine/pawn.html#SoundDampening">SoundDampening</a>, <a href="../engine/pawn.html#SpecialGoal">SpecialGoal</a>, <a href="../engine/pawn.html#SpecialMesh">SpecialMesh</a>, <a href="../engine/pawn.html#SpecialPause">SpecialPause</a>, <a href="../engine/pawn.html#SpeechTime">SpeechTime</a>, <a href="../engine/pawn.html#SpeedScale">SpeedScale</a>, <a href="../engine/pawn.html#SplashTime">SplashTime</a>, <a href="../engine/pawn.html#Spree">Spree</a>, <a href="../engine/pawn.html#StabJoint">StabJoint</a>, <a href="../engine/pawn.html#StartEvent">StartEvent</a>, <a href="../engine/pawn.html#Stimulus">Stimulus</a>, <a href="../engine/pawn.html#Strength">Strength</a>, <a href="../engine/pawn.html#targetangle">targetangle</a>, <a href="../engine/pawn.html#UnderWaterTime">UnderWaterTime</a>, <a href="../engine/pawn.html#UninterruptedAnim">UninterruptedAnim</a>, <a href="../engine/pawn.html#UseActor">UseActor</a>, <a href="../engine/pawn.html#ViewLocation">ViewLocation</a>, <a href="../engine/pawn.html#ViewRotation">ViewRotation</a>, <a href="../engine/pawn.html#Visibility">Visibility</a>, <a href="../engine/pawn.html#VoicePitch">VoicePitch</a>, <a href="../engine/pawn.html#VoiceType">VoiceType</a>, <a href="../engine/pawn.html#WalkBob">WalkBob</a>, <a href="../engine/pawn.html#WalkingSpeed">WalkingSpeed</a>, <a href="../engine/pawn.html#WaterSpeed">WaterSpeed</a>, <a href="../engine/pawn.html#WaterStep">WaterStep</a>, <a href="../engine/pawn.html#WaterSteps">WaterSteps</a>, <a href="../engine/pawn.html#Weapon">Weapon</a>, <a href="../engine/pawn.html#WeaponJoint">WeaponJoint</a>, <a href="../engine/pawn.html#WetFootprintClass">WetFootprintClass</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Enumerations Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Enumerations from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/pawn.html">Pawn</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/pawn.html#EAttitude">EAttitude</a>, <a href="../engine/pawn.html#EIntelligence">EIntelligence</a>, <a href="../engine/pawn.html#ESpeedScale">ESpeedScale</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_AltFire-" name="AltFire" title="go to the details">AltFire</a> (optional float F ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_BehindView-" name="BehindView" title="go to the details">BehindView</a> (Bool B ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_CallForHelp-" name="CallForHelp" title="go to the details">CallForHelp</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_CameraIn-" name="CameraIn" title="go to the details">CameraIn</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_CameraOut-" name="CameraOut" title="go to the details">CameraOut</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ChangeTeam-" name="ChangeTeam" title="go to the details">ChangeTeam</a> (int N ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ClientReStart-" name="ClientReStart" title="go to the details">ClientReStart</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Debug-" name="Debug" title="go to the details">Debug</a> (<a href="../engine/canvas.html">Canvas</a> canvas, int mode))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Fire-" name="Fire" title="go to the details">Fire</a> (optional float F ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Fly-" name="Fly" title="go to the details">Fly</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>&nbsp;</td><td><a href="#_FootZoneChange-" name="FootZoneChange" title="go to the details">FootZoneChange</a> (<a href="../engine/zoneinfo.html">ZoneInfo</a> newFootZone))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Grab-" name="Grab" title="go to the details">Grab</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>&nbsp;</td><td><a href="#_HeadZoneChange-" name="HeadZoneChange" title="go to the details">HeadZoneChange</a> (<a href="../engine/zoneinfo.html">ZoneInfo</a> newHeadZone))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_InitPlayerReplicationInfo-" name="InitPlayerReplicationInfo" title="go to the details">InitPlayerReplicationInfo</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>bool&nbsp;</td><td><a href="#_JointDamaged-" name="JointDamaged" title="go to the details">JointDamaged</a> (int Damage, <a href="../engine/pawn.html">Pawn</a> instigatedBy, <a href="../core/object.html#Vector">Vector</a> hitlocation, <a href="../core/object.html#Vector">Vector</a> momentum, name damageType, int joint))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_NextItem-" name="NextItem" title="go to the details">NextItem</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>&nbsp;</td><td><a href="#_PainTimer-" name="PainTimer" title="go to the details">PainTimer</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PlayerTimeOut-" name="PlayerTimeOut" title="go to the details">PlayerTimeOut</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Possess-" name="Possess" title="go to the details">Possess</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_event.gif" alt="event" title="event" /></td><td>&nbsp;</td><td><a href="#_PostRender-" name="PostRender" title="go to the details">PostRender</a> (canvas <a href="../engine/canvas.html">Canvas</a> ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_PrevItem-" name="PrevItem" title="go to the details">PrevItem</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_RestartLevel-" name="RestartLevel" title="go to the details">RestartLevel</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Say-" name="Say" title="go to the details">Say</a> (string S ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_ServerChangeSkin-" name="ServerChangeSkin" title="go to the details">ServerChangeSkin</a> (int SkinIndex ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Suicide-" name="Suicide" title="go to the details">Suicide</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_SwitchWeapon-" name="SwitchWeapon" title="go to the details">SwitchWeapon</a> (byte F ))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Taunt-" name="Taunt" title="go to the details">Taunt</a> ()))<br /><span class="function_state"></span></td></tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Walk-" name="Walk" title="go to the details">Walk</a> ()))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/playerpawn.html">PlayerPawn</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/playerpawn.html#ActivateInventoryItem">ActivateInventoryItem</a>, <a href="../engine/playerpawn.html#ActivateItem">ActivateItem</a>, <a href="../engine/playerpawn.html#ActorState">ActorState</a>, <a href="../engine/playerpawn.html#AddBots">AddBots</a>, <a href="../engine/playerpawn.html#AdjustAim">AdjustAim</a>, <a href="../engine/playerpawn.html#Admin">Admin</a>, <a href="../engine/playerpawn.html#AdminLogin">AdminLogin</a>, <a href="../engine/playerpawn.html#AdminLogout">AdminLogout</a>, <a href="../engine/playerpawn.html#AltFire">AltFire</a>, <a href="../engine/playerpawn.html#AlwaysMouseLook">AlwaysMouseLook</a>, <a href="../engine/playerpawn.html#Amphibious">Amphibious</a>, <a href="../engine/playerpawn.html#AnimEnd">AnimEnd</a>, <a href="../engine/playerpawn.html#AttitudeTo">AttitudeTo</a>, <a href="../engine/playerpawn.html#BeginState">BeginState</a>, <a href="../engine/playerpawn.html#BehindView">BehindView</a>, <a href="../engine/playerpawn.html#BoostStrength">BoostStrength</a>, <a href="../engine/playerpawn.html#Bug">Bug</a>, <a href="../engine/playerpawn.html#CalcBehindView">CalcBehindView</a>, <a href="../engine/playerpawn.html#CallForHelp">CallForHelp</a>, <a href="../engine/playerpawn.html#CanGotoPainState">CanGotoPainState</a>, <a href="../engine/playerpawn.html#CauseEvent">CauseEvent</a>, <a href="../engine/playerpawn.html#ChangeAlwaysMouseLook">ChangeAlwaysMouseLook</a>, <a href="../engine/playerpawn.html#ChangeAutoAim">ChangeAutoAim</a>, <a href="../engine/playerpawn.html#ChangeCrosshair">ChangeCrosshair</a>, <a href="../engine/playerpawn.html#ChangeDodgeClickTime">ChangeDodgeClickTime</a>, <a href="../engine/playerpawn.html#ChangedWeapon">ChangedWeapon</a>, <a href="../engine/playerpawn.html#ChangeHud">ChangeHud</a>, <a href="../engine/playerpawn.html#ChangeName">ChangeName</a>, <a href="../engine/playerpawn.html#ChangeSnapView">ChangeSnapView</a>, <a href="../engine/playerpawn.html#ChangeStairLook">ChangeStairLook</a>, <a href="../engine/playerpawn.html#ChangeTeam">ChangeTeam</a>, <a href="../engine/playerpawn.html#CheatPlease">CheatPlease</a>, <a href="../engine/playerpawn.html#CheatView">CheatView</a>, <a href="../engine/playerpawn.html#CheckBob">CheckBob</a>, <a href="../engine/playerpawn.html#ClearProgressMessages">ClearProgressMessages</a>, <a href="../engine/playerpawn.html#ClientAdjustGlow">ClientAdjustGlow</a>, <a href="../engine/playerpawn.html#ClientAdjustPosition">ClientAdjustPosition</a>, <a href="../engine/playerpawn.html#ClientChangeTeam">ClientChangeTeam</a>, <a href="../engine/playerpawn.html#ClientFlash">ClientFlash</a>, <a href="../engine/playerpawn.html#ClientInstantFlash">ClientInstantFlash</a>, <a href="../engine/playerpawn.html#ClientMessage">ClientMessage</a>, <a href="../engine/playerpawn.html#ClientPlaySound">ClientPlaySound</a>, <a href="../engine/playerpawn.html#ClientReliablePlaySound">ClientReliablePlaySound</a>, <a href="../engine/playerpawn.html#ClientReplicateSkins">ClientReplicateSkins</a>, <a href="../engine/playerpawn.html#ClientSetMusic">ClientSetMusic</a>, <a href="../engine/playerpawn.html#ClientShake">ClientShake</a>, <a href="../engine/playerpawn.html#ClientTravel">ClientTravel</a>, <a href="../engine/playerpawn.html#ClientUpdatePosition">ClientUpdatePosition</a>, <a href="../engine/playerpawn.html#ClientVoiceMessage">ClientVoiceMessage</a>, <a href="../engine/playerpawn.html#ClientWeaponEvent">ClientWeaponEvent</a>, <a href="../engine/playerpawn.html#CompressAccel">CompressAccel</a>, <a href="../engine/playerpawn.html#ConsoleCommand">ConsoleCommand</a>, <a href="../engine/playerpawn.html#CopyToClipboard">CopyToClipboard</a>, <a href="../engine/playerpawn.html#damageAttitudeTo">damageAttitudeTo</a>, <a href="../engine/playerpawn.html#Debug">Debug</a>, <a href="../engine/playerpawn.html#DebugCommand">DebugCommand</a>, <a href="../engine/playerpawn.html#DebugContinue">DebugContinue</a>, <a href="../engine/playerpawn.html#Destroyed">Destroyed</a>, <a href="../engine/playerpawn.html#Died">Died</a>, <a href="../engine/playerpawn.html#Dodge">Dodge</a>, <a href="../engine/playerpawn.html#DoJump">DoJump</a>, <a href="../engine/playerpawn.html#Done">Done</a>, <a href="../engine/playerpawn.html#EndState">EndState</a>, <a href="../engine/playerpawn.html#EndZoom">EndZoom</a>, <a href="../engine/playerpawn.html#FeignDeath">FeignDeath</a>, <a href="../engine/playerpawn.html#FindGoodView">FindGoodView</a>, <a href="../engine/playerpawn.html#Fire">Fire</a>, <a href="../engine/playerpawn.html#Fly">Fly</a>, <a href="../engine/playerpawn.html#FOV">FOV</a>, <a href="../engine/playerpawn.html#FunctionKey">FunctionKey</a>, <a href="../engine/playerpawn.html#GetDefaultURL">GetDefaultURL</a>, <a href="../engine/playerpawn.html#GetEntryLevel">GetEntryLevel</a>, <a href="../engine/playerpawn.html#GetFreeMove">GetFreeMove</a>, <a href="../engine/playerpawn.html#GetNGSecret">GetNGSecret</a>, <a href="../engine/playerpawn.html#GetPlayerNetworkAddress">GetPlayerNetworkAddress</a>, <a href="../engine/playerpawn.html#GetWeapon">GetWeapon</a>, <a href="../engine/playerpawn.html#Ghost">Ghost</a>, <a href="../engine/playerpawn.html#God">God</a>, <a href="../engine/playerpawn.html#Grab">Grab</a>, <a href="../engine/playerpawn.html#HandleWalking">HandleWalking</a>, <a href="../engine/playerpawn.html#InitPlayerReplicationInfo">InitPlayerReplicationInfo</a>, <a href="../engine/playerpawn.html#InvertMouse">InvertMouse</a>, <a href="../engine/playerpawn.html#Invisible">Invisible</a>, <a href="../engine/playerpawn.html#JointDamaged">JointDamaged</a>, <a href="../engine/playerpawn.html#Jump">Jump</a>, <a href="../engine/playerpawn.html#JumpOffPawn">JumpOffPawn</a>, <a href="../engine/playerpawn.html#Kick">Kick</a>, <a href="../engine/playerpawn.html#KickBan">KickBan</a>, <a href="../engine/playerpawn.html#KillAll">KillAll</a>, <a href="../engine/playerpawn.html#KilledBy">KilledBy</a>, <a href="../engine/playerpawn.html#KillMessage">KillMessage</a>, <a href="../engine/playerpawn.html#KillPawns">KillPawns</a>, <a href="../engine/playerpawn.html#Landed">Landed</a>, <a href="../engine/playerpawn.html#Loc">Loc</a>, <a href="../engine/playerpawn.html#LocalTravel">LocalTravel</a>, <a href="../engine/playerpawn.html#MoveAutonomous">MoveAutonomous</a>, <a href="../engine/playerpawn.html#Mutate">Mutate</a>, <a href="../engine/playerpawn.html#Name">Name</a>, <a href="../engine/playerpawn.html#NeverSwitchOnPickup">NeverSwitchOnPickup</a>, <a href="../engine/playerpawn.html#NextWeapon">NextWeapon</a>, <a href="../engine/playerpawn.html#PasteFromClipboard">PasteFromClipboard</a>, <a href="../engine/playerpawn.html#Pause">Pause</a>, <a href="../engine/playerpawn.html#Ping">Ping</a>, <a href="../engine/playerpawn.html#PlayAltFiring">PlayAltFiring</a>, <a href="../engine/playerpawn.html#PlayBeepSound">PlayBeepSound</a>, <a href="../engine/playerpawn.html#PlayChatting">PlayChatting</a>, <a href="../engine/playerpawn.html#PlayDodge">PlayDodge</a>, <a href="../engine/playerpawn.html#PlayDying">PlayDying</a>, <a href="../engine/playerpawn.html#PlayerCalcView">PlayerCalcView</a>, <a href="../engine/playerpawn.html#PlayerInput">PlayerInput</a>, <a href="../engine/playerpawn.html#PlayerList">PlayerList</a>, <a href="../engine/playerpawn.html#PlayerMove">PlayerMove</a>, <a href="../engine/playerpawn.html#PlayersOnly">PlayersOnly</a>, <a href="../engine/playerpawn.html#PlayerTick">PlayerTick</a>, <a href="../engine/playerpawn.html#PlayerTimeOut">PlayerTimeOut</a>, <a href="../engine/playerpawn.html#PlayFeignDeath">PlayFeignDeath</a>, <a href="../engine/playerpawn.html#PlayFiring">PlayFiring</a>, <a href="../engine/playerpawn.html#PlayHit">PlayHit</a>, <a href="../engine/playerpawn.html#PlayRising">PlayRising</a>, <a href="../engine/playerpawn.html#PlaySwimming">PlaySwimming</a>, <a href="../engine/playerpawn.html#PlayTakeHit">PlayTakeHit</a>, <a href="../engine/playerpawn.html#PlayTurning">PlayTurning</a>, <a href="../engine/playerpawn.html#PlayWaiting">PlayWaiting</a>, <a href="../engine/playerpawn.html#Possess">Possess</a>, <a href="../engine/playerpawn.html#PostBeginPlay">PostBeginPlay</a>, <a href="../engine/playerpawn.html#PostRender">PostRender</a>, <a href="../engine/playerpawn.html#PowerUp">PowerUp</a>, <a href="../engine/playerpawn.html#PreBeginPlay">PreBeginPlay</a>, <a href="../engine/playerpawn.html#PreClientTravel">PreClientTravel</a>, <a href="../engine/playerpawn.html#PreRender">PreRender</a>, <a href="../engine/playerpawn.html#PrevItem">PrevItem</a>, <a href="../engine/playerpawn.html#PrevWeapon">PrevWeapon</a>, <a href="../engine/playerpawn.html#ProcessMove">ProcessMove</a>, <a href="../engine/playerpawn.html#Profile">Profile</a>, <a href="../engine/playerpawn.html#QuickLoad">QuickLoad</a>, <a href="../engine/playerpawn.html#QuickSave">QuickSave</a>, <a href="../engine/playerpawn.html#ReceiveLocalizedMessage">ReceiveLocalizedMessage</a>, <a href="../engine/playerpawn.html#RememberSpot">RememberSpot</a>, <a href="../engine/playerpawn.html#RenderOverlays">RenderOverlays</a>, <a href="../engine/playerpawn.html#ReplaceText">ReplaceText</a>, <a href="../engine/playerpawn.html#ReplicateMove">ReplicateMove</a>, <a href="../engine/playerpawn.html#ResetKeyboard">ResetKeyboard</a>, <a href="../engine/playerpawn.html#RestartLevel">RestartLevel</a>, <a href="../engine/playerpawn.html#Rise">Rise</a>, <a href="../engine/playerpawn.html#RuleList">RuleList</a>, <a href="../engine/playerpawn.html#Say">Say</a>, <a href="../engine/playerpawn.html#SendVoiceMessage">SendVoiceMessage</a>, <a href="../engine/playerpawn.html#ServerAddBots">ServerAddBots</a>, <a href="../engine/playerpawn.html#ServerChangeSkin">ServerChangeSkin</a>, <a href="../engine/playerpawn.html#ServerFeignDeath">ServerFeignDeath</a>, <a href="../engine/playerpawn.html#ServerMove">ServerMove</a>, <a href="../engine/playerpawn.html#ServerNeverSwitchOnPickup">ServerNeverSwitchOnPickup</a>, <a href="../engine/playerpawn.html#ServerReStartGame">ServerReStartGame</a>, <a href="../engine/playerpawn.html#ServerReStartPlayer">ServerReStartPlayer</a>, <a href="../engine/playerpawn.html#ServerSetSloMo">ServerSetSloMo</a>, <a href="../engine/playerpawn.html#ServerSetWeaponPriority">ServerSetWeaponPriority</a>, <a href="../engine/playerpawn.html#ServerTaunt">ServerTaunt</a>, <a href="../engine/playerpawn.html#ServerUpdateWeapons">ServerUpdateWeapons</a>, <a href="../engine/playerpawn.html#SetAutoAim">SetAutoAim</a>, <a href="../engine/playerpawn.html#SetBob">SetBob</a>, <a href="../engine/playerpawn.html#SetClientAlpha">SetClientAlpha</a>, <a href="../engine/playerpawn.html#SetDesiredFOV">SetDesiredFOV</a>, <a href="../engine/playerpawn.html#SetDodgeClickTime">SetDodgeClickTime</a>, <a href="../engine/playerpawn.html#SetFOVAngle">SetFOVAngle</a>, <a href="../engine/playerpawn.html#SetFriction">SetFriction</a>, <a href="../engine/playerpawn.html#SetJumpZ">SetJumpZ</a>, <a href="../engine/playerpawn.html#SetMaxMouseSmoothing">SetMaxMouseSmoothing</a>, <a href="../engine/playerpawn.html#SetMouseSmoothThreshold">SetMouseSmoothThreshold</a>, <a href="../engine/playerpawn.html#SetName">SetName</a>, <a href="../engine/playerpawn.html#SetNGSecret">SetNGSecret</a>, <a href="../engine/playerpawn.html#SetPause">SetPause</a>, <a href="../engine/playerpawn.html#SetProgressColor">SetProgressColor</a>, <a href="../engine/playerpawn.html#SetProgressMessage">SetProgressMessage</a>, <a href="../engine/playerpawn.html#SetProgressTime">SetProgressTime</a>, <a href="../engine/playerpawn.html#SetSensitivity">SetSensitivity</a>, <a href="../engine/playerpawn.html#SetSpeed">SetSpeed</a>, <a href="../engine/playerpawn.html#SetViewFlash">SetViewFlash</a>, <a href="../engine/playerpawn.html#SetWeaponStay">SetWeaponStay</a>, <a href="../engine/playerpawn.html#ShakeView">ShakeView</a>, <a href="../engine/playerpawn.html#ShowInventory">ShowInventory</a>, <a href="../engine/playerpawn.html#ShowLoadMenu">ShowLoadMenu</a>, <a href="../engine/playerpawn.html#ShowMenu">ShowMenu</a>, <a href="../engine/playerpawn.html#ShowPath">ShowPath</a>, <a href="../engine/playerpawn.html#ShowScores">ShowScores</a>, <a href="../engine/playerpawn.html#ShowSpecialMenu">ShowSpecialMenu</a>, <a href="../engine/playerpawn.html#ShowTags">ShowTags</a>, <a href="../engine/playerpawn.html#ShowUpgradeMenu">ShowUpgradeMenu</a>, <a href="../engine/playerpawn.html#ShutUp">ShutUp</a>, <a href="../engine/playerpawn.html#SloMo">SloMo</a>, <a href="../engine/playerpawn.html#SnapView">SnapView</a>, <a href="../engine/playerpawn.html#Speech">Speech</a>, <a href="../engine/playerpawn.html#SShot">SShot</a>, <a href="../engine/playerpawn.html#StairLook">StairLook</a>, <a href="../engine/playerpawn.html#StartWalk">StartWalk</a>, <a href="../engine/playerpawn.html#StartZoom">StartZoom</a>, <a href="../engine/playerpawn.html#StopZoom">StopZoom</a>, <a href="../engine/playerpawn.html#StrengthDecay">StrengthDecay</a>, <a href="../engine/playerpawn.html#Suicide">Suicide</a>, <a href="../engine/playerpawn.html#Summon">Summon</a>, <a href="../engine/playerpawn.html#SwimAnimUpdate">SwimAnimUpdate</a>, <a href="../engine/playerpawn.html#SwitchCoopLevel">SwitchCoopLevel</a>, <a href="../engine/playerpawn.html#SwitchLevel">SwitchLevel</a>, <a href="../engine/playerpawn.html#SwitchWeapon">SwitchWeapon</a>, <a href="../engine/playerpawn.html#Taunt">Taunt</a>, <a href="../engine/playerpawn.html#Team">Team</a>, <a href="../engine/playerpawn.html#TeamMessage">TeamMessage</a>, <a href="../engine/playerpawn.html#TeamSay">TeamSay</a>, <a href="../engine/playerpawn.html#Tele">Tele</a>, <a href="../engine/playerpawn.html#Throw">Throw</a>, <a href="../engine/playerpawn.html#Timer">Timer</a>, <a href="../engine/playerpawn.html#ToggleRuneHUD">ToggleRuneHUD</a>, <a href="../engine/playerpawn.html#ToggleZoom">ToggleZoom</a>, <a href="../engine/playerpawn.html#TravelPostAccept">TravelPostAccept</a>, <a href="../engine/playerpawn.html#TweenToSwimming">TweenToSwimming</a>, <a href="../engine/playerpawn.html#Typing">Typing</a>, <a href="../engine/playerpawn.html#UnPossess">UnPossess</a>, <a href="../engine/playerpawn.html#UpdateBob">UpdateBob</a>, <a href="../engine/playerpawn.html#UpdateEyeHeight">UpdateEyeHeight</a>, <a href="../engine/playerpawn.html#UpdateRotation">UpdateRotation</a>, <a href="../engine/playerpawn.html#UpdateSensitivity">UpdateSensitivity</a>, <a href="../engine/playerpawn.html#UpdateURL">UpdateURL</a>, <a href="../engine/playerpawn.html#UpdateWeaponPriorities">UpdateWeaponPriorities</a>, <a href="../engine/playerpawn.html#Use">Use</a>, <a href="../engine/playerpawn.html#ViewClass">ViewClass</a>, <a href="../engine/playerpawn.html#ViewFlash">ViewFlash</a>, <a href="../engine/playerpawn.html#ViewPlayer">ViewPlayer</a>, <a href="../engine/playerpawn.html#ViewPlayerNum">ViewPlayerNum</a>, <a href="../engine/playerpawn.html#ViewSelf">ViewSelf</a>, <a href="../engine/playerpawn.html#ViewShake">ViewShake</a>, <a href="../engine/playerpawn.html#Walk">Walk</a>, <a href="../engine/playerpawn.html#Watch">Watch</a>, <a href="../engine/playerpawn.html#ZoneChange">ZoneChange</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/pawn.html">Pawn</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/pawn.html#AcquireInventory">AcquireInventory</a>, <a href="../engine/pawn.html#ActivateShield">ActivateShield</a>, <a href="../engine/pawn.html#actorReachable">actorReachable</a>, <a href="../engine/pawn.html#ActorTagged">ActorTagged</a>, <a href="../engine/pawn.html#AddInventory">AddInventory</a>, <a href="../engine/pawn.html#AddPawn">AddPawn</a>, <a href="../engine/pawn.html#AddVelocity">AddVelocity</a>, <a href="../engine/pawn.html#AdjustAim">AdjustAim</a>, <a href="../engine/pawn.html#AdjustDesireFor">AdjustDesireFor</a>, <a href="../engine/pawn.html#AdjustToss">AdjustToss</a>, <a href="../engine/pawn.html#AllowWeaponToHitActor">AllowWeaponToHitActor</a>, <a href="../engine/pawn.html#AlterDestination">AlterDestination</a>, <a href="../engine/pawn.html#AmbientSoundTimer">AmbientSoundTimer</a>, <a href="../engine/pawn.html#AngleTo">AngleTo</a>, <a href="../engine/pawn.html#AnimEnd">AnimEnd</a>, <a href="../engine/pawn.html#ApplyPainToJoint">ApplyPainToJoint</a>, <a href="../engine/pawn.html#BaseChange">BaseChange</a>, <a href="../engine/pawn.html#BecomeViewTarget">BecomeViewTarget</a>, <a href="../engine/pawn.html#BeginState">BeginState</a>, <a href="../engine/pawn.html#BodyPartCollision">BodyPartCollision</a>, <a href="../engine/pawn.html#BodyPartCritical">BodyPartCritical</a>, <a href="../engine/pawn.html#BodyPartForJoint">BodyPartForJoint</a>, <a href="../engine/pawn.html#BodyPartForPolyGroup">BodyPartForPolyGroup</a>, <a href="../engine/pawn.html#BodyPartMissing">BodyPartMissing</a>, <a href="../engine/pawn.html#BodyPartSeverable">BodyPartSeverable</a>, <a href="../engine/pawn.html#BodyPartVisibility">BodyPartVisibility</a>, <a href="../engine/pawn.html#BoostStrength">BoostStrength</a>, <a href="../engine/pawn.html#BotVoiceMessage">BotVoiceMessage</a>, <a href="../engine/pawn.html#CalcLookAngle">CalcLookAngle</a>, <a href="../engine/pawn.html#CanBeStatued">CanBeStatued</a>, <a href="../engine/pawn.html#CanGotoPainState">CanGotoPainState</a>, <a href="../engine/pawn.html#CanPickup">CanPickup</a>, <a href="../engine/pawn.html#CanSee">CanSee</a>, <a href="../engine/pawn.html#CanStabActor">CanStabActor</a>, <a href="../engine/pawn.html#ChangedWeapon">ChangedWeapon</a>, <a href="../engine/pawn.html#CheckDefending">CheckDefending</a>, <a href="../engine/pawn.html#CheckWaterJump">CheckWaterJump</a>, <a href="../engine/pawn.html#ClearPaths">ClearPaths</a>, <a href="../engine/pawn.html#ClearSwipeArray">ClearSwipeArray</a>, <a href="../engine/pawn.html#ClientDying">ClientDying</a>, <a href="../engine/pawn.html#ClientGameEnded">ClientGameEnded</a>, <a href="../engine/pawn.html#ClientHearSound">ClientHearSound</a>, <a href="../engine/pawn.html#ClientMessage">ClientMessage</a>, <a href="../engine/pawn.html#ClientPutDown">ClientPutDown</a>, <a href="../engine/pawn.html#ClientReStart">ClientReStart</a>, <a href="../engine/pawn.html#ClientSetLocation">ClientSetLocation</a>, <a href="../engine/pawn.html#ClientSetRotation">ClientSetRotation</a>, <a href="../engine/pawn.html#ClientVoiceMessage">ClientVoiceMessage</a>, <a href="../engine/pawn.html#CloserNavPointTo">CloserNavPointTo</a>, <a href="../engine/pawn.html#damageAttitudeTo">damageAttitudeTo</a>, <a href="../engine/pawn.html#DamageBodyPart">DamageBodyPart</a>, <a href="../engine/pawn.html#Debug">Debug</a>, <a href="../engine/pawn.html#DeleteInventory">DeleteInventory</a>, <a href="../engine/pawn.html#Destroyed">Destroyed</a>, <a href="../engine/pawn.html#Died">Died</a>, <a href="../engine/pawn.html#Done">Done</a>, <a href="../engine/pawn.html#DoThrow">DoThrow</a>, <a href="../engine/pawn.html#DropShield">DropShield</a>, <a href="../engine/pawn.html#DropWeapon">DropWeapon</a>, <a href="../engine/pawn.html#EAdjustJump">EAdjustJump</a>, <a href="../engine/pawn.html#EncroachedBy">EncroachedBy</a>, <a href="../engine/pawn.html#EncroachingOn">EncroachingOn</a>, <a href="../engine/pawn.html#EndState">EndState</a>, <a href="../engine/pawn.html#EnemyNotVisible">EnemyNotVisible</a>, <a href="../engine/pawn.html#ExpandCollisionRadius">ExpandCollisionRadius</a>, <a href="../engine/pawn.html#Falling">Falling</a>, <a href="../engine/pawn.html#FearThisSpot">FearThisSpot</a>, <a href="../engine/pawn.html#FellOutOfWorld">FellOutOfWorld</a>, <a href="../engine/pawn.html#FindBestInventoryPath">FindBestInventoryPath</a>, <a href="../engine/pawn.html#FindBestPathToward">FindBestPathToward</a>, <a href="../engine/pawn.html#FindInventoryType">FindInventoryType</a>, <a href="../engine/pawn.html#FindPathAwayFrom">FindPathAwayFrom</a>, <a href="../engine/pawn.html#FindPathTo">FindPathTo</a>, <a href="../engine/pawn.html#FindPathToward">FindPathToward</a>, <a href="../engine/pawn.html#FindRandomDest">FindRandomDest</a>, <a href="../engine/pawn.html#FindStairRotation">FindStairRotation</a>, <a href="../engine/pawn.html#FindWaterLine">FindWaterLine</a>, <a href="../engine/pawn.html#FollowOrders">FollowOrders</a>, <a href="../engine/pawn.html#FootStep">FootStep</a>, <a href="../engine/pawn.html#FootStepLeft">FootStepLeft</a>, <a href="../engine/pawn.html#FootStepPrint">FootStepPrint</a>, <a href="../engine/pawn.html#FootStepRight">FootStepRight</a>, <a href="../engine/pawn.html#FootZoneChange">FootZoneChange</a>, <a href="../engine/pawn.html#Gasp">Gasp</a>, <a href="../engine/pawn.html#GetFootstepSound">GetFootstepSound</a>, <a href="../engine/pawn.html#GetHumanName">GetHumanName</a>, <a href="../engine/pawn.html#GetNumSkins">GetNumSkins</a>, <a href="../engine/pawn.html#GetSkinName">GetSkinName</a>, <a href="../engine/pawn.html#GrabEdge">GrabEdge</a>, <a href="../engine/pawn.html#HandleHelpMessageFrom">HandleHelpMessageFrom</a>, <a href="../engine/pawn.html#HeadZoneChange">HeadZoneChange</a>, <a href="../engine/pawn.html#HearNoise">HearNoise</a>, <a href="../engine/pawn.html#HidePlayer">HidePlayer</a>, <a href="../engine/pawn.html#InitPlayerReplicationInfo">InitPlayerReplicationInfo</a>, <a href="../engine/pawn.html#Jaw">Jaw</a>, <a href="../engine/pawn.html#JointDamaged">JointDamaged</a>, <a href="../engine/pawn.html#JumpOffPawn">JumpOffPawn</a>, <a href="../engine/pawn.html#Killed">Killed</a>, <a href="../engine/pawn.html#KillMessage">KillMessage</a>, <a href="../engine/pawn.html#Landed">Landed</a>, <a href="../engine/pawn.html#LimbPassThrough">LimbPassThrough</a>, <a href="../engine/pawn.html#LimbSevered">LimbSevered</a>, <a href="../engine/pawn.html#LineOfSightTo">LineOfSightTo</a>, <a href="../engine/pawn.html#LongFall">LongFall</a>, <a href="../engine/pawn.html#LookAt">LookAt</a>, <a href="../engine/pawn.html#LookToward">LookToward</a>, <a href="../engine/pawn.html#MakeTwitchable">MakeTwitchable</a>, <a href="../engine/pawn.html#MatterForJoint">MatterForJoint</a>, <a href="../engine/pawn.html#MayFall">MayFall</a>, <a href="../engine/pawn.html#MoveTo">MoveTo</a>, <a href="../engine/pawn.html#MoveToward">MoveToward</a>, <a href="../engine/pawn.html#NearestNavPoint">NearestNavPoint</a>, <a href="../engine/pawn.html#NearWall">NearWall</a>, <a href="../engine/pawn.html#NeedToTurn">NeedToTurn</a>, <a href="../engine/pawn.html#NextItem">NextItem</a>, <a href="../engine/pawn.html#OpenMouth">OpenMouth</a>, <a href="../engine/pawn.html#PainTimer">PainTimer</a>, <a href="../engine/pawn.html#PawnDamageModifier">PawnDamageModifier</a>, <a href="../engine/pawn.html#PickAnyTarget">PickAnyTarget</a>, <a href="../engine/pawn.html#PickTarget">PickTarget</a>, <a href="../engine/pawn.html#PickWallAdjust">PickWallAdjust</a>, <a href="../engine/pawn.html#PlayBackDeath">PlayBackDeath</a>, <a href="../engine/pawn.html#PlayBackHit">PlayBackHit</a>, <a href="../engine/pawn.html#PlayCrawling">PlayCrawling</a>, <a href="../engine/pawn.html#PlayDeath">PlayDeath</a>, <a href="../engine/pawn.html#PlayDive">PlayDive</a>, <a href="../engine/pawn.html#PlayDrownDeath">PlayDrownDeath</a>, <a href="../engine/pawn.html#PlayDrowning">PlayDrowning</a>, <a href="../engine/pawn.html#PlayDuck">PlayDuck</a>, <a href="../engine/pawn.html#PlayDying">PlayDying</a>, <a href="../engine/pawn.html#PlayDyingSound">PlayDyingSound</a>, <a href="../engine/pawn.html#PlayerTimeOut">PlayerTimeOut</a>, <a href="../engine/pawn.html#PlayFrontHit">PlayFrontHit</a>, <a href="../engine/pawn.html#PlayGibDeath">PlayGibDeath</a>, <a href="../engine/pawn.html#PlayHeadDeath">PlayHeadDeath</a>, <a href="../engine/pawn.html#PlayHeadHit">PlayHeadHit</a>, <a href="../engine/pawn.html#PlayInAir">PlayInAir</a>, <a href="../engine/pawn.html#PlayJumping">PlayJumping</a>, <a href="../engine/pawn.html#PlayLanded">PlayLanded</a>, <a href="../engine/pawn.html#PlayLanding">PlayLanding</a>, <a href="../engine/pawn.html#PlayLandSound">PlayLandSound</a>, <a href="../engine/pawn.html#PlayLeftDeath">PlayLeftDeath</a>, <a href="../engine/pawn.html#PlayLeftHit">PlayLeftHit</a>, <a href="../engine/pawn.html#PlayMoving">PlayMoving</a>, <a href="../engine/pawn.html#PlayMovingAttack">PlayMovingAttack</a>, <a href="../engine/pawn.html#PlayOutOfWater">PlayOutOfWater</a>, <a href="../engine/pawn.html#PlayPullUp">PlayPullUp</a>, <a href="../engine/pawn.html#PlayRightDeath">PlayRightDeath</a>, <a href="../engine/pawn.html#PlayRightHit">PlayRightHit</a>, <a href="../engine/pawn.html#PlaySkewerDeath">PlaySkewerDeath</a>, <a href="../engine/pawn.html#PlayStepUp">PlayStepUp</a>, <a href="../engine/pawn.html#PlayTakeHit">PlayTakeHit</a>, <a href="../engine/pawn.html#PlayTakeHitSound">PlayTakeHitSound</a>, <a href="../engine/pawn.html#PlayThreatening">PlayThreatening</a>, <a href="../engine/pawn.html#PlayTurning">PlayTurning</a>, <a href="../engine/pawn.html#PlayUninterruptedAnim">PlayUninterruptedAnim</a>, <a href="../engine/pawn.html#PlayWaiting">PlayWaiting</a>, <a href="../engine/pawn.html#PlayWeaponSwitch">PlayWeaponSwitch</a>, <a href="../engine/pawn.html#pointReachable">pointReachable</a>, <a href="../engine/pawn.html#PostBeginPlay">PostBeginPlay</a>, <a href="../engine/pawn.html#PostNetBeginPlay">PostNetBeginPlay</a>, <a href="../engine/pawn.html#PowerupBlaze">PowerupBlaze</a>, <a href="../engine/pawn.html#PowerupElectricity">PowerupElectricity</a>, <a href="../engine/pawn.html#PowerupFire">PowerupFire</a>, <a href="../engine/pawn.html#PowerupFriend">PowerupFriend</a>, <a href="../engine/pawn.html#PowerupIce">PowerupIce</a>, <a href="../engine/pawn.html#PowerupStone">PowerupStone</a>, <a href="../engine/pawn.html#PowerUpWeapon">PowerUpWeapon</a>, <a href="../engine/pawn.html#PreBeginPlay">PreBeginPlay</a>, <a href="../engine/pawn.html#PreSetMovement">PreSetMovement</a>, <a href="../engine/pawn.html#ReceiveLocalizedMessage">ReceiveLocalizedMessage</a>, <a href="../engine/pawn.html#RemovePawn">RemovePawn</a>, <a href="../engine/pawn.html#RenderOverlays">RenderOverlays</a>, <a href="../engine/pawn.html#ReplaceWithCarcass">ReplaceWithCarcass</a>, <a href="../engine/pawn.html#RestartPlayer">RestartPlayer</a>, <a href="../engine/pawn.html#RestoreBodyPart">RestoreBodyPart</a>, <a href="../engine/pawn.html#SeePlayer">SeePlayer</a>, <a href="../engine/pawn.html#SendGlobalMessage">SendGlobalMessage</a>, <a href="../engine/pawn.html#SendTeamMessage">SendTeamMessage</a>, <a href="../engine/pawn.html#SendVoiceMessage">SendVoiceMessage</a>, <a href="../engine/pawn.html#SetDefaultDisplayProperties">SetDefaultDisplayProperties</a>, <a href="../engine/pawn.html#SetDisplayProperties">SetDisplayProperties</a>, <a href="../engine/pawn.html#SetMesh">SetMesh</a>, <a href="../engine/pawn.html#SetMovementPhysics">SetMovementPhysics</a>, <a href="../engine/pawn.html#SetSkinActor">SetSkinActor</a>, <a href="../engine/pawn.html#SetSkinElement">SetSkinElement</a>, <a href="../engine/pawn.html#SeveredLimbClass">SeveredLimbClass</a>, <a href="../engine/pawn.html#ShadowUpdate">ShadowUpdate</a>, <a href="../engine/pawn.html#ShrinkCollisionHeight">ShrinkCollisionHeight</a>, <a href="../engine/pawn.html#SkeletonLook">SkeletonLook</a>, <a href="../engine/pawn.html#SpawnBodyGibs">SpawnBodyGibs</a>, <a href="../engine/pawn.html#SpawnCarcass">SpawnCarcass</a>, <a href="../engine/pawn.html#SpecialPainSkin">SpecialPainSkin</a>, <a href="../engine/pawn.html#SpeechTimer">SpeechTimer</a>, <a href="../engine/pawn.html#StopAttack">StopAttack</a>, <a href="../engine/pawn.html#StopFiring">StopFiring</a>, <a href="../engine/pawn.html#StopLookingToward">StopLookingToward</a>, <a href="../engine/pawn.html#StopWaiting">StopWaiting</a>, <a href="../engine/pawn.html#StrafeFacing">StrafeFacing</a>, <a href="../engine/pawn.html#StrafeTo">StrafeTo</a>, <a href="../engine/pawn.html#SwipeEffectEnd">SwipeEffectEnd</a>, <a href="../engine/pawn.html#SwipeEffectStart">SwipeEffectStart</a>, <a href="../engine/pawn.html#SwitchToBestWeapon">SwitchToBestWeapon</a>, <a href="../engine/pawn.html#TeamBroadcast">TeamBroadcast</a>, <a href="../engine/pawn.html#TeamMessage">TeamMessage</a>, <a href="../engine/pawn.html#ThrowWeapon">ThrowWeapon</a>, <a href="../engine/pawn.html#Tick">Tick</a>, <a href="../engine/pawn.html#TossWeapon">TossWeapon</a>, <a href="../engine/pawn.html#TurnTo">TurnTo</a>, <a href="../engine/pawn.html#TurnToward">TurnToward</a>, <a href="../engine/pawn.html#TweenToMoving">TweenToMoving</a>, <a href="../engine/pawn.html#TweenToWaiting">TweenToWaiting</a>, <a href="../engine/pawn.html#UnderLift">UnderLift</a>, <a href="../engine/pawn.html#UpdateEyeHeight">UpdateEyeHeight</a>, <a href="../engine/pawn.html#UpdateMovementSpeed">UpdateMovementSpeed</a>, <a href="../engine/pawn.html#UpdateTactics">UpdateTactics</a>, <a href="../engine/pawn.html#UseNotify">UseNotify</a>, <a href="../engine/pawn.html#WaitForLanding">WaitForLanding</a>, <a href="../engine/pawn.html#WalkTexture">WalkTexture</a>, <a href="../engine/pawn.html#WantsToPickUp">WantsToPickUp</a>, <a href="../engine/pawn.html#WarnTarget">WarnTarget</a>, <a href="../engine/pawn.html#WeaponActivate">WeaponActivate</a>, <a href="../engine/pawn.html#WeaponDeactivate">WeaponDeactivate</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Variables Detail</th>
+</tr>
+</table>
+
+<h4><a name="_bChaseCam" class="hidden"></a>bChaseCam <a href="../Source_engine/spectator.html#6" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword">var</span> <span class="source_keyword">bool</span> bChaseCam;</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_AltFire-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> AltFire <span class="function_state"></span> <a href="../Source_engine/spectator.html#189" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">exec</span> <span class="source_keyword">function</span>  AltFire ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> <span class="source_type">F</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_BehindView-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> BehindView <span class="function_state"></span> <a href="../Source_engine/spectator.html#67" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">exec</span> <span class="source_keyword">function</span>  BehindView ( <span class="source_keyword">Bool</span> <span class="source_type">B</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CallForHelp-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CallForHelp <span class="function_state"></span> <a href="../Source_engine/spectator.html#91" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">exec</span> <span class="source_keyword">function</span>  CallForHelp ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CameraIn-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CameraIn <span class="function_state"></span> <a href="../Source_engine/spectator.html#72" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">exec</span> <span class="source_keyword">function</span>  CameraIn ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_CameraOut-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> CameraOut <span class="function_state"></span> <a href="../Source_engine/spectator.html#77" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">exec</span> <span class="source_keyword">function</span>  CameraOut ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ChangeTeam-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ChangeTeam <span class="function_state"></span> <a href="../Source_engine/spectator.html#82" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ChangeTeam ( <span class="source_keyword">int</span> <span class="source_type">N</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ClientReStart-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ClientReStart <span class="function_state"></span> <a href="../Source_engine/spectator.html#113" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ClientReStart ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Debug-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Debug <span class="function_state"></span> <a href="../Source_engine/spectator.html#207" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span>  Debug ( <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span>, <span class="source_keyword">int</span> mode) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Fire-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Fire <span class="function_state"></span> <a href="../Source_engine/spectator.html#179" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">exec</span> <span class="source_keyword">function</span>  <span class="source_type"><a href="../runei/fire.html" class="source">Fire</a></span> ( <span class="source_keyword2">optional</span> <span class="source_keyword">float</span> <span class="source_type">F</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Fly-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Fly <span class="function_state"></span> <a href="../Source_engine/spectator.html#99" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">exec</span> <span class="source_keyword">function</span>  Fly ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_FootZoneChange-" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> FootZoneChange <span class="function_state"></span> <a href="../Source_engine/spectator.html#23" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span>  FootZoneChange ( <span class="source_type"><a href="../engine/zoneinfo.html" class="source">ZoneInfo</a></span> newFootZone) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Grab-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Grab <span class="function_state"></span> <a href="../Source_engine/spectator.html#130" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">exec</span> <span class="source_keyword">function</span>  Grab ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_HeadZoneChange-" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> HeadZoneChange <span class="function_state"></span> <a href="../Source_engine/spectator.html#27" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span>  HeadZoneChange ( <span class="source_type"><a href="../engine/zoneinfo.html" class="source">ZoneInfo</a></span> newHeadZone) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_InitPlayerReplicationInfo-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> InitPlayerReplicationInfo <span class="function_state"></span> <a href="../Source_engine/spectator.html#17" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  InitPlayerReplicationInfo ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_JointDamaged-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> JointDamaged <span class="function_state"></span> <a href="../Source_engine/spectator.html#201" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span> <span class="source_keyword">bool</span> JointDamaged ( <span class="source_keyword">int</span> Damage, <span class="source_type"><a href="../engine/pawn.html" class="source">Pawn</a></span> <span class="source_type">instigatedBy</span>, <span class="source_type"><a href="../core/object.html#Vector" class="source">Vector</a></span> <span class="source_type">hitlocation</span>, 
+                        <span class="source_type"><a href="../core/object.html#Vector" class="source">Vector</a></span> momentum, <span class="source_keyword">name</span> <span class="source_type"><a href="../engine/damagetype.html" class="source">damageType</a></span>, <span class="source_keyword">int</span> joint) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_NextItem-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> NextItem <span class="function_state"></span> <a href="../Source_engine/spectator.html#171" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">exec</span> <span class="source_keyword">function</span>  NextItem ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PainTimer-" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> PainTimer <span class="function_state"></span> <a href="../Source_engine/spectator.html#31" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span>  PainTimer ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PlayerTimeOut-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PlayerTimeOut <span class="function_state"></span> <a href="../Source_engine/spectator.html#124" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  PlayerTimeOut ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Possess-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Possess <span class="function_state"></span> <a href="../Source_engine/spectator.html#151" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  Possess ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PostRender-" class="hidden"></a><img src="../img_event.gif" alt="" title="event" /> PostRender <span class="function_state"></span> <a href="../Source_engine/spectator.html#35" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">event</span>  PostRender ( <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_PrevItem-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> PrevItem <span class="function_state"></span> <a href="../Source_engine/spectator.html#175" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">exec</span> <span class="source_keyword">function</span>  PrevItem ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_RestartLevel-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> RestartLevel <span class="function_state"></span> <a href="../Source_engine/spectator.html#146" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">exec</span> <span class="source_keyword">function</span>  RestartLevel ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Say-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Say <span class="function_state"></span> <a href="../Source_engine/spectator.html#135" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">exec</span> <span class="source_keyword">function</span>  Say ( <span class="source_keyword">string</span> <span class="source_type">S</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_ServerChangeSkin-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> ServerChangeSkin <span class="function_state"></span> <a href="../Source_engine/spectator.html#109" class="small">Source code</a></h4>
+<div class="declaration"> <span class="source_keyword">function</span>  ServerChangeSkin ( <span class="source_keyword">int</span> <span class="source_type">SkinIndex</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Suicide-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Suicide <span class="function_state"></span> <a href="../Source_engine/spectator.html#95" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">exec</span> <span class="source_keyword">function</span>  Suicide ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_SwitchWeapon-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> SwitchWeapon <span class="function_state"></span> <a href="../Source_engine/spectator.html#167" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">exec</span> <span class="source_keyword">function</span>  SwitchWeapon ( <span class="source_keyword">byte</span> <span class="source_type">F</span> ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Taunt-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Taunt <span class="function_state"></span> <a href="../Source_engine/spectator.html#87" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">exec</span> <span class="source_keyword">function</span>  Taunt ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+<h4><a name="_Walk-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Walk <span class="function_state"></span> <a href="../Source_engine/spectator.html#63" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">exec</span> <span class="source_keyword">function</span>  Walk ( ) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     bChaseCam=<span class="source_keyword">True</span>
+     AirSpeed=<span class="source_int">400.000000</span>
+     Visibility=<span class="source_int">0</span>
+     AttitudeToPlayer=ATTITUDE_Friendly
+     MenuName=<span class="source_string">"Spectator"</span>
+     bHidden=<span class="source_keyword">True</span>
+     bCollideActors=<span class="source_keyword">False</span>
+     bCollideWorld=<span class="source_keyword">False</span>
+     bBlockActors=<span class="source_keyword">False</span>
+     bBlockPlayers=<span class="source_keyword">False</span>
+     bProjTarget=<span class="source_keyword">False</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../engine/engine-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_engine/spectator.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#Spectator">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../engine/specialevent.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../engine/spewer.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:41:12.089 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>

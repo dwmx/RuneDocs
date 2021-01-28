@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>UnCodeX - Engine.Light</title>
+	<meta name="Generator" content="UnCodeX 237" />
+	<link rel="stylesheet" href="../DocStyle2.css" type="text/css" title="Original Purple" />
+	<link rel="alternative stylesheet" href="../DocStyle2-blue.css" type="text/css" title="Blue" />
+	<link rel="alternative stylesheet" href="../DocStyle2-red.css" type="text/css" title="Red" />
+	<!--[if IE]>
+	<link rel="stylesheet" href="../DocStyle2-msie.css" type="text/css" />
+	<![endif]-->
+	<script src="../styleswitcher.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../engine/engine-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_engine/light.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#Light">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../engine/liftexit.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../engine/localmessage.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html#engine/light.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+</div>
+<div class="spacer"></div>
+
+<h1><a href="../engine/engine-overview.html">Engine</a>.Light</h1>
+
+<dl>
+<dt>Extends</dt><dd><a href="../engine/actor.html">Actor</a></dd>
+<dt>Modifiers</dt><dd>native </dd>
+</dl>
+
+<p></p>
+
+<pre class="tree"><a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a>
+|   
++-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a>
+   |   
+   +-- <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/light.html">Light</a>
+</pre>
+
+<h4>Direct Known Subclasses:</h4>
+<blockquote>
+	<a href="../runei/spawnablelight.html">SpawnableLight</a>, <a href="../engine/spotlight.html">Spotlight</a>, <a href="../engine/triggerlight.html">TriggerLight</a>
+</blockquote>
+
+<hr />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Constants Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Contants from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/actor.html#ANGLE_1">ANGLE_1</a>, <a href="../engine/actor.html#ANGLE_180">ANGLE_180</a>, <a href="../engine/actor.html#ANGLE_360">ANGLE_360</a>, <a href="../engine/actor.html#ANGLE_45">ANGLE_45</a>, <a href="../engine/actor.html#ANGLE_90">ANGLE_90</a>, <a href="../engine/actor.html#bDebug">bDebug</a>, <a href="../engine/actor.html#BODYPART_BODY">BODYPART_BODY</a>, <a href="../engine/actor.html#BODYPART_HEAD">BODYPART_HEAD</a>, <a href="../engine/actor.html#BODYPART_LARM1">BODYPART_LARM1</a>, <a href="../engine/actor.html#BODYPART_LARM2">BODYPART_LARM2</a>, <a href="../engine/actor.html#BODYPART_LLEG1">BODYPART_LLEG1</a>, <a href="../engine/actor.html#BODYPART_LLEG2">BODYPART_LLEG2</a>, <a href="../engine/actor.html#BODYPART_MISC1">BODYPART_MISC1</a>, <a href="../engine/actor.html#BODYPART_MISC2">BODYPART_MISC2</a>, <a href="../engine/actor.html#BODYPART_MISC3">BODYPART_MISC3</a>, <a href="../engine/actor.html#BODYPART_MISC4">BODYPART_MISC4</a>, <a href="../engine/actor.html#BODYPART_RARM1">BODYPART_RARM1</a>, <a href="../engine/actor.html#BODYPART_RARM2">BODYPART_RARM2</a>, <a href="../engine/actor.html#BODYPART_RLEG1">BODYPART_RLEG1</a>, <a href="../engine/actor.html#BODYPART_RLEG2">BODYPART_RLEG2</a>, <a href="../engine/actor.html#BODYPART_TORSO">BODYPART_TORSO</a>, <a href="../engine/actor.html#DEBUG_AI">DEBUG_AI</a>, <a href="../engine/actor.html#DEBUG_CONSTANT">DEBUG_CONSTANT</a>, <a href="../engine/actor.html#DEBUG_LEVEL">DEBUG_LEVEL</a>, <a href="../engine/actor.html#DEBUG_LIGHTS">DEBUG_LIGHTS</a>, <a href="../engine/actor.html#DEBUG_MAX">DEBUG_MAX</a>, <a href="../engine/actor.html#DEBUG_MULTIPLE">DEBUG_MULTIPLE</a>, <a href="../engine/actor.html#DEBUG_NAVPOINTS">DEBUG_NAVPOINTS</a>, <a href="../engine/actor.html#DEBUG_NONE">DEBUG_NONE</a>, <a href="../engine/actor.html#DEBUG_PLAYER">DEBUG_PLAYER</a>, <a href="../engine/actor.html#DEBUG_TARGET">DEBUG_TARGET</a>, <a href="../engine/actor.html#DEBUG_TRIGGERS">DEBUG_TRIGGERS</a>, <a href="../engine/actor.html#DEBUG_VISIBLE">DEBUG_VISIBLE</a>, <a href="../engine/actor.html#DEBUG_ZONE">DEBUG_ZONE</a>, <a href="../engine/actor.html#HUD_ACTOR">HUD_ACTOR</a>, <a href="../engine/actor.html#HUD_LOD">HUD_LOD</a>, <a href="../engine/actor.html#HUD_MAX">HUD_MAX</a>, <a href="../engine/actor.html#HUD_NETWORK">HUD_NETWORK</a>, <a href="../engine/actor.html#HUD_NONE">HUD_NONE</a>, <a href="../engine/actor.html#HUD_POV">HUD_POV</a>, <a href="../engine/actor.html#HUD_SCRIPT">HUD_SCRIPT</a>, <a href="../engine/actor.html#HUD_SKELAXES">HUD_SKELAXES</a>, <a href="../engine/actor.html#HUD_SKELETON">HUD_SKELETON</a>, <a href="../engine/actor.html#HUD_SKELJOINTS">HUD_SKELJOINTS</a>, <a href="../engine/actor.html#HUD_SKELNAMES">HUD_SKELNAMES</a>, <a href="../engine/actor.html#JOINT_FLAG_ABSPOSITION">JOINT_FLAG_ABSPOSITION</a>, <a href="../engine/actor.html#JOINT_FLAG_ABSROTATION">JOINT_FLAG_ABSROTATION</a>, <a href="../engine/actor.html#JOINT_FLAG_ACCELERATIVE">JOINT_FLAG_ACCELERATIVE</a>, <a href="../engine/actor.html#JOINT_FLAG_BLENDJOINT">JOINT_FLAG_BLENDJOINT</a>, <a href="../engine/actor.html#JOINT_FLAG_COLLISION">JOINT_FLAG_COLLISION</a>, <a href="../engine/actor.html#JOINT_FLAG_GRAVJOINT">JOINT_FLAG_GRAVJOINT</a>, <a href="../engine/actor.html#JOINT_FLAG_IKCHAIN">JOINT_FLAG_IKCHAIN</a>, <a href="../engine/actor.html#JOINT_FLAG_SPRINGPOINT">JOINT_FLAG_SPRINGPOINT</a>, <a href="../engine/actor.html#NUM_BODYPARTS">NUM_BODYPARTS</a>, <a href="../engine/actor.html#NUM_JOINT_FLAGS">NUM_JOINT_FLAGS</a>, <a href="../engine/actor.html#POLYFLAG_ENVIRONMENT">POLYFLAG_ENVIRONMENT</a>, <a href="../engine/actor.html#POLYFLAG_INVISIBLE">POLYFLAG_INVISIBLE</a>, <a href="../engine/actor.html#POLYFLAG_MASKED">POLYFLAG_MASKED</a>, <a href="../engine/actor.html#POLYFLAG_MODULATED">POLYFLAG_MODULATED</a>, <a href="../engine/actor.html#POLYFLAG_TRANSLUCENT">POLYFLAG_TRANSLUCENT</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Contants from <a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../core/object.html#MaxInt">MaxInt</a>, <a href="../core/object.html#Pi">Pi</a>, <a href="../core/object.html#RF_NotForClient">RF_NotForClient</a>, <a href="../core/object.html#RF_NotForEdit">RF_NotForEdit</a>, <a href="../core/object.html#RF_NotForServer">RF_NotForServer</a>, <a href="../core/object.html#RF_Public">RF_Public</a>, <a href="../core/object.html#RF_Transactional">RF_Transactional</a>, <a href="../core/object.html#RF_Transient">RF_Transient</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="2" class="title">Variables Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/actor.html#Acceleration">Acceleration</a>, <a href="../engine/actor.html#AlphaScale">AlphaScale</a>, <a href="../engine/actor.html#AmbientGlow">AmbientGlow</a>, <a href="../engine/actor.html#AmbientSound">AmbientSound</a>, <a href="../engine/actor.html#AnimFrame">AnimFrame</a>, <a href="../engine/actor.html#AnimLast">AnimLast</a>, <a href="../engine/actor.html#AnimMinRate">AnimMinRate</a>, <a href="../engine/actor.html#AnimProxy">AnimProxy</a>, <a href="../engine/actor.html#AnimRate">AnimRate</a>, <a href="../engine/actor.html#AnimSequence">AnimSequence</a>, <a href="../engine/actor.html#AttachParent">AttachParent</a>, <a href="../engine/actor.html#AttachParentJoint">AttachParentJoint</a>, <a href="../engine/actor.html#AttachTag">AttachTag</a>, <a href="../engine/actor.html#bActorShadows">bActorShadows</a>, <a href="../engine/actor.html#bAffectActors">bAffectActors</a>, <a href="../engine/actor.html#bAffectWorld">bAffectWorld</a>, <a href="../engine/actor.html#bAlwaysRelevant">bAlwaysRelevant</a>, <a href="../engine/actor.html#bAlwaysTick">bAlwaysTick</a>, <a href="../engine/actor.html#bAnimByOwner">bAnimByOwner</a>, <a href="../engine/actor.html#bAnimFinished">bAnimFinished</a>, <a href="../engine/actor.html#bAnimLoop">bAnimLoop</a>, <a href="../engine/actor.html#bAnimNotify">bAnimNotify</a>, <a href="../engine/actor.html#bApplyLagToAccelerators">bApplyLagToAccelerators</a>, <a href="../engine/actor.html#Base">Base</a>, <a href="../engine/actor.html#BaseJoint">BaseJoint</a>, <a href="../engine/actor.html#BaseMatterType">BaseMatterType</a>, <a href="../engine/actor.html#BaseScrollDir">BaseScrollDir</a>, <a href="../engine/actor.html#bAssimilated">bAssimilated</a>, <a href="../engine/actor.html#bBlockActors">bBlockActors</a>, <a href="../engine/actor.html#bBlockPlayers">bBlockPlayers</a>, <a href="../engine/actor.html#bBounce">bBounce</a>, <a href="../engine/actor.html#bCanTeleport">bCanTeleport</a>, <a href="../engine/actor.html#bCarriedItem">bCarriedItem</a>, <a href="../engine/actor.html#bClientAnim">bClientAnim</a>, <a href="../engine/actor.html#bClientDemoNetFunc">bClientDemoNetFunc</a>, <a href="../engine/actor.html#bClientDemoRecording">bClientDemoRecording</a>, <a href="../engine/actor.html#bCollideActors">bCollideActors</a>, <a href="../engine/actor.html#bCollideWhenPlacing">bCollideWhenPlacing</a>, <a href="../engine/actor.html#bCollideWorld">bCollideWorld</a>, <a href="../engine/actor.html#bComplexOcclusion">bComplexOcclusion</a>, <a href="../engine/actor.html#bCorona">bCorona</a>, <a href="../engine/actor.html#bDeleteMe">bDeleteMe</a>, <a href="../engine/actor.html#bDemoRecording">bDemoRecording</a>, <a href="../engine/actor.html#bDifficulty0">bDifficulty0</a>, <a href="../engine/actor.html#bDifficulty1">bDifficulty1</a>, <a href="../engine/actor.html#bDifficulty2">bDifficulty2</a>, <a href="../engine/actor.html#bDifficulty3">bDifficulty3</a>, <a href="../engine/actor.html#bDirectional">bDirectional</a>, <a href="../engine/actor.html#bDrawAxes">bDrawAxes</a>, <a href="../engine/actor.html#bDrawJoints">bDrawJoints</a>, <a href="../engine/actor.html#bDrawSkel">bDrawSkel</a>, <a href="../engine/actor.html#bDynamicLight">bDynamicLight</a>, <a href="../engine/actor.html#bEdLocked">bEdLocked</a>, <a href="../engine/actor.html#bEdShouldSnap">bEdShouldSnap</a>, <a href="../engine/actor.html#bEdSnap">bEdSnap</a>, <a href="../engine/actor.html#bFilterByVolume">bFilterByVolume</a>, <a href="../engine/actor.html#bFixedRotationDir">bFixedRotationDir</a>, <a href="../engine/actor.html#bForcePhysicsUpdate">bForcePhysicsUpdate</a>, <a href="../engine/actor.html#bForceRender">bForceRender</a>, <a href="../engine/actor.html#bForceStasis">bForceStasis</a>, <a href="../engine/actor.html#bFrameNotifies">bFrameNotifies</a>, <a href="../engine/actor.html#bGameRelevant">bGameRelevant</a>, <a href="../engine/actor.html#bHasShadow">bHasShadow</a>, <a href="../engine/actor.html#bHidden">bHidden</a>, <a href="../engine/actor.html#bHiddenEd">bHiddenEd</a>, <a href="../engine/actor.html#bHighDetail">bHighDetail</a>, <a href="../engine/actor.html#bHighlighted">bHighlighted</a>, <a href="../engine/actor.html#bInterpolating">bInterpolating</a>, <a href="../engine/actor.html#bIsItemGoal">bIsItemGoal</a>, <a href="../engine/actor.html#bIsKillGoal">bIsKillGoal</a>, <a href="../engine/actor.html#bIsMover">bIsMover</a>, <a href="../engine/actor.html#bIsPawn">bIsPawn</a>, <a href="../engine/actor.html#bIsSecretGoal">bIsSecretGoal</a>, <a href="../engine/actor.html#bJointsBlock">bJointsBlock</a>, <a href="../engine/actor.html#bJointsTouch">bJointsTouch</a>, <a href="../engine/actor.html#bJustTeleported">bJustTeleported</a>, <a href="../engine/actor.html#BlendAnimAlpha">BlendAnimAlpha</a>, <a href="../engine/actor.html#BlendAnimFrame">BlendAnimFrame</a>, <a href="../engine/actor.html#BlendAnimSequence">BlendAnimSequence</a>, <a href="../engine/actor.html#bLensFlare">bLensFlare</a>, <a href="../engine/actor.html#bLightChanged">bLightChanged</a>, <a href="../engine/actor.html#bLookFocusCreature">bLookFocusCreature</a>, <a href="../engine/actor.html#bLookFocusPlayer">bLookFocusPlayer</a>, <a href="../engine/actor.html#bMemorized">bMemorized</a>, <a href="../engine/actor.html#bMeshCurvy">bMeshCurvy</a>, <a href="../engine/actor.html#bMeshEnviroMap">bMeshEnviroMap</a>, <a href="../engine/actor.html#bMirrored">bMirrored</a>, <a href="../engine/actor.html#bMovable">bMovable</a>, <a href="../engine/actor.html#bNegativeLight">bNegativeLight</a>, <a href="../engine/actor.html#bNet">bNet</a>, <a href="../engine/actor.html#bNetFeel">bNetFeel</a>, <a href="../engine/actor.html#bNetHear">bNetHear</a>, <a href="../engine/actor.html#bNetInitial">bNetInitial</a>, <a href="../engine/actor.html#bNetOptional">bNetOptional</a>, <a href="../engine/actor.html#bNetOwner">bNetOwner</a>, <a href="../engine/actor.html#bNetRelevant">bNetRelevant</a>, <a href="../engine/actor.html#bNetSee">bNetSee</a>, <a href="../engine/actor.html#bNetSpecial">bNetSpecial</a>, <a href="../engine/actor.html#bNetTemporary">bNetTemporary</a>, <a href="../engine/actor.html#bNoDelete">bNoDelete</a>, <a href="../engine/actor.html#bNoSmooth">bNoSmooth</a>, <a href="../engine/actor.html#bNoSurfaceBob">bNoSurfaceBob</a>, <a href="../engine/actor.html#bOnlyOwnerSee">bOnlyOwnerSee</a>, <a href="../engine/actor.html#bOwnerNoSee">bOwnerNoSee</a>, <a href="../engine/actor.html#bParticles">bParticles</a>, <a href="../engine/actor.html#bPointLight">bPointLight</a>, <a href="../engine/actor.html#bPreLight">bPreLight</a>, <a href="../engine/actor.html#bProjTarget">bProjTarget</a>, <a href="../engine/actor.html#bRandomFrame">bRandomFrame</a>, <a href="../engine/actor.html#bReleaseLock">bReleaseLock</a>, <a href="../engine/actor.html#bRenderedLastFrame">bRenderedLastFrame</a>, <a href="../engine/actor.html#bReplicateInstigator">bReplicateInstigator</a>, <a href="../engine/actor.html#bRotateToDesired">bRotateToDesired</a>, <a href="../engine/actor.html#Brush">Brush</a>, <a href="../engine/actor.html#bSelected">bSelected</a>, <a href="../engine/actor.html#bShadowCast">bShadowCast</a>, <a href="../engine/actor.html#bSimFall">bSimFall</a>, <a href="../engine/actor.html#bSimulatedPawn">bSimulatedPawn</a>, <a href="../engine/actor.html#bSinglePlayer">bSinglePlayer</a>, <a href="../engine/actor.html#bSpecialLit">bSpecialLit</a>, <a href="../engine/actor.html#bSpecialLit2">bSpecialLit2</a>, <a href="../engine/actor.html#bSpecialLit3">bSpecialLit3</a>, <a href="../engine/actor.html#bSpecialRender">bSpecialRender</a>, <a href="../engine/actor.html#bStasis">bStasis</a>, <a href="../engine/actor.html#bStatic">bStatic</a>, <a href="../engine/actor.html#bSweepable">bSweepable</a>, <a href="../engine/actor.html#bTempEditor">bTempEditor</a>, <a href="../engine/actor.html#bTicked">bTicked</a>, <a href="../engine/actor.html#bTimerLoop">bTimerLoop</a>, <a href="../engine/actor.html#bTrailerPrePivot">bTrailerPrePivot</a>, <a href="../engine/actor.html#bTrailerSameRotation">bTrailerSameRotation</a>, <a href="../engine/actor.html#bTravel">bTravel</a>, <a href="../engine/actor.html#bUnlit">bUnlit</a>, <a href="../engine/actor.html#Buoyancy">Buoyancy</a>, <a href="../engine/actor.html#CollisionHeight">CollisionHeight</a>, <a href="../engine/actor.html#CollisionRadius">CollisionRadius</a>, <a href="../engine/actor.html#CollisionTag">CollisionTag</a>, <a href="../engine/actor.html#ColLocation">ColLocation</a>, <a href="../engine/actor.html#ColorAdjust">ColorAdjust</a>, <a href="../engine/actor.html#Deleted">Deleted</a>, <a href="../engine/actor.html#DesiredColorAdjust">DesiredColorAdjust</a>, <a href="../engine/actor.html#DesiredFatness">DesiredFatness</a>, <a href="../engine/actor.html#DesiredRotation">DesiredRotation</a>, <a href="../engine/actor.html#DodgeDir">DodgeDir</a>, <a href="../engine/actor.html#DrawScale">DrawScale</a>, <a href="../engine/actor.html#DrawType">DrawType</a>, <a href="../engine/actor.html#Event">Event</a>, <a href="../engine/actor.html#ExtraTag">ExtraTag</a>, <a href="../engine/actor.html#Fatness">Fatness</a>, <a href="../engine/actor.html#Group">Group</a>, <a href="../engine/actor.html#InitialState">InitialState</a>, <a href="../engine/actor.html#Instigator">Instigator</a>, <a href="../engine/actor.html#Inventory">Inventory</a>, <a href="../engine/actor.html#JointChild[50]">JointChild[50]</a>, <a href="../engine/actor.html#JointFlags[50]">JointFlags[50]</a>, <a href="../engine/actor.html#LatentActor">LatentActor</a>, <a href="../engine/actor.html#LatentByte">LatentByte</a>, <a href="../engine/actor.html#LatentFloat">LatentFloat</a>, <a href="../engine/actor.html#LatentInt">LatentInt</a>, <a href="../engine/actor.html#Level">Level</a>, <a href="../engine/actor.html#LifeSpan">LifeSpan</a>, <a href="../engine/actor.html#LightBrightness">LightBrightness</a>, <a href="../engine/actor.html#LightCone">LightCone</a>, <a href="../engine/actor.html#LightEffect">LightEffect</a>, <a href="../engine/actor.html#LightHue">LightHue</a>, <a href="../engine/actor.html#LightingTag">LightingTag</a>, <a href="../engine/actor.html#LightPeriod">LightPeriod</a>, <a href="../engine/actor.html#LightPhase">LightPhase</a>, <a href="../engine/actor.html#LightRadius">LightRadius</a>, <a href="../engine/actor.html#LightSaturation">LightSaturation</a>, <a href="../engine/actor.html#LightType">LightType</a>, <a href="../engine/actor.html#Location">Location</a>, <a href="../engine/actor.html#LODBias">LODBias</a>, <a href="../engine/actor.html#LODCurve">LODCurve</a>, <a href="../engine/actor.html#LODDistMax">LODDistMax</a>, <a href="../engine/actor.html#LODDistMin">LODDistMin</a>, <a href="../engine/actor.html#LODPercentMax">LODPercentMax</a>, <a href="../engine/actor.html#LODPercentMin">LODPercentMin</a>, <a href="../engine/actor.html#LODPolyCount">LODPolyCount</a>, <a href="../engine/actor.html#Mass">Mass</a>, <a href="../engine/actor.html#Mesh">Mesh</a>, <a href="../engine/actor.html#MiscNumber">MiscNumber</a>, <a href="../engine/actor.html#MultiSkins[8]">MultiSkins[8]</a>, <a href="../engine/actor.html#NetPriority">NetPriority</a>, <a href="../engine/actor.html#NetTag">NetTag</a>, <a href="../engine/actor.html#NetUpdateFrequency">NetUpdateFrequency</a>, <a href="../engine/actor.html#OddsOfAppearing">OddsOfAppearing</a>, <a href="../engine/actor.html#OldAnimRate">OldAnimRate</a>, <a href="../engine/actor.html#OldLocation">OldLocation</a>, <a href="../engine/actor.html#OtherTag">OtherTag</a>, <a href="../engine/actor.html#Owner">Owner</a>, <a href="../engine/actor.html#PendingTouch">PendingTouch</a>, <a href="../engine/actor.html#PhysAlpha">PhysAlpha</a>, <a href="../engine/actor.html#Physics">Physics</a>, <a href="../engine/actor.html#PhysRate">PhysRate</a>, <a href="../engine/actor.html#PrePivot">PrePivot</a>, <a href="../engine/actor.html#Region">Region</a>, <a href="../engine/actor.html#RemoteRole">RemoteRole</a>, <a href="../engine/actor.html#RenderInterface">RenderInterface</a>, <a href="../engine/actor.html#RenderIteratorClass">RenderIteratorClass</a>, <a href="../engine/actor.html#Role">Role</a>, <a href="../engine/actor.html#Rotation">Rotation</a>, <a href="../engine/actor.html#RotationRate">RotationRate</a>, <a href="../engine/actor.html#ScaleGlow">ScaleGlow</a>, <a href="../engine/actor.html#ShadowTexture">ShadowTexture</a>, <a href="../engine/actor.html#ShadowVector">ShadowVector</a>, <a href="../engine/actor.html#SimAnim">SimAnim</a>, <a href="../engine/actor.html#Skeletal">Skeletal</a>, <a href="../engine/actor.html#SkelGroupFlags[16]">SkelGroupFlags[16]</a>, <a href="../engine/actor.html#SkelGroupSkins[16]">SkelGroupSkins[16]</a>, <a href="../engine/actor.html#SkelMesh">SkelMesh</a>, <a href="../engine/actor.html#Skin">Skin</a>, <a href="../engine/actor.html#SoundPitch">SoundPitch</a>, <a href="../engine/actor.html#SoundRadius">SoundRadius</a>, <a href="../engine/actor.html#SoundVolume">SoundVolume</a>, <a href="../engine/actor.html#SpecialTag">SpecialTag</a>, <a href="../engine/actor.html#Sprite">Sprite</a>, <a href="../engine/actor.html#SpriteProjForward">SpriteProjForward</a>, <a href="../engine/actor.html#StandingCount">StandingCount</a>, <a href="../engine/actor.html#Style">Style</a>, <a href="../engine/actor.html#SubstituteMesh">SubstituteMesh</a>, <a href="../engine/actor.html#Tag">Tag</a>, <a href="../engine/actor.html#Target">Target</a>, <a href="../engine/actor.html#Texture">Texture</a>, <a href="../engine/actor.html#TimerCounter">TimerCounter</a>, <a href="../engine/actor.html#TimerRate">TimerRate</a>, <a href="../engine/actor.html#Touching[4]">Touching[4]</a>, <a href="../engine/actor.html#TransientSoundRadius">TransientSoundRadius</a>, <a href="../engine/actor.html#TransientSoundVolume">TransientSoundVolume</a>, <a href="../engine/actor.html#TweenRate">TweenRate</a>, <a href="../engine/actor.html#Velocity">Velocity</a>, <a href="../engine/actor.html#VisibilityHeight">VisibilityHeight</a>, <a href="../engine/actor.html#VisibilityRadius">VisibilityRadius</a>, <a href="../engine/actor.html#VolumeBrightness">VolumeBrightness</a>, <a href="../engine/actor.html#VolumeFog">VolumeFog</a>, <a href="../engine/actor.html#VolumeRadius">VolumeRadius</a>, <a href="../engine/actor.html#XLevel">XLevel</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Variables from <a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../core/object.html#Class">Class</a>, <a href="../core/object.html#Name">Name</a>, <a href="../core/object.html#ObjectFlags">ObjectFlags</a>, <a href="../core/object.html#ObjectInternal[6]">ObjectInternal[6]</a>, <a href="../core/object.html#Outer">Outer</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Enumerations Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Enumerations from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/actor.html#EDodgeDir">EDodgeDir</a>, <a href="../engine/actor.html#EDrawType">EDrawType</a>, <a href="../engine/actor.html#EInputAction">EInputAction</a>, <a href="../engine/actor.html#EInputKey">EInputKey</a>, <a href="../engine/actor.html#ELightEffect">ELightEffect</a>, <a href="../engine/actor.html#ELightType">ELightType</a>, <a href="../engine/actor.html#ELODCurve">ELODCurve</a>, <a href="../engine/actor.html#EMusicTransition">EMusicTransition</a>, <a href="../engine/actor.html#ENetRole">ENetRole</a>, <a href="../engine/actor.html#EPhysics">EPhysics</a>, <a href="../engine/actor.html#ERenderStyle">ERenderStyle</a>, <a href="../engine/actor.html#ESoundSlot">ESoundSlot</a>, <a href="../engine/actor.html#ETravelType">ETravelType</a>, <a href="../engine/actor.html#E_RMAlign">E_RMAlign</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Enumerations from <a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../core/object.html#EMatterType">EMatterType</a>, <a href="../core/object.html#ESheerAxis">ESheerAxis</a></td>
+</tr>
+</table>
+
+
+<br />
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Structures Summary</th>
+</tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Structures from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/actor.html#PointRegion">PointRegion</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Structures from <a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../core/object.html#BoundingBox">BoundingBox</a>, <a href="../core/object.html#BoundingVolume">BoundingVolume</a>, <a href="../core/object.html#Color">Color</a>, <a href="../core/object.html#Coords">Coords</a>, <a href="../core/object.html#Guid">Guid</a>, <a href="../core/object.html#Plane">Plane</a>, <a href="../core/object.html#Rotator">Rotator</a>, <a href="../core/object.html#Scale">Scale</a>, <a href="../core/object.html#Vector">Vector</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<table class="title">
+<tr>
+	<th colspan="3" class="title">Functions Summary</th>
+</tr>
+<tr><td nowrap="nowrap"><img src="../img_function.gif" alt="function" title="function" /></td><td>&nbsp;</td><td><a href="#_Debug-" name="Debug" title="go to the details">Debug</a> (<a href="../engine/canvas.html">canvas</a> Canvas, int mode))<br /><span class="function_state"></span></td></tr>
+
+</table>
+
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../engine/engine-overview.html">Engine</a>.<a href="../engine/actor.html">Actor</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../engine/actor.html#*">*</a>, <a href="../engine/actor.html#+">+</a>, <a href="../engine/actor.html#-">-</a>, <a href="../engine/actor.html#ActorAttachedTo">ActorAttachedTo</a>, <a href="../engine/actor.html#ActorInSector">ActorInSector</a>, <a href="../engine/actor.html#AddVelocity">AddVelocity</a>, <a href="../engine/actor.html#AllActors">AllActors</a>, <a href="../engine/actor.html#AnimEnd">AnimEnd</a>, <a href="../engine/actor.html#AnimProxyEnd">AnimProxyEnd</a>, <a href="../engine/actor.html#ApplyDamageToActor">ApplyDamageToActor</a>, <a href="../engine/actor.html#ApplyJointForce">ApplyJointForce</a>, <a href="../engine/actor.html#Attach">Attach</a>, <a href="../engine/actor.html#AttachActorToJoint">AttachActorToJoint</a>, <a href="../engine/actor.html#AutonomousPhysics">AutonomousPhysics</a>, <a href="../engine/actor.html#BaseChange">BaseChange</a>, <a href="../engine/actor.html#BasedActors">BasedActors</a>, <a href="../engine/actor.html#BecomeViewTarget">BecomeViewTarget</a>, <a href="../engine/actor.html#BeginEvent">BeginEvent</a>, <a href="../engine/actor.html#BeginPlay">BeginPlay</a>, <a href="../engine/actor.html#BodyPartForJoint">BodyPartForJoint</a>, <a href="../engine/actor.html#BroadcastLocalizedMessage">BroadcastLocalizedMessage</a>, <a href="../engine/actor.html#BroadcastMessage">BroadcastMessage</a>, <a href="../engine/actor.html#Bump">Bump</a>, <a href="../engine/actor.html#CalcArcVelocity">CalcArcVelocity</a>, <a href="../engine/actor.html#CanBeUsed">CanBeUsed</a>, <a href="../engine/actor.html#CheckDefending">CheckDefending</a>, <a href="../engine/actor.html#ChildActors">ChildActors</a>, <a href="../engine/actor.html#ClosestJointTo">ClosestJointTo</a>, <a href="../engine/actor.html#ConsoleCommand">ConsoleCommand</a>, <a href="../engine/actor.html#DamageBodyPart">DamageBodyPart</a>, <a href="../engine/actor.html#debug">debug</a>, <a href="../engine/actor.html#DebugStop">DebugStop</a>, <a href="../engine/actor.html#DemoPlaySound">DemoPlaySound</a>, <a href="../engine/actor.html#Destroy">Destroy</a>, <a href="../engine/actor.html#DestroyAnimationProxy">DestroyAnimationProxy</a>, <a href="../engine/actor.html#Destroyed">Destroyed</a>, <a href="../engine/actor.html#Detach">Detach</a>, <a href="../engine/actor.html#DetachActorFromJoint">DetachActorFromJoint</a>, <a href="../engine/actor.html#EncroachedBy">EncroachedBy</a>, <a href="../engine/actor.html#EncroachingOn">EncroachingOn</a>, <a href="../engine/actor.html#EndedRotation">EndedRotation</a>, <a href="../engine/actor.html#EndEvent">EndEvent</a>, <a href="../engine/actor.html#Error">Error</a>, <a href="../engine/actor.html#Expired">Expired</a>, <a href="../engine/actor.html#Falling">Falling</a>, <a href="../engine/actor.html#FastTrace">FastTrace</a>, <a href="../engine/actor.html#FellOutOfWorld">FellOutOfWorld</a>, <a href="../engine/actor.html#FinishAnim">FinishAnim</a>, <a href="../engine/actor.html#FinishInterpolation">FinishInterpolation</a>, <a href="../engine/actor.html#FireEvent">FireEvent</a>, <a href="../engine/actor.html#FrameNotify">FrameNotify</a>, <a href="../engine/actor.html#FrameSweep">FrameSweep</a>, <a href="../engine/actor.html#FrameSwept">FrameSwept</a>, <a href="../engine/actor.html#GainedChild">GainedChild</a>, <a href="../engine/actor.html#GetAccelJointMagnitude">GetAccelJointMagnitude</a>, <a href="../engine/actor.html#GetAccelJointParms">GetAccelJointParms</a>, <a href="../engine/actor.html#GetAnimGroup">GetAnimGroup</a>, <a href="../engine/actor.html#GetDamageValues">GetDamageValues</a>, <a href="../engine/actor.html#GetHumanName">GetHumanName</a>, <a href="../engine/actor.html#GetItemName">GetItemName</a>, <a href="../engine/actor.html#GetJointName">GetJointName</a>, <a href="../engine/actor.html#GetJointPos">GetJointPos</a>, <a href="../engine/actor.html#GetJointRot">GetJointRot</a>, <a href="../engine/actor.html#GetMapName">GetMapName</a>, <a href="../engine/actor.html#GetNextInt">GetNextInt</a>, <a href="../engine/actor.html#GetNextIntDesc">GetNextIntDesc</a>, <a href="../engine/actor.html#GetNextSkin">GetNextSkin</a>, <a href="../engine/actor.html#GetSoundDuration">GetSoundDuration</a>, <a href="../engine/actor.html#GetSpringJointParms">GetSpringJointParms</a>, <a href="../engine/actor.html#GetURLMap">GetURLMap</a>, <a href="../engine/actor.html#GetUseAnim">GetUseAnim</a>, <a href="../engine/actor.html#GetUsePriority">GetUsePriority</a>, <a href="../engine/actor.html#HandleConsoleCommand">HandleConsoleCommand</a>, <a href="../engine/actor.html#HasAnim">HasAnim</a>, <a href="../engine/actor.html#HitWall">HitWall</a>, <a href="../engine/actor.html#HurtRadius">HurtRadius</a>, <a href="../engine/actor.html#InterpolateEnd">InterpolateEnd</a>, <a href="../engine/actor.html#IsAnimating">IsAnimating</a>, <a href="../engine/actor.html#JointChangedDirection">JointChangedDirection</a>, <a href="../engine/actor.html#JointDamaged">JointDamaged</a>, <a href="../engine/actor.html#JointNamed">JointNamed</a>, <a href="../engine/actor.html#JointTouchedBy">JointTouchedBy</a>, <a href="../engine/actor.html#KillCredit">KillCredit</a>, <a href="../engine/actor.html#KilledBy">KilledBy</a>, <a href="../engine/actor.html#Landed">Landed</a>, <a href="../engine/actor.html#LipSyncString">LipSyncString</a>, <a href="../engine/actor.html#LoopAnim">LoopAnim</a>, <a href="../engine/actor.html#LostChild">LostChild</a>, <a href="../engine/actor.html#MakeNoise">MakeNoise</a>, <a href="../engine/actor.html#MatterForJoint">MatterForJoint</a>, <a href="../engine/actor.html#MatterTrace">MatterTrace</a>, <a href="../engine/actor.html#Move">Move</a>, <a href="../engine/actor.html#MoveSmooth">MoveSmooth</a>, <a href="../engine/actor.html#NumJoints">NumJoints</a>, <a href="../engine/actor.html#PainSkin">PainSkin</a>, <a href="../engine/actor.html#PlayAnim">PlayAnim</a>, <a href="../engine/actor.html#PlayerCanSeeMe">PlayerCanSeeMe</a>, <a href="../engine/actor.html#PlayOwnedSound">PlayOwnedSound</a>, <a href="../engine/actor.html#PlaySound">PlaySound</a>, <a href="../engine/actor.html#PlayStabRemove">PlayStabRemove</a>, <a href="../engine/actor.html#PostBeginPlay">PostBeginPlay</a>, <a href="../engine/actor.html#PostNetBeginPlay">PostNetBeginPlay</a>, <a href="../engine/actor.html#PostTeleport">PostTeleport</a>, <a href="../engine/actor.html#PostTouch">PostTouch</a>, <a href="../engine/actor.html#PreBeginPlay">PreBeginPlay</a>, <a href="../engine/actor.html#PreTeleport">PreTeleport</a>, <a href="../engine/actor.html#RadiusActors">RadiusActors</a>, <a href="../engine/actor.html#Release">Release</a>, <a href="../engine/actor.html#ReleaseTagged">ReleaseTagged</a>, <a href="../engine/actor.html#RenderOverlays">RenderOverlays</a>, <a href="../engine/actor.html#RenderTexture">RenderTexture</a>, <a href="../engine/actor.html#ResetAnimationCache">ResetAnimationCache</a>, <a href="../engine/actor.html#SetBase">SetBase</a>, <a href="../engine/actor.html#SetCollision">SetCollision</a>, <a href="../engine/actor.html#SetCollisionSize">SetCollisionSize</a>, <a href="../engine/actor.html#SetDefaultDisplayProperties">SetDefaultDisplayProperties</a>, <a href="../engine/actor.html#SetDefaultJointFlags">SetDefaultJointFlags</a>, <a href="../engine/actor.html#SetDefaultPolygroups">SetDefaultPolygroups</a>, <a href="../engine/actor.html#SetDisplayProperties">SetDisplayProperties</a>, <a href="../engine/actor.html#SetInitialState">SetInitialState</a>, <a href="../engine/actor.html#SetJointRot">SetJointRot</a>, <a href="../engine/actor.html#SetLocation">SetLocation</a>, <a href="../engine/actor.html#SetOnFire">SetOnFire</a>, <a href="../engine/actor.html#SetOwner">SetOwner</a>, <a href="../engine/actor.html#SetPhysics">SetPhysics</a>, <a href="../engine/actor.html#SetRotation">SetRotation</a>, <a href="../engine/actor.html#SetTimer">SetTimer</a>, <a href="../engine/actor.html#Sleep">Sleep</a>, <a href="../engine/actor.html#SLog">SLog</a>, <a href="../engine/actor.html#Spawn">Spawn</a>, <a href="../engine/actor.html#SpawnAnimationProxy">SpawnAnimationProxy</a>, <a href="../engine/actor.html#Spawned">Spawned</a>, <a href="../engine/actor.html#SpecialHandling">SpecialHandling</a>, <a href="../engine/actor.html#StopAllSound">StopAllSound</a>, <a href="../engine/actor.html#StopSound">StopSound</a>, <a href="../engine/actor.html#SweepActors">SweepActors</a>, <a href="../engine/actor.html#TakeDamage">TakeDamage</a>, <a href="../engine/actor.html#Tick">Tick</a>, <a href="../engine/actor.html#Timer">Timer</a>, <a href="../engine/actor.html#Touch">Touch</a>, <a href="../engine/actor.html#TouchingActors">TouchingActors</a>, <a href="../engine/actor.html#TouchJointOf">TouchJointOf</a>, <a href="../engine/actor.html#Trace">Trace</a>, <a href="../engine/actor.html#TraceActors">TraceActors</a>, <a href="../engine/actor.html#TraceTexture">TraceTexture</a>, <a href="../engine/actor.html#TravelPostAccept">TravelPostAccept</a>, <a href="../engine/actor.html#TravelPreAccept">TravelPreAccept</a>, <a href="../engine/actor.html#Trigger">Trigger</a>, <a href="../engine/actor.html#TurnJointTo">TurnJointTo</a>, <a href="../engine/actor.html#TweenAnim">TweenAnim</a>, <a href="../engine/actor.html#UnlinkAttachments">UnlinkAttachments</a>, <a href="../engine/actor.html#UnTouch">UnTouch</a>, <a href="../engine/actor.html#UnTrigger">UnTrigger</a>, <a href="../engine/actor.html#UseTrigger">UseTrigger</a>, <a href="../engine/actor.html#VisibleActors">VisibleActors</a>, <a href="../engine/actor.html#VisibleCollidingActors">VisibleCollidingActors</a>, <a href="../engine/actor.html#WaitForRelease">WaitForRelease</a>, <a href="../engine/actor.html#ZoneChange">ZoneChange</a></td>
+</tr>
+</table>
+<table>
+<tr>
+	<th class="inherittitle">Inherited Functions from <a href="../core/core-overview.html">Core</a>.<a href="../core/object.html">Object</a></th>
+</tr>
+<tr>
+	<td class="small"><a href="../core/object.html#!">!</a>, <a href="../core/object.html#!=">!=</a>, <a href="../core/object.html#$">$</a>, <a href="../core/object.html#%">%</a>, <a href="../core/object.html#&">&</a>, <a href="../core/object.html#&&">&&</a>, <a href="../core/object.html#*">*</a>, <a href="../core/object.html#**">**</a>, <a href="../core/object.html#*=">*=</a>, <a href="../core/object.html#+">+</a>, <a href="../core/object.html#++">++</a>, <a href="../core/object.html#+=">+=</a>, <a href="../core/object.html#-">-</a>, <a href="../core/object.html#--">--</a>, <a href="../core/object.html#-=">-=</a>, <a href="../core/object.html#/ ">/ </a>, <a href="../core/object.html#/=">/=</a>, <a href="../core/object.html#&lt;">&lt;</a>, <a href="../core/object.html#&lt;&lt;">&lt;&lt;</a>, <a href="../core/object.html#&lt;=">&lt;=</a>, <a href="../core/object.html#==">==</a>, <a href="../core/object.html#&gt;">&gt;</a>, <a href="../core/object.html#&gt;=">&gt;=</a>, <a href="../core/object.html#&gt;&gt;">&gt;&gt;</a>, <a href="../core/object.html#&gt;&gt;&gt;">&gt;&gt;&gt;</a>, <a href="../core/object.html#@">@</a>, <a href="../core/object.html#Abs">Abs</a>, <a href="../core/object.html#Asc">Asc</a>, <a href="../core/object.html#Atan">Atan</a>, <a href="../core/object.html#BeginState">BeginState</a>, <a href="../core/object.html#Caps">Caps</a>, <a href="../core/object.html#Chr">Chr</a>, <a href="../core/object.html#Clamp">Clamp</a>, <a href="../core/object.html#ClassIsChildOf">ClassIsChildOf</a>, <a href="../core/object.html#Cos">Cos</a>, <a href="../core/object.html#Cross">Cross</a>, <a href="../core/object.html#Disable">Disable</a>, <a href="../core/object.html#Dot">Dot</a>, <a href="../core/object.html#DynamicLoadObject">DynamicLoadObject</a>, <a href="../core/object.html#Enable">Enable</a>, <a href="../core/object.html#EndState">EndState</a>, <a href="../core/object.html#Exp">Exp</a>, <a href="../core/object.html#FClamp">FClamp</a>, <a href="../core/object.html#FMax">FMax</a>, <a href="../core/object.html#FMin">FMin</a>, <a href="../core/object.html#FRand">FRand</a>, <a href="../core/object.html#GetAxes">GetAxes</a>, <a href="../core/object.html#GetEnum">GetEnum</a>, <a href="../core/object.html#GetPropertyText">GetPropertyText</a>, <a href="../core/object.html#GetStateName">GetStateName</a>, <a href="../core/object.html#GetToken">GetToken</a>, <a href="../core/object.html#GetUnAxes">GetUnAxes</a>, <a href="../core/object.html#GotoState">GotoState</a>, <a href="../core/object.html#InStr">InStr</a>, <a href="../core/object.html#Invert">Invert</a>, <a href="../core/object.html#IsA">IsA</a>, <a href="../core/object.html#IsInState">IsInState</a>, <a href="../core/object.html#Left">Left</a>, <a href="../core/object.html#Len">Len</a>, <a href="../core/object.html#Lerp">Lerp</a>, <a href="../core/object.html#Localize">Localize</a>, <a href="../core/object.html#Log">Log</a>, <a href="../core/object.html#Loge">Loge</a>, <a href="../core/object.html#Max">Max</a>, <a href="../core/object.html#Mid">Mid</a>, <a href="../core/object.html#Min">Min</a>, <a href="../core/object.html#MirrorVectorByNormal">MirrorVectorByNormal</a>, <a href="../core/object.html#Normal">Normal</a>, <a href="../core/object.html#Normalize">Normalize</a>, <a href="../core/object.html#OrthoRotation">OrthoRotation</a>, <a href="../core/object.html#Radians">Radians</a>, <a href="../core/object.html#Rand">Rand</a>, <a href="../core/object.html#RandRange">RandRange</a>, <a href="../core/object.html#ResetConfig">ResetConfig</a>, <a href="../core/object.html#Right">Right</a>, <a href="../core/object.html#RotRand">RotRand</a>, <a href="../core/object.html#SaveConfig">SaveConfig</a>, <a href="../core/object.html#SetPropertyText">SetPropertyText</a>, <a href="../core/object.html#Sin">Sin</a>, <a href="../core/object.html#Smerp">Smerp</a>, <a href="../core/object.html#Sqrt">Sqrt</a>, <a href="../core/object.html#Square">Square</a>, <a href="../core/object.html#StaticSaveConfig">StaticSaveConfig</a>, <a href="../core/object.html#Tan">Tan</a>, <a href="../core/object.html#VRand">VRand</a>, <a href="../core/object.html#VSize">VSize</a>, <a href="../core/object.html#VSize2D">VSize2D</a>, <a href="../core/object.html#Warn">Warn</a>, <a href="../core/object.html#^">^</a>, <a href="../core/object.html#^^">^^</a>, <a href="../core/object.html#|">|</a>, <a href="../core/object.html#||">||</a>, <a href="../core/object.html#~">~</a>, <a href="../core/object.html#~=">~=</a></td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+<table class="title">
+<tr>
+	<th class="title">Functions Detail</th>
+</tr>
+</table>
+
+<h4><a name="_Debug-" class="hidden"></a><img src="../img_function.gif" alt="" title="function" /> Debug <span class="function_state"></span> <a href="../Source_engine/light.html#10" class="small">Source code</a></h4>
+<div class="declaration"><span class="source_keyword2">simulated</span> <span class="source_keyword">function</span>  Debug ( <span class="source_type"><a href="../engine/canvas.html" class="source">canvas</a></span> <span class="source_type"><a href="../engine/canvas.html" class="source">Canvas</a></span>, <span class="source_keyword">int</span> mode) )</div>
+<blockquote class="comment">
+
+</blockquote>
+<hr class="small" />
+
+
+<br />
+
+
+<table class="title">
+<tr>
+	<th class="title">Defaultproperties</th>
+</tr>
+</table>
+<br />
+<div class="source"><table class="source"><tr><td class="source"><pre class="source"><span class="source_keyword">defaultproperties</span>
+{
+     bStatic=<span class="source_keyword">True</span>
+     bHidden=<span class="source_keyword">True</span>
+     bNoDelete=<span class="source_keyword">True</span>
+     <span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span>=<span class="source_type"><a href="../engine/texture.html" class="source">Texture</a></span><span class="source_name">'Engine.S_Light'</span>
+     bMovable=<span class="source_keyword">False</span>
+     CollisionRadius=<span class="source_int">24.000000</span>
+     CollisionHeight=<span class="source_int">24.000000</span>
+     LightType=LT_Steady
+     LightBrightness=<span class="source_int">64</span>
+     LightHue=<span class="source_int">51</span>
+     LightSaturation=<span class="source_int">255</span>
+     LightRadius=<span class="source_int">64</span>
+     LightPeriod=<span class="source_int">32</span>
+     LightCone=<span class="source_int">128</span>
+     VolumeBrightness=<span class="source_int">64</span>
+}
+</pre></td></tr></table></div>
+
+
+
+<hr />
+<table class="header">
+<tr class="header">
+	<td class="header"><a href="../overview.html">Overview</a></td>
+	<td class="header"><a href="../engine/engine-overview.html">Package</a></td>
+	<td class="header_hilight">Class</td>
+	<td class="header"><a href="../Source_engine/light.html">Source</a></td>
+	<td class="header"><a class="header" href="../classtree.html#Light">Class tree</a></td>
+	<td class="header"><a class="header" href="../glossary_A.html">Glossary</a></td>
+	<td class="logo" rowspan="2">UnrealScript<br />Documentation</td>
+</tr>
+<tr>
+	<td class="subheader" colspan="3"><a href="../engine/liftexit.html">previous class</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../engine/localmessage.html">next class</a></td>
+	<td class="subheader" colspan="2"><a href="../index.html" target="_top">frames</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="" target="_top">no frames</a></td>
+</tr>
+</table>
+
+<div class="stats">Creation time: Thu 28/1/2021 11:27:18.223 - Created with <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a></div>
+
+</body>
+</html>
